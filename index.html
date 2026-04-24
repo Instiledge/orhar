@@ -5,20 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ORHAR — The Mountain of Light</title>
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            /* Brand Colors */
+            /* Default Theme Variables - Updates via JS */
             --bg-color: #FCFBF8;
             --surface-color: #FFFFFF;
-            --primary-navy: #1A2E4A;
+            --primary-navy: #1A2E4A; /* Used for headings */
+            --header-bg: #FCFBF8;
             --accent-gold: #CFB286;
             --accent-brown: #915B27;
             --text-dark: #1e1e1e;
@@ -26,30 +24,60 @@
             
             --font-display: 'Cormorant Garamond', serif;
             --font-body: 'Work Sans', sans-serif;
+            
+            /* Transition for smooth theme switching */
+            --theme-transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-body); background-color: var(--bg-color); color: var(--text-dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-        h1, h2, h3, h4 { font-family: var(--font-display); color: var(--primary-navy); line-height: 1.2; }
-        a { text-decoration: none; color: var(--primary-navy); transition: color 0.2s ease; }
+        
+        body { 
+            font-family: var(--font-body); 
+            background-color: var(--bg-color); 
+            color: var(--text-dark); 
+            line-height: 1.6; 
+            -webkit-font-smoothing: antialiased;
+            transition: var(--theme-transition);
+        }
+        
+        h1, h2, h3, h4 { 
+            font-family: var(--font-display); 
+            color: var(--primary-navy); 
+            line-height: 1.2; 
+            transition: var(--theme-transition);
+        }
+        
+        a { text-decoration: none; color: var(--primary-navy); transition: var(--theme-transition); }
         a:hover { color: var(--accent-brown); }
 
         /* Navigation */
-        header { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(252, 251, 248, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(207, 178, 134, 0.2); }
+        header { 
+            padding: 20px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: var(--header-bg); 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            border-bottom: 1px solid var(--accent-gold);
+            transition: var(--theme-transition);
+        }
         .logo-container { display: flex; align-items: center; gap: 12px; }
         .logo-img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; }
-        .logo-text { font-family: var(--font-display); font-size: 24px; font-weight: 700; letter-spacing: 2px; color: var(--primary-navy); }
+        .logo-text { font-family: var(--font-display); font-size: 24px; font-weight: 700; letter-spacing: 2px; color: var(--primary-navy); transition: var(--theme-transition); }
         .nav-links { display: flex; gap: 30px; align-items: center; }
         .nav-links a { font-size: 15px; font-weight: 500; }
 
         /* Hero Section */
         .hero { padding: 100px 5% 80px; text-align: center; max-width: 900px; margin: 0 auto; }
         .hero h1 { font-size: 64px; margin-bottom: 15px; letter-spacing: 1px; }
-        .hero h2 { font-size: 28px; font-weight: 400; font-style: italic; color: var(--accent-brown); margin-bottom: 30px; }
-        .hero p { font-size: 18px; color: var(--text-muted); max-width: 600px; margin: 0 auto 40px; }
+        .hero h2 { font-size: 28px; font-weight: 400; font-style: italic; color: var(--accent-brown); margin-bottom: 30px; transition: var(--theme-transition); }
+        .hero p { font-size: 18px; color: var(--text-muted); max-width: 600px; margin: 0 auto 40px; transition: var(--theme-transition); }
+        
         .store-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-        .store-btn { display: flex; align-items: center; gap: 10px; background-color: var(--primary-navy); color: white; padding: 12px 24px; border-radius: 12px; font-size: 16px; font-weight: 500; transition: transform 0.2s ease, background 0.2s ease; }
-        .store-btn:hover { background-color: var(--accent-brown); color: white; transform: translateY(-2px); }
+        .store-btn { display: flex; align-items: center; gap: 10px; background-color: var(--primary-navy); color: var(--surface-color); padding: 12px 24px; border-radius: 12px; font-size: 16px; font-weight: 500; transition: transform 0.2s ease, background-color 0.4s ease, color 0.4s ease; }
+        .store-btn:hover { background-color: var(--accent-brown); transform: translateY(-2px); }
         .store-btn i { font-size: 24px; }
         .coming-soon { font-size: 11px; opacity: 0.8; display: block; text-align: left; line-height: 1; }
 
@@ -57,36 +85,58 @@
         .section { padding: 80px 5%; }
         .section-title { text-align: center; font-size: 42px; margin-bottom: 50px; }
         .story-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
-        .story-card { background: var(--surface-color); padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(26, 46, 74, 0.05); border-top: 4px solid var(--accent-gold); text-align: center; }
-        .story-card i { font-size: 32px; color: var(--accent-brown); margin-bottom: 20px; }
+        .story-card { 
+            background: var(--surface-color); 
+            padding: 30px; 
+            border-radius: 16px; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
+            border-top: 4px solid var(--accent-gold); 
+            text-align: center; 
+            transition: var(--theme-transition);
+        }
+        .story-card i { font-size: 32px; color: var(--accent-brown); margin-bottom: 20px; transition: var(--theme-transition); }
         .story-card h3 { font-size: 24px; margin-bottom: 15px; }
-        .story-card p { font-size: 15px; color: var(--text-muted); }
+        .story-card p { font-size: 15px; color: var(--text-muted); transition: var(--theme-transition); }
 
         /* Features */
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
         .feature-item { display: flex; align-items: flex-start; gap: 15px; padding: 20px; }
-        .feature-icon { background: rgba(207, 178, 134, 0.15); color: var(--accent-brown); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+        .feature-icon { 
+            background: var(--surface-color); 
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-brown); 
+            width: 50px; 
+            height: 50px; 
+            border-radius: 12px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 20px; 
+            flex-shrink: 0; 
+            transition: var(--theme-transition);
+        }
         .feature-item h4 { font-size: 20px; margin-bottom: 5px; }
-        .feature-item p { font-size: 14px; color: var(--text-muted); }
+        .feature-item p { font-size: 14px; color: var(--text-muted); transition: var(--theme-transition); }
 
         /* Themes */
-        .themes-section { background-color: var(--primary-navy); color: white; padding: 80px 5%; text-align: center; }
-        .themes-section .section-title { color: white; }
-        .themes-section p { color: rgba(255, 255, 255, 0.8); margin-bottom: 40px; font-size: 18px; }
+        .themes-section { background-color: var(--primary-navy); padding: 80px 5%; text-align: center; transition: var(--theme-transition); }
+        .themes-section .section-title { color: var(--surface-color); }
+        .themes-section p { color: var(--bg-color); margin-bottom: 40px; font-size: 18px; opacity: 0.9; }
+        
         .theme-circles { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; max-width: 800px; margin: 0 auto; }
-        .theme-circle { width: 50px; height: 50px; border-radius: 50%; cursor: pointer; border: 3px solid transparent; transition: transform 0.2s ease; }
-        .theme-circle:hover, .theme-circle.active { border-color: white; transform: scale(1.1); }
-        .theme-name { margin-top: 20px; font-family: var(--font-display); font-size: 24px; font-style: italic; color: var(--accent-gold); min-height: 30px; }
+        .theme-circle { width: 50px; height: 50px; border-radius: 50%; cursor: pointer; border: 3px solid transparent; transition: transform 0.2s ease, border-color 0.2s ease; }
+        .theme-circle:hover, .theme-circle.active { border-color: var(--surface-color); transform: scale(1.1); box-shadow: 0 0 15px rgba(0,0,0,0.3); }
+        .theme-name { margin-top: 20px; font-family: var(--font-display); font-size: 24px; font-style: italic; color: var(--accent-gold); min-height: 30px; transition: var(--theme-transition); }
 
         /* Footer */
-        footer { background-color: var(--surface-color); padding: 60px 5% 30px; border-top: 1px solid rgba(26, 46, 74, 0.1); }
+        footer { background-color: var(--surface-color); padding: 60px 5% 30px; border-top: 1px solid var(--accent-gold); transition: var(--theme-transition); }
         .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; }
         .footer-brand h2 { font-size: 32px; letter-spacing: 3px; margin-bottom: 5px; }
-        .footer-brand p { font-style: italic; color: var(--text-muted); font-family: var(--font-display); font-size: 18px; }
+        .footer-brand p { font-style: italic; color: var(--text-muted); font-family: var(--font-display); font-size: 18px; transition: var(--theme-transition); }
         .footer-links { display: flex; gap: 20px; }
-        .footer-links a { font-size: 14px; color: var(--text-muted); }
+        .footer-links a { font-size: 14px; color: var(--text-muted); transition: var(--theme-transition); }
         .footer-links a:hover { color: var(--accent-brown); }
-        .copyright { text-align: center; margin-top: 40px; font-size: 13px; color: #a0a0a0; }
+        .copyright { text-align: center; margin-top: 40px; font-size: 13px; color: var(--text-muted); opacity: 0.8; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 48px; }
@@ -99,7 +149,6 @@
 
     <header>
         <a href="index.html" class="logo-container">
-            <!-- Updated to logo.png -->
             <img src="logo.png" alt="ORHAR Logo" class="logo-img" onerror="this.style.display='none'">
             <span class="logo-text">ORHAR</span>
         </a>
@@ -162,108 +211,63 @@
     <section id="features" class="section" style="background-color: var(--surface-color);">
         <h2 class="section-title">Your Scripture Companions</h2>
         <div class="features-grid">
-            <!-- ALL 12 FEATURES ADDED -->
             <div class="feature-item">
                 <div class="feature-icon"><i class="fas fa-bible"></i></div>
-                <div>
-                    <h4>Full Bible In-App</h4>
-                    <p>Read the scriptures in multiple versions and languages, completely offline.</p>
-                </div>
+                <div><h4>Full Bible In-App</h4><p>Read the scriptures in multiple versions and languages, completely offline.</p></div>
             </div>
             <div class="feature-item">
                 <div class="feature-icon"><i class="fas fa-hands-praying"></i></div>
-                <div>
-                    <h4>Prayers</h4>
-                    <p>A dedicated space for guided prayers and daily spiritual connection.</p>
-                </div>
+                <div><h4>Prayers</h4><p>A dedicated space for guided prayers and daily spiritual connection.</p></div>
             </div>
             <div class="feature-item">
                 <div class="feature-icon"><i class="fas fa-headphones"></i></div>
-                <div>
-                    <h4>Audio & TTS</h4>
-                    <p>Listen to the Word on the go with high-quality Text-to-Speech playback.</p>
-                </div>
+                <div><h4>Audio & TTS</h4><p>Listen to the Word on the go with high-quality Text-to-Speech playback.</p></div>
             </div>
             <div class="feature-item">
                 <div class="feature-icon"><i class="fas fa-pen-fancy"></i></div>
-                <div>
-                    <h4>Personal Notes</h4>
-                    <p>Document your revelations, tag them, and sync them securely across devices.</p>
-                </div>
+                <div><h4>Personal Notes</h4><p>Document your revelations, tag them, and sync them securely across devices.</p></div>
             </div>
             <div class="feature-item">
                 <div class="feature-icon"><i class="fas fa-sun"></i></div>
-                <div>
-                    <h4>Daily Verse</h4>
-                    <p>Start your day with a carefully selected scripture to illuminate your path.</p>
-                </div>
+                <div><h4>Daily Verse</h4><p>Start your day with a carefully selected scripture to illuminate your path.</p></div>
             </div>
             <div class="feature-item">
                 <div class="feature-icon"><i class="fas fa-book"></i></div>
-                <div>
-                    <h4>Books In-App</h4>
-                    <p>Access a curated library of theological and spiritual writings inside the app.</p>
-                </div>
+                <div><h4>Books In-App</h4><p>Access a curated library of theological and spiritual writings inside the app.</p></div>
             </div>
             <div class="feature-item">
                 <div class="feature-icon"><i class="fas fa-map-marked-alt"></i></div>
-                <div>
-                    <h4>Reading Plans</h4>
-                    <p>Follow structured plans to read through the Bible at your own pace and season.</p>
-                </div>
+                <div><h4>Reading Plans</h4><p>Follow structured plans to read through the Bible at your own pace.</p></div>
             </div>
             <div class="feature-item">
                 <div class="feature-icon"><i class="fas fa-dove"></i></div>
-                <div>
-                    <h4>Women's Section</h4>
-                    <p>Dedicated biblical insights, studies, and stories of women in the Word.</p>
-                </div>
+                <div><h4>Women's Section</h4><p>Dedicated biblical insights, studies, and stories of women in the Word.</p></div>
             </div>
             <div class="feature-item">
                 <div class="feature-icon"><i class="fas fa-question-circle"></i></div>
-                <div>
-                    <h4>Bible Quiz</h4>
-                    <p>Test your knowledge and grow deeper in your understanding of the scriptures.</p>
-                </div>
+                <div><h4>Bible Quiz</h4><p>Test your knowledge and grow deeper in your understanding of the scriptures.</p></div>
             </div>
             <div class="feature-item">
                 <div class="feature-icon"><i class="fas fa-landmark"></i></div>
-                <div>
-                    <h4>Historical Content</h4>
-                    <p>Explore the deep historical context and background of biblical times.</p>
-                </div>
+                <div><h4>Historical Content</h4><p>Explore the deep historical context and background of biblical times.</p></div>
             </div>
             <div class="feature-item">
                 <div class="feature-icon"><i class="fas fa-bell"></i></div>
-                <div>
-                    <h4>Reminders</h4>
-                    <p>Set custom notifications so you never miss your daily time in the Word.</p>
-                </div>
+                <div><h4>Reminders</h4><p>Set custom notifications so you never miss your daily time in the Word.</p></div>
             </div>
             <div class="feature-item">
                 <div class="feature-icon"><i class="fas fa-church"></i></div>
-                <div>
-                    <h4>Catholic Content (CEC)</h4>
-                    <p>Includes Deuterocanonical books and specific Catholic resources.</p>
-                </div>
+                <div><h4>Catholic Content (CEC)</h4><p>Includes Deuterocanonical books and specific Catholic resources.</p></div>
             </div>
         </div>
     </section>
 
     <section class="themes-section">
         <h2 class="section-title">A Space That Reflects You</h2>
-        <p>ORHAR is fully customizable. Choose from 9 carefully crafted color themes.</p>
+        <p>ORHAR is fully customizable. Choose from 9 carefully crafted color themes to match your spirit.</p>
         
-        <div class="theme-circles">
-            <div class="theme-circle active" style="background-color: #CFB286;" onclick="setThemeName('Default')"></div>
-            <div class="theme-circle" style="background-color: #0EC1F4;" onclick="setThemeName('Bleu')"></div>
-            <div class="theme-circle" style="background-color: #f26b8b;" onclick="setThemeName('Sunset')"></div>
-            <div class="theme-circle" style="background-color: #5fb387;" onclick="setThemeName('Forest')"></div>
-            <div class="theme-circle" style="background-color: #9c7ece;" onclick="setThemeName('Violet')"></div>
-            <div class="theme-circle" style="background-color: #399baa;" onclick="setThemeName('Oceanic')"></div>
-            <div class="theme-circle" style="background-color: #d88c79;" onclick="setThemeName('Earthy')"></div>
-            <div class="theme-circle" style="background-color: #6e6e6e;" onclick="setThemeName('Graphite')"></div>
-            <div class="theme-circle" style="background-color: #ffb7c5;" onclick="setThemeName('Sakura')"></div>
+        <div class="theme-circles" id="theme-buttons">
+            <!-- Rendered by JS -->
         </div>
         <div class="theme-name" id="theme-display">Default Theme</div>
     </section>
@@ -288,12 +292,47 @@
     </footer>
 
     <script>
-        function setThemeName(name) {
-            document.getElementById('theme-display').innerText = name + " Theme";
-            const circles = document.querySelectorAll('.theme-circle');
-            circles.forEach(circle => circle.classList.remove('active'));
-            event.target.classList.add('active');
-        }
+        // Your actual App Colors Config!
+        const appThemes = [
+            { name: 'Default',  primary: '#1A2E4A', accentGold: '#CFB286', accentBrown: '#915B27', bg: '#FCFBF8', surface: '#FFFFFF', text: '#1e1e1e', textMuted: '#7f8c8d' },
+            { name: 'Bleu',     primary: '#0b9ac3', accentGold: '#FDB718', accentBrown: '#0EC1F4', bg: '#FCFBF6', surface: '#FFFFFF', text: '#1e1e1e', textMuted: '#7f8c8d' },
+            { name: 'Sunset',   primary: '#ef476f', accentGold: '#ffd166', accentBrown: '#f26b8b', bg: '#fff8f3', surface: '#FFFFFF', text: '#2d1b2d', textMuted: '#b3a395' },
+            { name: 'Forest',   primary: '#38a169', accentGold: '#ffcc70', accentBrown: '#5fb387', bg: '#f0f7f1', surface: '#FFFFFF', text: '#1e2a21', textMuted: '#a9b7a9' },
+            { name: 'Violet',   primary: '#845EC2', accentGold: '#ff6f91', accentBrown: '#9c7ece', bg: '#ebe3f5', surface: '#FFFFFF', text: '#2e233e', textMuted: '#c6bec7' },
+            { name: 'Oceanic',  primary: '#088395', accentGold: '#ffc93c', accentBrown: '#399baa', bg: '#f0f8ff', surface: '#FFFFFF', text: '#071a21', textMuted: '#a2d5c6' },
+            { name: 'Earthy',   primary: '#ac7060', accentGold: '#f7b267', accentBrown: '#d88c79', bg: '#fef9f3', surface: '#FFFFFF', text: '#2d1c18', textMuted: '#bcaaa4' },
+            { name: 'Graphite', primary: '#4a4a4a', accentGold: '#ffd700', accentBrown: '#6e6e6e', bg: '#f5f5f7', surface: '#FFFFFF', text: '#111111', textMuted: '#888888' },
+            { name: 'Sakura',   primary: '#cc929d', accentGold: '#8FBC8F', accentBrown: '#ffb7c5', bg: '#fff0f5', surface: '#FFFFFF', text: '#21181b', textMuted: '#e6c0c8' }
+        ];
+
+        const container = document.getElementById('theme-buttons');
+        const root = document.documentElement;
+        
+        // Generate buttons
+        appThemes.forEach((theme, index) => {
+            const btn = document.createElement('div');
+            btn.className = `theme-circle ${index === 0 ? 'active' : ''}`;
+            btn.style.backgroundColor = theme.accentBrown;
+            
+            btn.onclick = (e) => {
+                // Update UI active state
+                document.querySelectorAll('.theme-circle').forEach(c => c.classList.remove('active'));
+                e.target.classList.add('active');
+                document.getElementById('theme-display').innerText = theme.name + " Theme";
+
+                // Update CSS Variables to change whole site colors instantly!
+                root.style.setProperty('--primary-navy', theme.primary);
+                root.style.setProperty('--accent-gold', theme.accentGold);
+                root.style.setProperty('--accent-brown', theme.accentBrown);
+                root.style.setProperty('--bg-color', theme.bg);
+                root.style.setProperty('--header-bg', theme.bg);
+                root.style.setProperty('--surface-color', theme.surface);
+                root.style.setProperty('--text-dark', theme.text);
+                root.style.setProperty('--text-muted', theme.textMuted);
+            };
+            
+            container.appendChild(btn);
+        });
     </script>
 </body>
 </html>

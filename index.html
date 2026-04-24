@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORHAR — The Mountain of Light</title>
+    
+    <!-- Fonts: Cormorant Garamond for elegant headings, Work Sans for clean body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* Brand Colors from App Config */
+            --bg-color: #FCFBF8;
+            --surface-color: #FFFFFF;
+            --primary-navy: #1A2E4A;
+            --accent-gold: #CFB286;
+            --accent-brown: #915B27;
+            --text-dark: #1e1e1e;
+            --text-muted: #7f8c8d;
+            
+            /* Typography */
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Work Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            color: var(--primary-navy);
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-navy);
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--accent-brown);
+        }
+
+        /* Navigation */
+        header {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(252, 251, 248, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(207, 178, 134, 0.2);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--primary-navy);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 5% 80px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--accent-brown);
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .store-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .store-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary-navy);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .store-btn:hover {
+            background-color: var(--accent-brown);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .store-btn i {
+            font-size: 24px;
+        }
+
+        .coming-soon {
+            font-size: 11px;
+            opacity: 0.8;
+            display: block;
+            text-align: left;
+            line-height: 1;
+        }
+
+        /* The Story Section */
+        .section {
+            padding: 80px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 50px;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .story-card {
+            background: var(--surface-color);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(26, 46, 74, 0.05);
+            border-top: 4px solid var(--accent-gold);
+            text-align: center;
+        }
+
+        .story-card i {
+            font-size: 32px;
+            color: var(--accent-brown);
+            margin-bottom: 20px;
+        }
+
+        .story-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .story-card p {
+            font-size: 15px;
+            color: var(--text-muted);
+        }
+
+        /* App Themes Preview */
+        .themes-section {
+            background-color: var(--primary-navy);
+            color: white;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .themes-section .section-title {
+            color: white;
+        }
+
+        .themes-section p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+
+        .theme-circles {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .theme-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: transform 0.2s ease;
+            position: relative;
+        }
+
+        .theme-circle:hover {
+            transform: scale(1.1);
+        }
+
+        .theme-circle.active {
+            border-color: white;
+            transform: scale(1.1);
+        }
+
+        .theme-name {
+            margin-top: 20px;
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-style: italic;
+            color: var(--accent-gold);
+            min-height: 30px;
+        }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            background: rgba(207, 178, 134, 0.15);
+            color: var(--accent-brown);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .feature-item h4 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--surface-color);
+            padding: 60px 5% 30px;
+            border-top: 1px solid rgba(26, 46, 74, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-brand h2 {
+            font-size: 32px;
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+        }
+
+        .footer-brand p {
+            font-style: italic;
+            color: var(--text-muted);
+            font-family: var(--font-display);
+            font-size: 18px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-brown);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 13px;
+            color: #a0a0a0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 48px; }
+            .nav-links { display: none; } /* Simplified for mobile */
+            .footer-content { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="logo.jpg" alt="ORHAR Logo" class="logo-img" onerror="this.style.display='none'">
+            <span class="logo-text">ORHAR</span>
+        </a>
+        <nav class="nav-links">
+            <a href="#story">The Story</a>
+            <a href="#features">Features</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>The Mountain of Light</h1>
+        <h2>Where God's Word and the human soul meet on the heights.</h2>
+        <p>OR means light. HAR means mountain. Together, ORHAR is the biblical place of divine encounter. Built for the daily ascent, multilingual, and beautifully crafted for your spiritual journey.</p>
+        
+        <div class="store-buttons">
+            <a href="#" class="store-btn">
+                <i class="fab fa-apple"></i>
+                <div>
+                    <span class="coming-soon">Coming soon on the</span>
+                    <strong>App Store</strong>
+                </div>
+            </a>
+            <a href="#" class="store-btn">
+                <i class="fab fa-google-play"></i>
+                <div>
+                    <span class="coming-soon">Coming soon on</span>
+                    <strong>Google Play</strong>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="story" class="section">
+        <h2 class="section-title">Read the Icon</h2>
+        <div class="story-grid">
+            <div class="story-card">
+                <i class="fas fa-book-open"></i>
+                <h3>The Bible</h3>
+                <p>Everything begins here. Pages open wide, alive, breathing, ready. The Word of God is not a closed book; it is thrown open, waiting for you.</p>
+            </div>
+            <div class="story-card">
+                <i class="fas fa-bookmark"></i>
+                <h3>The Bookmark</h3>
+                <p>A golden bookmark rests in the open Bible—faithful, patient. It says you will return. The Word is a place you come back to every day.</p>
+            </div>
+            <div class="story-card">
+                <i class="fas fa-mountain"></i>
+                <h3>The Mountain</h3>
+                <p>Sinai received the Law. Zion bears the promise. Tabor blazed with glory. ORHAR places you on that mountain every time you open the Word.</p>
+            </div>
+            <div class="story-card">
+                <i class="fas fa-sun"></i>
+                <h3>The Halo</h3>
+                <p>At the summit, a golden halo crowns the mountain. "Let there be light." The first word spoken into darkness is the same light that shines on every page.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section" style="background-color: var(--surface-color);">
+        <h2 class="section-title">Your Scripture Companions</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-bible"></i></div>
+                <div>
+                    <h4>Full Bible In-App</h4>
+                    <p>Read the scriptures in multiple versions and languages, completely offline.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-headphones"></i></div>
+                <div>
+                    <h4>Audio & TTS</h4>
+                    <p>Listen to the Word on the go with high-quality Text-to-Speech playback.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-pen-fancy"></i></div>
+                <div>
+                    <h4>Personal Notes</h4>
+                    <p>Document your revelations, tag them, and sync them securely across your devices.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-sun"></i></div>
+                <div>
+                    <h4>Daily Verse</h4>
+                    <p>Start your day with a selected scripture to guide your steps and illuminate your path.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-map-marked-alt"></i></div>
+                <div>
+                    <h4>Reading Plans</h4>
+                    <p>Follow structured plans to read through the Bible at your own pace and season.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-question-circle"></i></div>
+                <div>
+                    <h4>Bible Quiz</h4>
+                    <p>Test your knowledge and grow deeper in your understanding of historical and biblical facts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="themes-section">
+        <h2 class="section-title">A Space That Reflects You</h2>
+        <p>ORHAR is fully customizable. Choose from 9 carefully crafted color themes.</p>
+        
+        <div class="theme-circles">
+            <div class="theme-circle active" style="background-color: #CFB286;" onclick="setThemeName('Default')"></div>
+            <div class="theme-circle" style="background-color: #0EC1F4;" onclick="setThemeName('Bleu')"></div>
+            <div class="theme-circle" style="background-color: #f26b8b;" onclick="setThemeName('Sunset')"></div>
+            <div class="theme-circle" style="background-color: #5fb387;" onclick="setThemeName('Forest')"></div>
+            <div class="theme-circle" style="background-color: #9c7ece;" onclick="setThemeName('Violet')"></div>
+            <div class="theme-circle" style="background-color: #399baa;" onclick="setThemeName('Oceanic')"></div>
+            <div class="theme-circle" style="background-color: #d88c79;" onclick="setThemeName('Earthy')"></div>
+            <div class="theme-circle" style="background-color: #6e6e6e;" onclick="setThemeName('Graphite')"></div>
+            <div class="theme-circle" style="background-color: #ffb7c5;" onclick="setThemeName('Sakura')"></div>
+        </div>
+        <div class="theme-name" id="theme-display">Default Theme</div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>ORHAR</h2>
+                <p>Made with ❤️ for the life of prayer.</p>
+            </div>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="licenses.html">Licenses</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 ORHAR. All Rights Reserved.<br>
+            "Your word is a lamp to my feet, a light to my path." — Psalm 119:105
+        </div>
+    </footer>
+
+    <script>
+        // Simple interactive script for the themes section
+        function setThemeName(name) {
+            document.getElementById('theme-display').innerText = name + " Theme";
+            
+            // Update active ring
+            const circles = document.querySelectorAll('.theme-circle');
+            circles.forEach(circle => circle.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

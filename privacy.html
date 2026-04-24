@@ -7,70 +7,87 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg-color: #FCFBF8;
+            var(--bg-color): #FCFBF8;
             --surface-color: #FFFFFF;
             --primary-navy: #1A2E4A;
             --header-bg: #FCFBF8;
             --accent-gold: #CFB286;
             --accent-brown: #915B27;
             --text-dark: #1e1e1e;
-            --text-muted: #4a5568;
-            --border-color: #e2e8f0;
+            --text-muted: #555555;
             
             --font-display: 'Cormorant Garamond', serif;
             --font-body: 'Work Sans', sans-serif;
-            --theme-transition: background-color 0.4s ease, color 0.4s ease;
+            --theme-transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-body); background-color: var(--bg-color); color: var(--text-dark); line-height: 1.7; transition: var(--theme-transition); }
-        h1, h2, h3 { font-family: var(--font-display); color: var(--primary-navy); transition: var(--theme-transition); margin-top: 2.5rem; margin-bottom: 1rem; }
-        p, ul, li { color: var(--text-muted); margin-bottom: 1rem; }
-        ul { padding-left: 1.5rem; }
-        li { margin-bottom: 0.5rem; }
-        a { text-decoration: none; color: var(--accent-brown); font-weight: 500; transition: color 0.2s ease; }
-        a:hover { color: var(--primary-navy); text-decoration: underline; }
-        strong { color: var(--text-dark); font-weight: 600; }
+        body { font-family: var(--font-body); background-color: var(--bg-color); color: var(--text-dark); line-height: 1.6; transition: var(--theme-transition); }
+        h1, h2, h3, h4 { font-family: var(--font-display); color: var(--primary-navy); transition: var(--theme-transition); }
+        a { text-decoration: none; color: var(--primary-navy); transition: var(--theme-transition); }
+        a:hover { color: var(--accent-brown); }
 
         /* Header & Nav */
-        header { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: var(--header-bg); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--accent-gold); }
+        header { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: var(--header-bg); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--accent-gold); transition: var(--theme-transition); }
         .logo-container { display: flex; align-items: center; gap: 12px; }
         .logo-img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; }
         .logo-text { font-family: var(--font-display); font-size: 24px; font-weight: 700; letter-spacing: 2px; color: var(--primary-navy); }
         .nav-links { display: flex; gap: 25px; align-items: center; }
-        .nav-links a { font-size: 15px; font-weight: 500; color: var(--primary-navy); }
+        .nav-links a { font-size: 15px; font-weight: 500; }
         
         .lang-select { background: transparent; border: 1px solid var(--accent-gold); color: var(--primary-navy); padding: 5px 10px; border-radius: 6px; font-family: var(--font-body); font-weight: 500; cursor: pointer; outline: none; }
+        .lang-select:hover { border-color: var(--accent-brown); }
 
-        /* Content Container */
-        .legal-container { max-width: 800px; margin: 60px auto; padding: 40px; background: var(--surface-color); border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border-top: 4px solid var(--accent-gold); }
+        /* Legal Content Container */
+        .legal-wrapper { max-width: 800px; margin: 60px auto; padding: 0 5%; background: var(--bg-color); min-height: 60vh; }
+        .lang-block { display: none; animation: fadeIn 0.3s ease; }
+        .lang-block.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .legal-wrapper h1 { font-size: 42px; margin-bottom: 10px; }
+        .legal-wrapper .effective-date { font-size: 14px; color: var(--text-muted); margin-bottom: 40px; font-style: italic; }
         
-        .legal-header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-color); }
-        .legal-header h1 { font-size: 42px; margin-top: 0; margin-bottom: 10px; }
-        .legal-meta { font-size: 14px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .legal-wrapper h2 { font-size: 26px; margin-top: 40px; margin-bottom: 15px; border-bottom: 1px solid rgba(207, 178, 134, 0.3); padding-bottom: 8px; }
+        .legal-wrapper h3 { font-size: 18px; margin-top: 25px; margin-bottom: 10px; color: var(--text-dark); }
+        .legal-wrapper p { color: var(--text-muted); margin-bottom: 16px; font-size: 16px; }
+        
+        .legal-wrapper ul { margin-left: 20px; margin-bottom: 24px; color: var(--text-muted); }
+        .legal-wrapper li { margin-bottom: 8px; }
+        .legal-wrapper li strong { color: var(--text-dark); }
 
-        .highlight-box { background: rgba(207, 178, 134, 0.1); border-left: 4px solid var(--accent-gold); padding: 20px; border-radius: 0 8px 8px 0; margin: 2rem 0; }
+        .highlight-box { background: rgba(207, 178, 134, 0.1); border-left: 4px solid var(--accent-brown); padding: 20px; margin: 30px 0; border-radius: 0 8px 8px 0; }
         .highlight-box h3 { margin-top: 0; color: var(--accent-brown); }
-        .highlight-box p:last-child { margin-bottom: 0; }
+        .highlight-box p { margin-bottom: 0; color: var(--text-dark); }
 
-        .contact-email { display: inline-block; background: var(--bg-color); padding: 8px 16px; border-radius: 6px; font-weight: 600; color: var(--primary-navy); border: 1px solid var(--border-color); margin-top: 10px; }
+        /* Themes & Footer (Same as index) */
+        .themes-section { background-color: var(--primary-navy); padding: 80px 5%; text-align: center; transition: var(--theme-transition); margin-top: 60px; }
+        .themes-section .section-title { color: var(--surface-color); font-size: 32px; margin-bottom: 20px; }
+        .themes-section p { color: var(--bg-color); margin-bottom: 40px; font-size: 16px; opacity: 0.9; }
+        .theme-circles { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; max-width: 800px; margin: 0 auto; }
+        .theme-circle { width: 50px; height: 50px; border-radius: 50%; cursor: pointer; border: 3px solid transparent; transition: transform 0.2s ease; }
+        .theme-circle:hover, .theme-circle.active { border-color: var(--surface-color); transform: scale(1.1); box-shadow: 0 0 15px rgba(0,0,0,0.3); }
+        .theme-name { margin-top: 20px; font-family: var(--font-display); font-size: 24px; font-style: italic; color: var(--accent-gold); min-height: 30px; }
 
-        /* Footer */
-        footer { background-color: var(--surface-color); padding: 40px 5% 30px; border-top: 1px solid var(--border-color); text-align: center; }
-        .footer-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
-        .footer-links a { font-size: 14px; color: var(--text-muted); }
-        .copyright { font-size: 13px; color: #a0a0a0; }
+        footer { background-color: var(--surface-color); padding: 60px 5% 30px; border-top: 1px solid var(--accent-gold); transition: var(--theme-transition); }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; }
+        .footer-brand h2 { font-size: 32px; letter-spacing: 3px; margin-bottom: 5px; }
+        .footer-brand p { font-style: italic; color: var(--text-muted); font-family: var(--font-display); font-size: 18px; }
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a { font-size: 14px; color: var(--text-muted); transition: var(--theme-transition); }
+        .footer-links a:hover { color: var(--accent-brown); }
+        .copyright { text-align: center; margin-top: 40px; font-size: 13px; color: var(--text-muted); opacity: 0.8; }
 
         @media (max-width: 768px) {
-            .legal-container { margin: 20px; padding: 25px; }
-            .legal-header h1 { font-size: 32px; }
             .nav-links { flex-wrap: wrap; justify-content: center; margin-top: 15px; }
             header { flex-direction: column; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .legal-wrapper h1 { font-size: 32px; }
         }
     </style>
 </head>
@@ -97,355 +114,370 @@
         </nav>
     </header>
 
-    <div class="legal-container">
-        <div class="legal-header">
-            <h1 data-i18n="p_title">Privacy Policy</h1>
-            <div class="legal-meta"><span data-i18n="p_effective">Effective Date:</span> <span data-i18n="p_date">April 25, 2026</span></div>
-        </div>
-
-        <h2 data-i18n="p_h1">1. Introduction</h2>
-        <p data-i18n="p_t1">Welcome to ORHAR. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application. We are committed to protecting your privacy, securing your spiritual reflections, and providing a transparent understanding of our data practices in full compliance with global privacy regulations including the GDPR (Europe) and CCPA/CPRA (California).</p>
-
-        <h2 data-i18n="p_h2">2. Information We Collect</h2>
-        <p data-i18n="p_t2">We operate on the principle of data minimization. We collect only the information that is strictly essential for providing and improving our services.</p>
+    <main class="legal-wrapper">
         
-        <h3 data-i18n="p_h2a">A. Information You Provide to Us</h3>
-        <ul>
-            <li><strong data-i18n="p_l1s">Account Information:</strong> <span data-i18n="p_l1d">When you create an account, we collect your email address, password (encrypted), and display name.</span></li>
-            <li><strong data-i18n="p_l2s">User-Generated Content:</strong> <span data-i18n="p_l2d">We collect the content you create within the app, such as the text and tags of your personal notes, prayers, and reflections, to sync them across your devices.</span></li>
-            <li><strong data-i18n="p_l3s">Communications:</strong> <span data-i18n="p_l3d">If you contact us directly, we receive your email address and the contents of your message.</span></li>
-        </ul>
+        <!-- ENGLISH -->
+        <div id="policy-en" class="lang-block active">
+            <h1>Privacy Policy</h1>
+            <p class="effective-date">Effective Date: May 1, 2026</p>
+            
+            <p>Welcome to ORHAR. We are committed to protecting your privacy and ensuring transparency in how we handle your data. This policy explains what information we collect, how we use it, and your rights regarding your personal data when using the ORHAR mobile application.</p>
 
-        <h3 data-i18n="p_h2b">B. Information Collected Automatically</h3>
-        <ul>
-            <li><strong data-i18n="p_l4s">Usage & Preference Data:</strong> <span data-i18n="p_l4d">We collect information about your activity to preserve your experience, such as your quiz progress, selected UI theme, font size, and chosen Bible version.</span></li>
-            <li><strong data-i18n="p_l5s">Device Information:</strong> <span data-i18n="p_l5d">We collect basic, non-identifying telemetry (operating system, device type, crash logs) to diagnose bugs and improve compatibility.</span></li>
-            <li><strong data-i18n="p_l6s">Guest Account Identifiers:</strong> <span data-i18n="p_l6d">For users who do not create an email account, we generate a unique device identifier to maintain your session and save your reading progress locally. We do not use this for cross-app tracking or advertising.</span></li>
-        </ul>
-
-        <h2 data-i18n="p_h3">3. Third-Party Sub-Processors</h2>
-        <p data-i18n="p_t3">To operate ORHAR, we share strictly necessary data with industry-leading service providers who adhere to the highest security standards. We do not sell your personal data.</p>
-        <ul>
-            <li><strong data-i18n="p_l7s">Google Firebase:</strong> <span data-i18n="p_l7d">Used for secure authentication, cloud database hosting (Firestore), and crash reporting. Your notes and account data are stored securely on Firebase servers.</span></li>
-            <li><strong data-i18n="p_l8s">RevenueCat:</strong> <span data-i18n="p_l8d">Used to manage premium subscriptions. We do not collect or store your payment information (e.g., credit cards). Financial transactions are processed entirely by Apple (App Store) or Google (Play Store). RevenueCat only securely transmits your subscription status (Free/Premium) to our app.</span></li>
-        </ul>
-
-        <h2 data-i18n="p_h4">4. How We Use Your Information</h2>
-        <ul>
-            <li><span data-i18n="p_l9d">To create, maintain, and secure your account.</span></li>
-            <li><span data-i18n="p_l10d">To sync your personal notes, highlights, and preferences across multiple devices.</span></li>
-            <li><span data-i18n="p_l11d">To verify premium subscription status and unlock features.</span></li>
-            <li><span data-i18n="p_l12d">To analyze app performance, fix crashes, and improve the user experience.</span></li>
-            <li><span data-i18n="p_l13d">To respond to customer support inquiries and send critical account security notices. We do not send marketing emails without explicit opt-in consent.</span></li>
-        </ul>
-
-        <div class="highlight-box">
-            <h3 data-i18n="p_h5">5. Your Data Protection Rights (GDPR & CCPA)</h3>
-            <p data-i18n="p_t5">Depending on your location, you possess comprehensive rights regarding your personal data:</p>
+            <h2>1. Information We Collect</h2>
+            <p>We collect only the information essential to providing and improving your spiritual journey within the app.</p>
             <ul>
-                <li><strong data-i18n="p_l14s">Right to Access:</strong> <span data-i18n="p_l14d">You may request a copy of the personal data we hold about you.</span></li>
-                <li><strong data-i18n="p_l15s">Right to Rectification:</strong> <span data-i18n="p_l15d">You may request correction of inaccurate data.</span></li>
-                <li><strong data-i18n="p_l16s">Right to Erasure (Right to be Forgotten):</strong> <span data-i18n="p_l16d">You may request the complete deletion of your account and all associated data.</span></li>
-                <li><strong data-i18n="p_l17s">Right to Opt-Out:</strong> <span data-i18n="p_l17d">While we do not sell data, California residents have the right to opt-out of future data sales.</span></li>
+                <li><strong>Account Information:</strong> If you create an account, we collect your email address and display name.</li>
+                <li><strong>User-Generated Content:</strong> We securely store data you create, such as personal notes, tags, highlights, and prayers, so they sync across your devices.</li>
+                <li><strong>Usage & Device Data:</strong> We automatically collect app settings (theme, font size, selected Bible version), quiz progress, and basic device diagnostics (OS, device model) to fix bugs.</li>
+                <li><strong>Guest Account ID:</strong> For users who do not sign in, we generate an anonymous device identifier to save reading progress and preferences locally. This is not used for tracking or advertising.</li>
             </ul>
+
+            <h2>2. How We Use Your Information</h2>
+            <p>Your data is used exclusively to operate and improve ORHAR:</p>
+            <ul>
+                <li>To sync your notes, highlights, and preferences across devices.</li>
+                <li>To manage your premium subscription status and unlock features.</li>
+                <li>To diagnose technical issues and improve application performance.</li>
+                <li>To respond to your support requests. We do not send marketing emails without your explicit consent.</li>
+            </ul>
+
+            <h2>3. Data Sharing and Third Parties</h2>
+            <p><strong>We do not sell your personal data.</strong> We share data only with trusted infrastructure partners required to run the app:</p>
+            <ul>
+                <li><strong>Google Firebase:</strong> Used for secure cloud hosting, database storage (Firestore), and user authentication.</li>
+                <li><strong>RevenueCat:</strong> Used to manage subscription statuses. <em>We do not collect or see your credit card information</em>; all payments are processed directly by the Apple App Store or Google Play Store.</li>
+            </ul>
+
+            <h2>4. Data Security</h2>
+            <p>Your data is encrypted both in transit (via HTTPS) and at rest on Firebase servers using industry-standard AES-256 encryption. While we implement robust security measures, no digital transmission is 100% secure.</p>
+
+            <h2>5. Your Privacy Rights</h2>
+            <p>Under global privacy laws (including GDPR and CCPA), you have the right to:</p>
+            <ul>
+                <li><strong>Access</strong> the personal data we hold about you.</li>
+                <li><strong>Rectify</strong> any inaccurate or incomplete information.</li>
+                <li><strong>Erase</strong> your data and close your account entirely.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>Data Deletion Request</h3>
+                <p>You can delete your data (notes, history) or your entire account directly inside the ORHAR app settings. Alternatively, you may email us at <strong><a href="mailto:contact@orhar.com">contact@orhar.com</a></strong> with the subject "Account Deletion". We will process your request within 30 days.</p>
+            </div>
+
+            <h2>6. Children's Privacy</h2>
+            <p>ORHAR is not directed to individuals under the age of 13. We do not knowingly collect personal data from children. If we become aware that a child has provided us with personal data, we will take steps to delete it.</p>
+
+            <h2>7. Contact Us</h2>
+            <p>If you have any questions regarding this Privacy Policy, please contact us at <strong><a href="mailto:contact@orhar.com">contact@orhar.com</a></strong>.</p>
         </div>
 
-        <h2 data-i18n="p_h6">6. Data Deletion Policy</h2>
-        <p data-i18n="p_t6">You retain total control over your spiritual journal and account data. You may delete your data in two ways:</p>
-        <ul>
-            <li><strong data-i18n="p_l18s">In-App Deletion:</strong> <span data-i18n="p_l18d">You can instantly delete individual notes, reset quiz progress, or delete your entire account directly from the "Settings" menu within the ORHAR app.</span></li>
-            <li><strong data-i18n="p_l19s">Email Request:</strong> <span data-i18n="p_l19d">You may submit a data deletion request by emailing us from the address associated with your account. We will process and confirm the permanent deletion of your data within 30 days.</span></li>
-        </ul>
+        <!-- FRENCH -->
+        <div id="policy-fr" class="lang-block">
+            <h1>Politique de Confidentialité</h1>
+            <p class="effective-date">Date d'entrée en vigueur : 1 mai 2026</p>
+            
+            <p>Bienvenue sur ORHAR. Nous nous engageons à protéger votre vie privée et à assurer la transparence dans le traitement de vos données. Cette politique explique quelles informations nous collectons, comment nous les utilisons et vos droits concernant vos données personnelles.</p>
 
-        <h2 data-i18n="p_h7">7. Children's Privacy (COPPA)</h2>
-        <p data-i18n="p_t7">ORHAR is not directed at children under the age of 13 (or 16 in certain jurisdictions). We do not knowingly collect personally identifiable information from children. If we discover that a child has provided us with personal information, we will immediately delete that data from our servers.</p>
+            <h2>1. Les informations que nous collectons</h2>
+            <p>Nous ne collectons que les informations essentielles pour fournir et améliorer votre parcours spirituel dans l'application.</p>
+            <ul>
+                <li><strong>Informations du compte :</strong> Si vous créez un compte, nous collectons votre adresse e-mail et votre nom d'affichage.</li>
+                <li><strong>Contenu généré par l'utilisateur :</strong> Nous stockons en toute sécurité les données que vous créez (notes, tags, surlignages, prières) pour les synchroniser sur vos appareils.</li>
+                <li><strong>Données d'utilisation et d'appareil :</strong> Nous collectons automatiquement vos paramètres (thème, police, version biblique), votre progression dans les quiz et des diagnostics de base de l'appareil (OS, modèle) pour corriger les bugs.</li>
+                <li><strong>ID de compte invité :</strong> Pour les utilisateurs non connectés, nous générons un identifiant anonyme pour sauvegarder la progression. Il n'est pas utilisé pour le suivi publicitaire.</li>
+            </ul>
 
-        <h2 data-i18n="p_h8">8. Changes to This Policy</h2>
-        <p data-i18n="p_t8">We may update this Privacy Policy periodically to reflect changes in legal requirements or app features. We will notify you of significant changes via an in-app notice or email prior to the change becoming effective.</p>
+            <h2>2. Comment nous utilisons vos informations</h2>
+            <p>Vos données sont utilisées exclusivement pour faire fonctionner et améliorer ORHAR :</p>
+            <ul>
+                <li>Pour synchroniser vos notes et préférences entre vos appareils.</li>
+                <li>Pour gérer votre statut d'abonnement premium.</li>
+                <li>Pour diagnostiquer les problèmes techniques.</li>
+                <li>Pour répondre à vos demandes de support. Nous n'envoyons pas d'e-mails marketing sans consentement explicite.</li>
+            </ul>
 
-        <h2 data-i18n="p_h9">9. Contact Us</h2>
-        <p data-i18n="p_t9">For privacy inquiries, data export requests, or account deletion, please contact our Data Protection Officer at:</p>
-        <span class="contact-email">contact@orhar.com</span>
+            <h2>3. Partage des données et tiers</h2>
+            <p><strong>Nous ne vendons pas vos données personnelles.</strong> Nous partageons les données uniquement avec des partenaires d'infrastructure de confiance :</p>
+            <ul>
+                <li><strong>Google Firebase :</strong> Utilisé pour l'hébergement cloud sécurisé, la base de données (Firestore) et l'authentification.</li>
+                <li><strong>RevenueCat :</strong> Utilisé pour gérer les abonnements. <em>Nous ne collectons pas vos informations bancaires</em> ; les paiements sont traités par l'App Store ou Google Play.</li>
+            </ul>
 
-    </div>
+            <h2>4. Sécurité des données</h2>
+            <p>Vos données sont chiffrées en transit (HTTPS) et au repos sur les serveurs Firebase à l'aide du chiffrement AES-256 standard de l'industrie.</p>
+
+            <h2>5. Vos droits à la vie privée</h2>
+            <p>Conformément aux lois mondiales (dont le RGPD et le CCPA), vous avez le droit de :</p>
+            <ul>
+                <li><strong>Accéder</strong> aux données personnelles que nous détenons sur vous.</li>
+                <li><strong>Rectifier</strong> toute information inexacte.</li>
+                <li><strong>Effacer</strong> vos données et fermer votre compte.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>Demande de suppression de données</h3>
+                <p>Vous pouvez supprimer vos données ou votre compte directement dans les paramètres de l'application ORHAR. Vous pouvez également nous envoyer un e-mail à <strong><a href="mailto:contact@orhar.com">contact@orhar.com</a></strong> avec pour objet "Suppression de compte". Nous traiterons votre demande sous 30 jours.</p>
+            </div>
+
+            <h2>6. Nous contacter</h2>
+            <p>Pour toute question concernant cette politique, veuillez nous contacter à <strong><a href="mailto:contact@orhar.com">contact@orhar.com</a></strong>.</p>
+        </div>
+
+        <!-- SPANISH -->
+        <div id="policy-es" class="lang-block">
+            <h1>Política de Privacidad</h1>
+            <p class="effective-date">Fecha de vigencia: 1 de mayo de 2026</p>
+            <p>Bienvenido a ORHAR. Nos comprometemos a proteger su privacidad. Esta política explica qué información recopilamos y sus derechos sobre sus datos personales.</p>
+            <h2>1. Información que recopilamos</h2>
+            <ul>
+                <li><strong>Datos de la cuenta:</strong> Correo electrónico y nombre (si se registra).</li>
+                <li><strong>Contenido del usuario:</strong> Notas, resaltados y oraciones sincronizadas de forma segura.</li>
+                <li><strong>Datos del dispositivo:</strong> Preferencias de la app, progreso y un ID anónimo para usuarios invitados (no usado para publicidad).</li>
+            </ul>
+            <h2>2. Cómo usamos y compartimos su información</h2>
+            <p>Usamos sus datos para operar la app y sincronizar sus notas. <strong>Nunca vendemos sus datos personales.</strong> Solo compartimos datos con socios esenciales: Google Firebase (bases de datos y autenticación) y RevenueCat (estado de la suscripción, sin procesar datos de tarjetas de crédito).</p>
+            <h2>3. Seguridad y Derechos</h2>
+            <p>Sus datos están encriptados mediante HTTPS y AES-256. Bajo leyes como el RGPD y CCPA, usted tiene derecho a acceder, corregir y eliminar sus datos.</p>
+            <div class="highlight-box">
+                <h3>Eliminación de datos</h3>
+                <p>Puede eliminar su cuenta desde los ajustes de la app o enviando un correo a <strong><a href="mailto:contact@orhar.com">contact@orhar.com</a></strong> con el asunto "Eliminación de cuenta".</p>
+            </div>
+        </div>
+
+        <!-- GERMAN -->
+        <div id="policy-de" class="lang-block">
+            <h1>Datenschutzerklärung</h1>
+            <p class="effective-date">Datum des Inkrafttretens: 1. Mai 2026</p>
+            <p>Willkommen bei ORHAR. Wir verpflichten uns, Ihre Privatsphäre zu schützen. Diese Richtlinie erklärt, wie wir Ihre Daten verarbeiten.</p>
+            <h2>1. Welche Daten wir sammeln</h2>
+            <ul>
+                <li><strong>Kontodaten:</strong> E-Mail-Adresse und Anzeigename (bei Registrierung).</li>
+                <li><strong>Nutzerinhalte:</strong> Notizen, Markierungen und Gebete werden sicher synchronisiert.</li>
+                <li><strong>Gerätedaten:</strong> App-Einstellungen und eine anonyme ID für Gastnutzer (nicht für Werbung verwendet).</li>
+            </ul>
+            <h2>2. Nutzung und Weitergabe Ihrer Daten</h2>
+            <p>Wir verwenden Ihre Daten für den Betrieb der App. <strong>Wir verkaufen Ihre Daten niemals.</strong> Wir teilen Daten nur mit wesentlichen Partnern: Google Firebase (Datenbank/Login) und RevenueCat (Abo-Status, keine Kreditkartendaten).</p>
+            <h2>3. Sicherheit und Ihre Rechte</h2>
+            <p>Ihre Daten sind via HTTPS und AES-256 verschlüsselt. Gemäß DSGVO haben Sie das Recht auf Auskunft, Berichtigung und Löschung Ihrer Daten.</p>
+            <div class="highlight-box">
+                <h3>Datenlöschung</h3>
+                <p>Sie können Ihr Konto in der App löschen oder uns eine E-Mail an <strong><a href="mailto:contact@orhar.com">contact@orhar.com</a></strong> mit dem Betreff "Kontolöschung" senden.</p>
+            </div>
+        </div>
+
+        <!-- ITALIAN -->
+        <div id="policy-it" class="lang-block">
+            <h1>Informativa sulla Privacy</h1>
+            <p class="effective-date">Data di entrata in vigore: 1 Maggio 2026</p>
+            <p>Benvenuto in ORHAR. Ci impegniamo a proteggere la tua privacy. Questa politica spiega come gestiamo i tuoi dati personali.</p>
+            <h2>1. Dati che raccogliamo</h2>
+            <ul>
+                <li><strong>Dati dell'account:</strong> Indirizzo email e nome (se registrato).</li>
+                <li><strong>Contenuti dell'utente:</strong> Note, evidenziazioni e preghiere sincronizzate in modo sicuro.</li>
+                <li><strong>Dati del dispositivo:</strong> Preferenze dell'app e un ID anonimo per gli ospiti (non usato per pubblicità).</li>
+            </ul>
+            <h2>2. Uso e condivisione dei dati</h2>
+            <p>Utilizziamo i dati per far funzionare l'app. <strong>Non vendiamo mai i tuoi dati.</strong> Condividiamo le informazioni solo con partner essenziali: Google Firebase (database) e RevenueCat (gestione abbonamenti, nessuna carta di credito).</p>
+            <h2>3. Sicurezza e Diritti</h2>
+            <p>I tuoi dati sono crittografati (HTTPS, AES-256). Secondo il GDPR, hai il diritto di accedere, correggere ed eliminare i tuoi dati.</p>
+            <div class="highlight-box">
+                <h3>Cancellazione dei dati</h3>
+                <p>Puoi eliminare l'account nelle impostazioni dell'app o scrivendo a <strong><a href="mailto:contact@orhar.com">contact@orhar.com</a></strong> con oggetto "Cancellazione Account".</p>
+            </div>
+        </div>
+
+        <!-- PORTUGUESE -->
+        <div id="policy-pt" class="lang-block">
+            <h1>Política de Privacidade</h1>
+            <p class="effective-date">Data de vigência: 1 de maio de 2026</p>
+            <p>Bem-vindo ao ORHAR. Temos o compromisso de proteger sua privacidade. Esta política explica como lidamos com seus dados pessoais.</p>
+            <h2>1. Dados que coletamos</h2>
+            <ul>
+                <li><strong>Dados da conta:</strong> E-mail e nome de exibição.</li>
+                <li><strong>Conteúdo do usuário:</strong> Notas, destaques e orações sincronizados com segurança.</li>
+                <li><strong>Dados do dispositivo:</strong> Configurações do app e um ID anônimo para convidados.</li>
+            </ul>
+            <h2>2. Uso e compartilhamento de dados</h2>
+            <p>Usamos seus dados para operar o app. <strong>Nunca vendemos seus dados.</strong> Compartilhamos informações apenas com parceiros essenciais: Google Firebase (banco de dados) e RevenueCat (status de assinatura, sem dados de cartão de crédito).</p>
+            <h2>3. Segurança e Seus Direitos</h2>
+            <p>Seus dados são criptografados (HTTPS e AES-256). De acordo com a GDPR e LGPD, você tem o direito de acessar, corrigir e excluir seus dados.</p>
+            <div class="highlight-box">
+                <h3>Exclusão de Dados</h3>
+                <p>Você pode excluir sua conta diretamente no app ou enviando um e-mail para <strong><a href="mailto:contact@orhar.com">contact@orhar.com</a></strong>.</p>
+            </div>
+        </div>
+
+        <!-- POLISH -->
+        <div id="policy-pl" class="lang-block">
+            <h1>Polityka Prywatności</h1>
+            <p class="effective-date">Data wejścia w życie: 1 maja 2026 r.</p>
+            <p>Witamy w ORHAR. Zobowiązujemy się do ochrony Twojej prywatności. Niniejsza polityka wyjaśnia, w jaki sposób przetwarzamy Twoje dane.</p>
+            <h2>1. Jakie dane gromadzimy</h2>
+            <ul>
+                <li><strong>Dane konta:</strong> Adres e-mail i nazwa (w przypadku rejestracji).</li>
+                <li><strong>Treści użytkownika:</strong> Notatki, zakreślenia i modlitwy, bezpiecznie synchronizowane.</li>
+                <li><strong>Dane urządzenia:</strong> Ustawienia aplikacji i anonimowy identyfikator dla gości.</li>
+            </ul>
+            <h2>2. Wykorzystanie i udostępnianie danych</h2>
+            <p>Używamy Twoich danych do obsługi aplikacji. <strong>Nigdy nie sprzedajemy Twoich danych.</strong> Współpracujemy tylko z niezbędnymi partnerami: Google Firebase (baza danych) oraz RevenueCat (status subskrypcji, bez danych kart płatniczych).</p>
+            <h2>3. Bezpieczeństwo i Twoje prawa</h2>
+            <p>Twoje dane są szyfrowane (HTTPS, AES-256). Zgodnie z RODO masz prawo dostępu, poprawiania i usuwania swoich danych.</p>
+            <div class="highlight-box">
+                <h3>Usunięcie Danych</h3>
+                <p>Możesz usunąć swoje konto w ustawieniach aplikacji lub wysyłając e-mail na adres <strong><a href="mailto:contact@orhar.com">contact@orhar.com</a></strong>.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <section class="themes-section">
+        <h2 class="section-title" data-i18n="th_title">A Space That Reflects You</h2>
+        <p data-i18n="th_desc">ORHAR is fully customizable. Choose from 9 carefully crafted color themes to match your spirit.</p>
+        <div class="theme-circles" id="theme-buttons"></div>
+        <div class="theme-name" id="theme-display"><span data-i18n="th_def">Default Theme</span></div>
+    </section>
 
     <footer>
-        <div class="footer-links">
-            <a href="privacy.html" data-i18n="foot_priv">Privacy Policy</a>
-            <a href="terms.html" data-i18n="foot_terms">Terms of Service</a>
-            <a href="contact.html" data-i18n="nav_contact">Contact Us</a>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>ORHAR</h2>
+                <p data-i18n="foot_made">Made with ❤️ for the life of prayer.</p>
+            </div>
+            <div class="footer-links">
+                <a href="privacy.html" data-i18n="foot_priv" style="color: var(--accent-brown); font-weight: bold;">Privacy Policy</a>
+                <a href="terms.html" data-i18n="foot_terms">Terms of Service</a>
+                <a href="licenses.html" data-i18n="foot_lic">Licenses</a>
+                <a href="contact.html" data-i18n="nav_contact">Contact Us</a>
+            </div>
         </div>
         <div class="copyright">
-            &copy; 2026 ORHAR. <span data-i18n="foot_rights">All Rights Reserved.</span>
+            &copy; 2026 ORHAR. <span data-i18n="foot_rights">All Rights Reserved.</span><br>
+            <span data-i18n="foot_verse">"Your word is a lamp to my feet, a light to my path." — Psalm 119:105</span>
         </div>
     </footer>
 
     <script>
+        // --- 1. THEMES LOGIC (Identical to homepage) ---
+        const appThemes = [
+            { name: 'Default',  primary: '#1A2E4A', accentGold: '#CFB286', accentBrown: '#915B27', bg: '#FCFBF8', surface: '#FFFFFF', text: '#1e1e1e', textMuted: '#555555' },
+            { name: 'Bleu',     primary: '#0b9ac3', accentGold: '#FDB718', accentBrown: '#0EC1F4', bg: '#FCFBF6', surface: '#FFFFFF', text: '#1e1e1e', textMuted: '#555555' },
+            { name: 'Sunset',   primary: '#ef476f', accentGold: '#ffd166', accentBrown: '#f26b8b', bg: '#fff8f3', surface: '#FFFFFF', text: '#2d1b2d', textMuted: '#555555' },
+            { name: 'Forest',   primary: '#38a169', accentGold: '#ffcc70', accentBrown: '#5fb387', bg: '#f0f7f1', surface: '#FFFFFF', text: '#1e2a21', textMuted: '#555555' },
+            { name: 'Violet',   primary: '#845EC2', accentGold: '#ff6f91', accentBrown: '#9c7ece', bg: '#ebe3f5', surface: '#FFFFFF', text: '#2e233e', textMuted: '#555555' },
+            { name: 'Oceanic',  primary: '#088395', accentGold: '#ffc93c', accentBrown: '#399baa', bg: '#f0f8ff', surface: '#FFFFFF', text: '#071a21', textMuted: '#555555' },
+            { name: 'Earthy',   primary: '#ac7060', accentGold: '#f7b267', accentBrown: '#d88c79', bg: '#fef9f3', surface: '#FFFFFF', text: '#2d1c18', textMuted: '#555555' },
+            { name: 'Graphite', primary: '#4a4a4a', accentGold: '#ffd700', accentBrown: '#6e6e6e', bg: '#f5f5f7', surface: '#FFFFFF', text: '#111111', textMuted: '#888888' },
+            { name: 'Sakura',   primary: '#cc929d', accentGold: '#8FBC8F', accentBrown: '#ffb7c5', bg: '#fff0f5', surface: '#FFFFFF', text: '#21181b', textMuted: '#555555' }
+        ];
+
+        const container = document.getElementById('theme-buttons');
+        const root = document.documentElement;
+        
+        appThemes.forEach((theme, index) => {
+            const btn = document.createElement('div');
+            btn.className = `theme-circle ${index === 0 ? 'active' : ''}`;
+            btn.style.backgroundColor = theme.accentBrown;
+            btn.onclick = (e) => {
+                document.querySelectorAll('.theme-circle').forEach(c => c.classList.remove('active'));
+                e.target.classList.add('active');
+                const wordTheme = translations[document.documentElement.lang]?.th_word || "Theme";
+                document.getElementById('theme-display').innerText = `${theme.name} ${wordTheme}`;
+                root.style.setProperty('--primary-navy', theme.primary);
+                root.style.setProperty('--accent-gold', theme.accentGold);
+                root.style.setProperty('--accent-brown', theme.accentBrown);
+                root.style.setProperty('--bg-color', theme.bg);
+                root.style.setProperty('--header-bg', theme.bg);
+                root.style.setProperty('--surface-color', theme.surface);
+                root.style.setProperty('--text-dark', theme.text);
+                root.style.setProperty('--text-muted', theme.textMuted);
+            };
+            container.appendChild(btn);
+        });
+
+        // --- 2. TRANSLATIONS DICTIONARY FOR UI ---
         const translations = {
             en: {
                 nav_story: "The Story", nav_features: "Features", nav_contact: "Contact",
-                p_title: "Privacy Policy", p_effective: "Effective Date:", p_date: "April 25, 2026",
-                p_h1: "1. Introduction", p_t1: "Welcome to ORHAR. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application. We are committed to protecting your privacy, securing your spiritual reflections, and providing a transparent understanding of our data practices in full compliance with global privacy regulations including the GDPR (Europe) and CCPA/CPRA (California).",
-                p_h2: "2. Information We Collect", p_t2: "We operate on the principle of data minimization. We collect only the information that is strictly essential for providing and improving our services.",
-                p_h2a: "A. Information You Provide to Us",
-                p_l1s: "Account Information:", p_l1d: "When you create an account, we collect your email address, password (encrypted), and display name.",
-                p_l2s: "User-Generated Content:", p_l2d: "We collect the content you create within the app, such as the text and tags of your personal notes, prayers, and reflections, to sync them across your devices.",
-                p_l3s: "Communications:", p_l3d: "If you contact us directly, we receive your email address and the contents of your message.",
-                p_h2b: "B. Information Collected Automatically",
-                p_l4s: "Usage & Preference Data:", p_l4d: "We collect information about your activity to preserve your experience, such as your quiz progress, selected UI theme, font size, and chosen Bible version.",
-                p_l5s: "Device Information:", p_l5d: "We collect basic, non-identifying telemetry (operating system, device type, crash logs) to diagnose bugs and improve compatibility.",
-                p_l6s: "Guest Account Identifiers:", p_l6d: "For users who do not create an email account, we generate a unique device identifier to maintain your session and save your reading progress locally. We do not use this for cross-app tracking or advertising.",
-                p_h3: "3. Third-Party Sub-Processors", p_t3: "To operate ORHAR, we share strictly necessary data with industry-leading service providers who adhere to the highest security standards. We do not sell your personal data.",
-                p_l7s: "Google Firebase:", p_l7d: "Used for secure authentication, cloud database hosting (Firestore), and crash reporting. Your notes and account data are stored securely on Firebase servers.",
-                p_l8s: "RevenueCat:", p_l8d: "Used to manage premium subscriptions. We do not collect or store your payment information (e.g., credit cards). Financial transactions are processed entirely by Apple (App Store) or Google (Play Store). RevenueCat only securely transmits your subscription status (Free/Premium) to our app.",
-                p_h4: "4. How We Use Your Information",
-                p_l9d: "To create, maintain, and secure your account.",
-                p_l10d: "To sync your personal notes, highlights, and preferences across multiple devices.",
-                p_l11d: "To verify premium subscription status and unlock features.",
-                p_l12d: "To analyze app performance, fix crashes, and improve the user experience.",
-                p_l13d: "To respond to customer support inquiries and send critical account security notices. We do not send marketing emails without explicit opt-in consent.",
-                p_h5: "5. Your Data Protection Rights (GDPR & CCPA)", p_t5: "Depending on your location, you possess comprehensive rights regarding your personal data:",
-                p_l14s: "Right to Access:", p_l14d: "You may request a copy of the personal data we hold about you.",
-                p_l15s: "Right to Rectification:", p_l15d: "You may request correction of inaccurate data.",
-                p_l16s: "Right to Erasure (Right to be Forgotten):", p_l16d: "You may request the complete deletion of your account and all associated data.",
-                p_l17s: "Right to Opt-Out:", p_l17d: "While we do not sell data, California residents have the right to opt-out of future data sales.",
-                p_h6: "6. Data Deletion Policy", p_t6: "You retain total control over your spiritual journal and account data. You may delete your data in two ways:",
-                p_l18s: "In-App Deletion:", p_l18d: "You can instantly delete individual notes, reset quiz progress, or delete your entire account directly from the 'Settings' menu within the ORHAR app.",
-                p_l19s: "Email Request:", p_l19d: "You may submit a data deletion request by emailing us from the address associated with your account. We will process and confirm the permanent deletion of your data within 30 days.",
-                p_h7: "7. Children's Privacy (COPPA)", p_t7: "ORHAR is not directed at children under the age of 13 (or 16 in certain jurisdictions). We do not knowingly collect personally identifiable information from children. If we discover that a child has provided us with personal information, we will immediately delete that data from our servers.",
-                p_h8: "8. Changes to This Policy", p_t8: "We may update this Privacy Policy periodically to reflect changes in legal requirements or app features. We will notify you of significant changes via an in-app notice or email prior to the change becoming effective.",
-                p_h9: "9. Contact Us", p_t9: "For privacy inquiries, data export requests, or account deletion, please contact our Data Protection Officer at:",
-                foot_priv: "Privacy Policy", foot_terms: "Terms of Service", foot_rights: "All Rights Reserved."
+                th_title: "A Space That Reflects You", th_desc: "ORHAR is fully customizable. Choose from 9 carefully crafted color themes to match your spirit.",
+                th_def: "Default Theme", th_word: "Theme",
+                foot_made: "Made with ❤️ for the life of prayer.", foot_priv: "Privacy Policy", foot_terms: "Terms of Service", foot_lic: "Licenses", foot_rights: "All Rights Reserved.", foot_verse: "\"Your word is a lamp to my feet, a light to my path.\" — Psalm 119:105"
             },
             fr: {
                 nav_story: "L'Histoire", nav_features: "Fonctionnalités", nav_contact: "Contact",
-                p_title: "Politique de Confidentialité", p_effective: "Date d'entrée en vigueur :", p_date: "25 avril 2026",
-                p_h1: "1. Introduction", p_t1: "Bienvenue sur ORHAR. Cette Politique explique comment nous collectons, utilisons et protégeons vos informations. Nous nous engageons à protéger votre vie privée et à sécuriser vos réflexions spirituelles en totale conformité avec le RGPD (Europe) et le CCPA (Californie).",
-                p_h2: "2. Les données que nous collectons", p_t2: "Nous appliquons le principe de minimisation des données. Nous ne collectons que les informations strictement nécessaires.",
-                p_h2a: "A. Informations que vous nous fournissez",
-                p_l1s: "Informations du compte :", p_l1d: "Lors de la création d'un compte, nous collectons votre e-mail, votre mot de passe (crypté) et votre nom d'affichage.",
-                p_l2s: "Contenu généré par l'utilisateur :", p_l2d: "Nous collectons le contenu créé dans l'application (notes, prières) pour les synchroniser sur vos appareils.",
-                p_l3s: "Communications :", p_l3d: "Si vous nous contactez, nous recevons votre adresse e-mail et le contenu de votre message.",
-                p_h2b: "B. Informations collectées automatiquement",
-                p_l4s: "Données d'utilisation :", p_l4d: "Nous collectons vos préférences (thème, taille de police, progression des quiz) pour préserver votre expérience.",
-                p_l5s: "Informations sur l'appareil :", p_l5d: "Nous collectons des données techniques basiques (système d'exploitation, rapports de crash) pour corriger les bugs.",
-                p_l6s: "Identifiants de compte invité :", p_l6d: "Pour les utilisateurs sans compte e-mail, nous générons un identifiant unique pour maintenir la session localement. Non utilisé pour le ciblage publicitaire.",
-                p_h3: "3. Sous-traitants tiers", p_t3: "Nous partageons des données strictement nécessaires avec des leaders de l'industrie. Nous ne vendons pas vos données.",
-                p_l7s: "Google Firebase :", p_l7d: "Utilisé pour l'authentification et l'hébergement sécurisé de la base de données (Firestore).",
-                p_l8s: "RevenueCat :", p_l8d: "Utilisé pour gérer les abonnements. Nous ne stockons aucune information bancaire. Les paiements sont gérés par Apple ou Google.",
-                p_h4: "4. Comment nous utilisons vos informations",
-                p_l9d: "Pour créer, maintenir et sécuriser votre compte.",
-                p_l10d: "Pour synchroniser vos notes et préférences entre vos appareils.",
-                p_l11d: "Pour vérifier le statut de votre abonnement premium.",
-                p_l12d: "Pour analyser les performances et corriger les bugs de l'application.",
-                p_l13d: "Pour répondre au support client. Aucun e-mail marketing n'est envoyé sans consentement.",
-                p_h5: "5. Vos droits (RGPD & CCPA)", p_t5: "Selon votre juridiction, vous disposez de droits complets sur vos données :",
-                p_l14s: "Droit d'accès :", p_l14d: "Vous pouvez demander une copie de vos données personnelles.",
-                p_l15s: "Droit de rectification :", p_l15d: "Vous pouvez demander la correction de données inexactes.",
-                p_l16s: "Droit à l'effacement :", p_l16d: "Vous pouvez demander la suppression totale de votre compte et de vos données.",
-                p_l17s: "Droit d'opposition :", p_l17d: "Bien que nous ne vendions pas de données, les résidents de Californie peuvent s'opposer à la vente future de données.",
-                p_h6: "6. Politique de suppression des données", p_t6: "Vous gardez le contrôle total. Vous pouvez supprimer vos données de deux manières :",
-                p_l18s: "Suppression dans l'application :", p_l18d: "Vous pouvez supprimer instantanément votre compte ou vos notes depuis le menu 'Paramètres'.",
-                p_l19s: "Demande par e-mail :", p_l19d: "Vous pouvez envoyer une demande de suppression à notre adresse de support. Traitement garanti sous 30 jours.",
-                p_h7: "7. Confidentialité des enfants (COPPA)", p_t7: "ORHAR n'est pas destiné aux enfants de moins de 13 ans (ou 16 ans dans certaines juridictions). Nous ne collectons pas sciemment d'informations d'enfants.",
-                p_h8: "8. Modifications", p_t8: "Nous pouvons mettre à jour cette politique. Vous serez informé des changements majeurs via l'application.",
-                p_h9: "9. Nous contacter", p_t9: "Pour toute demande liée à la confidentialité ou à la suppression de données, contactez-nous à :",
-                foot_priv: "Politique de Confidentialité", foot_terms: "Conditions d'Utilisation", foot_rights: "Tous droits réservés."
+                th_title: "Un Espace Qui Vous Reflète", th_desc: "ORHAR est entièrement personnalisable. Choisissez parmi 9 thèmes de couleurs créés pour votre esprit.",
+                th_def: "Thème Défaut", th_word: "Thème",
+                foot_made: "Fait avec ❤️ pour la vie de prière.", foot_priv: "Politique de Confidentialité", foot_terms: "Conditions d'Utilisation", foot_lic: "Licences", foot_rights: "Tous droits réservés.", foot_verse: "\"Ta parole est une lampe à mes pieds, Et une lumière sur mon sentier.\" — Psaume 119:105"
             },
             es: {
                 nav_story: "La Historia", nav_features: "Funciones", nav_contact: "Contacto",
-                p_title: "Política de Privacidad", p_effective: "Fecha de vigencia:", p_date: "25 de abril de 2026",
-                p_h1: "1. Introducción", p_t1: "Bienvenido a ORHAR. Nos comprometemos a proteger su privacidad en pleno cumplimiento del RGPD y CCPA.",
-                p_h2: "2. Información que recopilamos", p_t2: "Solo recopilamos la información estrictamente esencial.",
-                p_h2a: "A. Información que usted nos proporciona",
-                p_l1s: "Información de la cuenta:", p_l1d: "Correo electrónico, contraseña y nombre de usuario.",
-                p_l2s: "Contenido generado:", p_l2d: "Notas, oraciones y etiquetas para sincronizarlas entre dispositivos.",
-                p_l3s: "Comunicaciones:", p_l3d: "Correos electrónicos enviados a nuestro soporte.",
-                p_h2b: "B. Información recopilada automáticamente",
-                p_l4s: "Preferencias:", p_l4d: "Tema de la interfaz, progreso de cuestionarios.",
-                p_l5s: "Datos del dispositivo:", p_l5d: "Información técnica anónima para corregir errores.",
-                p_l6s: "Identificadores de invitados:", p_l6d: "Un ID único para guardar el progreso localmente.",
-                p_h3: "3. Proveedores externos", p_t3: "No vendemos sus datos. Compartimos datos necesarios con:",
-                p_l7s: "Google Firebase:", p_l7d: "Para autenticación segura y almacenamiento en la nube.",
-                p_l8s: "RevenueCat:", p_l8d: "Para gestionar suscripciones premium. No procesamos datos bancarios.",
-                p_h4: "4. Cómo usamos su información",
-                p_l9d: "Para mantener y asegurar su cuenta.",
-                p_l10d: "Para sincronizar sus notas.",
-                p_l11d: "Para verificar suscripciones premium.",
-                p_l12d: "Para corregir errores y mejorar la app.",
-                p_l13d: "Para soporte técnico. No enviamos correos de marketing sin consentimiento.",
-                p_h5: "5. Sus derechos (RGPD & CCPA)", p_t5: "Usted tiene los siguientes derechos:",
-                p_l14s: "Derecho de acceso:", p_l14d: "Puede solicitar una copia de sus datos.",
-                p_l15s: "Derecho de rectificación:", p_l15d: "Puede corregir datos inexactos.",
-                p_l16s: "Derecho de supresión:", p_l16d: "Puede eliminar permanentemente su cuenta.",
-                p_l17s: "Derecho de exclusión:", p_l17d: "Derecho a no vender sus datos (solo California).",
-                p_h6: "6. Eliminación de datos", p_t6: "Puede eliminar sus datos de dos formas:",
-                p_l18s: "En la App:", p_l18d: "Desde el menú 'Configuración'.",
-                p_l19s: "Por correo:", p_l19d: "Solicitándolo a nuestro correo de contacto (procesado en 30 días).",
-                p_h7: "7. Privacidad infantil", p_t7: "ORHAR no está dirigido a menores de 13 años. No recopilamos datos de niños a sabiendas.",
-                p_h8: "8. Cambios", p_t8: "Le notificaremos sobre cualquier cambio importante en esta política.",
-                p_h9: "9. Contacto", p_t9: "Para consultas sobre privacidad, contáctenos en:",
-                foot_priv: "Privacidad", foot_terms: "Términos", foot_rights: "Todos los derechos reservados."
+                th_title: "Un Espacio Para Ti", th_desc: "ORHAR es totalmente personalizable. Elige entre 9 temas de colores.",
+                th_def: "Tema Predeterminado", th_word: "Tema",
+                foot_made: "Hecho con ❤️ para la vida de oración.", foot_priv: "Privacidad", foot_terms: "Términos", foot_lic: "Licencias", foot_rights: "Todos los derechos reservados.", foot_verse: "\"Lámpara es a mis pies tu palabra, Y lumbrera a mi camino.\" — Salmo 119:105"
             },
             de: {
                 nav_story: "Geschichte", nav_features: "Funktionen", nav_contact: "Kontakt",
-                p_title: "Datenschutzerklärung", p_effective: "Datum des Inkrafttretens:", p_date: "25. April 2026",
-                p_h1: "1. Einführung", p_t1: "Willkommen bei ORHAR. Wir verpflichten uns zum Schutz Ihrer Privatsphäre in voller Übereinstimmung mit DSGVO und CCPA.",
-                p_h2: "2. Informationen, die wir sammeln", p_t2: "Wir sammeln nur absolut notwendige Informationen.",
-                p_h2a: "A. Von Ihnen bereitgestellte Informationen",
-                p_l1s: "Kontoinformationen:", p_l1d: "E-Mail-Adresse, Passwort und Anzeigename.",
-                p_l2s: "Benutzergenerierte Inhalte:", p_l2d: "Notizen und Gebete zur geräteübergreifenden Synchronisation.",
-                p_l3s: "Kommunikation:", p_l3d: "Nachrichten an unseren Support.",
-                p_h2b: "B. Automatisch gesammelte Informationen",
-                p_l4s: "Präferenzen:", p_l4d: "UI-Theme, Quiz-Fortschritt.",
-                p_l5s: "Geräteinformationen:", p_l5d: "Anonyme technische Daten zur Fehlerbehebung.",
-                p_l6s: "Gast-IDs:", p_l6d: "Eindeutige ID zur lokalen Speicherung des Lesefortschritts.",
-                p_h3: "3. Drittanbieter", p_t3: "Wir verkaufen Ihre Daten nicht. Wir nutzen:",
-                p_l7s: "Google Firebase:", p_l7d: "Für sichere Authentifizierung und Cloud-Speicherung.",
-                p_l8s: "RevenueCat:", p_l8d: "Zur Verwaltung von Premium-Abonnements. Wir verarbeiten keine Bankdaten.",
-                p_h4: "4. Wie wir Ihre Informationen verwenden",
-                p_l9d: "Um Ihr Konto zu verwalten.",
-                p_l10d: "Um Ihre Notizen zu synchronisieren.",
-                p_l11d: "Um Abonnements zu überprüfen.",
-                p_l12d: "Um Fehler zu beheben.",
-                p_l13d: "Für den Kundensupport. Kein Marketing ohne Zustimmung.",
-                p_h5: "5. Ihre Rechte (DSGVO)", p_t5: "Sie haben folgende Rechte:",
-                p_l14s: "Auskunftsrecht:", p_l14d: "Sie können eine Kopie Ihrer Daten anfordern.",
-                p_l15s: "Recht auf Berichtigung:", p_l15d: "Korrektur ungenauer Daten.",
-                p_l16s: "Recht auf Löschung:", p_l16d: "Sie können Ihr Konto vollständig löschen lassen.",
-                p_l17s: "Widerspruchsrecht:", p_l17d: "Recht, dem Verkauf von Daten zu widersprechen.",
-                p_h6: "6. Datenlöschung", p_t6: "Sie können Ihre Daten auf zwei Arten löschen:",
-                p_l18s: "In der App:", p_l18d: "Über das Menü 'Einstellungen'.",
-                p_l19s: "Per E-Mail:", p_l19d: "Anfrage an unsere Kontakt-E-Mail (Bearbeitung in 30 Tagen).",
-                p_h7: "7. Privatsphäre von Kindern", p_t7: "ORHAR richtet sich nicht an Kinder unter 13 Jahren.",
-                p_h8: "8. Änderungen", p_t8: "Wir werden Sie über wichtige Änderungen dieser Richtlinie informieren.",
-                p_h9: "9. Kontakt", p_t9: "Für Datenschutzanfragen kontaktieren Sie uns unter:",
-                foot_priv: "Datenschutz", foot_terms: "Bedingungen", foot_rights: "Alle Rechte vorbehalten."
+                th_title: "Dein eigener Raum", th_desc: "Wähle aus 9 sorgfältig gestalteten Farbthemen.",
+                th_def: "Standard-Thema", th_word: "Thema",
+                foot_made: "Gemacht mit ❤️ für das Gebetsleben.", foot_priv: "Datenschutz", foot_terms: "Bedingungen", foot_lic: "Lizenzen", foot_rights: "Alle Rechte vorbehalten.", foot_verse: "\"Dein Wort ist meines Fußes Leuchte und ein Licht auf meinem Wege.\" — Psalm 119:105"
             },
             it: {
                 nav_story: "La Storia", nav_features: "Funzioni", nav_contact: "Contatto",
-                p_title: "Informativa sulla Privacy", p_effective: "Data di efficacia:", p_date: "25 aprile 2026",
-                p_h1: "1. Introduzione", p_t1: "Benvenuto su ORHAR. Ci impegniamo a proteggere la tua privacy in piena conformità con GDPR e CCPA.",
-                p_h2: "2. Informazioni raccolte", p_t2: "Raccogliamo solo le informazioni strettamente essenziali.",
-                p_h2a: "A. Informazioni fornite da te",
-                p_l1s: "Dati dell'account:", p_l1d: "Email, password e nome utente.",
-                p_l2s: "Contenuti utente:", p_l2d: "Note e preghiere per la sincronizzazione.",
-                p_l3s: "Comunicazioni:", p_l3d: "Messaggi inviati al nostro supporto.",
-                p_h2b: "B. Informazioni raccolte automaticamente",
-                p_l4s: "Preferenze:", p_l4d: "Tema UI, progressi quiz.",
-                p_l5s: "Dati dispositivo:", p_l5d: "Dati tecnici anonimi per risolvere i bug.",
-                p_l6s: "ID Ospite:", p_l6d: "Un ID unico per salvare il progresso in locale.",
-                p_h3: "3. Fornitori terzi", p_t3: "Non vendiamo i tuoi dati. Condividiamo dati necessari con:",
-                p_l7s: "Google Firebase:", p_l7d: "Per autenticazione sicura e archiviazione cloud.",
-                p_l8s: "RevenueCat:", p_l8d: "Per gestire gli abbonamenti. Non elaboriamo dati bancari.",
-                p_h4: "4. Come usiamo le tue informazioni",
-                p_l9d: "Per mantenere il tuo account.",
-                p_l10d: "Per sincronizzare le tue note.",
-                p_l11d: "Per verificare gli abbonamenti.",
-                p_l12d: "Per migliorare l'app.",
-                p_l13d: "Per supporto tecnico. Nessun marketing senza consenso.",
-                p_h5: "5. I tuoi diritti (GDPR)", p_t5: "Hai i seguenti diritti:",
-                p_l14s: "Diritto di accesso:", p_l14d: "Puoi richiedere una copia dei tuoi dati.",
-                p_l15s: "Diritto di rettifica:", p_l15d: "Puoi correggere dati inesatti.",
-                p_l16s: "Diritto alla cancellazione:", p_l16d: "Puoi eliminare il tuo account in modo permanente.",
-                p_l17s: "Diritto di opposizione:", p_l17d: "Diritto di non vendere i dati.",
-                p_h6: "6. Cancellazione dati", p_t6: "Puoi eliminare i tuoi dati in due modi:",
-                p_l18s: "Nell'App:", p_l18d: "Dal menu 'Impostazioni'.",
-                p_l19s: "Tramite email:", p_l19d: "Richiedendolo via email (elaborato in 30 giorni).",
-                p_h7: "7. Privacy dei minori", p_t7: "ORHAR non è rivolto ai minori di 13 anni.",
-                p_h8: "8. Modifiche", p_t8: "Ti informeremo in caso di modifiche importanti a questa politica.",
-                p_h9: "9. Contatti", p_t9: "Per questioni di privacy, contattaci a:",
-                foot_priv: "Privacy", foot_terms: "Termini", foot_rights: "Tutti i diritti riservati."
+                th_title: "Uno Spazio Per Te", th_desc: "Scegli tra 9 temi di colori per riflettere il tuo spirito.",
+                th_def: "Tema Predefinito", th_word: "Tema",
+                foot_made: "Fatto con ❤️ per la vita di preghiera.", foot_priv: "Privacy", foot_terms: "Termini", foot_lic: "Licenze", foot_rights: "Tutti i diritti riservati.", foot_verse: "\"La tua parola è una lampada al mio piede e una luce sul mio sentiero.\" — Salmo 119:105"
             },
             pt: {
                 nav_story: "A História", nav_features: "Recursos", nav_contact: "Contato",
-                p_title: "Política de Privacidade", p_effective: "Data de vigência:", p_date: "25 de abril de 2026",
-                p_h1: "1. Introdução", p_t1: "Bem-vindo ao ORHAR. Temos o compromisso de proteger sua privacidade em total conformidade com o GDPR e CCPA.",
-                p_h2: "2. Informações que coletamos", p_t2: "Coletamos apenas informações estritamente essenciais.",
-                p_h2a: "A. Informações fornecidas por você",
-                p_l1s: "Dados da conta:", p_l1d: "E-mail, senha e nome de usuário.",
-                p_l2s: "Conteúdo do usuário:", p_l2d: "Notas e orações para sincronização.",
-                p_l3s: "Comunicações:", p_l3d: "Mensagens enviadas ao nosso suporte.",
-                p_h2b: "B. Informações coletadas automaticamente",
-                p_l4s: "Preferências:", p_l4d: "Tema da interface, progresso em quizzes.",
-                p_l5s: "Dados do dispositivo:", p_l5d: "Dados técnicos anônimos para corrigir bugs.",
-                p_l6s: "IDs de Convidados:", p_l6d: "Um ID exclusivo para salvar o progresso localmente.",
-                p_h3: "3. Provedores de serviços", p_t3: "Não vendemos seus dados. Compartilhamos apenas o necessário com:",
-                p_l7s: "Google Firebase:", p_l7d: "Para autenticação segura e armazenamento em nuvem.",
-                p_l8s: "RevenueCat:", p_l8d: "Para gerenciar assinaturas. Não processamos dados bancários.",
-                p_h4: "4. Como usamos suas informações",
-                p_l9d: "Para manter sua conta.",
-                p_l10d: "Para sincronizar suas notas.",
-                p_l11d: "Para verificar assinaturas.",
-                p_l12d: "Para corrigir bugs.",
-                p_l13d: "Para suporte técnico. Sem marketing sem consentimento.",
-                p_h5: "5. Seus direitos (GDPR)", p_t5: "Você tem os seguintes direitos:",
-                p_l14s: "Direito de acesso:", p_l14d: "Você pode solicitar uma cópia dos seus dados.",
-                p_l15s: "Direito de retificação:", p_l15d: "Você pode corrigir dados imprecisos.",
-                p_l16s: "Direito ao esquecimento:", p_l16d: "Você pode excluir permanentemente sua conta.",
-                p_l17s: "Direito de oposição:", p_l17d: "Direito de não ter dados vendidos.",
-                p_h6: "6. Exclusão de dados", p_t6: "Você pode excluir seus dados de duas formas:",
-                p_l18s: "No App:", p_l18d: "A partir do menu 'Configurações'.",
-                p_l19s: "Por E-mail:", p_l19d: "Solicitando via e-mail (processado em 30 dias).",
-                p_h7: "7. Privacidade infantil", p_t7: "ORHAR não é direcionado a crianças menores de 13 anos.",
-                p_h8: "8. Alterações", p_t8: "Notificaremos sobre mudanças importantes nesta política.",
-                p_h9: "9. Contato", p_t9: "Para dúvidas sobre privacidade, entre em contato:",
-                foot_priv: "Privacidade", foot_terms: "Termos", foot_rights: "Todos os direitos reservados."
+                th_title: "Um Espaço Que Reflete Você", th_desc: "Escolha entre 9 temas de cores cuidadosamente elaborados.",
+                th_def: "Tema Padrão", th_word: "Tema",
+                foot_made: "Feito com ❤️ para a vida de oração.", foot_priv: "Privacidade", foot_terms: "Termos", foot_lic: "Licenças", foot_rights: "Todos os direitos reservados.", foot_verse: "\"Lâmpada para os meus pés é tua palavra, e luz para o meu caminho.\" — Salmo 119:105"
             },
             pl: {
                 nav_story: "Historia", nav_features: "Funkcje", nav_contact: "Kontakt",
-                p_title: "Polityka Prywatności", p_effective: "Data wejścia w życie:", p_date: "25 kwietnia 2026",
-                p_h1: "1. Wprowadzenie", p_t1: "Witamy w ORHAR. Zobowiązujemy się do ochrony Twojej prywatności w pełnej zgodności z RODO (GDPR) i CCPA.",
-                p_h2: "2. Zbierane informacje", p_t2: "Zbieramy tylko absolutnie niezbędne informacje.",
-                p_h2a: "A. Informacje podane przez Ciebie",
-                p_l1s: "Dane konta:", p_l1d: "E-mail, hasło i nazwa użytkownika.",
-                p_l2s: "Treści użytkownika:", p_l2d: "Notatki i modlitwy do synchronizacji.",
-                p_l3s: "Komunikacja:", p_l3d: "Wiadomości wysłane do wsparcia.",
-                p_h2b: "B. Informacje zbierane automatycznie",
-                p_l4s: "Preferencje:", p_l4d: "Motyw UI, postępy w quizach.",
-                p_l5s: "Dane urządzenia:", p_l5d: "Anonimowe dane techniczne do naprawy błędów.",
-                p_l6s: "ID Gościa:", p_l6d: "Unikalne ID do lokalnego zapisywania postępów.",
-                p_h3: "3. Zewnętrzni dostawcy", p_t3: "Nie sprzedajemy Twoich danych. Korzystamy z:",
-                p_l7s: "Google Firebase:", p_l7d: "Bezpieczne uwierzytelnianie i chmura.",
-                p_l8s: "RevenueCat:", p_l8d: "Zarządzanie subskrypcjami. Nie przetwarzamy danych bankowych.",
-                p_h4: "4. Jak używamy Twoich danych",
-                p_l9d: "Do obsługi konta.",
-                p_l10d: "Do synchronizacji notatek.",
-                p_l11d: "Do weryfikacji subskrypcji.",
-                p_l12d: "Do naprawy błędów.",
-                p_l13d: "Wsparcie techniczne. Brak e-maili marketingowych bez zgody.",
-                p_h5: "5. Twoje prawa (RODO)", p_t5: "Masz następujące prawa:",
-                p_l14s: "Prawo dostępu:", p_l14d: "Możesz poprosić o kopię swoich danych.",
-                p_l15s: "Prawo do sprostowania:", p_l15d: "Poprawa niedokładnych danych.",
-                p_l16s: "Prawo do usunięcia:", p_l16d: "Możesz trwale usunąć swoje konto.",
-                p_l17s: "Prawo sprzeciwu:", p_l17d: "Prawo do zakazu sprzedaży danych.",
-                p_h6: "6. Usuwanie danych", p_t6: "Możesz usunąć swoje dane na dwa sposoby:",
-                p_l18s: "W aplikacji:", p_l18d: "Z menu 'Ustawienia'.",
-                p_l19s: "Przez e-mail:", p_l19d: "Prośba na nasz e-mail (przetwarzana w 30 dni).",
-                p_h7: "7. Prywatność dzieci", p_t7: "ORHAR nie jest skierowany do dzieci poniżej 13 lat.",
-                p_h8: "8. Zmiany", p_t8: "Powiadomimy Cię o ważnych zmianach w polityce.",
-                p_h9: "9. Kontakt", p_t9: "W sprawach prywatności skontaktuj się z nami na:",
-                foot_priv: "Prywatność", foot_terms: "Regulamin", foot_rights: "Wszelkie prawa zastrzeżone."
+                th_title: "Przestrzeń dla Ciebie", th_desc: "Wybierz jeden z 9 starannie opracowanych motywów kolorystycznych.",
+                th_def: "Domyślny Motyw", th_word: "Motyw",
+                foot_made: "Stworzone z ❤️ dla życia w modlitwie.", foot_priv: "Prywatność", foot_terms: "Regulamin", foot_lic: "Licencje", foot_rights: "Wszelkie prawa zastrzeżone.", foot_verse: "\"Twoje słowo jest lampą dla moich stóp i światłem na mojej ścieżce.\" — Psalm 119:105"
             }
         };
 
+        // --- 3. LANGUAGE SWITCHER LOGIC ---
         function changeLang(lang) {
+            // Update UI elements
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (translations[lang] && translations[lang][key]) {
                     el.innerHTML = translations[lang][key];
                 }
             });
+            
+            // Toggle Privacy Policy Text Block
+            document.querySelectorAll('.lang-block').forEach(el => el.classList.remove('active'));
+            const activeBlock = document.getElementById('policy-' + lang);
+            if (activeBlock) {
+                activeBlock.classList.add('active');
+            } else {
+                document.getElementById('policy-en').classList.add('active'); // fallback
+            }
+
+            // Save preference & update document language
             localStorage.setItem('orhar_lang', lang);
             document.documentElement.lang = lang;
+
+            // Update Theme display text
+            const currentThemeName = document.getElementById('theme-display').innerText.split(' ')[0];
+            const wordTheme = translations[lang]?.th_word || "Theme";
+            if (currentThemeName && currentThemeName !== "Default" && currentThemeName !== "Thème") {
+                document.getElementById('theme-display').innerText = `${currentThemeName} ${wordTheme}`;
+            }
         }
 
+        // Auto-detect browser language or load saved preference
         document.addEventListener("DOMContentLoaded", () => {
             const savedLang = localStorage.getItem('orhar_lang');
             const browserLang = navigator.language.slice(0, 2);
             const supported = ['en', 'fr', 'es', 'de', 'it', 'pt', 'pl'];
             
-            let initLang = 'en'; 
+            let initLang = 'en'; // Fallback
             if (savedLang && supported.includes(savedLang)) {
                 initLang = savedLang;
             } else if (supported.includes(browserLang)) {

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Support — ORHAR</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #FCFBF8;
+            --surface-color: #FFFFFF;
+            --primary-navy: #1A2E4A;
+            --header-bg: #FCFBF8;
+            --accent-gold: #CFB286;
+            --accent-brown: #915B27;
+            --text-dark: #1e1e1e;
+            --text-muted: #4a5568; 
+            
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Work Sans', sans-serif;
+            --theme-transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); background-color: var(--bg-color); color: var(--text-dark); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, h4 { font-family: var(--font-display); color: var(--primary-navy); }
+        a { text-decoration: none; color: var(--accent-brown); font-weight: 500; transition: color 0.2s ease; }
+        a:hover { color: var(--primary-navy); }
+
+        /* Header & Nav */
+        header { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: var(--header-bg); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--accent-gold); }
+        .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none !important; }
+        .logo-img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; }
+        .logo-text { font-family: var(--font-display); font-size: 24px; font-weight: 700; letter-spacing: 2px; color: var(--primary-navy); text-decoration: none !important; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { font-size: 15px; font-weight: 500; color: var(--primary-navy); text-decoration: none; }
+        .nav-links a:hover { color: var(--accent-brown); }
+        
+        /* Language Switcher */
+        .lang-select { background: transparent; border: 1px solid var(--accent-gold); color: var(--primary-navy); padding: 5px 10px; border-radius: 6px; font-family: var(--font-body); font-weight: 500; cursor: pointer; outline: none; }
+
+        /* Contact Layout */
+        .contact-wrapper { max-width: 900px; margin: 80px auto; padding: 0 5%; }
+        .contact-header { text-align: center; margin-bottom: 60px; }
+        .contact-header h1 { font-size: 48px; margin-bottom: 15px; }
+        .contact-header p { font-size: 18px; color: var(--text-muted); max-width: 500px; margin: 0 auto; }
+
+        /* Contact Card */
+        .contact-card { background: var(--surface-color); padding: 40px; border-radius: 16px; border-top: 4px solid var(--accent-gold); box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; margin-bottom: 60px; }
+        .contact-card i { font-size: 40px; color: var(--accent-brown); margin-bottom: 20px; }
+        .contact-card h2 { font-size: 28px; margin-bottom: 10px; }
+        .contact-card p { color: var(--text-muted); margin-bottom: 25px; font-size: 16px; }
+        .email-link { display: inline-block; background-color: var(--primary-navy); color: var(--surface-color); padding: 14px 30px; border-radius: 12px; font-size: 16px; font-weight: 500; transition: transform 0.2s ease, background-color 0.4s ease; }
+        .email-link:hover { background-color: var(--accent-brown); transform: translateY(-2px); color: var(--surface-color); text-decoration: none; }
+
+        /* FAQ Section */
+        .faq-section { margin-top: 60px; }
+        .faq-section h2 { font-size: 32px; text-align: center; margin-bottom: 40px; }
+        .faq-grid { display: grid; gap: 20px; }
+        .faq-item { background: var(--surface-color); padding: 25px; border-radius: 12px; border: 1px solid rgba(207, 178, 134, 0.3); }
+        .faq-item h3 { font-size: 18px; margin-bottom: 10px; color: var(--primary-navy); display: flex; align-items: center; gap: 10px; }
+        .faq-item h3 i { color: var(--accent-gold); }
+        .faq-item p { font-size: 15px; color: var(--text-muted); }
+
+        /* Footer */
+        footer { background-color: var(--surface-color); padding: 60px 5% 30px; border-top: 1px solid var(--accent-gold); margin-top: 80px; }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; }
+        .footer-brand h2 { font-size: 32px; letter-spacing: 3px; margin-bottom: 5px; }
+        .footer-brand p { font-style: italic; color: var(--text-muted); font-family: var(--font-display); font-size: 18px; }
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a { font-size: 14px; color: var(--text-muted); }
+        .copyright { text-align: center; margin-top: 40px; font-size: 13px; color: var(--text-muted); opacity: 0.8; }
+
+        @media (max-width: 768px) {
+            .contact-header h1 { font-size: 36px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; margin-top: 15px; }
+            header { flex-direction: column; }
+            .footer-content { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="ORHAR Logo" class="logo-img" onerror="this.style.display='none'">
+            <span class="logo-text">ORHAR</span>
+        </a>
+        <nav class="nav-links">
+            <a href="index.html" data-i18n="nav_home">Home</a>
+            <a href="contact.html" data-i18n="nav_contact" style="color: var(--accent-brown);">Contact</a>
+            <select id="langSwitch" class="lang-select" onchange="changeLang(this.value)">
+                <option value="en">🇬🇧 EN</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="de">🇩🇪 DE</option>
+                <option value="it">🇮🇹 IT</option>
+                <option value="pt">🇵🇹 PT</option>
+                <option value="pl">🇵🇱 PL</option>
+            </select>
+        </nav>
+    </header>
+
+    <main class="contact-wrapper">
+        <div class="contact-header">
+            <h1 data-i18n="c_title">Contact & Support</h1>
+            <p data-i18n="c_subtitle">We are here to help you with your spiritual journey. Reach out if you have any questions, feedback, or issues.</p>
+        </div>
+
+        <div class="contact-card">
+            <i class="fas fa-envelope-open-text"></i>
+            <h2 data-i18n="c_email_title">Email Us</h2>
+            <p data-i18n="c_email_desc">Our support team usually responds within 24 to 48 hours. Please include your account email if you need technical help.</p>
+            <a href="mailto:contact@orhar.com" class="email-link" id="email-button" data-i18n="c_btn">contact@orhar.com</a>
+        </div>
+
+        <!-- FAQ Content injected by JS -->
+        <div class="faq-section">
+            <h2 data-i18n="faq_title">Frequently Asked Questions</h2>
+            <div class="faq-grid" id="faq-content">
+                <!-- Translated dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>ORHAR</h2>
+                <p data-i18n="foot_made">Made with ❤️ for the life of prayer.</p>
+            </div>
+            <div class="footer-links">
+                <a href="privacy.html" data-i18n="foot_priv">Privacy Policy</a>
+                <a href="terms.html" data-i18n="foot_terms">Terms of Service</a>
+                <a href="licenses.html" data-i18n="foot_lic">Licenses</a>
+                <a href="contact.html" data-i18n="nav_contact">Contact Us</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 ORHAR. <span data-i18n="foot_rights">All Rights Reserved.</span><br>
+            <span data-i18n="foot_verse">"Your word is a lamp to my feet, a light to my path." — Psalm 119:105</span>
+        </div>
+    </footer>
+
+    <script>
+        // Full dictionary for Contact & FAQ
+        const contactData = {
+            en: {
+                nav_home: "Home", nav_contact: "Contact",
+                c_title: "Contact & Support", c_subtitle: "We are here to help you with your spiritual journey. Reach out if you have any questions, feedback, or issues.",
+                c_email_title: "Email Us", c_email_desc: "Our support team usually responds within 24 to 48 hours. Please include your account email if you need technical help.",
+                c_btn: "Send an Email", faq_title: "Frequently Asked Questions",
+                foot_made: "Made with ❤️ for the life of prayer.", foot_priv: "Privacy Policy", foot_terms: "Terms of Service", foot_lic: "Licenses", foot_rights: "All Rights Reserved.", foot_verse: "\"Your word is a lamp to my feet, a light to my path.\" — Psalm 119:105",
+                faq_html: `
+                    <div class="faq-item"><h3><i class="fas fa-sync-alt"></i> How do I restore my Premium subscription?</h3><p>If you changed devices or reinstalled the app, simply go to the Settings menu inside ORHAR and tap "Restore Purchases." Make sure you are logged into the same Apple or Google account used for the original purchase.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-lock"></i> Are my personal notes secure?</h3><p>Yes. All your personal notes, highlights, and prayers are encrypted and securely synchronized to your account. We never read or sell your personal spiritual data.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-user-times"></i> How do I delete my account?</h3><p>You have full control over your data. You can permanently delete your account and all associated data directly from the App by navigating to Settings > Account > Delete Account.</p></div>
+                `
+            },
+            fr: {
+                nav_home: "Accueil", nav_contact: "Contact",
+                c_title: "Contact et Assistance", c_subtitle: "Nous sommes là pour vous accompagner dans votre voyage spirituel. N'hésitez pas à nous contacter.",
+                c_email_title: "Envoyez-nous un e-mail", c_email_desc: "Notre équipe répond généralement sous 24 à 48 heures. Pensez à inclure l'adresse e-mail de votre compte pour toute aide technique.",
+                c_btn: "Écrire un e-mail", faq_title: "Foire Aux Questions",
+                foot_made: "Fait avec ❤️ pour la vie de prière.", foot_priv: "Politique de Confidentialité", foot_terms: "Conditions d'Utilisation", foot_lic: "Licences", foot_rights: "Tous droits réservés.", foot_verse: "\"Ta parole est une lampe à mes pieds...\" — Psaume 119:105",
+                faq_html: `
+                    <div class="faq-item"><h3><i class="fas fa-sync-alt"></i> Comment restaurer mon abonnement Premium ?</h3><p>Si vous avez changé d'appareil, allez dans les Paramètres de l'application et appuyez sur "Restaurer les achats". Assurez-vous d'être connecté au même compte Apple ou Google.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-lock"></i> Mes notes personnelles sont-elles sécurisées ?</h3><p>Oui. Toutes vos notes et prières sont cryptées et synchronisées en toute sécurité. Nous ne lisons ni ne vendons jamais vos données spirituelles.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-user-times"></i> Comment supprimer mon compte ?</h3><p>Vous avez le contrôle total. Vous pouvez supprimer définitivement votre compte et vos données depuis l'application dans Paramètres > Compte > Supprimer le compte.</p></div>
+                `
+            },
+            es: {
+                nav_home: "Inicio", nav_contact: "Contacto",
+                c_title: "Contacto y Soporte", c_subtitle: "Estamos aquí para ayudarte. Contáctanos si tienes preguntas, comentarios o problemas.",
+                c_email_title: "Envíanos un correo", c_email_desc: "Nuestro equipo responde en 24-48 horas. Por favor, incluye el correo de tu cuenta si necesitas soporte técnico.",
+                c_btn: "Enviar correo", faq_title: "Preguntas Frecuentes",
+                foot_made: "Hecho con ❤️ para la vida de oración.", foot_priv: "Privacidad", foot_terms: "Términos", foot_lic: "Licencias", foot_rights: "Todos los derechos reservados.", foot_verse: "\"Lámpara es a mis pies tu palabra...\" — Salmo 119:105",
+                faq_html: `
+                    <div class="faq-item"><h3><i class="fas fa-sync-alt"></i> ¿Cómo restauro mi suscripción Premium?</h3><p>Ve a Configuración en la app y toca "Restaurar Compras". Asegúrate de usar la misma cuenta de Apple o Google.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-lock"></i> ¿Están seguras mis notas?</h3><p>Sí. Tus notas están encriptadas. Nunca leemos ni vendemos tus datos personales.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-user-times"></i> ¿Cómo elimino mi cuenta?</h3><p>Ve a Configuración > Cuenta > Eliminar Cuenta en la aplicación para borrar tus datos permanentemente.</p></div>
+                `
+            },
+            de: {
+                nav_home: "Startseite", nav_contact: "Kontakt",
+                c_title: "Kontakt & Support", c_subtitle: "Wir sind hier, um dir zu helfen. Melde dich bei Fragen oder Problemen.",
+                c_email_title: "Schreib uns eine E-Mail", c_email_desc: "Unser Team antwortet normalerweise innerhalb von 24 bis 48 Stunden.",
+                c_btn: "E-Mail senden", faq_title: "Häufig gestellte Fragen",
+                foot_made: "Gemacht mit ❤️ für das Gebetsleben.", foot_priv: "Datenschutz", foot_terms: "Bedingungen", foot_lic: "Lizenzen", foot_rights: "Alle Rechte vorbehalten.", foot_verse: "\"Dein Wort ist meines Fußes Leuchte...\" — Psalm 119:105",
+                faq_html: `
+                    <div class="faq-item"><h3><i class="fas fa-sync-alt"></i> Wie stelle ich Premium wieder her?</h3><p>Gehe in der App zu Einstellungen und tippe auf "Käufe wiederherstellen".</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-lock"></i> Sind meine Notizen sicher?</h3><p>Ja, alle Notizen sind verschlüsselt. Wir lesen deine spirituellen Daten nicht.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-user-times"></i> Wie lösche ich mein Konto?</h3><p>Gehe in der App auf Einstellungen > Konto > Konto löschen.</p></div>
+                `
+            },
+            it: {
+                nav_home: "Home", nav_contact: "Contatto",
+                c_title: "Contatto e Supporto", c_subtitle: "Siamo qui per aiutarti. Contattaci per qualsiasi domanda o problema.",
+                c_email_title: "Scrivici un'e-mail", c_email_desc: "Rispondiamo solitamente entro 24-48 ore. Includi l'e-mail del tuo account per ricevere assistenza tecnica.",
+                c_btn: "Invia un'e-mail", faq_title: "Domande Frequenti",
+                foot_made: "Fatto con ❤️ per la vita di preghiera.", foot_priv: "Privacy", foot_terms: "Termini", foot_lic: "Licenze", foot_rights: "Tutti i diritti riservati.", foot_verse: "\"La tua parola è una lampada al mio piede...\" — Salmo 119:105",
+                faq_html: `
+                    <div class="faq-item"><h3><i class="fas fa-sync-alt"></i> Come ripristino l'abbonamento Premium?</h3><p>Vai nelle Impostazioni dell'app e tocca "Ripristina acquisti".</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-lock"></i> Le mie note sono al sicuro?</h3><p>Sì, le note sono crittografate. Non vendiamo i tuoi dati.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-user-times"></i> Come elimino il mio account?</h3><p>Vai su Impostazioni > Account > Elimina account all'interno dell'app.</p></div>
+                `
+            },
+            pt: {
+                nav_home: "Início", nav_contact: "Contato",
+                c_title: "Contato e Suporte", c_subtitle: "Estamos aqui para ajudar em sua jornada. Entre em contato se tiver alguma dúvida.",
+                c_email_title: "Envie um E-mail", c_email_desc: "Nossa equipe responde em 24-48 horas. Inclua o e-mail da sua conta para suporte técnico.",
+                c_btn: "Enviar E-mail", faq_title: "Perguntas Frequentes",
+                foot_made: "Feito com ❤️ para a vida de oração.", foot_priv: "Privacidade", foot_terms: "Termos", foot_lic: "Licenças", foot_rights: "Todos os direitos reservados.", foot_verse: "\"Lâmpada para os meus pés é tua palavra...\" — Salmo 119:105",
+                faq_html: `
+                    <div class="faq-item"><h3><i class="fas fa-sync-alt"></i> Como restauro minha assinatura Premium?</h3><p>Vá em Configurações no App e toque em "Restaurar Compras".</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-lock"></i> Minhas notas estão seguras?</h3><p>Sim, suas notas são criptografadas. Nunca lemos seus dados pessoais.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-user-times"></i> Como excluo minha conta?</h3><p>Vá em Configurações > Conta > Excluir Conta no aplicativo.</p></div>
+                `
+            },
+            pl: {
+                nav_home: "Strona Główna", nav_contact: "Kontakt",
+                c_title: "Kontakt i Wsparcie", c_subtitle: "Jesteśmy tu, aby Ci pomóc. Skontaktuj się z nami w razie pytań.",
+                c_email_title: "Napisz do nas", c_email_desc: "Nasz zespół odpowiada w ciągu 24-48 godzin.",
+                c_btn: "Wyślij e-mail", faq_title: "Często Zadawane Pytania",
+                foot_made: "Stworzone z ❤️ dla życia w modlitwie.", foot_priv: "Prywatność", foot_terms: "Regulamin", foot_lic: "Licencje", foot_rights: "Wszelkie prawa zastrzeżone.", foot_verse: "\"Twoje słowo jest lampą dla moich stóp...\" — Psalm 119:105",
+                faq_html: `
+                    <div class="faq-item"><h3><i class="fas fa-sync-alt"></i> Jak przywrócić subskrypcję Premium?</h3><p>Przejdź do Ustawień w aplikacji i wybierz "Przywróć zakupy".</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-lock"></i> Czy moje notatki są bezpieczne?</h3><p>Tak, wszystkie notatki są szyfrowane.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-user-times"></i> Jak usunąć konto?</h3><p>Przejdź do Ustawienia > Konto > Usuń konto w aplikacji.</p></div>
+                `
+            }
+        };
+
+        function changeLang(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (contactData[lang] && contactData[lang][key]) {
+                    el.innerHTML = contactData[lang][key];
+                }
+            });
+            
+            // Inject FAQ HTML
+            const faqDiv = document.getElementById('faq-content');
+            if (contactData[lang] && contactData[lang].faq_html) {
+                faqDiv.innerHTML = contactData[lang].faq_html;
+            }
+
+            localStorage.setItem('orhar_lang', lang);
+            document.documentElement.lang = lang;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedLang = localStorage.getItem('orhar_lang');
+            const browserLang = navigator.language.slice(0, 2);
+            const supported = ['en', 'fr', 'es', 'de', 'it', 'pt', 'pl'];
+            
+            let initLang = 'en'; 
+            if (savedLang && supported.includes(savedLang)) {
+                initLang = savedLang;
+            } else if (supported.includes(browserLang)) {
+                initLang = browserLang;
+            }
+            
+            document.getElementById('langSwitch').value = initLang;
+            changeLang(initLang);
+        });
+    </script>
+</body>
+</html>

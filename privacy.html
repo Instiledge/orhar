@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — ORHAR</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #FCFBF8;
+            --surface-color: #FFFFFF;
+            --primary-navy: #1A2E4A;
+            --header-bg: #FCFBF8;
+            --accent-gold: #CFB286;
+            --accent-brown: #915B27;
+            --text-dark: #1e1e1e;
+            --text-muted: #4a4a4a;
+            
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Work Sans', sans-serif;
+            --theme-transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); background-color: var(--bg-color); color: var(--text-dark); line-height: 1.7; transition: var(--theme-transition); }
+        h1, h2, h3, h4 { font-family: var(--font-display); color: var(--primary-navy); transition: var(--theme-transition); }
+        a { text-decoration: none; color: var(--primary-navy); transition: var(--theme-transition); font-weight: 500; }
+        a:hover { color: var(--accent-brown); }
+
+        /* Header & Nav */
+        header { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: var(--header-bg); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--accent-gold); transition: var(--theme-transition); }
+        .logo-container { display: flex; align-items: center; gap: 12px; }
+        .logo-img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; }
+        .logo-text { font-family: var(--font-display); font-size: 24px; font-weight: 700; letter-spacing: 2px; color: var(--primary-navy); }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { font-size: 15px; font-weight: 500; }
+        
+        /* Language Switcher */
+        .lang-select { background: transparent; border: 1px solid var(--accent-gold); color: var(--primary-navy); padding: 5px 10px; border-radius: 6px; font-family: var(--font-body); font-weight: 500; cursor: pointer; outline: none; }
+        .lang-select:hover { border-color: var(--accent-brown); }
+
+        /* Legal Content Container */
+        .legal-container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px;
+            background: var(--surface-color);
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(26, 46, 74, 0.05);
+            border-top: 4px solid var(--accent-gold);
+        }
+
+        .legal-container h1 { font-size: 42px; margin-bottom: 10px; border-bottom: 1px solid rgba(207, 178, 134, 0.3); padding-bottom: 20px; }
+        .legal-container h2 { font-size: 28px; margin-top: 40px; margin-bottom: 15px; color: var(--accent-brown); }
+        .legal-container h3 { font-size: 20px; margin-top: 25px; margin-bottom: 10px; }
+        .legal-container p { font-size: 16px; color: var(--text-muted); margin-bottom: 15px; }
+        .legal-container ul { margin-left: 20px; margin-bottom: 20px; color: var(--text-muted); }
+        .legal-container li { margin-bottom: 10px; }
+        .legal-container strong { color: var(--text-dark); }
+        
+        .highlight-box {
+            background-color: rgba(207, 178, 134, 0.1);
+            border-left: 4px solid var(--accent-brown);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .highlight-box h2 { margin-top: 0; }
+        
+        .support-email {
+            font-weight: 600;
+            color: var(--accent-brown);
+            padding: 4px 8px;
+            background: rgba(145, 91, 39, 0.1);
+            border-radius: 4px;
+        }
+
+        /* Footer */
+        footer { background-color: var(--surface-color); padding: 40px 5% 30px; border-top: 1px solid var(--accent-gold); transition: var(--theme-transition); }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; }
+        .footer-brand h2 { font-size: 28px; letter-spacing: 3px; margin-bottom: 5px; }
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a { font-size: 14px; color: var(--text-muted); }
+        .copyright { text-align: center; margin-top: 30px; font-size: 13px; color: var(--text-muted); opacity: 0.8; }
+
+        @media (max-width: 768px) {
+            .nav-links { flex-wrap: wrap; justify-content: center; margin-top: 15px; }
+            header { flex-direction: column; }
+            .legal-container { margin: 30px 5%; padding: 25px; }
+            .legal-container h1 { font-size: 32px; }
+            .footer-content { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="ORHAR Logo" class="logo-img" onerror="this.style.display='none'">
+            <span class="logo-text">ORHAR</span>
+        </a>
+        <nav class="nav-links">
+            <a href="index.html" data-i18n="nav_home">Home</a>
+            <a href="contact.html" data-i18n="nav_contact">Contact</a>
+            <select id="langSwitch" class="lang-select" onchange="changeLang(this.value)">
+                <option value="en">🇬🇧 EN</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="de">🇩🇪 DE</option>
+                <option value="it">🇮🇹 IT</option>
+                <option value="pt">🇵🇹 PT</option>
+                <option value="pl">🇵🇱 PL</option>
+            </select>
+        </nav>
+    </header>
+
+    <main class="legal-container" id="policy-content">
+        <!-- Content will be injected here by JS -->
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>ORHAR</h2>
+            </div>
+            <div class="footer-links">
+                <a href="privacy.html" data-i18n="foot_priv">Privacy Policy</a>
+                <a href="terms.html" data-i18n="foot_terms">Terms of Service</a>
+                <a href="licenses.html" data-i18n="foot_lic">Licenses</a>
+                <a href="contact.html" data-i18n="nav_contact">Contact Us</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 ORHAR. <span data-i18n="foot_rights">All Rights Reserved.</span>
+        </div>
+    </footer>
+
+    <script>
+        const SUPPORT_EMAIL = "contact@orhar.com";
+        const APP_NAME = "ORHAR";
+        const EFFECTIVE_DATE = "July 15, 2025";
+
+        // Navigation translations
+        const uiTranslations = {
+            en: { nav_home: "Home", nav_contact: "Contact", foot_priv: "Privacy Policy", foot_terms: "Terms of Service", foot_lic: "Licenses", foot_rights: "All Rights Reserved." },
+            fr: { nav_home: "Accueil", nav_contact: "Contact", foot_priv: "Confidentialité", foot_terms: "Conditions d'Utilisation", foot_lic: "Licences", foot_rights: "Tous droits réservés." },
+            es: { nav_home: "Inicio", nav_contact: "Contacto", foot_priv: "Privacidad", foot_terms: "Términos de Servicio", foot_lic: "Licencias", foot_rights: "Todos los derechos reservados." },
+            de: { nav_home: "Startseite", nav_contact: "Kontakt", foot_priv: "Datenschutz", foot_terms: "Nutzungsbedingungen", foot_lic: "Lizenzen", foot_rights: "Alle Rechte vorbehalten." },
+            it: { nav_home: "Home", nav_contact: "Contatto", foot_priv: "Privacy", foot_terms: "Termini di Servizio", foot_lic: "Licenze", foot_rights: "Tutti i diritti riservati." },
+            pt: { nav_home: "Início", nav_contact: "Contato", foot_priv: "Privacidade", foot_terms: "Termos de Serviço", foot_lic: "Licenças", foot_rights: "Todos os direitos reservados." },
+            pl: { nav_home: "Główna", nav_contact: "Kontakt", foot_priv: "Prywatność", foot_terms: "Regulamin", foot_lic: "Licencje", foot_rights: "Wszelkie prawa zastrzeżone." }
+        };
+
+        // Full Privacy Policy HTML in 7 languages
+        const policies = {
+            en: `
+                <h1>Privacy Policy for ${APP_NAME}</h1>
+                <p><strong>Effective Date:</strong> ${EFFECTIVE_DATE}</p>
+                <h2>1. Introduction</h2>
+                <p>Welcome to ${APP_NAME}. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application. By using ${APP_NAME}, you agree to the collection and use of information in accordance with this policy.</p>
+                <h2>2. Information We Collect</h2>
+                <h3>Information You Provide to Us</h3>
+                <ul>
+                    <li><strong>Account Information:</strong> When you create an account, we collect your email address and display name.</li>
+                    <li><strong>User-Generated Content:</strong> We collect content you create, such as personal notes and tags.</li>
+                </ul>
+                <h3>Information Collected Automatically</h3>
+                <ul>
+                    <li><strong>Usage Data:</strong> We collect info about your activity, such as quiz progress and settings (theme, font size).</li>
+                    <li><strong>Device Information:</strong> OS, device type, to help us diagnose bugs.</li>
+                    <li><strong>Device Identification for Guests:</strong> We generate a unique identifier to maintain guest sessions and sync preferences. We do not use this for tracking across apps.</li>
+                </ul>
+                <h3>Third-Party Services</h3>
+                <ul>
+                    <li><strong>Firebase:</strong> Used for authentication and data storage (Firestore).</li>
+                    <li><strong>RevenueCat:</strong> Used to manage subscriptions. We do <strong>not</strong> collect payment info.</li>
+                </ul>
+                <h2>3. How We Use Your Information</h2>
+                <ul>
+                    <li>To provide and maintain our service, sync data, and manage accounts.</li>
+                    <li>To personalize your experience (themes, languages).</li>
+                    <li>To manage your premium subscription.</li>
+                    <li>To improve our application and fix bugs.</li>
+                    <li>To respond to your support requests.</li>
+                </ul>
+                <h2>4. Data Sharing and Disclosure</h2>
+                <p>We do not sell your personal data. We only share information with trusted third parties (Firebase, RevenueCat) essential for operation.</p>
+                <h2>5. Data Security</h2>
+                <p>We use Google Firebase's industry-standard encryption to protect your data both in transit and at rest.</p>
+                <h2>6. Your Data Protection Rights</h2>
+                <p>Under laws like the GDPR, you have the right to access, rectify, or erase your personal data.</p>
+                
+                <div class="highlight-box">
+                    <h2>Data Deletion Request</h2>
+                    <p>You have the right to request the deletion of your data at any time.</p>
+                    <ul>
+                        <li><strong>Partial Deletion:</strong> You can delete personal notes directly in the app.</li>
+                        <li><strong>Full Account Deletion:</strong> You can request complete deletion of your account and all data.</li>
+                    </ul>
+                    <p>To submit a deletion request, email us at: <span class="support-email">${SUPPORT_EMAIL}</span></p>
+                </div>
+
+                <h2>7. Children's Privacy</h2>
+                <p>${APP_NAME} is not intended for use by anyone under 13. We do not knowingly collect data from children under 13.</p>
+                <h2>8. Changes to This Policy</h2>
+                <p>We may update our Privacy Policy. We will notify you of any changes by posting the new policy within the app.</p>
+                <h2>9. Contact Us</h2>
+                <p>If you have questions, please contact us at <span class="support-email">${SUPPORT_EMAIL}</span>.</p>
+            `,
+            fr: `
+                <h1>Politique de Confidentialité d'${APP_NAME}</h1>
+                <p><strong>Date d'entrée en vigueur :</strong> 15 juillet 2025</p>
+                <h2>1. Introduction</h2>
+                <p>Bienvenue sur ${APP_NAME}. Cette politique explique comment nous collectons, utilisons et protégeons vos informations. En utilisant ${APP_NAME}, vous acceptez ces pratiques.</p>
+                <h2>2. Les Données que nous Collectons</h2>
+                <h3>Informations fournies</h3>
+                <ul>
+                    <li><strong>Compte :</strong> Adresse e-mail et nom d'utilisateur.</li>
+                    <li><strong>Contenu :</strong> Vos notes personnelles et rflexions.</li>
+                </ul>
+                <h3>Informations automatiques</h3>
+                <ul>
+                    <li><strong>Utilisation :</strong> Progression des quiz, paramètres (thème, police).</li>
+                    <li><strong>Appareil :</strong> Système d'exploitation et type d'appareil.</li>
+                    <li><strong>Comptes Invités :</strong> Identifiant unique pour maintenir la session, non utilisé pour le suivi publicitaire.</li>
+                </ul>
+                <h3>Services Tiers</h3>
+                <ul>
+                    <li><strong>Firebase :</strong> Authentification et stockage.</li>
+                    <li><strong>RevenueCat :</strong> Gestion des abonnements. Nous ne stockons <strong>aucune</strong> donnée bancaire.</li>
+                </ul>
+                <h2>3. Utilisation des Informations</h2>
+                <ul>
+                    <li>Pour fournir et maintenir le service.</li>
+                    <li>Pour personnaliser votre expérience.</li>
+                    <li>Pour gérer votre abonnement premium.</li>
+                    <li>Pour améliorer l'application et corriger les bugs.</li>
+                </ul>
+                <h2>4. Partage des Données</h2>
+                <p>Nous ne vendons pas vos données. Nous les partageons uniquement avec Firebase et RevenueCat pour le fonctionnement de l'app.</p>
+                <h2>5. Sécurité</h2>
+                <p>Vos données sont protégées par le cryptage standard de Google Firebase.</p>
+                <h2>6. Vos Droits (RGPD)</h2>
+                <p>Vous avez le droit d'accéder, de rectifier ou d'effacer vos données personnelles.</p>
+                
+                <div class="highlight-box">
+                    <h2>Demande de Suppression</h2>
+                    <p>Vous pouvez demander la suppression de vos données :</p>
+                    <ul>
+                        <li><strong>Partielle :</strong> Supprimez vos notes directement dans l'app.</li>
+                        <li><strong>Totale :</strong> Demandez la suppression complète du compte.</li>
+                    </ul>
+                    <p>Pour faire une demande, contactez-nous à : <span class="support-email">${SUPPORT_EMAIL}</span></p>
+                </div>
+
+                <h2>7. Enfants</h2>
+                <p>${APP_NAME} n'est pas destiné aux moins de 13 ans.</p>
+                <h2>8. Modifications</h2>
+                <p>Nous vous informerons de tout changement via l'application.</p>
+                <h2>9. Contact</h2>
+                <p>Pour toute question, contactez-nous à <span class="support-email">${SUPPORT_EMAIL}</span>.</p>
+            `,
+            es: `
+                <h1>Política de Privacidad de ${APP_NAME}</h1>
+                <p><strong>Fecha de vigencia:</strong> 15 de julio de 2025</p>
+                <h2>1. Introducción</h2>
+                <p>Bienvenido a ${APP_NAME}. Esta política explica cómo recopilamos, usamos y protegemos su información. Al usar ${APP_NAME}, acepta estas prácticas.</p>
+                <h2>2. Información que Recopilamos</h2>
+                <ul>
+                    <li><strong>Cuenta:</strong> Correo electrónico y nombre de usuario.</li>
+                    <li><strong>Contenido:</strong> Notas personales y etiquetas.</li>
+                    <li><strong>Uso y Dispositivo:</strong> Progreso, configuración (tema, fuente) e información básica del dispositivo.</li>
+                    <li><strong>Terceros:</strong> Firebase (almacenamiento) y RevenueCat (suscripciones, sin datos de pago).</li>
+                </ul>
+                <h2>3. Uso de la Información</h2>
+                <p>Usamos sus datos para proporcionar el servicio, personalizar su experiencia, gestionar suscripciones y mejorar la aplicación.</p>
+                <h2>4. Compartir Datos</h2>
+                <p>No vendemos sus datos personales. Solo compartimos con Firebase y RevenueCat por necesidad operativa.</p>
+                <h2>5. Seguridad</h2>
+                <p>Protegemos sus datos utilizando el cifrado estándar de Google Firebase.</p>
+                <h2>6. Sus Derechos</h2>
+                <p>Según el RGPD, tiene derecho a acceder, rectificar o borrar sus datos.</p>
+                
+                <div class="highlight-box">
+                    <h2>Solicitud de Eliminación de Datos</h2>
+                    <p>Puede eliminar sus notas en la app o solicitar la eliminación total de su cuenta enviando un correo a: <span class="support-email">${SUPPORT_EMAIL}</span></p>
+                </div>
+
+                <h2>7. Menores</h2>
+                <p>No recopilamos intencionalmente datos de menores de 13 años.</p>
+                <h2>8. Cambios y Contacto</h2>
+                <p>Notificaremos los cambios en la app. Para preguntas, escriba a <span class="support-email">${SUPPORT_EMAIL}</span>.</p>
+            `,
+            de: `
+                <h1>Datenschutzerklärung für ${APP_NAME}</h1>
+                <p><strong>Inkrafttreten:</strong> 15. Juli 2025</p>
+                <h2>1. Einleitung</h2>
+                <p>Willkommen bei ${APP_NAME}. Diese Richtlinie erklärt, wie wir Ihre Daten sammeln und schützen.</p>
+                <h2>2. Erfasste Daten</h2>
+                <ul>
+                    <li><strong>Konto & Inhalte:</strong> E-Mail, Name und persönliche Notizen.</li>
+                    <li><strong>Nutzung & Gerät:</strong> Fortschritte, Einstellungen (Theme) und Geräteinformationen.</li>
+                    <li><strong>Drittanbieter:</strong> Firebase (Speicher) und RevenueCat (Abos, keine Zahlungsdaten).</li>
+                </ul>
+                <h2>3. Nutzung & Weitergabe</h2>
+                <p>Wir nutzen Ihre Daten, um den Dienst bereitzustellen und zu verbessern. Wir verkaufen keine Daten. Weitergabe erfolgt nur an Firebase und RevenueCat.</p>
+                <h2>4. Sicherheit & Rechte</h2>
+                <p>Ihre Daten sind durch Google Firebase verschlüsselt. Sie haben das Recht auf Auskunft, Berichtigung und Löschung (DSGVO).</p>
+                
+                <div class="highlight-box">
+                    <h2>Löschantrag</h2>
+                    <p>Sie können Ihr Konto vollständig löschen lassen, indem Sie eine E-Mail senden an: <span class="support-email">${SUPPORT_EMAIL}</span></p>
+                </div>
+
+                <h2>5. Kontakt</h2>
+                <p>Bei Fragen kontaktieren Sie uns unter <span class="support-email">${SUPPORT_EMAIL}</span>.</p>
+            `,
+            it: `
+                <h1>Informativa sulla Privacy di ${APP_NAME}</h1>
+                <p><strong>Data di validità:</strong> 15 Luglio 2025</p>
+                <h2>1. Introduzione</h2>
+                <p>Benvenuto in ${APP_NAME}. Questa policy spiega come raccogliamo e proteggiamo le tue informazioni.</p>
+                <h2>2. Dati Raccolti</h2>
+                <ul>
+                    <li><strong>Account e Contenuti:</strong> Email, nome utente e note personali.</li>
+                    <li><strong>Uso e Dispositivo:</strong> Progressi, impostazioni (tema) e info sul dispositivo.</li>
+                    <li><strong>Terze Parti:</strong> Firebase (archiviazione) e RevenueCat (abbonamenti, senza dati di pagamento).</li>
+                </ul>
+                <h2>3. Uso e Condivisione</h2>
+                <p>Usiamo i dati per fornire e migliorare il servizio. Non vendiamo i tuoi dati. Condividiamo solo con Firebase e RevenueCat.</p>
+                <h2>4. Sicurezza e Diritti</h2>
+                <p>I dati sono protetti tramite crittografia Firebase. Hai diritto di accesso, rettifica e cancellazione (GDPR).</p>
+                
+                <div class="highlight-box">
+                    <h2>Richiesta di Cancellazione</h2>
+                    <p>Puoi richiedere la cancellazione completa del tuo account inviando un'email a: <span class="support-email">${SUPPORT_EMAIL}</span></p>
+                </div>
+
+                <h2>5. Contatti</h2>
+                <p>Per domande, scrivici a <span class="support-email">${SUPPORT_EMAIL}</span>.</p>
+            `,
+            pt: `
+                <h1>Política de Privacidade do ${APP_NAME}</h1>
+                <p><strong>Data de Vigência:</strong> 15 de julho de 2025</p>
+                <h2>1. Introdução</h2>
+                <p>Bem-vindo ao ${APP_NAME}. Esta política explica como coletamos e protegemos suas informações.</p>
+                <h2>2. Dados Coletados</h2>
+                <ul>
+                    <li><strong>Conta e Conteúdo:</strong> Email, nome e notas pessoais.</li>
+                    <li><strong>Uso e Dispositivo:</strong> Progresso, configurações (tema) e dados do dispositivo.</li>
+                    <li><strong>Terceiros:</strong> Firebase (armazenamento) e RevenueCat (assinaturas, sem dados de pagamento).</li>
+                </ul>
+                <h2>3. Uso e Compartilhamento</h2>
+                <p>Usamos dados para fornecer e melhorar o serviço. Não vendemos dados. Compartilhamos apenas com Firebase e RevenueCat.</p>
+                <h2>4. Segurança e Direitos</h2>
+                <p>Os dados são protegidos por criptografia do Firebase. Você tem direitos de acesso, retificação e exclusão (GDPR).</p>
+                
+                <div class="highlight-box">
+                    <h2>Exclusão de Dados</h2>
+                    <p>Para excluir totalmente sua conta, envie um email para: <span class="support-email">${SUPPORT_EMAIL}</span></p>
+                </div>
+
+                <h2>5. Contato</h2>
+                <p>Dúvidas? Fale conosco: <span class="support-email">${SUPPORT_EMAIL}</span>.</p>
+            `,
+            pl: `
+                <h1>Polityka Prywatności ${APP_NAME}</h1>
+                <p><strong>Data wejścia w życie:</strong> 15 lipca 2025</p>
+                <h2>1. Wprowadzenie</h2>
+                <p>Witamy w ${APP_NAME}. Niniejsza polityka wyjaśnia, w jaki sposób zbieramy i chronimy Twoje dane.</p>
+                <h2>2. Zbierane Dane</h2>
+                <ul>
+                    <li><strong>Konto i Treści:</strong> Email, nazwa użytkownika i osobiste notatki.</li>
+                    <li><strong>Użytkowanie i Urządzenie:</strong> Postępy, ustawienia (motyw) i dane urządzenia.</li>
+                    <li><strong>Strony Trzecie:</strong> Firebase (przechowywanie) i RevenueCat (subskrypcje, bez danych płatniczych).</li>
+                </ul>
+                <h2>3. Wykorzystanie i Udostępnianie</h2>
+                <p>Używamy danych do świadczenia i ulepszania usługi. Nie sprzedajemy danych. Udostępniamy je tylko Firebase i RevenueCat.</p>
+                <h2>4. Bezpieczeństwo i Prawa</h2>
+                <p>Dane są chronione szyfrowaniem Firebase. Masz prawo dostępu, sprostowania i usunięcia danych (RODO).</p>
+                
+                <div class="highlight-box">
+                    <h2>Żądanie Usunięcia Danych</h2>
+                    <p>Aby całkowicie usunąć konto, wyślij e-mail na adres: <span class="support-email">${SUPPORT_EMAIL}</span></p>
+                </div>
+
+                <h2>5. Kontakt</h2>
+                <p>W razie pytań napisz do nas: <span class="support-email">${SUPPORT_EMAIL}</span>.</p>
+            `
+        };
+
+        function changeLang(lang) {
+            // Update UI elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (uiTranslations[lang] && uiTranslations[lang][key]) {
+                    el.innerHTML = uiTranslations[lang][key];
+                }
+            });
+
+            // Update Policy Content
+            document.getElementById('policy-content').innerHTML = policies[lang];
+            
+            // Save preference
+            localStorage.setItem('orhar_lang', lang);
+            document.documentElement.lang = lang;
+        }
+
+        // Auto-detect and initialize
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedLang = localStorage.getItem('orhar_lang');
+            const browserLang = navigator.language.slice(0, 2);
+            const supported = ['en', 'fr', 'es', 'de', 'it', 'pt', 'pl'];
+            
+            let initLang = 'en';
+            if (savedLang && supported.includes(savedLang)) {
+                initLang = savedLang;
+            } else if (supported.includes(browserLang)) {
+                initLang = browserLang;
+            }
+            
+            document.getElementById('langSwitch').value = initLang;
+            changeLang(initLang);
+        });
+    </script>
+</body>
+</html>

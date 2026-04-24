@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — ORHAR</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #FCFBF8;
+            --surface-color: #FFFFFF;
+            --primary-navy: #1A2E4A;
+            --header-bg: #FCFBF8;
+            --accent-gold: #CFB286;
+            --accent-brown: #915B27;
+            --text-dark: #1e1e1e;
+            --text-muted: #4a5568; 
+            
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Work Sans', sans-serif;
+            --theme-transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); background-color: var(--bg-color); color: var(--text-dark); line-height: 1.7; }
+        h1, h2, h3, h4 { font-family: var(--font-display); color: var(--primary-navy); }
+        a { text-decoration: none; color: var(--accent-brown); font-weight: 500; }
+        a:hover { text-decoration: underline; }
+
+        /* Header & Nav */
+        header { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: var(--header-bg); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--accent-gold); }
+        .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none !important; }
+        .logo-img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; }
+        .logo-text { font-family: var(--font-display); font-size: 24px; font-weight: 700; letter-spacing: 2px; color: var(--primary-navy); text-decoration: none !important; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { font-size: 15px; font-weight: 500; color: var(--primary-navy); text-decoration: none; }
+        .nav-links a:hover { color: var(--accent-brown); text-decoration: none; }
+        
+        /* Language Switcher */
+        .lang-select { background: transparent; border: 1px solid var(--accent-gold); color: var(--primary-navy); padding: 5px 10px; border-radius: 6px; font-family: var(--font-body); font-weight: 500; cursor: pointer; outline: none; }
+
+        /* Legal Content */
+        .legal-wrapper { max-width: 800px; margin: 60px auto; padding: 0 5%; }
+        .legal-wrapper h1 { font-size: 42px; margin-bottom: 10px; text-align: center; }
+        .eff-date { text-align: center; color: var(--text-muted); margin-bottom: 50px; font-style: italic; }
+        
+        .legal-section { margin-bottom: 40px; background: var(--surface-color); padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+        .legal-section h2 { font-size: 28px; margin-bottom: 20px; border-bottom: 1px solid rgba(207, 178, 134, 0.3); padding-bottom: 10px; }
+        .legal-section h3 { font-size: 20px; margin: 20px 0 10px; color: var(--accent-brown); }
+        .legal-section p { font-size: 16px; color: var(--text-muted); margin-bottom: 15px; }
+        .legal-section ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-muted); }
+        .legal-section li { margin-bottom: 8px; }
+        .legal-section strong { color: var(--text-dark); font-weight: 600; }
+
+        /* Highlight Box for Subscriptions */
+        .highlight-box { background-color: rgba(207, 178, 134, 0.1); border-left: 4px solid var(--accent-gold); padding: 25px; border-radius: 0 12px 12px 0; margin-top: 30px; margin-bottom: 40px;}
+        .highlight-box h2 { border-bottom: none; margin-bottom: 10px; color: var(--accent-brown); font-size: 24px;}
+        .highlight-box p { color: var(--text-muted); margin-bottom: 10px; }
+
+        /* Footer */
+        footer { background-color: var(--surface-color); padding: 60px 5% 30px; border-top: 1px solid var(--accent-gold); margin-top: 60px; }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; }
+        .footer-brand h2 { font-size: 32px; letter-spacing: 3px; margin-bottom: 5px; }
+        .footer-brand p { font-style: italic; color: var(--text-muted); font-family: var(--font-display); font-size: 18px; }
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a { font-size: 14px; color: var(--text-muted); text-decoration: none; }
+        .footer-links a:hover { color: var(--accent-brown); }
+        .copyright { text-align: center; margin-top: 40px; font-size: 13px; color: var(--text-muted); opacity: 0.8; }
+
+        @media (max-width: 768px) {
+            .legal-wrapper h1 { font-size: 32px; }
+            .legal-section { padding: 25px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; margin-top: 15px; }
+            header { flex-direction: column; }
+            .footer-content { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="ORHAR Logo" class="logo-img" onerror="this.style.display='none'">
+            <span class="logo-text">ORHAR</span>
+        </a>
+        <nav class="nav-links">
+            <a href="index.html" data-i18n="nav_home">Home</a>
+            <a href="contact.html" data-i18n="nav_contact">Contact</a>
+            <select id="langSwitch" class="lang-select" onchange="changeLang(this.value)">
+                <option value="en">🇬🇧 EN</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="de">🇩🇪 DE</option>
+                <option value="it">🇮🇹 IT</option>
+                <option value="pt">🇵🇹 PT</option>
+                <option value="pl">🇵🇱 PL</option>
+            </select>
+        </nav>
+    </header>
+
+    <main class="legal-wrapper">
+        <h1 data-i18n="t_title">Terms of Service for ORHAR</h1>
+        <p class="eff-date" data-i18n="t_date">Effective Date: April 2026</p>
+
+        <!-- The content of these sections will be dynamically injected by JS based on language -->
+        <div id="legal-content"></div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>ORHAR</h2>
+                <p data-i18n="foot_made">Made with ❤️ for the life of prayer.</p>
+            </div>
+            <div class="footer-links">
+                <a href="privacy.html" data-i18n="foot_priv">Privacy Policy</a>
+                <a href="terms.html" data-i18n="foot_terms">Terms of Service</a>
+                <a href="licenses.html" data-i18n="foot_lic">Licenses</a>
+                <a href="contact.html" data-i18n="nav_contact">Contact Us</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 ORHAR. <span data-i18n="foot_rights">All Rights Reserved.</span><br>
+            <span data-i18n="foot_verse">"Your word is a lamp to my feet, a light to my path." — Psalm 119:105</span>
+        </div>
+    </footer>
+
+    <script>
+        // Professional, fully localized Terms of Service dictionary
+        const legalData = {
+            en: {
+                nav_home: "Home", nav_contact: "Contact", t_title: "Terms of Service for ORHAR", t_date: "Effective Date: April 2026",
+                foot_made: "Made with ❤️ for the life of prayer.", foot_priv: "Privacy Policy", foot_terms: "Terms of Service", foot_lic: "Licenses", foot_rights: "All Rights Reserved.", foot_verse: "\"Your word is a lamp to my feet, a light to my path.\" — Psalm 119:105",
+                html: `
+                    <div class="legal-section">
+                        <h2>1. Acceptance of Terms</h2>
+                        <p>By downloading, accessing, or using the ORHAR mobile application ("App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App. These Terms constitute a legally binding agreement between you and ORHAR.</p>
+                    </div>
+                    <div class="legal-section">
+                        <h2>2. User Accounts & Security</h2>
+                        <p>To access certain features, you may be required to register an account. You agree to provide accurate information and are solely responsible for maintaining the confidentiality of your account credentials. You must notify us immediately of any unauthorized use of your account.</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h2>3. Subscriptions, Billing, and Cancellation</h2>
+                        <p>ORHAR offers premium features through auto-renewing subscriptions. By selecting a premium tier, you agree to the pricing and billing frequency presented to you.</p>
+                        <ul>
+                            <li><strong>Billing:</strong> Payments are charged to your Apple App Store or Google Play account at the confirmation of purchase.</li>
+                            <li><strong>Auto-Renewal:</strong> Subscriptions automatically renew unless auto-renew is turned off at least 24 hours before the end of the current period.</li>
+                            <li><strong>Cancellations:</strong> You must manage or cancel your subscriptions directly through your Apple ID or Google Play account settings. <strong>Deleting the ORHAR app does not cancel your subscription.</strong></li>
+                        </ul>
+                    </div>
+                    <div class="legal-section">
+                        <h2>4. User-Generated Content</h2>
+                        <p>You retain full ownership of all notes, prayers, highlights, and journal entries ("User Content") you create within ORHAR. By using the App, you grant us a secure, encrypted license solely to synchronize, host, and display this data on your devices. We will never use your personal spiritual notes for marketing or advertising purposes.</p>
+                    </div>
+                    <div class="legal-section">
+                        <h2>5. Intellectual Property</h2>
+                        <p>The core biblical texts provided in the App are generally in the public domain or licensed appropriately. However, the ORHAR app itself, including its original design, source code, color themes, logo, and audio features, are the exclusive property of ORHAR and are protected by international copyright laws. You may not copy, reverse-engineer, or distribute the App's proprietary elements.</p>
+                    </div>
+                    <div class="legal-section">
+                        <h2>6. Prohibited Conduct</h2>
+                        <p>You agree not to use the App to:</p>
+                        <ul>
+                            <li>Violate any applicable local, national, or international law.</li>
+                            <li>Attempt to breach or circumvent the security or authentication measures of the App.</li>
+                            <li>Use automated systems (bots, scrapers) to extract data from the App.</li>
+                            <li>Upload any content that contains malicious code or viruses.</li>
+                        </ul>
+                    </div>
+                    <div class="legal-section">
+                        <h2>7. Disclaimers & Limitation of Liability</h2>
+                        <p><strong>"As-Is" Service:</strong> ORHAR is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, whether express or implied. We do not guarantee that the App will be completely error-free or uninterrupted.</p>
+                        <p><strong>Limitation of Liability:</strong> To the maximum extent permitted by law, ORHAR and its developers shall not be liable for any indirect, incidental, special, or consequential damages resulting from your use of the App, including but not limited to loss of data or service interruptions. In no event shall our total liability exceed the amount you paid for the App in the past 12 months.</p>
+                    </div>
+                    <div class="legal-section">
+                        <h2>8. Changes to Terms</h2>
+                        <p>We reserve the right to modify these Terms at any time. We will notify you of material changes through an in-app notice or via email. Your continued use of the App following such modifications constitutes your acceptance of the updated Terms.</p>
+                    </div>
+                    <div class="legal-section">
+                        <h2>9. Contact Us</h2>
+                        <p>If you have any questions about these Terms, please contact our legal team at:</p>
+                        <p><strong><a href="mailto:contact@orhar.com">contact@orhar.com</a></strong></p>
+                    </div>
+                `
+            },
+            fr: {
+                nav_home: "Accueil", nav_contact: "Contact", t_title: "Conditions d'Utilisation d'ORHAR", t_date: "Date d'entrée en vigueur : Avril 2026",
+                foot_made: "Fait avec ❤️ pour la vie de prière.", foot_priv: "Politique de Confidentialité", foot_terms: "Conditions d'Utilisation", foot_lic: "Licences", foot_rights: "Tous droits réservés.", foot_verse: "\"Ta parole est une lampe à mes pieds, Et une lumière sur mon sentier.\" — Psaume 119:105",
+                html: `
+                    <div class="legal-section">
+                        <h2>1. Acceptation des Conditions</h2>
+                        <p>En téléchargeant ou en utilisant l'application ORHAR, vous acceptez d'être lié par ces Conditions d'Utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser l'application.</p>
+                    </div>
+                    <div class="legal-section">
+                        <h2>2. Comptes Utilisateurs</h2>
+                        <p>Vous êtes responsable de la confidentialité de vos identifiants. Vous devez nous informer de toute utilisation non autorisée de votre compte.</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h2>3. Abonnements et Annulations</h2>
+                        <p>ORHAR propose des fonctionnalités premium via des abonnements à renouvellement automatique.</p>
+                        <ul>
+                            <li><strong>Facturation :</strong> Les paiements sont facturés via votre compte Apple App Store ou Google Play.</li>
+                            <li><strong>Renouvellement :</strong> L'abonnement se renouvelle automatiquement sauf si vous le désactivez 24h avant la fin de la période en cours.</li>
+                            <li><strong>Annulation :</strong> Vous devez gérer et annuler vos abonnements dans les paramètres de votre appareil Apple ou Google. <strong>Supprimer l'application n'annule pas votre abonnement.</strong></li>
+                        </ul>
+                    </div>
+                    <div class="legal-section">
+                        <h2>4. Contenu Utilisateur</h2>
+                        <p>Vous conservez la pleine propriété de vos notes, prières et surlignages. Vous nous accordez uniquement une licence sécurisée pour synchroniser et héberger ces données sur vos appareils. Nous ne lirons jamais vos notes spirituelles à des fins commerciales.</p>
+                    </div>
+                    <div class="legal-section">
+                        <h2>5. Propriété Intellectuelle</h2>
+                        <p>Les textes bibliques relèvent du domaine public ou de licences spécifiques. Cependant, le design, le code, les thèmes de couleurs et le logo d'ORHAR sont notre propriété exclusive et sont protégés par le droit d'auteur.</p>
+                    </div>
+                    <div class="legal-section">
+                        <h2>6. Limitation de Responsabilité</h2>
+                        <p>ORHAR est fourni "TEL QUEL". Dans la mesure permise par la loi, ORHAR ne sera pas responsable des dommages indirects ou des pertes de données liés à l'utilisation de l'application.</p>
+                    </div>
+                    <div class="legal-section" style="margin-top:40px;">
+                        <h2>7. Contact</h2>
+                        <p>Pour toute question sur ces conditions, contactez-nous à :</p>
+                        <p><strong><a href="mailto:contact@orhar.com">contact@orhar.com</a></strong></p>
+                    </div>
+                `
+            },
+            es: {
+                nav_home: "Inicio", nav_contact: "Contacto", t_title: "Términos de Servicio de ORHAR", t_date: "Fecha de vigencia: Abril de 2026",
+                foot_made: "Hecho con ❤️ para la vida de oración.", foot_priv: "Privacidad", foot_terms: "Términos", foot_lic: "Licencias", foot_rights: "Todos los derechos reservados.", foot_verse: "\"Lámpara es a mis pies tu palabra, Y lumbrera a mi camino.\" — Salmo 119:105",
+                html: `<div class="legal-section"><h2>1. Aceptación</h2><p>Al utilizar ORHAR, aceptas estos Términos de Servicio de forma vinculante.</p></div>
+                       <div class="highlight-box"><h2>Suscripciones y Cancelación</h2><p>Los pagos se procesan a través de Apple App Store o Google Play. Las suscripciones se renuevan automáticamente. Para cancelar, debes hacerlo desde la configuración de tu cuenta de Apple o Google. <strong>Eliminar la app no cancela la suscripción.</strong></p></div>
+                       <div class="legal-section"><h2>2. Tu Contenido</h2><p>Tú mantienes la propiedad de tus notas y oraciones. Nosotros solo las sincronizamos de forma segura.</p></div>
+                       <div class="legal-section"><h2>3. Propiedad Intelectual</h2><p>El diseño de la app, código y logo son propiedad exclusiva de ORHAR.</p></div>
+                       <div class="legal-section"><h2>4. Limitación de Responsabilidad</h2><p>El servicio se ofrece "tal cual". ORHAR no se responsabiliza por la pérdida de datos o interrupciones.</p></div>
+                       <div class="legal-section" style="margin-top:40px;"><h2>5. Contacto</h2><p><strong><a href="mailto:contact@orhar.com">contact@orhar.com</a></strong></p></div>`
+            },
+            de: {
+                nav_home: "Startseite", nav_contact: "Kontakt", t_title: "Nutzungsbedingungen für ORHAR", t_date: "Gültig ab: April 2026",
+                foot_made: "Gemacht mit ❤️ für das Gebetsleben.", foot_priv: "Datenschutz", foot_terms: "Bedingungen", foot_lic: "Lizenzen", foot_rights: "Alle Rechte vorbehalten.", foot_verse: "\"Dein Wort ist meines Fußes Leuchte und ein Licht auf meinem Wege.\" — Psalm 119:105",
+                html: `<div class="legal-section"><h2>1. Annahme</h2><p>Durch die Nutzung von ORHAR stimmen Sie diesen Nutzungsbedingungen zu.</p></div>
+                       <div class="highlight-box"><h2>Abonnements und Kündigung</h2><p>Zahlungen erfolgen über den Apple App Store oder Google Play. Abos verlängern sich automatisch. Sie müssen diese in den Kontoeinstellungen Ihres Geräts kündigen. <strong>Das Löschen der App kündigt das Abo nicht.</strong></p></div>
+                       <div class="legal-section"><h2>2. Benutzerinhalte</h2><p>Ihre Notizen gehören Ihnen. Wir synchronisieren diese lediglich sicher für Sie.</p></div>
+                       <div class="legal-section"><h2>3. Geistiges Eigentum</h2><p>App-Design, Code und Logos sind ausschließliches Eigentum von ORHAR.</p></div>
+                       <div class="legal-section"><h2>4. Haftungsbeschränkung</h2><p>Die App wird "wie besehen" bereitgestellt. Wir haften nicht für Datenverluste.</p></div>
+                       <div class="legal-section" style="margin-top:40px;"><h2>5. Kontakt</h2><p><strong><a href="mailto:contact@orhar.com">contact@orhar.com</a></strong></p></div>`
+            },
+            it: {
+                nav_home: "Home", nav_contact: "Contatto", t_title: "Termini di Servizio di ORHAR", t_date: "In vigore da: Aprile 2026",
+                foot_made: "Fatto con ❤️ per la vita di preghiera.", foot_priv: "Privacy", foot_terms: "Termini", foot_lic: "Licenze", foot_rights: "Tutti i diritti riservati.", foot_verse: "\"La tua parola è una lampada al mio piede...\" — Salmo 119:105",
+                html: `<div class="legal-section"><h2>1. Accettazione</h2><p>Usando ORHAR, accetti i presenti Termini di Servizio.</p></div>
+                       <div class="highlight-box"><h2>Abbonamenti e Disdetta</h2><p>I pagamenti avvengono tramite Apple App Store o Google Play e si rinnovano automaticamente. Devi annullare l'abbonamento tramite le impostazioni del tuo account Apple o Google. <strong>L'eliminazione dell'app non annulla l'abbonamento.</strong></p></div>
+                       <div class="legal-section"><h2>2. I tuoi contenuti</h2><p>Mantieni la proprietà delle tue note. Noi le sincronizziamo solo in modo sicuro.</p></div>
+                       <div class="legal-section"><h2>3. Proprietà intellettuale</h2><p>Design, codice e logo dell'app sono di proprietà di ORHAR.</p></div>
+                       <div class="legal-section"><h2>4. Limitazione di Responsabilità</h2><p>Il servizio è fornito "così com'è". ORHAR non è responsabile per la perdita di dati.</p></div>
+                       <div class="legal-section" style="margin-top:40px;"><h2>5. Contatto</h2><p><strong><a href="mailto:contact@orhar.com">contact@orhar.com</a></strong></p></div>`
+            },
+            pt: {
+                nav_home: "Início", nav_contact: "Contato", t_title: "Termos de Serviço do ORHAR", t_date: "Data de vigência: Abril de 2026",
+                foot_made: "Feito com ❤️ para a vida de oração.", foot_priv: "Privacidade", foot_terms: "Termos", foot_lic: "Licenças", foot_rights: "Todos os direitos reservados.", foot_verse: "\"Lâmpada para os meus pés é tua palavra...\" — Salmo 119:105",
+                html: `<div class="legal-section"><h2>1. Aceitação</h2><p>Ao utilizar o ORHAR, você concorda com estes Termos de Serviço.</p></div>
+                       <div class="highlight-box"><h2>Assinaturas e Cancelamento</h2><p>Os pagamentos são feitos via Apple App Store ou Google Play. As assinaturas são renovadas automaticamente. O cancelamento deve ser feito nas configurações da sua conta da Apple ou Google. <strong>Excluir o app não cancela a assinatura.</strong></p></div>
+                       <div class="legal-section"><h2>2. Seu Conteúdo</h2><p>Você é dono de suas notas e orações. Nós apenas as sincronizamos com segurança.</p></div>
+                       <div class="legal-section"><h2>3. Propriedade Intelectual</h2><p>O design, código e logotipo do app são propriedade do ORHAR.</p></div>
+                       <div class="legal-section"><h2>4. Limitação de Responsabilidade</h2><p>O aplicativo é fornecido "como está", sem garantias contra perda de dados.</p></div>
+                       <div class="legal-section" style="margin-top:40px;"><h2>5. Contato</h2><p><strong><a href="mailto:contact@orhar.com">contact@orhar.com</a></strong></p></div>`
+            },
+            pl: {
+                nav_home: "Strona Główna", nav_contact: "Kontakt", t_title: "Regulamin Świadczenia Usług ORHAR", t_date: "Data wejścia w życie: Kwiecień 2026",
+                foot_made: "Stworzone z ❤️ dla życia w modlitwie.", foot_priv: "Prywatność", foot_terms: "Regulamin", foot_lic: "Licencje", foot_rights: "Wszelkie prawa zastrzeżone.", foot_verse: "\"Twoje słowo jest lampą dla moich stóp...\" — Psalm 119:105",
+                html: `<div class="legal-section"><h2>1. Akceptacja</h2><p>Korzystając z ORHAR, akceptujesz niniejszy Regulamin.</p></div>
+                       <div class="highlight-box"><h2>Subskrypcje i Anulowanie</h2><p>Płatności są przetwarzane przez Apple App Store lub Google Play. Subskrypcje odnawiają się automatycznie. Aby anulować, użyj ustawień swojego konta Apple lub Google. <strong>Usunięcie aplikacji nie anuluje subskrypcji.</strong></p></div>
+                       <div class="legal-section"><h2>2. Treści Użytkownika</h2><p>Zachowujesz prawa do swoich notatek. My jedynie bezpiecznie je synchronizujemy.</p></div>
+                       <div class="legal-section"><h2>3. Własność Intelektualna</h2><p>Projekt aplikacji, kod i logo są wyłączną własnością ORHAR.</p></div>
+                       <div class="legal-section"><h2>4. Ograniczenie Odpowiedzialności</h2><p>Aplikacja jest dostarczana "w stanie, w jakim jest". Nie odpowiadamy za utratę danych.</p></div>
+                       <div class="legal-section" style="margin-top:40px;"><h2>5. Kontakt</h2><p><strong><a href="mailto:contact@orhar.com">contact@orhar.com</a></strong></p></div>`
+            }
+        };
+
+        function changeLang(lang) {
+            // Update simple translated elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (legalData[lang] && legalData[lang][key]) {
+                    el.innerHTML = legalData[lang][key];
+                }
+            });
+            
+            // Inject HTML body
+            const contentDiv = document.getElementById('legal-content');
+            if (legalData[lang] && legalData[lang].html) {
+                contentDiv.innerHTML = legalData[lang].html;
+            }
+
+            // Save preference & update document language
+            localStorage.setItem('orhar_lang', lang);
+            document.documentElement.lang = lang;
+        }
+
+        // Auto-detect browser language or load saved preference
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedLang = localStorage.getItem('orhar_lang');
+            const browserLang = navigator.language.slice(0, 2);
+            const supported = ['en', 'fr', 'es', 'de', 'it', 'pt', 'pl'];
+            
+            let initLang = 'en'; // Default
+            if (savedLang && supported.includes(savedLang)) {
+                initLang = savedLang;
+            } else if (supported.includes(browserLang)) {
+                initLang = browserLang;
+            }
+            
+            document.getElementById('langSwitch').value = initLang;
+            changeLang(initLang);
+        });
+    </script>
+</body>
+</html>

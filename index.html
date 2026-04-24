@@ -12,10 +12,9 @@
 
     <style>
         :root {
-            /* Default Theme Variables - Updates via JS */
-            --bg-color: #FCFBF8;
+            var(--bg-color): #FCFBF8;
             --surface-color: #FFFFFF;
-            --primary-navy: #1A2E4A; /* Used for headings */
+            --primary-navy: #1A2E4A;
             --header-bg: #FCFBF8;
             --accent-gold: #CFB286;
             --accent-brown: #915B27;
@@ -24,123 +23,74 @@
             
             --font-display: 'Cormorant Garamond', serif;
             --font-body: 'Work Sans', sans-serif;
-            
-            /* Transition for smooth theme switching */
             --theme-transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font-family: var(--font-body); 
-            background-color: var(--bg-color); 
-            color: var(--text-dark); 
-            line-height: 1.6; 
-            -webkit-font-smoothing: antialiased;
-            transition: var(--theme-transition);
-        }
-        
-        h1, h2, h3, h4 { 
-            font-family: var(--font-display); 
-            color: var(--primary-navy); 
-            line-height: 1.2; 
-            transition: var(--theme-transition);
-        }
-        
+        body { font-family: var(--font-body); background-color: var(--bg-color); color: var(--text-dark); line-height: 1.6; transition: var(--theme-transition); }
+        h1, h2, h3, h4 { font-family: var(--font-display); color: var(--primary-navy); transition: var(--theme-transition); }
         a { text-decoration: none; color: var(--primary-navy); transition: var(--theme-transition); }
         a:hover { color: var(--accent-brown); }
 
-        /* Navigation */
-        header { 
-            padding: 20px 5%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            background: var(--header-bg); 
-            position: sticky; 
-            top: 0; 
-            z-index: 100; 
-            border-bottom: 1px solid var(--accent-gold);
-            transition: var(--theme-transition);
-        }
+        /* Header & Nav */
+        header { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: var(--header-bg); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--accent-gold); transition: var(--theme-transition); }
         .logo-container { display: flex; align-items: center; gap: 12px; }
         .logo-img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; }
-        .logo-text { font-family: var(--font-display); font-size: 24px; font-weight: 700; letter-spacing: 2px; color: var(--primary-navy); transition: var(--theme-transition); }
-        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .logo-text { font-family: var(--font-display); font-size: 24px; font-weight: 700; letter-spacing: 2px; color: var(--primary-navy); }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
         .nav-links a { font-size: 15px; font-weight: 500; }
+        
+        /* Language Switcher */
+        .lang-select { background: transparent; border: 1px solid var(--accent-gold); color: var(--primary-navy); padding: 5px 10px; border-radius: 6px; font-family: var(--font-body); font-weight: 500; cursor: pointer; outline: none; }
+        .lang-select:hover { border-color: var(--accent-brown); }
 
-        /* Hero Section */
+        /* Hero */
         .hero { padding: 100px 5% 80px; text-align: center; max-width: 900px; margin: 0 auto; }
         .hero h1 { font-size: 64px; margin-bottom: 15px; letter-spacing: 1px; }
-        .hero h2 { font-size: 28px; font-weight: 400; font-style: italic; color: var(--accent-brown); margin-bottom: 30px; transition: var(--theme-transition); }
-        .hero p { font-size: 18px; color: var(--text-muted); max-width: 600px; margin: 0 auto 40px; transition: var(--theme-transition); }
-        
+        .hero h2 { font-size: 28px; font-weight: 400; font-style: italic; color: var(--accent-brown); margin-bottom: 30px; }
+        .hero p { font-size: 18px; color: var(--text-muted); max-width: 600px; margin: 0 auto 40px; }
         .store-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-        .store-btn { display: flex; align-items: center; gap: 10px; background-color: var(--primary-navy); color: var(--surface-color); padding: 12px 24px; border-radius: 12px; font-size: 16px; font-weight: 500; transition: transform 0.2s ease, background-color 0.4s ease, color 0.4s ease; }
-        .store-btn:hover { background-color: var(--accent-brown); transform: translateY(-2px); }
+        .store-btn { display: flex; align-items: center; gap: 10px; background-color: var(--primary-navy); color: var(--surface-color); padding: 12px 24px; border-radius: 12px; font-size: 16px; transition: transform 0.2s ease, background-color 0.4s ease; }
+        .store-btn:hover { background-color: var(--accent-brown); transform: translateY(-2px); color: white;}
         .store-btn i { font-size: 24px; }
         .coming-soon { font-size: 11px; opacity: 0.8; display: block; text-align: left; line-height: 1; }
 
-        /* Story Section */
+        /* Sections */
         .section { padding: 80px 5%; }
         .section-title { text-align: center; font-size: 42px; margin-bottom: 50px; }
-        .story-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
-        .story-card { 
-            background: var(--surface-color); 
-            padding: 30px; 
-            border-radius: 16px; 
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
-            border-top: 4px solid var(--accent-gold); 
-            text-align: center; 
-            transition: var(--theme-transition);
-        }
-        .story-card i { font-size: 32px; color: var(--accent-brown); margin-bottom: 20px; transition: var(--theme-transition); }
+        .story-grid, .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
+        
+        .story-card { background: var(--surface-color); padding: 30px; border-radius: 16px; border-top: 4px solid var(--accent-gold); text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: var(--theme-transition); }
+        .story-card i { font-size: 32px; color: var(--accent-brown); margin-bottom: 20px; }
         .story-card h3 { font-size: 24px; margin-bottom: 15px; }
-        .story-card p { font-size: 15px; color: var(--text-muted); transition: var(--theme-transition); }
+        .story-card p, .feature-item p { font-size: 15px; color: var(--text-muted); transition: var(--theme-transition); }
 
-        /* Features */
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
         .feature-item { display: flex; align-items: flex-start; gap: 15px; padding: 20px; }
-        .feature-icon { 
-            background: var(--surface-color); 
-            border: 1px solid var(--accent-gold);
-            color: var(--accent-brown); 
-            width: 50px; 
-            height: 50px; 
-            border-radius: 12px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-size: 20px; 
-            flex-shrink: 0; 
-            transition: var(--theme-transition);
-        }
+        .feature-icon { background: var(--surface-color); border: 1px solid var(--accent-gold); color: var(--accent-brown); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; transition: var(--theme-transition); }
         .feature-item h4 { font-size: 20px; margin-bottom: 5px; }
-        .feature-item p { font-size: 14px; color: var(--text-muted); transition: var(--theme-transition); }
 
         /* Themes */
         .themes-section { background-color: var(--primary-navy); padding: 80px 5%; text-align: center; transition: var(--theme-transition); }
         .themes-section .section-title { color: var(--surface-color); }
         .themes-section p { color: var(--bg-color); margin-bottom: 40px; font-size: 18px; opacity: 0.9; }
-        
         .theme-circles { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; max-width: 800px; margin: 0 auto; }
-        .theme-circle { width: 50px; height: 50px; border-radius: 50%; cursor: pointer; border: 3px solid transparent; transition: transform 0.2s ease, border-color 0.2s ease; }
+        .theme-circle { width: 50px; height: 50px; border-radius: 50%; cursor: pointer; border: 3px solid transparent; transition: transform 0.2s ease; }
         .theme-circle:hover, .theme-circle.active { border-color: var(--surface-color); transform: scale(1.1); box-shadow: 0 0 15px rgba(0,0,0,0.3); }
-        .theme-name { margin-top: 20px; font-family: var(--font-display); font-size: 24px; font-style: italic; color: var(--accent-gold); min-height: 30px; transition: var(--theme-transition); }
+        .theme-name { margin-top: 20px; font-family: var(--font-display); font-size: 24px; font-style: italic; color: var(--accent-gold); min-height: 30px; }
 
         /* Footer */
         footer { background-color: var(--surface-color); padding: 60px 5% 30px; border-top: 1px solid var(--accent-gold); transition: var(--theme-transition); }
         .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; }
         .footer-brand h2 { font-size: 32px; letter-spacing: 3px; margin-bottom: 5px; }
-        .footer-brand p { font-style: italic; color: var(--text-muted); font-family: var(--font-display); font-size: 18px; transition: var(--theme-transition); }
+        .footer-brand p { font-style: italic; color: var(--text-muted); font-family: var(--font-display); font-size: 18px; }
         .footer-links { display: flex; gap: 20px; }
-        .footer-links a { font-size: 14px; color: var(--text-muted); transition: var(--theme-transition); }
-        .footer-links a:hover { color: var(--accent-brown); }
+        .footer-links a { font-size: 14px; color: var(--text-muted); }
         .copyright { text-align: center; margin-top: 40px; font-size: 13px; color: var(--text-muted); opacity: 0.8; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 48px; }
-            .nav-links { display: none; }
+            .nav-links { flex-wrap: wrap; justify-content: center; margin-top: 15px; }
+            header { flex-direction: column; }
             .footer-content { flex-direction: column; text-align: center; }
         }
     </style>
@@ -153,29 +103,38 @@
             <span class="logo-text">ORHAR</span>
         </a>
         <nav class="nav-links">
-            <a href="#story">The Story</a>
-            <a href="#features">Features</a>
-            <a href="contact.html">Contact</a>
+            <a href="#story" data-i18n="nav_story">The Story</a>
+            <a href="#features" data-i18n="nav_features">Features</a>
+            <a href="contact.html" data-i18n="nav_contact">Contact</a>
+            <select id="langSwitch" class="lang-select" onchange="changeLang(this.value)">
+                <option value="en">🇬🇧 EN</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="de">🇩🇪 DE</option>
+                <option value="it">🇮🇹 IT</option>
+                <option value="pt">🇵🇹 PT</option>
+                <option value="pl">🇵🇱 PL</option>
+            </select>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>The Mountain of Light</h1>
-        <h2>Where God's Word and the human soul meet on the heights.</h2>
-        <p>OR means light. HAR means mountain. Together, ORHAR is the biblical place of divine encounter. Built for the daily ascent, multilingual, and beautifully crafted for your spiritual journey.</p>
+        <h1 data-i18n="hero_title">The Mountain of Light</h1>
+        <h2 data-i18n="hero_subtitle">Where God's Word and the human soul meet on the heights.</h2>
+        <p data-i18n="hero_desc">OR means light. HAR means mountain. Together, ORHAR is the biblical place of divine encounter. Built for the daily ascent, multilingual, and beautifully crafted for your spiritual journey.</p>
         
         <div class="store-buttons">
             <a href="#" class="store-btn">
                 <i class="fab fa-apple"></i>
                 <div>
-                    <span class="coming-soon">Coming soon on the</span>
+                    <span class="coming-soon" data-i18n="btn_coming">Coming soon on the</span>
                     <strong>App Store</strong>
                 </div>
             </a>
             <a href="#" class="store-btn">
                 <i class="fab fa-google-play"></i>
                 <div>
-                    <span class="coming-soon">Coming soon on</span>
+                    <span class="coming-soon" data-i18n="btn_coming2">Coming soon on</span>
                     <strong>Google Play</strong>
                 </div>
             </a>
@@ -183,116 +142,101 @@
     </section>
 
     <section id="story" class="section">
-        <h2 class="section-title">Read the Icon</h2>
+        <h2 class="section-title" data-i18n="story_title">Read the Icon</h2>
         <div class="story-grid">
             <div class="story-card">
                 <i class="fas fa-book-open"></i>
-                <h3>The Bible</h3>
-                <p>Everything begins here. Pages open wide, alive, breathing, ready. The Word of God is not a closed book; it is thrown open, waiting for you.</p>
+                <h3 data-i18n="story_1_t">The Bible</h3>
+                <p data-i18n="story_1_d">Everything begins here. Pages open wide, alive, breathing, ready. The Word of God is not a closed book; it is thrown open, waiting for you.</p>
             </div>
             <div class="story-card">
                 <i class="fas fa-bookmark"></i>
-                <h3>The Bookmark</h3>
-                <p>A golden bookmark rests in the open Bible—faithful, patient. It says you will return. The Word is a place you come back to every day.</p>
+                <h3 data-i18n="story_2_t">The Bookmark</h3>
+                <p data-i18n="story_2_d">A golden bookmark rests in the open Bible—faithful, patient. It says you will return. The Word is a place you come back to every day.</p>
             </div>
             <div class="story-card">
                 <i class="fas fa-mountain"></i>
-                <h3>The Mountain</h3>
-                <p>Sinai received the Law. Zion bears the promise. Tabor blazed with glory. ORHAR places you on that mountain every time you open the Word.</p>
+                <h3 data-i18n="story_3_t">The Mountain</h3>
+                <p data-i18n="story_3_d">Sinai received the Law. Zion bears the promise. Tabor blazed with glory. ORHAR places you on that mountain every time you open the Word.</p>
             </div>
             <div class="story-card">
                 <i class="fas fa-sun"></i>
-                <h3>The Halo</h3>
-                <p>At the summit, a golden halo crowns the mountain. "Let there be light." The first word spoken into darkness is the same light that shines on every page.</p>
+                <h3 data-i18n="story_4_t">The Halo</h3>
+                <p data-i18n="story_4_d">At the summit, a golden halo crowns the mountain. "Let there be light." The first word spoken into darkness is the same light that shines on every page.</p>
             </div>
         </div>
     </section>
 
     <section id="features" class="section" style="background-color: var(--surface-color);">
-        <h2 class="section-title">Your Scripture Companions</h2>
+        <h2 class="section-title" data-i18n="feat_title">Your Scripture Companions</h2>
         <div class="features-grid">
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-bible"></i></div>
-                <div><h4>Full Bible In-App</h4><p>Read the scriptures in multiple versions and languages, completely offline.</p></div>
+            <div class="feature-item"><div class="feature-icon"><i class="fas fa-bible"></i></div>
+                <div><h4 data-i18n="f1_t">Full Bible In-App</h4><p data-i18n="f1_d">Read the scriptures in multiple versions and languages, completely offline.</p></div>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-hands-praying"></i></div>
-                <div><h4>Prayers</h4><p>A dedicated space for guided prayers and daily spiritual connection.</p></div>
+            <div class="feature-item"><div class="feature-icon"><i class="fas fa-hands-praying"></i></div>
+                <div><h4 data-i18n="f2_t">Prayers</h4><p data-i18n="f2_d">A dedicated space for guided prayers and daily spiritual connection.</p></div>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-headphones"></i></div>
-                <div><h4>Audio & TTS</h4><p>Listen to the Word on the go with high-quality Text-to-Speech playback.</p></div>
+            <div class="feature-item"><div class="feature-icon"><i class="fas fa-headphones"></i></div>
+                <div><h4 data-i18n="f3_t">Audio & TTS</h4><p data-i18n="f3_d">Listen to the Word on the go with high-quality Text-to-Speech playback.</p></div>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-pen-fancy"></i></div>
-                <div><h4>Personal Notes</h4><p>Document your revelations, tag them, and sync them securely across devices.</p></div>
+            <div class="feature-item"><div class="feature-icon"><i class="fas fa-pen-fancy"></i></div>
+                <div><h4 data-i18n="f4_t">Personal Notes</h4><p data-i18n="f4_d">Document your revelations, tag them, and sync them securely across devices.</p></div>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-sun"></i></div>
-                <div><h4>Daily Verse</h4><p>Start your day with a carefully selected scripture to illuminate your path.</p></div>
+            <div class="feature-item"><div class="feature-icon"><i class="fas fa-sun"></i></div>
+                <div><h4 data-i18n="f5_t">Daily Verse</h4><p data-i18n="f5_d">Start your day with a carefully selected scripture to illuminate your path.</p></div>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-book"></i></div>
-                <div><h4>Books In-App</h4><p>Access a curated library of theological and spiritual writings inside the app.</p></div>
+            <div class="feature-item"><div class="feature-icon"><i class="fas fa-book"></i></div>
+                <div><h4 data-i18n="f6_t">Books In-App</h4><p data-i18n="f6_d">Access a curated library of theological and spiritual writings inside the app.</p></div>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-map-marked-alt"></i></div>
-                <div><h4>Reading Plans</h4><p>Follow structured plans to read through the Bible at your own pace.</p></div>
+            <div class="feature-item"><div class="feature-icon"><i class="fas fa-map-marked-alt"></i></div>
+                <div><h4 data-i18n="f7_t">Reading Plans</h4><p data-i18n="f7_d">Follow structured plans to read through the Bible at your own pace.</p></div>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-dove"></i></div>
-                <div><h4>Women's Section</h4><p>Dedicated biblical insights, studies, and stories of women in the Word.</p></div>
+            <div class="feature-item"><div class="feature-icon"><i class="fas fa-dove"></i></div>
+                <div><h4 data-i18n="f8_t">Women's Section</h4><p data-i18n="f8_d">Dedicated biblical insights, studies, and stories of women in the Word.</p></div>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-question-circle"></i></div>
-                <div><h4>Bible Quiz</h4><p>Test your knowledge and grow deeper in your understanding of the scriptures.</p></div>
+            <div class="feature-item"><div class="feature-icon"><i class="fas fa-question-circle"></i></div>
+                <div><h4 data-i18n="f9_t">Bible Quiz</h4><p data-i18n="f9_d">Test your knowledge and grow deeper in your understanding of the scriptures.</p></div>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-landmark"></i></div>
-                <div><h4>Historical Content</h4><p>Explore the deep historical context and background of biblical times.</p></div>
+            <div class="feature-item"><div class="feature-icon"><i class="fas fa-landmark"></i></div>
+                <div><h4 data-i18n="f10_t">Historical Content</h4><p data-i18n="f10_d">Explore the deep historical context and background of biblical times.</p></div>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-bell"></i></div>
-                <div><h4>Reminders</h4><p>Set custom notifications so you never miss your daily time in the Word.</p></div>
+            <div class="feature-item"><div class="feature-icon"><i class="fas fa-bell"></i></div>
+                <div><h4 data-i18n="f11_t">Reminders</h4><p data-i18n="f11_d">Set custom notifications so you never miss your daily time in the Word.</p></div>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-church"></i></div>
-                <div><h4>Catholic Content (CEC)</h4><p>Includes Deuterocanonical books and specific Catholic resources.</p></div>
+            <div class="feature-item"><div class="feature-icon"><i class="fas fa-church"></i></div>
+                <div><h4 data-i18n="f12_t">Catholic Content (CEC)</h4><p data-i18n="f12_d">Includes Deuterocanonical books and specific Catholic resources.</p></div>
             </div>
         </div>
     </section>
 
     <section class="themes-section">
-        <h2 class="section-title">A Space That Reflects You</h2>
-        <p>ORHAR is fully customizable. Choose from 9 carefully crafted color themes to match your spirit.</p>
-        
-        <div class="theme-circles" id="theme-buttons">
-            <!-- Rendered by JS -->
-        </div>
-        <div class="theme-name" id="theme-display">Default Theme</div>
+        <h2 class="section-title" data-i18n="th_title">A Space That Reflects You</h2>
+        <p data-i18n="th_desc">ORHAR is fully customizable. Choose from 9 carefully crafted color themes to match your spirit.</p>
+        <div class="theme-circles" id="theme-buttons"></div>
+        <div class="theme-name" id="theme-display"><span data-i18n="th_def">Default Theme</span></div>
     </section>
 
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
                 <h2>ORHAR</h2>
-                <p>Made with ❤️ for the life of prayer.</p>
+                <p data-i18n="foot_made">Made with ❤️ for the life of prayer.</p>
             </div>
             <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="licenses.html">Licenses</a>
-                <a href="contact.html">Contact Us</a>
+                <a href="privacy.html" data-i18n="foot_priv">Privacy Policy</a>
+                <a href="terms.html" data-i18n="foot_terms">Terms of Service</a>
+                <a href="licenses.html" data-i18n="foot_lic">Licenses</a>
+                <a href="contact.html" data-i18n="nav_contact">Contact Us</a>
             </div>
         </div>
         <div class="copyright">
-            &copy; 2026 ORHAR. All Rights Reserved.<br>
-            "Your word is a lamp to my feet, a light to my path." — Psalm 119:105
+            &copy; 2026 ORHAR. <span data-i18n="foot_rights">All Rights Reserved.</span><br>
+            <span data-i18n="foot_verse">"Your word is a lamp to my feet, a light to my path." — Psalm 119:105</span>
         </div>
     </footer>
 
     <script>
-        // Your actual App Colors Config!
+        // --- 1. THEMES LOGIC ---
         const appThemes = [
             { name: 'Default',  primary: '#1A2E4A', accentGold: '#CFB286', accentBrown: '#915B27', bg: '#FCFBF8', surface: '#FFFFFF', text: '#1e1e1e', textMuted: '#7f8c8d' },
             { name: 'Bleu',     primary: '#0b9ac3', accentGold: '#FDB718', accentBrown: '#0EC1F4', bg: '#FCFBF6', surface: '#FFFFFF', text: '#1e1e1e', textMuted: '#7f8c8d' },
@@ -308,19 +252,18 @@
         const container = document.getElementById('theme-buttons');
         const root = document.documentElement;
         
-        // Generate buttons
         appThemes.forEach((theme, index) => {
             const btn = document.createElement('div');
             btn.className = `theme-circle ${index === 0 ? 'active' : ''}`;
             btn.style.backgroundColor = theme.accentBrown;
-            
             btn.onclick = (e) => {
-                // Update UI active state
                 document.querySelectorAll('.theme-circle').forEach(c => c.classList.remove('active'));
                 e.target.classList.add('active');
-                document.getElementById('theme-display').innerText = theme.name + " Theme";
+                
+                // Keep the "Theme" word translated but change the name
+                const wordTheme = translations[document.documentElement.lang]?.th_word || "Theme";
+                document.getElementById('theme-display').innerText = `${theme.name} ${wordTheme}`;
 
-                // Update CSS Variables to change whole site colors instantly!
                 root.style.setProperty('--primary-navy', theme.primary);
                 root.style.setProperty('--accent-gold', theme.accentGold);
                 root.style.setProperty('--accent-brown', theme.accentBrown);
@@ -330,8 +273,241 @@
                 root.style.setProperty('--text-dark', theme.text);
                 root.style.setProperty('--text-muted', theme.textMuted);
             };
-            
             container.appendChild(btn);
+        });
+
+        // --- 2. TRANSLATIONS DICTIONARY ---
+        const translations = {
+            en: {
+                nav_story: "The Story", nav_features: "Features", nav_contact: "Contact",
+                hero_title: "The Mountain of Light",
+                hero_subtitle: "Where God's Word and the human soul meet on the heights.",
+                hero_desc: "OR means light. HAR means mountain. Together, ORHAR is the biblical place of divine encounter. Built for the daily ascent, multilingual, and beautifully crafted for your spiritual journey.",
+                btn_coming: "Coming soon on the", btn_coming2: "Coming soon on",
+                story_title: "Read the Icon",
+                story_1_t: "The Bible", story_1_d: "Everything begins here. Pages open wide, alive, breathing, ready. The Word of God is not a closed book; it is thrown open, waiting for you.",
+                story_2_t: "The Bookmark", story_2_d: "A golden bookmark rests in the open Bible—faithful, patient. It says you will return. The Word is a place you come back to every day.",
+                story_3_t: "The Mountain", story_3_d: "Sinai received the Law. Zion bears the promise. Tabor blazed with glory. ORHAR places you on that mountain every time you open the Word.",
+                story_4_t: "The Halo", story_4_d: "At the summit, a golden halo crowns the mountain. 'Let there be light.' The first word spoken into darkness is the same light that shines on every page.",
+                feat_title: "Your Scripture Companions",
+                f1_t: "Full Bible In-App", f1_d: "Read the scriptures in multiple versions and languages, completely offline.",
+                f2_t: "Prayers", f2_d: "A dedicated space for guided prayers and daily spiritual connection.",
+                f3_t: "Audio & TTS", f3_d: "Listen to the Word on the go with high-quality Text-to-Speech playback.",
+                f4_t: "Personal Notes", f4_d: "Document your revelations, tag them, and sync them securely across devices.",
+                f5_t: "Daily Verse", f5_d: "Start your day with a carefully selected scripture to illuminate your path.",
+                f6_t: "Books In-App", f6_d: "Access a curated library of theological and spiritual writings inside the app.",
+                f7_t: "Reading Plans", f7_d: "Follow structured plans to read through the Bible at your own pace.",
+                f8_t: "Women's Section", f8_d: "Dedicated biblical insights, studies, and stories of women in the Word.",
+                f9_t: "Bible Quiz", f9_d: "Test your knowledge and grow deeper in your understanding of the scriptures.",
+                f10_t: "Historical Content", f10_d: "Explore the deep historical context and background of biblical times.",
+                f11_t: "Reminders", f11_d: "Set custom notifications so you never miss your daily time in the Word.",
+                f12_t: "Catholic Content (CEC)", f12_d: "Includes Deuterocanonical books and specific Catholic resources.",
+                th_title: "A Space That Reflects You", th_desc: "ORHAR is fully customizable. Choose from 9 carefully crafted color themes to match your spirit.",
+                th_def: "Default Theme", th_word: "Theme",
+                foot_made: "Made with ❤️ for the life of prayer.", foot_priv: "Privacy Policy", foot_terms: "Terms of Service", foot_lic: "Licenses", foot_rights: "All Rights Reserved.", foot_verse: "\"Your word is a lamp to my feet, a light to my path.\" — Psalm 119:105"
+            },
+            fr: {
+                nav_story: "L'Histoire", nav_features: "Fonctionnalités", nav_contact: "Contact",
+                hero_title: "La Montagne de Lumière",
+                hero_subtitle: "Où la Parole de Dieu et l'âme humaine se rencontrent sur les sommets.",
+                hero_desc: "OR signifie lumière. HAR signifie montagne. Ensemble, ORHAR est le lieu biblique de la rencontre divine. Conçu pour l'ascension quotidienne, multilingue et magnifiquement pensé pour votre voyage spirituel.",
+                btn_coming: "Bientôt sur l'", btn_coming2: "Bientôt sur",
+                story_title: "Lisez l'Icône",
+                story_1_t: "La Bible", story_1_d: "Tout commence ici. Des pages grandes ouvertes, vivantes. La Parole de Dieu n'est pas un livre fermé ; elle est ouverte, vous attendant.",
+                story_2_t: "Le Marque-page", story_2_d: "Un marque-page doré repose dans la Bible ouverte — fidèle, patient. Il dit que vous reviendrez. La Parole est un lieu où l'on revient chaque jour.",
+                story_3_t: "La Montagne", story_3_d: "Le Sinaï a reçu la Loi. Sion porte la promesse. Le Thabor a brillé de gloire. ORHAR vous place sur cette montagne chaque fois que vous ouvrez la Parole.",
+                story_4_t: "L'Auréole", story_4_d: "Au sommet, une auréole dorée couronne la montagne. 'Que la lumière soit.' La première parole prononcée dans les ténèbres brille sur chaque page.",
+                feat_title: "Vos Compagnons Bibliques",
+                f1_t: "Bible Complète", f1_d: "Lisez les Écritures dans plusieurs versions et langues, totalement hors ligne.",
+                f2_t: "Prières", f2_d: "Un espace dédié pour des prières guidées et une connexion spirituelle quotidienne.",
+                f3_t: "Audio & Synthèse", f3_d: "Écoutez la Parole en déplacement avec une lecture vocale de haute qualité.",
+                f4_t: "Notes Personnelles", f4_d: "Documentez vos révélations, taguez-les et synchronisez-les en toute sécurité.",
+                f5_t: "Verset du Jour", f5_d: "Commencez votre journée avec un passage choisi pour illuminer votre chemin.",
+                f6_t: "Livres Inclus", f6_d: "Accédez à une bibliothèque sélectionnée d'écrits théologiques et spirituels.",
+                f7_t: "Plans de Lecture", f7_d: "Suivez des plans structurés pour lire la Bible à votre propre rythme.",
+                f8_t: "Section Femmes", f8_d: "Histoires, études et réflexions bibliques dédiées aux femmes de la Parole.",
+                f9_t: "Quiz Biblique", f9_d: "Testez vos connaissances et approfondissez votre compréhension des Écritures.",
+                f10_t: "Contexte Historique", f10_d: "Explorez le contexte historique et culturel profond de l'époque biblique.",
+                f11_t: "Rappels", f11_d: "Définissez des notifications pour ne jamais manquer votre temps dans la Parole.",
+                f12_t: "Contenu Catholique", f12_d: "Inclut les livres deutérocanoniques et des ressources catholiques spécifiques.",
+                th_title: "Un Espace Qui Vous Reflète", th_desc: "ORHAR est entièrement personnalisable. Choisissez parmi 9 thèmes de couleurs créés pour votre esprit.",
+                th_def: "Thème Défaut", th_word: "Thème",
+                foot_made: "Fait avec ❤️ pour la vie de prière.", foot_priv: "Politique de Confidentialité", foot_terms: "Conditions d'Utilisation", foot_lic: "Licences", foot_rights: "Tous droits réservés.", foot_verse: "\"Ta parole est une lampe à mes pieds, Et une lumière sur mon sentier.\" — Psaume 119:105"
+            },
+            es: {
+                nav_story: "La Historia", nav_features: "Funciones", nav_contact: "Contacto",
+                hero_title: "El Monte de Luz", hero_subtitle: "Donde la Palabra de Dios y el alma humana se encuentran.",
+                hero_desc: "OR significa luz. HAR significa monte. Juntos, ORHAR es el lugar bíblico del encuentro divino. Diseñada para el ascenso diario y tu viaje espiritual.",
+                btn_coming: "Próximamente en la", btn_coming2: "Próximamente en",
+                story_title: "Lee el Icono",
+                story_1_t: "La Biblia", story_1_d: "Todo comienza aquí. La Palabra de Dios no es un libro cerrado; está abierta, esperándote.",
+                story_2_t: "El Marcapáginas", story_2_d: "Un marcapáginas dorado reposa en la Biblia abierta. Dice que volverás.",
+                story_3_t: "La Montaña", story_3_d: "El Sinaí recibió la Ley. Sión lleva la promesa. ORHAR te coloca en ese monte.",
+                story_4_t: "El Halo", story_4_d: "En la cima, un halo dorado. La primera palabra en la oscuridad brilla en cada página.",
+                feat_title: "Tus Compañeros Bíblicos",
+                f1_t: "Biblia Completa", f1_d: "Lee las escrituras en múltiples versiones y lenguajes, sin conexión.",
+                f2_t: "Oraciones", f2_d: "Un espacio dedicado para oraciones guiadas y conexión espiritual.",
+                f3_t: "Audio", f3_d: "Escucha la Palabra en cualquier lugar con reproducción de voz.",
+                f4_t: "Notas Personales", f4_d: "Escribe tus revelaciones y sincronízalas de forma segura.",
+                f5_t: "Versículo del Día", f5_d: "Comienza tu día con un pasaje seleccionado para iluminar tu camino.",
+                f6_t: "Libros", f6_d: "Accede a una biblioteca de escritos teológicos y espirituales.",
+                f7_t: "Planes de Lectura", f7_d: "Sigue planes estructurados para leer la Biblia a tu propio ritmo.",
+                f8_t: "Sección de Mujeres", f8_d: "Estudios y reflexiones sobre las mujeres en la Palabra.",
+                f9_t: "Cuestionario", f9_d: "Pon a prueba tus conocimientos de las Escrituras.",
+                f10_t: "Historia", f10_d: "Explora el contexto histórico de los tiempos bíblicos.",
+                f11_t: "Recordatorios", f11_d: "Establece notificaciones para no perder tu tiempo diario.",
+                f12_t: "Contenido Católico", f12_d: "Incluye libros deuterocanónicos y recursos católicos.",
+                th_title: "Un Espacio Para Ti", th_desc: "ORHAR es totalmente personalizable. Elige entre 9 temas de colores.",
+                th_def: "Tema Predeterminado", th_word: "Tema",
+                foot_made: "Hecho con ❤️ para la vida de oración.", foot_priv: "Privacidad", foot_terms: "Términos", foot_lic: "Licencias", foot_rights: "Todos los derechos reservados.", foot_verse: "\"Lámpara es a mis pies tu palabra, Y lumbrera a mi camino.\" — Salmo 119:105"
+            },
+            de: {
+                nav_story: "Geschichte", nav_features: "Funktionen", nav_contact: "Kontakt",
+                hero_title: "Der Berg des Lichts", hero_subtitle: "Wo Gottes Wort und die menschliche Seele sich treffen.",
+                hero_desc: "OR bedeutet Licht. HAR bedeutet Berg. ORHAR ist der biblische Ort der göttlichen Begegnung. Mehrsprachig und wunderschön gestaltet für deine spirituelle Reise.",
+                btn_coming: "Bald im", btn_coming2: "Bald bei",
+                story_title: "Lese die Ikone",
+                story_1_t: "Die Bibel", story_1_d: "Alles beginnt hier. Gottes Wort ist kein verschlossenes Buch; es wartet auf dich.",
+                story_2_t: "Das Lesezeichen", story_2_d: "Ein goldenes Lesezeichen ruht in der offenen Bibel. Es besagt, dass du zurückkehren wirst.",
+                story_3_t: "Der Berg", story_3_d: "Sinai empfing das Gesetz. ORHAR bringt dich auf diesen Berg, wann immer du das Wort öffnest.",
+                story_4_t: "Der Heiligenschein", story_4_d: "Auf dem Gipfel ein goldener Heiligenschein. Das erste Licht leuchtet auf jeder Seite.",
+                feat_title: "Deine Begleiter",
+                f1_t: "Die ganze Bibel", f1_d: "Lies die Heilige Schrift offline in mehreren Versionen.",
+                f2_t: "Gebete", f2_d: "Ein eigener Raum für geleitete Gebete.",
+                f3_t: "Audio", f3_d: "Höre das Wort unterwegs in hoher Qualität.",
+                f4_t: "Notizen", f4_d: "Dokumentiere deine Gedanken und synchronisiere sie sicher.",
+                f5_t: "Tagesvers", f5_d: "Beginne deinen Tag mit einem ausgewählten Vers.",
+                f6_t: "Bücher", f6_d: "Greife auf theologische und spirituelle Schriften zu.",
+                f7_t: "Lesepläne", f7_d: "Folge strukturierten Plänen in deinem eigenen Tempo.",
+                f8_t: "Frauenbereich", f8_d: "Studien und Geschichten von Frauen im Wort.",
+                f9_t: "Bibel-Quiz", f9_d: "Teste dein Wissen über die Heilige Schrift.",
+                f10_t: "Geschichte", f10_d: "Erforsche den historischen Kontext biblischer Zeiten.",
+                f11_t: "Erinnerungen", f11_d: "Richte Benachrichtigungen für deine Zeit mit Gott ein.",
+                f12_t: "Katholische Inhalte", f12_d: "Enthält deuterokanonische Bücher.",
+                th_title: "Dein eigener Raum", th_desc: "Wähle aus 9 sorgfältig gestalteten Farbthemen.",
+                th_def: "Standard-Thema", th_word: "Thema",
+                foot_made: "Gemacht mit ❤️ für das Gebetsleben.", foot_priv: "Datenschutz", foot_terms: "Bedingungen", foot_lic: "Lizenzen", foot_rights: "Alle Rechte vorbehalten.", foot_verse: "\"Dein Wort ist meines Fußes Leuchte und ein Licht auf meinem Wege.\" — Psalm 119:105"
+            },
+            it: {
+                nav_story: "La Storia", nav_features: "Funzioni", nav_contact: "Contatto",
+                hero_title: "Il Monte di Luce", hero_subtitle: "Dove la Parola di Dio e l'anima umana si incontrano.",
+                hero_desc: "OR significa luce. HAR significa monte. ORHAR è il luogo biblico dell'incontro divino. Costruita per la salita quotidiana e il tuo viaggio spirituale.",
+                btn_coming: "Prossimamente su", btn_coming2: "Prossimamente su",
+                story_title: "Leggi l'Icona",
+                story_1_t: "La Bibbia", story_1_d: "Tutto inizia qui. La Parola di Dio non è un libro chiuso; è aperta, ti aspetta.",
+                story_2_t: "Il Segnalibro", story_2_d: "Un segnalibro dorato riposa nella Bibbia. Dice che tornerai.",
+                story_3_t: "La Montagna", story_3_d: "Il Sinai ricevette la Legge. ORHAR ti porta su quella montagna ogni volta.",
+                story_4_t: "L'Aureola", story_4_d: "Sulla cima, un'aureola dorata. La prima parola detta nell'oscurità brilla in ogni pagina.",
+                feat_title: "I Tuoi Compagni",
+                f1_t: "Bibbia Completa", f1_d: "Leggi le scritture offline in molteplici versioni.",
+                f2_t: "Preghiere", f2_d: "Uno spazio per la preghiera guidata.",
+                f3_t: "Audio", f3_d: "Ascolta la Parola ovunque con sintesi vocale.",
+                f4_t: "Note Personali", f4_d: "Scrivi le tue rivelazioni e sincronizzale in modo sicuro.",
+                f5_t: "Versetto Quotidiano", f5_d: "Inizia la giornata con un passaggio selezionato.",
+                f6_t: "Libri", f6_d: "Accedi a una libreria di scritti teologici.",
+                f7_t: "Piani di Lettura", f7_d: "Leggi la Bibbia al tuo ritmo con piani strutturati.",
+                f8_t: "Sezione Donne", f8_d: "Studi e riflessioni sulle donne nella Parola.",
+                f9_t: "Quiz Biblico", f9_d: "Metti alla prova la tua conoscenza delle scritture.",
+                f10_t: "Storia", f10_d: "Esplora il profondo contesto storico.",
+                f11_t: "Promemoria", f11_d: "Imposta notifiche per il tuo tempo quotidiano.",
+                f12_t: "Contenuti Cattolici", f12_d: "Include libri deuterocanonici.",
+                th_title: "Uno Spazio Per Te", th_desc: "Scegli tra 9 temi di colori per riflettere il tuo spirito.",
+                th_def: "Tema Predefinito", th_word: "Tema",
+                foot_made: "Fatto con ❤️ per la vita di preghiera.", foot_priv: "Privacy", foot_terms: "Termini", foot_lic: "Licenze", foot_rights: "Tutti i diritti riservati.", foot_verse: "\"La tua parola è una lampada al mio piede e una luce sul mio sentiero.\" — Salmo 119:105"
+            },
+            pt: {
+                nav_story: "A História", nav_features: "Recursos", nav_contact: "Contato",
+                hero_title: "O Monte de Luz", hero_subtitle: "Onde a Palavra de Deus e a alma se encontram nas alturas.",
+                hero_desc: "OR significa luz. HAR significa monte. ORHAR é o lugar bíblico do encontro divino. Criado para a subida diária e para a sua jornada espiritual.",
+                btn_coming: "Em breve na", btn_coming2: "Em breve no",
+                story_title: "Leia o Ícone",
+                story_1_t: "A Bíblia", story_1_d: "Tudo começa aqui. A Palavra de Deus não é um livro fechado; espera por você.",
+                story_2_t: "O Marcador", story_2_d: "Um marcador dourado descansa na Bíblia. A Palavra é o lugar aonde você sempre volta.",
+                story_3_t: "A Montanha", story_3_d: "O Sinai recebeu a Lei. ORHAR coloca você nessa montanha a cada leitura.",
+                story_4_t: "O Halo", story_4_d: "No cume, um halo dourado. A primeira palavra na escuridão brilha em cada página.",
+                feat_title: "Seus Companheiros",
+                f1_t: "Bíblia Completa", f1_d: "Leia offline em várias versões e idiomas.",
+                f2_t: "Orações", f2_d: "Um espaço para oração e conexão espiritual.",
+                f3_t: "Áudio", f3_d: "Ouça a Palavra com reprodução de voz de alta qualidade.",
+                f4_t: "Notas", f4_d: "Anote suas revelações e sincronize-as com segurança.",
+                f5_t: "Versículo Diário", f5_d: "Comece o dia com uma escritura selecionada.",
+                f6_t: "Livros", f6_d: "Acesse uma biblioteca de textos teológicos e espirituais.",
+                f7_t: "Planos de Leitura", f7_d: "Siga planos para ler a Bíblia no seu ritmo.",
+                f8_t: "Seção de Mulheres", f8_d: "Estudos e histórias de mulheres na Palavra.",
+                f9_t: "Quiz Bíblico", f9_d: "Teste seus conhecimentos das Escrituras.",
+                f10_t: "História", f10_d: "Explore o contexto histórico dos tempos bíblicos.",
+                f11_t: "Lembretes", f11_d: "Defina notificações para seu tempo diário com Deus.",
+                f12_t: "Conteúdo Católico", f12_d: "Inclui os livros deuterocanônicos.",
+                th_title: "Um Espaço Que Reflete Você", th_desc: "Escolha entre 9 temas de cores cuidadosamente elaborados.",
+                th_def: "Tema Padrão", th_word: "Tema",
+                foot_made: "Feito com ❤️ para a vida de oração.", foot_priv: "Privacidade", foot_terms: "Termos", foot_lic: "Licenças", foot_rights: "Todos os direitos reservados.", foot_verse: "\"Lâmpada para os meus pés é tua palavra, e luz para o meu caminho.\" — Salmo 119:105"
+            },
+            pl: {
+                nav_story: "Historia", nav_features: "Funkcje", nav_contact: "Kontakt",
+                hero_title: "Góra Światła", hero_subtitle: "Gdzie Słowo Boże i ludzka dusza spotykają się na wyżynach.",
+                hero_desc: "OR oznacza światło. HAR oznacza górę. ORHAR to biblijne miejsce boskiego spotkania. Stworzona z myślą o twojej duchowej podróży.",
+                btn_coming: "Wkrótce w", btn_coming2: "Wkrótce w",
+                story_title: "Czytaj Ikonę",
+                story_1_t: "Biblia", story_1_d: "Wszystko zaczyna się tutaj. Słowo Boże nie jest zamkniętą księgą; czeka na ciebie.",
+                story_2_t: "Zakładka", story_2_d: "Złota zakładka spoczywa w otwartej Biblii. Oznacza, że powrócisz.",
+                story_3_t: "Góra", story_3_d: "Synaj otrzymał Prawo. ORHAR przenosi cię na tę górę za każdym razem, gdy czytasz Słowo.",
+                story_4_t: "Aureola", story_4_d: "Na szczycie złota aureola. Pierwsze światło stworzenia świeci na każdej stronie.",
+                feat_title: "Twoi Towarzysze",
+                f1_t: "Cała Biblia", f1_d: "Czytaj offline w wielu przekładach i językach.",
+                f2_t: "Modlitwy", f2_d: "Dedykowana przestrzeń na codzienną modlitwę.",
+                f3_t: "Audio", f3_d: "Słuchaj Słowa w drodze dzięki wysokiej jakości lektorowi.",
+                f4_t: "Notatki", f4_d: "Zapisuj swoje przemyślenia i bezpiecznie synchronizuj.",
+                f5_t: "Werset Dnia", f5_d: "Rozpocznij dzień z wybranym fragmentem Pisma.",
+                f6_t: "Książki", f6_d: "Dostęp do biblioteki tekstów teologicznych.",
+                f7_t: "Plany Czytania", f7_d: "Czytaj Biblię we własnym tempie według planów.",
+                f8_t: "Sekcja Kobiet", f8_d: "Studia i historie kobiet w Piśmie Świętym.",
+                f9_t: "Quiz", f9_d: "Sprawdź swoją wiedzę biblijną.",
+                f10_t: "Historia", f10_d: "Odkryj kontekst historyczny czasów biblijnych.",
+                f11_t: "Przypomnienia", f11_d: "Ustaw powiadomienia o codziennym czytaniu.",
+                f12_t: "Treści Katolickie", f12_d: "Zawiera księgi deuterokanoniczne.",
+                th_title: "Przestrzeń dla Ciebie", th_desc: "Wybierz jeden z 9 starannie opracowanych motywów kolorystycznych.",
+                th_def: "Domyślny Motyw", th_word: "Motyw",
+                foot_made: "Stworzone z ❤️ dla życia w modlitwie.", foot_priv: "Prywatność", foot_terms: "Regulamin", foot_lic: "Licencje", foot_rights: "Wszelkie prawa zastrzeżone.", foot_verse: "\"Twoje słowo jest lampą dla moich stóp i światłem na mojej ścieżce.\" — Psalm 119:105"
+            }
+        };
+
+        // --- 3. LANGUAGE SWITCHER LOGIC ---
+        function changeLang(lang) {
+            // Update all translated elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            
+            // Save preference & update document language
+            localStorage.setItem('orhar_lang', lang);
+            document.documentElement.lang = lang;
+
+            // Update the theme text block if currently displayed
+            const currentThemeName = document.getElementById('theme-display').innerText.split(' ')[0];
+            const wordTheme = translations[lang]?.th_word || "Theme";
+            if (currentThemeName && currentThemeName !== "Default" && currentThemeName !== "Thème") {
+                document.getElementById('theme-display').innerText = `${currentThemeName} ${wordTheme}`;
+            }
+        }
+
+        // Auto-detect browser language or load saved preference
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedLang = localStorage.getItem('orhar_lang');
+            const browserLang = navigator.language.slice(0, 2);
+            const supported = ['en', 'fr', 'es', 'de', 'it', 'pt', 'pl'];
+            
+            let initLang = 'en'; // Fallback
+            if (savedLang && supported.includes(savedLang)) {
+                initLang = savedLang;
+            } else if (supported.includes(browserLang)) {
+                initLang = browserLang;
+            }
+            
+            document.getElementById('langSwitch').value = initLang;
+            changeLang(initLang);
         });
     </script>
 </body>

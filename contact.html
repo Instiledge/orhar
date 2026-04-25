@@ -76,7 +76,6 @@
             --text-dark: #1e1e1e;
             --text-muted: #7f8c8d;
             --card-shadow: 0 10px 40px rgba(0,0,0,0.06);
-            --gradient-hero: linear-gradient(180deg, rgba(207,178,134,0.15) 0%, rgba(252,251,248,1) 100%);
             
             --font-display: 'Cormorant Garamond', serif;
             --font-body: 'Work Sans', sans-serif;
@@ -84,7 +83,6 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         html { scroll-behavior: smooth; }
         
         body { 
@@ -184,13 +182,8 @@
             transition: width 0.3s ease;
         }
         
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
+        .nav-links a:hover::after {
             width: 100%;
-        }
-        
-        .nav-links a.active {
-            color: var(--accent-brown);
         }
         
         .lang-select { 
@@ -221,7 +214,7 @@
         /* ========== HERO ========== */
         .contact-hero { 
             text-align: center; 
-            margin-bottom: 70px;
+            margin-bottom: 60px;
             position: relative;
         }
         
@@ -257,15 +250,23 @@
             line-height: 1.8;
         }
 
-        /* ========== TWO-COLUMN LAYOUT ========== */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 80px;
+        /* ========== SECTION TITLES ========== */
+        .section-heading {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
         }
         
-        /* ========== CONTACT CARD ========== */
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 16px;
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+
+        /* ========== CARDS ========== */
         .contact-card { 
             background: var(--surface-color); 
             padding: 40px 32px; 
@@ -331,27 +332,7 @@
             color: #FFFFFF;
         }
 
-        /* ========== SUPPORT CARD ========== */
-        .support-card {
-            background: var(--surface-color); 
-            padding: 40px 32px; 
-            border-radius: 20px; 
-            border-top: 4px solid var(--accent-gold); 
-            box-shadow: var(--card-shadow);
-            transition: all 0.4s ease;
-        }
-        
-        .support-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-        }
-        
-        .support-card h2 {
-            font-size: 28px;
-            margin-bottom: 24px;
-            text-align: center;
-        }
-        
+        /* ========== SUPPORT ITEMS ========== */
         .support-list {
             display: flex;
             flex-direction: column;
@@ -389,10 +370,7 @@
             flex-shrink: 0;
         }
         
-        .support-item-icon i {
-            font-size: 20px;
-            color: var(--accent-brown);
-        }
+        .support-item-icon i { font-size: 20px; color: var(--accent-brown); }
         
         .support-item-content h4 {
             font-family: var(--font-body);
@@ -402,16 +380,8 @@
             margin-bottom: 2px;
         }
         
-        .support-item-content p {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-        
-        .support-item-arrow {
-            margin-left: auto;
-            color: var(--accent-gold);
-            font-size: 14px;
-        }
+        .support-item-content p { font-size: 13px; color: var(--text-muted); }
+        .support-item-arrow { margin-left: auto; color: var(--accent-gold); font-size: 14px; }
 
         /* ========== DONATE CARD ========== */
         .donate-card {
@@ -420,19 +390,12 @@
             border-radius: 20px;
             text-align: center;
             border: 1px solid rgba(var(--accent-gold-rgb), 0.3);
-            margin-bottom: 80px;
+            margin-bottom: 40px;
             box-shadow: var(--card-shadow);
         }
         
-        .donate-emoji {
-            font-size: 40px;
-            margin-bottom: 16px;
-        }
-        
-        .donate-card h2 {
-            font-size: 28px;
-            margin-bottom: 12px;
-        }
+        .donate-emoji { font-size: 40px; margin-bottom: 16px; }
+        .donate-card h2 { font-size: 28px; margin-bottom: 12px; }
         
         .donate-card p {
             color: var(--text-muted);
@@ -466,25 +429,7 @@
             background: linear-gradient(135deg, #b8733a, var(--accent-brown));
         }
 
-        /* ========== FAQ SECTION ========== */
-        .faq-section { 
-            margin-bottom: 40px;
-        }
-        
-        .faq-section h2 { 
-            font-size: 36px; 
-            text-align: center; 
-            margin-bottom: 16px; 
-        }
-        
-        .faq-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 16px;
-            font-style: italic;
-            margin-bottom: 40px;
-        }
-        
+        /* ========== FAQ ========== */
         .faq-grid { 
             display: grid; 
             gap: 16px; 
@@ -516,39 +461,10 @@
             font-weight: 600;
         }
         
-        .faq-item h3 i { 
-            color: var(--accent-brown);
-            font-size: 18px;
-            width: 24px;
-            text-align: center;
-        }
-        
-        .faq-item p { 
-            font-size: 15px; 
-            color: var(--text-muted);
-            line-height: 1.7;
-            padding-left: 36px;
-        }
+        .faq-item h3 i { color: var(--accent-brown); font-size: 18px; width: 24px; text-align: center; }
+        .faq-item p { font-size: 15px; color: var(--text-muted); line-height: 1.7; padding-left: 36px; }
 
-        /* ========== CONTRIBUTION SECTION ========== */
-        .contribute-section {
-            margin-bottom: 40px;
-        }
-        
-        .contribute-section h2 {
-            font-size: 36px;
-            text-align: center;
-            margin-bottom: 16px;
-        }
-        
-        .contribute-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 16px;
-            font-style: italic;
-            margin-bottom: 40px;
-        }
-        
+        /* ========== CONTRIBUTE GRID ========== */
         .contribute-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -587,10 +503,7 @@
             flex-shrink: 0;
         }
         
-        .contribute-icon i {
-            font-size: 22px;
-            color: var(--accent-brown);
-        }
+        .contribute-icon i { font-size: 22px; color: var(--accent-brown); }
         
         .contribute-content h4 {
             font-family: var(--font-body);
@@ -600,10 +513,32 @@
             margin-bottom: 4px;
         }
         
-        .contribute-content p {
-            font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.6;
+        .contribute-content p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+        /* ========== SECTION DIVIDER ========== */
+        .section-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 60px auto;
+            max-width: 400px;
+        }
+        
+        .section-divider::before,
+        .section-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+        }
+        
+        .section-divider span {
+            display: inline-block;
+            padding: 0 24px;
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-style: italic;
+            color: var(--accent-brown);
         }
 
         /* ========== LEGAL SECTION ========== */
@@ -616,10 +551,7 @@
             transition: var(--theme-transition);
         }
         
-        .legal-section h3 {
-            font-size: 32px;
-            margin-bottom: 8px;
-        }
+        .legal-section h3 { font-size: 32px; margin-bottom: 8px; }
         
         .legal-subtitle {
             color: var(--text-muted);
@@ -655,11 +587,7 @@
             box-shadow: var(--card-shadow);
         }
         
-        .legal-card i {
-            font-size: 28px;
-            color: var(--accent-brown);
-            margin-bottom: 10px;
-        }
+        .legal-card i { font-size: 28px; color: var(--accent-brown); margin-bottom: 10px; }
         
         .legal-card h4 {
             font-family: var(--font-body);
@@ -702,11 +630,7 @@
             font-size: 18px; 
         }
         
-        .footer-links { 
-            display: flex; 
-            gap: 24px;
-            flex-wrap: wrap;
-        }
+        .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
         
         .footer-links a { 
             font-size: 14px; 
@@ -714,24 +638,11 @@
             transition: color 0.3s ease;
         }
         
-        .footer-links a:hover {
-            color: var(--accent-gold);
-        }
+        .footer-links a:hover { color: var(--accent-gold); }
         
-        .footer-contact {
-            color: rgba(255,255,255,0.7);
-            font-size: 14px;
-        }
-        
-        .footer-contact a {
-            color: var(--accent-gold);
-            font-weight: 500;
-        }
-        
-        .footer-contact .separator {
-            color: rgba(255,255,255,0.3);
-            margin: 0 8px;
-        }
+        .footer-contact { color: rgba(255,255,255,0.7); font-size: 14px; }
+        .footer-contact a { color: var(--accent-gold); font-weight: 500; }
+        .footer-contact .separator { color: rgba(255,255,255,0.3); margin: 0 8px; }
         
         .copyright { 
             text-align: center; 
@@ -744,8 +655,7 @@
         /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
             .contact-hero h1 { font-size: 38px; }
-            .contact-grid { grid-template-columns: 1fr; }
-            .contact-card, .support-card { padding: 30px 24px; }
+            .section-heading { font-size: 28px; }
             .nav-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
             header { flex-direction: column; gap: 16px; }
             .footer-content { flex-direction: column; text-align: center; align-items: center; }
@@ -768,7 +678,9 @@
         </a>
         <nav class="nav-links">
             <a href="index.html" data-i18n="nav_home">Home</a>
-            <a href="contact.html" class="active" data-i18n="nav_contact">Contact</a>
+            <a href="#contact-section" data-i18n="nav_contact">Contact</a>
+            <a href="#support-section" data-i18n="nav_support">Support</a>
+            <a href="#faq-section" data-i18n="nav_faq">FAQ</a>
             <select id="langSwitch" class="lang-select" onchange="changeLang(this.value)">
                 <option value="en">🇬🇧 EN</option>
                 <option value="fr">🇫🇷 FR</option>
@@ -782,6 +694,7 @@
     </header>
 
     <main class="contact-wrapper">
+        
         <!-- ========== HERO ========== -->
         <div class="contact-hero">
             <div class="contact-badge" data-i18n="c_badge">✦ Help & Support</div>
@@ -789,60 +702,41 @@
             <p data-i18n="c_subtitle">We are here to help you on your spiritual journey. Reach out with any questions, feedback, or technical issues.</p>
         </div>
 
-        <!-- ========== TWO-COLUMN: EMAIL + SUPPORT OPTIONS ========== -->
-        <div class="contact-grid">
-            <div class="contact-card">
-                <div class="contact-card-icon">
-                    <i class="fas fa-envelope-open-text"></i>
-                </div>
-                <h2 data-i18n="c_email_title">Email Us</h2>
-                <p data-i18n="c_email_desc">Our support team usually responds within 24 to 48 hours. Please include your account email if you need technical help.</p>
-                <a href="mailto:contact@orhar.com" class="email-link" id="email-button">
-                    <i class="fas fa-paper-plane"></i>
-                    <span>contact@orhar.com</span>
-                </a>
-            </div>
-
-            <div class="support-card">
-                <h2 data-i18n="c_support_title">Ways We Can Help</h2>
-                <div class="support-list">
-                    <a href="mailto:contact@orhar.com?subject=Translation%20Contribution" class="support-item">
-                        <div class="support-item-icon"><i class="fas fa-language"></i></div>
-                        <div class="support-item-content">
-                            <h4 data-i18n="sup_translate">Become a Translator</h4>
-                            <p data-i18n="sup_translate_desc">Help us bring ORHAR to more languages</p>
-                        </div>
-                        <i class="fas fa-chevron-right support-item-arrow"></i>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Bug%20Report" class="support-item">
-                        <div class="support-item-icon"><i class="fas fa-bug"></i></div>
-                        <div class="support-item-content">
-                            <h4 data-i18n="sup_bug">Report an Issue</h4>
-                            <p data-i18n="sup_bug_desc">Found a bug? Let us know immediately</p>
-                        </div>
-                        <i class="fas fa-chevron-right support-item-arrow"></i>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Beta%20Tester" class="support-item">
-                        <div class="support-item-icon"><i class="fas fa-flask"></i></div>
-                        <div class="support-item-content">
-                            <h4 data-i18n="sup_beta">Join Beta Testing</h4>
-                            <p data-i18n="sup_beta_desc">Test early features before release</p>
-                        </div>
-                        <i class="fas fa-chevron-right support-item-arrow"></i>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=General%20Inquiry" class="support-item">
-                        <div class="support-item-icon"><i class="fas fa-question-circle"></i></div>
-                        <div class="support-item-content">
-                            <h4 data-i18n="sup_general">General Inquiry</h4>
-                            <p data-i18n="sup_general_desc">Anything else on your mind</p>
-                        </div>
-                        <i class="fas fa-chevron-right support-item-arrow"></i>
-                    </a>
-                </div>
-            </div>
+        <!-- ════════════════════════════════════════════
+             SECTION 1: CONTACT
+             — Email card + Ways You Can Help
+        ════════════════════════════════════════════ -->
+        <div id="contact-section">
+            <h2 class="section-heading" data-i18n="section1_title">Get in Touch</h2>
+            <p class="section-subtitle" data-i18n="section1_sub">We respond within 24–48 hours</p>
         </div>
 
-        <!-- ========== DONATE CARD ========== -->
+        <div class="contact-card" style="margin-bottom: 80px;">
+            <div class="contact-card-icon">
+                <i class="fas fa-envelope-open-text"></i>
+            </div>
+            <h2 data-i18n="c_email_title">Email Us</h2>
+            <p data-i18n="c_email_desc">Our support team usually responds within 24 to 48 hours. Please include your account email if you need technical help.</p>
+            <a href="mailto:contact@orhar.com" class="email-link" id="email-button">
+                <i class="fas fa-paper-plane"></i>
+                <span>contact@orhar.com</span>
+            </a>
+        </div>
+
+        <!-- ════════════════════════════════════════════
+             SECTION 2: SUPPORT
+             — Donate card + Ways You Can Help + Contribute
+        ════════════════════════════════════════════ -->
+        <div class="section-divider">
+            <span data-i18n="divider_support">✦ Support the Mission</span>
+        </div>
+
+        <div id="support-section">
+            <h2 class="section-heading" data-i18n="section2_title">Support the Project</h2>
+            <p class="section-subtitle" data-i18n="section2_sub">Your generosity fuels this mission</p>
+        </div>
+
+        <!-- Donate Card -->
         <div class="donate-card">
             <div class="donate-emoji">💸 💝 💰</div>
             <h2 data-i18n="donate_title">Support the Mission</h2>
@@ -853,23 +747,67 @@
             </a>
         </div>
 
-        <!-- ========== FAQ SECTION ========== -->
-        <div class="faq-section">
-            <h2 data-i18n="faq_title">Frequently Asked Questions</h2>
-            <p class="faq-subtitle" data-i18n="faq_sub">Quick answers to common questions</p>
+        <!-- Ways You Can Help -->
+        <h2 class="section-heading" data-i18n="c_support_title" style="margin-top: 40px;">Ways You Can Help</h2>
+        <p class="section-subtitle" data-i18n="c_support_sub">Join the mission in a way that suits you</p>
+
+        <div class="support-list" style="margin-bottom: 60px;">
+            <a href="mailto:contact@orhar.com?subject=Translation%20Contribution" class="support-item">
+                <div class="support-item-icon"><i class="fas fa-language"></i></div>
+                <div class="support-item-content">
+                    <h4 data-i18n="sup_translate">Become a Translator</h4>
+                    <p data-i18n="sup_translate_desc">Help us bring ORHAR to more languages</p>
+                </div>
+                <i class="fas fa-chevron-right support-item-arrow"></i>
+            </a>
+            <a href="mailto:contact@orhar.com?subject=Bug%20Report" class="support-item">
+                <div class="support-item-icon"><i class="fas fa-bug"></i></div>
+                <div class="support-item-content">
+                    <h4 data-i18n="sup_bug">Report an Issue</h4>
+                    <p data-i18n="sup_bug_desc">Found a bug? Let us know immediately</p>
+                </div>
+                <i class="fas fa-chevron-right support-item-arrow"></i>
+            </a>
+            <a href="mailto:contact@orhar.com?subject=Beta%20Tester" class="support-item">
+                <div class="support-item-icon"><i class="fas fa-flask"></i></div>
+                <div class="support-item-content">
+                    <h4 data-i18n="sup_beta">Join Beta Testing</h4>
+                    <p data-i18n="sup_beta_desc">Test early features before release</p>
+                </div>
+                <i class="fas fa-chevron-right support-item-arrow"></i>
+            </a>
+            <a href="mailto:contact@orhar.com?subject=General%20Inquiry" class="support-item">
+                <div class="support-item-icon"><i class="fas fa-question-circle"></i></div>
+                <div class="support-item-content">
+                    <h4 data-i18n="sup_general">General Inquiry</h4>
+                    <p data-i18n="sup_general_desc">Anything else on your mind</p>
+                </div>
+                <i class="fas fa-chevron-right support-item-arrow"></i>
+            </a>
+        </div>
+
+        <!-- Contribute Grid -->
+        <h2 class="section-heading" data-i18n="contrib_title">Other Ways to Help</h2>
+        <p class="section-subtitle" data-i18n="contrib_sub">Every contribution, big or small, makes a difference</p>
+        <div class="contribute-grid" id="contribute-content">
+            <!-- Translated dynamically -->
+        </div>
+
+        <!-- ════════════════════════════════════════════
+             SECTION 3: FAQ
+        ════════════════════════════════════════════ -->
+        <div class="section-divider">
+            <span data-i18n="divider_faq">✦ Common Questions</span>
+        </div>
+
+        <div id="faq-section">
+            <h2 class="section-heading" data-i18n="faq_title">Frequently Asked Questions</h2>
+            <p class="section-subtitle" data-i18n="faq_sub">Quick answers to common questions</p>
             <div class="faq-grid" id="faq-content">
                 <!-- Translated dynamically -->
             </div>
         </div>
 
-        <!-- ========== CONTRIBUTE SECTION ========== -->
-        <div class="contribute-section" style="margin-top: 60px;">
-            <h2 data-i18n="contrib_title">Other Ways to Help</h2>
-            <p class="contribute-subtitle" data-i18n="contrib_sub">Every contribution, big or small, makes a difference</p>
-            <div class="contribute-grid" id="contribute-content">
-                <!-- Translated dynamically -->
-            </div>
-        </div>
     </main>
 
     <!-- ========== LEGAL SECTION ========== -->
@@ -917,622 +855,308 @@
     </footer>
 
     <script>
-        // ========== COMPLETE TRANSLATION DICTIONARY (7 LANGUAGES, 1:1 MAPPED) ==========
         const contactData = {
             en: {
-                nav_home: "Home",
-                nav_contact: "Contact",
+                nav_home: "Home", nav_contact: "Contact", nav_support: "Support", nav_faq: "FAQ",
                 c_badge: "✦ Help & Support",
                 c_title: "Contact & Support",
                 c_subtitle: "We are here to help you on your spiritual journey. Reach out with any questions, feedback, or technical issues.",
+                section1_title: "Get in Touch",
+                section1_sub: "We respond within 24–48 hours",
                 c_email_title: "Email Us",
                 c_email_desc: "Our support team usually responds within 24 to 48 hours. Please include your account email if you need technical help.",
-                c_support_title: "Ways We Can Help",
-                sup_translate: "Become a Translator",
-                sup_translate_desc: "Help us bring ORHAR to more languages",
-                sup_bug: "Report an Issue",
-                sup_bug_desc: "Found a bug? Let us know immediately",
-                sup_beta: "Join Beta Testing",
-                sup_beta_desc: "Test early features before release",
-                sup_general: "General Inquiry",
-                sup_general_desc: "Anything else on your mind",
+                divider_support: "✦ Support the Mission",
+                section2_title: "Support the Project",
+                section2_sub: "Your generosity fuels this mission",
                 donate_title: "Support the Mission",
                 donate_desc: "ORHAR is a labor of love, sustained by community support. Your generosity helps cover operational costs and fuels ongoing development.",
                 donate_btn: "Donate Now",
-                faq_title: "Frequently Asked Questions",
-                faq_sub: "Quick answers to common questions",
+                c_support_title: "Ways You Can Help",
+                c_support_sub: "Join the mission in a way that suits you",
+                sup_translate: "Become a Translator", sup_translate_desc: "Help us bring ORHAR to more languages",
+                sup_bug: "Report an Issue", sup_bug_desc: "Found a bug? Let us know immediately",
+                sup_beta: "Join Beta Testing", sup_beta_desc: "Test early features before release",
+                sup_general: "General Inquiry", sup_general_desc: "Anything else on your mind",
                 contrib_title: "Other Ways to Help",
                 contrib_sub: "Every contribution, big or small, makes a difference",
+                divider_faq: "✦ Common Questions",
+                faq_title: "Frequently Asked Questions",
+                faq_sub: "Quick answers to common questions",
                 legal_title: "Legal & Transparency",
                 legal_sub: "Your trust matters. Read our policies and licenses.",
                 foot_made: "Made with ❤️ for the life of prayer.",
-                foot_priv: "Privacy Policy",
-                foot_terms: "Terms of Service",
-                foot_lic: "Open Source Licenses",
+                foot_priv: "Privacy Policy", foot_terms: "Terms of Service", foot_lic: "Open Source Licenses",
                 foot_rights: "All Rights Reserved.",
                 foot_verse: "\"Your word is a lamp to my feet, a light to my path.\" — Psalm 119:105",
-                // FAQ HTML blocks
                 faq_html: `
-                    <div class="faq-item">
-                        <h3><i class="fas fa-sync-alt"></i> How do I restore my Premium subscription?</h3>
-                        <p>If you changed devices or reinstalled the app, go to <strong>Settings → Restore Purchases</strong> inside the ORHAR app. Ensure you are logged into the same Apple ID or Google account used for the original purchase.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-lock"></i> Are my personal notes and data secure?</h3>
-                        <p>Absolutely. All notes, highlights, and prayers are encrypted and securely synchronized to your account. We never read, analyze, or sell your personal spiritual data. Your privacy is sacred.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-user-times"></i> How do I permanently delete my account?</h3>
-                        <p>You have full control over your data. Navigate to <strong>Settings → Account → Delete Account</strong> within the app. This action permanently removes your account and all associated data from our servers.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-download"></i> Can I export my notes and highlights?</h3>
-                        <p>Yes. ORHAR supports exporting your personal content. Go to <strong>Settings → Data → Export</strong> to download your notes in a readable format.</p>
-                    </div>
+                    <div class="faq-item"><h3><i class="fas fa-sync-alt"></i> How do I restore my Premium subscription?</h3><p>If you changed devices or reinstalled the app, go to <strong>Settings → Restore Purchases</strong> inside the ORHAR app. Ensure you are logged into the same Apple ID or Google account used for the original purchase.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-lock"></i> Are my personal notes and data secure?</h3><p>Absolutely. All notes, highlights, and prayers are encrypted and securely synchronized to your account. We never read, analyze, or sell your personal spiritual data. Your privacy is sacred.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-user-times"></i> How do I permanently delete my account?</h3><p>You have full control over your data. Navigate to <strong>Settings → Account → Delete Account</strong> within the app. This action permanently removes your account and all associated data from our servers.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-download"></i> Can I export my notes and highlights?</h3><p>Yes. ORHAR supports exporting your personal content. Go to <strong>Settings → Data → Export</strong> to download your notes in a readable format.</p></div>
                 `,
                 contrib_html: `
-                    <a href="mailto:contact@orhar.com?subject=Prayer%20Suggestion" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-hands-praying"></i></div>
-                        <div class="contribute-content">
-                            <h4>Suggest a Prayer</h4>
-                            <p>Share a prayer that could bless the community</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Feature%20Request" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-lightbulb"></i></div>
-                        <div class="contribute-content">
-                            <h4>Feature Request</h4>
-                            <p>Ideas that could make ORHAR even better</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Content%20Contribution" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div>
-                        <div class="contribute-content">
-                            <h4>Content Contribution</h4>
-                            <p>Help us write or review biblical content</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Spreading%20the%20Word" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-share-alt"></i></div>
-                        <div class="contribute-content">
-                            <h4>Spread the Word</h4>
-                            <p>Share ORHAR with your community</p>
-                        </div>
-                    </a>
+                    <a href="mailto:contact@orhar.com?subject=Prayer%20Suggestion" class="contribute-item"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Suggest a Prayer</h4><p>Share a prayer that could bless the community</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Feature%20Request" class="contribute-item"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Feature Request</h4><p>Ideas that could make ORHAR even better</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Content%20Contribution" class="contribute-item"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Content Contribution</h4><p>Help us write or review biblical content</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Spreading%20the%20Word" class="contribute-item"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Spread the Word</h4><p>Share ORHAR with your community</p></div></a>
                 `
             },
             fr: {
-                nav_home: "Accueil",
-                nav_contact: "Contact",
-                c_badge: "✦ Aide & Support",
-                c_title: "Contact et Assistance",
+                nav_home: "Accueil", nav_contact: "Contact", nav_support: "Soutenir", nav_faq: "FAQ",
+                c_badge: "✦ Aide & Support", c_title: "Contact et Assistance",
                 c_subtitle: "Nous sommes là pour vous accompagner dans votre cheminement spirituel. Contactez-nous pour toute question, retour ou problème technique.",
+                section1_title: "Nous Contacter", section1_sub: "Nous répondons sous 24–48 heures",
                 c_email_title: "Envoyez-nous un e-mail",
                 c_email_desc: "Notre équipe répond généralement sous 24 à 48 heures. Pensez à inclure l'adresse e-mail de votre compte pour toute aide technique.",
-                c_support_title: "Comment pouvons-nous vous aider",
-                sup_translate: "Devenir Traducteur",
-                sup_translate_desc: "Aidez-nous à proposer ORHAR dans plus de langues",
-                sup_bug: "Signaler un Problème",
-                sup_bug_desc: "Vous avez trouvé un bug ? Prévenez-nous immédiatement",
-                sup_beta: "Rejoindre le Programme Bêta",
-                sup_beta_desc: "Testez les nouvelles fonctionnalités en avant-première",
-                sup_general: "Demande Générale",
-                sup_general_desc: "Toute autre question en tête",
+                divider_support: "✦ Soutenir la Mission",
+                section2_title: "Soutenir le Projet", section2_sub: "Votre générosité alimente cette mission",
                 donate_title: "Soutenir la Mission",
                 donate_desc: "ORHAR est un travail d'amour, soutenu par la communauté. Votre générosité aide à couvrir les coûts opérationnels et alimente le développement continu.",
                 donate_btn: "Faire un Don",
-                faq_title: "Foire Aux Questions",
-                faq_sub: "Réponses rapides aux questions courantes",
-                contrib_title: "Autres Façons d'Aider",
-                contrib_sub: "Chaque contribution, grande ou petite, fait la différence",
-                legal_title: "Légal & Transparence",
-                legal_sub: "Votre confiance compte. Consultez nos politiques et licences.",
+                c_support_title: "Façons de Nous Aider", c_support_sub: "Rejoignez la mission à votre manière",
+                sup_translate: "Devenir Traducteur", sup_translate_desc: "Aidez-nous à proposer ORHAR dans plus de langues",
+                sup_bug: "Signaler un Problème", sup_bug_desc: "Vous avez trouvé un bug ? Prévenez-nous immédiatement",
+                sup_beta: "Rejoindre le Programme Bêta", sup_beta_desc: "Testez les nouvelles fonctionnalités en avant-première",
+                sup_general: "Demande Générale", sup_general_desc: "Toute autre question en tête",
+                contrib_title: "Autres Façons d'Aider", contrib_sub: "Chaque contribution, grande ou petite, fait la différence",
+                divider_faq: "✦ Questions Fréquentes",
+                faq_title: "Foire Aux Questions", faq_sub: "Réponses rapides aux questions courantes",
+                legal_title: "Légal & Transparence", legal_sub: "Votre confiance compte. Consultez nos politiques et licences.",
                 foot_made: "Fait avec ❤️ pour la vie de prière.",
-                foot_priv: "Politique de Confidentialité",
-                foot_terms: "Conditions d'Utilisation",
-                foot_lic: "Licences Open Source",
+                foot_priv: "Politique de Confidentialité", foot_terms: "Conditions d'Utilisation", foot_lic: "Licences Open Source",
                 foot_rights: "Tous droits réservés.",
                 foot_verse: "\"Ta parole est une lampe à mes pieds, une lumière sur mon sentier.\" — Psaume 119:105",
                 faq_html: `
-                    <div class="faq-item">
-                        <h3><i class="fas fa-sync-alt"></i> Comment restaurer mon abonnement Premium ?</h3>
-                        <p>Si vous avez changé d'appareil ou réinstallé l'application, allez dans <strong>Paramètres → Restaurer les achats</strong> dans l'application ORHAR. Assurez-vous d'être connecté au même compte Apple ou Google utilisé pour l'achat initial.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-lock"></i> Mes notes personnelles sont-elles sécurisées ?</h3>
-                        <p>Absolument. Toutes les notes, surlignages et prières sont chiffrés et synchronisés en toute sécurité sur votre compte. Nous ne lisons, n'analysons ni ne vendons jamais vos données spirituelles personnelles. Votre vie privée est sacrée.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-user-times"></i> Comment supprimer définitivement mon compte ?</h3>
-                        <p>Vous avez le contrôle total. Allez dans <strong>Paramètres → Compte → Supprimer le compte</strong> dans l'application. Cette action supprime définitivement votre compte et toutes les données associées de nos serveurs.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-download"></i> Puis-je exporter mes notes et surlignages ?</h3>
-                        <p>Oui. ORHAR prend en charge l'exportation de votre contenu personnel. Allez dans <strong>Paramètres → Données → Exporter</strong> pour télécharger vos notes dans un format lisible.</p>
-                    </div>
+                    <div class="faq-item"><h3><i class="fas fa-sync-alt"></i> Comment restaurer mon abonnement Premium ?</h3><p>Si vous avez changé d'appareil ou réinstallé l'application, allez dans <strong>Paramètres → Restaurer les achats</strong> dans l'application ORHAR. Assurez-vous d'être connecté au même compte Apple ou Google utilisé pour l'achat initial.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-lock"></i> Mes notes personnelles sont-elles sécurisées ?</h3><p>Absolument. Toutes les notes, surlignages et prières sont chiffrés et synchronisés en toute sécurité sur votre compte. Nous ne lisons, n'analysons ni ne vendons jamais vos données spirituelles personnelles. Votre vie privée est sacrée.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-user-times"></i> Comment supprimer définitivement mon compte ?</h3><p>Vous avez le contrôle total. Allez dans <strong>Paramètres → Compte → Supprimer le compte</strong> dans l'application. Cette action supprime définitivement votre compte et toutes les données associées de nos serveurs.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-download"></i> Puis-je exporter mes notes et surlignages ?</h3><p>Oui. ORHAR prend en charge l'exportation de votre contenu personnel. Allez dans <strong>Paramètres → Données → Exporter</strong> pour télécharger vos notes dans un format lisible.</p></div>
                 `,
                 contrib_html: `
-                    <a href="mailto:contact@orhar.com?subject=Suggestion%20de%20Pri%C3%A8re" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-hands-praying"></i></div>
-                        <div class="contribute-content">
-                            <h4>Suggérer une Prière</h4>
-                            <p>Partagez une prière qui pourrait bénir la communauté</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Demande%20de%20Fonctionnalit%C3%A9" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-lightbulb"></i></div>
-                        <div class="contribute-content">
-                            <h4>Suggérer une Fonctionnalité</h4>
-                            <p>Des idées pour rendre ORHAR encore meilleur</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Contribution%20de%20Contenu" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div>
-                        <div class="contribute-content">
-                            <h4>Contribution de Contenu</h4>
-                            <p>Aidez-nous à rédiger ou réviser du contenu biblique</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Partager%20la%20Parole" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-share-alt"></i></div>
-                        <div class="contribute-content">
-                            <h4>Partager la Parole</h4>
-                            <p>Faites connaître ORHAR autour de vous</p>
-                        </div>
-                    </a>
+                    <a href="mailto:contact@orhar.com?subject=Suggestion%20de%20Pri%C3%A8re" class="contribute-item"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Suggérer une Prière</h4><p>Partagez une prière qui pourrait bénir la communauté</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Demande%20de%20Fonctionnalit%C3%A9" class="contribute-item"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Suggérer une Fonctionnalité</h4><p>Des idées pour rendre ORHAR encore meilleur</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Contribution%20de%20Contenu" class="contribute-item"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Contribution de Contenu</h4><p>Aidez-nous à rédiger ou réviser du contenu biblique</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Partager%20la%20Parole" class="contribute-item"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Partager la Parole</h4><p>Faites connaître ORHAR autour de vous</p></div></a>
                 `
             },
             es: {
-                nav_home: "Inicio",
-                nav_contact: "Contacto",
-                c_badge: "✦ Ayuda y Soporte",
-                c_title: "Contacto y Soporte",
+                nav_home: "Inicio", nav_contact: "Contacto", nav_support: "Apoyar", nav_faq: "FAQ",
+                c_badge: "✦ Ayuda y Soporte", c_title: "Contacto y Soporte",
                 c_subtitle: "Estamos aquí para ayudarte en tu camino espiritual. Contáctanos con cualquier pregunta, comentario o problema técnico.",
+                section1_title: "Contacto", section1_sub: "Respondemos en 24–48 horas",
                 c_email_title: "Envíanos un Correo",
                 c_email_desc: "Nuestro equipo suele responder en 24 a 48 horas. Incluye el correo de tu cuenta si necesitas ayuda técnica.",
-                c_support_title: "Cómo Podemos Ayudarte",
-                sup_translate: "Conviértete en Traductor",
-                sup_translate_desc: "Ayúdanos a llevar ORHAR a más idiomas",
-                sup_bug: "Reportar un Problema",
-                sup_bug_desc: "¿Encontraste un error? Cuéntanos de inmediato",
-                sup_beta: "Únete a la Beta",
-                sup_beta_desc: "Prueba funciones antes del lanzamiento",
-                sup_general: "Consulta General",
-                sup_general_desc: "Cualquier otra cosa en mente",
+                divider_support: "✦ Apoyar la Misión",
+                section2_title: "Apoyar el Proyecto", section2_sub: "Tu generosidad impulsa esta misión",
                 donate_title: "Apoya la Misión",
                 donate_desc: "ORHAR es un trabajo de amor, sostenido por el apoyo de la comunidad. Tu generosidad ayuda a cubrir costos operativos e impulsa el desarrollo continuo.",
                 donate_btn: "Donar Ahora",
-                faq_title: "Preguntas Frecuentes",
-                faq_sub: "Respuestas rápidas a preguntas comunes",
-                contrib_title: "Otras Formas de Ayudar",
-                contrib_sub: "Cada contribución, grande o pequeña, marca la diferencia",
-                legal_title: "Legal y Transparencia",
-                legal_sub: "Tu confianza importa. Lee nuestras políticas y licencias.",
+                c_support_title: "Cómo Puedes Ayudar", c_support_sub: "Únete a la misión a tu manera",
+                sup_translate: "Conviértete en Traductor", sup_translate_desc: "Ayúdanos a llevar ORHAR a más idiomas",
+                sup_bug: "Reportar un Problema", sup_bug_desc: "¿Encontraste un error? Cuéntanos de inmediato",
+                sup_beta: "Únete a la Beta", sup_beta_desc: "Prueba funciones antes del lanzamiento",
+                sup_general: "Consulta General", sup_general_desc: "Cualquier otra cosa en mente",
+                contrib_title: "Otras Formas de Ayudar", contrib_sub: "Cada contribución, grande o pequeña, marca la diferencia",
+                divider_faq: "✦ Preguntas Frecuentes",
+                faq_title: "Preguntas Frecuentes", faq_sub: "Respuestas rápidas a preguntas comunes",
+                legal_title: "Legal y Transparencia", legal_sub: "Tu confianza importa. Lee nuestras políticas y licencias.",
                 foot_made: "Hecho con ❤️ para la vida de oración.",
-                foot_priv: "Política de Privacidad",
-                foot_terms: "Términos de Servicio",
-                foot_lic: "Licencias de Código Abierto",
+                foot_priv: "Política de Privacidad", foot_terms: "Términos de Servicio", foot_lic: "Licencias de Código Abierto",
                 foot_rights: "Todos los derechos reservados.",
                 foot_verse: "\"Lámpara es a mis pies tu palabra, y lumbrera a mi camino.\" — Salmo 119:105",
                 faq_html: `
-                    <div class="faq-item">
-                        <h3><i class="fas fa-sync-alt"></i> ¿Cómo restauro mi suscripción Premium?</h3>
-                        <p>Si cambiaste de dispositivo, ve a <strong>Ajustes → Restaurar Compras</strong> en la app ORHAR. Asegúrate de usar la misma cuenta de Apple o Google de la compra original.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-lock"></i> ¿Mis notas están seguras?</h3>
-                        <p>Totalmente. Todas las notas están encriptadas. Nunca leemos ni vendemos tus datos espirituales. Tu privacidad es sagrada.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-user-times"></i> ¿Cómo elimino mi cuenta?</h3>
-                        <p>Ve a <strong>Ajustes → Cuenta → Eliminar Cuenta</strong> en la aplicación. Esta acción borra permanentemente tu cuenta y todos los datos asociados.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-download"></i> ¿Puedo exportar mis notas?</h3>
-                        <p>Sí. ORHAR permite exportar tu contenido. Ve a <strong>Ajustes → Datos → Exportar</strong> para descargar tus notas.</p>
-                    </div>
+                    <div class="faq-item"><h3><i class="fas fa-sync-alt"></i> ¿Cómo restauro mi suscripción Premium?</h3><p>Si cambiaste de dispositivo, ve a <strong>Ajustes → Restaurar Compras</strong> en la app ORHAR. Asegúrate de usar la misma cuenta de Apple o Google de la compra original.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-lock"></i> ¿Mis notas están seguras?</h3><p>Totalmente. Todas las notas están encriptadas. Nunca leemos ni vendemos tus datos espirituales. Tu privacidad es sagrada.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-user-times"></i> ¿Cómo elimino mi cuenta?</h3><p>Ve a <strong>Ajustes → Cuenta → Eliminar Cuenta</strong> en la aplicación. Esta acción borra permanentemente tu cuenta y todos los datos asociados.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-download"></i> ¿Puedo exportar mis notas?</h3><p>Sí. ORHAR permite exportar tu contenido. Ve a <strong>Ajustes → Datos → Exportar</strong> para descargar tus notas.</p></div>
                 `,
                 contrib_html: `
-                    <a href="mailto:contact@orhar.com?subject=Sugerencia%20de%20Oraci%C3%B3n" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-hands-praying"></i></div>
-                        <div class="contribute-content">
-                            <h4>Sugerir una Oración</h4>
-                            <p>Comparte una oración que bendiga a la comunidad</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Solicitud%20de%20Funci%C3%B3n" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-lightbulb"></i></div>
-                        <div class="contribute-content">
-                            <h4>Sugerir Función</h4>
-                            <p>Ideas para hacer ORHAR aún mejor</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Contribuci%C3%B3n%20de%20Contenido" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div>
-                        <div class="contribute-content">
-                            <h4>Contribuir Contenido</h4>
-                            <p>Ayúdanos a escribir contenido bíblico</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Compartir%20la%20Palabra" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-share-alt"></i></div>
-                        <div class="contribute-content">
-                            <h4>Compartir la Palabra</h4>
-                            <p>Difunde ORHAR en tu comunidad</p>
-                        </div>
-                    </a>
+                    <a href="mailto:contact@orhar.com?subject=Sugerencia%20de%20Oraci%C3%B3n" class="contribute-item"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Sugerir una Oración</h4><p>Comparte una oración que bendiga a la comunidad</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Solicitud%20de%20Funci%C3%B3n" class="contribute-item"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Sugerir Función</h4><p>Ideas para hacer ORHAR aún mejor</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Contribuci%C3%B3n%20de%20Contenido" class="contribute-item"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Contribuir Contenido</h4><p>Ayúdanos a escribir contenido bíblico</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Compartir%20la%20Palabra" class="contribute-item"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Compartir la Palabra</h4><p>Difunde ORHAR en tu comunidad</p></div></a>
                 `
             },
             de: {
-                nav_home: "Startseite",
-                nav_contact: "Kontakt",
-                c_badge: "✦ Hilfe & Support",
-                c_title: "Kontakt & Support",
+                nav_home: "Startseite", nav_contact: "Kontakt", nav_support: "Unterstützen", nav_faq: "FAQ",
+                c_badge: "✦ Hilfe & Support", c_title: "Kontakt & Support",
                 c_subtitle: "Wir sind hier, um dich auf deiner spirituellen Reise zu unterstützen. Melde dich bei Fragen, Feedback oder technischen Problemen.",
+                section1_title: "Kontaktiere Uns", section1_sub: "Wir antworten innerhalb von 24–48 Stunden",
                 c_email_title: "Schreib uns eine E-Mail",
                 c_email_desc: "Unser Team antwortet normalerweise innerhalb von 24 bis 48 Stunden. Bitte gib deine Account-E-Mail an, wenn du technische Hilfe benötigst.",
-                c_support_title: "Wie wir helfen können",
-                sup_translate: "Übersetzer werden",
-                sup_translate_desc: "Hilf uns, ORHAR in weiteren Sprachen anzubieten",
-                sup_bug: "Problem melden",
-                sup_bug_desc: "Fehler gefunden? Sag uns sofort Bescheid",
-                sup_beta: "Beta-Tester werden",
-                sup_beta_desc: "Teste neue Funktionen vor der Veröffentlichung",
-                sup_general: "Allgemeine Anfrage",
-                sup_general_desc: "Alles, was dir sonst auf dem Herzen liegt",
+                divider_support: "✦ Unterstütze die Mission",
+                section2_title: "Unterstütze das Projekt", section2_sub: "Deine Großzügigkeit treibt diese Mission an",
                 donate_title: "Unterstütze die Mission",
                 donate_desc: "ORHAR ist eine Herzensarbeit, getragen von der Gemeinschaft. Deine Großzügigkeit hilft, Betriebskosten zu decken und die Entwicklung voranzutreiben.",
                 donate_btn: "Jetzt spenden",
-                faq_title: "Häufig gestellte Fragen",
-                faq_sub: "Schnelle Antworten auf häufige Fragen",
-                contrib_title: "Weitere Möglichkeiten zu helfen",
-                contrib_sub: "Jeder Beitrag, ob groß oder klein, macht einen Unterschied",
-                legal_title: "Rechtliches & Transparenz",
-                legal_sub: "Dein Vertrauen zählt. Lies unsere Richtlinien und Lizenzen.",
+                c_support_title: "Wie Du Helfen Kannst", c_support_sub: "Schließe dich der Mission auf deine Weise an",
+                sup_translate: "Übersetzer werden", sup_translate_desc: "Hilf uns, ORHAR in weiteren Sprachen anzubieten",
+                sup_bug: "Problem melden", sup_bug_desc: "Fehler gefunden? Sag uns sofort Bescheid",
+                sup_beta: "Beta-Tester werden", sup_beta_desc: "Teste neue Funktionen vor der Veröffentlichung",
+                sup_general: "Allgemeine Anfrage", sup_general_desc: "Alles, was dir sonst auf dem Herzen liegt",
+                contrib_title: "Weitere Möglichkeiten", contrib_sub: "Jeder Beitrag, ob groß oder klein, macht einen Unterschied",
+                divider_faq: "✦ Häufige Fragen",
+                faq_title: "Häufig gestellte Fragen", faq_sub: "Schnelle Antworten auf häufige Fragen",
+                legal_title: "Rechtliches & Transparenz", legal_sub: "Dein Vertrauen zählt. Lies unsere Richtlinien und Lizenzen.",
                 foot_made: "Gemacht mit ❤️ für das Leben im Gebet.",
-                foot_priv: "Datenschutzerklärung",
-                foot_terms: "Nutzungsbedingungen",
-                foot_lic: "Open-Source-Lizenzen",
+                foot_priv: "Datenschutzerklärung", foot_terms: "Nutzungsbedingungen", foot_lic: "Open-Source-Lizenzen",
                 foot_rights: "Alle Rechte vorbehalten.",
                 foot_verse: "\"Dein Wort ist meines Fußes Leuchte und ein Licht auf meinem Wege.\" — Psalm 119:105",
                 faq_html: `
-                    <div class="faq-item">
-                        <h3><i class="fas fa-sync-alt"></i> Wie stelle ich mein Premium-Abo wieder her?</h3>
-                        <p>Gehe in der ORHAR-App auf <strong>Einstellungen → Käufe wiederherstellen</strong>. Stelle sicher, dass du mit demselben Apple- oder Google-Konto angemeldet bist, mit dem du gekauft hast.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-lock"></i> Sind meine Notizen sicher?</h3>
-                        <p>Absolut. Alle Notizen sind verschlüsselt. Wir lesen oder verkaufen niemals deine spirituellen Daten. Deine Privatsphäre ist heilig.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-user-times"></i> Wie lösche ich mein Konto endgültig?</h3>
-                        <p>Gehe in der App auf <strong>Einstellungen → Konto → Konto löschen</strong>. Diese Aktion entfernt dein Konto und alle zugehörigen Daten dauerhaft.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-download"></i> Kann ich meine Notizen exportieren?</h3>
-                        <p>Ja. Gehe auf <strong>Einstellungen → Daten → Exportieren</strong>, um deine Notizen herunterzuladen.</p>
-                    </div>
+                    <div class="faq-item"><h3><i class="fas fa-sync-alt"></i> Wie stelle ich mein Premium-Abo wieder her?</h3><p>Gehe in der ORHAR-App auf <strong>Einstellungen → Käufe wiederherstellen</strong>. Stelle sicher, dass du mit demselben Apple- oder Google-Konto angemeldet bist, mit dem du gekauft hast.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-lock"></i> Sind meine Notizen sicher?</h3><p>Absolut. Alle Notizen sind verschlüsselt. Wir lesen oder verkaufen niemals deine spirituellen Daten. Deine Privatsphäre ist heilig.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-user-times"></i> Wie lösche ich mein Konto endgültig?</h3><p>Gehe in der App auf <strong>Einstellungen → Konto → Konto löschen</strong>. Diese Aktion entfernt dein Konto und alle zugehörigen Daten dauerhaft.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-download"></i> Kann ich meine Notizen exportieren?</h3><p>Ja. Gehe auf <strong>Einstellungen → Daten → Exportieren</strong>, um deine Notizen herunterzuladen.</p></div>
                 `,
                 contrib_html: `
-                    <a href="mailto:contact@orhar.com?subject=Gebetsvorschlag" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-hands-praying"></i></div>
-                        <div class="contribute-content">
-                            <h4>Gebet vorschlagen</h4>
-                            <p>Teile ein Gebet, das die Gemeinschaft segnen kann</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Funktionsvorschlag" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-lightbulb"></i></div>
-                        <div class="contribute-content">
-                            <h4>Funktion vorschlagen</h4>
-                            <p>Ideen, die ORHAR noch besser machen</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Inhaltsbeitrag" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div>
-                        <div class="contribute-content">
-                            <h4>Inhalte beisteuern</h4>
-                            <p>Hilf uns, biblische Inhalte zu schreiben</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Weitersagen" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-share-alt"></i></div>
-                        <div class="contribute-content">
-                            <h4>Weitersagen</h4>
-                            <p>Teile ORHAR mit deiner Gemeinschaft</p>
-                        </div>
-                    </a>
+                    <a href="mailto:contact@orhar.com?subject=Gebetsvorschlag" class="contribute-item"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Gebet vorschlagen</h4><p>Teile ein Gebet, das die Gemeinschaft segnen kann</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Funktionsvorschlag" class="contribute-item"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Funktion vorschlagen</h4><p>Ideen, die ORHAR noch besser machen</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Inhaltsbeitrag" class="contribute-item"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Inhalte beisteuern</h4><p>Hilf uns, biblische Inhalte zu schreiben</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Weitersagen" class="contribute-item"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Weitersagen</h4><p>Teile ORHAR mit deiner Gemeinschaft</p></div></a>
                 `
             },
             it: {
-                nav_home: "Home",
-                nav_contact: "Contatto",
-                c_badge: "✦ Aiuto & Supporto",
-                c_title: "Contatto e Supporto",
+                nav_home: "Home", nav_contact: "Contatto", nav_support: "Sostieni", nav_faq: "FAQ",
+                c_badge: "✦ Aiuto & Supporto", c_title: "Contatto e Supporto",
                 c_subtitle: "Siamo qui per aiutarti nel tuo cammino spirituale. Contattaci per domande, feedback o problemi tecnici.",
+                section1_title: "Contattaci", section1_sub: "Rispondiamo entro 24–48 ore",
                 c_email_title: "Scrivici un'e-mail",
                 c_email_desc: "Il nostro team risponde solitamente entro 24-48 ore. Includi l'e-mail del tuo account per ricevere assistenza tecnica.",
-                c_support_title: "Come Possiamo Aiutarti",
-                sup_translate: "Diventa Traduttore",
-                sup_translate_desc: "Aiutaci a portare ORHAR in altre lingue",
-                sup_bug: "Segnala un Problema",
-                sup_bug_desc: "Trovato un bug? Segnalacelo subito",
-                sup_beta: "Partecipa al Beta Testing",
-                sup_beta_desc: "Prova le funzionalità in anteprima",
-                sup_general: "Richiesta Generale",
-                sup_general_desc: "Qualsiasi altra cosa in mente",
+                divider_support: "✦ Sostieni la Missione",
+                section2_title: "Sostieni il Progetto", section2_sub: "La tua generosità alimenta questa missione",
                 donate_title: "Sostieni la Missione",
                 donate_desc: "ORHAR è un lavoro d'amore, sostenuto dalla comunità. La tua generosità aiuta a coprire i costi operativi e alimenta lo sviluppo continuo.",
                 donate_btn: "Dona Ora",
-                faq_title: "Domande Frequenti",
-                faq_sub: "Risposte rapide alle domande comuni",
-                contrib_title: "Altri Modi per Aiutare",
-                contrib_sub: "Ogni contributo, grande o piccolo, fa la differenza",
-                legal_title: "Legale & Trasparenza",
-                legal_sub: "La tua fiducia conta. Leggi le nostre politiche e licenze.",
+                c_support_title: "Come Puoi Aiutare", c_support_sub: "Unisciti alla missione a modo tuo",
+                sup_translate: "Diventa Traduttore", sup_translate_desc: "Aiutaci a portare ORHAR in altre lingue",
+                sup_bug: "Segnala un Problema", sup_bug_desc: "Trovato un bug? Segnalacelo subito",
+                sup_beta: "Partecipa al Beta Testing", sup_beta_desc: "Prova le funzionalità in anteprima",
+                sup_general: "Richiesta Generale", sup_general_desc: "Qualsiasi altra cosa in mente",
+                contrib_title: "Altri Modi per Aiutare", contrib_sub: "Ogni contributo, grande o piccolo, fa la differenza",
+                divider_faq: "✦ Domande Frequenti",
+                faq_title: "Domande Frequenti", faq_sub: "Risposte rapide alle domande comuni",
+                legal_title: "Legale & Trasparenza", legal_sub: "La tua fiducia conta. Leggi le nostre politiche e licenze.",
                 foot_made: "Fatto con ❤️ per la vita di preghiera.",
-                foot_priv: "Informativa sulla Privacy",
-                foot_terms: "Termini di Servizio",
-                foot_lic: "Licenze Open Source",
+                foot_priv: "Informativa sulla Privacy", foot_terms: "Termini di Servizio", foot_lic: "Licenze Open Source",
                 foot_rights: "Tutti i diritti riservati.",
                 foot_verse: "\"La tua parola è una lampada al mio piede e una luce sul mio sentiero.\" — Salmo 119:105",
                 faq_html: `
-                    <div class="faq-item">
-                        <h3><i class="fas fa-sync-alt"></i> Come ripristino il mio abbonamento Premium?</h3>
-                        <p>Vai su <strong>Impostazioni → Ripristina acquisti</strong> nell'app ORHAR. Assicurati di usare lo stesso account Apple o Google dell'acquisto originale.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-lock"></i> Le mie note sono al sicuro?</h3>
-                        <p>Assolutamente sì. Le note sono crittografate. Non leggiamo né vendiamo mai i tuoi dati spirituali. La tua privacy è sacra.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-user-times"></i> Come elimino il mio account?</h3>
-                        <p>Vai su <strong>Impostazioni → Account → Elimina account</strong> nell'app. Questa azione rimuove permanentemente il tuo account e tutti i dati associati.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-download"></i> Posso esportare le mie note?</h3>
-                        <p>Sì. Vai su <strong>Impostazioni → Dati → Esporta</strong> per scaricare le tue note in un formato leggibile.</p>
-                    </div>
+                    <div class="faq-item"><h3><i class="fas fa-sync-alt"></i> Come ripristino il mio abbonamento Premium?</h3><p>Vai su <strong>Impostazioni → Ripristina acquisti</strong> nell'app ORHAR. Assicurati di usare lo stesso account Apple o Google dell'acquisto originale.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-lock"></i> Le mie note sono al sicuro?</h3><p>Assolutamente sì. Le note sono crittografate. Non leggiamo né vendiamo mai i tuoi dati spirituali. La tua privacy è sacra.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-user-times"></i> Come elimino il mio account?</h3><p>Vai su <strong>Impostazioni → Account → Elimina account</strong> nell'app. Questa azione rimuove permanentemente il tuo account e tutti i dati associati.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-download"></i> Posso esportare le mie note?</h3><p>Sì. Vai su <strong>Impostazioni → Dati → Esporta</strong> per scaricare le tue note in un formato leggibile.</p></div>
                 `,
                 contrib_html: `
-                    <a href="mailto:contact@orhar.com?subject=Suggerimento%20Preghiera" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-hands-praying"></i></div>
-                        <div class="contribute-content">
-                            <h4>Suggerisci una Preghiera</h4>
-                            <p>Condividi una preghiera per benedire la comunità</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Richiesta%20Funzionalit%C3%A0" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-lightbulb"></i></div>
-                        <div class="contribute-content">
-                            <h4>Suggerisci una Funzionalità</h4>
-                            <p>Idee per rendere ORHAR ancora migliore</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Contributo%20Contenuti" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div>
-                        <div class="contribute-content">
-                            <h4>Contribuisci Contenuti</h4>
-                            <p>Aiutaci a scrivere contenuti biblici</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Condividi%20ORHAR" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-share-alt"></i></div>
-                        <div class="contribute-content">
-                            <h4>Condividi la Parola</h4>
-                            <p>Fai conoscere ORHAR alla tua comunità</p>
-                        </div>
-                    </a>
+                    <a href="mailto:contact@orhar.com?subject=Suggerimento%20Preghiera" class="contribute-item"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Suggerisci una Preghiera</h4><p>Condividi una preghiera per benedire la comunità</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Richiesta%20Funzionalit%C3%A0" class="contribute-item"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Suggerisci una Funzionalità</h4><p>Idee per rendere ORHAR ancora migliore</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Contributo%20Contenuti" class="contribute-item"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Contribuisci Contenuti</h4><p>Aiutaci a scrivere contenuti biblici</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Condividi%20ORHAR" class="contribute-item"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Condividi la Parola</h4><p>Fai conoscere ORHAR alla tua comunità</p></div></a>
                 `
             },
             pt: {
-                nav_home: "Início",
-                nav_contact: "Contato",
-                c_badge: "✦ Ajuda & Suporte",
-                c_title: "Contato e Suporte",
+                nav_home: "Início", nav_contact: "Contato", nav_support: "Apoiar", nav_faq: "FAQ",
+                c_badge: "✦ Ajuda & Suporte", c_title: "Contato e Suporte",
                 c_subtitle: "Estamos aqui para ajudar na sua jornada espiritual. Entre em contato com dúvidas, feedback ou problemas técnicos.",
+                section1_title: "Fale Conosco", section1_sub: "Respondemos em 24–48 horas",
                 c_email_title: "Envie um E-mail",
                 c_email_desc: "Nossa equipe responde em 24 a 48 horas. Inclua o e-mail da sua conta para suporte técnico.",
-                c_support_title: "Como Podemos Ajudar",
-                sup_translate: "Torne-se Tradutor",
-                sup_translate_desc: "Ajude-nos a levar o ORHAR a mais idiomas",
-                sup_bug: "Reportar um Problema",
-                sup_bug_desc: "Encontrou um bug? Avise-nos imediatamente",
-                sup_beta: "Participar do Beta",
-                sup_beta_desc: "Teste recursos antes do lançamento",
-                sup_general: "Dúvida Geral",
-                sup_general_desc: "Qualquer outra coisa em mente",
+                divider_support: "✦ Apoiar a Missão",
+                section2_title: "Apoiar o Projeto", section2_sub: "Sua generosidade alimenta esta missão",
                 donate_title: "Apoie a Missão",
                 donate_desc: "ORHAR é um trabalho de amor, sustentado pelo apoio da comunidade. Sua generosidade ajuda a cobrir custos operacionais e impulsiona o desenvolvimento.",
                 donate_btn: "Doar Agora",
-                faq_title: "Perguntas Frequentes",
-                faq_sub: "Respostas rápidas para perguntas comuns",
-                contrib_title: "Outras Formas de Ajudar",
-                contrib_sub: "Cada contribuição, grande ou pequena, faz a diferença",
-                legal_title: "Legal & Transparência",
-                legal_sub: "Sua confiança importa. Leia nossas políticas e licenças.",
+                c_support_title: "Como Você Pode Ajudar", c_support_sub: "Junte-se à missão do seu jeito",
+                sup_translate: "Torne-se Tradutor", sup_translate_desc: "Ajude-nos a levar o ORHAR a mais idiomas",
+                sup_bug: "Reportar um Problema", sup_bug_desc: "Encontrou um bug? Avise-nos imediatamente",
+                sup_beta: "Participar do Beta", sup_beta_desc: "Teste recursos antes do lançamento",
+                sup_general: "Dúvida Geral", sup_general_desc: "Qualquer outra coisa em mente",
+                contrib_title: "Outras Formas de Ajudar", contrib_sub: "Cada contribuição, grande ou pequena, faz a diferença",
+                divider_faq: "✦ Perguntas Frequentes",
+                faq_title: "Perguntas Frequentes", faq_sub: "Respostas rápidas para perguntas comuns",
+                legal_title: "Legal & Transparência", legal_sub: "Sua confiança importa. Leia nossas políticas e licenças.",
                 foot_made: "Feito com ❤️ para a vida de oração.",
-                foot_priv: "Política de Privacidade",
-                foot_terms: "Termos de Serviço",
-                foot_lic: "Licenças de Código Aberto",
+                foot_priv: "Política de Privacidade", foot_terms: "Termos de Serviço", foot_lic: "Licenças de Código Aberto",
                 foot_rights: "Todos os direitos reservados.",
                 foot_verse: "\"Lâmpada para os meus pés é tua palavra, e luz para o meu caminho.\" — Salmo 119:105",
                 faq_html: `
-                    <div class="faq-item">
-                        <h3><i class="fas fa-sync-alt"></i> Como restauro minha assinatura Premium?</h3>
-                        <p>Vá em <strong>Configurações → Restaurar Compras</strong> no aplicativo ORHAR. Certifique-se de usar a mesma conta Apple ou Google da compra original.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-lock"></i> Minhas notas estão seguras?</h3>
-                        <p>Com certeza. Todas as notas são criptografadas. Nunca lemos ou vendemos seus dados espirituais. Sua privacidade é sagrada.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-user-times"></i> Como excluo minha conta permanentemente?</h3>
-                        <p>Vá em <strong>Configurações → Conta → Excluir Conta</strong> no aplicativo. Esta ação remove permanentemente sua conta e todos os dados associados.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-download"></i> Posso exportar minhas notas?</h3>
-                        <p>Sim. Vá em <strong>Configurações → Dados → Exportar</strong> para baixar suas notas em formato legível.</p>
-                    </div>
+                    <div class="faq-item"><h3><i class="fas fa-sync-alt"></i> Como restauro minha assinatura Premium?</h3><p>Vá em <strong>Configurações → Restaurar Compras</strong> no aplicativo ORHAR. Certifique-se de usar a mesma conta Apple ou Google da compra original.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-lock"></i> Minhas notas estão seguras?</h3><p>Com certeza. Todas as notas são criptografadas. Nunca lemos ou vendemos seus dados espirituais. Sua privacidade é sagrada.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-user-times"></i> Como excluo minha conta permanentemente?</h3><p>Vá em <strong>Configurações → Conta → Excluir Conta</strong> no aplicativo. Esta ação remove permanentemente sua conta e todos os dados associados.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-download"></i> Posso exportar minhas notas?</h3><p>Sim. Vá em <strong>Configurações → Dados → Exportar</strong> para baixar suas notas em formato legível.</p></div>
                 `,
                 contrib_html: `
-                    <a href="mailto:contact@orhar.com?subject=Sugest%C3%A3o%20de%20Ora%C3%A7%C3%A3o" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-hands-praying"></i></div>
-                        <div class="contribute-content">
-                            <h4>Sugerir uma Oração</h4>
-                            <p>Compartilhe uma oração que abençoe a comunidade</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Sugest%C3%A3o%20de%20Recurso" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-lightbulb"></i></div>
-                        <div class="contribute-content">
-                            <h4>Sugerir Recurso</h4>
-                            <p>Ideias para tornar o ORHAR ainda melhor</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Contribui%C3%A7%C3%A3o%20de%20Conte%C3%BAdo" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div>
-                        <div class="contribute-content">
-                            <h4>Contribuir com Conteúdo</h4>
-                            <p>Ajude-nos a escrever conteúdo bíblico</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Compartilhar%20ORHAR" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-share-alt"></i></div>
-                        <div class="contribute-content">
-                            <h4>Compartilhar a Palavra</h4>
-                            <p>Divulgue o ORHAR na sua comunidade</p>
-                        </div>
-                    </a>
+                    <a href="mailto:contact@orhar.com?subject=Sugest%C3%A3o%20de%20Ora%C3%A7%C3%A3o" class="contribute-item"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Sugerir uma Oração</h4><p>Compartilhe uma oração que abençoe a comunidade</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Sugest%C3%A3o%20de%20Recurso" class="contribute-item"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Sugerir Recurso</h4><p>Ideias para tornar o ORHAR ainda melhor</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Contribui%C3%A7%C3%A3o%20de%20Conte%C3%BAdo" class="contribute-item"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Contribuir com Conteúdo</h4><p>Ajude-nos a escrever conteúdo bíblico</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Compartilhar%20ORHAR" class="contribute-item"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Compartilhar a Palavra</h4><p>Divulgue o ORHAR na sua comunidade</p></div></a>
                 `
             },
             pl: {
-                nav_home: "Strona Główna",
-                nav_contact: "Kontakt",
-                c_badge: "✦ Pomoc i Wsparcie",
-                c_title: "Kontakt i Wsparcie",
+                nav_home: "Strona Główna", nav_contact: "Kontakt", nav_support: "Wesprzyj", nav_faq: "FAQ",
+                c_badge: "✦ Pomoc i Wsparcie", c_title: "Kontakt i Wsparcie",
                 c_subtitle: "Jesteśmy tutaj, aby pomóc Ci w duchowej podróży. Skontaktuj się z nami w razie pytań, uwag lub problemów technicznych.",
+                section1_title: "Skontaktuj Się", section1_sub: "Odpowiadamy w ciągu 24–48 godzin",
                 c_email_title: "Napisz do nas",
                 c_email_desc: "Nasz zespół odpowiada zazwyczaj w ciągu 24-48 godzin. Podaj adres e-mail konta, jeśli potrzebujesz pomocy technicznej.",
-                c_support_title: "Jak Możemy Pomóc",
-                sup_translate: "Zostań Tłumaczem",
-                sup_translate_desc: "Pomóż nam udostępnić ORHAR w kolejnych językach",
-                sup_bug: "Zgłoś Problem",
-                sup_bug_desc: "Znalazłeś błąd? Daj nam znać natychmiast",
-                sup_beta: "Dołącz do Testów Beta",
-                sup_beta_desc: "Testuj nowe funkcje przed premierą",
-                sup_general: "Zapytanie Ogólne",
-                sup_general_desc: "Wszystko inne, co masz na myśli",
+                divider_support: "✦ Wesprzyj Misję",
+                section2_title: "Wesprzyj Projekt", section2_sub: "Twoja hojność napędza tę misję",
                 donate_title: "Wesprzyj Misję",
                 donate_desc: "ORHAR to praca z miłości, utrzymywana dzięki wsparciu społeczności. Twoja hojność pomaga pokryć koszty operacyjne i napędza rozwój.",
                 donate_btn: "Przekaż Darowiznę",
-                faq_title: "Często Zadawane Pytania",
-                faq_sub: "Szybkie odpowiedzi na częste pytania",
-                contrib_title: "Inne Sposoby Pomocy",
-                contrib_sub: "Każdy wkład, duży czy mały, robi różnicę",
-                legal_title: "Prawne i Przejrzystość",
-                legal_sub: "Twoje zaufanie ma znaczenie. Przeczytaj nasze zasady i licencje.",
+                c_support_title: "Jak Możesz Pomóc", c_support_sub: "Dołącz do misji na swój sposób",
+                sup_translate: "Zostań Tłumaczem", sup_translate_desc: "Pomóż nam udostępnić ORHAR w kolejnych językach",
+                sup_bug: "Zgłoś Problem", sup_bug_desc: "Znalazłeś błąd? Daj nam znać natychmiast",
+                sup_beta: "Dołącz do Testów Beta", sup_beta_desc: "Testuj nowe funkcje przed premierą",
+                sup_general: "Zapytanie Ogólne", sup_general_desc: "Wszystko inne, co masz na myśli",
+                contrib_title: "Inne Sposoby Pomocy", contrib_sub: "Każdy wkład, duży czy mały, robi różnicę",
+                divider_faq: "✦ Częste Pytania",
+                faq_title: "Często Zadawane Pytania", faq_sub: "Szybkie odpowiedzi na częste pytania",
+                legal_title: "Prawne i Przejrzystość", legal_sub: "Twoje zaufanie ma znaczenie. Przeczytaj nasze zasady i licencje.",
                 foot_made: "Stworzone z ❤️ dla życia modlitewnego.",
-                foot_priv: "Polityka Prywatności",
-                foot_terms: "Warunki Usługi",
-                foot_lic: "Licencje Open Source",
+                foot_priv: "Polityka Prywatności", foot_terms: "Warunki Usługi", foot_lic: "Licencje Open Source",
                 foot_rights: "Wszelkie prawa zastrzeżone.",
                 foot_verse: "\"Twoje słowo jest lampą dla moich stóp i światłem na mojej ścieżce.\" — Psalm 119:105",
                 faq_html: `
-                    <div class="faq-item">
-                        <h3><i class="fas fa-sync-alt"></i> Jak przywrócić subskrypcję Premium?</h3>
-                        <p>Przejdź do <strong>Ustawienia → Przywróć zakupy</strong> w aplikacji ORHAR. Upewnij się, że używasz tego samego konta Apple lub Google, którego użyto do zakupu.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-lock"></i> Czy moje notatki są bezpieczne?</h3>
-                        <p>Absolutnie tak. Wszystkie notatki są szyfrowane. Nigdy nie czytamy ani nie sprzedajemy Twoich danych duchowych. Twoja prywatność jest święta.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-user-times"></i> Jak trwale usunąć konto?</h3>
-                        <p>Przejdź do <strong>Ustawienia → Konto → Usuń konto</strong> w aplikacji. Ta czynność trwale usuwa Twoje konto i wszystkie powiązane dane.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3><i class="fas fa-download"></i> Czy mogę wyeksportować notatki?</h3>
-                        <p>Tak. Przejdź do <strong>Ustawienia → Dane → Eksportuj</strong>, aby pobrać notatki w czytelnym formacie.</p>
-                    </div>
+                    <div class="faq-item"><h3><i class="fas fa-sync-alt"></i> Jak przywrócić subskrypcję Premium?</h3><p>Przejdź do <strong>Ustawienia → Przywróć zakupy</strong> w aplikacji ORHAR. Upewnij się, że używasz tego samego konta Apple lub Google, którego użyto do zakupu.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-lock"></i> Czy moje notatki są bezpieczne?</h3><p>Absolutnie tak. Wszystkie notatki są szyfrowane. Nigdy nie czytamy ani nie sprzedajemy Twoich danych duchowych. Twoja prywatność jest święta.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-user-times"></i> Jak trwale usunąć konto?</h3><p>Przejdź do <strong>Ustawienia → Konto → Usuń konto</strong> w aplikacji. Ta czynność trwale usuwa Twoje konto i wszystkie powiązane dane.</p></div>
+                    <div class="faq-item"><h3><i class="fas fa-download"></i> Czy mogę wyeksportować notatki?</h3><p>Tak. Przejdź do <strong>Ustawienia → Dane → Eksportuj</strong>, aby pobrać notatki w czytelnym formacie.</p></div>
                 `,
                 contrib_html: `
-                    <a href="mailto:contact@orhar.com?subject=Propozycja%20Modlitwy" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-hands-praying"></i></div>
-                        <div class="contribute-content">
-                            <h4>Zaproponuj Modlitwę</h4>
-                            <p>Podziel się modlitwą, która pobłogosławi wspólnotę</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Propozycja%20Funkcji" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-lightbulb"></i></div>
-                        <div class="contribute-content">
-                            <h4>Zaproponuj Funkcję</h4>
-                            <p>Pomysły, które uczynią ORHAR jeszcze lepszym</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Wk%C5%82ad%20Tre%C5%9Bci" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div>
-                        <div class="contribute-content">
-                            <h4>Wkład Treści</h4>
-                            <p>Pomóż nam pisać treści biblijne</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@orhar.com?subject=Udost%C4%99pnij%20ORHAR" class="contribute-item">
-                        <div class="contribute-icon"><i class="fas fa-share-alt"></i></div>
-                        <div class="contribute-content">
-                            <h4>Podziel się Słowem</h4>
-                            <p>Podziel się ORHAR ze swoją wspólnotą</p>
-                        </div>
-                    </a>
+                    <a href="mailto:contact@orhar.com?subject=Propozycja%20Modlitwy" class="contribute-item"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Zaproponuj Modlitwę</h4><p>Podziel się modlitwą, która pobłogosławi wspólnotę</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Propozycja%20Funkcji" class="contribute-item"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Zaproponuj Funkcję</h4><p>Pomysły, które uczynią ORHAR jeszcze lepszym</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Wk%C5%82ad%20Tre%C5%9Bci" class="contribute-item"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Wkład Treści</h4><p>Pomóż nam pisać treści biblijne</p></div></a>
+                    <a href="mailto:contact@orhar.com?subject=Udost%C4%99pnij%20ORHAR" class="contribute-item"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Podziel się Słowem</h4><p>Podziel się ORHAR ze swoją wspólnotą</p></div></a>
                 `
             }
         };
 
-        // ========== LANGUAGE SWITCHER ==========
         function changeLang(lang) {
-            // Update all data-i18n elements
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (contactData[lang] && contactData[lang][key] !== undefined) {
-                    // For elements that might contain HTML (like FAQ), use innerHTML
-                    if (key === 'faq_html' || key === 'contrib_html') {
-                        // Skip these - handled separately
-                        return;
-                    }
+                    if (key === 'faq_html' || key === 'contrib_html') return;
                     el.textContent = contactData[lang][key];
                 }
             });
             
-            // Inject FAQ HTML
             const faqDiv = document.getElementById('faq-content');
-            if (contactData[lang] && contactData[lang].faq_html) {
-                faqDiv.innerHTML = contactData[lang].faq_html;
-            }
+            if (contactData[lang] && contactData[lang].faq_html) faqDiv.innerHTML = contactData[lang].faq_html;
             
-            // Inject Contribute HTML
             const contribDiv = document.getElementById('contribute-content');
-            if (contactData[lang] && contactData[lang].contrib_html) {
-                contribDiv.innerHTML = contactData[lang].contrib_html;
-            }
+            if (contactData[lang] && contactData[lang].contrib_html) contribDiv.innerHTML = contactData[lang].contrib_html;
 
             localStorage.setItem('orhar_lang', lang);
             document.documentElement.lang = lang;
         }
 
-        // ========== INITIALIZATION ==========
         document.addEventListener("DOMContentLoaded", () => {
             const savedLang = localStorage.getItem('orhar_lang');
             const browserLang = navigator.language.slice(0, 2);
             const supported = ['en', 'fr', 'es', 'de', 'it', 'pt', 'pl'];
-            
             let initLang = 'en'; 
-            if (savedLang && supported.includes(savedLang)) {
-                initLang = savedLang;
-            } else if (supported.includes(browserLang)) {
-                initLang = browserLang;
-            }
-            
+            if (savedLang && supported.includes(savedLang)) initLang = savedLang;
+            else if (supported.includes(browserLang)) initLang = browserLang;
             document.getElementById('langSwitch').value = initLang;
             changeLang(initLang);
         });

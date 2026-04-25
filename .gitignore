@@ -1,0 +1,27 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux system files
+*~
+
+# Log files
+*.log
+
+# Editor files (VS Code, etc.)
+.vscode/
+.idea/
+
+# Local development server
+.serve/
+
+# Sensitive config (if you ever add one)
+.env
+.env.local

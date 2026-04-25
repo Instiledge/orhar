@@ -77,15 +77,15 @@ Language is auto-detected from the browser and can be switched via the dropdown 
 ## 📁 File Structure
 
 orhar-website/
-├── index.html # Homepage — hero, features, theme picker
-├── contact.html # Contact & Support — FAQ, donate, contribute
-├── privacy.html # Privacy Policy — complete legal document
-├── terms.html # Terms of Service — complete legal document
-├── licenses.html # Open Source Licenses — third-party attributions
-├── action.html # Firebase Auth — password reset, email verification
-├── logo.png # ORHAR Logo (light background)
-├── logo-dark.png # ORHAR Logo (dark background)
-└── README.md # This file
+- ├── index.html # Homepage — hero, features, theme picker
+- ├── contact.html # Contact & Support — FAQ, donate, contribute
+- ├── privacy.html # Privacy Policy — complete legal document
+- ├── terms.html # Terms of Service — complete legal document
+- ├── licenses.html # Open Source Licenses — third-party attributions
+- ├── action.html # Firebase Auth — password reset, email verification
+- ├── logo.png # ORHAR Logo (light background)
+- ├── logo-dark.png # ORHAR Logo (dark background)
+- └── README.md # This file
 
 
 ## 📄 License

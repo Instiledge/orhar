@@ -15,69 +15,536 @@
             --bg-color: #FCFBF8;
             --surface-color: #FFFFFF;
             --primary-navy: #1A2E4A;
-            --header-bg: #FCFBF8;
+            --header-bg: rgba(252, 251, 248, 0.95);
             --accent-gold: #CFB286;
+            --accent-gold-rgb: 207, 178, 134;
             --accent-brown: #915B27;
+            --accent-brown-rgb: 145, 91, 39;
             --text-dark: #1e1e1e;
-            --text-muted: #4a5568; 
+            --text-muted: #7f8c8d;
+            --card-shadow: 0 10px 40px rgba(0,0,0,0.06);
             
             --font-display: 'Cormorant Garamond', serif;
             --font-body: 'Work Sans', sans-serif;
+            --theme-transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-body); background-color: var(--bg-color); color: var(--text-dark); line-height: 1.7; }
-        h1, h2, h3, h4 { font-family: var(--font-display); color: var(--primary-navy); }
-        a { text-decoration: none; color: var(--accent-brown); font-weight: 500; }
-        a:hover { text-decoration: underline; }
+        
+        html { scroll-behavior: smooth; }
+        
+        body { 
+            font-family: var(--font-body); 
+            background-color: var(--bg-color); 
+            color: var(--text-dark); 
+            line-height: 1.7; 
+            transition: var(--theme-transition);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        h1, h2, h3, h4 { 
+            font-family: var(--font-display); 
+            color: var(--primary-navy); 
+            transition: var(--theme-transition); 
+        }
+        
+        a { 
+            text-decoration: none; 
+            color: var(--primary-navy); 
+            transition: var(--theme-transition); 
+        }
+        
+        a:hover { color: var(--accent-brown); }
 
-        /* Header & Nav */
-        header { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: var(--header-bg); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--accent-gold); }
-        .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none !important; }
-        .logo-img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; }
-        .logo-text { font-family: var(--font-display); font-size: 24px; font-weight: 700; letter-spacing: 2px; color: var(--primary-navy); text-decoration: none !important; }
-        .nav-links { display: flex; gap: 25px; align-items: center; }
-        .nav-links a { font-size: 15px; font-weight: 500; color: var(--primary-navy); text-decoration: none; }
-        .nav-links a:hover { color: var(--accent-brown); text-decoration: none; }
+        /* ========== HEADER ========== */
+        header { 
+            padding: 16px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: var(--header-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid rgba(var(--accent-gold-rgb), 0.3); 
+            transition: var(--theme-transition);
+        }
         
-        /* Language Switcher */
-        .lang-select { background: transparent; border: 1px solid var(--accent-gold); color: var(--primary-navy); padding: 5px 10px; border-radius: 6px; font-family: var(--font-body); font-weight: 500; cursor: pointer; outline: none; }
+        .logo-container { 
+            display: flex; 
+            align-items: center; 
+            gap: 14px; 
+            text-decoration: none !important;
+        }
+        
+        .logo-img { 
+            width: 48px; 
+            height: 48px; 
+            border-radius: 12px; 
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(var(--accent-gold-rgb), 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .logo-container:hover .logo-img {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(var(--accent-gold-rgb), 0.4);
+        }
+        
+        .logo-text { 
+            font-family: var(--font-display); 
+            font-size: 26px; 
+            font-weight: 700; 
+            letter-spacing: 3px; 
+            color: var(--primary-navy);
+            transition: var(--theme-transition);
+        }
+        
+        .nav-links { 
+            display: flex; 
+            gap: 28px; 
+            align-items: center; 
+        }
+        
+        .nav-links a { 
+            font-size: 15px; 
+            font-weight: 500;
+            position: relative;
+            padding: 4px 0;
+            transition: color 0.3s ease;
+            color: var(--primary-navy);
+            text-decoration: none;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-brown);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .nav-links a.active {
+            color: var(--accent-brown);
+        }
+        
+        .lang-select { 
+            background: transparent; 
+            border: 1.5px solid var(--accent-gold); 
+            color: var(--primary-navy); 
+            padding: 8px 14px; 
+            border-radius: 8px; 
+            font-family: var(--font-body); 
+            font-weight: 500; 
+            cursor: pointer; 
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-select:hover { 
+            border-color: var(--accent-brown);
+            box-shadow: 0 2px 8px rgba(var(--accent-brown-rgb), 0.15);
+        }
 
-        /* Legal Content */
-        .legal-wrapper { max-width: 800px; margin: 60px auto; padding: 0 5%; }
-        .legal-wrapper h1 { font-size: 42px; margin-bottom: 10px; text-align: center; }
-        .eff-date { text-align: center; color: var(--text-muted); margin-bottom: 50px; font-style: italic; }
+        /* ========== LEGAL WRAPPER ========== */
+        .legal-wrapper { 
+            max-width: 900px; 
+            margin: 80px auto; 
+            padding: 0 5%; 
+        }
         
-        .highlight-box { background-color: rgba(207, 178, 134, 0.1); border-left: 4px solid var(--accent-gold); padding: 25px; border-radius: 0 12px 12px 0; margin-bottom: 40px;}
-        .highlight-box h3 { margin-bottom: 10px; color: var(--accent-brown); font-size: 24px;}
+        /* ========== HERO ========== */
+        .legal-hero { 
+            text-align: center; 
+            margin-bottom: 60px;
+            position: relative;
+        }
         
-        .category-header { margin-top: 40px; margin-bottom: 20px; border-bottom: 1px solid rgba(207, 178, 134, 0.3); padding-bottom: 10px; font-size: 28px; }
+        .legal-badge {
+            display: inline-block;
+            background: rgba(var(--accent-gold-rgb), 0.15);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-brown);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+            font-family: var(--font-body);
+        }
         
-        .license-box { background: var(--surface-color); padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); margin-bottom: 20px; border-top: 3px solid var(--primary-navy); }
-        .license-name { font-size: 20px; font-weight: 600; color: var(--primary-navy); margin-bottom: 5px; font-family: var(--font-display); }
-        .license-type { font-size: 14px; color: var(--accent-brown); font-style: italic; margin-bottom: 15px; }
-        .license-description { font-size: 15px; color: var(--text-muted); margin-bottom: 15px; }
-        .license-details { font-size: 14px; color: var(--text-dark); }
-        .license-details strong { font-weight: 600; }
+        .legal-hero h1 { 
+            font-size: 52px; 
+            margin-bottom: 14px;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, var(--primary-navy), var(--accent-brown));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
         
-        pre { background-color: #f5f5f5; padding: 15px; border-radius: 8px; overflow-x: auto; font-size: 13px; font-family: monospace; border: 1px solid #ddd; margin-top: 15px; color: #333;}
-        details summary { cursor: pointer; color: var(--accent-brown); font-weight: 600; font-size: 15px; }
+        .eff-date { 
+            text-align: center; 
+            color: var(--text-muted); 
+            margin-bottom: 50px; 
+            font-style: italic;
+            font-size: 15px;
+        }
+        
+        /* ========== HIGHLIGHT BOX ========== */
+        .highlight-box { 
+            background: rgba(var(--accent-gold-rgb), 0.08);
+            border-left: 4px solid var(--accent-gold); 
+            padding: 28px 32px; 
+            border-radius: 0 16px 16px 0; 
+            margin-bottom: 50px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .highlight-box h3 { 
+            margin-bottom: 12px; 
+            color: var(--accent-brown); 
+            font-size: 26px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .highlight-box h3 i {
+            color: var(--accent-gold);
+            font-size: 24px;
+        }
+        
+        .highlight-box p {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+        
+        /* ========== CATEGORY HEADER ========== */
+        .category-header { 
+            margin-top: 50px; 
+            margin-bottom: 24px; 
+            padding-bottom: 14px;
+            font-size: 32px; 
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            border-bottom: 2px solid rgba(var(--accent-gold-rgb), 0.3);
+        }
+        
+        .category-header i {
+            color: var(--accent-brown);
+            font-size: 26px;
+        }
+        
+        .category-description {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+        
+        /* ========== LICENSE BOX ========== */
+        .license-box { 
+            background: var(--surface-color); 
+            padding: 28px 32px; 
+            border-radius: 16px; 
+            box-shadow: var(--card-shadow);
+            margin-bottom: 20px; 
+            border-left: 4px solid var(--primary-navy);
+            transition: all 0.3s ease;
+        }
+        
+        .license-box:hover {
+            transform: translateX(4px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+            border-left-color: var(--accent-brown);
+        }
+        
+        .license-name { 
+            font-size: 22px; 
+            font-weight: 700; 
+            color: var(--primary-navy); 
+            margin-bottom: 6px; 
+            font-family: var(--font-display);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .license-name .lib-icon {
+            font-size: 20px;
+            color: var(--accent-brown);
+        }
+        
+        .license-type { 
+            font-size: 13px; 
+            color: var(--accent-brown); 
+            font-style: italic; 
+            margin-bottom: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .license-description { 
+            font-size: 15px; 
+            color: var(--text-muted); 
+            margin-bottom: 14px;
+            line-height: 1.7;
+        }
+        
+        .license-details { 
+            font-size: 14px; 
+            color: var(--text-dark);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        .license-details span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(var(--accent-gold-rgb), 0.1);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+        
+        .license-details span i {
+            color: var(--accent-brown);
+            font-size: 12px;
+        }
+        
+        .license-details a {
+            color: var(--accent-brown);
+            font-weight: 600;
+        }
+        
+        /* ========== MIT SECTION ========== */
+        .mit-section {
+            margin-top: 50px;
+        }
+        
+        details { 
+            margin-top: 16px;
+        }
+        
+        details summary { 
+            cursor: pointer; 
+            color: var(--accent-brown); 
+            font-weight: 600; 
+            font-size: 15px;
+            padding: 12px 16px;
+            background: rgba(var(--accent-gold-rgb), 0.1);
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+        
+        details summary:hover {
+            background: rgba(var(--accent-gold-rgb), 0.2);
+        }
+        
+        pre { 
+            background: var(--surface-color);
+            padding: 20px; 
+            border-radius: 12px; 
+            overflow-x: auto; 
+            font-size: 13px; 
+            font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace; 
+            border: 1px solid rgba(var(--accent-gold-rgb), 0.2);
+            margin-top: 12px; 
+            color: var(--text-dark);
+            line-height: 1.6;
+            box-shadow: var(--card-shadow);
+        }
+        
+        /* ========== CONTACT ROW ========== */
+        .contact-row {
+            margin-top: 60px;
+            padding: 32px;
+            background: var(--surface-color);
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(var(--accent-gold-rgb), 0.3);
+        }
+        
+        .contact-row h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+        
+        .contact-row p {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .contact-row a {
+            color: var(--accent-brown);
+            font-weight: 700;
+        }
+        
+        .contact-row i {
+            color: var(--accent-gold);
+            margin-right: 8px;
+        }
 
-        /* Footer */
-        footer { background-color: var(--surface-color); padding: 60px 5% 30px; border-top: 1px solid var(--accent-gold); margin-top: 60px; }
-        .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; }
-        .footer-brand h2 { font-size: 32px; letter-spacing: 3px; margin-bottom: 5px; }
-        .footer-brand p { font-style: italic; color: var(--text-muted); font-family: var(--font-display); font-size: 18px; }
-        .footer-links { display: flex; gap: 20px; }
-        .footer-links a { font-size: 14px; color: var(--text-muted); text-decoration: none; }
-        .footer-links a:hover { color: var(--accent-brown); }
-        .copyright { text-align: center; margin-top: 40px; font-size: 13px; color: var(--text-muted); opacity: 0.8; }
+        /* ========== LEGAL SECTION ========== */
+        .legal-section {
+            padding: 60px 5%;
+            text-align: center;
+            background: var(--surface-color);
+            border-top: 1px solid rgba(var(--accent-gold-rgb), 0.3);
+            border-bottom: 1px solid rgba(var(--accent-gold-rgb), 0.3);
+            transition: var(--theme-transition);
+        }
+        
+        .legal-section h3 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        
+        .legal-subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        
+        .legal-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .legal-card {
+            background: var(--bg-color);
+            border: 1px solid rgba(var(--accent-gold-rgb), 0.2);
+            padding: 24px 32px;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+            min-width: 180px;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .legal-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-2px);
+            box-shadow: var(--card-shadow);
+        }
+        
+        .legal-card i {
+            font-size: 28px;
+            color: var(--accent-brown);
+            margin-bottom: 10px;
+        }
+        
+        .legal-card h4 {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-navy);
+            letter-spacing: 0.5px;
+        }
+        
+        .legal-card.active {
+            border-color: var(--accent-brown);
+            background: rgba(var(--accent-brown-rgb), 0.05);
+        }
 
+        /* ========== FOOTER ========== */
+        footer { 
+            background: linear-gradient(180deg, var(--primary-navy), #0f1f33); 
+            padding: 70px 5% 35px; 
+            border-top: 1px solid rgba(var(--accent-gold-rgb), 0.3); 
+            transition: var(--theme-transition);
+            color: #FFFFFF;
+        }
+        
+        .footer-content { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: flex-start; 
+            flex-wrap: wrap; 
+            gap: 40px; 
+        }
+        
+        .footer-brand h2 { 
+            font-size: 34px; 
+            letter-spacing: 4px; 
+            margin-bottom: 8px;
+            color: var(--accent-gold);
+        }
+        
+        .footer-brand p { 
+            font-style: italic; 
+            color: rgba(255,255,255,0.6); 
+            font-family: var(--font-display); 
+            font-size: 18px; 
+        }
+        
+        .footer-links { 
+            display: flex; 
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a { 
+            font-size: 14px; 
+            color: rgba(255,255,255,0.7);
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .copyright { 
+            text-align: center; 
+            margin-top: 40px; 
+            font-size: 13px; 
+            color: rgba(255,255,255,0.5); 
+            line-height: 1.8;
+        }
+
+        /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
-            .legal-wrapper h1 { font-size: 32px; }
-            .nav-links { flex-wrap: wrap; justify-content: center; margin-top: 15px; }
-            header { flex-direction: column; }
-            .footer-content { flex-direction: column; text-align: center; }
+            .legal-hero h1 { font-size: 38px; }
+            .category-header { font-size: 26px; }
+            .license-box { padding: 22px 24px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+            header { flex-direction: column; gap: 16px; }
+            .footer-content { flex-direction: column; text-align: center; align-items: center; }
+            .footer-links { justify-content: center; }
+        }
+
+        @media (max-width: 480px) {
+            .legal-hero h1 { font-size: 32px; }
+            .legal-wrapper { margin: 50px auto; }
+            .license-details { flex-direction: column; gap: 8px; }
         }
     </style>
 </head>
@@ -104,11 +571,36 @@
     </header>
 
     <main class="legal-wrapper">
-        <h1 data-i18n="l_title">Open Source Licenses</h1>
+        <!-- ========== HERO ========== -->
+        <div class="legal-hero">
+            <div class="legal-badge" data-i18n="l_badge">✦ Transparency & Gratitude</div>
+            <h1 data-i18n="l_title">Open Source Licenses</h1>
+        </div>
         <p class="eff-date" data-i18n="l_date">Last Updated: April 2026</p>
 
+        <!-- ========== DYNAMIC CONTENT ========== -->
         <div id="legal-content"></div>
     </main>
+
+    <!-- ========== LEGAL SECTION ========== -->
+    <section class="legal-section">
+        <h3 data-i18n="legal_title">Legal & Transparency</h3>
+        <p class="legal-subtitle" data-i18n="legal_sub">Your trust matters. Read our policies and licenses.</p>
+        <div class="legal-grid">
+            <a href="privacy.html" class="legal-card">
+                <i class="fas fa-shield-alt"></i>
+                <h4 data-i18n="foot_priv">Privacy Policy</h4>
+            </a>
+            <a href="terms.html" class="legal-card">
+                <i class="fas fa-scale-balanced"></i>
+                <h4 data-i18n="foot_terms">Terms of Service</h4>
+            </a>
+            <a href="licenses.html" class="legal-card active">
+                <i class="fas fa-file-contract"></i>
+                <h4 data-i18n="foot_lic">Open Source Licenses</h4>
+            </a>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-content">
@@ -132,8 +624,12 @@
     <script>
         const contactEmail = "contact@orhar.com";
 
-        // Pre-build the HTML string for the MIT license detail to keep the dictionaries clean
-        const mitLicenseText = `Permission is hereby granted, free of charge, to any person obtaining a copy
+        // MIT License text used across all languages
+        const mitLicenseText = `MIT License
+
+Copyright (c) [respective copyright holders]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -151,235 +647,644 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.`;
 
+        // ========== COMPLETE TRANSLATION DICTIONARY (7 LANGUAGES, 1:1 MAPPED) ==========
         const legalData = {
             en: {
-                nav_home: "Home", nav_contact: "Contact", l_title: "Open Source Licenses", l_date: "Last Updated: April 2026",
-                foot_made: "Made with ❤️ for the life of prayer.", foot_priv: "Privacy Policy", foot_terms: "Terms of Service", foot_lic: "Licenses", foot_rights: "All Rights Reserved.", foot_verse: "\"Your word is a lamp to my feet, a light to my path.\" — Psalm 119:105",
+                nav_home: "Home",
+                nav_contact: "Contact",
+                l_badge: "✦ Transparency & Gratitude",
+                l_title: "Open Source Licenses",
+                l_date: "Last Updated: April 2026",
+                legal_title: "Legal & Transparency",
+                legal_sub: "Your trust matters. Read our policies and licenses.",
+                foot_made: "Made with ❤️ for the life of prayer.",
+                foot_priv: "Privacy Policy",
+                foot_terms: "Terms of Service",
+                foot_lic: "Open Source Licenses",
+                foot_rights: "All Rights Reserved.",
+                foot_verse: "\"Your word is a lamp to my feet, a light to my path.\" — Psalm 119:105",
                 html: `
                     <div class="highlight-box">
-                        <h3>Acknowledgment</h3>
+                        <h3><i class="fas fa-heart"></i> Acknowledgment</h3>
                         <p>ORHAR is built with gratitude on the shoulders of the open-source community. This page lists the third-party libraries, frameworks, and services that make our application possible. We are deeply thankful to all the developers and organizations who contribute their work freely to advance technology and innovation.</p>
                     </div>
 
-                    <h2 class="category-header">Core Framework & Development Tools</h2>
+                    <h2 class="category-header"><i class="fas fa-code"></i> Core Framework & Development Tools</h2>
                     
                     <div class="license-box">
-                        <div class="license-name">React Native</div>
+                        <div class="license-name"><span class="lib-icon"><i class="fab fa-react"></i></span> React Native</div>
                         <div class="license-type">MIT License</div>
                         <div class="license-description">A framework for building native mobile applications using React. React Native enables ORHAR to provide a seamless cross-platform experience on both iOS and Android.</div>
                         <div class="license-details">
-                            <p><strong>Copyright:</strong> Meta Platforms, Inc. and affiliates</p>
-                            <p><strong>Website:</strong> <a href="https://reactnative.dev" target="_blank">https://reactnative.dev</a></p>
+                            <span><i class="fas fa-copyright"></i> Meta Platforms, Inc.</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://reactnative.dev" target="_blank">reactnative.dev</a></span>
                         </div>
                     </div>
 
                     <div class="license-box">
-                        <div class="license-name">Expo</div>
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-cube"></i></span> Expo</div>
                         <div class="license-type">MIT License</div>
                         <div class="license-description">An open-source platform for making universal native apps with React that run on Android, iOS, and the web. Expo provides the development environment, build system, and essential native APIs.</div>
                         <div class="license-details">
-                            <p><strong>Copyright:</strong> 650 Industries, Inc. (Expo)</p>
-                            <p><strong>Website:</strong> <a href="https://expo.dev" target="_blank">https://expo.dev</a></p>
+                            <span><i class="fas fa-copyright"></i> 650 Industries, Inc.</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://expo.dev" target="_blank">expo.dev</a></span>
                         </div>
                     </div>
 
                     <div class="license-box">
-                        <div class="license-name">Expo Application Services (EAS)</div>
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-rocket"></i></span> Expo Application Services (EAS)</div>
                         <div class="license-type">Commercial Service (Free Tier Available)</div>
                         <div class="license-description">EAS Build, Submit, and Update services are used to build, distribute, and update the ORHAR application across app stores.</div>
                         <div class="license-details">
-                            <p><strong>Provider:</strong> Expo (650 Industries, Inc.)</p>
-                            <p><strong>Website:</strong> <a href="https://expo.dev/eas" target="_blank">https://expo.dev/eas</a></p>
+                            <span><i class="fas fa-copyright"></i> Expo (650 Industries, Inc.)</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://expo.dev/eas" target="_blank">expo.dev/eas</a></span>
                         </div>
                     </div>
 
-                    <h2 class="category-header">Backend & Cloud Services</h2>
+                    <h2 class="category-header"><i class="fas fa-cloud"></i> Backend & Cloud Services</h2>
 
                     <div class="license-box">
-                        <div class="license-name">Firebase</div>
-                        <div class="license-type">Proprietary (Google Cloud Platform)</div>
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-database"></i></span> Firebase</div>
+                        <div class="license-type">Proprietary (Google Cloud Platform) — SDK: Apache 2.0</div>
                         <div class="license-description">Firebase provides the backend infrastructure for ORHAR, including Firebase Authentication, Cloud Firestore for data sync, and Firebase Cloud Messaging for push notifications.</div>
                         <div class="license-details">
-                            <p><strong>Provider:</strong> Google LLC</p>
-                            <p><strong>Website:</strong> <a href="https://firebase.google.com" target="_blank">https://firebase.google.com</a></p>
-                            <p><strong>Note:</strong> The Firebase JavaScript SDK is open-source under Apache License 2.0</p>
+                            <span><i class="fas fa-copyright"></i> Google LLC</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://firebase.google.com" target="_blank">firebase.google.com</a></span>
                         </div>
                     </div>
 
-                    <h2 class="category-header">Subscription & Monetization</h2>
+                    <h2 class="category-header"><i class="fas fa-credit-card"></i> Subscription & Monetization</h2>
 
                     <div class="license-box">
-                        <div class="license-name">RevenueCat</div>
-                        <div class="license-type">Proprietary (Commercial Service)</div>
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-receipt"></i></span> RevenueCat</div>
+                        <div class="license-type">Proprietary (Commercial Service) — SDK: MIT License</div>
                         <div class="license-description">RevenueCat provides subscription infrastructure and analytics for ORHAR's Premium plan. It handles in-app purchase validation and cross-platform sync.</div>
                         <div class="license-details">
-                            <p><strong>Provider:</strong> RevenueCat, Inc.</p>
-                            <p><strong>Website:</strong> <a href="https://www.revenuecat.com" target="_blank">https://www.revenuecat.com</a></p>
-                            <p><strong>Note:</strong> The RevenueCat React Native SDK is open-source under MIT License</p>
+                            <span><i class="fas fa-copyright"></i> RevenueCat, Inc.</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://www.revenuecat.com" target="_blank">revenuecat.com</a></span>
                         </div>
                     </div>
 
-                    <h2 class="category-header">React Native Libraries (MIT Licensed)</h2>
-                    <p style="margin-bottom: 20px; color: var(--text-muted);">ORHAR uses numerous open-source React Native libraries, all licensed under the MIT License unless otherwise noted:</p>
+                    <h2 class="category-header"><i class="fas fa-puzzle-piece"></i> React Native Libraries (MIT Licensed)</h2>
+                    <p class="category-description">ORHAR uses numerous open-source React Native libraries, all licensed under the MIT License unless otherwise noted:</p>
 
                     <div class="license-box">
-                        <div class="license-name">React Navigation</div>
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-route"></i></span> React Navigation</div>
                         <div class="license-description">Routing and navigation library for React Native apps.</div>
                     </div>
                     <div class="license-box">
-                        <div class="license-name">React Native AsyncStorage</div>
-                        <div class="license-description">Persistent key-value storage system.</div>
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-memory"></i></span> React Native AsyncStorage</div>
+                        <div class="license-description">Persistent key-value storage system for React Native.</div>
                     </div>
                     <div class="license-box">
-                        <div class="license-name">React i18next</div>
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-language"></i></span> React i18next</div>
                         <div class="license-description">Internationalization framework enabling ORHAR's 7-language support.</div>
                     </div>
                     <div class="license-box">
-                        <div class="license-name">Expo Vector Icons</div>
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-icons"></i></span> Expo Vector Icons</div>
                         <div class="license-description">Icon sets including FontAwesome, MaterialIcons, and Ionicons.</div>
                     </div>
 
-                    <h2 class="category-header">Content & Data</h2>
+                    <h2 class="category-header"><i class="fas fa-book-open"></i> Content & Data</h2>
 
                     <div class="license-box">
-                        <div class="license-name">Bible Translations</div>
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-bible"></i></span> Bible Translations</div>
                         <div class="license-type">Various (Public Domain / Licensed Sources)</div>
                         <div class="license-description">ORHAR provides access to multiple Bible translations. Most are in the public domain or used under explicit permission. Users should refer to individual Bible version attributions within the app for specific copyright and usage terms.</div>
                     </div>
 
                     <div class="license-box">
-                        <div class="license-name">Catechism of the Catholic Church (CEC)</div>
-                        <div class="license-type">Copyright (Libreria Editrice Vaticana)</div>
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-church"></i></span> Catechism of the Catholic Church (CEC)</div>
+                        <div class="license-type">Copyright © Libreria Editrice Vaticana</div>
                         <div class="license-description">The complete text of the Catechism is provided for non-commercial, educational, and devotional use.</div>
                         <div class="license-details">
-                            <p><strong>Copyright Holder:</strong> Libreria Editrice Vaticana</p>
+                            <span><i class="fas fa-copyright"></i> Libreria Editrice Vaticana</span>
                         </div>
                     </div>
 
-                    <div class="highlight-box" style="margin-top: 60px;">
-                        <h3>MIT License Standard Terms</h3>
-                        <p style="margin-bottom:15px;">Most of the open-source libraries used in ORHAR are licensed under the MIT License, which permits commercial and non-commercial use, modification, and distribution, under the condition that the original copyright notice is included.</p>
+                    <div class="highlight-box mit-section">
+                        <h3><i class="fas fa-balance-scale"></i> MIT License Standard Terms</h3>
+                        <p style="margin-bottom:16px;">Most of the open-source libraries used in ORHAR are licensed under the MIT License, which permits commercial and non-commercial use, modification, and distribution, under the condition that the original copyright notice is included.</p>
                         <details>
-                            <summary>View Full MIT License Text</summary>
+                            <summary>📄 View Full MIT License Text</summary>
                             <pre>${mitLicenseText}</pre>
                         </details>
                     </div>
 
-                    <h2 class="category-header">Contact & Contributions</h2>
-                    <p>If you believe any attribution is missing, incorrect, or if you have questions about the licenses used in ORHAR, please contact us at <strong><a href="mailto:${contactEmail}">${contactEmail}</a></strong>. We are committed to full compliance with all open-source licenses and intellectual property rights.</p>
+                    <div class="contact-row">
+                        <h2><i class="fas fa-envelope"></i> Contact & Contributions</h2>
+                        <p>If you believe any attribution is missing, incorrect, or if you have questions about the licenses used in ORHAR, please contact us at <a href="mailto:${contactEmail}">${contactEmail}</a>. We are committed to full compliance with all open-source licenses and intellectual property rights.</p>
+                    </div>
                 `
             },
             fr: {
-                nav_home: "Accueil", nav_contact: "Contact", l_title: "Licences Open Source", l_date: "Dernière mise à jour : Avril 2026",
-                foot_made: "Fait avec ❤️ pour la vie de prière.", foot_priv: "Politique de Confidentialité", foot_terms: "Conditions d'Utilisation", foot_lic: "Licences", foot_rights: "Tous droits réservés.", foot_verse: "\"Ta parole est une lampe à mes pieds...\" — Psaume 119:105",
+                nav_home: "Accueil",
+                nav_contact: "Contact",
+                l_badge: "✦ Transparence & Gratitude",
+                l_title: "Licences Open Source",
+                l_date: "Dernière mise à jour : Avril 2026",
+                legal_title: "Légal & Transparence",
+                legal_sub: "Votre confiance compte. Consultez nos politiques et licences.",
+                foot_made: "Fait avec ❤️ pour la vie de prière.",
+                foot_priv: "Politique de Confidentialité",
+                foot_terms: "Conditions d'Utilisation",
+                foot_lic: "Licences Open Source",
+                foot_rights: "Tous droits réservés.",
+                foot_verse: "\"Ta parole est une lampe à mes pieds, une lumière sur mon sentier.\" — Psaume 119:105",
                 html: `
                     <div class="highlight-box">
-                        <h3>Remerciements</h3>
-                        <p>ORHAR est construit avec gratitude sur les épaules de la communauté open-source. Cette page liste les bibliothèques tierces, frameworks et services qui rendent notre application possible.</p>
+                        <h3><i class="fas fa-heart"></i> Remerciements</h3>
+                        <p>ORHAR est construit avec gratitude sur les épaules de la communauté open-source. Cette page répertorie les bibliothèques tierces, les frameworks et les services qui rendent notre application possible. Nous sommes profondément reconnaissants envers tous les développeurs et organisations qui contribuent librement à faire avancer la technologie.</p>
                     </div>
-                    <h2 class="category-header">Framework Principal & Outils de Développement</h2>
-                    <div class="license-box"><div class="license-name">React Native</div><div class="license-type">Licence MIT</div><div class="license-description">Un framework pour créer des applications mobiles natives utilisant React.</div></div>
-                    <div class="license-box"><div class="license-name">Expo</div><div class="license-type">Licence MIT</div><div class="license-description">Une plateforme open-source pour créer des applications natives universelles.</div></div>
-                    <h2 class="category-header">Backend & Services Cloud</h2>
-                    <div class="license-box"><div class="license-name">Firebase</div><div class="license-type">Propriétaire (Google Cloud Platform)</div><div class="license-description">Firebase fournit l'infrastructure backend pour ORHAR. (Le SDK JavaScript Firebase est sous Licence Apache 2.0).</div></div>
-                    <h2 class="category-header">Abonnement & Monétisation</h2>
-                    <div class="license-box"><div class="license-name">RevenueCat</div><div class="license-type">Propriétaire</div><div class="license-description">Fournit l'infrastructure d'abonnement. (Le SDK React Native est open-source sous Licence MIT).</div></div>
-                    <h2 class="category-header">Bibliothèques React Native (Licence MIT)</h2>
-                    <p style="margin-bottom: 20px; color: var(--text-muted);">ORHAR utilise de nombreuses bibliothèques open-source (React Navigation, AsyncStorage, React i18next, Expo Vector Icons), toutes sous licence MIT.</p>
-                    <h2 class="category-header">Contenu & Données</h2>
-                    <div class="license-box"><div class="license-name">Traductions de la Bible</div><div class="license-type">Domaine Public / Sous Licence</div><div class="license-description">Veuillez vous référer aux attributions individuelles dans l'application pour les droits d'auteur spécifiques.</div></div>
-                    <div class="license-box"><div class="license-name">Catéchisme de l'Église Catholique (CEC)</div><div class="license-type">Copyright (Libreria Editrice Vaticana)</div><div class="license-description">Fourni pour un usage éducatif et dévotionnel non commercial.</div></div>
-                    <div class="highlight-box" style="margin-top: 60px;">
-                        <h3>Conditions Standards de la Licence MIT</h3>
-                        <p style="margin-bottom:15px;">La plupart des bibliothèques open-source utilisées dans ORHAR sont sous Licence MIT.</p>
-                        <details><summary>Voir le texte complet de la licence MIT (Anglais)</summary><pre>${mitLicenseText}</pre></details>
+
+                    <h2 class="category-header"><i class="fas fa-code"></i> Framework Principal & Outils de Développement</h2>
+                    
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fab fa-react"></i></span> React Native</div>
+                        <div class="license-type">Licence MIT</div>
+                        <div class="license-description">Un framework pour créer des applications mobiles natives avec React. React Native permet à ORHAR d'offrir une expérience multiplateforme fluide sur iOS et Android.</div>
+                        <div class="license-details">
+                            <span><i class="fas fa-copyright"></i> Meta Platforms, Inc.</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://reactnative.dev" target="_blank">reactnative.dev</a></span>
+                        </div>
                     </div>
-                    <h2 class="category-header">Contact & Contributions</h2>
-                    <p>Pour toute question sur les licences : <strong><a href="mailto:${contactEmail}">${contactEmail}</a></strong></p>
+
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-cube"></i></span> Expo</div>
+                        <div class="license-type">Licence MIT</div>
+                        <div class="license-description">Une plateforme open-source pour créer des applications natives universelles avec React, fonctionnant sur Android, iOS et le web.</div>
+                        <div class="license-details">
+                            <span><i class="fas fa-copyright"></i> 650 Industries, Inc.</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://expo.dev" target="_blank">expo.dev</a></span>
+                        </div>
+                    </div>
+
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-rocket"></i></span> Expo Application Services (EAS)</div>
+                        <div class="license-type">Service Commercial (Niveau Gratuit Disponible)</div>
+                        <div class="license-description">Les services EAS Build, Submit et Update sont utilisés pour compiler, distribuer et mettre à jour l'application ORHAR sur les boutiques d'applications.</div>
+                        <div class="license-details">
+                            <span><i class="fas fa-copyright"></i> Expo (650 Industries, Inc.)</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://expo.dev/eas" target="_blank">expo.dev/eas</a></span>
+                        </div>
+                    </div>
+
+                    <h2 class="category-header"><i class="fas fa-cloud"></i> Backend & Services Cloud</h2>
+
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-database"></i></span> Firebase</div>
+                        <div class="license-type">Propriétaire (Google Cloud Platform) — SDK : Apache 2.0</div>
+                        <div class="license-description">Firebase fournit l'infrastructure backend d'ORHAR, incluant l'authentification, Cloud Firestore pour la synchronisation des données et Firebase Cloud Messaging pour les notifications push.</div>
+                        <div class="license-details">
+                            <span><i class="fas fa-copyright"></i> Google LLC</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://firebase.google.com" target="_blank">firebase.google.com</a></span>
+                        </div>
+                    </div>
+
+                    <h2 class="category-header"><i class="fas fa-credit-card"></i> Abonnement & Monétisation</h2>
+
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-receipt"></i></span> RevenueCat</div>
+                        <div class="license-type">Propriétaire (Service Commercial) — SDK : Licence MIT</div>
+                        <div class="license-description">RevenueCat fournit l'infrastructure d'abonnement pour le plan Premium d'ORHAR. Il gère la validation des achats intégrés et la synchronisation multiplateforme.</div>
+                        <div class="license-details">
+                            <span><i class="fas fa-copyright"></i> RevenueCat, Inc.</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://www.revenuecat.com" target="_blank">revenuecat.com</a></span>
+                        </div>
+                    </div>
+
+                    <h2 class="category-header"><i class="fas fa-puzzle-piece"></i> Bibliothèques React Native (Licence MIT)</h2>
+                    <p class="category-description">ORHAR utilise de nombreuses bibliothèques open-source React Native, toutes sous licence MIT sauf indication contraire :</p>
+
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-route"></i></span> React Navigation</div><div class="license-description">Bibliothèque de routage et de navigation pour applications React Native.</div></div>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-memory"></i></span> React Native AsyncStorage</div><div class="license-description">Système de stockage persistant clé-valeur pour React Native.</div></div>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-language"></i></span> React i18next</div><div class="license-description">Framework d'internationalisation permettant le support des 7 langues d'ORHAR.</div></div>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-icons"></i></span> Expo Vector Icons</div><div class="license-description">Ensembles d'icônes incluant FontAwesome, MaterialIcons et Ionicons.</div></div>
+
+                    <h2 class="category-header"><i class="fas fa-book-open"></i> Contenu & Données</h2>
+
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-bible"></i></span> Traductions de la Bible</div>
+                        <div class="license-type">Divers (Domaine Public / Sources Sous Licence)</div>
+                        <div class="license-description">ORHAR donne accès à plusieurs traductions de la Bible. La plupart sont dans le domaine public ou utilisées avec autorisation explicite. Les utilisateurs doivent se référer aux attributions individuelles dans l'application.</div>
+                    </div>
+
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-church"></i></span> Catéchisme de l'Église Catholique (CEC)</div>
+                        <div class="license-type">Copyright © Libreria Editrice Vaticana</div>
+                        <div class="license-description">Le texte complet du Catéchisme est fourni pour un usage non commercial, éducatif et dévotionnel.</div>
+                        <div class="license-details">
+                            <span><i class="fas fa-copyright"></i> Libreria Editrice Vaticana</span>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box mit-section">
+                        <h3><i class="fas fa-balance-scale"></i> Conditions Standard de la Licence MIT</h3>
+                        <p style="margin-bottom:16px;">La plupart des bibliothèques open-source utilisées dans ORHAR sont sous licence MIT, qui permet l'utilisation commerciale et non commerciale, la modification et la distribution, à condition que la mention originale du droit d'auteur soit incluse.</p>
+                        <details>
+                            <summary>📄 Voir le texte complet de la licence MIT (Anglais)</summary>
+                            <pre>${mitLicenseText}</pre>
+                        </details>
+                    </div>
+
+                    <div class="contact-row">
+                        <h2><i class="fas fa-envelope"></i> Contact & Contributions</h2>
+                        <p>Si vous pensez qu'une attribution est manquante ou incorrecte, ou pour toute question sur les licences : <a href="mailto:${contactEmail}">${contactEmail}</a>. Nous nous engageons à respecter pleinement toutes les licences open-source.</p>
+                    </div>
                 `
             },
             es: {
-                nav_home: "Inicio", nav_contact: "Contacto", l_title: "Licencias de Código Abierto", l_date: "Última actualización: Abril de 2026",
-                foot_made: "Hecho con ❤️ para la vida de oración.", foot_priv: "Privacidad", foot_terms: "Términos", foot_lic: "Licencias", foot_rights: "Todos los derechos reservados.", foot_verse: "\"Lámpara es a mis pies tu palabra...\" — Salmo 119:105",
+                nav_home: "Inicio",
+                nav_contact: "Contacto",
+                l_badge: "✦ Transparencia y Gratitud",
+                l_title: "Licencias de Código Abierto",
+                l_date: "Última actualización: Abril de 2026",
+                legal_title: "Legal y Transparencia",
+                legal_sub: "Tu confianza importa. Lee nuestras políticas y licencias.",
+                foot_made: "Hecho con ❤️ para la vida de oración.",
+                foot_priv: "Política de Privacidad",
+                foot_terms: "Términos de Servicio",
+                foot_lic: "Licencias de Código Abierto",
+                foot_rights: "Todos los derechos reservados.",
+                foot_verse: "\"Lámpara es a mis pies tu palabra, y lumbrera a mi camino.\" — Salmo 119:105",
                 html: `
-                    <div class="highlight-box"><h3>Agradecimiento</h3><p>ORHAR se ha creado gracias a la comunidad de código abierto. Agradecemos a los desarrolladores su trabajo.</p></div>
-                    <h2 class="category-header">Herramientas de Desarrollo</h2>
-                    <div class="license-box"><div class="license-name">React Native & Expo</div><div class="license-type">Licencia MIT</div><div class="license-description">Frameworks para crear aplicaciones móviles multiplataforma.</div></div>
-                    <h2 class="category-header">Servicios en la Nube</h2>
-                    <div class="license-box"><div class="license-name">Firebase & RevenueCat</div><div class="license-type">Propietario / SDKs MIT & Apache</div><div class="license-description">Infraestructura de backend y gestión de suscripciones.</div></div>
-                    <h2 class="category-header">Contenido</h2>
-                    <div class="license-box"><div class="license-name">Traducciones Bíblicas y CEC</div><div class="license-type">Dominio Público / Licenciado</div><div class="license-description">Consulte las atribuciones individuales dentro de la aplicación. (CEC: Copyright Libreria Editrice Vaticana).</div></div>
-                    <div class="highlight-box" style="margin-top: 60px;"><h3>Licencia MIT</h3><details><summary>Ver texto de la licencia MIT</summary><pre>${mitLicenseText}</pre></details></div>
-                    <h2 class="category-header">Contacto</h2><p>Dudas sobre licencias: <strong><a href="mailto:${contactEmail}">${contactEmail}</a></strong></p>
+                    <div class="highlight-box">
+                        <h3><i class="fas fa-heart"></i> Agradecimiento</h3>
+                        <p>ORHAR se construye con gratitud sobre los hombros de la comunidad de código abierto. Esta página enumera las bibliotecas, frameworks y servicios de terceros que hacen posible nuestra aplicación. Agradecemos profundamente a todos los desarrolladores y organizaciones que contribuyen libremente al avance de la tecnología.</p>
+                    </div>
+
+                    <h2 class="category-header"><i class="fas fa-code"></i> Framework Principal y Herramientas de Desarrollo</h2>
+                    
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fab fa-react"></i></span> React Native</div>
+                        <div class="license-type">Licencia MIT</div>
+                        <div class="license-description">Framework para crear aplicaciones móviles nativas con React. React Native permite a ORHAR ofrecer una experiencia multiplataforma fluida en iOS y Android.</div>
+                        <div class="license-details">
+                            <span><i class="fas fa-copyright"></i> Meta Platforms, Inc.</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://reactnative.dev" target="_blank">reactnative.dev</a></span>
+                        </div>
+                    </div>
+
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-cube"></i></span> Expo</div>
+                        <div class="license-type">Licencia MIT</div>
+                        <div class="license-description">Plataforma de código abierto para crear aplicaciones nativas universales con React que funcionan en Android, iOS y web.</div>
+                        <div class="license-details">
+                            <span><i class="fas fa-copyright"></i> 650 Industries, Inc.</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://expo.dev" target="_blank">expo.dev</a></span>
+                        </div>
+                    </div>
+
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-rocket"></i></span> Expo Application Services (EAS)</div>
+                        <div class="license-type">Servicio Comercial (Nivel Gratuito Disponible)</div>
+                        <div class="license-description">Los servicios EAS Build, Submit y Update se utilizan para compilar, distribuir y actualizar la aplicación ORHAR en las tiendas de aplicaciones.</div>
+                        <div class="license-details">
+                            <span><i class="fas fa-copyright"></i> Expo (650 Industries, Inc.)</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://expo.dev/eas" target="_blank">expo.dev/eas</a></span>
+                        </div>
+                    </div>
+
+                    <h2 class="category-header"><i class="fas fa-cloud"></i> Backend y Servicios en la Nube</h2>
+
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-database"></i></span> Firebase</div>
+                        <div class="license-type">Propietario (Google Cloud Platform) — SDK: Apache 2.0</div>
+                        <div class="license-description">Firebase proporciona la infraestructura backend de ORHAR, incluyendo autenticación, Cloud Firestore para sincronización de datos y Firebase Cloud Messaging para notificaciones push.</div>
+                        <div class="license-details">
+                            <span><i class="fas fa-copyright"></i> Google LLC</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://firebase.google.com" target="_blank">firebase.google.com</a></span>
+                        </div>
+                    </div>
+
+                    <h2 class="category-header"><i class="fas fa-credit-card"></i> Suscripción y Monetización</h2>
+
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-receipt"></i></span> RevenueCat</div>
+                        <div class="license-type">Propietario (Servicio Comercial) — SDK: Licencia MIT</div>
+                        <div class="license-description">RevenueCat proporciona la infraestructura de suscripción para el plan Premium de ORHAR. Gestiona la validación de compras y la sincronización multiplataforma.</div>
+                        <div class="license-details">
+                            <span><i class="fas fa-copyright"></i> RevenueCat, Inc.</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://www.revenuecat.com" target="_blank">revenuecat.com</a></span>
+                        </div>
+                    </div>
+
+                    <h2 class="category-header"><i class="fas fa-puzzle-piece"></i> Bibliotecas React Native (Licencia MIT)</h2>
+                    <p class="category-description">ORHAR utiliza numerosas bibliotecas de código abierto, todas bajo licencia MIT a menos que se indique lo contrario:</p>
+
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-route"></i></span> React Navigation</div><div class="license-description">Biblioteca de enrutamiento y navegación para aplicaciones React Native.</div></div>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-memory"></i></span> React Native AsyncStorage</div><div class="license-description">Sistema de almacenamiento persistente clave-valor para React Native.</div></div>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-language"></i></span> React i18next</div><div class="license-description">Framework de internacionalización que permite el soporte de 7 idiomas en ORHAR.</div></div>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-icons"></i></span> Expo Vector Icons</div><div class="license-description">Conjuntos de iconos incluyendo FontAwesome, MaterialIcons e Ionicons.</div></div>
+
+                    <h2 class="category-header"><i class="fas fa-book-open"></i> Contenido y Datos</h2>
+
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-bible"></i></span> Traducciones de la Biblia</div>
+                        <div class="license-type">Varias (Dominio Público / Fuentes con Licencia)</div>
+                        <div class="license-description">ORHAR proporciona acceso a múltiples traducciones de la Biblia. La mayoría son de dominio público o se usan con permiso explícito. Consulte las atribuciones individuales en la aplicación.</div>
+                    </div>
+
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-church"></i></span> Catecismo de la Iglesia Católica (CEC)</div>
+                        <div class="license-type">Copyright © Libreria Editrice Vaticana</div>
+                        <div class="license-description">El texto completo del Catecismo se proporciona para uso no comercial, educativo y devocional.</div>
+                        <div class="license-details">
+                            <span><i class="fas fa-copyright"></i> Libreria Editrice Vaticana</span>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box mit-section">
+                        <h3><i class="fas fa-balance-scale"></i> Términos Estándar de la Licencia MIT</h3>
+                        <p style="margin-bottom:16px;">La mayoría de las bibliotecas utilizadas en ORHAR están bajo la Licencia MIT, que permite el uso comercial y no comercial, la modificación y la distribución, siempre que se incluya el aviso de copyright original.</p>
+                        <details>
+                            <summary>📄 Ver texto completo de la Licencia MIT</summary>
+                            <pre>${mitLicenseText}</pre>
+                        </details>
+                    </div>
+
+                    <div class="contact-row">
+                        <h2><i class="fas fa-envelope"></i> Contacto y Contribuciones</h2>
+                        <p>Si cree que falta alguna atribución o es incorrecta, o tiene preguntas sobre las licencias: <a href="mailto:${contactEmail}">${contactEmail}</a>. Estamos comprometidos con el pleno cumplimiento de todas las licencias.</p>
+                    </div>
                 `
             },
             de: {
-                nav_home: "Startseite", nav_contact: "Kontakt", l_title: "Open Source Lizenzen", l_date: "Zuletzt aktualisiert: April 2026",
-                foot_made: "Gemacht mit ❤️ für das Gebetsleben.", foot_priv: "Datenschutz", foot_terms: "Bedingungen", foot_lic: "Lizenzen", foot_rights: "Alle Rechte vorbehalten.", foot_verse: "\"Dein Wort ist meines Fußes Leuchte...\" — Psalm 119:105",
+                nav_home: "Startseite",
+                nav_contact: "Kontakt",
+                l_badge: "✦ Transparenz & Dankbarkeit",
+                l_title: "Open Source Lizenzen",
+                l_date: "Zuletzt aktualisiert: April 2026",
+                legal_title: "Rechtliches & Transparenz",
+                legal_sub: "Dein Vertrauen zählt. Lies unsere Richtlinien und Lizenzen.",
+                foot_made: "Gemacht mit ❤️ für das Leben im Gebet.",
+                foot_priv: "Datenschutzerklärung",
+                foot_terms: "Nutzungsbedingungen",
+                foot_lic: "Open-Source-Lizenzen",
+                foot_rights: "Alle Rechte vorbehalten.",
+                foot_verse: "\"Dein Wort ist meines Fußes Leuchte und ein Licht auf meinem Wege.\" — Psalm 119:105",
                 html: `
-                    <div class="highlight-box"><h3>Danksagung</h3><p>ORHAR wurde dank der Open-Source-Community entwickelt. Wir danken allen Entwicklern.</p></div>
-                    <h2 class="category-header">Entwicklungswerkzeuge</h2>
-                    <div class="license-box"><div class="license-name">React Native & Expo</div><div class="license-type">MIT Lizenz</div><div class="license-description">Frameworks zur Erstellung plattformübergreifender mobiler Anwendungen.</div></div>
-                    <h2 class="category-header">Cloud-Dienste</h2>
-                    <div class="license-box"><div class="license-name">Firebase & RevenueCat</div><div class="license-type">Proprietär / SDKs unter MIT & Apache</div><div class="license-description">Backend-Infrastruktur und Abonnementverwaltung.</div></div>
-                    <h2 class="category-header">Inhalt</h2>
-                    <div class="license-box"><div class="license-name">Bibelübersetzungen & CEC</div><div class="license-type">Gemeinfrei / Lizenziert</div><div class="license-description">Bitte beachten Sie die individuellen Zuschreibungen in der App.</div></div>
-                    <div class="highlight-box" style="margin-top: 60px;"><h3>MIT Lizenz</h3><details><summary>MIT Lizenztext anzeigen</summary><pre>${mitLicenseText}</pre></details></div>
-                    <h2 class="category-header">Kontakt</h2><p>Fragen zu Lizenzen: <strong><a href="mailto:${contactEmail}">${contactEmail}</a></strong></p>
+                    <div class="highlight-box">
+                        <h3><i class="fas fa-heart"></i> Danksagung</h3>
+                        <p>ORHAR wurde mit Dankbarkeit auf den Schultern der Open-Source-Community aufgebaut. Diese Seite listet die Bibliotheken, Frameworks und Dienste von Drittanbietern auf, die unsere Anwendung ermöglichen. Wir danken allen Entwicklern und Organisationen.</p>
+                    </div>
+
+                    <h2 class="category-header"><i class="fas fa-code"></i> Kern-Framework & Entwicklungswerkzeuge</h2>
+                    
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fab fa-react"></i></span> React Native</div>
+                        <div class="license-type">MIT Lizenz</div>
+                        <div class="license-description">Framework zur Erstellung nativer mobiler Apps mit React. Ermöglicht ORHAR eine nahtlose plattformübergreifende Erfahrung.</div>
+                        <div class="license-details">
+                            <span><i class="fas fa-copyright"></i> Meta Platforms, Inc.</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://reactnative.dev" target="_blank">reactnative.dev</a></span>
+                        </div>
+                    </div>
+
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-cube"></i></span> Expo</div>
+                        <div class="license-type">MIT Lizenz</div>
+                        <div class="license-description">Open-Source-Plattform zur Erstellung universeller nativer Apps mit React für Android, iOS und Web.</div>
+                        <div class="license-details">
+                            <span><i class="fas fa-copyright"></i> 650 Industries, Inc.</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://expo.dev" target="_blank">expo.dev</a></span>
+                        </div>
+                    </div>
+
+                    <h2 class="category-header"><i class="fas fa-cloud"></i> Backend & Cloud-Dienste</h2>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-database"></i></span> Firebase</div><div class="license-type">Proprietär (Google) — SDK: Apache 2.0</div><div class="license-description">Firebase stellt die Backend-Infrastruktur für ORHAR bereit (Authentifizierung, Firestore, Messaging).</div></div>
+
+                    <h2 class="category-header"><i class="fas fa-credit-card"></i> Abonnements</h2>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-receipt"></i></span> RevenueCat</div><div class="license-type">Proprietär — SDK: MIT Lizenz</div><div class="license-description">Abonnement-Infrastruktur für den Premium-Plan von ORHAR.</div></div>
+
+                    <h2 class="category-header"><i class="fas fa-puzzle-piece"></i> React Native Bibliotheken (MIT)</h2>
+                    <p class="category-description">ORHAR nutzt zahlreiche Open-Source-Bibliotheken (React Navigation, AsyncStorage, i18next, Vector Icons).</p>
+
+                    <h2 class="category-header"><i class="fas fa-book-open"></i> Inhalte & Daten</h2>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-bible"></i></span> Bibelübersetzungen</div><div class="license-type">Gemeinfrei / Lizenziert</div><div class="license-description">ORHAR bietet Zugang zu mehreren Bibelübersetzungen. Bitte die individuellen Angaben in der App beachten.</div></div>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-church"></i></span> Katechismus (CEC)</div><div class="license-type">Copyright © Libreria Editrice Vaticana</div><div class="license-description">Der vollständige Text wird für nicht-kommerzielle, lehrreiche und andächtige Nutzung bereitgestellt.</div></div>
+
+                    <div class="highlight-box mit-section">
+                        <h3><i class="fas fa-balance-scale"></i> MIT Lizenz Standardbedingungen</h3>
+                        <p style="margin-bottom:16px;">Die meisten in ORHAR verwendeten Bibliotheken stehen unter der MIT-Lizenz.</p>
+                        <details><summary>📄 Vollständigen MIT-Lizenztext anzeigen</summary><pre>${mitLicenseText}</pre></details>
+                    </div>
+
+                    <div class="contact-row">
+                        <h2><i class="fas fa-envelope"></i> Kontakt & Beiträge</h2>
+                        <p>Bei Fragen zu Lizenzen: <a href="mailto:${contactEmail}">${contactEmail}</a>. Wir sind der vollständigen Einhaltung aller Open-Source-Lizenzen verpflichtet.</p>
+                    </div>
                 `
             },
             it: {
-                nav_home: "Home", nav_contact: "Contatto", l_title: "Licenze Open Source", l_date: "Ultimo aggiornamento: Aprile 2026",
-                foot_made: "Fatto con ❤️ per la vita di preghiera.", foot_priv: "Privacy", foot_terms: "Termini", foot_lic: "Licenze", foot_rights: "Tutti i diritti riservati.", foot_verse: "\"La tua parola è una lampada al mio piede...\" — Salmo 119:105",
+                nav_home: "Home",
+                nav_contact: "Contatto",
+                l_badge: "✦ Trasparenza & Gratitudine",
+                l_title: "Licenze Open Source",
+                l_date: "Ultimo aggiornamento: Aprile 2026",
+                legal_title: "Legale & Trasparenza",
+                legal_sub: "La tua fiducia conta. Leggi le nostre politiche e licenze.",
+                foot_made: "Fatto con ❤️ per la vita di preghiera.",
+                foot_priv: "Informativa sulla Privacy",
+                foot_terms: "Termini di Servizio",
+                foot_lic: "Licenze Open Source",
+                foot_rights: "Tutti i diritti riservati.",
+                foot_verse: "\"La tua parola è una lampada al mio piede e una luce sul mio sentiero.\" — Salmo 119:105",
                 html: `
-                    <div class="highlight-box"><h3>Riconoscimento</h3><p>ORHAR è stato creato grazie alla comunità open source. Ringraziamo tutti gli sviluppatori.</p></div>
-                    <h2 class="category-header">Strumenti di Sviluppo</h2>
-                    <div class="license-box"><div class="license-name">React Native & Expo</div><div class="license-type">Licenza MIT</div><div class="license-description">Framework per la creazione di applicazioni mobili multipiattaforma.</div></div>
-                    <h2 class="category-header">Servizi Cloud</h2>
-                    <div class="license-box"><div class="license-name">Firebase & RevenueCat</div><div class="license-type">Proprietario / SDK in MIT & Apache</div><div class="license-description">Infrastruttura di backend e gestione degli abbonamenti.</div></div>
-                    <h2 class="category-header">Contenuti</h2>
-                    <div class="license-box"><div class="license-name">Traduzioni Bibliche e CEC</div><div class="license-type">Dominio Pubblico / Licenziato</div><div class="license-description">Fare riferimento alle singole attribuzioni all'interno dell'app.</div></div>
-                    <div class="highlight-box" style="margin-top: 60px;"><h3>Licenza MIT</h3><details><summary>Visualizza testo della licenza MIT</summary><pre>${mitLicenseText}</pre></details></div>
-                    <h2 class="category-header">Contatto</h2><p>Domande sulle licenze: <strong><a href="mailto:${contactEmail}">${contactEmail}</a></strong></p>
+                    <div class="highlight-box">
+                        <h3><i class="fas fa-heart"></i> Riconoscimento</h3>
+                        <p>ORHAR è costruito con gratitudine sulle spalle della comunità open source. Questa pagina elenca le librerie, i framework e i servizi di terze parti che rendono possibile la nostra applicazione.</p>
+                    </div>
+
+                    <h2 class="category-header"><i class="fas fa-code"></i> Framework Principale & Strumenti di Sviluppo</h2>
+                    
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fab fa-react"></i></span> React Native</div>
+                        <div class="license-type">Licenza MIT</div>
+                        <div class="license-description">Framework per la creazione di app mobili native con React. Consente a ORHAR di offrire un'esperienza multipiattaforma fluida.</div>
+                        <div class="license-details">
+                            <span><i class="fas fa-copyright"></i> Meta Platforms, Inc.</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://reactnative.dev" target="_blank">reactnative.dev</a></span>
+                        </div>
+                    </div>
+
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-cube"></i></span> Expo</div>
+                        <div class="license-type">Licenza MIT</div>
+                        <div class="license-description">Piattaforma open source per la creazione di app native universali con React per Android, iOS e web.</div>
+                        <div class="license-details">
+                            <span><i class="fas fa-copyright"></i> 650 Industries, Inc.</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://expo.dev" target="_blank">expo.dev</a></span>
+                        </div>
+                    </div>
+
+                    <h2 class="category-header"><i class="fas fa-cloud"></i> Backend & Servizi Cloud</h2>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-database"></i></span> Firebase</div><div class="license-type">Proprietario (Google) — SDK: Apache 2.0</div><div class="license-description">Firebase fornisce l'infrastruttura backend per ORHAR (autenticazione, Firestore, messaggistica).</div></div>
+
+                    <h2 class="category-header"><i class="fas fa-credit-card"></i> Abbonamenti</h2>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-receipt"></i></span> RevenueCat</div><div class="license-type">Proprietario — SDK: Licenza MIT</div><div class="license-description">Infrastruttura di abbonamento per il piano Premium di ORHAR.</div></div>
+
+                    <h2 class="category-header"><i class="fas fa-puzzle-piece"></i> Librerie React Native (MIT)</h2>
+                    <p class="category-description">ORHAR utilizza numerose librerie open source (React Navigation, AsyncStorage, i18next, Vector Icons).</p>
+
+                    <h2 class="category-header"><i class="fas fa-book-open"></i> Contenuti & Dati</h2>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-bible"></i></span> Traduzioni della Bibbia</div><div class="license-type">Dominio Pubblico / Concesse in Licenza</div><div class="license-description">ORHAR fornisce accesso a molteplici traduzioni. Consultare le attribuzioni nell'app.</div></div>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-church"></i></span> Catechismo (CEC)</div><div class="license-type">Copyright © Libreria Editrice Vaticana</div><div class="license-description">Il testo completo è fornito per uso non commerciale, educativo e devozionale.</div></div>
+
+                    <div class="highlight-box mit-section">
+                        <h3><i class="fas fa-balance-scale"></i> Termini Standard Licenza MIT</h3>
+                        <p style="margin-bottom:16px;">La maggior parte delle librerie utilizzate in ORHAR è sotto Licenza MIT.</p>
+                        <details><summary>📄 Visualizza testo completo Licenza MIT</summary><pre>${mitLicenseText}</pre></details>
+                    </div>
+
+                    <div class="contact-row">
+                        <h2><i class="fas fa-envelope"></i> Contatto & Contributi</h2>
+                        <p>Per domande sulle licenze: <a href="mailto:${contactEmail}">${contactEmail}</a>. Ci impegniamo al pieno rispetto di tutte le licenze open source.</p>
+                    </div>
                 `
             },
             pt: {
-                nav_home: "Início", nav_contact: "Contato", l_title: "Licenças de Código Aberto", l_date: "Última atualização: Abril de 2026",
-                foot_made: "Feito com ❤️ para a vida de oração.", foot_priv: "Privacidade", foot_terms: "Termos", foot_lic: "Licenças", foot_rights: "Todos os direitos reservados.", foot_verse: "\"Lâmpada para os meus pés é tua palavra...\" — Salmo 119:105",
+                nav_home: "Início",
+                nav_contact: "Contato",
+                l_badge: "✦ Transparência & Gratidão",
+                l_title: "Licenças de Código Aberto",
+                l_date: "Última atualização: Abril de 2026",
+                legal_title: "Legal & Transparência",
+                legal_sub: "Sua confiança importa. Leia nossas políticas e licenças.",
+                foot_made: "Feito com ❤️ para a vida de oração.",
+                foot_priv: "Política de Privacidade",
+                foot_terms: "Termos de Serviço",
+                foot_lic: "Licenças de Código Aberto",
+                foot_rights: "Todos os direitos reservados.",
+                foot_verse: "\"Lâmpada para os meus pés é tua palavra, e luz para o meu caminho.\" — Salmo 119:105",
                 html: `
-                    <div class="highlight-box"><h3>Reconhecimento</h3><p>O ORHAR foi construído graças à comunidade de código aberto. Agradecemos a todos os desenvolvedores.</p></div>
-                    <h2 class="category-header">Ferramentas de Desenvolvimento</h2>
-                    <div class="license-box"><div class="license-name">React Native & Expo</div><div class="license-type">Licença MIT</div><div class="license-description">Frameworks para criar aplicativos móveis multiplataforma.</div></div>
-                    <h2 class="category-header">Serviços em Nuvem</h2>
-                    <div class="license-box"><div class="license-name">Firebase & RevenueCat</div><div class="license-type">Proprietário / SDKs sob MIT & Apache</div><div class="license-description">Infraestrutura de backend e gerenciamento de assinaturas.</div></div>
-                    <h2 class="category-header">Conteúdo</h2>
-                    <div class="license-box"><div class="license-name">Traduções da Bíblia e CEC</div><div class="license-type">Domínio Público / Licenciado</div><div class="license-description">Consulte as atribuições individuais no aplicativo.</div></div>
-                    <div class="highlight-box" style="margin-top: 60px;"><h3>Licença MIT</h3><details><summary>Ver texto da licença MIT</summary><pre>${mitLicenseText}</pre></details></div>
-                    <h2 class="category-header">Contato</h2><p>Dúvidas sobre licenças: <strong><a href="mailto:${contactEmail}">${contactEmail}</a></strong></p>
+                    <div class="highlight-box">
+                        <h3><i class="fas fa-heart"></i> Reconhecimento</h3>
+                        <p>O ORHAR é construído com gratidão sobre os ombros da comunidade de código aberto. Esta página lista as bibliotecas, frameworks e serviços de terceiros que tornam nosso aplicativo possível.</p>
+                    </div>
+
+                    <h2 class="category-header"><i class="fas fa-code"></i> Framework Principal & Ferramentas de Desenvolvimento</h2>
+                    
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fab fa-react"></i></span> React Native</div>
+                        <div class="license-type">Licença MIT</div>
+                        <div class="license-description">Framework para criação de aplicativos móveis nativos com React. Permite ao ORHAR oferecer uma experiência multiplataforma fluida.</div>
+                        <div class="license-details">
+                            <span><i class="fas fa-copyright"></i> Meta Platforms, Inc.</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://reactnative.dev" target="_blank">reactnative.dev</a></span>
+                        </div>
+                    </div>
+
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-cube"></i></span> Expo</div>
+                        <div class="license-type">Licença MIT</div>
+                        <div class="license-description">Plataforma de código aberto para criar aplicativos nativos universais com React para Android, iOS e web.</div>
+                        <div class="license-details">
+                            <span><i class="fas fa-copyright"></i> 650 Industries, Inc.</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://expo.dev" target="_blank">expo.dev</a></span>
+                        </div>
+                    </div>
+
+                    <h2 class="category-header"><i class="fas fa-cloud"></i> Backend & Serviços em Nuvem</h2>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-database"></i></span> Firebase</div><div class="license-type">Proprietário (Google) — SDK: Apache 2.0</div><div class="license-description">Firebase fornece a infraestrutura de backend para o ORHAR (autenticação, Firestore, mensagens).</div></div>
+
+                    <h2 class="category-header"><i class="fas fa-credit-card"></i> Assinaturas</h2>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-receipt"></i></span> RevenueCat</div><div class="license-type">Proprietário — SDK: Licença MIT</div><div class="license-description">Infraestrutura de assinatura para o plano Premium do ORHAR.</div></div>
+
+                    <h2 class="category-header"><i class="fas fa-puzzle-piece"></i> Bibliotecas React Native (MIT)</h2>
+                    <p class="category-description">ORHAR utiliza inúmeras bibliotecas de código aberto (React Navigation, AsyncStorage, i18next, Vector Icons).</p>
+
+                    <h2 class="category-header"><i class="fas fa-book-open"></i> Conteúdo & Dados</h2>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-bible"></i></span> Traduções da Bíblia</div><div class="license-type">Domínio Público / Licenciadas</div><div class="license-description">ORHAR fornece acesso a múltiplas traduções. Consulte as atribuições no aplicativo.</div></div>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-church"></i></span> Catecismo (CEC)</div><div class="license-type">Copyright © Libreria Editrice Vaticana</div><div class="license-description">O texto completo é fornecido para uso não comercial, educacional e devocional.</div></div>
+
+                    <div class="highlight-box mit-section">
+                        <h3><i class="fas fa-balance-scale"></i> Termos Padrão da Licença MIT</h3>
+                        <p style="margin-bottom:16px;">A maioria das bibliotecas usadas no ORHAR está sob a Licença MIT.</p>
+                        <details><summary>📄 Ver texto completo da Licença MIT</summary><pre>${mitLicenseText}</pre></details>
+                    </div>
+
+                    <div class="contact-row">
+                        <h2><i class="fas fa-envelope"></i> Contato & Contribuições</h2>
+                        <p>Dúvidas sobre licenças: <a href="mailto:${contactEmail}">${contactEmail}</a>. Estamos comprometidos com a total conformidade com todas as licenças.</p>
+                    </div>
                 `
             },
             pl: {
-                nav_home: "Strona Główna", nav_contact: "Kontakt", l_title: "Licencje Open Source", l_date: "Ostatnia aktualizacja: Kwiecień 2026",
-                foot_made: "Stworzone z ❤️ dla życia w modlitwie.", foot_priv: "Prywatność", foot_terms: "Regulamin", foot_lic: "Licencje", foot_rights: "Wszelkie prawa zastrzeżone.", foot_verse: "\"Twoje słowo jest lampą dla moich stóp...\" — Psalm 119:105",
+                nav_home: "Strona Główna",
+                nav_contact: "Kontakt",
+                l_badge: "✦ Przejrzystość & Wdzięczność",
+                l_title: "Licencje Open Source",
+                l_date: "Ostatnia aktualizacja: Kwiecień 2026",
+                legal_title: "Prawne i Przejrzystość",
+                legal_sub: "Twoje zaufanie ma znaczenie. Przeczytaj nasze zasady i licencje.",
+                foot_made: "Stworzone z ❤️ dla życia modlitewnego.",
+                foot_priv: "Polityka Prywatności",
+                foot_terms: "Warunki Usługi",
+                foot_lic: "Licencje Open Source",
+                foot_rights: "Wszelkie prawa zastrzeżone.",
+                foot_verse: "\"Twoje słowo jest lampą dla moich stóp i światłem na mojej ścieżce.\" — Psalm 119:105",
                 html: `
-                    <div class="highlight-box"><h3>Podziękowania</h3><p>ORHAR został zbudowany dzięki społeczności open source. Dziękujemy wszystkim programistom.</p></div>
-                    <h2 class="category-header">Narzędzia Programistyczne</h2>
-                    <div class="license-box"><div class="license-name">React Native & Expo</div><div class="license-type">Licencja MIT</div><div class="license-description">Platformy do tworzenia wieloplatformowych aplikacji mobilnych.</div></div>
-                    <h2 class="category-header">Usługi Chmurowe</h2>
-                    <div class="license-box"><div class="license-name">Firebase & RevenueCat</div><div class="license-type">Własnościowe / SDK (MIT & Apache)</div><div class="license-description">Infrastruktura backendowa i zarządzanie subskrypcjami.</div></div>
-                    <h2 class="category-header">Treści</h2>
-                    <div class="license-box"><div class="license-name">Tłumaczenia Biblii i CEC</div><div class="license-type">Domena Publiczna / Licencjonowane</div><div class="license-description">Szczegółowe prawa autorskie znajdują się wewnątrz aplikacji.</div></div>
-                    <div class="highlight-box" style="margin-top: 60px;"><h3>Licencja MIT</h3><details><summary>Zobacz tekst licencji MIT</summary><pre>${mitLicenseText}</pre></details></div>
-                    <h2 class="category-header">Kontakt</h2><p>Pytania o licencje: <strong><a href="mailto:${contactEmail}">${contactEmail}</a></strong></p>
+                    <div class="highlight-box">
+                        <h3><i class="fas fa-heart"></i> Podziękowania</h3>
+                        <p>ORHAR został zbudowany z wdzięcznością na ramionach społeczności open source. Ta strona zawiera listę bibliotek, frameworków i usług stron trzecich, które umożliwiają działanie naszej aplikacji.</p>
+                    </div>
+
+                    <h2 class="category-header"><i class="fas fa-code"></i> Główny Framework & Narzędzia Deweloperskie</h2>
+                    
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fab fa-react"></i></span> React Native</div>
+                        <div class="license-type">Licencja MIT</div>
+                        <div class="license-description">Framework do tworzenia natywnych aplikacji mobilnych przy użyciu React. Umożliwia ORHAR płynne działanie na różnych platformach.</div>
+                        <div class="license-details">
+                            <span><i class="fas fa-copyright"></i> Meta Platforms, Inc.</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://reactnative.dev" target="_blank">reactnative.dev</a></span>
+                        </div>
+                    </div>
+
+                    <div class="license-box">
+                        <div class="license-name"><span class="lib-icon"><i class="fas fa-cube"></i></span> Expo</div>
+                        <div class="license-type">Licencja MIT</div>
+                        <div class="license-description">Platforma open source do tworzenia uniwersalnych aplikacji natywnych z React na Androida, iOS i web.</div>
+                        <div class="license-details">
+                            <span><i class="fas fa-copyright"></i> 650 Industries, Inc.</span>
+                            <span><i class="fas fa-globe"></i> <a href="https://expo.dev" target="_blank">expo.dev</a></span>
+                        </div>
+                    </div>
+
+                    <h2 class="category-header"><i class="fas fa-cloud"></i> Backend & Usługi Chmurowe</h2>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-database"></i></span> Firebase</div><div class="license-type">Własnościowe (Google) — SDK: Apache 2.0</div><div class="license-description">Firebase zapewnia infrastrukturę backendową dla ORHAR (uwierzytelnianie, Firestore, powiadomienia).</div></div>
+
+                    <h2 class="category-header"><i class="fas fa-credit-card"></i> Subskrypcje</h2>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-receipt"></i></span> RevenueCat</div><div class="license-type">Własnościowe — SDK: Licencja MIT</div><div class="license-description">Infrastruktura subskrypcyjna dla planu Premium ORHAR.</div></div>
+
+                    <h2 class="category-header"><i class="fas fa-puzzle-piece"></i> Biblioteki React Native (MIT)</h2>
+                    <p class="category-description">ORHAR korzysta z wielu bibliotek open source (React Navigation, AsyncStorage, i18next, Vector Icons).</p>
+
+                    <h2 class="category-header"><i class="fas fa-book-open"></i> Treści & Dane</h2>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-bible"></i></span> Tłumaczenia Biblii</div><div class="license-type">Domena Publiczna / Licencjonowane</div><div class="license-description">ORHAR zapewnia dostęp do wielu tłumaczeń. Szczegóły w atrybucjach w aplikacji.</div></div>
+                    <div class="license-box"><div class="license-name"><span class="lib-icon"><i class="fas fa-church"></i></span> Katechizm (CEC)</div><div class="license-type">Copyright © Libreria Editrice Vaticana</div><div class="license-description">Pełny tekst udostępniany do użytku niekomercyjnego, edukacyjnego i dewocyjnego.</div></div>
+
+                    <div class="highlight-box mit-section">
+                        <h3><i class="fas fa-balance-scale"></i> Standardowe Warunki Licencji MIT</h3>
+                        <p style="margin-bottom:16px;">Większość bibliotek używanych w ORHAR jest objęta Licencją MIT.</p>
+                        <details><summary>📄 Zobacz pełny tekst Licencji MIT</summary><pre>${mitLicenseText}</pre></details>
+                    </div>
+
+                    <div class="contact-row">
+                        <h2><i class="fas fa-envelope"></i> Kontakt & Wkład</h2>
+                        <p>Pytania dotyczące licencji: <a href="mailto:${contactEmail}">${contactEmail}</a>. Jesteśmy zobowiązani do pełnej zgodności ze wszystkimi licencjami open source.</p>
+                    </div>
                 `
             }
         };
 
+        // ========== LANGUAGE SWITCHER ==========
         function changeLang(lang) {
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                if (legalData[lang] && legalData[lang][key]) {
-                    el.innerHTML = legalData[lang][key];
+                if (legalData[lang] && legalData[lang][key] !== undefined) {
+                    el.textContent = legalData[lang][key];
                 }
             });
             
@@ -392,6 +1297,7 @@ SOFTWARE.`;
             document.documentElement.lang = lang;
         }
 
+        // ========== INITIALIZATION ==========
         document.addEventListener("DOMContentLoaded", () => {
             const savedLang = localStorage.getItem('orhar_lang');
             const browserLang = navigator.language.slice(0, 2);

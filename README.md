@@ -1,4 +1,5 @@
-# ORHAR — The Mountain of Light ⛰️✨ | Official app website
+# ORHAR — The Mountain of Light ⛰️✨ 
+Official app website
 
 <div align="center">
   <img src="logo.png" alt="ORHAR Logo" width="120" />

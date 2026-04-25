@@ -15,69 +15,464 @@
             --bg-color: #FCFBF8;
             --surface-color: #FFFFFF;
             --primary-navy: #1A2E4A;
-            --header-bg: #FCFBF8;
+            --header-bg: rgba(252, 251, 248, 0.95);
             --accent-gold: #CFB286;
+            --accent-gold-rgb: 207, 178, 134;
             --accent-brown: #915B27;
+            --accent-brown-rgb: 145, 91, 39;
             --text-dark: #1e1e1e;
-            --text-muted: #4a5568; 
+            --text-muted: #7f8c8d;
+            --card-shadow: 0 10px 40px rgba(0,0,0,0.06);
             
             --font-display: 'Cormorant Garamond', serif;
             --font-body: 'Work Sans', sans-serif;
-            --theme-transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+            --theme-transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-body); background-color: var(--bg-color); color: var(--text-dark); line-height: 1.7; }
-        h1, h2, h3, h4 { font-family: var(--font-display); color: var(--primary-navy); }
-        a { text-decoration: none; color: var(--accent-brown); font-weight: 500; }
-        a:hover { text-decoration: underline; }
-
-        /* Header & Nav */
-        header { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: var(--header-bg); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--accent-gold); }
-        .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none !important; }
-        .logo-img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; }
-        .logo-text { font-family: var(--font-display); font-size: 24px; font-weight: 700; letter-spacing: 2px; color: var(--primary-navy); text-decoration: none !important; }
-        .nav-links { display: flex; gap: 25px; align-items: center; }
-        .nav-links a { font-size: 15px; font-weight: 500; color: var(--primary-navy); text-decoration: none; }
-        .nav-links a:hover { color: var(--accent-brown); text-decoration: none; }
         
-        /* Language Switcher */
-        .lang-select { background: transparent; border: 1px solid var(--accent-gold); color: var(--primary-navy); padding: 5px 10px; border-radius: 6px; font-family: var(--font-body); font-weight: 500; cursor: pointer; outline: none; }
-
-        /* Legal Content */
-        .legal-wrapper { max-width: 800px; margin: 60px auto; padding: 0 5%; }
-        .legal-wrapper h1 { font-size: 42px; margin-bottom: 10px; text-align: center; }
-        .eff-date { text-align: center; color: var(--text-muted); margin-bottom: 50px; font-style: italic; }
+        html { scroll-behavior: smooth; }
         
-        .legal-section { margin-bottom: 40px; background: var(--surface-color); padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
-        .legal-section h2 { font-size: 28px; margin-bottom: 20px; border-bottom: 1px solid rgba(207, 178, 134, 0.3); padding-bottom: 10px; }
-        .legal-section h3 { font-size: 20px; margin: 20px 0 10px; color: var(--accent-brown); }
-        .legal-section p { font-size: 16px; color: var(--text-muted); margin-bottom: 15px; }
-        .legal-section ul { margin-left: 20px; margin-bottom: 15px; color: var(--text-muted); }
-        .legal-section li { margin-bottom: 8px; }
-        .legal-section strong { color: var(--text-dark); font-weight: 600; }
+        body { 
+            font-family: var(--font-body); 
+            background-color: var(--bg-color); 
+            color: var(--text-dark); 
+            line-height: 1.7; 
+            transition: var(--theme-transition);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        h1, h2, h3, h4 { 
+            font-family: var(--font-display); 
+            color: var(--primary-navy); 
+            transition: var(--theme-transition); 
+        }
+        
+        a { 
+            text-decoration: none; 
+            color: var(--primary-navy); 
+            transition: var(--theme-transition); 
+        }
+        
+        a:hover { color: var(--accent-brown); }
 
-        /* Highlight Box for Limitations */
-        .highlight-box { background-color: rgba(207, 178, 134, 0.1); border-left: 4px solid var(--accent-gold); padding: 25px; border-radius: 0 12px 12px 0; margin-top: 30px; margin-bottom: 40px;}
-        .highlight-box h2 { border-bottom: none; margin-bottom: 10px; color: var(--accent-brown); font-size: 24px;}
-        .highlight-box p { color: var(--text-muted); margin-bottom: 10px; }
+        /* ========== HEADER ========== */
+        header { 
+            padding: 16px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: var(--header-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid rgba(var(--accent-gold-rgb), 0.3); 
+            transition: var(--theme-transition);
+        }
+        
+        .logo-container { 
+            display: flex; 
+            align-items: center; 
+            gap: 14px; 
+            text-decoration: none !important;
+        }
+        
+        .logo-img { 
+            width: 48px; 
+            height: 48px; 
+            border-radius: 12px; 
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(var(--accent-gold-rgb), 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .logo-container:hover .logo-img {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(var(--accent-gold-rgb), 0.4);
+        }
+        
+        .logo-text { 
+            font-family: var(--font-display); 
+            font-size: 26px; 
+            font-weight: 700; 
+            letter-spacing: 3px; 
+            color: var(--primary-navy);
+            transition: var(--theme-transition);
+        }
+        
+        .nav-links { 
+            display: flex; 
+            gap: 28px; 
+            align-items: center; 
+        }
+        
+        .nav-links a { 
+            font-size: 15px; 
+            font-weight: 500;
+            position: relative;
+            padding: 4px 0;
+            transition: color 0.3s ease;
+            color: var(--primary-navy);
+            text-decoration: none;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-brown);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .lang-select { 
+            background: transparent; 
+            border: 1.5px solid var(--accent-gold); 
+            color: var(--primary-navy); 
+            padding: 8px 14px; 
+            border-radius: 8px; 
+            font-family: var(--font-body); 
+            font-weight: 500; 
+            cursor: pointer; 
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-select:hover { 
+            border-color: var(--accent-brown);
+            box-shadow: 0 2px 8px rgba(var(--accent-brown-rgb), 0.15);
+        }
 
-        /* Footer */
-        footer { background-color: var(--surface-color); padding: 60px 5% 30px; border-top: 1px solid var(--accent-gold); margin-top: 60px; }
-        .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; }
-        .footer-brand h2 { font-size: 32px; letter-spacing: 3px; margin-bottom: 5px; }
-        .footer-brand p { font-style: italic; color: var(--text-muted); font-family: var(--font-display); font-size: 18px; }
-        .footer-links { display: flex; gap: 20px; }
-        .footer-links a { font-size: 14px; color: var(--text-muted); text-decoration: none; }
-        .footer-links a:hover { color: var(--accent-brown); }
-        .copyright { text-align: center; margin-top: 40px; font-size: 13px; color: var(--text-muted); opacity: 0.8; }
+        /* ========== LEGAL WRAPPER ========== */
+        .legal-wrapper { 
+            max-width: 900px; 
+            margin: 80px auto; 
+            padding: 0 5%; 
+        }
+        
+        /* ========== HERO ========== */
+        .legal-hero { 
+            text-align: center; 
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .legal-badge {
+            display: inline-block;
+            background: rgba(var(--accent-gold-rgb), 0.15);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-brown);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+            font-family: var(--font-body);
+        }
+        
+        .legal-hero h1 { 
+            font-size: 52px; 
+            margin-bottom: 14px;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, var(--primary-navy), var(--accent-brown));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .eff-date { 
+            text-align: center; 
+            color: var(--text-muted); 
+            margin-bottom: 20px; 
+            font-style: italic;
+            font-size: 15px;
+        }
+        
+        .intro-text {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* ========== LEGAL SECTION CARDS ========== */
+        .legal-section { 
+            margin-bottom: 24px; 
+            background: var(--surface-color); 
+            padding: 32px 36px; 
+            border-radius: 20px; 
+            box-shadow: var(--card-shadow);
+            border-left: 4px solid var(--accent-gold);
+            transition: all 0.3s ease;
+        }
+        
+        .legal-section:hover {
+            transform: translateX(4px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+            border-left-color: var(--accent-brown);
+        }
+        
+        .legal-section h2 { 
+            font-size: 26px; 
+            margin-bottom: 16px; 
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid rgba(var(--accent-gold-rgb), 0.3);
+            padding-bottom: 12px;
+        }
+        
+        .legal-section h2 .section-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: rgba(var(--accent-gold-rgb), 0.1);
+            color: var(--accent-brown);
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        
+        .legal-section h3 { 
+            font-size: 20px; 
+            margin: 20px 0 10px; 
+            color: var(--accent-brown);
+            font-family: var(--font-display);
+        }
+        
+        .legal-section p { 
+            font-size: 15px; 
+            color: var(--text-muted); 
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+        
+        .legal-section ul { 
+            margin-left: 0; 
+            margin-bottom: 14px; 
+            color: var(--text-muted);
+            list-style: none;
+        }
+        
+        .legal-section li { 
+            margin-bottom: 10px;
+            padding-left: 24px;
+            position: relative;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        
+        .legal-section li::before {
+            content: '•';
+            position: absolute;
+            left: 4px;
+            color: var(--accent-gold);
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .legal-section strong { 
+            color: var(--text-dark); 
+            font-weight: 600; 
+        }
+        
+        .legal-section a {
+            color: var(--accent-brown);
+            font-weight: 600;
+        }
 
+        /* ========== HIGHLIGHT BOX (DISCLAIMERS) ========== */
+        .highlight-box { 
+            background: linear-gradient(135deg, rgba(var(--accent-gold-rgb), 0.1), rgba(var(--accent-brown-rgb), 0.05));
+            border-left: 4px solid var(--accent-brown); 
+            padding: 32px 36px; 
+            border-radius: 0 20px 20px 0; 
+            margin-top: 8px;
+            margin-bottom: 24px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .highlight-box h2 { 
+            border-bottom: none; 
+            margin-bottom: 14px; 
+            color: var(--accent-brown);
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .highlight-box h2 i {
+            color: #e6a817;
+            font-size: 22px;
+        }
+        
+        .highlight-box p {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+        
+        .highlight-box strong {
+            color: var(--text-dark);
+        }
+
+        /* ========== LEGAL SECTION (BOTTOM) ========== */
+        .legal-bottom-section {
+            padding: 60px 5%;
+            text-align: center;
+            background: var(--surface-color);
+            border-top: 1px solid rgba(var(--accent-gold-rgb), 0.3);
+            border-bottom: 1px solid rgba(var(--accent-gold-rgb), 0.3);
+            transition: var(--theme-transition);
+        }
+        
+        .legal-bottom-section h3 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        
+        .legal-subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        
+        .legal-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .legal-card {
+            background: var(--bg-color);
+            border: 1px solid rgba(var(--accent-gold-rgb), 0.2);
+            padding: 24px 32px;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+            min-width: 180px;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .legal-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-2px);
+            box-shadow: var(--card-shadow);
+        }
+        
+        .legal-card i {
+            font-size: 28px;
+            color: var(--accent-brown);
+            margin-bottom: 10px;
+        }
+        
+        .legal-card h4 {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-navy);
+            letter-spacing: 0.5px;
+        }
+        
+        .legal-card.active {
+            border-color: var(--accent-brown);
+            background: rgba(var(--accent-brown-rgb), 0.05);
+        }
+
+        /* ========== FOOTER ========== */
+        footer { 
+            background: linear-gradient(180deg, var(--primary-navy), #0f1f33); 
+            padding: 70px 5% 35px; 
+            border-top: 1px solid rgba(var(--accent-gold-rgb), 0.3); 
+            transition: var(--theme-transition);
+            color: #FFFFFF;
+        }
+        
+        .footer-content { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: flex-start; 
+            flex-wrap: wrap; 
+            gap: 40px; 
+        }
+        
+        .footer-brand h2 { 
+            font-size: 34px; 
+            letter-spacing: 4px; 
+            margin-bottom: 8px;
+            color: var(--accent-gold);
+        }
+        
+        .footer-brand p { 
+            font-style: italic; 
+            color: rgba(255,255,255,0.6); 
+            font-family: var(--font-display); 
+            font-size: 18px; 
+        }
+        
+        .footer-links { 
+            display: flex; 
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a { 
+            font-size: 14px; 
+            color: rgba(255,255,255,0.7);
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .copyright { 
+            text-align: center; 
+            margin-top: 40px; 
+            font-size: 13px; 
+            color: rgba(255,255,255,0.5); 
+            line-height: 1.8;
+        }
+
+        /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
-            .legal-wrapper h1 { font-size: 32px; }
-            .legal-section { padding: 25px; }
-            .nav-links { flex-wrap: wrap; justify-content: center; margin-top: 15px; }
-            header { flex-direction: column; }
-            .footer-content { flex-direction: column; text-align: center; }
+            .legal-hero h1 { font-size: 38px; }
+            .legal-section { padding: 24px 24px; }
+            .highlight-box { padding: 24px 24px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+            header { flex-direction: column; gap: 16px; }
+            .footer-content { flex-direction: column; text-align: center; align-items: center; }
+            .footer-links { justify-content: center; }
+        }
+
+        @media (max-width: 480px) {
+            .legal-hero h1 { font-size: 32px; }
+            .legal-wrapper { margin: 50px auto; }
         }
     </style>
 </head>
@@ -104,13 +499,37 @@
     </header>
 
     <main class="legal-wrapper">
-        <h1 data-i18n="t_title">Terms of Service</h1>
+        <!-- ========== HERO ========== -->
+        <div class="legal-hero">
+            <div class="legal-badge" data-i18n="t_badge">✦ Our Covenant With You</div>
+            <h1 data-i18n="t_title">Terms of Service</h1>
+        </div>
         <p class="eff-date" data-i18n="t_date">Effective Date: April 2026</p>
-        <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;" data-i18n="t_intro_top">Welcome to ORHAR! These Terms of Service govern your use of the ORHAR mobile application, our website, and any related services provided by us. By downloading, accessing, or using our Services, you agree to be bound by these Terms and our Privacy Policy. If you do not agree, do not use our Services.</p>
+        <p class="intro-text" data-i18n="t_intro_top">Welcome to ORHAR! These Terms of Service govern your use of the ORHAR mobile application, our website, and any related services. By downloading, accessing, or using our Services, you agree to be bound by these Terms and our Privacy Policy. If you do not agree, please do not use our Services.</p>
 
+        <!-- ========== DYNAMIC CONTENT ========== -->
         <div id="legal-content"></div>
-
     </main>
+
+    <!-- ========== LEGAL SECTION ========== -->
+    <section class="legal-bottom-section">
+        <h3 data-i18n="legal_title">Legal & Transparency</h3>
+        <p class="legal-subtitle" data-i18n="legal_sub">Your trust matters. Read our policies and licenses.</p>
+        <div class="legal-grid">
+            <a href="privacy.html" class="legal-card">
+                <i class="fas fa-shield-alt"></i>
+                <h4 data-i18n="foot_priv">Privacy Policy</h4>
+            </a>
+            <a href="terms.html" class="legal-card active">
+                <i class="fas fa-scale-balanced"></i>
+                <h4 data-i18n="foot_terms">Terms of Service</h4>
+            </a>
+            <a href="licenses.html" class="legal-card">
+                <i class="fas fa-file-contract"></i>
+                <h4 data-i18n="foot_lic">Open Source Licenses</h4>
+            </a>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-content">
@@ -134,207 +553,366 @@
     <script>
         const contactEmail = "contact@orhar.com";
 
-        // Full 12-section dictionary based precisely on the uploaded attachment
+        // ========== COMPLETE TRANSLATION DICTIONARY (7 LANGUAGES, 1:1 MAPPED) ==========
         const legalData = {
             en: {
-                nav_home: "Home", nav_contact: "Contact", t_title: "Terms of Service for ORHAR", t_date: "Effective Date: April 2026",
-                t_intro_top: "Welcome to ORHAR! These Terms of Service govern your use of the ORHAR mobile application, our website, and any related services provided by us. By downloading, accessing, or using our Services, you agree to be bound by these Terms and our Privacy Policy. If you do not agree, do not use our Services.",
-                foot_made: "Made with ❤️ for the life of prayer.", foot_priv: "Privacy Policy", foot_terms: "Terms of Service", foot_lic: "Licenses", foot_rights: "All Rights Reserved.", foot_verse: "\"Your word is a lamp to my feet, a light to my path.\" — Psalm 119:105",
+                nav_home: "Home",
+                nav_contact: "Contact",
+                t_badge: "✦ Our Covenant With You",
+                t_title: "Terms of Service",
+                t_date: "Effective Date: April 2026",
+                t_intro_top: "Welcome to ORHAR! These Terms of Service govern your use of the ORHAR mobile application, our website, and any related services. By downloading, accessing, or using our Services, you agree to be bound by these Terms and our Privacy Policy. If you do not agree, please do not use our Services.",
+                legal_title: "Legal & Transparency",
+                legal_sub: "Your trust matters. Read our policies and licenses.",
+                foot_made: "Made with ❤️ for the life of prayer.",
+                foot_priv: "Privacy Policy",
+                foot_terms: "Terms of Service",
+                foot_lic: "Open Source Licenses",
+                foot_rights: "All Rights Reserved.",
+                foot_verse: "\"Your word is a lamp to my feet, a light to my path.\" — Psalm 119:105",
                 html: `
                     <div class="legal-section">
-                        <h2>1. Description of Services</h2>
+                        <h2><span class="section-icon"><i class="fas fa-mobile-alt"></i></span> 1. Description of Services</h2>
                         <p>ORHAR is a faith-based application that provides users with access to religious texts, educational tools, and community features, including but not limited to:</p>
                         <ul>
                             <li>Offline access to multiple versions of the Holy Bible.</li>
                             <li>The complete text of the Catechism of the Catholic Church (CEC) where applicable.</li>
                             <li>An interactive Bible quiz module with a leveling and leaderboard system.</li>
                             <li>A personalized Bible reading plan generator.</li>
-                            <li>A library of prayers.</li>
+                            <li>A comprehensive library of prayers.</li>
                             <li>A personal note-taking feature linked to in-app content.</li>
                         </ul>
                     </div>
+
                     <div class="legal-section">
-                        <h2>2. User Accounts</h2>
+                        <h2><span class="section-icon"><i class="fas fa-user-circle"></i></span> 2. User Accounts</h2>
                         <ul>
                             <li><strong>Guest Access:</strong> You may access certain features of the App without creating an account. Functionality, such as the ability to save or sync data, will be limited. Guest data is stored locally on your device and may be lost if the app is uninstalled or the device is changed.</li>
-                            <li><strong>Registered Accounts:</strong> To access all features, including cloud synchronization and premium content, you must register for an account using an email address and password or through a third-party service. You are responsible for maintaining the confidentiality of your account information.</li>
-                            <li><strong>Account Accuracy:</strong> You agree to provide accurate, current, and complete information during registration.</li>
+                            <li><strong>Registered Accounts:</strong> To access all features, including cloud synchronization and premium content, you must register for an account using an email address and password or through a third-party service. You are responsible for maintaining the confidentiality of your account information and for all activities that occur under your account.</li>
+                            <li><strong>Account Accuracy:</strong> You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate.</li>
                         </ul>
                     </div>
+
                     <div class="legal-section">
-                        <h2>3. Freemium and Premium Services</h2>
-                        <p>ORHAR operates on a freemium model.</p>
+                        <h2><span class="section-icon"><i class="fas fa-gem"></i></span> 3. Freemium and Premium Services</h2>
+                        <p>ORHAR operates on a "freemium" model.</p>
                         <ul>
-                            <li><strong>Freemium Plan:</strong> Core functionalities, including offline access to the Bible and basic features, are provided free of charge. This plan may be supported by advertisements.</li>
-                            <li><strong>Premium Plan:</strong> We offer enhanced features through a paid subscription. These features may include an ad-free experience, cloud synchronization, content exporting, advanced customization options, and full access to specific library texts.</li>
+                            <li><strong>Freemium Plan:</strong> Core functionalities, including offline access to the Bible, Catechism, and the basic quiz module, are provided free of charge. This plan may be supported by advertisements.</li>
+                            <li><strong>Premium Plan:</strong> We offer enhanced features through a paid subscription. These features may include an ad-free experience, cloud synchronization, content exporting, a Custom Quiz Builder, and advanced customization options.</li>
                         </ul>
                     </div>
+
                     <div class="legal-section">
-                        <h2>4. Subscriptions and Payments</h2>
+                        <h2><span class="section-icon"><i class="fas fa-credit-card"></i></span> 4. Subscriptions and Payments</h2>
                         <ul>
-                            <li><strong>Billing:</strong> Subscriptions are managed through the third-party platform from which you downloaded the App (e.g., Apple App Store or Google Play Store). Billing is handled by the respective platform, subject to their terms.</li>
-                            <li><strong>Automatic Renewal:</strong> Subscriptions automatically renew at the end of each billing cycle unless canceled at least 24 hours before the end of the current period.</li>
-                            <li><strong>Cancellation:</strong> You can manage and cancel your subscriptions through your App Store or Google Play account settings. You will continue to have access to Premium features until the end of your billing period.</li>
+                            <li><strong>Billing:</strong> Subscriptions to the Premium Plan are managed through the third-party platform from which you downloaded the App (e.g., Apple App Store or Google Play Store). Billing is handled by the respective platform, and you are subject to their payment terms and policies.</li>
+                            <li><strong>Automatic Renewal:</strong> Subscriptions automatically renew at the end of each billing cycle (e.g., monthly or yearly) unless you cancel at least 24 hours before the end of the current period.</li>
+                            <li><strong>Cancellation:</strong> You can manage and cancel your subscriptions through your App Store or Google Play Store account settings. If you cancel, you will continue to have access to Premium features until the end of your current billing period.</li>
                         </ul>
                     </div>
+
                     <div class="legal-section">
-                        <h2>5. User Content</h2>
-                        <p>You retain full ownership of any personal content you create within the App, such as notes and custom quizzes ("User Content"). By using our cloud-sync features, you grant us a non-exclusive, worldwide, royalty-free license to store, reproduce, and display your User Content solely for the purpose of providing and improving the Services for you. We will not share your personal User Content with third parties without explicit consent, except as required by law.</p>
+                        <h2><span class="section-icon"><i class="fas fa-pen-fancy"></i></span> 5. User Content</h2>
+                        <p>You retain full ownership of any personal content you create within the App, such as notes and custom quizzes ("User Content"). By using our cloud-sync features, you grant us a non-exclusive, worldwide, royalty-free license to store, reproduce, and display your User Content solely for the purpose of providing and improving the Services for you. We will not share your personal User Content with third parties without your explicit consent, except as required by law.</p>
                     </div>
+
                     <div class="legal-section">
-                        <h2>6. User Conduct and Responsibilities</h2>
+                        <h2><span class="section-icon"><i class="fas fa-handshake"></i></span> 6. User Conduct and Responsibilities</h2>
                         <p>You agree not to use the Services to violate any applicable laws, infringe on the rights of others, or engage in any activity that disrupts or interferes with the performance of the Services. We reserve the right to remove content and suspend or terminate accounts that violate these terms.</p>
                     </div>
+
                     <div class="legal-section">
-                        <h2>7. Intellectual Property</h2>
-                        <p>All content and materials available on the Services, including but not limited to the ORHAR name, logo, software, databases, graphics, and original quiz questions, are the property of our company or licensors and are protected by intellectual property laws. You are granted a limited, non-exclusive, non-transferable license to access and use the Services for personal, non-commercial use only.</p>
+                        <h2><span class="section-icon"><i class="fas fa-copyright"></i></span> 7. Intellectual Property</h2>
+                        <p>All content and materials available on the Services, including but not limited to the ORHAR name, logo, software, databases, text, graphics, and our original quiz questions, are the property of our company or its licensors and are protected by intellectual property laws. You are granted a limited, non-exclusive, non-transferable license to access and use the Services for personal, non-commercial use only.</p>
                     </div>
+
                     <div class="highlight-box">
-                        <h2>8. Disclaimers and Limitation of Liability</h2>
+                        <h2><i class="fas fa-exclamation-triangle"></i> 8. Disclaimers and Limitation of Liability</h2>
                         <p><strong>THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. WE DO NOT GUARANTEE THAT THE SERVICES WILL BE UNINTERRUPTED, ERROR-FREE, OR SECURE.</strong></p>
                         <p>THE RELIGIOUS TEXTS AND EDUCATIONAL CONTENT ARE PROVIDED FOR INFORMATIONAL AND DEVOTIONAL PURPOSES. WHILE WE STRIVE FOR ACCURACY, WE DO NOT GUARANTEE THE ABSOLUTE ACCURACY OR COMPLETENESS OF ANY INFORMATION.</p>
-                        <p>TO THE FULLEST EXTENT PERMITTED BY LAW, WE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, DATA, USE, OR GOODWILL.</p>
+                        <p>TO THE FULLEST EXTENT PERMITTED BY LAW, WE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES.</p>
                     </div>
+
                     <div class="legal-section">
-                        <h2>9. Termination</h2>
-                        <p>We may terminate or suspend your access to our Services immediately, without prior notice or liability, for any reason whatsoever, including if you breach these Terms. You may terminate your account at any time using the "Delete Account" feature within the App settings.</p>
+                        <h2><span class="section-icon"><i class="fas fa-door-open"></i></span> 9. Termination</h2>
+                        <p>We may terminate or suspend your access to our Services immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach these Terms. You may terminate your account at any time by using the "Delete Account" feature within the App's settings.</p>
                     </div>
+
                     <div class="legal-section">
-                        <h2>10. Changes to Terms</h2>
-                        <p>We reserve the right to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice. By continuing to access or use our Services after those revisions become effective, you agree to be bound by the revised terms.</p>
+                        <h2><span class="section-icon"><i class="fas fa-sync-alt"></i></span> 10. Changes to Terms</h2>
+                        <p>We reserve the right to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. By continuing to access or use our Services after those revisions become effective, you agree to be bound by the revised terms.</p>
                     </div>
+
                     <div class="legal-section">
-                        <h2>11. Governing Law</h2>
-                        <p>These Terms shall be governed and construed in accordance with the laws of your jurisdiction, without regard to its conflict of law provisions.</p>
+                        <h2><span class="section-icon"><i class="fas fa-gavel"></i></span> 11. Governing Law</h2>
+                        <p>These Terms shall be governed and construed in accordance with the laws of the jurisdiction in which ORHAR operates, without regard to its conflict of law provisions.</p>
                     </div>
+
                     <div class="legal-section">
-                        <h2>12. Contact Us</h2>
+                        <h2><span class="section-icon"><i class="fas fa-envelope"></i></span> 12. Contact Us</h2>
                         <p>If you have any questions about these Terms, please contact us at:</p>
-                        <p><strong><a href="mailto:${contactEmail}">${contactEmail}</a></strong></p>
+                        <p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="mailto:${contactEmail}"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p>
                     </div>
                 `
             },
             fr: {
-                nav_home: "Accueil", nav_contact: "Contact", t_title: "Conditions d'Utilisation", t_date: "Date d'entrée en vigueur : Avril 2026",
-                t_intro_top: "Bienvenue sur ORHAR ! Ces Conditions régissent votre utilisation de l'application mobile ORHAR, de notre site et de nos services. En utilisant nos Services, vous acceptez ces Conditions et notre Politique de Confidentialité.",
-                foot_made: "Fait avec ❤️ pour la vie de prière.", foot_priv: "Politique de Confidentialité", foot_terms: "Conditions d'Utilisation", foot_lic: "Licences", foot_rights: "Tous droits réservés.", foot_verse: "\"Ta parole est une lampe à mes pieds...\" — Psaume 119:105",
+                nav_home: "Accueil",
+                nav_contact: "Contact",
+                t_badge: "✦ Notre Engagement Envers Vous",
+                t_title: "Conditions d'Utilisation",
+                t_date: "Date d'entrée en vigueur : Avril 2026",
+                t_intro_top: "Bienvenue sur ORHAR ! Ces Conditions d'Utilisation régissent votre utilisation de l'application mobile ORHAR, de notre site web et des services associés. En téléchargeant, accédant ou utilisant nos Services, vous acceptez d'être lié par ces Conditions et notre Politique de Confidentialité. Si vous n'acceptez pas ces Conditions, veuillez ne pas utiliser nos Services.",
+                legal_title: "Légal & Transparence",
+                legal_sub: "Votre confiance compte. Consultez nos politiques et licences.",
+                foot_made: "Fait avec ❤️ pour la vie de prière.",
+                foot_priv: "Politique de Confidentialité",
+                foot_terms: "Conditions d'Utilisation",
+                foot_lic: "Licences Open Source",
+                foot_rights: "Tous droits réservés.",
+                foot_verse: "\"Ta parole est une lampe à mes pieds, une lumière sur mon sentier.\" — Psaume 119:105",
                 html: `
-                    <div class="legal-section"><h2>1. Description des Services</h2><p>ORHAR est une application religieuse offrant l'accès hors ligne à la Bible, au Catéchisme, à des quiz interactifs, des plans de lecture, des prières et la prise de notes personnelles.</p></div>
-                    <div class="legal-section"><h2>2. Comptes Utilisateur</h2><p><strong>Accès Invité :</strong> Fonctionnalités limitées, données stockées localement. <strong>Comptes Enregistrés :</strong> Requis pour la synchronisation cloud et les fonctions premium. Vous êtes responsable de la confidentialité de votre compte.</p></div>
-                    <div class="legal-section"><h2>3. Services Freemium et Premium</h2><p>Le plan gratuit offre les fonctions de base avec publicité potentielle. Le plan Premium (payant) offre une expérience sans publicité, la synchronisation cloud, et des options avancées.</p></div>
-                    <div class="legal-section"><h2>4. Abonnements et Paiements</h2><p>Les abonnements sont gérés par l'App Store ou Google Play. Ils se renouvellent automatiquement sauf annulation 24h avant la fin de la période. <strong>L'annulation se fait dans les paramètres de votre compte Apple/Google.</strong></p></div>
-                    <div class="legal-section"><h2>5. Contenu Utilisateur</h2><p>Vous possédez vos notes personnelles. Vous nous accordez uniquement une licence pour les stocker et les synchroniser sur vos appareils. Nous ne les partageons pas sans votre consentement.</p></div>
-                    <div class="legal-section"><h2>6. Conduite de l'Utilisateur</h2><p>Vous vous engagez à ne pas utiliser l'application pour enfreindre la loi ou perturber les services.</p></div>
-                    <div class="legal-section"><h2>7. Propriété Intellectuelle</h2><p>Le nom, logo, logiciel et design d'ORHAR sont protégés par les lois sur la propriété intellectuelle. Vous disposez d'une licence d'utilisation personnelle non commerciale.</p></div>
-                    <div class="highlight-box"><h2>8. Exonérations et Limitation de Responsabilité</h2><p><strong>LES SERVICES SONT FOURNIS "TELS QUELS". NOUS NE GARANTISSONS PAS L'ABSENCE D'ERREURS.</strong> ORHAR ne sera pas responsable des dommages indirects ou pertes de données.</p></div>
-                    <div class="legal-section"><h2>9. Résiliation</h2><p>Nous pouvons suspendre votre accès en cas de violation. Vous pouvez supprimer votre compte via l'application.</p></div>
-                    <div class="legal-section"><h2>10. Modifications</h2><p>Nous pouvons modifier ces conditions avec un préavis de 30 jours pour les changements majeurs.</p></div>
-                    <div class="legal-section"><h2>11. Droit Applicable</h2><p>Ces conditions sont régies par les lois de votre juridiction.</p></div>
-                    <div class="legal-section"><h2>12. Nous Contacter</h2><p>Contact : <strong><a href="mailto:${contactEmail}">${contactEmail}</a></strong></p></div>
+                    <div class="legal-section">
+                        <h2><span class="section-icon"><i class="fas fa-mobile-alt"></i></span> 1. Description des Services</h2>
+                        <p>ORHAR est une application fondée sur la foi qui donne accès à des textes religieux, des outils éducatifs et des fonctionnalités communautaires, notamment :</p>
+                        <ul>
+                            <li>Accès hors ligne à plusieurs versions de la Sainte Bible.</li>
+                            <li>Le texte complet du Catéchisme de l'Église Catholique (CEC) le cas échéant.</li>
+                            <li>Un module de quiz biblique interactif avec système de niveaux et classement.</li>
+                            <li>Un générateur de plans de lecture biblique personnalisés.</li>
+                            <li>Une bibliothèque complète de prières.</li>
+                            <li>Une fonction de prise de notes personnelles liée au contenu de l'application.</li>
+                        </ul>
+                    </div>
+
+                    <div class="legal-section">
+                        <h2><span class="section-icon"><i class="fas fa-user-circle"></i></span> 2. Comptes Utilisateur</h2>
+                        <ul>
+                            <li><strong>Accès Invité :</strong> Vous pouvez accéder à certaines fonctionnalités sans créer de compte. Les fonctions telles que la sauvegarde ou la synchronisation des données seront limitées. Les données invité sont stockées localement et peuvent être perdues si l'application est désinstallée.</li>
+                            <li><strong>Comptes Enregistrés :</strong> Pour accéder à toutes les fonctionnalités, y compris la synchronisation cloud et le contenu premium, vous devez créer un compte. Vous êtes responsable de la confidentialité de vos identifiants et de toutes les activités sur votre compte.</li>
+                            <li><strong>Exactitude du Compte :</strong> Vous vous engagez à fournir des informations exactes, actuelles et complètes lors de l'inscription.</li>
+                        </ul>
+                    </div>
+
+                    <div class="legal-section">
+                        <h2><span class="section-icon"><i class="fas fa-gem"></i></span> 3. Services Freemium et Premium</h2>
+                        <p>ORHAR fonctionne sur un modèle « freemium ».</p>
+                        <ul>
+                            <li><strong>Formule Gratuite :</strong> Les fonctionnalités de base, y compris l'accès hors ligne à la Bible, au Catéchisme et au module de quiz de base, sont fournies gratuitement. Cette formule peut être soutenue par des publicités.</li>
+                            <li><strong>Formule Premium :</strong> Nous proposons des fonctionnalités améliorées via un abonnement payant, notamment une expérience sans publicité, la synchronisation cloud, l'exportation de contenu et des options de personnalisation avancées.</li>
+                        </ul>
+                    </div>
+
+                    <div class="legal-section">
+                        <h2><span class="section-icon"><i class="fas fa-credit-card"></i></span> 4. Abonnements et Paiements</h2>
+                        <ul>
+                            <li><strong>Facturation :</strong> Les abonnements sont gérés via la plateforme depuis laquelle vous avez téléchargé l'application (Apple App Store ou Google Play Store). La facturation est gérée par la plateforme respective, selon leurs conditions.</li>
+                            <li><strong>Renouvellement Automatique :</strong> Les abonnements se renouvellent automatiquement à la fin de chaque cycle de facturation, sauf annulation au moins 24 heures avant la fin de la période en cours.</li>
+                            <li><strong>Annulation :</strong> Vous pouvez gérer et annuler vos abonnements via les paramètres de votre compte App Store ou Google Play. L'accès Premium reste valable jusqu'à la fin de la période en cours.</li>
+                        </ul>
+                    </div>
+
+                    <div class="legal-section">
+                        <h2><span class="section-icon"><i class="fas fa-pen-fancy"></i></span> 5. Contenu Utilisateur</h2>
+                        <p>Vous conservez la pleine propriété de tout contenu personnel créé dans l'application, comme les notes et quiz personnalisés. En utilisant la synchronisation cloud, vous nous accordez une licence non exclusive, mondiale et libre de redevance pour stocker et afficher votre Contenu Utilisateur uniquement dans le but de vous fournir les Services. Nous ne partagerons pas votre Contenu Utilisateur sans votre consentement explicite, sauf obligation légale.</p>
+                    </div>
+
+                    <div class="legal-section">
+                        <h2><span class="section-icon"><i class="fas fa-handshake"></i></span> 6. Conduite et Responsabilités</h2>
+                        <p>Vous acceptez de ne pas utiliser les Services pour enfreindre les lois, porter atteinte aux droits d'autrui ou perturber le fonctionnement des Services. Nous nous réservons le droit de supprimer du contenu et de suspendre ou résilier des comptes en cas de violation.</p>
+                    </div>
+
+                    <div class="legal-section">
+                        <h2><span class="section-icon"><i class="fas fa-copyright"></i></span> 7. Propriété Intellectuelle</h2>
+                        <p>Tous les contenus disponibles sur les Services, y compris le nom ORHAR, le logo, les logiciels, les bases de données et les questions de quiz originales, sont la propriété de notre entreprise ou de ses concédants. Vous bénéficiez d'une licence limitée, non exclusive et non transférable pour un usage personnel et non commercial uniquement.</p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h2><i class="fas fa-exclamation-triangle"></i> 8. Exonérations et Limitation de Responsabilité</h2>
+                        <p><strong>LES SERVICES SONT FOURNIS « TELS QUELS » ET « SELON DISPONIBILITÉ », SANS GARANTIE D'AUCUNE SORTE. NOUS NE GARANTISSONS PAS QUE LES SERVICES SERONT ININTERROMPUS, EXEMPTS D'ERREURS OU SÉCURISÉS.</strong></p>
+                        <p>LES TEXTES RELIGIEUX ET LE CONTENU ÉDUCATIF SONT FOURNIS À DES FINS INFORMATIVES ET DÉVOTIONNELLES. BIEN QUE NOUS VISIONS L'EXACTITUDE, NOUS NE GARANTISSONS PAS L'EXACTITUDE ABSOLUE OU L'EXHAUSTIVITÉ DES INFORMATIONS.</p>
+                        <p>DANS TOUTE LA MESURE PERMISE PAR LA LOI, NOUS NE SOMMES PAS RESPONSABLES DES DOMMAGES INDIRECTS, ACCESSOIRES, SPÉCIAUX, CONSÉCUTIFS OU PUNITIFS, NI DES PERTES DE PROFITS, DE DONNÉES OU DE CLIENTÈLE.</p>
+                    </div>
+
+                    <div class="legal-section">
+                        <h2><span class="section-icon"><i class="fas fa-door-open"></i></span> 9. Résiliation</h2>
+                        <p>Nous pouvons résilier ou suspendre votre accès immédiatement, sans préavis, pour toute raison, y compris en cas de violation de ces Conditions. Vous pouvez résilier votre compte à tout moment via la fonction « Supprimer le compte » dans les paramètres de l'application.</p>
+                    </div>
+
+                    <div class="legal-section">
+                        <h2><span class="section-icon"><i class="fas fa-sync-alt"></i></span> 10. Modifications des Conditions</h2>
+                        <p>Nous nous réservons le droit de modifier ces Conditions à tout moment. En cas de modification substantielle, nous fournirons un préavis d'au moins 30 jours. En continuant à utiliser les Services après l'entrée en vigueur des modifications, vous acceptez les nouvelles conditions.</p>
+                    </div>
+
+                    <div class="legal-section">
+                        <h2><span class="section-icon"><i class="fas fa-gavel"></i></span> 11. Droit Applicable</h2>
+                        <p>Ces Conditions sont régies et interprétées conformément aux lois de la juridiction dans laquelle ORHAR opère, sans égard aux dispositions relatives aux conflits de lois.</p>
+                    </div>
+
+                    <div class="legal-section">
+                        <h2><span class="section-icon"><i class="fas fa-envelope"></i></span> 12. Nous Contacter</h2>
+                        <p>Pour toute question concernant ces Conditions, veuillez nous contacter à :</p>
+                        <p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="mailto:${contactEmail}"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p>
+                    </div>
                 `
             },
             es: {
-                nav_home: "Inicio", nav_contact: "Contacto", t_title: "Términos de Servicio", t_date: "Fecha de vigencia: Abril de 2026",
-                t_intro_top: "¡Bienvenido a ORHAR! Estos Términos rigen su uso de la aplicación móvil ORHAR y sus servicios. Al utilizarlos, acepta estos Términos y la Política de Privacidad.",
-                foot_made: "Hecho con ❤️ para la vida de oración.", foot_priv: "Privacidad", foot_terms: "Términos", foot_lic: "Licencias", foot_rights: "Todos los derechos reservados.", foot_verse: "\"Lámpara es a mis pies tu palabra...\" — Salmo 119:105",
+                nav_home: "Inicio",
+                nav_contact: "Contacto",
+                t_badge: "✦ Nuestro Pacto Contigo",
+                t_title: "Términos de Servicio",
+                t_date: "Fecha de vigencia: Abril de 2026",
+                t_intro_top: "¡Bienvenido a ORHAR! Estos Términos de Servicio rigen el uso de la aplicación móvil ORHAR, nuestro sitio web y los servicios relacionados. Al descargar, acceder o utilizar nuestros Servicios, usted acepta estos Términos y nuestra Política de Privacidad. Si no está de acuerdo, no utilice nuestros Servicios.",
+                legal_title: "Legal y Transparencia",
+                legal_sub: "Su confianza importa. Lea nuestras políticas y licencias.",
+                foot_made: "Hecho con ❤️ para la vida de oración.",
+                foot_priv: "Política de Privacidad",
+                foot_terms: "Términos de Servicio",
+                foot_lic: "Licencias de Código Abierto",
+                foot_rights: "Todos los derechos reservados.",
+                foot_verse: "\"Lámpara es a mis pies tu palabra, y lumbrera a mi camino.\" — Salmo 119:105",
                 html: `
-                    <div class="legal-section"><h2>1. Descripción de los Servicios</h2><p>ORHAR ofrece acceso offline a la Biblia, cuestionarios, planes de lectura, oraciones y toma de notas.</p></div>
-                    <div class="legal-section"><h2>2. Cuentas de Usuario</h2><p><strong>Acceso de Invitado:</strong> Funciones limitadas, datos locales. <strong>Cuentas Registradas:</strong> Permiten sincronización en la nube y contenido premium.</p></div>
-                    <div class="legal-section"><h2>3. Servicios Freemium y Premium</h2><p>Plan gratuito con funciones básicas (puede incluir anuncios). Plan Premium con sincronización y sin anuncios.</p></div>
-                    <div class="legal-section"><h2>4. Suscripciones y Pagos</h2><p>Gestionados por App Store o Google Play. Se renuevan automáticamente salvo cancelación 24h antes del fin del período.</p></div>
-                    <div class="legal-section"><h2>5. Contenido del Usuario</h2><p>Usted es dueño de sus notas. Nos otorga licencia solo para almacenarlas y sincronizarlas.</p></div>
-                    <div class="legal-section"><h2>6. Conducta del Usuario</h2><p>No debe usar la App para actividades ilegales o perjudiciales.</p></div>
-                    <div class="legal-section"><h2>7. Propiedad Intelectual</h2><p>El diseño, código y logo son propiedad de ORHAR.</p></div>
-                    <div class="highlight-box"><h2>8. Limitación de Responsabilidad</h2><p><strong>EL SERVICIO SE PROPORCIONA "TAL CUAL".</strong> No garantizamos que esté libre de errores. No somos responsables por pérdida de datos.</p></div>
-                    <div class="legal-section"><h2>9. Terminación</h2><p>Podemos suspender su cuenta por incumplimiento. Usted puede eliminar su cuenta en la App.</p></div>
-                    <div class="legal-section"><h2>10. Cambios a los Términos</h2><p>Avisaremos con 30 días de antelación si hay cambios sustanciales.</p></div>
-                    <div class="legal-section"><h2>11. Ley Aplicable</h2><p>Se rigen por las leyes de su jurisdicción.</p></div>
-                    <div class="legal-section"><h2>12. Contacto</h2><p><strong><a href="mailto:${contactEmail}">${contactEmail}</a></strong></p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-mobile-alt"></i></span> 1. Descripción de los Servicios</h2><p>ORHAR es una aplicación de fe que proporciona acceso a textos religiosos, herramientas educativas y características comunitarias, incluyendo acceso offline a múltiples versiones de la Biblia, el Catecismo, un módulo de quiz interactivo, planes de lectura, una biblioteca de oraciones y toma de notas personales.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-user-circle"></i></span> 2. Cuentas de Usuario</h2><ul><li><strong>Acceso de Invitado:</strong> Funciones limitadas; los datos se almacenan localmente y pueden perderse al desinstalar la aplicación.</li><li><strong>Cuentas Registradas:</strong> Requeridas para la sincronización en la nube y contenido premium. Usted es responsable de mantener la confidencialidad de su cuenta.</li><li><strong>Exactitud de la Cuenta:</strong> Debe proporcionar información precisa y actualizada durante el registro.</li></ul></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-gem"></i></span> 3. Servicios Freemium y Premium</h2><p>ORHAR funciona con un modelo "freemium". El plan gratuito incluye funciones básicas con posible publicidad. El plan Premium (de pago) ofrece experiencia sin anuncios, sincronización en la nube, exportación de contenido y opciones avanzadas de personalización.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-credit-card"></i></span> 4. Suscripciones y Pagos</h2><ul><li><strong>Facturación:</strong> Gestionada a través de App Store o Google Play según sus términos.</li><li><strong>Renovación Automática:</strong> Las suscripciones se renuevan automáticamente a menos que se cancelen al menos 24 horas antes del final del período.</li><li><strong>Cancelación:</strong> Puede gestionar y cancelar suscripciones en los ajustes de su cuenta de App Store o Google Play.</li></ul></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-pen-fancy"></i></span> 5. Contenido del Usuario</h2><p>Usted conserva la plena propiedad de su contenido personal (notas, quizzes). Al usar la sincronización en la nube, nos otorga una licencia limitada para almacenar y mostrar su contenido únicamente para proporcionarle los Servicios. No compartiremos su contenido sin su consentimiento explícito, salvo obligación legal.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-handshake"></i></span> 6. Conducta del Usuario</h2><p>Usted acepta no utilizar los Servicios para violar leyes, infringir derechos de terceros o perturbar los Servicios. Nos reservamos el derecho de eliminar contenido y suspender cuentas que violen estos términos.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-copyright"></i></span> 7. Propiedad Intelectual</h2><p>Todo el contenido disponible en los Servicios, incluido el nombre, logotipo, software y preguntas de quiz originales, es propiedad de nuestra empresa o sus licenciantes. Se le concede una licencia limitada para uso personal y no comercial.</p></div>
+                    <div class="highlight-box"><h2><i class="fas fa-exclamation-triangle"></i> 8. Exención y Limitación de Responsabilidad</h2><p><strong>LOS SERVICIOS SE PROPORCIONAN "TAL CUAL" Y "SEGÚN DISPONIBILIDAD", SIN GARANTÍAS DE NINGÚN TIPO. NO GARANTIZAMOS QUE LOS SERVICIOS SEAN ININTERRUMPIDOS, LIBRES DE ERRORES O SEGUROS.</strong></p><p>LOS TEXTOS RELIGIOSOS SE PROPORCIONAN CON FINES INFORMATIVOS Y DEVOCIONALES. NO GARANTIZAMOS LA EXACTITUD ABSOLUTA DE LA INFORMACIÓN.</p><p>HASTA EL MÁXIMO PERMITIDO POR LA LEY, NO SEREMOS RESPONSABLES DE DAÑOS INDIRECTOS, INCIDENTALES, ESPECIALES O CONSECUENTES, NI DE PÉRDIDA DE BENEFICIOS, DATOS O FONDO DE COMERCIO.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-door-open"></i></span> 9. Terminación</h2><p>Podemos suspender o terminar su acceso inmediatamente por cualquier motivo, incluyendo el incumplimiento de estos Términos. Usted puede eliminar su cuenta en cualquier momento desde los ajustes de la aplicación.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-sync-alt"></i></span> 10. Cambios en los Términos</h2><p>Nos reservamos el derecho de modificar estos Términos. Los cambios sustanciales serán notificados con al menos 30 días de antelación. El uso continuado de los Servicios después de la entrada en vigor de los cambios constituye la aceptación de los nuevos términos.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-gavel"></i></span> 11. Ley Aplicable</h2><p>Estos Términos se rigen por las leyes de la jurisdicción en la que opera ORHAR.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-envelope"></i></span> 12. Contáctenos</h2><p>Si tiene preguntas sobre estos Términos, contáctenos en:</p><p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="mailto:${contactEmail}"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p></div>
                 `
             },
             de: {
-                nav_home: "Startseite", nav_contact: "Kontakt", t_title: "Nutzungsbedingungen", t_date: "Gültig ab: April 2026",
-                t_intro_top: "Willkommen bei ORHAR! Diese Bedingungen regeln die Nutzung der App. Durch die Nutzung stimmen Sie diesen Bedingungen zu.",
-                foot_made: "Gemacht mit ❤️ für das Gebetsleben.", foot_priv: "Datenschutz", foot_terms: "Bedingungen", foot_lic: "Lizenzen", foot_rights: "Alle Rechte vorbehalten.", foot_verse: "\"Dein Wort ist meines Fußes Leuchte...\" — Psalm 119:105",
+                nav_home: "Startseite",
+                nav_contact: "Kontakt",
+                t_badge: "✦ Unser Bund Mit Ihnen",
+                t_title: "Nutzungsbedingungen",
+                t_date: "Gültig ab: April 2026",
+                t_intro_top: "Willkommen bei ORHAR! Diese Nutzungsbedingungen regeln die Nutzung der ORHAR-App, unserer Website und zugehöriger Dienste. Durch das Herunterladen oder Nutzen unserer Dienste stimmen Sie diesen Bedingungen und unserer Datenschutzerklärung zu. Wenn Sie nicht zustimmen, nutzen Sie unsere Dienste bitte nicht.",
+                legal_title: "Rechtliches & Transparenz",
+                legal_sub: "Ihr Vertrauen zählt. Lesen Sie unsere Richtlinien und Lizenzen.",
+                foot_made: "Gemacht mit ❤️ für das Leben im Gebet.",
+                foot_priv: "Datenschutzerklärung",
+                foot_terms: "Nutzungsbedingungen",
+                foot_lic: "Open-Source-Lizenzen",
+                foot_rights: "Alle Rechte vorbehalten.",
+                foot_verse: "\"Dein Wort ist meines Fußes Leuchte und ein Licht auf meinem Wege.\" — Psalm 119:105",
                 html: `
-                    <div class="legal-section"><h2>1. Beschreibung der Dienste</h2><p>ORHAR bietet Offline-Zugang zur Bibel, Quizze, Lesepläne, Gebete und Notizfunktionen.</p></div>
-                    <div class="legal-section"><h2>2. Benutzerkonten</h2><p>Gastzugang mit lokalen Daten oder registriertes Konto für Cloud-Synchronisierung.</p></div>
-                    <div class="legal-section"><h2>3. Freemium und Premium</h2><p>Kostenlose Basisversion (ggf. mit Werbung) und kostenpflichtige Premiumversion ohne Werbung.</p></div>
-                    <div class="legal-section"><h2>4. Abonnements und Zahlungen</h2><p>Verwaltet über App Store / Google Play. Automatische Verlängerung, falls nicht 24h vorher gekündigt.</p></div>
-                    <div class="legal-section"><h2>5. Benutzerinhalte</h2><p>Ihre Notizen gehören Ihnen. Wir speichern sie nur zur Synchronisierung.</p></div>
-                    <div class="legal-section"><h2>6. Verhalten</h2><p>Die Nutzung für illegale Zwecke ist untersagt.</p></div>
-                    <div class="legal-section"><h2>7. Geistiges Eigentum</h2><p>App-Design und Code sind Eigentum von ORHAR.</p></div>
-                    <div class="highlight-box"><h2>8. Haftungsbeschränkung</h2><p><strong>DIENSTE WERDEN "WIE BESEHEN" BEREITGESTELLT.</strong> Keine Haftung für Datenverlust.</p></div>
-                    <div class="legal-section"><h2>9. Kündigung</h2><p>Sie können Ihr Konto jederzeit in der App löschen.</p></div>
-                    <div class="legal-section"><h2>10. Änderungen</h2><p>Bei wesentlichen Änderungen informieren wir 30 Tage im Voraus.</p></div>
-                    <div class="legal-section"><h2>11. Anwendbares Recht</h2><p>Es gelten die Gesetze Ihres Landes.</p></div>
-                    <div class="legal-section"><h2>12. Kontakt</h2><p><strong><a href="mailto:${contactEmail}">${contactEmail}</a></strong></p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-mobile-alt"></i></span> 1. Beschreibung der Dienste</h2><p>ORHAR ist eine glaubensbasierte App mit Offline-Zugang zu mehreren Bibelversionen, dem Katechismus, interaktiven Quizzen, Leseplänen, Gebeten und einer Notizfunktion.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-user-circle"></i></span> 2. Benutzerkonten</h2><ul><li><strong>Gastzugang:</strong> Eingeschränkte Funktionen; Daten werden lokal gespeichert und können bei Deinstallation verloren gehen.</li><li><strong>Registrierte Konten:</strong> Für Cloud-Synchronisierung und Premium-Inhalte erforderlich. Sie sind für die Vertraulichkeit Ihres Kontos verantwortlich.</li><li><strong>Kontogenauigkeit:</strong> Sie verpflichten sich, genaue und aktuelle Informationen bereitzustellen.</li></ul></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-gem"></i></span> 3. Freemium und Premium</h2><p>ORHAR arbeitet nach dem "Freemium"-Modell. Der kostenlose Plan enthält Basisfunktionen (ggf. mit Werbung). Der Premium-Plan (kostenpflichtig) bietet werbefreie Nutzung, Cloud-Sync und erweiterte Optionen.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-credit-card"></i></span> 4. Abonnements und Zahlungen</h2><ul><li><strong>Abrechnung:</strong> Über den App Store oder Google Play gemäß deren Bedingungen.</li><li><strong>Automatische Verlängerung:</strong> Abonnements verlängern sich automatisch, sofern nicht mindestens 24 Stunden vor Ablauf gekündigt wird.</li><li><strong>Kündigung:</strong> Sie können Abonnements in den Einstellungen Ihres App Store- oder Google Play-Kontos verwalten und kündigen.</li></ul></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-pen-fancy"></i></span> 5. Benutzerinhalte</h2><p>Sie behalten das Eigentum an Ihren persönlichen Inhalten (Notizen, Quizze). Durch die Nutzung der Cloud-Synchronisierung gewähren Sie uns eine beschränkte Lizenz zur Speicherung und Anzeige Ihrer Inhalte ausschließlich zur Bereitstellung der Dienste.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-handshake"></i></span> 6. Benutzerverhalten</h2><p>Sie verpflichten sich, die Dienste nicht für rechtswidrige Zwecke zu nutzen. Wir behalten uns das Recht vor, rechtswidrige Inhalte zu entfernen und Konten zu sperren.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-copyright"></i></span> 7. Geistiges Eigentum</h2><p>Alle Inhalte, einschließlich Name, Logo, Software und Original-Quizfragen, sind Eigentum unseres Unternehmens oder seiner Lizenzgeber. Sie erhalten eine beschränkte Lizenz für den persönlichen, nicht-kommerziellen Gebrauch.</p></div>
+                    <div class="highlight-box"><h2><i class="fas fa-exclamation-triangle"></i> 8. Haftungsausschluss</h2><p><strong>DIE DIENSTE WERDEN "WIE BESEHEN" OHNE JEGLICHE GEWÄHRLEISTUNG BEREITGESTELLT. WIR ÜBERNEHMEN KEINE HAFTUNG FÜR INDIREKTE SCHÄDEN, DATENVERLUST ODER ENTGANGENEN GEWINN.</strong></p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-door-open"></i></span> 9. Kündigung</h2><p>Wir können Ihren Zugang bei Verstoß gegen diese Bedingungen sperren. Sie können Ihr Konto jederzeit in den App-Einstellungen löschen.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-sync-alt"></i></span> 10. Änderungen</h2><p>Bei wesentlichen Änderungen werden wir Sie mindestens 30 Tage im Voraus informieren.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-gavel"></i></span> 11. Anwendbares Recht</h2><p>Es gilt das Recht der Gerichtsbarkeit, in der ORHAR tätig ist.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-envelope"></i></span> 12. Kontakt</h2><p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="mailto:${contactEmail}"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p></div>
                 `
             },
             it: {
-                nav_home: "Home", nav_contact: "Contatto", t_title: "Termini di Servizio", t_date: "In vigore da: Aprile 2026",
-                t_intro_top: "Benvenuto in ORHAR! Questi Termini regolano l'uso dell'app. Utilizzando i Servizi, accetti questi Termini e la Privacy Policy.",
-                foot_made: "Fatto con ❤️ per la vita di preghiera.", foot_priv: "Privacy", foot_terms: "Termini", foot_lic: "Licenze", foot_rights: "Tutti i diritti riservati.", foot_verse: "\"La tua parola è una lampada al mio piede...\" — Salmo 119:105",
+                nav_home: "Home",
+                nav_contact: "Contatto",
+                t_badge: "✦ Il Nostro Patto Con Te",
+                t_title: "Termini di Servizio",
+                t_date: "In vigore da: Aprile 2026",
+                t_intro_top: "Benvenuto in ORHAR! I presenti Termini di Servizio regolano l'uso dell'app ORHAR, del nostro sito web e dei servizi correlati. Scaricando, accedendo o utilizzando i nostri Servizi, accetti questi Termini e la nostra Informativa sulla Privacy. Se non sei d'accordo, non utilizzare i nostri Servizi.",
+                legal_title: "Legale & Trasparenza",
+                legal_sub: "La tua fiducia conta. Leggi le nostre politiche e licenze.",
+                foot_made: "Fatto con ❤️ per la vita di preghiera.",
+                foot_priv: "Informativa sulla Privacy",
+                foot_terms: "Termini di Servizio",
+                foot_lic: "Licenze Open Source",
+                foot_rights: "Tutti i diritti riservati.",
+                foot_verse: "\"La tua parola è una lampada al mio piede e una luce sul mio sentiero.\" — Salmo 119:105",
                 html: `
-                    <div class="legal-section"><h2>1. Descrizione dei Servizi</h2><p>ORHAR offre accesso offline alla Bibbia, quiz, piani di lettura, preghiere e note.</p></div>
-                    <div class="legal-section"><h2>2. Account Utente</h2><p>Accesso Ospite (dati locali) o Registrato (sincronizzazione cloud).</p></div>
-                    <div class="legal-section"><h2>3. Freemium e Premium</h2><p>Piano base gratuito. Piano Premium a pagamento senza pubblicità.</p></div>
-                    <div class="legal-section"><h2>4. Abbonamenti e Pagamenti</h2><p>Gestiti tramite App Store / Google Play. Rinnovo automatico se non annullati 24 ore prima.</p></div>
-                    <div class="legal-section"><h2>5. Contenuti dell'Utente</h2><p>Mantieni la proprietà delle tue note; noi le sincronizziamo solamente.</p></div>
-                    <div class="legal-section"><h2>6. Condotta dell'Utente</h2><p>Vietato l'uso per scopi illegali.</p></div>
-                    <div class="legal-section"><h2>7. Proprietà Intellettuale</h2><p>Design, codice e logo sono di proprietà di ORHAR.</p></div>
-                    <div class="highlight-box"><h2>8. Limitazione di Responsabilità</h2><p><strong>SERVIZI FORNITI "COSÌ COME SONO".</strong> Nessuna responsabilità per perdita di dati.</p></div>
-                    <div class="legal-section"><h2>9. Risoluzione</h2><p>Puoi eliminare l'account dall'app in qualsiasi momento.</p></div>
-                    <div class="legal-section"><h2>10. Modifiche</h2><p>Preavviso di 30 giorni per modifiche sostanziali.</p></div>
-                    <div class="legal-section"><h2>11. Legge Applicabile</h2><p>Regolato dalle leggi della tua giurisdizione.</p></div>
-                    <div class="legal-section"><h2>12. Contattaci</h2><p><strong><a href="mailto:${contactEmail}">${contactEmail}</a></strong></p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-mobile-alt"></i></span> 1. Descrizione dei Servizi</h2><p>ORHAR è un'app basata sulla fede che fornisce accesso offline a molteplici versioni della Bibbia, al Catechismo, quiz interattivi, piani di lettura, una biblioteca di preghiere e la presa di note personali.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-user-circle"></i></span> 2. Account Utente</h2><ul><li><strong>Accesso Ospite:</strong> Funzionalità limitate; i dati sono memorizzati localmente e potrebbero andare persi.</li><li><strong>Account Registrati:</strong> Necessari per sincronizzazione cloud e contenuti premium. Sei responsabile della riservatezza del tuo account.</li></ul></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-gem"></i></span> 3. Servizi Freemium e Premium</h2><p>ORHAR opera su modello "freemium". Il piano gratuito include funzioni di base (con possibile pubblicità). Il piano Premium a pagamento offre esperienza senza pubblicità, sincronizzazione cloud, esportazione e opzioni avanzate.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-credit-card"></i></span> 4. Abbonamenti e Pagamenti</h2><ul><li><strong>Fatturazione:</strong> Gestita tramite App Store o Google Play secondo i loro termini.</li><li><strong>Rinnovo Automatico:</strong> Gli abbonamenti si rinnovano automaticamente salvo cancellazione almeno 24 ore prima della fine del periodo.</li><li><strong>Cancellazione:</strong> Puoi gestire e cancellare gli abbonamenti dalle impostazioni del tuo account App Store o Google Play.</li></ul></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-pen-fancy"></i></span> 5. Contenuti dell'Utente</h2><p>Mantieni la piena proprietà dei tuoi contenuti personali (note, quiz). Utilizzando la sincronizzazione cloud, ci concedi una licenza limitata per archiviare e visualizzare i tuoi contenuti esclusivamente per fornirti i Servizi.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-handshake"></i></span> 6. Condotta dell'Utente</h2><p>Accetti di non utilizzare i Servizi per violare leggi, diritti altrui o interrompere i Servizi. Ci riserviamo il diritto di rimuovere contenuti e sospendere account.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-copyright"></i></span> 7. Proprietà Intellettuale</h2><p>Tutti i contenuti, inclusi nome, logo, software e quiz originali, sono di proprietà della nostra azienda o dei suoi licenziatari. Ti viene concessa una licenza limitata per uso personale e non commerciale.</p></div>
+                    <div class="highlight-box"><h2><i class="fas fa-exclamation-triangle"></i> 8. Esclusione e Limitazione di Responsabilità</h2><p><strong>I SERVIZI SONO FORNITI "COSÌ COME SONO" SENZA GARANZIE. NON SAREMO RESPONSABILI PER DANNI INDIRETTI, PERDITA DI DATI O MANCATI GUADAGNI.</strong></p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-door-open"></i></span> 9. Risoluzione</h2><p>Possiamo sospendere il tuo accesso in caso di violazione. Puoi eliminare il tuo account in qualsiasi momento dalle impostazioni dell'app.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-sync-alt"></i></span> 10. Modifiche ai Termini</h2><p>Ti informeremo con almeno 30 giorni di preavviso in caso di modifiche sostanziali.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-gavel"></i></span> 11. Legge Applicabile</h2><p>Questi Termini sono regolati dalle leggi della giurisdizione in cui opera ORHAR.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-envelope"></i></span> 12. Contattaci</h2><p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="mailto:${contactEmail}"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p></div>
                 `
             },
             pt: {
-                nav_home: "Início", nav_contact: "Contato", t_title: "Termos de Serviço", t_date: "Data de vigência: Abril de 2026",
-                t_intro_top: "Bem-vindo ao ORHAR! Estes Termos regem o uso do aplicativo. Ao utilizá-lo, você concorda com os Termos e a Política de Privacidade.",
-                foot_made: "Feito com ❤️ para a vida de oração.", foot_priv: "Privacidade", foot_terms: "Termos", foot_lic: "Licenças", foot_rights: "Todos os direitos reservados.", foot_verse: "\"Lâmpada para os meus pés é tua palavra...\" — Salmo 119:105",
+                nav_home: "Início",
+                nav_contact: "Contato",
+                t_badge: "✦ Nosso Pacto Com Você",
+                t_title: "Termos de Serviço",
+                t_date: "Data de vigência: Abril de 2026",
+                t_intro_top: "Bem-vindo ao ORHAR! Estes Termos de Serviço regem o uso do aplicativo móvel ORHAR, nosso site e serviços relacionados. Ao baixar, acessar ou usar nossos Serviços, você concorda com estes Termos e com nossa Política de Privacidade. Se não concordar, não use nossos Serviços.",
+                legal_title: "Legal & Transparência",
+                legal_sub: "Sua confiança importa. Leia nossas políticas e licenças.",
+                foot_made: "Feito com ❤️ para a vida de oração.",
+                foot_priv: "Política de Privacidade",
+                foot_terms: "Termos de Serviço",
+                foot_lic: "Licenças de Código Aberto",
+                foot_rights: "Todos os direitos reservados.",
+                foot_verse: "\"Lâmpada para os meus pés é tua palavra, e luz para o meu caminho.\" — Salmo 119:105",
                 html: `
-                    <div class="legal-section"><h2>1. Descrição dos Serviços</h2><p>ORHAR oferece acesso offline à Bíblia, quizzes, planos de leitura, orações e notas.</p></div>
-                    <div class="legal-section"><h2>2. Contas de Usuário</h2><p>Acesso Convidado (dados locais) ou Registrado (sincronização na nuvem).</p></div>
-                    <div class="legal-section"><h2>3. Freemium e Premium</h2><p>Plano básico gratuito e plano Premium pago (sem anúncios, sincronização).</p></div>
-                    <div class="legal-section"><h2>4. Assinaturas e Pagamentos</h2><p>Gerenciados pela App Store / Google Play. Renovação automática salvo cancelamento.</p></div>
-                    <div class="legal-section"><h2>5. Conteúdo do Usuário</h2><p>Você é dono de suas notas. Nós apenas as sincronizamos com segurança.</p></div>
-                    <div class="legal-section"><h2>6. Conduta do Usuário</h2><p>É proibido usar o App para violar leis.</p></div>
-                    <div class="legal-section"><h2>7. Propriedade Intelectual</h2><p>O design, código e logotipo são de propriedade do ORHAR.</p></div>
-                    <div class="highlight-box"><h2>8. Limitação de Responsabilidade</h2><p><strong>SERVIÇOS FORNECIDOS "COMO ESTÃO".</strong> Não nos responsabilizamos por perda de dados.</p></div>
-                    <div class="legal-section"><h2>9. Rescisão</h2><p>Você pode excluir sua conta no App a qualquer momento.</p></div>
-                    <div class="legal-section"><h2>10. Alterações</h2><p>Notificaremos mudanças substanciais com 30 dias de antecedência.</p></div>
-                    <div class="legal-section"><h2>11. Lei Aplicável</h2><p>Regido pelas leis de sua jurisdição.</p></div>
-                    <div class="legal-section"><h2>12. Contato</h2><p><strong><a href="mailto:${contactEmail}">${contactEmail}</a></strong></p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-mobile-alt"></i></span> 1. Descrição dos Serviços</h2><p>ORHAR é um aplicativo baseado na fé que fornece acesso offline a várias versões da Bíblia, ao Catecismo, quizzes interativos, planos de leitura, uma biblioteca de orações e tomada de notas pessoais.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-user-circle"></i></span> 2. Contas de Usuário</h2><ul><li><strong>Acesso Convidado:</strong> Funcionalidades limitadas; dados armazenados localmente e podem ser perdidos ao desinstalar.</li><li><strong>Contas Registradas:</strong> Necessárias para sincronização na nuvem e conteúdo premium. Você é responsável pela confidencialidade da sua conta.</li></ul></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-gem"></i></span> 3. Serviços Freemium e Premium</h2><p>ORHAR opera no modelo "freemium". O plano gratuito inclui funções básicas (pode incluir anúncios). O plano Premium (pago) oferece experiência sem anúncios, sincronização na nuvem, exportação e opções avançadas.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-credit-card"></i></span> 4. Assinaturas e Pagamentos</h2><ul><li><strong>Cobrança:</strong> Gerenciada pela App Store ou Google Play conforme seus termos.</li><li><strong>Renovação Automática:</strong> As assinaturas renovam-se automaticamente, a menos que canceladas com pelo menos 24 horas de antecedência.</li><li><strong>Cancelamento:</strong> Você pode gerenciar e cancelar assinaturas nas configurações da sua conta da App Store ou Google Play.</li></ul></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-pen-fancy"></i></span> 5. Conteúdo do Usuário</h2><p>Você mantém a propriedade total do seu conteúdo pessoal (notas, quizzes). Ao usar a sincronização em nuvem, você nos concede uma licença limitada para armazenar e exibir seu conteúdo exclusivamente para fornecer os Serviços.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-handshake"></i></span> 6. Conduta do Usuário</h2><p>Você concorda em não usar os Serviços para violar leis ou direitos de terceiros. Reservamo-nos o direito de remover conteúdo e suspender contas.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-copyright"></i></span> 7. Propriedade Intelectual</h2><p>Todo o conteúdo, incluindo nome, logotipo, software e quizzes originais, é propriedade da nossa empresa ou de seus licenciadores. Você recebe uma licença limitada para uso pessoal e não comercial.</p></div>
+                    <div class="highlight-box"><h2><i class="fas fa-exclamation-triangle"></i> 8. Isenção e Limitação de Responsabilidade</h2><p><strong>OS SERVIÇOS SÃO FORNECIDOS "COMO ESTÃO" SEM GARANTIAS. NÃO NOS RESPONSABILIZAMOS POR DANOS INDIRETOS, PERDA DE DADOS OU LUCROS CESSANTES.</strong></p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-door-open"></i></span> 9. Rescisão</h2><p>Podemos suspender seu acesso em caso de violação. Você pode excluir sua conta a qualquer momento nas configurações do aplicativo.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-sync-alt"></i></span> 10. Alterações nos Termos</h2><p>Alterações substanciais serão notificadas com pelo menos 30 dias de antecedência.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-gavel"></i></span> 11. Lei Aplicável</h2><p>Estes Termos são regidos pelas leis da jurisdição em que o ORHAR opera.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-envelope"></i></span> 12. Contate-nos</h2><p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="mailto:${contactEmail}"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p></div>
                 `
             },
             pl: {
-                nav_home: "Strona Główna", nav_contact: "Kontakt", t_title: "Regulamin Świadczenia Usług", t_date: "Data wejścia w życie: Kwiecień 2026",
-                t_intro_top: "Witamy w ORHAR! Niniejszy Regulamin określa zasady korzystania z aplikacji. Korzystając z niej, akceptujesz Regulamin.",
-                foot_made: "Stworzone z ❤️ dla życia w modlitwie.", foot_priv: "Prywatność", foot_terms: "Regulamin", foot_lic: "Licencje", foot_rights: "Wszelkie prawa zastrzeżone.", foot_verse: "\"Twoje słowo jest lampą dla moich stóp...\" — Psalm 119:105",
+                nav_home: "Strona Główna",
+                nav_contact: "Kontakt",
+                t_badge: "✦ Nasze Zobowiązanie Wobec Ciebie",
+                t_title: "Regulamin Świadczenia Usług",
+                t_date: "Data wejścia w życie: Kwiecień 2026",
+                t_intro_top: "Witamy w ORHAR! Niniejszy Regulamin określa zasady korzystania z aplikacji mobilnej ORHAR, naszej strony internetowej i powiązanych usług. Pobierając, uzyskując dostęp lub korzystając z naszych Usług, zgadzasz się na niniejszy Regulamin i naszą Politykę Prywatności. Jeśli się nie zgadzasz, nie korzystaj z naszych Usług.",
+                legal_title: "Prawne i Przejrzystość",
+                legal_sub: "Twoje zaufanie ma znaczenie. Przeczytaj nasze zasady i licencje.",
+                foot_made: "Stworzone z ❤️ dla życia modlitewnego.",
+                foot_priv: "Polityka Prywatności",
+                foot_terms: "Warunki Usługi",
+                foot_lic: "Licencje Open Source",
+                foot_rights: "Wszelkie prawa zastrzeżone.",
+                foot_verse: "\"Twoje słowo jest lampą dla moich stóp i światłem na mojej ścieżce.\" — Psalm 119:105",
                 html: `
-                    <div class="legal-section"><h2>1. Opis Usług</h2><p>ORHAR zapewnia dostęp offline do Biblii, quizów, planów czytania, modlitw i notatek.</p></div>
-                    <div class="legal-section"><h2>2. Konta Użytkowników</h2><p>Dostęp jako Gość (dane lokalne) lub Zarejestrowany (synchronizacja w chmurze).</p></div>
-                    <div class="legal-section"><h2>3. Usługi Freemium i Premium</h2><p>Podstawowy plan jest darmowy. Plan Premium oferuje synchronizację i brak reklam.</p></div>
-                    <div class="legal-section"><h2>4. Subskrypcje i Płatności</h2><p>Zarządzane przez App Store / Google Play. Odnawiane automatycznie, chyba że zostaną anulowane.</p></div>
-                    <div class="legal-section"><h2>5. Treści Użytkownika</h2><p>Zachowujesz prawa do swoich notatek. My jedynie bezpiecznie je przechowujemy.</p></div>
-                    <div class="legal-section"><h2>6. Postępowanie Użytkownika</h2><p>Zabrania się używania aplikacji do celów niezgodnych z prawem.</p></div>
-                    <div class="legal-section"><h2>7. Własność Intelektualna</h2><p>Kod, projekt i logo są własnością ORHAR.</p></div>
-                    <div class="highlight-box"><h2>8. Ograniczenie Odpowiedzialności</h2><p><strong>USŁUGI SĄ DOSTARCZANE "TAK JAK SĄ".</strong> Nie ponosimy odpowiedzialności za utratę danych.</p></div>
-                    <div class="legal-section"><h2>9. Zakończenie</h2><p>Możesz w każdej chwili usunąć swoje konto z poziomu aplikacji.</p></div>
-                    <div class="legal-section"><h2>10. Zmiany Regulaminu</h2><p>O istotnych zmianach powiadomimy z 30-dniowym wyprzedzeniem.</p></div>
-                    <div class="legal-section"><h2>11. Prawo Właściwe</h2><p>Regulamin podlega prawu obowiązującemu w Twojej jurysdykcji.</p></div>
-                    <div class="legal-section"><h2>12. Kontakt</h2><p><strong><a href="mailto:${contactEmail}">${contactEmail}</a></strong></p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-mobile-alt"></i></span> 1. Opis Usług</h2><p>ORHAR to aplikacja oparta na wierze, zapewniająca dostęp offline do wielu wersji Biblii, Katechizmu, interaktywnych quizów, planów czytania, biblioteki modlitw i osobistych notatek.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-user-circle"></i></span> 2. Konta Użytkowników</h2><ul><li><strong>Dostęp Gościa:</strong> Ograniczone funkcje; dane przechowywane lokalnie i mogą zostać utracone po odinstalowaniu.</li><li><strong>Konta Zarejestrowane:</strong> Wymagane do synchronizacji w chmurze i treści premium. Jesteś odpowiedzialny za poufność swojego konta.</li></ul></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-gem"></i></span> 3. Usługi Freemium i Premium</h2><p>ORHAR działa w modelu "freemium". Plan darmowy obejmuje podstawowe funkcje (może zawierać reklamy). Plan Premium (płatny) oferuje brak reklam, synchronizację w chmurze, eksport i zaawansowane opcje.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-credit-card"></i></span> 4. Subskrypcje i Płatności</h2><ul><li><strong>Rozliczenia:</strong> Zarządzane przez App Store lub Google Play zgodnie z ich warunkami.</li><li><strong>Automatyczne Odnawianie:</strong> Subskrypcje odnawiają się automatycznie, chyba że zostaną anulowane co najmniej 24 godziny przed końcem okresu.</li><li><strong>Anulowanie:</strong> Możesz zarządzać subskrypcjami w ustawieniach swojego konta App Store lub Google Play.</li></ul></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-pen-fancy"></i></span> 5. Treści Użytkownika</h2><p>Zachowujesz pełną własność swoich treści osobistych (notatki, quizy). Korzystając z synchronizacji w chmurze, udzielasz nam ograniczonej licencji na przechowywanie i wyświetlanie treści wyłącznie w celu świadczenia Usług.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-handshake"></i></span> 6. Postępowanie Użytkownika</h2><p>Zgadzasz się nie używać Usług do naruszania prawa lub praw osób trzecich. Zastrzegamy sobie prawo do usuwania treści i zawieszania kont.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-copyright"></i></span> 7. Własność Intelektualna</h2><p>Cała zawartość, w tym nazwa, logo, oprogramowanie i oryginalne quizy, stanowi własność naszej firmy lub jej licencjodawców. Otrzymujesz ograniczoną licencję do użytku osobistego, niekomercyjnego.</p></div>
+                    <div class="highlight-box"><h2><i class="fas fa-exclamation-triangle"></i> 8. Wyłączenie i Ograniczenie Odpowiedzialności</h2><p><strong>USŁUGI SĄ DOSTARCZANE "TAK JAK SĄ" BEZ ŻADNYCH GWARANCJI. NIE PONOSIMY ODPOWIEDZIALNOŚCI ZA SZKODY POŚREDNIE, UTRATĘ DANYCH LUB UTRACONE KORZYŚCI.</strong></p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-door-open"></i></span> 9. Zakończenie</h2><p>Możemy zawiesić Twój dostęp w przypadku naruszenia Regulaminu. Możesz usunąć swoje konto w dowolnym momencie w ustawieniach aplikacji.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-sync-alt"></i></span> 10. Zmiany Regulaminu</h2><p>O istotnych zmianach powiadomimy z co najmniej 30-dniowym wyprzedzeniem.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-gavel"></i></span> 11. Prawo Właściwe</h2><p>Niniejszy Regulamin podlega prawu jurysdykcji, w której działa ORHAR.</p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-envelope"></i></span> 12. Skontaktuj się z nami</h2><p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="mailto:${contactEmail}"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p></div>
                 `
             }
         };
 
+        // ========== LANGUAGE SWITCHER ==========
         function changeLang(lang) {
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                if (legalData[lang] && legalData[lang][key]) {
-                    el.innerHTML = legalData[lang][key];
+                if (legalData[lang] && legalData[lang][key] !== undefined) {
+                    el.textContent = legalData[lang][key];
                 }
             });
             
@@ -347,12 +925,13 @@
             document.documentElement.lang = lang;
         }
 
+        // ========== INITIALIZATION ==========
         document.addEventListener("DOMContentLoaded", () => {
             const savedLang = localStorage.getItem('orhar_lang');
             const browserLang = navigator.language.slice(0, 2);
             const supported = ['en', 'fr', 'es', 'de', 'it', 'pt', 'pl'];
             
-            let initLang = 'en'; 
+            let initLang = 'en';
             if (savedLang && supported.includes(savedLang)) {
                 initLang = savedLang;
             } else if (supported.includes(browserLang)) {

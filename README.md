@@ -66,43 +66,53 @@ Language is auto-detected from the browser and can be switched via the dropdown 
 
 ## 🏗️ Tech Stack
 
-HTML5 / CSS3 / Vanilla JavaScript — No framework, no build step
-Font Awesome 6 — Icon library
-Google Fonts — Cormorant Garamond (display) + Work Sans (body)
-Firebase Auth — For password reset and email verification flows
-localStorage — For language preference persistence
+| Technology | Purpose |
+|------------|---------|
+| **HTML5 / CSS3 / Vanilla JavaScript** | Core website — no framework, no build step |
+| **Font Awesome 6** | Icon library |
+| **Google Fonts** | Cormorant Garamond (display) + Work Sans (body) |
+| **Firebase Auth** | Password reset and email verification flows |
+| **localStorage** | Language preference persistence |
 
 ## 📁 File Structure
 
 orhar-website/
-├── index.html              # Homepage
-├── contact.html            # Contact & Support
-├── privacy.html            # Privacy Policy
-├── terms.html              # Terms of Service
-├── licenses.html           # Open Source Licenses
-├── action.html             # Firebase Auth Actions
-├── logo.png                # ORHAR Logo
-├── logo-dark.png           # Dark theme variant
-└── README.md               # This file
+├── index.html # Homepage — hero, features, theme picker
+├── contact.html # Contact & Support — FAQ, donate, contribute
+├── privacy.html # Privacy Policy — complete legal document
+├── terms.html # Terms of Service — complete legal document
+├── licenses.html # Open Source Licenses — third-party attributions
+├── action.html # Firebase Auth — password reset, email verification
+├── logo.png # ORHAR Logo (light background)
+├── logo-dark.png # ORHAR Logo (dark background)
+└── README.md # This file
+
 
 ## 📄 License
 
-This website's code is available under the MIT License.
+This website's code is available under the [MIT License](LICENSE).
 
-The ORHAR name, logo, and branding are proprietary. Third-party libraries and services are listed on the Licenses page.
+The ORHAR name, logo, and branding are proprietary. Third-party libraries and services are listed on the [Licenses](licenses.html) page.
 
 ## 🙏 Acknowledgments
 
 ORHAR is built with gratitude on the shoulders of:
 
-The open-source community — React Native, Expo, Firebase, and hundreds of libraries
-The translators and contributors who make ORHAR accessible across languages
-Every user who climbs the mountain daily through Scripture
+- **The open-source community** — React Native, Expo, Firebase, and hundreds of libraries
+- **The translators and contributors** who make ORHAR accessible across 7 languages
+- **Every user** who climbs the mountain daily through Scripture
 
 ## 📬 Contact
 
-Website: orhar.com
-Email: contact@orhar.com
-App: Available on the App Store and Google Play
+| Channel | Link |
+|---------|------|
+| 🌐 Website | [orhar.com](https://orhar.com) |
+| 📧 Email | [contact@orhar.com](mailto:contact@orhar.com) |
+| 📱 App | Available on the App Store and Google Play |
 
-<div align="center"> <p><em>"Your word is a lamp to my feet and a light to my path."</em></p> <p>— Psalm 119:105</p> </div>
+---
+
+<div align="center">
+  <p><em>"Your word is a lamp to my feet and a light to my path."</em></p>
+  <p>— Psalm 119:105</p>
+</div>

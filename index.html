@@ -296,6 +296,17 @@
         
         .store-btn strong { font-size: 18px; }
 
+        .store-btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary-navy);
+            color: var(--primary-navy);
+        }
+
+        .store-btn-secondary:hover {
+            background: var(--primary-navy);
+            color: var(--surface-color);
+        }
+
         /* ========== SECTION DIVIDER ========== */
         .section-divider {
             display: flex;
@@ -707,18 +718,18 @@
         <p data-i18n="hero_desc">OR means light. HAR means mountain. Together, ORHAR is the biblical place of divine encounter. Built for the daily ascent, multilingual, and beautifully crafted for your spiritual journey.</p>
         
         <div class="store-buttons">
-            <a href="#" class="store-btn">
-                <i class="fab fa-apple"></i>
+            <a href="contact.html" class="store-btn">
+                <i class="fas fa-bell"></i>
                 <div>
-                    <span class="coming-soon" data-i18n="btn_coming">Coming soon on the</span>
-                    <strong>App Store</strong>
+                    <span class="coming-soon" data-i18n="btn_notify">Be the first to know</span>
+                    <strong data-i18n="btn_notify_cta">Get Launch Updates</strong>
                 </div>
             </a>
-            <a href="#" class="store-btn">
-                <i class="fab fa-google-play"></i>
+            <a href="contact.html#support" class="store-btn store-btn-secondary">
+                <i class="fas fa-heart"></i>
                 <div>
-                    <span class="coming-soon" data-i18n="btn_coming2">Coming soon on</span>
-                    <strong>Google Play</strong>
+                    <span class="coming-soon" data-i18n="btn_support">Help us grow</span>
+                    <strong data-i18n="btn_support_cta">Support the Project</strong>
                 </div>
             </a>
         </div>
@@ -938,6 +949,10 @@
                 foot_terms: "Terms of Service",
                 foot_lic: "Open Source Licenses",
                 foot_rights: "All Rights Reserved.",
+                btn_notify: "Be the first to know",
+                btn_notify_cta: "Get Launch Updates",
+                btn_support: "Help us grow",
+                btn_support_cta: "Support the Project",
                 foot_verse: "\"Your word is a lamp to my feet, a light to my path.\" — Psalm 119:105"
             },
             fr: {
@@ -981,6 +996,10 @@
                 foot_terms: "Conditions d'Utilisation",
                 foot_lic: "Licences Open Source",
                 foot_rights: "Tous droits réservés.",
+                btn_notify: "Soyez les premiers informés",
+                btn_notify_cta: "Recevoir les Alertes",
+                btn_support: "Aidez-nous à grandir",
+                btn_support_cta: "Soutenir le Projet",
                 foot_verse: "\"Ta parole est une lampe à mes pieds, une lumière sur mon sentier.\" — Psaume 119:105"
             },
             es: {
@@ -1024,6 +1043,10 @@
                 foot_terms: "Términos de Servicio",
                 foot_lic: "Licencias de Código Abierto",
                 foot_rights: "Todos los derechos reservados.",
+                btn_notify: "Sé el primero en saberlo",
+                btn_notify_cta: "Recibir Actualizaciones",
+                btn_support: "Ayúdanos a crecer",
+                btn_support_cta: "Apoyar el Proyecto",
                 foot_verse: "\"Lámpara es a mis pies tu palabra, y lumbrera a mi camino.\" — Salmo 119:105"
             },
             de: {
@@ -1067,6 +1090,10 @@
                 foot_terms: "Nutzungsbedingungen",
                 foot_lic: "Open-Source-Lizenzen",
                 foot_rights: "Alle Rechte vorbehalten.",
+                btn_notify: "Sei der Erste, der es erfährt",
+                btn_notify_cta: "Updates Erhalten",
+                btn_support: "Hilf uns zu wachsen",
+                btn_support_cta: "Projekt Unterstützen",
                 foot_verse: "\"Dein Wort ist meines Fußes Leuchte und ein Licht auf meinem Wege.\" — Psalm 119:105"
             },
             it: {
@@ -1110,6 +1137,10 @@
                 foot_terms: "Termini di Servizio",
                 foot_lic: "Licenze Open Source",
                 foot_rights: "Tutti i diritti riservati.",
+                btn_notify: "Sii il primo a saperlo",
+                btn_notify_cta: "Ricevi Aggiornamenti",
+                btn_support: "Aiutaci a crescere",
+                btn_support_cta: "Sostieni il Progetto",
                 foot_verse: "\"La tua parola è una lampada al mio piede e una luce sul mio sentiero.\" — Salmo 119:105"
             },
             pt: {
@@ -1153,6 +1184,10 @@
                 foot_terms: "Termos de Serviço",
                 foot_lic: "Licenças de Código Aberto",
                 foot_rights: "Todos os direitos reservados.",
+                btn_notify: "Seja o primeiro a saber",
+                btn_notify_cta: "Receber Atualizações",
+                btn_support: "Ajude-nos a crescer",
+                btn_support_cta: "Apoiar o Projeto",
                 foot_verse: "\"Lâmpada para os meus pés é tua palavra, e luz para o meu caminho.\" — Salmo 119:105"
             },
             pl: {
@@ -1196,6 +1231,10 @@
                 foot_terms: "Warunki Usługi",
                 foot_lic: "Licencje Open Source",
                 foot_rights: "Wszelkie prawa zastrzeżone.",
+                btn_notify: "Bądź pierwszy, który się dowie",
+                btn_notify_cta: "Otrzymuj Aktualizacje",
+                btn_support: "Pomóż nam rosnąć",
+                btn_support_cta: "Wesprzyj Projekt",
                 foot_verse: "\"Twoje słowo jest lampą dla moich stóp i światłem na mojej ścieżce.\" — Psalm 119:105"
             }
         };

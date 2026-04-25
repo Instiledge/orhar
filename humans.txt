@@ -1,0 +1,20 @@
+/* TEAM */
+Founder: [Your Name]
+Contact: contact [at] orhar.com
+From: [Your Country/City]
+
+/* SITE */
+Last update: 2026-04-25
+Languages: English, French, Spanish, German, Italian, Portuguese, Polish
+Design: Custom — Glassmorphism + typography-driven
+Fonts: Cormorant Garamond (display), Work Sans (body)
+Icons: Font Awesome 6
+Hosting: GitHub Pages via Cloudflare CDN
+
+/* MISSION */
+"Your word is a lamp to my feet and a light to my path." — Psalm 119:105
+Made with ❤️ for the life of prayer.
+
+/* THANKS */
+The open-source community, our translators, beta testers,
+and every person who opens the Word daily.

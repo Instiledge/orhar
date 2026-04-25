@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found — ORHAR</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <meta name="robots" content="noindex, follow">
+
+    <style>
+        :root {
+            --bg-color: #FCFBF8;
+            --surface-color: #FFFFFF;
+            --primary-navy: #1A2E4A;
+            --header-bg: rgba(252, 251, 248, 0.95);
+            --accent-gold: #CFB286;
+            --accent-gold-rgb: 207, 178, 134;
+            --accent-brown: #915B27;
+            --accent-brown-rgb: 145, 91, 39;
+            --text-dark: #1e1e1e;
+            --text-muted: #7f8c8d;
+            --card-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Work Sans', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: var(--font-body); 
+            background-color: var(--bg-color); 
+            color: var(--text-dark); 
+            line-height: 1.7; 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        a { text-decoration: none; color: var(--primary-navy); transition: color 0.3s ease; }
+        a:hover { color: var(--accent-brown); }
+
+        header { 
+            padding: 16px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: var(--header-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(var(--accent-gold-rgb), 0.3); 
+        }
+        
+        .logo-container { 
+            display: flex; 
+            align-items: center; 
+            gap: 14px; 
+            text-decoration: none;
+        }
+        
+        .logo-img { 
+            width: 48px; 
+            height: 48px; 
+            border-radius: 12px; 
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(var(--accent-gold-rgb), 0.3);
+        }
+        
+        .logo-text { 
+            font-family: var(--font-display); 
+            font-size: 26px; 
+            font-weight: 700; 
+            letter-spacing: 3px; 
+            color: var(--primary-navy);
+        }
+
+        main { 
+            flex: 1; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 60px 20px; 
+        }
+
+        .error-container {
+            text-align: center;
+            max-width: 550px;
+        }
+
+        .error-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(var(--accent-gold-rgb), 0.1);
+            margin-bottom: 30px;
+        }
+
+        .error-icon i {
+            font-size: 56px;
+            color: var(--accent-brown);
+        }
+
+        .error-code {
+            font-family: var(--font-display);
+            font-size: 100px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-navy), var(--accent-brown));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: 32px;
+            color: var(--primary-navy);
+            margin-bottom: 16px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, var(--primary-navy), #2a4060);
+            color: #FFFFFF;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: var(--font-body);
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 24px rgba(26, 46, 74, 0.2);
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background: linear-gradient(135deg, #2a4060, var(--primary-navy));
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(26, 46, 74, 0.3);
+            color: #FFFFFF;
+        }
+
+        .button-secondary {
+            background: transparent;
+            border: 2px solid rgba(var(--accent-gold-rgb), 0.5);
+            color: var(--primary-navy);
+            box-shadow: none;
+        }
+
+        .button-secondary:hover {
+            background: rgba(var(--accent-gold-rgb), 0.1);
+            border-color: var(--accent-brown);
+            color: var(--accent-brown);
+            box-shadow: none;
+        }
+
+        .psalm-reference {
+            margin-top: 40px;
+            font-style: italic;
+            color: var(--accent-brown);
+            font-family: var(--font-display);
+            font-size: 18px;
+        }
+
+        @media (max-width: 600px) {
+            .error-code { font-size: 72px; }
+            h1 { font-size: 24px; }
+            .button-group { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="ORHAR Logo" class="logo-img" onerror="this.style.display='none'">
+            <span class="logo-text">ORHAR</span>
+        </a>
+    </header>
+
+    <main>
+        <div class="error-container">
+            <div class="error-icon">
+                <i class="fas fa-mountain"></i>
+            </div>
+            <div class="error-code">404</div>
+            <h1>Page Not Found</h1>
+            <p>The path you are looking for does not exist on this mountain. Perhaps it has been moved, or perhaps it was never here. Either way, the Word remains.</p>
+            <div class="button-group">
+                <a href="index.html" class="button">
+                    <i class="fas fa-home"></i> Return Home
+                </a>
+                <a href="contact.html" class="button button-secondary">
+                    <i class="fas fa-envelope"></i> Contact Us
+                </a>
+            </div>
+            <p class="psalm-reference">
+                "Your word is a lamp to my feet and a light to my path."<br>
+                — Psalm 119:105
+            </p>
+        </div>
+    </main>
+
+</body>
+</html>

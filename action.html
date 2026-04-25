@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -15,75 +15,447 @@
             --bg-color: #FCFBF8;
             --surface-color: #FFFFFF;
             --primary-navy: #1A2E4A;
-            --header-bg: #FCFBF8;
+            --header-bg: rgba(252, 251, 248, 0.95);
             --accent-gold: #CFB286;
+            --accent-gold-rgb: 207, 178, 134;
             --accent-brown: #915B27;
+            --accent-brown-rgb: 145, 91, 39;
             --text-dark: #1e1e1e;
-            --text-muted: #4a5568; 
+            --text-muted: #7f8c8d;
+            --card-shadow: 0 10px 40px rgba(0,0,0,0.06);
             
             --font-display: 'Cormorant Garamond', serif;
             --font-body: 'Work Sans', sans-serif;
+            --theme-transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-body); background-color: var(--bg-color); color: var(--text-dark); line-height: 1.7; display: flex; flex-direction: column; min-height: 100vh; }
-        h1, h2, h3, h4 { font-family: var(--font-display); color: var(--primary-navy); }
-        a { text-decoration: none; color: var(--accent-brown); font-weight: 500; transition: color 0.2s ease; }
-        a:hover { color: var(--primary-navy); }
-
-        /* Header */
-        header { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: var(--header-bg); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--accent-gold); }
-        .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none !important; }
-        .logo-img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; }
-        .logo-text { font-family: var(--font-display); font-size: 24px; font-weight: 700; letter-spacing: 2px; color: var(--primary-navy); }
-        .nav-links { display: flex; gap: 25px; align-items: center; }
-        .nav-links a { font-size: 15px; font-weight: 500; color: var(--primary-navy); }
-        .nav-links a:hover { color: var(--accent-brown); }
-
-        /* Main Content Centering */
-        main { flex: 1; display: flex; justify-content: center; align-items: center; padding: 40px 20px; }
-
-        /* Auth Card */
-        .auth-card { background: var(--surface-color); border-radius: 16px; padding: 40px; max-width: 450px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid var(--primary-navy); }
-        .auth-card .icon { font-size: 60px; color: var(--accent-gold); margin-bottom: 20px; }
-        .auth-card h1 { font-size: 32px; margin-bottom: 15px; }
-        .auth-card p { color: var(--text-muted); margin-bottom: 25px; font-size: 16px; }
-
-        /* Form Elements */
-        .form-group { margin-bottom: 20px; text-align: left; }
-        .form-group label { display: block; font-weight: 500; margin-bottom: 8px; color: var(--primary-navy); font-size: 14px; }
-        .password-wrapper { position: relative; }
-        .password-wrapper input { width: 100%; padding: 14px 45px 14px 15px; border: 1px solid rgba(207, 178, 134, 0.5); border-radius: 8px; font-family: var(--font-body); font-size: 16px; outline: none; transition: border-color 0.3s; background: var(--bg-color); color: var(--text-dark); }
-        .password-wrapper input:focus { border-color: var(--primary-navy); }
-        .toggle-password { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--text-muted); font-size: 16px; }
-        .toggle-password:hover { color: var(--primary-navy); }
-
-        /* Button */
-        .button { display: inline-block; width: 100%; padding: 15px; background-color: var(--primary-navy); color: var(--surface-color); border: none; border-radius: 8px; font-size: 16px; font-weight: 500; font-family: var(--font-body); cursor: pointer; transition: background-color 0.3s, transform 0.1s; }
-        .button:hover { background-color: var(--accent-brown); color: var(--surface-color); }
-        .button:disabled { opacity: 0.6; cursor: not-allowed; }
-
-        /* States */
-        .hidden { display: none !important; }
-        .spinner { border: 3px solid rgba(207, 178, 134, 0.3); border-top: 3px solid var(--primary-navy); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 20px; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         
-        .alert { padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; text-align: left; }
-        .alert-error { background: #FDE8E8; color: #9B1C1C; border: 1px solid #F9B4B4; }
-        .alert-success { background: #DEF7EC; color: #03543F; border: 1px solid #B3E3D1; }
+        html { scroll-behavior: smooth; }
+        
+        body { 
+            font-family: var(--font-body); 
+            background-color: var(--bg-color); 
+            color: var(--text-dark); 
+            line-height: 1.7; 
+            transition: var(--theme-transition);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        h1, h2, h3, h4 { 
+            font-family: var(--font-display); 
+            color: var(--primary-navy); 
+            transition: var(--theme-transition); 
+        }
+        
+        a { 
+            text-decoration: none; 
+            color: var(--primary-navy); 
+            transition: var(--theme-transition); 
+        }
+        
+        a:hover { color: var(--accent-brown); }
 
-        /* Footer */
-        footer { background-color: var(--surface-color); padding: 40px 5% 20px; border-top: 1px solid var(--accent-gold); margin-top: auto; }
-        .footer-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-        .footer-brand h2 { font-size: 24px; letter-spacing: 2px; margin-bottom: 0; }
-        .footer-links { display: flex; gap: 20px; }
-        .footer-links a { font-size: 14px; color: var(--text-muted); }
-        .copyright { text-align: center; margin-top: 20px; font-size: 13px; color: var(--text-muted); opacity: 0.8; }
+        /* ========== HEADER ========== */
+        header { 
+            padding: 16px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: var(--header-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid rgba(var(--accent-gold-rgb), 0.3); 
+            transition: var(--theme-transition);
+        }
+        
+        .logo-container { 
+            display: flex; 
+            align-items: center; 
+            gap: 14px; 
+            text-decoration: none !important;
+        }
+        
+        .logo-img { 
+            width: 48px; 
+            height: 48px; 
+            border-radius: 12px; 
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(var(--accent-gold-rgb), 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .logo-container:hover .logo-img {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(var(--accent-gold-rgb), 0.4);
+        }
+        
+        .logo-text { 
+            font-family: var(--font-display); 
+            font-size: 26px; 
+            font-weight: 700; 
+            letter-spacing: 3px; 
+            color: var(--primary-navy);
+            transition: var(--theme-transition);
+        }
+        
+        .nav-links { 
+            display: flex; 
+            gap: 28px; 
+            align-items: center; 
+        }
+        
+        .nav-links a { 
+            font-size: 15px; 
+            font-weight: 500;
+            position: relative;
+            padding: 4px 0;
+            transition: color 0.3s ease;
+            color: var(--primary-navy);
+            text-decoration: none;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-brown);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
+        /* ========== MAIN CONTENT ========== */
+        main { 
+            flex: 1; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 60px 20px; 
+        }
+
+        /* ========== AUTH CARD ========== */
+        .auth-card { 
+            background: var(--surface-color); 
+            border-radius: 24px; 
+            padding: 48px 40px; 
+            max-width: 480px; 
+            width: 100%; 
+            box-shadow: var(--card-shadow);
+            text-align: center; 
+            border: 1px solid rgba(var(--accent-gold-rgb), 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .auth-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-brown), var(--accent-gold));
+            opacity: 0.8;
+        }
+        
+        .auth-card .icon { 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(var(--accent-gold-rgb), 0.1);
+            margin-bottom: 24px;
+        }
+        
+        .auth-card .icon i {
+            font-size: 36px; 
+            color: var(--accent-brown);
+        }
+        
+        .auth-card .icon.success-icon {
+            background: rgba(5, 150, 105, 0.1);
+        }
+        
+        .auth-card .icon.success-icon i {
+            color: #059669;
+        }
+        
+        .auth-card .icon.error-icon {
+            background: rgba(220, 38, 38, 0.1);
+        }
+        
+        .auth-card .icon.error-icon i {
+            color: #DC2626;
+        }
+        
+        .auth-card h1 { 
+            font-size: 30px; 
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--primary-navy), var(--accent-brown));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .auth-card .email-display {
+            color: var(--accent-brown);
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 20px;
+            word-break: break-all;
+        }
+        
+        .auth-card p { 
+            color: var(--text-muted); 
+            margin-bottom: 24px; 
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* ========== FORM ELEMENTS ========== */
+        .form-group { 
+            margin-bottom: 20px; 
+            text-align: left; 
+        }
+        
+        .form-group label { 
+            display: block; 
+            font-weight: 600; 
+            margin-bottom: 8px; 
+            color: var(--primary-navy); 
+            font-size: 14px;
+            font-family: var(--font-body);
+        }
+        
+        .password-wrapper { 
+            position: relative; 
+        }
+        
+        .password-wrapper input { 
+            width: 100%; 
+            padding: 14px 48px 14px 16px; 
+            border: 2px solid rgba(var(--accent-gold-rgb), 0.3);
+            border-radius: 12px; 
+            font-family: var(--font-body); 
+            font-size: 16px; 
+            outline: none; 
+            transition: all 0.3s ease; 
+            background: var(--bg-color); 
+            color: var(--text-dark); 
+        }
+        
+        .password-wrapper input:focus { 
+            border-color: var(--accent-brown);
+            box-shadow: 0 0 0 3px rgba(var(--accent-brown-rgb), 0.1);
+        }
+        
+        .toggle-password { 
+            position: absolute; 
+            right: 14px; 
+            top: 50%; 
+            transform: translateY(-50%); 
+            background: none; 
+            border: none; 
+            cursor: pointer; 
+            color: var(--text-muted); 
+            font-size: 18px;
+            padding: 4px;
+            transition: color 0.3s ease;
+        }
+        
+        .toggle-password:hover { 
+            color: var(--accent-brown); 
+        }
+
+        /* ========== BUTTON ========== */
+        .button { 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%; 
+            padding: 16px 24px; 
+            background: linear-gradient(135deg, var(--primary-navy), #2a4060); 
+            color: #FFFFFF; 
+            border: none; 
+            border-radius: 14px; 
+            font-size: 16px; 
+            font-weight: 600; 
+            font-family: var(--font-body); 
+            cursor: pointer; 
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 24px rgba(26, 46, 74, 0.2);
+            text-decoration: none !important;
+        }
+        
+        .button:hover { 
+            background: linear-gradient(135deg, #2a4060, var(--primary-navy));
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(26, 46, 74, 0.3); 
+            color: #FFFFFF; 
+        }
+        
+        .button:disabled { 
+            opacity: 0.6; 
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .button-secondary {
+            background: transparent;
+            border: 2px solid rgba(var(--accent-gold-rgb), 0.5);
+            color: var(--primary-navy);
+            box-shadow: none;
+        }
+        
+        .button-secondary:hover {
+            background: rgba(var(--accent-gold-rgb), 0.1);
+            border-color: var(--accent-brown);
+            color: var(--accent-brown);
+            box-shadow: none;
+        }
+
+        /* ========== STORE BUTTONS ROW ========== */
+        .store-row {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 24px;
+        }
+        
+        .store-row .button {
+            flex: 1;
+            max-width: 200px;
+            font-size: 14px;
+            padding: 14px 20px;
+        }
+
+        /* ========== STATES ========== */
+        .hidden { display: none !important; }
+        
+        /* ========== SPINNER ========== */
+        .spinner-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .spinner { 
+            width: 48px; 
+            height: 48px; 
+            border: 4px solid rgba(var(--accent-gold-rgb), 0.2);
+            border-top: 4px solid var(--accent-brown); 
+            border-radius: 50%; 
+            animation: spin 1s linear infinite; 
+        }
+        
+        @keyframes spin { 
+            0% { transform: rotate(0deg); } 
+            100% { transform: rotate(360deg); } 
+        }
+        
+        /* ========== ALERTS ========== */
+        .alert { 
+            padding: 14px 18px; 
+            border-radius: 12px; 
+            margin-bottom: 20px; 
+            font-size: 14px; 
+            text-align: left;
+            font-weight: 500;
+        }
+        
+        .alert-error { 
+            background: #FEF2F2; 
+            color: #991B1B; 
+            border: 1px solid #FECACA; 
+        }
+        
+        .alert-success { 
+            background: #ECFDF5; 
+            color: #065F46; 
+            border: 1px solid #A7F3D0; 
+        }
+
+        /* ========== FOOTER ========== */
+        footer { 
+            background: linear-gradient(180deg, var(--primary-navy), #0f1f33); 
+            padding: 35px 5% 25px; 
+            border-top: 1px solid rgba(var(--accent-gold-rgb), 0.3); 
+            transition: var(--theme-transition);
+            color: #FFFFFF;
+            margin-top: auto;
+        }
+        
+        .footer-content { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: 24px; 
+        }
+        
+        .footer-brand h2 { 
+            font-size: 24px; 
+            letter-spacing: 3px; 
+            margin-bottom: 0;
+            color: var(--accent-gold);
+        }
+        
+        .footer-links { 
+            display: flex; 
+            gap: 20px; 
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a { 
+            font-size: 13px; 
+            color: rgba(255,255,255,0.7);
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .copyright { 
+            text-align: center; 
+            margin-top: 20px; 
+            font-size: 12px; 
+            color: rgba(255,255,255,0.5); 
+        }
+
+        /* ========== RESPONSIVE ========== */
         @media (max-width: 600px) {
-            .auth-card { padding: 30px 20px; }
-            header { flex-direction: column; gap: 15px; }
+            .auth-card { 
+                padding: 36px 24px; 
+                border-radius: 20px;
+            }
+            .auth-card h1 { font-size: 26px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+            header { flex-direction: column; gap: 12px; }
             .footer-content { flex-direction: column; text-align: center; }
+            .footer-links { justify-content: center; }
+            .store-row { flex-direction: column; align-items: center; }
+            .store-row .button { max-width: 100%; }
         }
     </style>
 </head>
@@ -102,17 +474,21 @@
 
     <main>
         <div class="auth-card">
-            <!-- Loading State -->
+            <!-- ========== LOADING STATE ========== -->
             <div id="loading-state">
-                <div class="spinner"></div>
-                <p id="loading-text">Processing...</p>
+                <div class="spinner-wrapper">
+                    <div class="spinner"></div>
+                    <p id="loading-text">Processing...</p>
+                </div>
             </div>
 
-            <!-- Password Reset Form -->
+            <!-- ========== PASSWORD RESET FORM ========== -->
             <div id="reset-password-view" class="hidden">
-                <i class="fas fa-key icon"></i>
+                <div class="icon">
+                    <i class="fas fa-key"></i>
+                </div>
                 <h1 id="reset-title">Reset Your Password</h1>
-                <p class="email" id="reset-email"></p>
+                <p class="email-display" id="reset-email"></p>
 
                 <div id="reset-error" class="alert alert-error hidden"></div>
                 <div id="reset-success" class="alert alert-success hidden"></div>
@@ -122,34 +498,49 @@
                         <label for="new-password" id="label-new">New Password</label>
                         <div class="password-wrapper">
                             <input type="password" id="new-password" placeholder="Min 8 characters" minlength="8" required>
-                            <button type="button" class="toggle-password" onclick="togglePassword('new-password', this)"><i class="fas fa-eye"></i></button>
+                            <button type="button" class="toggle-password" onclick="togglePassword('new-password', this)" aria-label="Toggle password visibility">
+                                <i class="fas fa-eye"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="confirm-password" id="label-confirm">Confirm Password</label>
                         <div class="password-wrapper">
                             <input type="password" id="confirm-password" placeholder="Confirm password" minlength="8" required>
-                            <button type="button" class="toggle-password" onclick="togglePassword('confirm-password', this)"><i class="fas fa-eye"></i></button>
+                            <button type="button" class="toggle-password" onclick="togglePassword('confirm-password', this)" aria-label="Toggle password visibility">
+                                <i class="fas fa-eye"></i>
+                            </button>
                         </div>
                     </div>
-                    <button type="submit" class="button" id="reset-submit">Reset Password</button>
+                    <button type="submit" class="button" id="reset-submit">
+                        <i class="fas fa-lock"></i> Reset Password
+                    </button>
                 </form>
             </div>
 
-            <!-- Email Verification Success -->
+            <!-- ========== EMAIL VERIFICATION SUCCESS ========== -->
             <div id="verify-email-view" class="hidden">
-                <i class="fas fa-envelope-circle-check icon" style="color: #059669;"></i>
+                <div class="icon success-icon">
+                    <i class="fas fa-circle-check"></i>
+                </div>
                 <h1 id="verify-title">Email Verified!</h1>
-                <p id="verify-message">Your email has been successfully verified.</p>
-                <button onclick="openAppWithDeepLink('Home')" class="button" id="verify-open-app">Open ORHAR</button>
+                <p id="verify-message">Your email has been successfully verified. You can now access all features of ORHAR.</p>
+                <button onclick="openAppWithDeepLink('Home')" class="button" id="verify-open-app">
+                    <i class="fas fa-external-link-alt"></i> Open ORHAR
+                </button>
             </div>
 
-            <!-- Error State -->
+            <!-- ========== ERROR STATE ========== -->
             <div id="error-view" class="hidden">
-                <i class="fas fa-triangle-exclamation icon" style="color: #DC2626;"></i>
+                <div class="icon error-icon">
+                    <i class="fas fa-circle-exclamation"></i>
+                </div>
                 <h1 id="error-title">Action Failed</h1>
                 <p id="error-message">Something went wrong.</p>
-                <p class="alert alert-error" id="error-detail"></p>
+                <div class="alert alert-error" id="error-detail"></div>
+                <a href="contact.html" class="button button-secondary" style="margin-top: 12px;">
+                    <i class="fas fa-envelope"></i> Contact Support
+                </a>
             </div>
         </div>
     </main>
@@ -163,6 +554,7 @@
                 <a href="privacy.html" id="footPriv">Privacy Policy</a>
                 <a href="terms.html" id="footTerms">Terms of Service</a>
                 <a href="licenses.html" id="footLic">Licenses</a>
+                <a href="contact.html" id="navContactFooter">Contact</a>
             </div>
         </div>
         <div class="copyright">
@@ -175,38 +567,123 @@
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
 
     <script>
+        // ========== TRANSLATIONS (7 LANGUAGES, 1:1 MAPPED) ==========
         const translations = {
             en: {
                 navHome: "Home", navContact: "Contact", footPriv: "Privacy Policy", footTerms: "Terms of Service", footLic: "Licenses", footRights: "All Rights Reserved.",
-                pageTitle: "ORHAR", loading: "Processing...", resetTitle: "Reset Your Password", resetFor: "for", labelNew: "New Password", labelConfirm: "Confirm Password", placeholderNew: "Min 8 characters", placeholderConfirm: "Confirm password", resetSubmit: "Reset Password", resetSubmitting: "Resetting...", resetSuccess: "Password reset successfully! Redirecting to app...", errorMatch: "Passwords do not match", errorLength: "Password must be at least 8 characters", verifyTitle: "Email Verified!", verifyMessage: "Your email has been successfully verified. You can now access all features of ORHAR.", openApp: "Open ORHAR", errorTitle: "Action Failed", errorMessage: "Something went wrong.", errorExpired: "This link has expired. Please request a new one from the app.", errorInvalid: "This link is invalid or has already been used.", errorDefault: "An error occurred. Please try again.", appNotInstalled: "App Not Installed", installMessage: "Please install ORHAR from your app store to complete this action."
+                pageTitle: "ORHAR — Account Action", loading: "Processing your request...",
+                resetTitle: "Reset Your Password", resetFor: "for", labelNew: "New Password", labelConfirm: "Confirm Password",
+                placeholderNew: "Min 8 characters", placeholderConfirm: "Confirm password",
+                resetSubmit: "Reset Password", resetSubmitting: "Resetting...",
+                resetSuccess: "Password reset successfully! Redirecting to app...",
+                errorMatch: "Passwords do not match", errorLength: "Password must be at least 8 characters",
+                verifyTitle: "Email Verified!", verifyMessage: "Your email has been successfully verified. You can now access all features of ORHAR.",
+                openApp: "Open ORHAR", errorTitle: "Action Failed", errorMessage: "Something went wrong.",
+                errorExpired: "This link has expired. Please request a new one from the app.",
+                errorInvalid: "This link is invalid or has already been used.",
+                errorDefault: "An error occurred. Please try again.",
+                appNotInstalled: "App Not Installed", installMessage: "Please install ORHAR from your app store to complete this action.",
+                contactSupport: "Contact Support"
             },
             fr: {
                 navHome: "Accueil", navContact: "Contact", footPriv: "Confidentialité", footTerms: "Conditions", footLic: "Licences", footRights: "Tous droits réservés.",
-                pageTitle: "ORHAR", loading: "Traitement...", resetTitle: "Réinitialisez votre mot de passe", resetFor: "pour", labelNew: "Nouveau mot de passe", labelConfirm: "Confirmer le mot de passe", placeholderNew: "Min 8 caractères", placeholderConfirm: "Confirmez le mot de passe", resetSubmit: "Réinitialiser", resetSubmitting: "En cours...", resetSuccess: "Mot de passe réinitialisé avec succès ! Redirection vers l'app...", errorMatch: "Les mots de passe ne correspondent pas", errorLength: "Le mot de passe doit contenir au moins 8 caractères", verifyTitle: "Email vérifié !", verifyMessage: "Votre email a été vérifié avec succès. Vous pouvez maintenant accéder à toutes les fonctionnalités d'ORHAR.", openApp: "Ouvrir ORHAR", errorTitle: "Action échouée", errorMessage: "Une erreur s'est produite.", errorExpired: "Ce lien a expiré. Veuillez en demander un nouveau depuis l'application.", errorInvalid: "Ce lien est invalide ou a déjà été utilisé.", errorDefault: "Une erreur s'est produite. Veuillez réessayer.", appNotInstalled: "Application Non Installée", installMessage: "Veuillez installer ORHAR depuis votre store pour continuer."
+                pageTitle: "ORHAR — Action de compte", loading: "Traitement de votre demande...",
+                resetTitle: "Réinitialisez votre mot de passe", resetFor: "pour", labelNew: "Nouveau mot de passe", labelConfirm: "Confirmer le mot de passe",
+                placeholderNew: "Min 8 caractères", placeholderConfirm: "Confirmez le mot de passe",
+                resetSubmit: "Réinitialiser", resetSubmitting: "En cours...",
+                resetSuccess: "Mot de passe réinitialisé avec succès ! Redirection vers l'application...",
+                errorMatch: "Les mots de passe ne correspondent pas", errorLength: "Le mot de passe doit contenir au moins 8 caractères",
+                verifyTitle: "Email vérifié !", verifyMessage: "Votre email a été vérifié. Vous pouvez maintenant accéder à toutes les fonctionnalités d'ORHAR.",
+                openApp: "Ouvrir ORHAR", errorTitle: "Action échouée", errorMessage: "Une erreur s'est produite.",
+                errorExpired: "Ce lien a expiré. Veuillez en demander un nouveau depuis l'application.",
+                errorInvalid: "Ce lien est invalide ou a déjà été utilisé.",
+                errorDefault: "Une erreur s'est produite. Veuillez réessayer.",
+                appNotInstalled: "Application Non Installée", installMessage: "Veuillez installer ORHAR depuis votre store pour continuer.",
+                contactSupport: "Contacter le Support"
             },
             de: {
                 navHome: "Startseite", navContact: "Kontakt", footPriv: "Datenschutz", footTerms: "Bedingungen", footLic: "Lizenzen", footRights: "Alle Rechte vorbehalten.",
-                pageTitle: "ORHAR", loading: "Verarbeitung...", resetTitle: "Passwort zurücksetzen", resetFor: "für", labelNew: "Neues Passwort", labelConfirm: "Passwort bestätigen", placeholderNew: "Min. 8 Zeichen", placeholderConfirm: "Passwort bestätigen", resetSubmit: "Zurücksetzen", resetSubmitting: "Wird zurückgesetzt...", resetSuccess: "Passwort erfolgreich zurückgesetzt! Weiterleitung zur App...", errorMatch: "Passwörter stimmen nicht überein", errorLength: "Passwort muss mindestens 8 Zeichen lang sein", verifyTitle: "E-Mail verifiziert!", verifyMessage: "Ihre E-Mail wurde erfolgreich verifiziert. Sie können jetzt alle Funktionen von ORHAR nutzen.", openApp: "ORHAR öffnen", errorTitle: "Aktion fehlgeschlagen", errorMessage: "Etwas ist schief gelaufen.", errorExpired: "Dieser Link ist abgelaufen. Bitte fordern Sie einen neuen in der App an.", errorInvalid: "Dieser Link ist ungültig oder wurde bereits verwendet.", errorDefault: "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.", appNotInstalled: "App Nicht Installiert", installMessage: "Bitte installieren Sie ORHAR aus Ihrem App Store, um fortzufahren."
+                pageTitle: "ORHAR — Kontoaktion", loading: "Ihre Anfrage wird verarbeitet...",
+                resetTitle: "Passwort zurücksetzen", resetFor: "für", labelNew: "Neues Passwort", labelConfirm: "Passwort bestätigen",
+                placeholderNew: "Min. 8 Zeichen", placeholderConfirm: "Passwort bestätigen",
+                resetSubmit: "Zurücksetzen", resetSubmitting: "Wird zurückgesetzt...",
+                resetSuccess: "Passwort erfolgreich zurückgesetzt! Weiterleitung zur App...",
+                errorMatch: "Passwörter stimmen nicht überein", errorLength: "Passwort muss mindestens 8 Zeichen lang sein",
+                verifyTitle: "E-Mail verifiziert!", verifyMessage: "Ihre E-Mail wurde erfolgreich verifiziert.",
+                openApp: "ORHAR öffnen", errorTitle: "Aktion fehlgeschlagen", errorMessage: "Etwas ist schief gelaufen.",
+                errorExpired: "Dieser Link ist abgelaufen. Bitte fordern Sie einen neuen in der App an.",
+                errorInvalid: "Dieser Link ist ungültig oder wurde bereits verwendet.",
+                errorDefault: "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+                appNotInstalled: "App Nicht Installiert", installMessage: "Bitte installieren Sie ORHAR aus Ihrem App Store.",
+                contactSupport: "Support kontaktieren"
             },
             es: {
                 navHome: "Inicio", navContact: "Contacto", footPriv: "Privacidad", footTerms: "Términos", footLic: "Licencias", footRights: "Todos los derechos reservados.",
-                pageTitle: "ORHAR", loading: "Procesando...", resetTitle: "Restablecer contraseña", resetFor: "para", labelNew: "Nueva contraseña", labelConfirm: "Confirmar contraseña", placeholderNew: "Mín. 8 caracteres", placeholderConfirm: "Confirme la contraseña", resetSubmit: "Restablecer", resetSubmitting: "Restableciendo...", resetSuccess: "¡Contraseña restablecida exitosamente! Redirigiendo a la app...", errorMatch: "Las contraseñas no coinciden", errorLength: "La contraseña debe tener al menos 8 caracteres", verifyTitle: "¡Email verificado!", verifyMessage: "Tu email ha sido verificado exitosamente. Ahora puedes acceder a todas las funciones de ORHAR.", openApp: "Abrir ORHAR", errorTitle: "Acción fallida", errorMessage: "Algo salió mal.", errorExpired: "Este enlace ha caducado. Solicita uno nuevo desde la aplicación.", errorInvalid: "Este enlace es inválido o ya fue usado.", errorDefault: "Ocurrió un error. Por favor, inténtalo de nuevo.", appNotInstalled: "App No Instalada", installMessage: "Por favor instala ORHAR desde tu tienda de aplicaciones para continuar."
+                pageTitle: "ORHAR — Acción de cuenta", loading: "Procesando su solicitud...",
+                resetTitle: "Restablecer contraseña", resetFor: "para", labelNew: "Nueva contraseña", labelConfirm: "Confirmar contraseña",
+                placeholderNew: "Mín. 8 caracteres", placeholderConfirm: "Confirme la contraseña",
+                resetSubmit: "Restablecer", resetSubmitting: "Restableciendo...",
+                resetSuccess: "¡Contraseña restablecida! Redirigiendo a la aplicación...",
+                errorMatch: "Las contraseñas no coinciden", errorLength: "La contraseña debe tener al menos 8 caracteres",
+                verifyTitle: "¡Email verificado!", verifyMessage: "Tu email ha sido verificado exitosamente.",
+                openApp: "Abrir ORHAR", errorTitle: "Acción fallida", errorMessage: "Algo salió mal.",
+                errorExpired: "Este enlace ha caducado. Solicita uno nuevo desde la aplicación.",
+                errorInvalid: "Este enlace es inválido o ya fue usado.",
+                errorDefault: "Ocurrió un error. Inténtalo de nuevo.",
+                appNotInstalled: "App No Instalada", installMessage: "Instala ORHAR desde tu tienda de aplicaciones.",
+                contactSupport: "Contactar Soporte"
             },
             it: {
                 navHome: "Home", navContact: "Contatto", footPriv: "Privacy", footTerms: "Termini", footLic: "Licenze", footRights: "Tutti i diritti riservati.",
-                pageTitle: "ORHAR", loading: "Elaborazione...", resetTitle: "Reimposta la password", resetFor: "per", labelNew: "Nuova password", labelConfirm: "Conferma password", placeholderNew: "Min. 8 caratteri", placeholderConfirm: "Conferma password", resetSubmit: "Reimposta", resetSubmitting: "Reimpostazione...", resetSuccess: "Password reimpostata con successo! Reindirizzamento all'app...", errorMatch: "Le password non corrispondono", errorLength: "La password deve contenere almeno 8 caratteri", verifyTitle: "Email verificata!", verifyMessage: "La tua email è stata verificata con successo. Ora puoi accedere a tutte le funzionalità di ORHAR.", openApp: "Apri ORHAR", errorTitle: "Azione fallita", errorMessage: "Qualcosa è andato storto.", errorExpired: "Questo link è scaduto. Richiedine uno nuovo dall'app.", errorInvalid: "Questo link non è valido o è già stato utilizzato.", errorDefault: "Si è verificato un errore. Riprova.", appNotInstalled: "App Non Installata", installMessage: "Installa ORHAR dal tuo app store per continuare."
+                pageTitle: "ORHAR — Azione account", loading: "Elaborazione della richiesta...",
+                resetTitle: "Reimposta la password", resetFor: "per", labelNew: "Nuova password", labelConfirm: "Conferma password",
+                placeholderNew: "Min. 8 caratteri", placeholderConfirm: "Conferma password",
+                resetSubmit: "Reimposta", resetSubmitting: "Reimpostazione...",
+                resetSuccess: "Password reimpostata! Reindirizzamento all'app...",
+                errorMatch: "Le password non corrispondono", errorLength: "La password deve contenere almeno 8 caratteri",
+                verifyTitle: "Email verificata!", verifyMessage: "La tua email è stata verificata con successo.",
+                openApp: "Apri ORHAR", errorTitle: "Azione fallita", errorMessage: "Qualcosa è andato storto.",
+                errorExpired: "Questo link è scaduto. Richiedine uno nuovo dall'app.",
+                errorInvalid: "Questo link non è valido o è già stato utilizzato.",
+                errorDefault: "Si è verificato un errore. Riprova.",
+                appNotInstalled: "App Non Installata", installMessage: "Installa ORHAR dal tuo app store.",
+                contactSupport: "Contatta Supporto"
             },
             pl: {
                 navHome: "Strona Główna", navContact: "Kontakt", footPriv: "Prywatność", footTerms: "Regulamin", footLic: "Licencje", footRights: "Wszelkie prawa zastrzeżone.",
-                pageTitle: "ORHAR", loading: "Przetwarzanie...", resetTitle: "Zresetuj hasło", resetFor: "dla", labelNew: "Nowe hasło", labelConfirm: "Potwierdź hasło", placeholderNew: "Min. 8 znaków", placeholderConfirm: "Potwierdź hasło", resetSubmit: "Zresetuj", resetSubmitting: "Resetowanie...", resetSuccess: "Hasło zostało zresetowane! Przekierowanie do aplikacji...", errorMatch: "Hasła nie są zgodne", errorLength: "Hasło musi mieć co najmniej 8 znaków", verifyTitle: "Email zweryfikowany!", verifyMessage: "Twój email został pomyślnie zweryfikowany. Możesz teraz korzystać ze wszystkich funkcji ORHAR.", openApp: "Otwórz ORHAR", errorTitle: "Akcja nie powiodła się", errorMessage: "Coś poszło nie tak.", errorExpired: "Ten link wygasł. Poproś o nowy w aplikacji.", errorInvalid: "Ten link jest nieprawidłowy lub został już użyty.", errorDefault: "Wystąpił błąd. Spróbuj ponownie.", appNotInstalled: "Aplikacja Nie Zainstalowana", installMessage: "Zainstaluj ORHAR ze swojego sklepu z aplikacjami, aby kontynuować."
+                pageTitle: "ORHAR — Akcja konta", loading: "Przetwarzanie żądania...",
+                resetTitle: "Zresetuj hasło", resetFor: "dla", labelNew: "Nowe hasło", labelConfirm: "Potwierdź hasło",
+                placeholderNew: "Min. 8 znaków", placeholderConfirm: "Potwierdź hasło",
+                resetSubmit: "Zresetuj", resetSubmitting: "Resetowanie...",
+                resetSuccess: "Hasło zresetowane! Przekierowanie do aplikacji...",
+                errorMatch: "Hasła nie są zgodne", errorLength: "Hasło musi mieć co najmniej 8 znaków",
+                verifyTitle: "Email zweryfikowany!", verifyMessage: "Twój email został pomyślnie zweryfikowany.",
+                openApp: "Otwórz ORHAR", errorTitle: "Akcja nie powiodła się", errorMessage: "Coś poszło nie tak.",
+                errorExpired: "Ten link wygasł. Poproś o nowy w aplikacji.",
+                errorInvalid: "Ten link jest nieprawidłowy lub został już użyty.",
+                errorDefault: "Wystąpił błąd. Spróbuj ponownie.",
+                appNotInstalled: "Aplikacja Nie Zainstalowana", installMessage: "Zainstaluj ORHAR ze sklepu z aplikacjami.",
+                contactSupport: "Skontaktuj się z Pomocą"
             },
             pt: {
                 navHome: "Início", navContact: "Contato", footPriv: "Privacidade", footTerms: "Termos", footLic: "Licenças", footRights: "Todos os direitos reservados.",
-                pageTitle: "ORHAR", loading: "Processando...", resetTitle: "Redefinir senha", resetFor: "para", labelNew: "Nova senha", labelConfirm: "Confirmar senha", placeholderNew: "Mín. 8 caracteres", placeholderConfirm: "Confirme a senha", resetSubmit: "Redefinir", resetSubmitting: "Redefinando...", resetSuccess: "Senha redefinida com sucesso! Redirecionando para o app...", errorMatch: "As senhas não correspondem", errorLength: "A senha deve ter pelo menos 8 caracteres", verifyTitle: "Email verificado!", verifyMessage: "Seu email foi verificado com sucesso. Agora você pode acessar todos os recursos do ORHAR.", openApp: "Abrir ORHAR", errorTitle: "Ação falhou", errorMessage: "Algo deu errado.", errorExpired: "Este link expirou. Solicite um novo no aplicativo.", errorInvalid: "Este link é inválido ou já foi usado.", errorDefault: "Ocorreu um erro. Tente novamente.", appNotInstalled: "App Não Instalada", installMessage: "Por favor instale o ORHAR na sua loja de aplicativos para continuar."
+                pageTitle: "ORHAR — Ação da conta", loading: "Processando sua solicitação...",
+                resetTitle: "Redefinir senha", resetFor: "para", labelNew: "Nova senha", labelConfirm: "Confirmar senha",
+                placeholderNew: "Mín. 8 caracteres", placeholderConfirm: "Confirme a senha",
+                resetSubmit: "Redefinir", resetSubmitting: "Redefinindo...",
+                resetSuccess: "Senha redefinida! Redirecionando para o app...",
+                errorMatch: "As senhas não correspondem", errorLength: "A senha deve ter pelo menos 8 caracteres",
+                verifyTitle: "Email verificado!", verifyMessage: "Seu email foi verificado com sucesso.",
+                openApp: "Abrir ORHAR", errorTitle: "Ação falhou", errorMessage: "Algo deu errado.",
+                errorExpired: "Este link expirou. Solicite um novo no aplicativo.",
+                errorInvalid: "Este link é inválido ou já foi usado.",
+                errorDefault: "Ocorreu um erro. Tente novamente.",
+                appNotInstalled: "App Não Instalada", installMessage: "Instale o ORHAR na sua loja de aplicativos.",
+                contactSupport: "Contatar Suporte"
             }
         };
 
-        // Parse URL
+        // ========== LANGUAGE DETECTION ==========
         const urlParams = new URLSearchParams(window.location.search);
         const mode = urlParams.get('mode');
         const oobCode = urlParams.get('oobCode');
@@ -219,11 +696,9 @@
 
         const lang = translations[activeLang];
 
-        // Replace UI texts based on language
+        // ========== APPLY TRANSLATIONS ==========
         document.getElementById('page-title').textContent = lang.pageTitle;
         document.getElementById('loading-text').textContent = lang.loading;
-        
-        // Nav & Footer translations
         document.getElementById('navHome').textContent = lang.navHome;
         document.getElementById('navContact').textContent = lang.navContact;
         document.getElementById('footPriv').textContent = lang.footPriv;
@@ -231,7 +706,7 @@
         document.getElementById('footLic').textContent = lang.footLic;
         document.getElementById('footRights').textContent = lang.footRights;
 
-        // Firebase Config (Keep your exact config here)
+        // ========== FIREBASE CONFIG ==========
         const firebaseConfig = {
             apiKey: "AIzaSyBEEWsFIsv2NyS5LZEJn0jMjXCT-XdAbgU",
             authDomain: "parobible-app.firebaseapp.com",
@@ -240,111 +715,149 @@
             messagingSenderId: "324929509217",
             appId: "1:324929509217:web:947e574e2ea14365505720"
         };
+        
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
 
+        // ========== MAIN ACTION HANDLER ==========
         async function handleAction() {
             if (!oobCode) {
                 showError(lang.errorInvalid);
                 return;
             }
+
             try {
                 switch(mode) {
-                    case 'resetPassword': await handlePasswordReset(); break;
-                    case 'verifyEmail': await handleEmailVerification(); break;
-                    case 'recoverEmail': await handleEmailRecovery(); break;
-                    default: showError(lang.errorInvalid);
+                    case 'resetPassword':
+                        await handlePasswordReset();
+                        break;
+                    case 'verifyEmail':
+                        await handleEmailVerification();
+                        break;
+                    case 'recoverEmail':
+                        await handleEmailRecovery();
+                        break;
+                    default:
+                        showError(lang.errorInvalid);
                 }
             } catch (error) {
+                console.error('Action error:', error);
                 showError(error.message || lang.errorDefault);
             }
         }
 
+        // ========== PASSWORD RESET ==========
         async function handlePasswordReset() {
             try {
                 const email = await auth.verifyPasswordResetCode(oobCode);
-                document.getElementById('reset-email').textContent = lang.resetFor + " " + email;
+                console.log('✅ Password reset code verified for:', email);
+                
+                document.getElementById('reset-email').textContent = `${lang.resetFor} ${email}`;
                 document.getElementById('loading-state').classList.add('hidden');
                 document.getElementById('reset-password-view').classList.remove('hidden');
-
+                
                 document.getElementById('reset-title').textContent = lang.resetTitle;
                 document.getElementById('label-new').textContent = lang.labelNew;
                 document.getElementById('label-confirm').textContent = lang.labelConfirm;
                 document.getElementById('new-password').placeholder = lang.placeholderNew;
                 document.getElementById('confirm-password').placeholder = lang.placeholderConfirm;
-                document.getElementById('reset-submit').textContent = lang.resetSubmit;
+                document.getElementById('reset-submit').innerHTML = `<i class="fas fa-lock"></i> ${lang.resetSubmit}`;
             } catch (error) {
+                console.error('Password reset verification error:', error);
                 const message = error.code === 'auth/expired-action-code' ? lang.errorExpired : lang.errorInvalid;
                 showError(message);
             }
         }
 
+        // ========== EMAIL VERIFICATION ==========
         async function handleEmailVerification() {
             try {
                 await auth.applyActionCode(oobCode);
+                console.log('✅ Email verified successfully');
+                
                 document.getElementById('loading-state').classList.add('hidden');
                 document.getElementById('verify-email-view').classList.remove('hidden');
+                
                 document.getElementById('verify-title').textContent = lang.verifyTitle;
                 document.getElementById('verify-message').textContent = lang.verifyMessage;
-                document.getElementById('verify-open-app').textContent = lang.openApp;
-                setTimeout(() => openAppWithDeepLink('Home'), 2000);
+                document.getElementById('verify-open-app').innerHTML = `<i class="fas fa-external-link-alt"></i> ${lang.openApp}`;
+                
+                setTimeout(() => {
+                    openAppWithDeepLink('Home');
+                }, 2000);
             } catch (error) {
+                console.error('Email verification error:', error);
                 const message = error.code === 'auth/expired-action-code' ? lang.errorExpired : lang.errorInvalid;
                 showError(message);
             }
         }
 
+        // ========== EMAIL RECOVERY ==========
         async function handleEmailRecovery() {
             try {
                 const info = await auth.checkActionCode(oobCode);
                 await auth.applyActionCode(oobCode);
+                console.log('✅ Email recovery completed');
+                
                 document.getElementById('loading-state').classList.add('hidden');
                 document.getElementById('verify-email-view').classList.remove('hidden');
+                
                 document.getElementById('verify-title').textContent = "Email Recovered";
                 document.getElementById('verify-message').textContent = "Your email has been successfully recovered.";
             } catch (error) {
+                console.error('Email recovery error:', error);
                 showError(lang.errorDefault);
             }
         }
 
+        // ========== PASSWORD RESET FORM SUBMISSION ==========
         document.getElementById('reset-form').addEventListener('submit', async (e) => {
             e.preventDefault();
+            
             const newPassword = document.getElementById('new-password').value;
             const confirmPassword = document.getElementById('confirm-password').value;
             const errorDiv = document.getElementById('reset-error');
             const successDiv = document.getElementById('reset-success');
             const submitBtn = document.getElementById('reset-submit');
-
+            
             errorDiv.classList.add('hidden');
             successDiv.classList.add('hidden');
-
+            
             if (newPassword !== confirmPassword) {
                 errorDiv.textContent = lang.errorMatch;
                 errorDiv.classList.remove('hidden');
                 return;
             }
+            
             if (newPassword.length < 8) {
                 errorDiv.textContent = lang.errorLength;
                 errorDiv.classList.remove('hidden');
                 return;
             }
-
+            
             submitBtn.disabled = true;
-            submitBtn.textContent = lang.resetSubmitting;
-
+            submitBtn.innerHTML = `<div class="spinner" style="width:20px;height:20px;border-width:2px;margin:0;"></div> ${lang.resetSubmitting}`;
+            
             try {
                 await auth.confirmPasswordReset(oobCode, newPassword);
+                console.log('✅ Password reset successful');
+                
                 successDiv.textContent = lang.resetSuccess;
                 successDiv.classList.remove('hidden');
-                setTimeout(() => openAppWithDeepLink('ProfileManagement'), 2000);
+                
+                setTimeout(() => {
+                    openAppWithDeepLink('ProfileManagement');
+                }, 2000);
             } catch (error) {
+                console.error('Password reset error:', error);
                 errorDiv.textContent = error.message || lang.errorDefault;
                 errorDiv.classList.remove('hidden');
                 submitBtn.disabled = false;
-                submitBtn.textContent = lang.resetSubmit;
+                submitBtn.innerHTML = `<i class="fas fa-lock"></i> ${lang.resetSubmit}`;
             }
         });
 
+        // ========== TOGGLE PASSWORD VISIBILITY ==========
         function togglePassword(inputId, button) {
             const input = document.getElementById(inputId);
             const icon = button.querySelector('i');
@@ -359,6 +872,7 @@
             }
         }
 
+        // ========== SHOW ERROR STATE ==========
         function showError(message) {
             document.getElementById('loading-state').classList.add('hidden');
             document.getElementById('reset-password-view').classList.add('hidden');
@@ -370,39 +884,55 @@
             document.getElementById('error-detail').textContent = message;
         }
 
+        // ========== DEEP LINK HANDLER ==========
         function openAppWithDeepLink(screen) {
-            // Note: Update "orhar" scheme if your app's info.plist/AndroidManifest still uses "parobible"
+            // Update to your app's URL scheme
             const deepLinkUrl = `orhar://navigate/${screen}`;
             const fallbackDelay = 2000;
             const startTime = Date.now();
             
+            console.log('🔗 Attempting to open app:', deepLinkUrl);
             window.location.href = deepLinkUrl;
-
+            
             const fallbackTimer = setTimeout(() => {
                 if (Date.now() - startTime < fallbackDelay + 500) {
+                    console.log('📱 App not installed, showing fallback');
                     showAppNotInstalledMessage();
                 }
             }, fallbackDelay);
-
+            
             document.addEventListener('visibilitychange', () => {
-                if (document.hidden) clearTimeout(fallbackTimer);
+                if (document.hidden) {
+                    clearTimeout(fallbackTimer);
+                    console.log('✅ App opened successfully');
+                }
             });
         }
 
+        // ========== APP NOT INSTALLED FALLBACK ==========
         function showAppNotInstalledMessage() {
             const card = document.querySelector('.auth-card');
             card.innerHTML = `
-                <i class="fas fa-mobile-screen icon"></i>
+                <div class="icon">
+                    <i class="fas fa-mobile-screen"></i>
+                </div>
                 <h1>${lang.appNotInstalled}</h1>
                 <p>${lang.installMessage}</p>
-                <div style="display: flex; gap: 15px; justify-content: center; margin-top: 30px;">
-                    <a href="https://apps.apple.com/app/id" class="button" style="flex:1;">App Store</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.yourapp.id" class="button" style="flex:1;">Play Store</a>
+                <div class="store-row">
+                    <a href="https://apps.apple.com/app/YOUR_APP_ID" class="button">
+                        <i class="fab fa-apple"></i> App Store
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME" class="button">
+                        <i class="fab fa-google-play"></i> Play Store
+                    </a>
                 </div>
+                <a href="contact.html" class="button button-secondary" style="margin-top: 16px;">
+                    <i class="fas fa-envelope"></i> ${lang.contactSupport}
+                </a>
             `;
         }
 
-        // Initialize Firebase action on load
+        // ========== INITIALIZE ==========
         handleAction();
     </script>
 </body>

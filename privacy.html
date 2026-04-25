@@ -9,19 +9,59 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ========== PRIMARY META TAGS ========== -->
     <meta name="description" content="ORHAR Privacy Policy — Learn how we collect, use, and protect your personal data. GDPR and CCPA compliant. Your privacy is sacred.">
     <meta name="keywords" content="ORHAR privacy policy, data protection, GDPR, CCPA, Bible app privacy">
-
+    <meta name="author" content="ORHAR">
+    <meta name="theme-color" content="#1A2E4A">
     <link rel="canonical" href="https://orhar.com/privacy.html">
 
+    <!-- ========== OPEN GRAPH (Facebook, LinkedIn, WhatsApp, Telegram) ========== -->
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://orhar.com/privacy.html">
     <meta property="og:title" content="Privacy Policy — ORHAR">
     <meta property="og:description" content="Learn how ORHAR protects your personal data. GDPR and CCPA compliant.">
+    <meta property="og:image" content="https://orhar.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="ORHAR">
+    <meta property="og:locale" content="en_US">
 
+    <!-- ========== TWITTER CARD ========== -->
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://orhar.com/privacy.html">
     <meta name="twitter:title" content="Privacy Policy — ORHAR">
     <meta name="twitter:description" content="Learn how ORHAR protects your personal data. GDPR and CCPA compliant.">
-    
+    <meta name="twitter:image" content="https://orhar.com/og-image.png">
+    <meta name="twitter:site" content="@orhar_app">
+    <meta name="twitter:creator" content="@orhar_app">
+
+    <!-- ========== FAVICONS ========== -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1A2E4A">
+    <meta name="msapplication-TileColor" content="#1A2E4A">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <!-- ========== PWA ========== -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="ORHAR">
+
+    <!-- ========== SERVICE WORKER ========== -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(() => console.log('ORHAR: Service Worker registered'))
+                    .catch(() => console.log('ORHAR: Service Worker registration failed'));
+            });
+        }
+    </script>
+
     <style>
         :root {
             --bg-color: #FCFBF8;

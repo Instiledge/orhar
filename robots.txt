@@ -4,18 +4,19 @@
 User-agent: *
 Allow: /
 
+# Explicitly allow Facebook's sharing crawler
+User-agent: facebookexternalhit
+Allow: /
+
+# Explicitly allow Twitter's card crawler
+User-agent: Twitterbot
+Allow: /
+
 # Sitemap location
 Sitemap: https://orhar.com/sitemap.xml
 
 # Disallow action pages (Firebase auth — no SEO value)
 Disallow: /action.html
 
-# Crawl delay (polite crawling — 1 second between requests)
+# Crawl delay (polite crawling)
 Crawl-delay: 1
-
-# Specific rules for AI crawlers (optional — uncomment to block)
-# User-agent: GPTBot
-# Disallow: /
-# 
-# User-agent: ChatGPT-User
-# Disallow: /

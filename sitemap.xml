@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://orhar.com/</loc>
+        <lastmod>2026-04-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/" />
+    </url>
+    
+    <!-- Contact & Support -->
+    <url>
+        <loc>https://orhar.com/contact.html</loc>
+        <lastmod>2026-04-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Privacy Policy -->
+    <url>
+        <loc>https://orhar.com/privacy.html</loc>
+        <lastmod>2026-04-25</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- Terms of Service -->
+    <url>
+        <loc>https://orhar.com/terms.html</loc>
+        <lastmod>2026-04-25</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- Open Source Licenses -->
+    <url>
+        <loc>https://orhar.com/licenses.html</loc>
+        <lastmod>2026-04-25</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+</urlset>

@@ -2,7 +2,7 @@
 
 <div align="center">
   <img src="logo.png" alt="ORHAR Logo" width="120" />
-  <p><em>אוֹר הַר — Where God's Word and the human soul meet on the heights.</em></p>
+  <p><em>אוֹר הַר — Where God's Word and the human soul meet on the heights</em></p>
 </div>
 
 ---

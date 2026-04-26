@@ -867,18 +867,21 @@
             .then(response => response.text())
             .then(html => {
                 const container = document.getElementById('update-container');
-                // Parse the fetched HTML and extract only the English update block
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
                 const updateBlock = doc.getElementById('update-en');
                 if (updateBlock) {
-                    // Replace the static fallback with the central content
+                    // Force display:block and copy the inner content
+                    updateBlock.style.display = 'block';
+                    updateBlock.style.padding = '40px 5%';
+                    updateBlock.style.background = 'var(--surface-color)';
+                    updateBlock.style.textAlign = 'center';
                     container.innerHTML = '';
                     container.appendChild(updateBlock);
                 }
             })
             .catch(() => {
-                // Silently fail — the static fallback text is already visible
+                // Keep the static fallback visible — do nothing
                 console.log('Update feed not available — using default text.');
             });
     </script>

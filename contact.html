@@ -1456,6 +1456,24 @@
             successMsg.style.display = 'none';
             form.reset();
             
+            // Re-translate the dropdown options (reset clears them)
+            const lang = activeLang || 'en';
+            const options = topicSelect.querySelectorAll('option');
+            options.forEach(option => {
+                const key = option.getAttribute('data-i18n');
+                if (key && contactData[lang] && contactData[lang][key]) {
+                    option.textContent = contactData[lang][key];
+                }
+            });
+            
+            // Re-translate placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (contactData[lang] && contactData[lang][key]) {
+                    el.placeholder = contactData[lang][key];
+                }
+            });
+            
             // Pre-fill topic
             if (topic && topicSelect.querySelector(`option[value="${topic}"]`)) {
                 topicSelect.value = topic;

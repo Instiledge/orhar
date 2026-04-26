@@ -374,11 +374,17 @@
         }
         
         .story-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); 
+            display: flex; 
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 28px; 
             max-width: 1200px; 
             margin: 0 auto; 
+        }
+        
+        .story-card-wrapper {
+            flex: 0 1 220px;
+            min-width: 200px;
         }
         
         .story-card { 
@@ -391,6 +397,10 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         .story-card::before {
@@ -812,30 +822,40 @@
         <h2 class="section-title">Lies das Symbol</h2>
         <p class="section-subtitle">Jedes Element trägt Bedeutung — eine heilige Geografie auf einen Blick.</p>
         <div class="story-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
-            <div class="story-card">
-                <i class="fas fa-book-open"></i>
-                <h3>Die Bibel</h3>
-                <p>Alles beginnt hier. Seiten weit geöffnet, lebendig, atmend, bereit. Gottes Wort ist kein verschlossenes Buch; es ist aufgeschlagen und wartet auf dich.</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Die Bibel</h3>
+                    <p>Alles beginnt hier. Seiten weit geöffnet, lebendig, atmend, bereit. Gottes Wort ist kein verschlossenes Buch; es ist aufgeschlagen und wartet auf dich.</p>
+                </div>
             </div>
-            <div class="story-card">
-                <i class="fas fa-bookmark"></i>
-                <h3>Das Lesezeichen</h3>
-                <p>Ein goldenes Lesezeichen ruht in der offenen Bibel — treu, geduldig. Es sagt, du wirst zurückkehren. Das Wort ist ein Ort, zu dem du jeden Tag zurückkommst.</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-bookmark"></i>
+                    <h3>Das Lesezeichen</h3>
+                    <p>Ein goldenes Lesezeichen ruht in der offenen Bibel — treu, geduldig. Es sagt, du wirst zurückkehren. Das Wort ist ein Ort, zu dem du jeden Tag zurückkommst.</p>
+                </div>
             </div>
-            <div class="story-card">
-                <i class="fas fa-road"></i>
-                <h3>Der Weg</h3>
-                <p>Eine goldene Straße erhebt sich von den Seiten direkt zum Gipfel. Jeder Vers ein Schritt, jedes Kapitel ein Aufstieg. «Dein Wort ist meines Fußes Leuchte und ein Licht auf meinem Wege.» (Ps 119:105)</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-road"></i>
+                    <h3>Der Weg</h3>
+                    <p>Eine goldene Straße erhebt sich von den Seiten direkt zum Gipfel. Jeder Vers ein Schritt, jedes Kapitel ein Aufstieg. «Dein Wort ist meines Fußes Leuchte und ein Licht auf meinem Wege.» (Ps 119:105)</p>
+                </div>
             </div>
-            <div class="story-card">
-                <i class="fas fa-mountain"></i>
-                <h3>Der Berg</h3>
-                <p>Der Sinai empfing das Gesetz. Zion trägt die Verheißung. Der Tabor erstrahlte in Herrlichkeit. ORHAR stellt dich auf diesen Berg, jedes Mal wenn du das Wort öffnest.</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-mountain"></i>
+                    <h3>Der Berg</h3>
+                    <p>Der Sinai empfing das Gesetz. Zion trägt die Verheißung. Der Tabor erstrahlte in Herrlichkeit. ORHAR stellt dich auf diesen Berg, jedes Mal wenn du das Wort öffnest.</p>
+                </div>
             </div>
-            <div class="story-card">
-                <i class="fas fa-sun"></i>
-                <h3>Der Heiligenschein</h3>
-                <p>Auf dem Gipfel krönt ein goldener Heiligenschein den Berg — nicht als Lohn, sondern als Geschenk. «Es werde Licht.» Das erste Wort in der Finsternis leuchtet auf jeder Seite von ORHAR.</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-sun"></i>
+                    <h3>Der Heiligenschein</h3>
+                    <p>Auf dem Gipfel krönt ein goldener Heiligenschein den Berg — nicht als Lohn, sondern als Geschenk. «Es werde Licht.» Das erste Wort in der Finsternis leuchtet auf jeder Seite von ORHAR.</p>
+                </div>
             </div>
         </div>
     </section>

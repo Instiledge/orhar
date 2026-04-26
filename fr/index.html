@@ -374,11 +374,17 @@
         }
         
         .story-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); 
+            display: flex; 
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 28px; 
             max-width: 1200px; 
             margin: 0 auto; 
+        }
+        
+        .story-card-wrapper {
+            flex: 0 1 220px;
+            min-width: 200px;
         }
         
         .story-card { 
@@ -391,6 +397,10 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         .story-card::before {
@@ -812,30 +822,40 @@
         <h2 class="section-title">Lisez l'Icône</h2>
         <p class="section-subtitle">Chaque élément porte un sens — une géographie sacrée en un seul regard.</p>
         <div class="story-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
-            <div class="story-card">
-                <i class="fas fa-book-open"></i>
-                <h3>La Bible</h3>
-                <p>Tout commence ici. Des pages grandes ouvertes, vivantes, qui respirent, prêtes. La Parole de Dieu n'est pas un livre fermé ; elle est ouverte, vous attendant.</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>La Bible</h3>
+                    <p>Tout commence ici. Des pages grandes ouvertes, vivantes, qui respirent, prêtes. La Parole de Dieu n'est pas un livre fermé ; elle est ouverte, vous attendant.</p>
+                </div>
             </div>
-            <div class="story-card">
-                <i class="fas fa-bookmark"></i>
-                <h3>Le Marque-page</h3>
-                <p>Un marque-page doré repose dans la Bible ouverte — fidèle, patient. Il dit que vous reviendrez. La Parole est un lieu où l'on revient chaque jour.</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-bookmark"></i>
+                    <h3>Le Marque-page</h3>
+                    <p>Un marque-page doré repose dans la Bible ouverte — fidèle, patient. Il dit que vous reviendrez. La Parole est un lieu où l'on revient chaque jour.</p>
+                </div>
             </div>
-            <div class="story-card">
-                <i class="fas fa-road"></i>
-                <h3>Le Chemin</h3>
-                <p>Une route dorée s'élève des pages jusqu'au sommet. Chaque verset, un pas. Chaque chapitre, une ascension. « Ta parole est une lampe à mes pieds et une lumière sur mon sentier. » (Ps 119, 105)</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-road"></i>
+                    <h3>Le Chemin</h3>
+                    <p>Une route dorée s'élève des pages jusqu'au sommet. Chaque verset, un pas. Chaque chapitre, une ascension. « Ta parole est une lampe à mes pieds et une lumière sur mon sentier. » (Ps 119, 105)</p>
+                </div>
             </div>
-            <div class="story-card">
-                <i class="fas fa-mountain"></i>
-                <h3>La Montagne</h3>
-                <p>Le Sinaï a reçu la Loi. Sion porte la promesse. Le Thabor a brillé de gloire. ORHAR vous place sur cette montagne chaque fois que vous ouvrez la Parole.</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-mountain"></i>
+                    <h3>La Montagne</h3>
+                    <p>Le Sinaï a reçu la Loi. Sion porte la promesse. Le Thabor a brillé de gloire. ORHAR vous place sur cette montagne chaque fois que vous ouvrez la Parole.</p>
+                </div>
             </div>
-            <div class="story-card">
-                <i class="fas fa-sun"></i>
-                <h3>L'Auréole</h3>
-                <p>Au sommet, une auréole dorée couronne la montagne — non comme récompense, mais comme un don. « Que la lumière soit. » La première parole dans les ténèbres brille sur chaque page d'ORHAR.</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-sun"></i>
+                    <h3>L'Auréole</h3>
+                    <p>Au sommet, une auréole dorée couronne la montagne — non comme récompense, mais comme un don. « Que la lumière soit. » La première parole dans les ténèbres brille sur chaque page d'ORHAR.</p>
+                </div>
             </div>
         </div>
     </section>

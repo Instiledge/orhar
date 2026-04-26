@@ -549,7 +549,7 @@
         
         .legal-grid {
             display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;
-            max-width: 700px; margin: 30px auto;
+            max-width: 1000px; margin: 30px auto;
         }
         
         .legal-card {
@@ -684,7 +684,7 @@
     <section id="story" class="section">
         <h2 class="section-title">Czytaj Ikonę</h2>
         <p class="section-subtitle">Każdy element niesie znaczenie — święta geografia w jednym spojrzeniu.</p>
-        <div class="story-grid">
+        <div class="story-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
             <div class="story-card">
                 <i class="fas fa-book-open"></i>
                 <h3>Biblia</h3>
@@ -696,6 +696,11 @@
                 <p>Złota zakładka spoczywa w otwartej Biblii — wierna, cierpliwa. Mówi, że powrócisz. Słowo jest miejscem, do którego wracasz każdego dnia.</p>
             </div>
             <div class="story-card">
+                <i class="fas fa-road"></i>
+                <h3>Ścieżka</h3>
+                <p>Złota droga wznosi się ze stron prosto na szczyt. Każdy werset to krok. Każdy rozdział to wspinaczka. «Twoje słowo jest lampą dla moich stóp i światłem na mojej ścieżce.» (Ps 119:105)</p>
+            </div>
+            <div class="story-card">
                 <i class="fas fa-mountain"></i>
                 <h3>Góra</h3>
                 <p>Synaj otrzymał Prawo. Syjon nosi obietnicę. Tabor zajaśniał chwałą. ORHAR stawia cię na tej górze za każdym razem, gdy otwierasz Słowo.</p>
@@ -703,7 +708,7 @@
             <div class="story-card">
                 <i class="fas fa-sun"></i>
                 <h3>Aureola</h3>
-                <p>Na szczycie złota aureola wieńczy górę. «Niech się stanie światłość». Pierwsze słowo wypowiedziane w ciemności jest tym samym światłem, które jaśnieje na każdej stronie.</p>
+                <p>Na szczycie złota aureola wieńczy górę — nie jako nagroda, ale jako dar. «Niech się stanie światłość.» Pierwsze słowo w ciemności jaśnieje na każdej stronie ORHAR.</p>
             </div>
         </div>
     </section>

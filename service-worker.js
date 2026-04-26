@@ -3,6 +3,14 @@ const CACHE_NAME = 'orhar-cache-v1';
 
 const ASSETS_TO_CACHE = [
     '/',
+    '/en/',
+    '/fr/',
+    '/es/',
+    '/de/',
+    '/it/',
+    '/pt/',
+    '/pl/',
+    '/updates.html',
     '/index.html',
     '/contact.html',
     '/privacy.html',

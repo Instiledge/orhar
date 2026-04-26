@@ -12,6 +12,14 @@ Allow: /
 User-agent: Twitterbot
 Allow: /
 
+# Block email harvesters
+User-agent: EmailCollector
+Disallow: /
+User-agent: WebEMailExtrac
+Disallow: /
+User-agent: EmailSiphon
+Disallow: /
+
 # Sitemap location
 Sitemap: https://orhar.com/sitemap.xml
 

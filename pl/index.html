@@ -792,6 +792,74 @@
             .anchor-text { font-size: 18px; }
             .anchor-slide { padding: 30px 24px; }
         }
+
+        /* ========== NEWSLETTER ========== */
+        .newsletter-card {
+            background: var(--surface-color);
+            border-radius: 16px;
+            padding: 28px 24px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(var(--accent-gold-rgb), 0.3);
+            max-width: 440px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-icon { font-size: 32px; margin-bottom: 12px; }
+
+        .newsletter-card h3 {
+            font-size: 22px;
+            margin-bottom: 6px;
+            color: var(--primary-navy);
+            font-family: var(--font-display);
+        }
+
+        .newsletter-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 8px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid rgba(var(--accent-gold-rgb), 0.3);
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            outline: none;
+            background: var(--bg-color);
+            color: var(--text-dark);
+        }
+
+        .newsletter-form input:focus {
+            border-color: var(--accent-brown);
+        }
+
+        .newsletter-form button {
+            padding: 12px 18px;
+            background: var(--primary-navy);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .newsletter-form button:hover { background: var(--accent-brown); }
+
+        .newsletter-success {
+            margin-top: 14px;
+            font-size: 14px;
+            color: #059669;
+        }
     </style>
 </head>
 <body>
@@ -844,6 +912,20 @@
                     <strong>Wesprzyj Projekt</strong>
                 </div>
             </a>
+        </div>
+
+        <!-- ========== NEWSLETTER SIGNUP ========== -->
+        <div class="newsletter-card" style="margin-top: 36px;">
+            <div class="newsletter-icon">📬</div>
+            <h3>Bądź na Bieżąco</h3>
+            <p>Dowiedz się pierwszy, kiedy ORHAR zostanie uruchomiony. Bez spamu.</p>
+            <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                <input type="email" id="nlEmail" placeholder="you@example.com" required>
+                <button type="submit">→</button>
+            </form>
+            <div class="newsletter-success" id="nlSuccess" style="display:none;">
+                ✅ Jesteś na liście! Niech Bóg Ci błogosławi.
+            </div>
         </div>
     </section>
 
@@ -1146,6 +1228,31 @@
             currentAnchor = (currentAnchor + 1) % totalAnchors;
             updateAnchors();
         }, 6000);
+    </script>
+
+    <script>
+        function subscribeNewsletter(event) {
+            event.preventDefault();
+            const email = document.getElementById('nlEmail').value.trim();
+            const form = event.target;
+            const success = document.getElementById('nlSuccess');
+            
+            form.style.display = 'none';
+            document.querySelector('.newsletter-card h3').textContent = 'Thank You!';
+            document.querySelector('.newsletter-card p').textContent = '';
+            
+            fetch('https://formsubmit.co/ajax/contact@orhar.com', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    email: email,
+                    _subject: '[ORHAR] Newsletter Signup',
+                    message: `New newsletter subscriber: ${email}`
+                })
+            });
+            
+            success.style.display = 'block';
+        }
     </script>
 </body>
 </html>

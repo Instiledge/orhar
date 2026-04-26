@@ -374,11 +374,17 @@
         }
         
         .story-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); 
+            display: flex; 
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 28px; 
             max-width: 1200px; 
             margin: 0 auto; 
+        }
+        
+        .story-card-wrapper {
+            flex: 0 1 220px;
+            min-width: 200px;
         }
         
         .story-card { 
@@ -391,6 +397,10 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         .story-card::before {
@@ -812,30 +822,40 @@
         <h2 class="section-title">Lee el Icono</h2>
         <p class="section-subtitle">Cada elemento tiene un significado — una geografía sagrada en una sola mirada.</p>
         <div class="story-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
-            <div class="story-card">
-                <i class="fas fa-book-open"></i>
-                <h3>La Biblia</h3>
-                <p>Todo comienza aquí. Páginas abiertas de par en par, vivas, respirando, listas. La Palabra de Dios no es un libro cerrado; está abierta, esperándote.</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>La Biblia</h3>
+                    <p>Todo comienza aquí. Páginas abiertas de par en par, vivas, respirando, listas. La Palabra de Dios no es un libro cerrado; está abierta, esperándote.</p>
+                </div>
             </div>
-            <div class="story-card">
-                <i class="fas fa-bookmark"></i>
-                <h3>El Marcapáginas</h3>
-                <p>Un marcapáginas dorado descansa en la Biblia abierta — fiel, paciente. Dice que volverás. La Palabra es un lugar al que regresas cada día.</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-bookmark"></i>
+                    <h3>El Marcapáginas</h3>
+                    <p>Un marcapáginas dorado descansa en la Biblia abierta — fiel, paciente. Dice que volverás. La Palabra es un lugar al que regresas cada día.</p>
+                </div>
             </div>
-            <div class="story-card">
-                <i class="fas fa-road"></i>
-                <h3>El Camino</h3>
-                <p>Un camino dorado se eleva desde las páginas hasta la cumbre. Cada versículo, un paso. Cada capítulo, una ascensión. «Lámpara es a mis pies tu palabra y lumbrera a mi camino.» (Sal 119:105)</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-road"></i>
+                    <h3>El Camino</h3>
+                    <p>Un camino dorado se eleva desde las páginas hasta la cumbre. Cada versículo, un paso. Cada capítulo, una ascensión. «Lámpara es a mis pies tu palabra y lumbrera a mi camino.» (Sal 119:105)</p>
+                </div>
             </div>
-            <div class="story-card">
-                <i class="fas fa-mountain"></i>
-                <h3>La Montaña</h3>
-                <p>El Sinaí recibió la Ley. Sión lleva la promesa. El Tabor resplandeció con gloria. ORHAR te coloca en esa montaña cada vez que abres la Palabra.</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-mountain"></i>
+                    <h3>La Montaña</h3>
+                    <p>El Sinaí recibió la Ley. Sión lleva la promesa. El Tabor resplandeció con gloria. ORHAR te coloca en esa montaña cada vez que abres la Palabra.</p>
+                </div>
             </div>
-            <div class="story-card">
-                <i class="fas fa-sun"></i>
-                <h3>El Halo</h3>
-                <p>En la cima, un halo dorado corona la montaña — no como recompensa, sino como un don. «Hágase la luz.» La primera palabra en la oscuridad brilla en cada página de ORHAR.</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-sun"></i>
+                    <h3>El Halo</h3>
+                    <p>En la cima, un halo dorado corona la montaña — no como recompensa, sino como un don. «Hágase la luz.» La primera palabra en la oscuridad brilla en cada página de ORHAR.</p>
+                </div>
             </div>
         </div>
     </section>

@@ -1,0 +1,4 @@
+Contact: mailto:contact@orhar.com
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en, fr, es, de, it, pt, pl
+Canonical: https://orhar.com/.well-known/security.txt

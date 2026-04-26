@@ -374,11 +374,17 @@
         }
         
         .story-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); 
+            display: flex; 
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 28px; 
             max-width: 1200px; 
             margin: 0 auto; 
+        }
+        
+        .story-card-wrapper {
+            flex: 0 1 220px;
+            min-width: 200px;
         }
         
         .story-card { 
@@ -391,6 +397,10 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         .story-card::before {
@@ -812,30 +822,40 @@
         <h2 class="section-title">Leia o Ícone</h2>
         <p class="section-subtitle">Cada elemento carrega significado — uma geografia sagrada em um único olhar.</p>
         <div class="story-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
-            <div class="story-card">
-                <i class="fas fa-book-open"></i>
-                <h3>A Bíblia</h3>
-                <p>Tudo começa aqui. Páginas abertas, vivas, respirando, prontas. A Palavra de Deus não é um livro fechado; está escancarada, esperando por você.</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>A Bíblia</h3>
+                    <p>Tudo começa aqui. Páginas abertas, vivas, respirando, prontas. A Palavra de Deus não é um livro fechado; está escancarada, esperando por você.</p>
+                </div>
             </div>
-            <div class="story-card">
-                <i class="fas fa-bookmark"></i>
-                <h3>O Marcador</h3>
-                <p>Um marcador dourado repousa na Bíblia aberta — fiel, paciente. Ele diz que você retornará. A Palavra é um lugar ao qual você volta todos os dias.</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-bookmark"></i>
+                    <h3>O Marcador</h3>
+                    <p>Um marcador dourado repousa na Bíblia aberta — fiel, paciente. Ele diz que você retornará. A Palavra é um lugar ao qual você volta todos os dias.</p>
+                </div>
             </div>
-            <div class="story-card">
-                <i class="fas fa-road"></i>
-                <h3>O Caminho</h3>
-                <p>Uma estrada dourada se eleva das páginas até o cume. Cada versículo, um passo. Cada capítulo, uma ascensão. «Lâmpada para os meus pés é tua palavra, e luz para o meu caminho.» (Sl 119:105)</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-road"></i>
+                    <h3>O Caminho</h3>
+                    <p>Uma estrada dourada se eleva das páginas até o cume. Cada versículo, um passo. Cada capítulo, uma ascensão. «Lâmpada para os meus pés é tua palavra, e luz para o meu caminho.» (Sl 119:105)</p>
+                </div>
             </div>
-            <div class="story-card">
-                <i class="fas fa-mountain"></i>
-                <h3>A Montanha</h3>
-                <p>O Sinai recebeu a Lei. Sião carrega a promessa. O Tabor resplandeceu em glória. ORHAR coloca você nessa montanha toda vez que abre a Palavra.</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-mountain"></i>
+                    <h3>A Montanha</h3>
+                    <p>O Sinai recebeu a Lei. Sião carrega a promessa. O Tabor resplandeceu em glória. ORHAR coloca você nessa montanha toda vez que abre a Palavra.</p>
+                </div>
             </div>
-            <div class="story-card">
-                <i class="fas fa-sun"></i>
-                <h3>O Halo</h3>
-                <p>No cume, um halo dourado coroa a montanha — não como recompensa, mas como presente. «Haja luz.» A primeira palavra nas trevas brilha em cada página do ORHAR.</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-sun"></i>
+                    <h3>O Halo</h3>
+                    <p>No cume, um halo dourado coroa a montanha — não como recompensa, mas como presente. «Haja luz.» A primeira palavra nas trevas brilha em cada página do ORHAR.</p>
+                </div>
             </div>
         </div>
     </section>

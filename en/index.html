@@ -383,9 +383,9 @@
         }
         
         .story-card-wrapper {
-            flex: 0 1 360px;
-            min-width: 340px;
-            max-width: 400px;
+            flex: 1 1 200px;
+            min-width: 180px;
+            max-width: 220px;
         }
         
         .story-card { 
@@ -636,6 +636,26 @@
         @media (max-width: 480px) {
             .story-grid { grid-template-columns: 1fr; }
             .hero { padding: 60px 5% 50px; }
+        }
+        
+        /* Story grid — wider cards on large screens */
+        @media (min-width: 1400px) {
+            .story-card-wrapper {
+                max-width: 260px;
+            }
+        }
+        
+        @media (min-width: 1100px) and (max-width: 1399px) {
+            .story-card-wrapper {
+                max-width: 240px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .story-card-wrapper {
+                max-width: 100%;
+                min-width: 100%;
+            }
         }
 
         /* ========== BIBLICAL ANCHORS ========== */

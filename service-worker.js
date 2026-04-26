@@ -19,8 +19,12 @@ const ASSETS_TO_CACHE = [
     '/404.html',
     '/manifest.json',
     '/logo.png',
+    '/og-image.png',
     '/icon-192.png',
     '/icon-512.png',
+    '/apple-touch-icon.png',
+    '/favicon.ico',
+    '/favicon-96x96.png',
     'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@400;500;600&display=swap',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
 ];

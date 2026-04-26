@@ -542,7 +542,7 @@
         
         .legal-grid {
             display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;
-            max-width: 700px; margin: 30px auto;
+            max-width: 1000px; margin: 30px auto;
         }
         
         .legal-subtitle {
@@ -684,7 +684,7 @@
     <section id="story" class="section">
         <h2 class="section-title">Lisez l'Icône</h2>
         <p class="section-subtitle">Chaque élément porte un sens — une géographie sacrée en un seul regard.</p>
-        <div class="story-grid">
+        <div class="story-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
             <div class="story-card">
                 <i class="fas fa-book-open"></i>
                 <h3>La Bible</h3>
@@ -696,6 +696,11 @@
                 <p>Un marque-page doré repose dans la Bible ouverte — fidèle, patient. Il dit que vous reviendrez. La Parole est un lieu où l'on revient chaque jour.</p>
             </div>
             <div class="story-card">
+                <i class="fas fa-road"></i>
+                <h3>Le Chemin</h3>
+                <p>Une route dorée s'élève des pages jusqu'au sommet. Chaque verset, un pas. Chaque chapitre, une ascension. « Ta parole est une lampe à mes pieds et une lumière sur mon sentier. » (Ps 119:105)</p>
+            </div>
+            <div class="story-card">
                 <i class="fas fa-mountain"></i>
                 <h3>La Montagne</h3>
                 <p>Le Sinaï a reçu la Loi. Sion porte la promesse. Le Thabor a brillé de gloire. ORHAR vous place sur cette montagne chaque fois que vous ouvrez la Parole.</p>
@@ -703,7 +708,7 @@
             <div class="story-card">
                 <i class="fas fa-sun"></i>
                 <h3>L'Auréole</h3>
-                <p>Au sommet, une auréole dorée couronne la montagne. « Que la lumière soit. » La première parole prononcée dans les ténèbres est la même lumière qui brille sur chaque page.</p>
+                <p>Au sommet, une auréole dorée couronne la montagne — non comme récompense, mais comme un don. « Que la lumière soit. » La première parole dans les ténèbres brille sur chaque page d'ORHAR.</p>
             </div>
         </div>
     </section>

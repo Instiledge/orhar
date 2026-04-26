@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORHAR — Der Berg des Lichts</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ========== PRIMARY META TAGS ========== -->
+    <meta name="description" content="ORHAR — Der Berg des Lichts. OR bedeutet Licht, HAR bedeutet Berg. Eine mehrsprachige Bibel-App für den täglichen Aufstieg durch die Heilige Schrift.">
+    <meta name="keywords" content="ORHAR, Bibel-App, katholische Bibel, Heilige Schrift, Gebets-App, Katechismus, Tagesvers, Bibel-Quiz, mehrsprachige Bibel">
+    <meta name="author" content="ORHAR">
+    <meta name="theme-color" content="#1A2E4A">
+    <link rel="canonical" href="https://orhar.com/de/">
+
+    <!-- ========== OPEN GRAPH ========== -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://orhar.com/de/">
+    <meta property="og:title" content="ORHAR — Der Berg des Lichts">
+    <meta property="og:description" content="Wo Gottes Wort und die menschliche Seele sich auf den Höhen begegnen. Eine mehrsprachige Bibel-App für den täglichen Aufstieg.">
+    <meta property="og:image" content="https://orhar.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="ORHAR">
+    <meta property="og:locale" content="de_DE">
+    <meta property="fb:app_id" content="826566160013437">
+
+    <!-- ========== TWITTER CARD ========== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://orhar.com/de/">
+    <meta name="twitter:title" content="ORHAR — Der Berg des Lichts">
+    <meta name="twitter:description" content="Wo Gottes Wort und die menschliche Seele sich auf den Höhen begegnen. Eine mehrsprachige Bibel-App für den täglichen Aufstieg.">
+    <meta name="twitter:image" content="https://orhar.com/og-image.png">
+    <meta name="twitter:site" content="@orhar_app">
+    <meta name="twitter:creator" content="@orhar_app">
+
+    <!-- ========== FAVICONS ========== -->
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1A2E4A">
+    <meta name="msapplication-TileColor" content="#1A2E4A">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <!-- ========== PWA ========== -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ORHAR">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2048.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2048.png" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2048.png" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2048.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)">
+
+    <!-- ========== SERVICE WORKER ========== -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(() => console.log('ORHAR: Service Worker registriert'))
+                    .catch(() => console.log('ORHAR: Service Worker Registrierung fehlgeschlagen'));
+            });
+        }
+    </script>
+    
+    <!-- ========== STRUCTURED DATA ========== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "ORHAR",
+        "description": "Eine mehrsprachige Bibel-App für den täglichen Aufstieg durch die Heilige Schrift. OR bedeutet Licht, HAR bedeutet Berg.",
+        "url": "https://orhar.com",
+        "applicationCategory": "ReligiousApplication",
+        "operatingSystem": "iOS, Android",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Organization", "name": "ORHAR", "url": "https://orhar.com" }
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #FCFBF8;
+            --surface-color: #FFFFFF;
+            --primary-navy: #1A2E4A;
+            --header-bg: rgba(252, 251, 248, 0.95);
+            --accent-gold: #CFB286;
+            --accent-gold-rgb: 207, 178, 134;
+            --accent-brown: #915B27;
+            --accent-brown-rgb: 145, 91, 39;
+            --text-dark: #1e1e1e;
+            --text-muted: #7f8c8d;
+            --card-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Work Sans', sans-serif;
+            --theme-transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body { 
+            font-family: var(--font-body); 
+            background-color: var(--bg-color); 
+            color: var(--text-dark); 
+            line-height: 1.7; 
+            transition: var(--theme-transition);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 { 
+            font-family: var(--font-display); 
+            color: var(--primary-navy); 
+            transition: var(--theme-transition); 
+        }
+        
+        a { 
+            text-decoration: none; 
+            color: var(--primary-navy); 
+            transition: var(--theme-transition); 
+        }
+        
+        a:hover { color: var(--accent-brown); }
+
+        /* ========== HEADER ========== */
+        header { 
+            padding: 16px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: var(--header-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid rgba(var(--accent-gold-rgb), 0.3); 
+            transition: var(--theme-transition);
+        }
+        
+        .logo-container { 
+            display: flex; 
+            align-items: center; 
+            gap: 14px; 
+        }
+        
+        .logo-img { 
+            width: 48px; 
+            height: 48px; 
+            border-radius: 12px; 
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(var(--accent-gold-rgb), 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .logo-container:hover .logo-img {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(var(--accent-gold-rgb), 0.4);
+        }
+        
+        .logo-text { 
+            font-family: var(--font-display); 
+            font-size: 26px; 
+            font-weight: 700; 
+            letter-spacing: 3px; 
+            color: var(--primary-navy);
+            transition: var(--theme-transition);
+        }
+        
+        .nav-links { 
+            display: flex; 
+            gap: 28px; 
+            align-items: center; 
+        }
+        
+        .nav-links a { 
+            font-size: 15px; 
+            font-weight: 500;
+            position: relative;
+            padding: 4px 0;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-brown);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after { width: 100%; }
+        
+        .lang-select { 
+            background: transparent; 
+            border: 1.5px solid var(--accent-gold); 
+            color: var(--primary-navy); 
+            padding: 8px 14px; 
+            border-radius: 8px; 
+            font-family: var(--font-body); 
+            font-weight: 500; 
+            cursor: pointer; 
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-select:hover { 
+            border-color: var(--accent-brown);
+            box-shadow: 0 2px 8px rgba(var(--accent-brown-rgb), 0.15);
+        }
+
+        /* ========== UPDATE SECTION ========== */
+        .update-section {
+            padding: 40px 5%;
+            background: var(--surface-color);
+            text-align: center;
+        }
+        
+        .update-badge {
+            display: inline-block;
+            background: rgba(var(--accent-gold-rgb), 0.1);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-brown);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            font-family: var(--font-body);
+        }
+        
+        .update-text {
+            font-size: 16px;
+            color: var(--text-muted);
+            font-style: italic;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ========== HERO ========== */
+        .hero { 
+            padding: 100px 5% 90px; 
+            text-align: center; 
+            max-width: 1000px; 
+            margin: 0 auto;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(var(--accent-gold-rgb), 0.15);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-brown);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 28px;
+            font-family: var(--font-body);
+        }
+        
+        .hero h1 { 
+            font-size: 72px; 
+            margin-bottom: 20px; 
+            letter-spacing: 2px;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--primary-navy), var(--accent-brown));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero h2 { 
+            font-size: 30px; 
+            font-weight: 400; 
+            font-style: italic; 
+            color: var(--accent-brown); 
+            margin-bottom: 24px;
+            line-height: 1.4;
+        }
+        
+        .hero p { 
+            font-size: 18px; 
+            color: var(--text-muted); 
+            max-width: 650px; 
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+        
+        .store-buttons { 
+            display: flex; 
+            gap: 18px; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+        }
+        
+        .store-btn { 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            background: linear-gradient(135deg, var(--primary-navy), #2a4060); 
+            color: #FFFFFF; 
+            padding: 16px 28px; 
+            border-radius: 16px; 
+            font-size: 16px; 
+            transition: all 0.4s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(26, 46, 74, 0.2);
+        }
+        
+        .store-btn:hover { 
+            transform: translateY(-4px); 
+            box-shadow: 0 16px 36px rgba(26, 46, 74, 0.3);
+            color: #FFFFFF;
+            background: linear-gradient(135deg, #2a4060, var(--primary-navy));
+        }
+        
+        .store-btn i { font-size: 28px; }
+        
+        .coming-soon { 
+            font-size: 11px; 
+            opacity: 0.8; 
+            display: block; 
+            text-align: left; 
+            line-height: 1.2; 
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .store-btn strong { font-size: 18px; }
+
+        .store-btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary-navy);
+            color: var(--primary-navy);
+        }
+
+        .store-btn-secondary:hover {
+            background: var(--primary-navy);
+            color: var(--surface-color);
+        }
+
+        /* ========== SECTIONS ========== */
+        .section { 
+            padding: 90px 5%; 
+            position: relative;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 16px;
+            max-width: 600px;
+            margin: -30px auto 50px;
+            font-style: italic;
+        }
+        
+        .section-title { 
+            text-align: center; 
+            font-size: 46px; 
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .story-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); 
+            gap: 28px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        
+        .story-card { 
+            background: var(--surface-color); 
+            padding: 36px 28px; 
+            border-radius: 20px; 
+            border-top: 4px solid var(--accent-gold); 
+            text-align: center; 
+            box-shadow: var(--card-shadow);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .story-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 100%;
+            background: linear-gradient(180deg, rgba(var(--accent-gold-rgb), 0.05) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .story-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+        
+        .story-card:hover::before { opacity: 1; }
+        
+        .story-card i { 
+            font-size: 36px; 
+            color: var(--accent-brown); 
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .story-card:hover i { transform: scale(1.1); }
+        .story-card h3 { font-size: 26px; margin-bottom: 14px; }
+        .story-card p { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+
+        /* ========== FEATURES ========== */
+        .features-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
+            gap: 24px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        
+        .feature-item { 
+            display: flex; 
+            align-items: flex-start; 
+            gap: 18px; 
+            padding: 24px; 
+            background: var(--surface-color);
+            border-radius: 16px;
+            transition: all 0.4s ease;
+            box-shadow: var(--card-shadow);
+            border: 1px solid transparent;
+        }
+        
+        .feature-item:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon { 
+            background: rgba(var(--accent-gold-rgb), 0.1); 
+            border: 2px solid var(--accent-gold); 
+            color: var(--accent-brown); 
+            width: 56px; height: 56px; 
+            border-radius: 14px; 
+            display: flex; align-items: center; justify-content: center; 
+            font-size: 22px; 
+            flex-shrink: 0; 
+            transition: all 0.4s ease; 
+        }
+        
+        .feature-item:hover .feature-icon {
+            background: var(--accent-brown);
+            color: #FFFFFF;
+            border-color: var(--accent-brown);
+        }
+        
+        .feature-item h4 { font-size: 20px; margin-bottom: 6px; }
+
+        /* ========== THEMES ========== */
+        .themes-section { 
+            background: linear-gradient(135deg, var(--primary-navy), #0f1f33); 
+            padding: 100px 5%; 
+            text-align: center; 
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .themes-section::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle at center, rgba(var(--accent-gold-rgb), 0.05) 0%, transparent 60%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        .themes-section .section-title { color: #FFFFFF; position: relative; z-index: 1; }
+        
+        .themes-section > p { 
+            color: rgba(255,255,255,0.7); 
+            margin-bottom: 50px; 
+            font-size: 18px; 
+            max-width: 600px; margin-left: auto; margin-right: auto;
+            position: relative; z-index: 1;
+        }
+        
+        .theme-circles { 
+            display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; 
+            max-width: 800px; margin: 0 auto; position: relative; z-index: 1;
+        }
+        
+        .theme-circle { 
+            width: 52px; height: 52px; border-radius: 50%; cursor: pointer; 
+            border: 3px solid rgba(255,255,255,0.2); 
+            transition: all 0.4s ease; position: relative;
+        }
+        
+        .theme-circle:hover { 
+            border-color: rgba(255,255,255,0.6); transform: scale(1.15);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3); 
+        }
+        
+        .theme-circle.active { 
+            border-color: #FFFFFF; transform: scale(1.15);
+            box-shadow: 0 0 0 4px rgba(255,255,255,0.2), 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .theme-circle.active::after {
+            content: '✓'; position: absolute; inset: 0;
+            display: flex; align-items: center; justify-content: center;
+            color: #FFFFFF; font-weight: bold; font-size: 18px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .theme-name { 
+            margin-top: 28px; 
+            font-family: var(--font-display); font-size: 26px; font-style: italic; 
+            color: var(--accent-gold); min-height: 36px; position: relative; z-index: 1;
+        }
+
+        /* ========== LEGAL SECTION ========== */
+        .legal-section {
+            padding: 60px 5%; text-align: center; background: var(--surface-color);
+            border-top: 1px solid rgba(var(--accent-gold-rgb), 0.3);
+        }
+        
+        .legal-subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        
+        .legal-grid {
+            display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;
+            max-width: 700px; margin: 30px auto;
+        }
+        
+        .legal-card {
+            background: var(--bg-color);
+            border: 1px solid rgba(var(--accent-gold-rgb), 0.2);
+            padding: 24px 32px; border-radius: 16px; text-align: center;
+            transition: all 0.3s ease; min-width: 180px;
+        }
+        
+        .legal-card:hover {
+            border-color: var(--accent-gold); transform: translateY(-2px);
+            box-shadow: var(--card-shadow);
+        }
+        
+        .legal-card i { font-size: 28px; color: var(--accent-brown); margin-bottom: 10px; }
+        
+        .legal-card h4 {
+            font-family: var(--font-body); font-size: 14px; font-weight: 600;
+            color: var(--primary-navy); letter-spacing: 0.5px;
+        }
+
+        /* ========== FOOTER ========== */
+        footer { 
+            background: linear-gradient(180deg, var(--primary-navy), #0f1f33); 
+            padding: 70px 5% 35px; 
+            border-top: 1px solid rgba(var(--accent-gold-rgb), 0.3); 
+            color: #FFFFFF;
+        }
+        
+        .footer-content { 
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: flex-start;
+            flex-wrap: wrap; gap: 40px; 
+        }
+        
+        .footer-brand h2 { 
+            font-size: 34px; letter-spacing: 4px; margin-bottom: 8px;
+            color: var(--accent-gold);
+        }
+        
+        .footer-brand p { 
+            font-style: italic; color: rgba(255,255,255,0.6); 
+            font-family: var(--font-display); font-size: 18px; 
+        }
+        
+        .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+        
+        .footer-links a { 
+            font-size: 14px; color: rgba(255,255,255,0.7);
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover { color: var(--accent-gold); }
+        
+        .copyright { 
+            text-align: center; margin-top: 40px; 
+            font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.8;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 44px; }
+            .hero h2 { font-size: 22px; }
+            .section-title { font-size: 34px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+            header { flex-direction: column; gap: 16px; }
+            .footer-content { flex-direction: column; text-align: center; align-items: center; }
+            .footer-links { justify-content: center; }
+            .features-grid { grid-template-columns: 1fr; }
+            .story-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .story-grid { grid-template-columns: 1fr; }
+            .hero { padding: 60px 5% 50px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="/de/" class="logo-container">
+            <img src="/logo.png" alt="ORHAR Logo" class="logo-img" onerror="this.style.display='none'">
+            <span class="logo-text">ORHAR</span>
+        </a>
+        <nav class="nav-links">
+            <a href="#story">Die Geschichte</a>
+            <a href="#features">Funktionen</a>
+            <a href="/contact.html">Kontakt</a>
+            <select id="langSwitch" class="lang-select" onchange="switchLanguage(this.value)">
+                <option value="en">🇬🇧 EN</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="de" selected>🇩🇪 DE</option>
+                <option value="it">🇮🇹 IT</option>
+                <option value="pt">🇵🇹 PT</option>
+                <option value="pl">🇵🇱 PL</option>
+            </select>
+        </nav>
+    </header>
+
+    <!-- ========== NEUESTES ========== -->
+    <div class="update-section" id="update-container">
+        <div class="update-badge">📣 Neuestes</div>
+        <p class="update-text">Unsere App befindet sich in aktiver Entwicklung. Die Website ist live, das Kontaktformular funktioniert, und wir bauen etwas Wunderschönes. Bleib dran.</p>
+    </div>
+
+    <section class="hero">
+        <div class="hero-badge">✦ Der Berg des Lichts</div>
+        <h1>Der Berg des Lichts</h1>
+        <h2>Wo Gottes Wort und die menschliche Seele sich auf den Höhen begegnen.</h2>
+        <p>OR bedeutet Licht. HAR bedeutet Berg. Zusammen ist ORHAR der biblische Ort der göttlichen Begegnung. Gebaut für den täglichen Aufstieg, mehrsprachig und wunderschön gestaltet für deine spirituelle Reise.</p>
+        
+        <div class="store-buttons">
+            <a href="/contact.html#contact-section" class="store-btn">
+                <i class="fas fa-bell"></i>
+                <div>
+                    <span class="coming-soon">Sei der Erste, der es erfährt</span>
+                    <strong>Updates Erhalten</strong>
+                </div>
+            </a>
+            <a href="/contact.html#support-section" class="store-btn store-btn-secondary">
+                <i class="fas fa-heart"></i>
+                <div>
+                    <span class="coming-soon">Hilf uns zu wachsen</span>
+                    <strong>Projekt Unterstützen</strong>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="story" class="section">
+        <h2 class="section-title">Lies das Symbol</h2>
+        <p class="section-subtitle">Jedes Element trägt Bedeutung — eine heilige Geografie auf einen Blick.</p>
+        <div class="story-grid">
+            <div class="story-card">
+                <i class="fas fa-book-open"></i>
+                <h3>Die Bibel</h3>
+                <p>Alles beginnt hier. Seiten weit geöffnet, lebendig, atmend, bereit. Gottes Wort ist kein verschlossenes Buch; es ist aufgeschlagen und wartet auf dich.</p>
+            </div>
+            <div class="story-card">
+                <i class="fas fa-bookmark"></i>
+                <h3>Das Lesezeichen</h3>
+                <p>Ein goldenes Lesezeichen ruht in der offenen Bibel — treu, geduldig. Es sagt, du wirst zurückkehren. Das Wort ist ein Ort, zu dem du jeden Tag zurückkommst.</p>
+            </div>
+            <div class="story-card">
+                <i class="fas fa-mountain"></i>
+                <h3>Der Berg</h3>
+                <p>Der Sinai empfing das Gesetz. Zion trägt die Verheißung. Der Tabor erstrahlte in Herrlichkeit. ORHAR stellt dich auf diesen Berg, jedes Mal wenn du das Wort öffnest.</p>
+            </div>
+            <div class="story-card">
+                <i class="fas fa-sun"></i>
+                <h3>Der Heiligenschein</h3>
+                <p>Auf dem Gipfel krönt ein goldener Heiligenschein den Berg. »Es werde Licht.« Das erste Wort, das in die Finsternis gesprochen wurde, ist dasselbe Licht, das auf jeder Seite leuchtet.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section" style="background-color: var(--surface-color);">
+        <h2 class="section-title">Deine Schrift-Begleiter</h2>
+        <p class="section-subtitle">Werkzeuge, die dich auf dem täglichen Aufstieg begleiten.</p>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-bible"></i></div>
+                <div><h4>Vollständige Bibel</h4><p>Lies die Heilige Schrift in mehreren Versionen und Sprachen, komplett offline.</p></div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-hands-praying"></i></div>
+                <div><h4>Gebete</h4><p>Ein eigener Raum für geführte Gebete und tägliche spirituelle Verbindung.</p></div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-headphones"></i></div>
+                <div><h4>Audio & TTS</h4><p>Höre das Wort unterwegs mit hochwertiger Text-zu-Sprache-Wiedergabe.</p></div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-pen-fancy"></i></div>
+                <div><h4>Persönliche Notizen</h4><p>Dokumentiere deine Offenbarungen, verschlagworte sie und synchronisiere sie sicher über Geräte hinweg.</p></div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-sun"></i></div>
+                <div><h4>Tagesvers</h4><p>Beginne deinen Tag mit einer sorgfältig ausgewählten Schriftstelle, die deinen Weg erleuchtet.</p></div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-book"></i></div>
+                <div><h4>Bücher In-App</h4><p>Greife auf eine kuratierte Bibliothek theologischer und spiritueller Schriften in der App zu.</p></div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-map-marked-alt"></i></div>
+                <div><h4>Lesepläne</h4><p>Folge strukturierten Plänen, um die Bibel in deinem eigenen Tempo zu lesen.</p></div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-dove"></i></div>
+                <div><h4>Frauen-Bereich</h4><p>Gewidmete biblische Einsichten, Studien und Geschichten von Frauen im Wort.</p></div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-question-circle"></i></div>
+                <div><h4>Bibel-Quiz</h4><p>Teste dein Wissen und vertiefe dein Verständnis der Heiligen Schrift.</p></div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-landmark"></i></div>
+                <div><h4>Historischer Inhalt</h4><p>Erkunde den tiefen historischen Kontext und Hintergrund der biblischen Zeit.</p></div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-bell"></i></div>
+                <div><h4>Erinnerungen</h4><p>Stelle benutzerdefinierte Benachrichtigungen ein, damit du deine tägliche Zeit im Wort nie verpasst.</p></div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-church"></i></div>
+                <div><h4>Katholischer Inhalt (CEC)</h4><p>Enthält deuterokanonische Bücher und spezifische katholische Ressourcen.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="themes-section">
+        <h2 class="section-title">Ein Raum, Der Dich Widerspiegelt</h2>
+        <p>ORHAR ist vollständig anpassbar. Wähle aus 9 sorgfältig gestalteten Farbthemen, die zu deinem Geist passen.</p>
+        <div class="theme-circles" id="theme-buttons"></div>
+        <div class="theme-name" id="theme-display">Standard-Theme</div>
+    </section>
+
+    <section class="legal-section">
+        <h3 class="section-title" style="font-size: 32px; margin-bottom: 8px;">Rechtliches & Transparenz</h3>
+        <p class="legal-subtitle">Dein Vertrauen zählt. Lies unsere Richtlinien und Lizenzen.</p>
+        <div class="legal-grid">
+            <a href="/privacy.html" class="legal-card">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Datenschutzerklärung</h4>
+            </a>
+            <a href="/terms.html" class="legal-card">
+                <i class="fas fa-scale-balanced"></i>
+                <h4>Nutzungsbedingungen</h4>
+            </a>
+            <a href="/licenses.html" class="legal-card">
+                <i class="fas fa-file-contract"></i>
+                <h4>Open-Source-Lizenzen</h4>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>ORHAR</h2>
+                <p>Gemacht mit ❤️ für das Leben im Gebet.</p>
+            </div>
+            <div class="footer-links">
+                <a href="/privacy.html">Datenschutz</a>
+                <a href="/terms.html">Bedingungen</a>
+                <a href="/licenses.html">Lizenzen</a>
+                <a href="/contact.html">Kontakt</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 ORHAR. Alle Rechte vorbehalten.<br>
+            »Dein Wort ist meines Fußes Leuchte und ein Licht auf meinem Wege.« — Psalm 119:105
+        </div>
+    </footer>
+
+    <script>
+        // ========== THEMEN ==========
+        const appThemes = [
+            { name: 'Default',  primary: '#1A2E4A', accentGold: '#CFB286', accentGoldRgb: '207,178,134', accentBrown: '#915B27', accentBrownRgb: '145,91,39', bg: '#FCFBF8', surface: '#FFFFFF', text: '#1e1e1e', textMuted: '#7f8c8d' },
+            { name: 'Bleu',     primary: '#0b9ac3', accentGold: '#FDB718', accentGoldRgb: '253,183,24', accentBrown: '#0EC1F4', accentBrownRgb: '14,193,244', bg: '#FCFBF6', surface: '#FFFFFF', text: '#1e1e1e', textMuted: '#7f8c8d' },
+            { name: 'Sunset',   primary: '#ef476f', accentGold: '#ffd166', accentGoldRgb: '255,209,102', accentBrown: '#f26b8b', accentBrownRgb: '242,107,139', bg: '#fff8f3', surface: '#FFFFFF', text: '#2d1b2d', textMuted: '#b3a395' },
+            { name: 'Forest',   primary: '#38a169', accentGold: '#ffcc70', accentGoldRgb: '255,204,112', accentBrown: '#5fb387', accentBrownRgb: '95,179,135', bg: '#f0f7f1', surface: '#FFFFFF', text: '#1e2a21', textMuted: '#a9b7a9' },
+            { name: 'Violet',   primary: '#845EC2', accentGold: '#ff6f91', accentGoldRgb: '255,111,145', accentBrown: '#9c7ece', accentBrownRgb: '156,126,206', bg: '#ebe3f5', surface: '#FFFFFF', text: '#2e233e', textMuted: '#c6bec7' },
+            { name: 'Oceanic',  primary: '#088395', accentGold: '#ffc93c', accentGoldRgb: '255,201,60', accentBrown: '#399baa', accentBrownRgb: '57,155,170', bg: '#f0f8ff', surface: '#FFFFFF', text: '#071a21', textMuted: '#a2d5c6' },
+            { name: 'Earthy',   primary: '#ac7060', accentGold: '#f7b267', accentGoldRgb: '247,178,103', accentBrown: '#d88c79', accentBrownRgb: '216,140,121', bg: '#fef9f3', surface: '#FFFFFF', text: '#2d1c18', textMuted: '#bcaaa4' },
+            { name: 'Graphite', primary: '#4a4a4a', accentGold: '#ffd700', accentGoldRgb: '255,215,0', accentBrown: '#6e6e6e', accentBrownRgb: '110,110,110', bg: '#f5f5f7', surface: '#FFFFFF', text: '#111111', textMuted: '#888888' },
+            { name: 'Sakura',   primary: '#cc929d', accentGold: '#8FBC8F', accentGoldRgb: '143,188,143', accentBrown: '#ffb7c5', accentBrownRgb: '255,183,197', bg: '#fff0f5', surface: '#FFFFFF', text: '#21181b', textMuted: '#e6c0c8' }
+        ];
+
+        const container = document.getElementById('theme-buttons');
+        const root = document.documentElement;
+        
+        appThemes.forEach((theme, index) => {
+            const btn = document.createElement('div');
+            btn.className = `theme-circle ${index === 0 ? 'active' : ''}`;
+            btn.style.backgroundColor = theme.accentBrown;
+            btn.title = theme.name;
+            btn.onclick = (e) => {
+                document.querySelectorAll('.theme-circle').forEach(c => c.classList.remove('active'));
+                e.target.classList.add('active');
+                document.getElementById('theme-display').innerText = `${theme.name} Theme`;
+                root.style.setProperty('--primary-navy', theme.primary);
+                root.style.setProperty('--accent-gold', theme.accentGold);
+                root.style.setProperty('--accent-gold-rgb', theme.accentGoldRgb);
+                root.style.setProperty('--accent-brown', theme.accentBrown);
+                root.style.setProperty('--accent-brown-rgb', theme.accentBrownRgb);
+                root.style.setProperty('--bg-color', theme.bg);
+                root.style.setProperty('--header-bg', theme.bg.replace(')', ', 0.95)').replace('rgb', 'rgba'));
+                root.style.setProperty('--surface-color', theme.surface);
+                root.style.setProperty('--text-dark', theme.text);
+                root.style.setProperty('--text-muted', theme.textMuted);
+            };
+            container.appendChild(btn);
+        });
+
+        // ========== SPRACHWECHSEL ==========
+        function switchLanguage(lang) {
+            localStorage.setItem('orhar_lang', lang);
+            window.location.href = '/' + lang + '/';
+        }
+
+        // ========== INITIALISIERUNG ==========
+        document.addEventListener("DOMContentLoaded", () => {
+            const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--bg-color').trim();
+            document.documentElement.style.setProperty('--header-bg', bgColor.replace(')', ', 0.95)').replace('rgb', 'rgba'));
+        });
+    </script>
+
+    <!-- ========== LADE AKTUALISIERUNGEN AUS ZENTRALER DATEI ========== -->
+    <script>
+        fetch('/updates.html')
+            .then(response => response.text())
+            .then(html => {
+                const container = document.getElementById('update-container');
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const updateBlock = doc.getElementById('update-de');
+                if (updateBlock) {
+                    // Force display:block and copy the inner content
+                    updateBlock.style.display = 'block';
+                    updateBlock.style.padding = '40px 5%';
+                    updateBlock.style.background = 'var(--surface-color)';
+                    updateBlock.style.textAlign = 'center';
+                    container.innerHTML = '';
+                    container.appendChild(updateBlock);
+                }
+            })
+            .catch(() => {
+                // Keep the static fallback visible — do nothing
+                console.log('Update-Feed nicht verfügbar — Standardtext wird verwendet.');
+            });
+    </script>
+</body>
+</html>

@@ -549,7 +549,7 @@
         
         .legal-grid {
             display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;
-            max-width: 700px; margin: 30px auto;
+            max-width: 1000px; margin: 30px auto;
         }
         
         .legal-card {
@@ -684,7 +684,7 @@
     <section id="story" class="section">
         <h2 class="section-title">Leggi l'Icona</h2>
         <p class="section-subtitle">Ogni elemento porta significato — una geografia sacra in un solo sguardo.</p>
-        <div class="story-grid">
+        <div class="story-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
             <div class="story-card">
                 <i class="fas fa-book-open"></i>
                 <h3>La Bibbia</h3>
@@ -696,6 +696,11 @@
                 <p>Un segnalibro dorato riposa nella Bibbia aperta — fedele, paziente. Dice che tornerai. La Parola è un luogo in cui ritorni ogni giorno.</p>
             </div>
             <div class="story-card">
+                <i class="fas fa-road"></i>
+                <h3>Il Sentiero</h3>
+                <p>Una strada dorata si eleva dalle pagine fino alla vetta. Ogni versetto, un passo. Ogni capitolo, un'ascensione. «La tua parola è una lampada al mio piede e una luce sul mio sentiero.» (Sal 119:105)</p>
+            </div>
+            <div class="story-card">
                 <i class="fas fa-mountain"></i>
                 <h3>La Montagna</h3>
                 <p>Il Sinai ricevette la Legge. Sion porta la promessa. Il Tabor risplendette di gloria. ORHAR ti pone su quella montagna ogni volta che apri la Parola.</p>
@@ -703,7 +708,7 @@
             <div class="story-card">
                 <i class="fas fa-sun"></i>
                 <h3>L'Aureola</h3>
-                <p>Sulla vetta, un'aureola dorata incorona la montagna. «Sia la luce». La prima parola pronunciata nelle tenebre è la stessa luce che brilla su ogni pagina.</p>
+                <p>Sulla vetta, un'aureola dorata incorona la montagna — non come ricompensa, ma come dono. «Sia la luce.» La prima parola nelle tenebre brilla su ogni pagina di ORHAR.</p>
             </div>
         </div>
     </section>

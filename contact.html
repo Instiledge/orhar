@@ -668,80 +668,17 @@
             .contact-wrapper { margin: 50px auto; }
         }
 
-        /* ========== MODAL ========== */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.5);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
+        /* ========== INLINE CONTACT FORM ========== */
+        #contactFormSection {
+            scroll-margin-top: 100px;
         }
         
-        .modal-overlay.active { display: flex; }
-        
-        .modal-dialog {
-            background: var(--surface-color);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 520px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            border-top: 4px solid var(--accent-gold);
-            animation: modalSlideIn 0.3s ease;
-        }
-        
-        @keyframes modalSlideIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border: none;
-            background: rgba(var(--accent-gold-rgb), 0.1);
-            color: var(--accent-brown);
-            font-size: 18px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .modal-close:hover { background: var(--accent-brown); color: #FFFFFF; }
-        
-        .modal-dialog h2 {
-            font-size: 28px;
-            margin-bottom: 6px;
-            text-align: center;
-        }
-        
-        .modal-dialog .modal-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 14px;
-            margin-bottom: 24px;
-            font-style: italic;
-        }
-        
-        .form-group {
+        .form-group-inline {
             margin-bottom: 18px;
+            text-align: left;
         }
         
-        .form-group label {
+        .form-group-inline label {
             display: block;
             font-weight: 600;
             color: var(--primary-navy);
@@ -750,13 +687,13 @@
             font-family: var(--font-body);
         }
         
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
+        .form-group-inline input,
+        .form-group-inline select,
+        .form-group-inline textarea {
             width: 100%;
-            padding: 12px 16px;
+            padding: 14px 16px;
             border: 2px solid rgba(var(--accent-gold-rgb), 0.3);
-            border-radius: 10px;
+            border-radius: 12px;
             font-family: var(--font-body);
             font-size: 15px;
             color: var(--text-dark);
@@ -765,66 +702,67 @@
             outline: none;
         }
         
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
+        .form-group-inline input:focus,
+        .form-group-inline select:focus,
+        .form-group-inline textarea:focus {
             border-color: var(--accent-brown);
             box-shadow: 0 0 0 3px rgba(var(--accent-brown-rgb), 0.1);
         }
         
-        .form-group textarea {
+        .form-group-inline textarea {
             min-height: 120px;
             resize: vertical;
         }
         
-        .form-submit {
-            width: 100%;
-            padding: 14px;
-            background: linear-gradient(135deg, var(--primary-navy), #2a4060);
-            color: #FFFFFF;
-            border: none;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            font-family: var(--font-body);
-            cursor: pointer;
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 24px rgba(26, 46, 74, 0.2);
+        .form-buttons-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
         }
         
-        .form-submit:hover {
-            background: linear-gradient(135deg, #2a4060, var(--primary-navy));
-            transform: translateY(-2px);
-            box-shadow: 0 12px 32px rgba(26, 46, 74, 0.3);
+        .form-cancel-btn {
+            background: transparent !important;
+            border: 2px solid rgba(var(--accent-gold-rgb), 0.5) !important;
+            color: var(--primary-navy) !important;
+            box-shadow: none !important;
         }
         
-        .form-submit:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
+        .form-cancel-btn:hover {
+            background: rgba(var(--accent-gold-rgb), 0.1) !important;
+            border-color: var(--accent-brown) !important;
+            color: var(--accent-brown) !important;
         }
         
-        .form-feedback {
+        .success-icon-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(5, 150, 105, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+        
+        .success-icon-circle i {
+            font-size: 28px;
+            color: #059669;
+        }
+        
+        #formSuccessMessage {
             text-align: center;
-            padding: 12px;
-            border-radius: 10px;
-            margin-bottom: 16px;
-            font-size: 14px;
-            display: none;
         }
         
-        .form-feedback.success {
-            display: block;
-            background: #ECFDF5;
-            color: #065F46;
-            border: 1px solid #A7F3D0;
+        #formSuccessMessage h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #059669;
         }
         
-        .form-feedback.error {
-            display: block;
-            background: #FEF2F2;
-            color: #991B1B;
-            border: 1px solid #FECACA;
+        #formSuccessMessage p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.7;
         }
     </style>
 </head>
@@ -876,12 +814,65 @@
             </div>
             <h2 data-i18n="c_email_title">Email Us</h2>
             <p data-i18n="c_email_desc">Our support team usually responds within 24 to 48 hours. Please include your account email if you need technical help.</p>
-            <button class="email-link" onclick="openContactForm()" style="font-family: var(--font-body);">
+            <button class="email-link" onclick="showContactForm('general')" style="font-family: var(--font-body);">
                 <i class="fas fa-paper-plane"></i>
                 <span data-i18n="c_form_open">Send Us a Message</span>
             </button>
         </div>
 
+        <!-- ========== CONTACT FORM (Hidden by default) ========== -->
+        <div class="contact-card" id="contactFormSection" style="margin-bottom: 80px; display: none;">
+            <div class="contact-card-icon">
+                <i class="fas fa-paper-plane"></i>
+            </div>
+            <h2 id="formTitle" data-i18n="c_form_title">Send Us a Message</h2>
+            
+            <form id="contactForm" onsubmit="handleFormSubmit(event)" style="margin-top: 24px;">
+                <div class="form-group-inline">
+                    <label for="formEmail" data-i18n="c_form_email_label">Your Email *</label>
+                    <input type="email" id="formEmail" placeholder="you@example.com" required>
+                </div>
+                
+                <div class="form-group-inline">
+                    <label for="formTopic" data-i18n="c_form_topic_label">Topic</label>
+                    <select id="formTopic">
+                        <option value="general" data-i18n="c_form_topic_general">General Inquiry</option>
+                        <option value="translation" data-i18n="c_form_topic_translation">Translation Contribution</option>
+                        <option value="bug" data-i18n="c_form_topic_bug">Bug Report</option>
+                        <option value="beta" data-i18n="c_form_topic_beta">Beta Testing</option>
+                        <option value="feature" data-i18n="c_form_topic_feature">Feature Request</option>
+                        <option value="prayer" data-i18n="c_form_topic_prayer">Prayer Suggestion</option>
+                        <option value="content" data-i18n="c_form_topic_content">Content Contribution</option>
+                        <option value="other" data-i18n="c_form_topic_other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group-inline">
+                    <label for="formMessage" data-i18n="c_form_message_label">Your Message *</label>
+                    <textarea id="formMessage" placeholder="Tell us what's on your heart..." rows="5" required></textarea>
+                </div>
+                
+                <div class="form-buttons-row">
+                    <button type="submit" class="email-link" id="formSubmitBtn" style="flex: 1;">
+                        <i class="fas fa-paper-plane"></i>
+                        <span data-i18n="c_form_send_btn">Send Message</span>
+                    </button>
+                    <button type="button" class="email-link form-cancel-btn" onclick="hideContactForm()" style="flex: 1;">
+                        <i class="fas fa-times"></i>
+                        <span data-i18n="c_form_cancel_btn">Cancel</span>
+                    </button>
+                </div>
+            </form>
+            
+            <div class="form-success-message" id="formSuccessMessage" style="display: none;">
+                <div class="success-icon-circle">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h3 data-i18n="c_form_success_title">Message Sent!</h3>
+                <p data-i18n="c_form_success_desc">Thank you for reaching out. We'll get back to you within 24–48 hours. God bless you.</p>
+            </div>
+        </div>
+        
         <!-- ════════════════════════════════════════════
              SECTION 2: SUPPORT
              — Donate card + Ways You Can Help + Contribute
@@ -911,7 +902,7 @@
         <p class="section-subtitle" data-i18n="c_support_sub">Join the mission in a way that suits you</p>
 
         <div class="support-list" style="margin-bottom: 60px;">
-            <a href="#" class="support-item" onclick="openContactForm('translation')">
+            <a href="#" class="support-item" onclick="showContactForm('translation')">
                 <div class="support-item-icon"><i class="fas fa-language"></i></div>
                 <div class="support-item-content">
                     <h4 data-i18n="sup_translate">Become a Translator</h4>
@@ -919,7 +910,7 @@
                 </div>
                 <i class="fas fa-chevron-right support-item-arrow"></i>
             </a>
-            <a href="#" class="support-item" onclick="openContactForm('bug')">
+            <a href="#" class="support-item" onclick="showContactForm('bug')">
                 <div class="support-item-icon"><i class="fas fa-bug"></i></div>
                 <div class="support-item-content">
                     <h4 data-i18n="sup_bug">Report an Issue</h4>
@@ -927,7 +918,7 @@
                 </div>
                 <i class="fas fa-chevron-right support-item-arrow"></i>
             </a>
-            <a href="#" class="support-item" onclick="openContactForm('beta')">
+            <a href="#" class="support-item" onclick="showContactForm('beta')">
                 <div class="support-item-icon"><i class="fas fa-flask"></i></div>
                 <div class="support-item-content">
                     <h4 data-i18n="sup_beta">Join Beta Testing</h4>
@@ -935,7 +926,7 @@
                 </div>
                 <i class="fas fa-chevron-right support-item-arrow"></i>
             </a>
-            <a href="#" class="support-item" onclick="openContactForm('general')">
+            <a href="#" class="support-item" onclick="showContactForm('general')">
                 <div class="support-item-icon"><i class="fas fa-question-circle"></i></div>
                 <div class="support-item-content">
                     <h4 data-i18n="sup_general">General Inquiry</h4>
@@ -966,52 +957,6 @@
                 <!-- Translated dynamically -->
             </div>
         </div>
-
-        <!-- ========== CONTACT FORM MODAL ========== -->
-        <div class="modal-overlay" id="contactModal">
-            <div class="modal-dialog">
-                <button class="modal-close" onclick="closeContactForm()">
-                    <i class="fas fa-times"></i>
-                </button>
-                <h2 data-i18n="c_form_title">Send Us a Message</h2>
-                <p class="modal-subtitle" data-i18n="c_form_sub">We'll get back to you within 24–48 hours</p>
-                
-                <div class="form-feedback" id="formFeedback"></div>
-                
-                <form id="contactForm" onsubmit="submitContactForm(event)">
-                    <div class="form-group">
-                        <label for="formName" data-i18n="c_form_name">Your Name</label>
-                        <input type="text" id="formName" placeholder="John Doe" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="formEmail" data-i18n="c_form_email">Your Email</label>
-                        <input type="email" id="formEmail" placeholder="john@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="formTopic" data-i18n="c_form_topic">Topic</label>
-                        <select id="formTopic" required>
-                            <option value="" disabled selected data-i18n="c_form_select">Select a topic...</option>
-                            <option value="general" data-i18n="c_form_general">General Inquiry</option>
-                            <option value="translation" data-i18n="c_form_translation">Become a Translator</option>
-                            <option value="bug" data-i18n="c_form_bug">Report a Bug</option>
-                            <option value="beta" data-i18n="c_form_beta">Join Beta Testing</option>
-                            <option value="feature" data-i18n="c_form_feature">Feature Request</option>
-                            <option value="prayer" data-i18n="c_form_prayer">Suggest a Prayer</option>
-                            <option value="content" data-i18n="c_form_content">Content Contribution</option>
-                            <option value="other" data-i18n="c_form_other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="formMessage" data-i18n="c_form_message">Your Message</label>
-                        <textarea id="formMessage" placeholder="Tell us how we can help..." required></textarea>
-                    </div>
-                    <button type="submit" class="form-submit" id="formSubmitBtn">
-                        <i class="fas fa-paper-plane"></i> <span data-i18n="c_form_send">Send Message</span>
-                    </button>
-                </form>
-            </div>
-        </div>
-        
     </main>
 
     <!-- ========== LEGAL SECTION ========== -->
@@ -1041,7 +986,7 @@
                 <p data-i18n="foot_made">Made with ❤️ for the life of prayer.</p>
             </div>
             <div class="footer-contact">
-                <a href="#" onclick="openContactForm()">contact@orhar.com</a>
+                <a href="#" onclick="showContactForm('general')">contact@orhar.com</a>
                 <span class="separator">•</span>
                 <span>orhar.com</span>
             </div>
@@ -1119,10 +1064,10 @@
                     <div class="faq-item"><h3><i class="fas fa-download"></i> Can I export my notes and highlights?</h3><p>Yes. ORHAR supports exporting your personal content. Go to <strong>Settings → Data → Export</strong> to download your notes in a readable format.</p></div>
                 `,
                 contrib_html: `
-                    <a href="#" class="contribute-item" onclick="openContactForm('prayer')"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Suggest a Prayer</h4><p>Share a prayer that could bless the community</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('feature')"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Feature Request</h4><p>Ideas that could make ORHAR even better</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('content')"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Content Contribution</h4><p>Help us write or review biblical content</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('general')"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Spread the Word</h4><p>Share ORHAR with your community</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('prayer')"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Suggest a Prayer</h4><p>Share a prayer that could bless the community</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('feature')"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Feature Request</h4><p>Ideas that could make ORHAR even better</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('content')"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Content Contribution</h4><p>Help us write or review biblical content</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('general')"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Spread the Word</h4><p>Share ORHAR with your community</p></div></a>
                 `
             },
             fr: {
@@ -1176,10 +1121,10 @@
                     <div class="faq-item"><h3><i class="fas fa-download"></i> Puis-je exporter mes notes et surlignages ?</h3><p>Oui. ORHAR prend en charge l'exportation de votre contenu personnel. Allez dans <strong>Paramètres → Données → Exporter</strong> pour télécharger vos notes dans un format lisible.</p></div>
                 `,
                 contrib_html: `
-                    <a href="#" class="contribute-item" onclick="openContactForm('prayer')"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Suggérer une Prière</h4><p>Partagez une prière qui pourrait bénir la communauté</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('feature')"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Suggérer une Fonctionnalité</h4><p>Des idées pour rendre ORHAR encore meilleur</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('content')"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Contribution de Contenu</h4><p>Aidez-nous à rédiger ou réviser du contenu biblique</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('general')"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Partager la Parole</h4><p>Faites connaître ORHAR autour de vous</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('prayer')"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Suggérer une Prière</h4><p>Partagez une prière qui pourrait bénir la communauté</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('feature')"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Suggérer une Fonctionnalité</h4><p>Des idées pour rendre ORHAR encore meilleur</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('content')"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Contribution de Contenu</h4><p>Aidez-nous à rédiger ou réviser du contenu biblique</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('general')"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Partager la Parole</h4><p>Faites connaître ORHAR autour de vous</p></div></a>
                 `
             },
             es: {
@@ -1233,10 +1178,10 @@
                     <div class="faq-item"><h3><i class="fas fa-download"></i> ¿Puedo exportar mis notas?</h3><p>Sí. ORHAR permite exportar tu contenido. Ve a <strong>Ajustes → Datos → Exportar</strong> para descargar tus notas.</p></div>
                 `,
                 contrib_html: `
-                    <a href="#" class="contribute-item" onclick="openContactForm('prayer')"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Sugerir una Oración</h4><p>Comparte una oración que bendiga a la comunidad</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('feature')"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Sugerir Función</h4><p>Ideas para hacer ORHAR aún mejor</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('content')"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Contribuir Contenido</h4><p>Ayúdanos a escribir contenido bíblico</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('general')"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Compartir la Palabra</h4><p>Difunde ORHAR en tu comunidad</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('prayer')"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Sugerir una Oración</h4><p>Comparte una oración que bendiga a la comunidad</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('feature')"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Sugerir Función</h4><p>Ideas para hacer ORHAR aún mejor</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('content')"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Contribuir Contenido</h4><p>Ayúdanos a escribir contenido bíblico</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('general')"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Compartir la Palabra</h4><p>Difunde ORHAR en tu comunidad</p></div></a>
                 `
             },
             de: {
@@ -1290,10 +1235,10 @@
                     <div class="faq-item"><h3><i class="fas fa-download"></i> Kann ich meine Notizen exportieren?</h3><p>Ja. Gehe auf <strong>Einstellungen → Daten → Exportieren</strong>, um deine Notizen herunterzuladen.</p></div>
                 `,
                 contrib_html: `
-                    <a href="#" class="contribute-item" onclick="openContactForm('prayer')"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Gebet vorschlagen</h4><p>Teile ein Gebet, das die Gemeinschaft segnen kann</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('feature')"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Funktion vorschlagen</h4><p>Ideen, die ORHAR noch besser machen</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('content')"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Inhalte beisteuern</h4><p>Hilf uns, biblische Inhalte zu schreiben</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('general')"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Weitersagen</h4><p>Teile ORHAR mit deiner Gemeinschaft</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('prayer')"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Gebet vorschlagen</h4><p>Teile ein Gebet, das die Gemeinschaft segnen kann</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('feature')"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Funktion vorschlagen</h4><p>Ideen, die ORHAR noch besser machen</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('content')"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Inhalte beisteuern</h4><p>Hilf uns, biblische Inhalte zu schreiben</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('general')"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Weitersagen</h4><p>Teile ORHAR mit deiner Gemeinschaft</p></div></a>
                 `
             },
             it: {
@@ -1347,10 +1292,10 @@
                     <div class="faq-item"><h3><i class="fas fa-download"></i> Posso esportare le mie note?</h3><p>Sì. Vai su <strong>Impostazioni → Dati → Esporta</strong> per scaricare le tue note in un formato leggibile.</p></div>
                 `,
                 contrib_html: `
-                    <a href="#" class="contribute-item" onclick="openContactForm('prayer')"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Suggerisci una Preghiera</h4><p>Condividi una preghiera per benedire la comunità</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('feature')"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Suggerisci una Funzionalità</h4><p>Idee per rendere ORHAR ancora migliore</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('content')"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Contribuisci Contenuti</h4><p>Aiutaci a scrivere contenuti biblici</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('general')"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Condividi la Parola</h4><p>Fai conoscere ORHAR alla tua comunità</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('prayer')"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Suggerisci una Preghiera</h4><p>Condividi una preghiera per benedire la comunità</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('feature')"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Suggerisci una Funzionalità</h4><p>Idee per rendere ORHAR ancora migliore</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('content')"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Contribuisci Contenuti</h4><p>Aiutaci a scrivere contenuti biblici</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('general')"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Condividi la Parola</h4><p>Fai conoscere ORHAR alla tua comunità</p></div></a>
                 `
             },
             pt: {
@@ -1404,10 +1349,10 @@
                     <div class="faq-item"><h3><i class="fas fa-download"></i> Posso exportar minhas notas?</h3><p>Sim. Vá em <strong>Configurações → Dados → Exportar</strong> para baixar suas notas em formato legível.</p></div>
                 `,
                 contrib_html: `
-                    <a href="#" class="contribute-item" onclick="openContactForm('prayer')"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Sugerir uma Oração</h4><p>Compartilhe uma oração que abençoe a comunidade</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('feature')"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Sugerir Recurso</h4><p>Ideias para tornar o ORHAR ainda melhor</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('content')"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Contribuir com Conteúdo</h4><p>Ajude-nos a escrever conteúdo bíblico</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('general')"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Compartilhar a Palavra</h4><p>Divulgue o ORHAR na sua comunidade</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('prayer')"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Sugerir uma Oração</h4><p>Compartilhe uma oração que abençoe a comunidade</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('feature')"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Sugerir Recurso</h4><p>Ideias para tornar o ORHAR ainda melhor</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('content')"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Contribuir com Conteúdo</h4><p>Ajude-nos a escrever conteúdo bíblico</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('general')"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Compartilhar a Palavra</h4><p>Divulgue o ORHAR na sua comunidade</p></div></a>
                 `
             },
             pl: {
@@ -1461,10 +1406,10 @@
                     <div class="faq-item"><h3><i class="fas fa-download"></i> Czy mogę wyeksportować notatki?</h3><p>Tak. Przejdź do <strong>Ustawienia → Dane → Eksportuj</strong>, aby pobrać notatki w czytelnym formacie.</p></div>
                 `,
                 contrib_html: `
-                    <a href="#" class="contribute-item" onclick="openContactForm('prayer')"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Zaproponuj Modlitwę</h4><p>Podziel się modlitwą, która pobłogosławi wspólnotę</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('feature')"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Zaproponuj Funkcję</h4><p>Pomysły, które uczynią ORHAR jeszcze lepszym</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('content')"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Wkład Treści</h4><p>Pomóż nam pisać treści biblijne</p></div></a>
-                    <a href="#" class="contribute-item" onclick="openContactForm('general')"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Podziel się Słowem</h4><p>Podziel się ORHAR ze swoją wspólnotą</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('prayer')"><div class="contribute-icon"><i class="fas fa-hands-praying"></i></div><div class="contribute-content"><h4>Zaproponuj Modlitwę</h4><p>Podziel się modlitwą, która pobłogosławi wspólnotę</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('feature')"><div class="contribute-icon"><i class="fas fa-lightbulb"></i></div><div class="contribute-content"><h4>Zaproponuj Funkcję</h4><p>Pomysły, które uczynią ORHAR jeszcze lepszym</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('content')"><div class="contribute-icon"><i class="fas fa-pen-fancy"></i></div><div class="contribute-content"><h4>Wkład Treści</h4><p>Pomóż nam pisać treści biblijne</p></div></a>
+                    <a href="#" class="contribute-item" onclick="showContactForm('general')"><div class="contribute-icon"><i class="fas fa-share-alt"></i></div><div class="contribute-content"><h4>Podziel się Słowem</h4><p>Podziel się ORHAR ze swoją wspólnotą</p></div></a>
                 `
             }
         };
@@ -1500,111 +1445,104 @@
             changeLang(initLang);
         });
 
-        // ========== CONTACT FORM LOGIC ==========
-        const TOPIC_SUBJECTS = {
-            general: 'General Inquiry',
-            translation: 'Translation Contribution',
-            bug: 'Bug Report',
-            beta: 'Beta Testing',
-            feature: 'Feature Request',
-            prayer: 'Prayer Suggestion',
-            content: 'Content Contribution',
-            other: 'Other'
-        };
-
-        function openContactForm(topic = '') {
-            const modal = document.getElementById('contactModal');
-            const topicSelect = document.getElementById('formTopic');
-            const feedback = document.getElementById('formFeedback');
+        // ========== INLINE CONTACT FORM LOGIC ==========
+        function showContactForm(topic) {
+            const formSection = document.getElementById('contactFormSection');
             const form = document.getElementById('contactForm');
+            const successMsg = document.getElementById('formSuccessMessage');
+            const topicSelect = document.getElementById('formTopic');
             
-            // Reset form
+            // Reset state
+            form.style.display = 'block';
+            successMsg.style.display = 'none';
             form.reset();
-            feedback.className = 'form-feedback';
-            feedback.style.display = 'none';
-            document.getElementById('formSubmitBtn').disabled = false;
             
-            // Pre-fill topic if provided
+            // Pre-fill topic
             if (topic && topicSelect.querySelector(`option[value="${topic}"]`)) {
                 topicSelect.value = topic;
             }
             
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            document.getElementById('formName').focus();
+            // Show the form section
+            formSection.style.display = 'block';
+            
+            // Smooth scroll to the form
+            formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+            // Focus on email field
+            setTimeout(() => {
+                document.getElementById('formEmail').focus();
+            }, 400);
         }
-
-        function closeContactForm() {
-            document.getElementById('contactModal').classList.remove('active');
-            document.body.style.overflow = '';
+        
+        function hideContactForm() {
+            const formSection = document.getElementById('contactFormSection');
+            formSection.style.display = 'none';
+            
+            // Scroll back to email card
+            document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-
-        // Close on overlay click
-        document.addEventListener('click', function(e) {
-            if (e.target.id === 'contactModal') {
-                closeContactForm();
-            }
-        });
-
-        // Close on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeContactForm();
-            }
-        });
-
-        async function submitContactForm(event) {
+        
+        function handleFormSubmit(event) {
             event.preventDefault();
             
-            const submitBtn = document.getElementById('formSubmitBtn');
-            const feedback = document.getElementById('formFeedback');
-            const name = document.getElementById('formName').value.trim();
             const email = document.getElementById('formEmail').value.trim();
             const topic = document.getElementById('formTopic').value;
             const message = document.getElementById('formMessage').value.trim();
+            const form = document.getElementById('contactForm');
+            const successMsg = document.getElementById('formSuccessMessage');
+            const submitBtn = document.getElementById('formSubmitBtn');
             
             // Disable button
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             
-            const subject = TOPIC_SUBJECTS[topic] || 'General Inquiry';
-            const body = `Name: ${name}\nEmail: ${email}\nTopic: ${subject}\n\nMessage:\n${message}`;
+            const topicLabels = {
+                general: 'General Inquiry',
+                translation: 'Translation Contribution',
+                bug: 'Bug Report',
+                beta: 'Beta Testing',
+                feature: 'Feature Request',
+                prayer: 'Prayer Suggestion',
+                content: 'Content Contribution',
+                other: 'Other'
+            };
             
-            // Use FormSubmit.co (free service — no backend needed)
-            const formData = new FormData();
-            formData.append('name', name);
-            formData.append('email', email);
-            formData.append('_subject', `[ORHAR] ${subject} — from ${name}`);
-            formData.append('message', body);
+            const subject = `[ORHAR] ${topicLabels[topic] || 'General Inquiry'}`;
+            const body = `From: ${email}\nTopic: ${topicLabels[topic] || 'General Inquiry'}\n\n${message}`;
             
-            try {
-                const response = await fetch('https://formsubmit.co/ajax/contact@orhar.com', {
-                    method: 'POST',
-                    body: formData
-                });
-                
+            // Send via FormSubmit.co
+            fetch('https://formsubmit.co/ajax/contact@orhar.com', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: 'ORHAR Website Visitor',
+                    email: email,
+                    _subject: subject,
+                    message: body
+                })
+            })
+            .then(response => {
                 if (response.ok) {
-                    feedback.className = 'form-feedback success';
-                    feedback.style.display = 'block';
-                    feedback.textContent = translations[activeLang]?.c_form_success || 'Message sent successfully! We\'ll get back to you soon.';
-                    document.getElementById('contactForm').reset();
+                    form.style.display = 'none';
+                    successMsg.style.display = 'block';
                     
-                    // Close modal after 2.5 seconds
+                    // Auto-hide after 5 seconds
                     setTimeout(() => {
-                        closeContactForm();
-                        feedback.className = 'form-feedback';
-                        feedback.style.display = 'none';
-                    }, 2500);
+                        hideContactForm();
+                    }, 5000);
                 } else {
-                    throw new Error('Failed to send');
+                    throw new Error('Failed');
                 }
-            } catch (error) {
-                feedback.className = 'form-feedback error';
-                feedback.style.display = 'block';
-                feedback.textContent = translations[activeLang]?.c_form_error || 'Something went wrong. Please try again or email us directly.';
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-            }
+            })
+            .catch(() => {
+                // Fallback: open mailto as last resort
+                const mailtoLink = `mailto:contact@orhar.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                window.location.href = mailtoLink;
+                
+                form.style.display = 'none';
+                successMsg.style.display = 'block';
+                setTimeout(() => hideContactForm(), 5000);
+            });
         }
     </script>
 </body>

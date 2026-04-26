@@ -860,6 +860,7 @@
         });
     </script>
 
+    <!-- ========== LOAD UPDATES FROM CENTRAL FILE ========== -->
     <script>
         fetch('/updates.html')
             .then(response => response.text())
@@ -869,11 +870,17 @@
                 const doc = parser.parseFromString(html, 'text/html');
                 const updateBlock = doc.getElementById('update-fr');
                 if (updateBlock) {
+                    // Force display:block and copy the inner content
+                    updateBlock.style.display = 'block';
+                    updateBlock.style.padding = '40px 5%';
+                    updateBlock.style.background = 'var(--surface-color)';
+                    updateBlock.style.textAlign = 'center';
                     container.innerHTML = '';
                     container.appendChild(updateBlock);
                 }
             })
             .catch(() => {
+                // Keep the static fallback visible — do nothing
                 console.log('Fil d\'actualité non disponible — texte par défaut affiché.');
             });
     </script>

@@ -748,6 +748,11 @@
             font-size: 28px;
             color: #059669;
         }
+
+        .form-success-message {
+            text-align: center;
+            padding: 20px 0;
+        }
         
         #formSuccessMessage {
             text-align: center;
@@ -830,7 +835,7 @@
             <form id="contactForm" onsubmit="handleFormSubmit(event)" style="margin-top: 24px;">
                 <div class="form-group-inline">
                     <label for="formEmail" data-i18n="c_form_email_label">Your Email *</label>
-                    <input type="email" id="formEmail" placeholder="you@example.com" required>
+                    <input type="email" id="formEmail" placeholder="you@example.com" required data-i18n-placeholder="c_form_email_placeholder">
                 </div>
                 
                 <div class="form-group-inline">
@@ -849,7 +854,7 @@
                 
                 <div class="form-group-inline">
                     <label for="formMessage" data-i18n="c_form_message_label">Your Message *</label>
-                    <textarea id="formMessage" placeholder="Tell us what's on your heart..." rows="5" required></textarea>
+                    <textarea id="formMessage" placeholder="Tell us what's on your heart..." rows="5" required data-i18n-placeholder="c_form_message_placeholder"></textarea>
                 </div>
                 
                 <div class="form-buttons-row">
@@ -1007,25 +1012,23 @@
         let activeLang = 'en';
         const contactData = {
             en: {
-                c_form_open: "Send Us a Message",
-                c_form_title: "Send Us a Message",
-                c_form_sub: "We'll get back to you within 24–48 hours",
-                c_form_name: "Your Name",
-                c_form_email: "Your Email",
-                c_form_topic: "Topic",
-                c_form_select: "Select a topic...",
-                c_form_general: "General Inquiry",
-                c_form_translation: "Become a Translator",
-                c_form_bug: "Report a Bug",
-                c_form_beta: "Join Beta Testing",
-                c_form_feature: "Feature Request",
-                c_form_prayer: "Suggest a Prayer",
-                c_form_content: "Content Contribution",
-                c_form_other: "Other",
-                c_form_message: "Your Message",
-                c_form_send: "Send Message",
-                c_form_success: "Message sent successfully! We'll get back to you soon.",
-                c_form_error: "Something went wrong. Please try again or email us directly.",
+                c_form_email_label: "Your Email *",
+                c_form_topic_label: "Topic",
+                c_form_topic_general: "General Inquiry",
+                c_form_topic_translation: "Translation Contribution",
+                c_form_topic_bug: "Bug Report",
+                c_form_topic_beta: "Beta Testing",
+                c_form_topic_feature: "Feature Request",
+                c_form_topic_prayer: "Prayer Suggestion",
+                c_form_topic_content: "Content Contribution",
+                c_form_topic_other: "Other",
+                c_form_message_label: "Your Message *",
+                c_form_send_btn: "Send Message",
+                c_form_cancel_btn: "Cancel",
+                c_form_email_placeholder: "you@example.com",
+                c_form_message_placeholder: "Tell us what's on your heart...",
+                c_form_success_title: "Message Sent!",
+                c_form_success_desc: "Thank you for reaching out. We'll get back to you within 24–48 hours. God bless you.",
                 nav_home: "Home", nav_contact: "Contact", nav_support: "Support", nav_faq: "FAQ",
                 c_badge: "✦ Help & Support",
                 c_title: "Contact & Support",
@@ -1071,25 +1074,23 @@
                 `
             },
             fr: {
-                c_form_open: "Envoyez-nous un Message",
-                c_form_title: "Envoyez-nous un Message",
-                c_form_sub: "Nous vous répondrons sous 24–48 heures",
-                c_form_name: "Votre Nom",
-                c_form_email: "Votre Email",
-                c_form_topic: "Sujet",
-                c_form_select: "Sélectionnez un sujet...",
-                c_form_general: "Demande Générale",
-                c_form_translation: "Devenir Traducteur",
-                c_form_bug: "Signaler un Bug",
-                c_form_beta: "Rejoindre le Programme Bêta",
-                c_form_feature: "Suggérer une Fonctionnalité",
-                c_form_prayer: "Suggérer une Prière",
-                c_form_content: "Contribution de Contenu",
-                c_form_other: "Autre",
-                c_form_message: "Votre Message",
-                c_form_send: "Envoyer le Message",
-                c_form_success: "Message envoyé avec succès ! Nous vous répondrons bientôt.",
-                c_form_error: "Une erreur s'est produite. Veuillez réessayer ou nous envoyer un email directement.",
+                c_form_email_label: "Votre Email *",
+                c_form_topic_label: "Sujet",
+                c_form_topic_general: "Demande Générale",
+                c_form_topic_translation: "Contribution de Traduction",
+                c_form_topic_bug: "Rapport de Bug",
+                c_form_topic_beta: "Test Bêta",
+                c_form_topic_feature: "Suggestion de Fonctionnalité",
+                c_form_topic_prayer: "Suggestion de Prière",
+                c_form_topic_content: "Contribution de Contenu",
+                c_form_topic_other: "Autre",
+                c_form_message_label: "Votre Message *",
+                c_form_send_btn: "Envoyer le Message",
+                c_form_cancel_btn: "Annuler",
+                c_form_email_placeholder: "vous@exemple.com",
+                c_form_message_placeholder: "Dites-nous ce qui vous tient à cœur...",
+                c_form_success_title: "Message Envoyé !",
+                c_form_success_desc: "Merci de nous avoir contactés. Nous vous répondrons sous 24–48 heures. Que Dieu vous bénisse.",
                 nav_home: "Accueil", nav_contact: "Contact", nav_support: "Soutenir", nav_faq: "FAQ",
                 c_badge: "✦ Aide & Support", c_title: "Contact et Assistance",
                 c_subtitle: "Nous sommes là pour vous accompagner dans votre cheminement spirituel. Contactez-nous pour toute question, retour ou problème technique.",
@@ -1128,25 +1129,23 @@
                 `
             },
             es: {
-                c_form_open: "Envíanos un Mensaje",
-                c_form_title: "Envíanos un Mensaje",
-                c_form_sub: "Te responderemos en 24–48 horas",
-                c_form_name: "Tu Nombre",
-                c_form_email: "Tu Email",
-                c_form_topic: "Tema",
-                c_form_select: "Selecciona un tema...",
-                c_form_general: "Consulta General",
-                c_form_translation: "Convertirse en Traductor",
-                c_form_bug: "Reportar un Error",
-                c_form_beta: "Unirse a la Beta",
-                c_form_feature: "Sugerir Función",
-                c_form_prayer: "Sugerir una Oración",
-                c_form_content: "Contribución de Contenido",
-                c_form_other: "Otro",
-                c_form_message: "Tu Mensaje",
-                c_form_send: "Enviar Mensaje",
-                c_form_success: "¡Mensaje enviado con éxito! Te responderemos pronto.",
-                c_form_error: "Algo salió mal. Inténtalo de nuevo o envíanos un email directamente.",
+                c_form_email_label: "Tu Email *",
+                c_form_topic_label: "Tema",
+                c_form_topic_general: "Consulta General",
+                c_form_topic_translation: "Contribución de Traducción",
+                c_form_topic_bug: "Reporte de Error",
+                c_form_topic_beta: "Prueba Beta",
+                c_form_topic_feature: "Sugerencia de Función",
+                c_form_topic_prayer: "Sugerencia de Oración",
+                c_form_topic_content: "Contribución de Contenido",
+                c_form_topic_other: "Otro",
+                c_form_message_label: "Tu Mensaje *",
+                c_form_send_btn: "Enviar Mensaje",
+                c_form_cancel_btn: "Cancelar",
+                c_form_email_placeholder: "tu@ejemplo.com",
+                c_form_message_placeholder: "Cuéntanos qué hay en tu corazón...",
+                c_form_success_title: "¡Mensaje Enviado!",
+                c_form_success_desc: "Gracias por contactarnos. Te responderemos en 24–48 horas. Dios te bendiga.",
                 nav_home: "Inicio", nav_contact: "Contacto", nav_support: "Apoyar", nav_faq: "FAQ",
                 c_badge: "✦ Ayuda y Soporte", c_title: "Contacto y Soporte",
                 c_subtitle: "Estamos aquí para ayudarte en tu camino espiritual. Contáctanos con cualquier pregunta, comentario o problema técnico.",
@@ -1185,25 +1184,23 @@
                 `
             },
             de: {
-                c_form_open: "Nachricht Senden",
-                c_form_title: "Nachricht Senden",
-                c_form_sub: "Wir antworten innerhalb von 24–48 Stunden",
-                c_form_name: "Dein Name",
-                c_form_email: "Deine E-Mail",
-                c_form_topic: "Thema",
-                c_form_select: "Thema auswählen...",
-                c_form_general: "Allgemeine Anfrage",
-                c_form_translation: "Übersetzer werden",
-                c_form_bug: "Fehler melden",
-                c_form_beta: "Beta-Tester werden",
-                c_form_feature: "Funktion vorschlagen",
-                c_form_prayer: "Gebet vorschlagen",
-                c_form_content: "Inhalte beisteuern",
-                c_form_other: "Sonstiges",
-                c_form_message: "Deine Nachricht",
-                c_form_send: "Nachricht Senden",
-                c_form_success: "Nachricht erfolgreich gesendet! Wir melden uns bald.",
-                c_form_error: "Etwas ist schief gelaufen. Bitte versuche es erneut oder schicke uns direkt eine E-Mail.",
+                c_form_email_label: "Deine E-Mail *",
+                c_form_topic_label: "Thema",
+                c_form_topic_general: "Allgemeine Anfrage",
+                c_form_topic_translation: "Übersetzungsbeitrag",
+                c_form_topic_bug: "Fehlerbericht",
+                c_form_topic_beta: "Beta-Test",
+                c_form_topic_feature: "Funktionsvorschlag",
+                c_form_topic_prayer: "Gebetsvorschlag",
+                c_form_topic_content: "Inhaltsbeitrag",
+                c_form_topic_other: "Sonstiges",
+                c_form_message_label: "Deine Nachricht *",
+                c_form_send_btn: "Nachricht Senden",
+                c_form_cancel_btn: "Abbrechen",
+                c_form_email_placeholder: "du@beispiel.de",
+                c_form_message_placeholder: "Sag uns, was dir auf dem Herzen liegt...",
+                c_form_success_title: "Nachricht Gesendet!",
+                c_form_success_desc: "Danke für deine Nachricht. Wir melden uns innerhalb von 24–48 Stunden. Gott segne dich.",
                 nav_home: "Startseite", nav_contact: "Kontakt", nav_support: "Unterstützen", nav_faq: "FAQ",
                 c_badge: "✦ Hilfe & Support", c_title: "Kontakt & Support",
                 c_subtitle: "Wir sind hier, um dich auf deiner spirituellen Reise zu unterstützen. Melde dich bei Fragen, Feedback oder technischen Problemen.",
@@ -1242,25 +1239,23 @@
                 `
             },
             it: {
-                c_form_open: "Inviaci un Messaggio",
-                c_form_title: "Inviaci un Messaggio",
-                c_form_sub: "Ti risponderemo entro 24–48 ore",
-                c_form_name: "Il Tuo Nome",
-                c_form_email: "La Tua Email",
-                c_form_topic: "Argomento",
-                c_form_select: "Seleziona un argomento...",
-                c_form_general: "Richiesta Generale",
-                c_form_translation: "Diventa Traduttore",
-                c_form_bug: "Segnala un Bug",
-                c_form_beta: "Partecipa al Beta Testing",
-                c_form_feature: "Suggerisci una Funzionalità",
-                c_form_prayer: "Suggerisci una Preghiera",
-                c_form_content: "Contribuisci Contenuti",
-                c_form_other: "Altro",
-                c_form_message: "Il Tuo Messaggio",
-                c_form_send: "Invia Messaggio",
-                c_form_success: "Messaggio inviato con successo! Ti risponderemo presto.",
-                c_form_error: "Qualcosa è andato storto. Riprova o inviaci un'email direttamente.",
+                c_form_email_label: "La Tua Email *",
+                c_form_topic_label: "Argomento",
+                c_form_topic_general: "Richiesta Generale",
+                c_form_topic_translation: "Contributo di Traduzione",
+                c_form_topic_bug: "Segnalazione Bug",
+                c_form_topic_beta: "Test Beta",
+                c_form_topic_feature: "Suggerimento Funzionalità",
+                c_form_topic_prayer: "Suggerimento Preghiera",
+                c_form_topic_content: "Contributo Contenuti",
+                c_form_topic_other: "Altro",
+                c_form_message_label: "Il Tuo Messaggio *",
+                c_form_send_btn: "Invia Messaggio",
+                c_form_cancel_btn: "Annulla",
+                c_form_email_placeholder: "tu@esempio.it",
+                c_form_message_placeholder: "Dicci cosa hai nel cuore...",
+                c_form_success_title: "Messaggio Inviato!",
+                c_form_success_desc: "Grazie per averci contattato. Ti risponderemo entro 24–48 ore. Dio ti benedica.",
                 nav_home: "Home", nav_contact: "Contatto", nav_support: "Sostieni", nav_faq: "FAQ",
                 c_badge: "✦ Aiuto & Supporto", c_title: "Contatto e Supporto",
                 c_subtitle: "Siamo qui per aiutarti nel tuo cammino spirituale. Contattaci per domande, feedback o problemi tecnici.",
@@ -1299,25 +1294,23 @@
                 `
             },
             pt: {
-                c_form_open: "Envie-nos uma Mensagem",
-                c_form_title: "Envie-nos uma Mensagem",
-                c_form_sub: "Responderemos dentro de 24–48 horas",
-                c_form_name: "Seu Nome",
-                c_form_email: "Seu Email",
-                c_form_topic: "Assunto",
-                c_form_select: "Selecione um assunto...",
-                c_form_general: "Dúvida Geral",
-                c_form_translation: "Tornar-se Tradutor",
-                c_form_bug: "Reportar um Bug",
-                c_form_beta: "Participar do Beta",
-                c_form_feature: "Sugerir Recurso",
-                c_form_prayer: "Sugerir uma Oração",
-                c_form_content: "Contribuir com Conteúdo",
-                c_form_other: "Outro",
-                c_form_message: "Sua Mensagem",
-                c_form_send: "Enviar Mensagem",
-                c_form_success: "Mensagem enviada com sucesso! Entraremos em contato em breve.",
-                c_form_error: "Algo deu errado. Tente novamente ou envie um email diretamente.",
+                c_form_email_label: "Seu Email *",
+                c_form_topic_label: "Assunto",
+                c_form_topic_general: "Dúvida Geral",
+                c_form_topic_translation: "Contribuição de Tradução",
+                c_form_topic_bug: "Relatório de Bug",
+                c_form_topic_beta: "Teste Beta",
+                c_form_topic_feature: "Sugestão de Recurso",
+                c_form_topic_prayer: "Sugestão de Oração",
+                c_form_topic_content: "Contribuição de Conteúdo",
+                c_form_topic_other: "Outro",
+                c_form_message_label: "Sua Mensagem *",
+                c_form_send_btn: "Enviar Mensagem",
+                c_form_cancel_btn: "Cancelar",
+                c_form_email_placeholder: "voce@exemplo.com",
+                c_form_message_placeholder: "Conte-nos o que está em seu coração...",
+                c_form_success_title: "Mensagem Enviada!",
+                c_form_success_desc: "Obrigado por entrar em contato. Responderemos em 24–48 horas. Deus te abençoe.",
                 nav_home: "Início", nav_contact: "Contato", nav_support: "Apoiar", nav_faq: "FAQ",
                 c_badge: "✦ Ajuda & Suporte", c_title: "Contato e Suporte",
                 c_subtitle: "Estamos aqui para ajudar na sua jornada espiritual. Entre em contato com dúvidas, feedback ou problemas técnicos.",
@@ -1356,25 +1349,23 @@
                 `
             },
             pl: {
-                c_form_open: "Wyślij Wiadomość",
-                c_form_title: "Wyślij Wiadomość",
-                c_form_sub: "Odpowiemy w ciągu 24–48 godzin",
-                c_form_name: "Twoje Imię",
-                c_form_email: "Twój Email",
-                c_form_topic: "Temat",
-                c_form_select: "Wybierz temat...",
-                c_form_general: "Zapytanie Ogólne",
-                c_form_translation: "Zostań Tłumaczem",
-                c_form_bug: "Zgłoś Błąd",
-                c_form_beta: "Dołącz do Testów Beta",
-                c_form_feature: "Zaproponuj Funkcję",
-                c_form_prayer: "Zaproponuj Modlitwę",
-                c_form_content: "Wkład Treści",
-                c_form_other: "Inne",
-                c_form_message: "Twoja Wiadomość",
-                c_form_send: "Wyślij Wiadomość",
-                c_form_success: "Wiadomość wysłana pomyślnie! Skontaktujemy się wkrótce.",
-                c_form_error: "Coś poszło nie tak. Spróbuj ponownie lub wyślij email bezpośrednio.",
+                c_form_email_label: "Twój Email *",
+                c_form_topic_label: "Temat",
+                c_form_topic_general: "Zapytanie Ogólne",
+                c_form_topic_translation: "Wkład Tłumaczeniowy",
+                c_form_topic_bug: "Zgłoszenie Błędu",
+                c_form_topic_beta: "Testy Beta",
+                c_form_topic_feature: "Propozycja Funkcji",
+                c_form_topic_prayer: "Propozycja Modlitwy",
+                c_form_topic_content: "Wkład Treści",
+                c_form_topic_other: "Inne",
+                c_form_message_label: "Twoja Wiadomość *",
+                c_form_send_btn: "Wyślij Wiadomość",
+                c_form_cancel_btn: "Anuluj",
+                c_form_email_placeholder: "ty@przyklad.pl",
+                c_form_message_placeholder: "Powiedz nam, co leży Ci na sercu...",
+                c_form_success_title: "Wiadomość Wysłana!",
+                c_form_success_desc: "Dziękujemy za kontakt. Odpowiemy w ciągu 24–48 godzin. Niech Bóg Ci błogosławi.",
                 nav_home: "Strona Główna", nav_contact: "Kontakt", nav_support: "Wesprzyj", nav_faq: "FAQ",
                 c_badge: "✦ Pomoc i Wsparcie", c_title: "Kontakt i Wsparcie",
                 c_subtitle: "Jesteśmy tutaj, aby pomóc Ci w duchowej podróży. Skontaktuj się z nami w razie pytań, uwag lub problemów technicznych.",
@@ -1421,6 +1412,14 @@
                 if (contactData[lang] && contactData[lang][key] !== undefined) {
                     if (key === 'faq_html' || key === 'contrib_html') return;
                     el.textContent = contactData[lang][key];
+                }
+            });
+            
+            // Handle placeholder translations
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (contactData[lang] && contactData[lang][key] !== undefined) {
+                    el.placeholder = contactData[lang][key];
                 }
             });
             
@@ -1526,10 +1525,10 @@
                     form.style.display = 'none';
                     successMsg.style.display = 'block';
                     
-                    // Auto-hide after 5 seconds
+                    // Auto-hide after 8 seconds
                     setTimeout(() => {
                         hideContactForm();
-                    }, 5000);
+                    }, 8000);
                 } else {
                     throw new Error('Failed');
                 }
@@ -1541,7 +1540,7 @@
                 
                 form.style.display = 'none';
                 successMsg.style.display = 'block';
-                setTimeout(() => hideContactForm(), 5000);
+                setTimeout(() => hideContactForm(), 8000);
             });
         }
     </script>

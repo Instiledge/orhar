@@ -1532,7 +1532,7 @@
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    name: 'ORHAR Website Visitor',
+                    name: email.split('@')[0],
                     email: email,
                     _subject: subject,
                     message: body

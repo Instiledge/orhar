@@ -757,6 +757,9 @@
         </div>
     </section>
 
+    <!-- ========== LOAD UPDATES FROM CENTRAL FILE ========== -->
+    <div id="update-container"></div>
+
     <section id="story" class="section">
         <h2 class="section-title" data-i18n="story_title">Read the Icon</h2>
         <p class="section-subtitle" data-i18n="story_sub">Every element carries meaning — a sacred geography in a single glance.</p>
@@ -1310,6 +1313,22 @@
             const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--bg-color').trim();
             document.documentElement.style.setProperty('--header-bg', bgColor.replace(')', ', 0.95)').replace('rgb', 'rgba'));
         }
+    </script>
+
+    <!-- ========== LOAD UPDATES FROM CENTRAL FILE ========== -->
+    <script>
+        fetch('/updates.html')
+            .then(response => response.text())
+            .then(html => {
+                const container = document.getElementById('update-container');
+                container.innerHTML = html;
+                // Show only the update for this language
+                const langCode = document.documentElement.lang;
+                const updateBlock = document.getElementById('update-' + langCode);
+                if (updateBlock) {
+                    updateBlock.style.display = 'block';
+                }
+            });
     </script>
 </body>
 </html>

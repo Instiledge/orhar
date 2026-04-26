@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORHAR — The Mountain of Light</title>
+    <link rel="canonical" href="https://orhar.com/">
+    <script>
+        const savedLang = localStorage.getItem('orhar_lang');
+        const browserLang = navigator.language.slice(0, 2);
+        const supported = ['en', 'fr', 'es', 'de', 'it', 'pt', 'pl'];
+        
+        let lang = 'en';
+        if (savedLang && supported.includes(savedLang)) lang = savedLang;
+        else if (supported.includes(browserLang)) lang = browserLang;
+        else lang = 'en';
+        
+        window.location.replace('/' + lang + '/');
+    </script>
+</head>
+<body>
+    <p>Redirecting to ORHAR...</p>
+</body>
+</html>

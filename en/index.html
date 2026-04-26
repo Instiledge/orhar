@@ -374,11 +374,17 @@
         }
         
         .story-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); 
+            display: flex; 
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 28px; 
             max-width: 1200px; 
             margin: 0 auto; 
+        }
+        
+        .story-card-wrapper {
+            flex: 0 1 220px;
+            min-width: 200px;
         }
         
         .story-card { 
@@ -391,6 +397,10 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         .story-card::before {
@@ -812,30 +822,40 @@
         <h2 class="section-title">Read the Icon</h2>
         <p class="section-subtitle">Every element carries meaning — a sacred geography in a single glance.</p>
         <div class="story-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
-            <div class="story-card">
-                <i class="fas fa-book-open"></i>
-                <h3>The Bible</h3>
-                <p>Everything begins here. Pages open wide, alive, breathing, ready. The Word of God is not a closed book; it is thrown open, waiting for you.</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>The Bible</h3>
+                    <p>Everything begins here. Pages open wide, alive, breathing, ready. The Word of God is not a closed book; it is thrown open, waiting for you.</p>
+                </div>
             </div>
-            <div class="story-card">
-                <i class="fas fa-bookmark"></i>
-                <h3>The Bookmark</h3>
-                <p>A golden bookmark rests in the open Bible—faithful, patient. It says you will return. The Word is a place you come back to every day.</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-bookmark"></i>
+                    <h3>The Bookmark</h3>
+                    <p>A golden bookmark rests in the open Bible—faithful, patient. It says you will return. The Word is a place you come back to every day.</p>
+                </div>
             </div>
-            <div class="story-card">
-                <i class="fas fa-road"></i>
-                <h3>The Path</h3>
-                <p>A golden road rises from the pages straight to the summit. Every verse, a step. Every chapter, an ascent. «Your word is a lamp to my feet and a light to my path.» (Psalm 119:105)</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-road"></i>
+                    <h3>The Path</h3>
+                    <p>A golden road rises from the pages straight to the summit. Every verse, a step. Every chapter, an ascent. «Your word is a lamp to my feet and a light to my path.» (Psalm 119:105)</p>
+                </div>
             </div>
-            <div class="story-card">
-                <i class="fas fa-mountain"></i>
-                <h3>The Mountain</h3>
-                <p>Sinai received the Law. Zion bears the promise. Tabor blazed with glory. ORHAR places you on that mountain every time you open the Word.</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-mountain"></i>
+                    <h3>The Mountain</h3>
+                    <p>Sinai received the Law. Zion bears the promise. Tabor blazed with glory. ORHAR places you on that mountain every time you open the Word.</p>
+                </div>
             </div>
-            <div class="story-card">
-                <i class="fas fa-sun"></i>
-                <h3>The Halo</h3>
-                <p>At the summit, a golden halo crowns the mountain—not as a reward, but as a gift. «Let there be light.» The first word spoken into darkness shines on every page of ORHAR.</p>
+            <div class="story-card-wrapper">
+                <div class="story-card">
+                    <i class="fas fa-sun"></i>
+                    <h3>The Halo</h3>
+                    <p>At the summit, a golden halo crowns the mountain—not as a reward, but as a gift. «Let there be light.» The first word spoken into darkness shines on every page of ORHAR.</p>
+                </div>
             </div>
         </div>
     </section>

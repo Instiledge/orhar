@@ -383,8 +383,9 @@
         }
         
         .story-card-wrapper {
-            flex: 0 1 220px;
-            min-width: 200px;
+            flex: 1 1 300px;
+            min-width: 280px;
+            max-width: 320px;
         }
         
         .story-card { 
@@ -637,6 +638,26 @@
             .hero { padding: 60px 5% 50px; }
         }
 
+        /* Story grid — wider cards on large screens */
+        @media (min-width: 1400px) {
+            .story-card-wrapper {
+                max-width: 360px;
+            }
+        }
+        
+        @media (min-width: 1100px) and (max-width: 1399px) {
+            .story-card-wrapper {
+                max-width: 340px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .story-card-wrapper {
+                max-width: 100%;
+                min-width: 100%;
+            }
+        }
+        
         /* ========== BIBLICAL ANCHORS ========== */
         .anchors-section {
             padding: 60px 5% 80px;
@@ -821,7 +842,7 @@
     <section id="story" class="section">
         <h2 class="section-title">Lisez l'Icône</h2>
         <p class="section-subtitle">Chaque élément porte un sens — une géographie sacrée en un seul regard.</p>
-        <div class="story-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+        <div class="story-grid">
             <div class="story-card-wrapper">
                 <div class="story-card">
                     <i class="fas fa-book-open"></i>

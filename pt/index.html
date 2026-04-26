@@ -549,7 +549,7 @@
         
         .legal-grid {
             display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;
-            max-width: 700px; margin: 30px auto;
+            max-width: 1000px; margin: 30px auto;
         }
         
         .legal-card {
@@ -684,7 +684,7 @@
     <section id="story" class="section">
         <h2 class="section-title">Leia o Ícone</h2>
         <p class="section-subtitle">Cada elemento carrega significado — uma geografia sagrada em um único olhar.</p>
-        <div class="story-grid">
+        <div class="story-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
             <div class="story-card">
                 <i class="fas fa-book-open"></i>
                 <h3>A Bíblia</h3>
@@ -696,6 +696,11 @@
                 <p>Um marcador dourado repousa na Bíblia aberta — fiel, paciente. Ele diz que você retornará. A Palavra é um lugar ao qual você volta todos os dias.</p>
             </div>
             <div class="story-card">
+                <i class="fas fa-road"></i>
+                <h3>O Caminho</h3>
+                <p>Uma estrada dourada se eleva das páginas até o cume. Cada versículo, um passo. Cada capítulo, uma ascensão. «Lâmpada para os meus pés é tua palavra, e luz para o meu caminho.» (Sl 119:105)</p>
+            </div>
+            <div class="story-card">
                 <i class="fas fa-mountain"></i>
                 <h3>A Montanha</h3>
                 <p>O Sinai recebeu a Lei. Sião carrega a promessa. O Tabor resplandeceu em glória. ORHAR coloca você nessa montanha toda vez que abre a Palavra.</p>
@@ -703,7 +708,7 @@
             <div class="story-card">
                 <i class="fas fa-sun"></i>
                 <h3>O Halo</h3>
-                <p>No cume, um halo dourado coroa a montanha. «Haja luz». A primeira palavra pronunciada nas trevas é a mesma luz que brilha em cada página.</p>
+                <p>No cume, um halo dourado coroa a montanha — não como recompensa, mas como presente. «Haja luz.» A primeira palavra nas trevas brilha em cada página do ORHAR.</p>
             </div>
         </div>
     </section>

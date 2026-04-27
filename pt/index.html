@@ -955,16 +955,28 @@
 
         <!-- ========== NEWSLETTER SIGNUP ========== -->
         <div class="newsletter-card" style="margin-top: 36px;">
-            <div class="newsletter-icon">📬</div>
-            <h3>Fique Atualizado</h3>
-            <p>Seja o primeiro a saber quando o ORHAR for lançado. Sem spam.</p>
-            <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
-                <input type="email" id="nlEmail" placeholder="you@example.com" required>
-                <button type="submit">→</button>
-            </form>
-            <div class="newsletter-success" id="nlSuccess" style="display:none;">
-                ✅ Você está na lista! Deus te abençoe.
+            <div class="newsletter-content">
+                <div class="newsletter-left">
+                    <div class="newsletter-icon">📬</div>
+                    <h3>Fique Atualizado</h3>
+                    <p>Seja o primeiro a saber quando o ORHAR for lançado.</p>
+                    <form
+                        action="https://buttondown.com/api/emails/embed-subscribe/orhar"
+                        method="post"
+                        target="popupwindow"
+                        onsubmit="window.open('https://buttondown.com/orhar', 'popupwindow')"
+                        class="newsletter-form"
+                    >
+                        <input type="email" name="email" id="bd-email" placeholder="you@example.com" required>
+                        <button type="submit">→</button>
+                    </form>
+                </div>
+                <div class="newsletter-right">
+                    <img src="/qr-subscribe.png" alt="Scan to subscribe to ORHAR updates" class="newsletter-qr">
+                    <p class="newsletter-qr-label">📱 Escaneie para se inscrever</p>
+                </div>
             </div>
+            <p class="newsletter-footer-note">✉️ Um email no lançamento. Cancele quando quiser.</p>
         </div>
     </section>
 
@@ -1265,31 +1277,6 @@
             currentAnchor = (currentAnchor + 1) % totalAnchors;
             updateAnchors();
         }, 6000);
-    </script>
-
-    <script>
-        function subscribeNewsletter(event) {
-            event.preventDefault();
-            const email = document.getElementById('nlEmail').value.trim();
-            const form = event.target;
-            const success = document.getElementById('nlSuccess');
-            
-            form.style.display = 'none';
-            document.querySelector('.newsletter-card h3').textContent = 'Obrigado!';
-            document.querySelector('.newsletter-card p').textContent = '';
-            
-            fetch('https://formsubmit.co/ajax/contact@orhar.com', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    email: email,
-                    _subject: '[ORHAR] Newsletter Signup',
-                    message: `New newsletter subscriber: ${email}`
-                })
-            });
-            
-            success.style.display = 'block';
-        }
     </script>
 </body>
 </html>

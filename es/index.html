@@ -892,6 +892,17 @@
             text-align: center;
         }
 
+        .newsletter-success {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #059669;
+            text-align: center;
+            padding: 10px;
+            background: #ECFDF5;
+            border-radius: 10px;
+            border: 1px solid #A7F3D0;
+        }
+        
         @media (max-width: 500px) {
             .newsletter-content {
                 flex-direction: column;
@@ -964,13 +975,15 @@
                     <form
                         action="https://buttondown.com/api/emails/embed-subscribe/orhar"
                         method="post"
-                        target="popupwindow"
-                        onsubmit="window.open('https://buttondown.com/orhar', 'popupwindow')"
                         class="newsletter-form"
+                        onsubmit="handleNewsletterSubmit(event)"
                     >
                         <input type="email" name="email" id="bd-email" placeholder="you@example.com" required>
-                        <button type="submit">→</button>
+                        <button type="submit" id="nl-submit-btn">→</button>
                     </form>
+                    <div class="newsletter-success" id="nl-success" style="display:none;">
+                        ✅ ¡Revisa tu bandeja de entrada para confirmar!
+                    </div>
                 </div>
                 <div class="newsletter-right">
                     <img src="/qr-subscribe.png" alt="Scan to subscribe to ORHAR updates" class="newsletter-qr">
@@ -1280,6 +1293,39 @@
             currentAnchor = (currentAnchor + 1) % totalAnchors;
             updateAnchors();
         }, 6000);
+    </script>
+
+    <script>
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const email = form.querySelector('input[name="email"]').value.trim();
+            const button = document.getElementById('nl-submit-btn');
+            const successDiv = document.getElementById('nl-success');
+            
+            // Disable button and show loading state
+            button.disabled = true;
+            button.textContent = '...';
+            
+            // Submit via fetch (stays on page)
+            fetch(form.action, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'email=' + encodeURIComponent(email)
+            })
+            .then(() => {
+                // Hide form, show success
+                form.style.display = 'none';
+                successDiv.style.display = 'block';
+            })
+            .catch(() => {
+                // If fetch fails, open in popup as fallback
+                window.open('https://buttondown.com/orhar', 'popupwindow');
+                form.style.display = 'none';
+                successDiv.style.display = 'block';
+            });
+        }
     </script>
 </body>
 </html>

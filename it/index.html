@@ -891,7 +891,18 @@
             padding-top: 16px;
             text-align: center;
         }
-
+        
+        .newsletter-success {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #059669;
+            text-align: center;
+            padding: 10px;
+            background: #ECFDF5;
+            border-radius: 10px;
+            border: 1px solid #A7F3D0;
+        }
+        
         @media (max-width: 500px) {
             .newsletter-content {
                 flex-direction: column;
@@ -953,7 +964,35 @@
                 </div>
             </a>
         </div>
-
+        
+        <!-- ========== NEWSLETTER SIGNUP ========== -->
+        <div class="newsletter-card" style="margin-top: 36px;">
+            <div class="newsletter-content">
+                <div class="newsletter-left">
+                    <div class="newsletter-icon">📬</div>
+                    <h3>Rimani Aggiornato</h3>
+                    <p>Sii il primo a sapere quando ORHAR verrà lanciato.</p>
+                    <form
+                        action="https://buttondown.com/api/emails/embed-subscribe/orhar"
+                        method="post"
+                        class="newsletter-form"
+                        onsubmit="handleNewsletterSubmit(event)"
+                    >
+                        <input type="email" name="email" id="bd-email" placeholder="you@example.com" required>
+                        <button type="submit" id="nl-submit-btn">→</button>
+                    </form>
+                    <div class="newsletter-success" id="nl-success" style="display:none;">
+                        ✅ Controlla la tua casella di posta per confermare!
+                    </div>
+                </div>
+                <div class="newsletter-right">
+                    <img src="/qr-subscribe.png" alt="Scan to subscribe to ORHAR updates" class="newsletter-qr">
+                    <p class="newsletter-qr-label">📱 Scansiona per iscriverti</p>
+                </div>
+            </div>
+            <p class="newsletter-footer-note">✉️ Un'email al lancio. Disiscriviti quando vuoi.</p>
+        </div>
+        
         <!-- ========== NEWSLETTER SIGNUP ========== -->
         <div class="newsletter-card" style="margin-top: 36px;">
             <div class="newsletter-content">
@@ -1278,6 +1317,39 @@
             currentAnchor = (currentAnchor + 1) % totalAnchors;
             updateAnchors();
         }, 6000);
+    </script>
+
+    <script>
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const email = form.querySelector('input[name="email"]').value.trim();
+            const button = document.getElementById('nl-submit-btn');
+            const successDiv = document.getElementById('nl-success');
+            
+            // Disable button and show loading state
+            button.disabled = true;
+            button.textContent = '...';
+            
+            // Submit via fetch (stays on page)
+            fetch(form.action, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'email=' + encodeURIComponent(email)
+            })
+            .then(() => {
+                // Hide form, show success
+                form.style.display = 'none';
+                successDiv.style.display = 'block';
+            })
+            .catch(() => {
+                // If fetch fails, open in popup as fallback
+                window.open('https://buttondown.com/orhar', 'popupwindow');
+                form.style.display = 'none';
+                successDiv.style.display = 'block';
+            });
+        }
     </script>
 </body>
 </html>

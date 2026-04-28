@@ -973,14 +973,23 @@
                     <h3>Stay Updated</h3>
                     <p>Be the first to know when ORHAR launches. No spam, ever.</p>
                     <form
-                        action="https://buttondown.com/api/emails/embed-subscribe/orhar"
+                        action="https://eomail5.com/form/ba2ecd78-42f0-11f1-9fbb-05f67d4a70fc.js"
                         method="post"
                         class="newsletter-form"
+                        target="hidden_eo_iframe"
                         onsubmit="handleNewsletterSubmit(event)"
                     >
-                        <input type="email" name="email" id="bd-email" placeholder="you@example.com" required>
+                        <input type="email" name="emailAddress" id="eo-email" placeholder="you@example.com" required>
+                        
+                        <!-- EmailOctopus anti-spam field — replace name with yours -->
+                        <input type="text" name="ba2ecd78-42f0-11f1-9fbb-05f67d4a70fc" style="display:none" tabindex="-1" autocomplete="off">
+                        
                         <button type="submit" id="nl-submit-btn">→</button>
                     </form>
+                    
+                    <!-- Hidden iframe to capture the redirect -->
+                    <iframe name="hidden_eo_iframe" id="hidden_eo_iframe" style="display:none;" onload="if(this.submitted) showSuccessMessage();"></iframe>
+                    
                     <div class="newsletter-success" id="nl-success" style="display:none;">
                         ✅ Check your inbox to confirm!
                     </div>
@@ -1299,32 +1308,35 @@
         function handleNewsletterSubmit(event) {
             event.preventDefault();
             
-            const form = event.target;
-            const email = form.querySelector('input[name="email"]').value.trim();
             const button = document.getElementById('nl-submit-btn');
-            const successDiv = document.getElementById('nl-success');
+            const iframe = document.getElementById('hidden_eo_iframe');
+            const form = event.target;
             
             // Disable button and show loading state
             button.disabled = true;
             button.textContent = '...';
             
-            // Submit via fetch (stays on page)
-            fetch(form.action, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: 'email=' + encodeURIComponent(email)
-            })
-            .then(() => {
-                // Hide form, show success
-                form.style.display = 'none';
-                successDiv.style.display = 'block';
-            })
-            .catch(() => {
-                // If fetch fails, open in popup as fallback
-                window.open('https://buttondown.com/orhar', 'popupwindow');
-                form.style.display = 'none';
-                successDiv.style.display = 'block';
-            });
+            // Set a flag on the iframe so onload knows this is a real submission
+            iframe.submitted = true;
+            
+            // Fallback: if iframe doesn't trigger onload in 8 seconds, show success anyway
+            setTimeout(() => {
+                if (form.style.display !== 'none') {
+                    showSuccessMessage();
+                }
+            }, 8000);
+            
+            // Submit the form into the hidden iframe
+            form.submit();
+        }
+        
+        function showSuccessMessage() {
+            const form = document.querySelector('.newsletter-form');
+            const successDiv = document.getElementById('nl-success');
+            
+            // Hide the form and show the success message
+            form.style.display = 'none';
+            successDiv.style.display = 'block';
         }
     </script>
 </body>

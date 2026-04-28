@@ -1010,29 +1010,17 @@
                     <h3>Stay Updated</h3>
                     <p>Be the first to know when ORHAR launches. No spam, ever.</p>
                     
-                    <!-- Notice the action URL here uses your specific form ID -->
-                    <form
-                        action="https://emailoctopus.com/lists/ccc239de-4304-11f1-915b-8dd42cd896bf/members/embedded/1.3/add"
-                        method="post"
-                        class="newsletter-form"
-                        target="hidden_eo_iframe"
-                        onsubmit="handleNewsletterSubmit(event)"
-                    >
-                        <input type="email" name="field_0" id="field_0" placeholder="you@example.com" required>
-                        
-                        <!-- EmailOctopus anti-spam field -->
-                        <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                            <input type="text" name="hpc4b27b6e-eb38-11e9-be00-06b4694bee2a" tabindex="-1" autocomplete="nope">
-                        </div>
-                        
+                    <form class="newsletter-form" id="orhar-nl-form" onsubmit="handleNewsletterSubmit(event)">
+                        <input type="email" name="email" id="eo-email" placeholder="you@example.com" required>
                         <button type="submit" id="nl-submit-btn">→</button>
                     </form>
                     
-                    <!-- Hidden iframe to capture the redirect -->
-                    <iframe name="hidden_eo_iframe" id="hidden_eo_iframe" style="display:none;" onload="if(this.submitted) showSuccessMessage();"></iframe>
-                    
                     <div class="newsletter-success" id="nl-success" style="display:none;">
                         ✅ Check your inbox to confirm!
+                    </div>
+                    
+                    <div class="newsletter-error" id="nl-error" style="display:none; color: #dc2626; font-size: 13px; margin-top: 10px;">
+                        Something went wrong. Please try again.
                     </div>
                 </div>
                 <div class="newsletter-right">
@@ -1346,25 +1334,48 @@
     </script>
 
     <script>
-        function handleNewsletterSubmit(event) {
-            // Note: NO event.preventDefault() here! The browser handles the post to the iframe.
-            const button = document.getElementById('nl-submit-btn');
-            const iframe = document.getElementById('hidden_eo_iframe');
+        async function handleNewsletterSubmit(event) {
+            event.preventDefault(); // We DO want this now! Keep the user on the page.
             
-            // Disable button visually
+            const form = event.target;
+            const email = form.querySelector('#eo-email').value.trim();
+            const button = document.getElementById('nl-submit-btn');
+            const successDiv = document.getElementById('nl-success');
+            const errorDiv = document.getElementById('nl-error');
+            
+            // Replace these with your actual keys from EmailOctopus Dashboard
+            const API_KEY = 'eo_02707a13026eaa9151e21e46c8ede18babad6bdfca4aece6713c22e0ba0e143b';
+            const LIST_ID = '528974f4-42f3-11f1-8bcf-f53450cd8ee6';
+            
             button.disabled = true;
             button.textContent = "...";
-            
-            // Set a flag on the iframe so we know it's currently processing a submission
-            iframe.submitted = true;
-        }
+            errorDiv.style.display = 'none';
         
-        function showSuccessMessage() {
-            const form = document.querySelector('.newsletter-form');
-            const successDiv = document.getElementById('nl-success');
-            
-            if (form) form.style.display = 'none';
-            if (successDiv) successDiv.style.display = 'block';
+            try {
+                const response = await fetch(`https://emailoctopus.com/api/1.6/lists/${LIST_ID}/contacts`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        api_key: API_KEY,
+                        email_address: email,
+                        status: 'PENDING' // 'PENDING' forces double opt-in (GDPR compliant). Use 'SUBSCRIBED' if you don't want confirmation emails.
+                    })
+                });
+        
+                if (response.ok) {
+                    form.style.display = 'none';
+                    successDiv.style.display = 'block';
+                } else {
+                    throw new Error('API Error');
+                }
+            } catch (error) {
+                console.error(error);
+                button.disabled = false;
+                button.textContent = "→";
+                errorDiv.style.display = 'block';
+            }
         }
     </script>
 </body>

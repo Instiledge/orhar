@@ -6,10 +6,38 @@
 </head>
 <body>
     <h2>EmailOctopus Direct Test</h2>
-    <form action="https://eomail5.com/form/ba2ecd78-42f0-11f1-9fbb-05f67d4a70fc" method="post">
-        <input type="email" name="field_0" placeholder="Your email" required>
-        <input type="text" name="hpc4b27b6e-eb38-11e9-be00-06b4694bee2a" tabindex="-1" autocomplete="nope" style="display:none">
-        <button type="submit">Subscribe</button>
-    </form>
+    <div class="newsletter-signup">
+  <h2>Sign up to my mailing list</h2>
+      <form action="https://eomail5.com/form/ccc239de-4304-11f1-915b-8dd42cd896bf" method="post">
+        
+        <!-- Email Address Field -->
+        <div class="form-group">
+          <label for="field_0">Email address</label>
+          <input 
+            id="field_0" 
+            name="field_0" 
+            type="email" 
+            placeholder="Email address" 
+            required 
+          />
+        </div>
+    
+        <!-- Anti-bot Honeypot Field (Must remain hidden) -->
+        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+          <input 
+            type="text" 
+            name="hpc4b27b6e-eb38-11e9-be00-06b4694bee2a" 
+            tabindex="-1" 
+            autocomplete="nope" 
+          />
+        </div>
+    
+        <!-- Submit Button -->
+        <div class="form-group">
+          <button type="submit">Subscribe</button>
+        </div>
+    
+      </form>
+    </div>
 </body>
 </html>

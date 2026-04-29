@@ -793,8 +793,55 @@
             .anchor-slide { padding: 30px 24px; }
         }
 
-        /* ========== NEWSLETTER FORM (SENDER EMBED) ========== */
-        .sender-form-field input[type="email"] {
+        /* ========== NEWSLETTER ========== */
+        .newsletter-card {
+            background: var(--surface-color);
+            border-radius: 16px;
+            padding: 28px 24px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(var(--accent-gold-rgb), 0.3);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-content {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .newsletter-left {
+            flex: 1;
+            text-align: center;
+        }
+
+        .newsletter-right {
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .newsletter-icon { font-size: 32px; margin-bottom: 12px; }
+
+        .newsletter-card h3 {
+            font-size: 22px;
+            margin-bottom: 6px;
+            color: var(--primary-navy);
+            font-family: var(--font-display);
+        }
+
+        .newsletter-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 8px;
+        }
+
+        .newsletter-form input {
             flex: 1;
             padding: 12px 16px;
             border: 2px solid rgba(var(--accent-gold-rgb), 0.3);
@@ -806,12 +853,11 @@
             color: var(--text-dark);
         }
 
-        .sender-form-field input[type="email"]:focus {
+        .newsletter-form input:focus {
             border-color: var(--accent-brown);
         }
 
-        .sender-form-field button,
-        .sender-form-field input[type="submit"] {
+        .newsletter-form button {
             padding: 12px 18px;
             background: var(--primary-navy);
             color: #FFFFFF;
@@ -820,12 +866,50 @@
             font-size: 16px;
             cursor: pointer;
             transition: background 0.3s;
-            font-family: var(--font-body);
         }
 
-        .sender-form-field button:hover,
-        .sender-form-field input[type="submit"]:hover {
-            background: var(--accent-brown);
+        .newsletter-form button:hover { background: var(--accent-brown); }
+
+        .newsletter-qr {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            border: 1px solid rgba(var(--accent-gold-rgb), 0.2);
+        }
+
+        .newsletter-qr-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 6px;
+            font-style: italic;
+        }
+
+        .newsletter-footer-note {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 24px;
+            padding-top: 16px;
+            text-align: center;
+        }
+
+        .newsletter-success {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #059669;
+            text-align: center;
+            padding: 10px;
+            background: #ECFDF5;
+            border-radius: 10px;
+            border: 1px solid #A7F3D0;
+        }
+
+        @media (max-width: 500px) {
+            .newsletter-content {
+                flex-direction: column;
+            }
+            .newsletter-right {
+                order: -1;
+            }
         }
     </style>
 </head>
@@ -882,44 +966,7 @@
         </div>
 
         <!-- ========== NEWSLETTER SIGNUP ========== -->
-        <!--
         <div class="newsletter-card" style="margin-top: 36px;">
-            <div class="newsletter-content">
-                <div class="newsletter-left">
-                    <div class="newsletter-icon">📬</div>
-                    <h3>Stay Updated</h3>
-                    <p>Be the first to know when ORHAR launches. No spam, ever.</p>
-                    <form
-                        action="https://eomail5.com/form/ccc239de-4304-11f1-915b-8dd42cd896bf"
-                        method="post"
-                        class="newsletter-form"
-                        target="hidden_eo_iframe"
-                        onsubmit="handleNewsletterSubmit(event)"
-                    >
-                        <input type="email" name="field_0" id="field_0" placeholder="you@example.com" required>
-                        
-                        <input type="text" name="hpc4b27b6e-eb38-11e9-be00-06b4694bee2a" style="display:none" tabindex="-1" autocomplete="nope">
-                        
-                        <button type="submit" id="nl-submit-btn">→</button>
-                    </form>
-                    
-                    <iframe name="hidden_eo_iframe" id="hidden_eo_iframe" style="display:none;" onload="if(this.submitted) showSuccessMessage();"></iframe>
-                    
-                    <div class="newsletter-success" id="nl-success" style="display:none;">
-                        ✅ Check your inbox to confirm!
-                    </div>
-                </div>
-                <div class="newsletter-right">
-                    <img src="/qr-subscribe.png" alt="Scan to subscribe to ORHAR updates" class="newsletter-qr">
-                    <p class="newsletter-qr-label">📱 Scan to subscribe</p>
-                </div>
-            </div>
-            <p class="newsletter-footer-note">✉️ One email at launch. Unsubscribe anytime.</p>
-        </div>
-        -->
-
-        <!-- ========== NEWSLETTER SIGNUP ========== -->
-        <div class="newsletter-card" id="newsletter" style="margin-top: 36px;">
             <div class="newsletter-content">
                 <div class="newsletter-left">
                     <div class="newsletter-icon">📬</div>
@@ -929,13 +976,17 @@
                         action="https://stats.sender.net/forms/b82yn5/subscribe"
                         method="post"
                         class="newsletter-form"
+                        onsubmit="handleNewsletterSubmit(event)"
                     >
-                        <input type="email" name="email" placeholder="you@example.com" required>
-                        <button type="submit">→</button>
+                        <input type="email" name="email" id="sd-email" placeholder="you@example.com" required>
+                        <button type="submit" id="nl-submit-btn">→</button>
                     </form>
+                    <div class="newsletter-success" id="nl-success" style="display:none;">
+                        ✅ Check your inbox to confirm!
+                    </div>
                 </div>
                 <div class="newsletter-right">
-                    <img src="/qr-subscribe.png" alt="Scan to subscribe" class="newsletter-qr">
+                    <img src="/qr-subscribe.png" alt="Scan to subscribe to ORHAR updates" class="newsletter-qr">
                     <p class="newsletter-qr-label">📱 Scan to subscribe</p>
                 </div>
             </div>
@@ -1245,18 +1296,36 @@
     </script>
 
     <script>
-      (function (s, e, n, d, er) {
-        s['Sender'] = er;
-        s[er] = s[er] || function () {
-          (s[er].q = s[er].q || []).push(arguments)
-        }, s[er].l = 1 * new Date();
-        var a = e.createElement(n),
-            m = e.getElementsByTagName(n)[0];
-        a.async = 1;
-        a.src = d;
-        m.parentNode.insertBefore(a, m)
-      })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
-      sender('0d0ca12a9c6976')
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const email = form.querySelector('input[name="email"]').value.trim();
+            const button = document.getElementById('nl-submit-btn');
+            const successDiv = document.getElementById('nl-success');
+            
+            // Disable button and show loading state
+            button.disabled = true;
+            button.textContent = '...';
+            
+            // Submit via fetch (stays on page)
+            fetch(form.action, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'email=' + encodeURIComponent(email)
+            })
+            .then(() => {
+                // Hide form, show success
+                form.style.display = 'none';
+                successDiv.style.display = 'block';
+            })
+            .catch(() => {
+                // If fetch fails, open in popup as fallback
+                window.open('https://buttondown.com/orhar', 'popupwindow');
+                form.style.display = 'none';
+                successDiv.style.display = 'block';
+            });
+        }
     </script>
 </body>
 </html>

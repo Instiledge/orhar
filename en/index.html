@@ -794,92 +794,38 @@
         }
 
         /* ========== NEWSLETTER FORM (SENDER EMBED) ========== */
-        .sender-form-wrapper {
-            max-width: 100%;
-        }
-
-        /* Style Sender's injected input */
-        .sender-form-wrapper input[type="email"],
         .sender-form-field input[type="email"] {
-            width: 100%;
-            padding: 14px 16px;
+            flex: 1;
+            padding: 12px 16px;
             border: 2px solid rgba(var(--accent-gold-rgb), 0.3);
-            border-radius: 12px;
+            border-radius: 10px;
             font-family: var(--font-body);
-            font-size: 16px;
+            font-size: 15px;
             outline: none;
             background: var(--bg-color);
             color: var(--text-dark);
-            margin-bottom: 12px;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .sender-form-wrapper input[type="email"]:focus,
         .sender-form-field input[type="email"]:focus {
             border-color: var(--accent-brown);
-            box-shadow: 0 0 0 3px rgba(var(--accent-brown-rgb), 0.1);
         }
 
-        /* Style Sender's injected submit button */
-        .sender-form-wrapper button,
-        .sender-form-wrapper input[type="submit"],
         .sender-form-field button,
         .sender-form-field input[type="submit"] {
-            width: 100%;
-            padding: 14px 24px;
-            background: linear-gradient(135deg, var(--primary-navy), #2a4060);
+            padding: 12px 18px;
+            background: var(--primary-navy);
             color: #FFFFFF;
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
             font-size: 16px;
-            font-weight: 600;
-            font-family: var(--font-body);
             cursor: pointer;
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 24px rgba(26, 46, 74, 0.2);
+            transition: background 0.3s;
+            font-family: var(--font-body);
         }
 
-        .sender-form-wrapper button:hover,
-        .sender-form-wrapper input[type="submit"]:hover,
         .sender-form-field button:hover,
         .sender-form-field input[type="submit"]:hover {
-            background: linear-gradient(135deg, #2a4060, var(--primary-navy));
-            transform: translateY(-2px);
-            box-shadow: 0 12px 32px rgba(26, 46, 74, 0.3);
-        }
-
-        /* Hide Sender's branding/powered-by text if they inject it */
-        .sender-form-wrapper a[href*="sender.net"],
-        .sender-form-field a[href*="sender.net"] {
-            display: none;
-        }
-
-        /* Style Sender's success message */
-        .sender-form-wrapper .sender-form-success,
-        .sender-form-field .sender-form-success,
-        .sender-form-wrapper .sender-form-message,
-        .sender-form-field .sender-form-message {
-            color: #059669;
-            font-size: 14px;
-            margin-top: 12px;
-            text-align: center;
-            padding: 10px;
-            background: #ECFDF5;
-            border-radius: 10px;
-            border: 1px solid #A7F3D0;
-        }
-
-        /* Style Sender's error message */
-        .sender-form-wrapper .sender-form-error,
-        .sender-form-field .sender-form-error {
-            color: #991B1B;
-            font-size: 14px;
-            margin-top: 12px;
-            text-align: center;
-            padding: 10px;
-            background: #FEF2F2;
-            border-radius: 10px;
-            border: 1px solid #FECACA;
+            background: var(--accent-brown);
         }
     </style>
 </head>
@@ -979,7 +925,18 @@
                     <div class="newsletter-icon">📬</div>
                     <h3>Stay Updated</h3>
                     <p>Be the first to know when ORHAR launches. No spam, ever.</p>
-                    <div class="sender-form-wrapper" data-sender-form-id="b82yn5"></div>
+                    <form
+                        action="https://stats.sender.net/forms/b82yn5/subscribe"
+                        method="post"
+                        class="newsletter-form"
+                    >
+                        <input type="email" name="email" placeholder="you@example.com" required>
+                        <button type="submit">→</button>
+                    </form>
+                </div>
+                <div class="newsletter-right">
+                    <img src="/qr-subscribe.png" alt="Scan to subscribe" class="newsletter-qr">
+                    <p class="newsletter-qr-label">📱 Scan to subscribe</p>
                 </div>
             </div>
             <p class="newsletter-footer-note">✉️ One email at launch. Unsubscribe anytime.</p>

@@ -797,84 +797,113 @@
         .newsletter-card {
             background: var(--surface-color);
             border-radius: 16px;
-            padding: 28px 24px;
+            padding: 32px 28px;
             box-shadow: var(--card-shadow);
             border: 1px solid rgba(var(--accent-gold-rgb), 0.3);
-            max-width: 600px;
+            max-width: 620px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .newsletter-content {
             display: flex;
-            align-items: center;
-            gap: 28px;
+            align-items: flex-start;
+            gap: 32px;
         }
 
         .newsletter-left {
             flex: 1;
-            text-align: center;
+            text-align: left;
         }
 
         .newsletter-right {
             flex-shrink: 0;
             text-align: center;
+            padding-top: 4px;
         }
 
-        .newsletter-icon { font-size: 32px; margin-bottom: 12px; }
+        .newsletter-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+            text-align: center;
+        }
 
         .newsletter-card h3 {
-            font-size: 22px;
-            margin-bottom: 6px;
+            font-size: 20px;
+            margin-bottom: 4px;
             color: var(--primary-navy);
-            font-family: var(--font-display);
+            font-family: var(--font-body);
+            font-weight: 600;
+            text-align: center;
         }
 
-        .newsletter-card p {
-            font-size: 14px;
+        .newsletter-card > .newsletter-content > .newsletter-left > p {
+            font-size: 13px;
             color: var(--text-muted);
-            margin-bottom: 18px;
+            margin-bottom: 16px;
+            text-align: center;
         }
 
         .newsletter-form {
             display: flex;
-            gap: 8px;
+            flex-direction: column;
+            gap: 10px;
         }
 
-        .newsletter-form input {
-            flex: 1;
-            padding: 12px 16px;
-            border: 2px solid rgba(var(--accent-gold-rgb), 0.3);
-            border-radius: 10px;
+        .newsletter-form input[type="email"] {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
             font-family: var(--font-body);
             font-size: 15px;
             outline: none;
             background: var(--bg-color);
             color: var(--text-dark);
+            transition: border-color 0.3s ease;
         }
 
-        .newsletter-form input:focus {
+        .newsletter-form input[type="email"]:focus {
             border-color: var(--accent-brown);
+            box-shadow: 0 0 0 3px rgba(var(--accent-brown-rgb), 0.1);
         }
 
-        .newsletter-form button {
-            padding: 12px 18px;
+        .newsletter-form input[type="email"]::placeholder {
+            color: #9ca3af;
+        }
+
+        .newsletter-form button[type="submit"] {
+            width: 100%;
+            padding: 14px 24px;
             background: var(--primary-navy);
             color: #FFFFFF;
             border: none;
-            border-radius: 10px;
-            font-size: 16px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            font-family: var(--font-body);
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.3s ease, transform 0.2s ease;
         }
 
-        .newsletter-form button:hover { background: var(--accent-brown); }
+        .newsletter-form button[type="submit"]:hover {
+            background: var(--accent-brown);
+            transform: translateY(-1px);
+        }
+
+        .newsletter-privacy-note {
+            font-size: 11px;
+            color: #9ca3af;
+            margin-top: 10px;
+            text-align: center;
+            font-style: italic;
+        }
 
         .newsletter-qr {
             width: 100px;
             height: 100px;
             border-radius: 10px;
-            border: 1px solid rgba(var(--accent-gold-rgb), 0.2);
+            border: 2px solid #e5e7eb;
         }
 
         .newsletter-qr-label {
@@ -884,14 +913,6 @@
             font-style: italic;
         }
 
-        .newsletter-footer-note {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-top: 24px;
-            padding-top: 16px;
-            text-align: center;
-        }
-
         .newsletter-success {
             margin-top: 12px;
             font-size: 14px;
@@ -899,7 +920,7 @@
             text-align: center;
             padding: 10px;
             background: #ECFDF5;
-            border-radius: 10px;
+            border-radius: 8px;
             border: 1px solid #A7F3D0;
         }
 
@@ -909,6 +930,10 @@
             }
             .newsletter-right {
                 order: -1;
+                align-self: center;
+            }
+            .newsletter-card {
+                padding: 24px 20px;
             }
         }
     </style>
@@ -978,9 +1003,10 @@
                         class="newsletter-form"
                         onsubmit="handleNewsletterSubmit(event)"
                     >
-                        <input type="email" name="email" id="sd-email" placeholder="you@example.com" required>
-                        <button type="submit" id="nl-submit-btn">→</button>
+                        <input type="email" name="email" id="sd-email" placeholder="your.email@example.com" required>
+                        <button type="submit" id="nl-submit-btn">Submit</button>
                     </form>
+                    <p class="newsletter-privacy-note">We value your privacy and will never send irrelevant information</p>
                     <div class="newsletter-success" id="nl-success" style="display:none;">
                         ✅ Check your inbox to confirm!
                     </div>
@@ -990,7 +1016,6 @@
                     <p class="newsletter-qr-label">📱 Scan to subscribe</p>
                 </div>
             </div>
-            <p class="newsletter-footer-note">✉️ One email at launch. Unsubscribe anytime.</p>
         </div>
     </section>
 
@@ -1294,7 +1319,7 @@
             updateAnchors();
         }, 6000);
     </script>
-
+    
     <script>
         function handleNewsletterSubmit(event) {
             event.preventDefault();
@@ -1303,27 +1328,33 @@
             const email = form.querySelector('input[name="email"]').value.trim();
             const button = document.getElementById('nl-submit-btn');
             const successDiv = document.getElementById('nl-success');
+            const privacyNote = form.parentElement.querySelector('.newsletter-privacy-note');
             
-            // Disable button and show loading state
+            if (!email) return;
+            
             button.disabled = true;
-            button.textContent = '...';
+            button.textContent = 'Submitting...';
             
-            // Submit via fetch (stays on page)
             fetch(form.action, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: 'email=' + encodeURIComponent(email)
             })
-            .then(() => {
-                // Hide form, show success
-                form.style.display = 'none';
-                successDiv.style.display = 'block';
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    form.style.display = 'none';
+                    if (privacyNote) privacyNote.style.display = 'none';
+                    successDiv.style.display = 'block';
+                } else {
+                    button.disabled = false;
+                    button.textContent = 'Submit';
+                    alert(data.message || 'Something went wrong. Please try again.');
+                }
             })
             .catch(() => {
-                // If fetch fails, open in popup as fallback
-                window.open('https://buttondown.com/orhar', 'popupwindow');
-                form.style.display = 'none';
-                successDiv.style.display = 'block';
+                // Fallback: submit normally
+                form.submit();
             });
         }
     </script>

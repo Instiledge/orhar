@@ -948,31 +948,19 @@
                 padding: 24px 20px;
             }
         }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .github-link i {
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
-
-    <header>
-        <a href="/es/" class="logo-container">
-            <img src="/logo.png" alt="ORHAR Logo" class="logo-img" onerror="this.style.display='none'">
-            <span class="logo-text">ORHAR</span>
-        </a>
-        <nav class="nav-links">
-            <a href="#story">La Historia</a>
-            <a href="#features">Funciones</a>
-            <a href="/contact.html">Contacto</a>
-            <select id="langSwitch" class="lang-select" onchange="switchLanguage(this.value)">
-                <option value="en">🇬🇧 EN</option>
-                <option value="fr">🇫🇷 FR</option>
-                <option value="es" selected>🇪🇸 ES</option>
-                <option value="de">🇩🇪 DE</option>
-                <option value="it">🇮🇹 IT</option>
-                <option value="pt">🇵🇹 PT</option>
-                <option value="pl">🇵🇱 PL</option>
-            </select>
-        </nav>
-    </header>
-
+    
     <!-- ========== ÚLTIMAS NOTICIAS ========== -->
     <div class="update-section" id="update-container">
         <div class="update-badge">📣 Novedades</div>
@@ -1205,25 +1193,6 @@
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h2>ORHAR</h2>
-                <p>Hecho con ❤️ para la vida de oración.</p>
-            </div>
-            <div class="footer-links">
-                <a href="/privacy.html">Privacidad</a>
-                <a href="/terms.html">Términos</a>
-                <a href="/licenses.html">Licencias</a>
-                <a href="/contact.html">Contacto</a>
-            </div>
-        </div>
-        <div class="copyright">
-            &copy; 2026 ORHAR. Todos los derechos reservados.<br>
-            «Lámpara es a mis pies tu palabra, y lumbrera a mi camino.» — Salmo 119:105
-        </div>
-    </footer>
-
     <script>
         // ========== TEMAS ==========
         const appThemes = [
@@ -1393,5 +1362,12 @@
             });
         }
     </script>
+
+    <script>
+        window.headerLinks = 'home';
+    </script>
+    <script src="/components/header.js"></script>
+    <script src="/components/footer.js"></script>
+</body>
 </body>
 </html>

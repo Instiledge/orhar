@@ -948,18 +948,30 @@
                 padding: 24px 20px;
             }
         }
-
-        .github-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .github-link i {
-            font-size: 14px;
-        }
     </style>
 </head>
 <body>
+
+    <header>
+        <a href="/fr/" class="logo-container">
+            <img src="/logo.png" alt="Logo ORHAR" class="logo-img" onerror="this.style.display='none'">
+            <span class="logo-text">ORHAR</span>
+        </a>
+        <nav class="nav-links">
+            <a href="#story">L'Histoire</a>
+            <a href="#features">Fonctionnalités</a>
+            <a href="/contact.html">Contact</a>
+            <select id="langSwitch" class="lang-select" onchange="switchLanguage(this.value)">
+                <option value="en">🇬🇧 EN</option>
+                <option value="fr" selected>🇫🇷 FR</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="de">🇩🇪 DE</option>
+                <option value="it">🇮🇹 IT</option>
+                <option value="pt">🇵🇹 PT</option>
+                <option value="pl">🇵🇱 PL</option>
+            </select>
+        </nav>
+    </header>
 
     <!-- ========== DERNIÈRES NOUVELLES ========== -->
     <div class="update-section" id="update-container">
@@ -1193,6 +1205,25 @@
         </div>
     </section>
 
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>ORHAR</h2>
+                <p>Fait avec ❤️ pour la vie de prière.</p>
+            </div>
+            <div class="footer-links">
+                <a href="/privacy.html">Politique de Confidentialité</a>
+                <a href="/terms.html">Conditions d'Utilisation</a>
+                <a href="/licenses.html">Licences</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 ORHAR. Tous droits réservés.<br>
+            « Ta parole est une lampe à mes pieds, une lumière sur mon sentier. » — Psaume 119, 105
+        </div>
+    </footer>
+
     <script>
         const appThemes = [
             { name: 'Default',  primary: '#1A2E4A', accentGold: '#CFB286', accentGoldRgb: '207,178,134', accentBrown: '#915B27', accentBrownRgb: '145,91,39', bg: '#FCFBF8', surface: '#FFFFFF', text: '#1e1e1e', textMuted: '#7f8c8d' },
@@ -1361,11 +1392,5 @@
             });
         }
     </script>
-
-    <script>
-        window.headerLinks = 'home';
-    </script>
-    <script src="/components/header.js"></script>
-    <script src="/components/footer.js"></script>
 </body>
 </html>

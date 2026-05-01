@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview ORHAR — The Mountain of Light</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ========== PRIMARY META TAGS ========== -->
+    <meta name="description" content="Preview ORHAR — The Mountain of Light. See the Bible app that brings Scripture to life with beautiful design, quizzes, prayers, and offline access.">
+    <meta name="keywords" content="ORHAR preview, Bible app screenshots, Catholic app preview, prayer app design, Bible quiz app">
+    <meta name="author" content="ORHAR">
+    <meta name="theme-color" content="#1A2E4A">
+    <link rel="canonical" href="https://orhar.com/preview.html">
+
+    <!-- ========== OPEN GRAPH ========== -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://orhar.com/preview.html">
+    <meta property="og:title" content="Preview ORHAR — The Mountain of Light">
+    <meta property="og:description" content="See the multilingual Bible app built for the daily ascent. Beautiful design, offline access, quizzes, and prayers.">
+    <meta property="og:image" content="https://orhar.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="ORHAR">
+    <meta property="og:locale" content="en_US">
+    <meta property="fb:app_id" content="826566160013437">
+
+    <!-- ========== TWITTER CARD ========== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://orhar.com/preview.html">
+    <meta name="twitter:title" content="Preview ORHAR — The Mountain of Light">
+    <meta name="twitter:description" content="See the multilingual Bible app built for the daily ascent.">
+    <meta name="twitter:image" content="https://orhar.com/og-image.png">
+    <meta name="twitter:site" content="@orhar_app">
+    <meta name="twitter:creator" content="@orhar_app">
+
+    <!-- ========== FAVICONS ========== -->
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1A2E4A">
+    <meta name="msapplication-TileColor" content="#1A2E4A">
+
+    <!-- ========== PWA ========== -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="ORHAR">
+
+    <!-- ========== STRUCTURED DATA ========== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "ORHAR",
+        "applicationCategory": "ReligiousApplication",
+        "operatingSystem": "Android",
+        "description": "A multilingual Bible app built for the daily ascent through Scripture.",
+        "url": "https://orhar.com",
+        "image": "https://orhar.com/og-image.png",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Organization", "name": "ORHAR", "url": "https://orhar.com" }
+    }
+    </script>
+    
+    <style>
+        :root {
+            --bg-color: #FCFBF8;
+            --surface-color: #FFFFFF;
+            --primary-navy: #1A2E4A;
+            --header-bg: rgba(252, 251, 248, 0.95);
+            --accent-gold: #CFB286;
+            --accent-gold-rgb: 207, 178, 134;
+            --accent-brown: #915B27;
+            --accent-brown-rgb: 145, 91, 39;
+            --text-dark: #1e1e1e;
+            --text-muted: #7f8c8d;
+            --card-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Work Sans', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body { 
+            font-family: var(--font-body); 
+            background-color: var(--bg-color); 
+            color: var(--text-dark); 
+            line-height: 1.7; 
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        h1, h2, h3, h4 { 
+            font-family: var(--font-display); 
+            color: var(--primary-navy); 
+        }
+
+        /* ========== HEADER ========== */
+        header { 
+            padding: 16px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: var(--header-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid rgba(var(--accent-gold-rgb), 0.3); 
+        }
+        
+        .logo-container { 
+            display: flex; 
+            align-items: center; 
+            gap: 14px; 
+            text-decoration: none;
+        }
+        
+        .logo-img { 
+            width: 48px; 
+            height: 48px; 
+            border-radius: 12px; 
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(var(--accent-gold-rgb), 0.3);
+        }
+        
+        .logo-text { 
+            font-family: var(--font-display); 
+            font-size: 26px; 
+            font-weight: 700; 
+            letter-spacing: 3px; 
+            color: var(--primary-navy);
+        }
+        
+        .nav-links { display: flex; gap: 28px; align-items: center; }
+        
+        .nav-links a { 
+            font-size: 15px; 
+            font-weight: 500;
+            color: var(--primary-navy);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover { color: var(--accent-brown); }
+
+        /* ========== HERO ========== */
+        .hero {
+            text-align: center;
+            padding: 80px 5% 60px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(var(--accent-gold-rgb), 0.15);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-brown);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, var(--primary-navy), var(--accent-brown));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero .subtitle {
+            font-size: 22px;
+            font-style: italic;
+            color: var(--accent-brown);
+            margin-bottom: 16px;
+        }
+        
+        .hero .description {
+            font-size: 17px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 32px;
+            line-height: 1.8;
+        }
+
+        /* ========== SCREENSHOT GALLERY ========== */
+        .gallery-section {
+            padding: 40px 5% 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+        
+        .screenshot-card {
+            text-align: center;
+            transition: transform 0.4s ease;
+        }
+        
+        .screenshot-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .phone-frame {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .phone-frame img {
+            width: 260px;
+            height: auto;
+            border-radius: 28px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            transition: box-shadow 0.4s ease;
+        }
+        
+        .screenshot-card:hover .phone-frame img {
+            box-shadow: 0 30px 70px rgba(0,0,0,0.25);
+        }
+        
+        .screenshot-label {
+            margin-top: 20px;
+        }
+        
+        .screenshot-label h3 {
+            font-size: 20px;
+            margin-bottom: 6px;
+        }
+        
+        .screenshot-label p {
+            font-size: 14px;
+            color: var(--text-muted);
+            max-width: 240px;
+            margin: 0 auto;
+        }
+
+        /* ========== FEATURE HIGHLIGHTS ========== */
+        .highlights-section {
+            background: var(--surface-color);
+            padding: 80px 5%;
+            border-top: 1px solid rgba(var(--accent-gold-rgb), 0.3);
+            border-bottom: 1px solid rgba(var(--accent-gold-rgb), 0.3);
+        }
+        
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 32px;
+            max-width: 1000px;
+            margin: 40px auto 0;
+            text-align: center;
+        }
+        
+        .highlight-item i {
+            font-size: 36px;
+            color: var(--accent-brown);
+            margin-bottom: 16px;
+        }
+        
+        .highlight-item h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            font-family: var(--font-body);
+            font-weight: 600;
+        }
+        
+        .highlight-item p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* ========== CTA SECTION ========== */
+        .cta-section {
+            text-align: center;
+            padding: 80px 5%;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+        
+        .cta-section p {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary-navy), #2a4060);
+            color: #FFFFFF;
+            padding: 16px 32px;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 24px rgba(26, 46, 74, 0.2);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(26, 46, 74, 0.3);
+            color: #FFFFFF;
+        }
+        
+        .cta-btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary-navy);
+            color: var(--primary-navy);
+            box-shadow: none;
+        }
+        
+        .cta-btn-secondary:hover {
+            background: var(--primary-navy);
+            color: #FFFFFF;
+        }
+
+        /* ========== FOOTER ========== */
+        footer { 
+            background: linear-gradient(180deg, var(--primary-navy), #0f1f33); 
+            padding: 70px 5% 35px; 
+            color: #FFFFFF;
+        }
+        
+        .footer-content { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: flex-start; 
+            flex-wrap: wrap; 
+            gap: 40px; 
+        }
+        
+        .footer-brand h2 { 
+            font-size: 34px; 
+            letter-spacing: 4px; 
+            margin-bottom: 8px;
+            color: var(--accent-gold);
+        }
+        
+        .footer-brand p { 
+            font-style: italic; 
+            color: rgba(255,255,255,0.6); 
+            font-family: var(--font-display); 
+            font-size: 18px; 
+        }
+        
+        .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+        
+        .footer-links a { 
+            font-size: 14px; 
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover { color: var(--accent-gold); }
+        
+        .copyright { 
+            text-align: center; 
+            margin-top: 40px; 
+            font-size: 13px; 
+            color: rgba(255,255,255,0.5); 
+            line-height: 1.8;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 38px; }
+            .hero .subtitle { font-size: 18px; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .highlights-grid { grid-template-columns: 1fr 1fr; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+            header { flex-direction: column; gap: 16px; }
+            .footer-content { flex-direction: column; text-align: center; align-items: center; }
+            .footer-links { justify-content: center; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 30px; }
+            .phone-frame img { width: 220px; }
+            .highlights-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="/" class="logo-container">
+            <img src="/logo.png" alt="ORHAR Logo" class="logo-img" onerror="this.style.display='none'">
+            <span class="logo-text">ORHAR</span>
+        </a>
+        <nav class="nav-links">
+            <a href="/">Home</a>
+            <a href="/updates.html">Updates</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ========== HERO ========== -->
+        <section class="hero">
+            <div class="hero-badge">✦ See It in Action</div>
+            <h1>Preview ORHAR</h1>
+            <p class="subtitle">A glimpse of the Mountain of Light.</p>
+            <p class="description">Every screen is crafted for the daily ascent — beautiful typography, offline access, and tools that walk with you through Scripture.</p>
+        </section>
+
+        <!-- ========== SCREENSHOT GALLERY ========== -->
+        <section class="gallery-section">
+            <h2 style="text-align:center;font-size:36px;margin-bottom:8px;">Explore the App</h2>
+            <p style="text-align:center;color:var(--text-muted);font-size:16px;font-style:italic;margin-bottom:40px;">Every screen designed for your daily ascent</p>
+            <div class="gallery-grid" id="screenshot-gallery">
+                
+                <!-- Home + Daily Verse -->
+                <div class="screenshot-card">
+                    <div class="phone-frame">
+                        <img src="/screenshots/home-daily-verse.jpg" alt="Home with Daily Verse">
+                    </div>
+                    <div class="screenshot-label">
+                        <h3>Home & Daily Verse</h3>
+                        <p>Start each day with a carefully selected scripture to illuminate your path.</p>
+                    </div>
+                </div>
+
+                <!-- Bible Reader -->
+                <div class="screenshot-card">
+                    <div class="phone-frame">
+                        <img src="/screenshots/bible-reader.jpg" alt="Bible Reader">
+                    </div>
+                    <div class="screenshot-label">
+                        <h3>Immersive Bible Reader</h3>
+                        <p>Clean typography, multiple versions, full offline access. The Word, uninterrupted.</p>
+                    </div>
+                </div>
+
+                <!-- Random Verse -->
+                <div class="screenshot-card">
+                    <div class="phone-frame">
+                        <img src="/screenshots/random-verse.jpg" alt="Random Verse Generator">
+                    </div>
+                    <div class="screenshot-label">
+                        <h3>Random Verse Generator</h3>
+                        <p>Let the Spirit guide you. Tap for a verse from either testament — perfect for Lectio Divina.</p>
+                    </div>
+                </div>
+
+                <!-- Reading Plan -->
+                <div class="screenshot-card">
+                    <div class="phone-frame">
+                        <img src="/screenshots/reading-plan.jpg" alt="Reading Plan">
+                    </div>
+                    <div class="screenshot-label">
+                        <h3>Custom Reading Plans</h3>
+                        <p>365-day plans, daily Psalms, daily Proverbs. Read through Scripture at your own pace.</p>
+                    </div>
+                </div>
+
+                <!-- Quiz -->
+                <div class="screenshot-card">
+                    <div class="phone-frame">
+                        <img src="/screenshots/quiz.jpg" alt="Bible Quiz">
+                    </div>
+                    <div class="screenshot-label">
+                        <h3>Interactive Bible Quiz</h3>
+                        <p>Level up your knowledge with questions across all books. Leaderboards included.</p>
+                    </div>
+                </div>
+
+                <!-- Notes -->
+                <div class="screenshot-card">
+                    <div class="phone-frame">
+                        <img src="/screenshots/notes.jpg" alt="Personal Notes">
+                    </div>
+                    <div class="screenshot-label">
+                        <h3>Personal Notes</h3>
+                        <p>Capture your revelations, tag them by category, and sync securely across devices.</p>
+                    </div>
+                </div>
+
+                <!-- Spiritual Books -->
+                <div class="screenshot-card">
+                    <div class="phone-frame">
+                        <img src="/screenshots/spiritual-books.jpg" alt="Spiritual Books Library">
+                    </div>
+                    <div class="screenshot-label">
+                        <h3>Spiritual Books Library</h3>
+                        <p>Access a curated library of theological and spiritual writings inside the app.</p>
+                    </div>
+                </div>
+
+                <!-- Bible Versions -->
+                <div class="screenshot-card">
+                    <div class="phone-frame">
+                        <img src="/screenshots/bible-versions.jpg" alt="Bible Versions">
+                    </div>
+                    <div class="screenshot-label">
+                        <h3>10+ Bible Versions</h3>
+                        <p>Multiple translations in multiple languages. Download the ones you need for offline use.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========== FEATURE HIGHLIGHTS ========== -->
+        <section class="highlights-section">
+            <h2 style="text-align:center;font-size:36px;">Built for the Daily Ascent</h2>
+            <div class="highlights-grid">
+                <div class="highlight-item">
+                    <i class="fas fa-globe"></i>
+                    <h4>7 Languages</h4>
+                    <p>English, French, Spanish, German, Italian, Portuguese, Polish</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-wifi"></i>
+                    <h4>100% Offline</h4>
+                    <p>No internet needed. The Word goes where you go.</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-palette"></i>
+                    <h4>9 Color Themes</h4>
+                    <p>Choose a palette that reflects your spirit.</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Privacy First</h4>
+                    <p>Your notes and prayers are encrypted. We never sell your data.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CTA ========== -->
+        <section class="cta-section">
+            <h2>Ready to Climb the Mountain?</h2>
+            <p>ORHAR is free. No ads on the premium plan. Just the Word, beautifully crafted for your daily ascent.</p>
+            <div class="cta-buttons">
+                <a href="/app.html" class="cta-btn">
+                    <i class="fab fa-google-play"></i> Get on Google Play
+                </a>
+                <a href="/contact.html" class="cta-btn cta-btn-secondary">
+                    <i class="fas fa-bell"></i> Get Launch Updates
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>ORHAR</h2>
+                <p>Made with ❤️ for the life of prayer.</p>
+            </div>
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="/licenses.html">Open Source Licenses</a>
+                <a href="/contact.html">Contact Us</a>
+                <a href="https://github.com/Instiledge/orhar" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i> Open Source
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 ORHAR. All Rights Reserved.<br>
+            "Your word is a lamp to my feet, a light to my path." — Psalm 119:105
+        </div>
+    </footer>
+
+</body>
+</html>

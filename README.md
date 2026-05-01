@@ -78,6 +78,7 @@ Language is auto-detected from the browser and can be switched via the dropdown 
 
 orhar-website/
 - ├── .well-known/security.txt
+- ├── .github/workflows/auto-sitemap.yml
 - ├── index.html              # Root → language redirector
 - ├── en/index.html           # English homepage
 - ├── fr/index.html           # French homepage
@@ -100,6 +101,7 @@ orhar-website/
 - ├── README.md               # Documentation
 - ├── _headers
 - ├── action.html             # Firebase Auth Actions
+- ├── app.html             # Firebase Auth Actions
 - ├── apple-splash-2048.png    # iOS icon
 - ├── apple-touch-icon.png    # iOS icon
 - ├── browserconfig.xml

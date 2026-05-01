@@ -77,16 +77,50 @@ Language is auto-detected from the browser and can be switched via the dropdown 
 ## 📁 File Structure
 
 orhar-website/
-- ├── index.html # Homepage — hero, features, theme picker
-- ├── contact.html # Contact & Support — FAQ, donate, contribute
-- ├── privacy.html # Privacy Policy — complete legal document
-- ├── terms.html # Terms of Service — complete legal document
-- ├── licenses.html # Open Source Licenses — third-party attributions
-- ├── action.html # Firebase Auth — password reset, email verification
-- ├── logo.png # ORHAR Logo (light background)
-- ├── logo-dark.png # ORHAR Logo (dark background)
-- └── README.md # This file
-
+- ├── .well-known/security.txt
+- ├── index.html              # Root → language redirector
+- ├── en/index.html           # English homepage
+- ├── fr/index.html           # French homepage
+- ├── es/index.html           # Spanish homepage
+- ├── de/index.html           # German homepage
+- ├── it/index.html           # Italian homepage
+- ├── pt/index.html           # Portuguese homepage
+- ├── pl/index.html           # Polish homepage
+- ├── en/qr-subscribe-en.png  # EN QR code
+- ├── fr/qr-subscribe-fr.png  # FR QR code
+- ├── es/qr-subscribe-es.png  # ES QR code
+- ├── de/qr-subscribe-de.png  # DE QR code
+- ├── it/qr-subscribe-it.png  # IT QR code
+- ├── pt/qr-subscribe-pt.png  # PT QR code
+- ├── pl/qr-subscribe-pl.png  # PL QR code
+- ├── .gitignore              # Git ignore rules
+- ├── 404.html                # Custom error page
+- ├── CNAME
+- ├── LICENSE                 # MIT License
+- ├── README.md               # Documentation
+- ├── _headers
+- ├── action.html             # Firebase Auth Actions
+- ├── apple-splash-2048.png    # iOS icon
+- ├── apple-touch-icon.png    # iOS icon
+- ├── browserconfig.xml
+- ├── contact.html            # Contact & Support
+- ├── favicon-96x96.png       # Browser icon (large)
+- ├── favicon.ico             # Browser icon
+- ├── humans.txt
+- ├── icon-192.png            # PWA icon (small)
+- ├── icon-512.png            # PWA icon (large)
+- ├── licenses.html           # Open Source Licenses
+- ├── logo.png                # ORHAR logo
+- ├── manifest.json           # PWA manifest
+- ├── mstile-150x150.png
+- ├── og-image.png            # Social sharing image
+- ├── privacy.html            # Privacy Policy
+- ├── robots.txt              # SEO instructions
+- ├── safari-pinned-tab.svg   # Safari pinned tab
+- ├── service-worker.js       # Offline caching
+- ├── sitemap.xml             # Search engine map
+- ├── terms.html              # Terms of Service
+- └── updates.html            # Central update feed
 
 ## 📄 License
 

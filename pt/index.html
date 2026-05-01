@@ -624,6 +624,19 @@
         
         .footer-links a:hover { color: var(--accent-gold); }
         
+        #footer-container footer {
+            animation: footerFadeIn 0.3s ease;
+        }
+        
+        @keyframes footerFadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .footer-contact { color: rgba(255,255,255,0.7); font-size: 14px; }
+        .footer-contact a { color: var(--accent-gold); font-weight: 500; }
+        .footer-contact .separator { color: rgba(255,255,255,0.3); margin: 0 8px; }
+        
         .copyright { 
             text-align: center; margin-top: 40px; 
             font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.8;
@@ -1216,30 +1229,7 @@
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h2>ORHAR</h2>
-                <p>Feito com ❤️ para a vida de oração.</p>
-            </div>
-            <div class="footer-links">
-                <a href="/privacy.html">Privacidade</a>
-                <a href="/terms.html">Termos</a>
-                <a href="/licenses.html">Licenças</a>
-                <a href="/contact.html">Contato</a>
-                <a href="/preview.html" class="github-link">
-                    <i class="fas fa-images"></i> Pré-visualizar o App
-                </a>
-                <a href="https://github.com/Instiledge/orhar" target="_blank" rel="noopener" class="github-link">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-            </div>
-        </div>
-        <div class="copyright">
-            &copy; 2026 ORHAR. Todos os direitos reservados.<br>
-            «Lâmpada para os meus pés é tua palavra, e luz para o meu caminho.» — Salmo 119:105
-        </div>
-    </footer>
+    <div id="footer-container"></div>
 
     <script>
         // ========== TEMAS ==========
@@ -1292,6 +1282,29 @@
             const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--bg-color').trim();
             document.documentElement.style.setProperty('--header-bg', bgColor.replace(')', ', 0.95)').replace('rgb', 'rgba'));
         });
+
+        // ========== FOOTER LOADER ==========
+        const footerLang = document.documentElement.lang || 'en';
+        fetch('/footer.html')
+            .then(response => response.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                let footerBlock = doc.getElementById('footer-' + footerLang);
+                
+                // Fallback to English
+                if (!footerBlock) {
+                    footerBlock = doc.getElementById('footer-en');
+                }
+                
+                if (footerBlock) {
+                    footerBlock.style.display = '';
+                    document.getElementById('footer-container').appendChild(footerBlock);
+                }
+            })
+            .catch(() => {
+                console.log('Footer not available');
+            });
     </script>
 
     <!-- ========== CARREGAR NOTÍCIAS DO ARQUIVO CENTRAL ========== -->

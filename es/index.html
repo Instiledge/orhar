@@ -797,118 +797,154 @@
         .newsletter-card {
             background: var(--surface-color);
             border-radius: 16px;
-            padding: 28px 24px;
+            padding: 32px 28px;
             box-shadow: var(--card-shadow);
             border: 1px solid rgba(var(--accent-gold-rgb), 0.3);
-            max-width: 600px;
+            max-width: 620px;
             margin-left: auto;
             margin-right: auto;
         }
-
+        
         .newsletter-content {
             display: flex;
-            align-items: center;
-            gap: 28px;
+            align-items: center;     /* vertically centers both columns against each other */
+            gap: 32px;
         }
-
+        
+        /* ── Left column ── */
         .newsletter-left {
             flex: 1;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;     /* horizontally centers all child elements */
+            justify-content: center; /* vertically centers content within the column */
+            text-align: center;      /* centers text inside paragraphs / headings */
         }
-
+        
+        /* ── Right column (QR) ── */
         .newsletter-right {
             flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;     /* centers QR image + label horizontally */
+            justify-content: center; /* centers the group vertically */
+            align-self: center;      /* ensures it sits at mid-height of the flex row */
             text-align: center;
         }
-
-        .newsletter-icon { font-size: 32px; margin-bottom: 12px; }
-
+        
+        .newsletter-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        
         .newsletter-card h3 {
-            font-size: 22px;
-            margin-bottom: 6px;
+            font-size: 20px;
+            margin-bottom: 4px;
             color: var(--primary-navy);
-            font-family: var(--font-display);
+            font-family: var(--font-body);
+            font-weight: 600;
         }
-
-        .newsletter-card p {
-            font-size: 14px;
+        
+        .newsletter-card > .newsletter-content > .newsletter-left > p {
+            font-size: 13px;
             color: var(--text-muted);
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
-
+        
+        /* ── Form stretches to fill the left column width ── */
         .newsletter-form {
             display: flex;
-            gap: 8px;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;             /* makes inputs fill the available width */
         }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 12px 16px;
-            border: 2px solid rgba(var(--accent-gold-rgb), 0.3);
-            border-radius: 10px;
+        
+        .newsletter-form input[type="email"] {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
             font-family: var(--font-body);
             font-size: 15px;
             outline: none;
             background: var(--bg-color);
             color: var(--text-dark);
+            transition: border-color 0.3s ease;
         }
-
-        .newsletter-form input:focus {
+        
+        .newsletter-form input[type="email"]:focus {
             border-color: var(--accent-brown);
+            box-shadow: 0 0 0 3px rgba(var(--accent-brown-rgb), 0.1);
         }
-
-        .newsletter-form button {
-            padding: 12px 18px;
+        
+        .newsletter-form input[type="email"]::placeholder {
+            color: #9ca3af;
+        }
+        
+        .newsletter-form button[type="submit"] {
+            width: 100%;
+            padding: 14px 24px;
             background: var(--primary-navy);
             color: #FFFFFF;
             border: none;
-            border-radius: 10px;
-            font-size: 16px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            font-family: var(--font-body);
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.3s ease, transform 0.2s ease;
         }
-
-        .newsletter-form button:hover { background: var(--accent-brown); }
-
+        
+        .newsletter-form button[type="submit"]:hover {
+            background: var(--accent-brown);
+            transform: translateY(-1px);
+        }
+        
+        .newsletter-privacy-note {
+            font-size: 11px;
+            color: #9ca3af;
+            padding-top: 14px;
+            margin-top: 12px;
+            font-style: italic;
+        }
+        
         .newsletter-qr {
             width: 100px;
             height: 100px;
             border-radius: 10px;
-            border: 1px solid rgba(var(--accent-gold-rgb), 0.2);
+            border: 2px solid #e5e7eb;
+            display: block;          /* removes any inline bottom gap */
         }
-
+        
         .newsletter-qr-label {
             font-size: 11px;
             color: var(--text-muted);
             margin-top: 6px;
             font-style: italic;
         }
-
-        .newsletter-footer-note {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-top: 24px;
-            padding-top: 16px;
-            text-align: center;
-        }
-
+        
         .newsletter-success {
             margin-top: 12px;
             font-size: 14px;
-            color: #059669;
+            color: #065F46;
             text-align: center;
-            padding: 10px;
+            padding: 16px 20px;
             background: #ECFDF5;
-            border-radius: 10px;
+            border-radius: 12px;
             border: 1px solid #A7F3D0;
+            line-height: 1.6;
         }
         
         @media (max-width: 500px) {
             .newsletter-content {
                 flex-direction: column;
+                align-items: center;
             }
             .newsletter-right {
                 order: -1;
+            }
+            .newsletter-card {
+                padding: 24px 20px;
             }
         }
     </style>
@@ -973,24 +1009,24 @@
                     <h3>Mantente Informado</h3>
                     <p>Sé el primero en saber cuándo se lance ORHAR.</p>
                     <form
-                        action="https://buttondown.com/api/emails/embed-subscribe/orhar"
+                        action="https://stats.sender.net/forms/bqxE4D/subscribe"
                         method="post"
                         class="newsletter-form"
                         onsubmit="handleNewsletterSubmit(event)"
                     >
-                        <input type="email" name="email" id="bd-email" placeholder="tu@ejemplo.com" required>
-                        <button type="submit" id="nl-submit-btn">→</button>
+                        <input type="email" name="email" id="sd-email" placeholder="tu.correo@ejemplo.com" required>
+                        <button type="submit" id="nl-submit-btn">Suscribirse</button>
                     </form>
+                    <p class="newsletter-privacy-note">Valoramos tu privacidad y nunca enviaremos información irrelevante</p>
                     <div class="newsletter-success" id="nl-success" style="display:none;">
                         ✅ ¡Revisa tu bandeja de entrada para confirmar!
                     </div>
                 </div>
                 <div class="newsletter-right">
-                    <img src="/qr-subscribe.png" alt="Scan to subscribe to ORHAR updates" class="newsletter-qr">
+                    <img src="/es/qr-subscribe-es.png" alt="Escanear para suscribirse a las actualizaciones de ORHAR" class="newsletter-qr">
                     <p class="newsletter-qr-label">📱 Escanea para suscribirte</p>
                 </div>
             </div>
-            <p class="newsletter-footer-note">✉️ Un correo en el lanzamiento. Cancela cuando quieras.</p>
         </div>
     </section>
 
@@ -1303,27 +1339,56 @@
             const email = form.querySelector('input[name="email"]').value.trim();
             const button = document.getElementById('nl-submit-btn');
             const successDiv = document.getElementById('nl-success');
+            const privacyNote = form.parentElement.querySelector('.newsletter-privacy-note');
+            const heading = form.closest('.newsletter-left').querySelector('h3');
+            const description = form.closest('.newsletter-left').querySelector('p');
+            const qrSection = document.querySelector('.newsletter-right');
             
-            // Disable button and show loading state
+            if (!email) return;
+            
+            const originalHeading = heading.textContent;
+            const originalDescription = description.textContent;
+            
             button.disabled = true;
-            button.textContent = '...';
+            button.textContent = 'Enviando...';
             
-            // Submit via fetch (stays on page)
             fetch(form.action, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: 'email=' + encodeURIComponent(email)
             })
-            .then(() => {
-                // Hide form, show success
-                form.style.display = 'none';
-                successDiv.style.display = 'block';
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    form.style.display = 'none';
+                    if (privacyNote) privacyNote.style.display = 'none';
+                    if (qrSection) qrSection.style.display = 'none';
+                    
+                    if (heading) heading.textContent = '¡Oh Gracias!';
+                    if (description) description.textContent = '';
+                    
+                    successDiv.style.display = 'block';
+                    
+                    setTimeout(() => {
+                        successDiv.style.display = 'none';
+                        form.style.display = '';
+                        if (privacyNote) privacyNote.style.display = '';
+                        if (qrSection) qrSection.style.display = '';
+                        if (heading) heading.textContent = originalHeading;
+                        if (description) description.textContent = originalDescription;
+                        form.reset();
+                        button.disabled = false;
+                        button.textContent = 'Suscribirse';
+                        document.getElementById('sd-email').focus();
+                    }, 8000);
+                } else {
+                    button.disabled = false;
+                    button.textContent = 'Suscribirse';
+                    alert(data.message || 'Algo salió mal. Por favor, inténtalo de nuevo.');
+                }
             })
             .catch(() => {
-                // If fetch fails, open in popup as fallback
-                window.open('https://buttondown.com/orhar', 'popupwindow');
-                form.style.display = 'none';
-                successDiv.style.display = 'block';
+                form.submit();
             });
         }
     </script>

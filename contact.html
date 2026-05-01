@@ -1016,43 +1016,29 @@
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h2>ORHAR</h2>
-                <p data-i18n="foot_made">Made with ❤️ for the life of prayer.</p>
-            </div>
-            <div class="footer-contact">
-                <a href="#" onclick="showContactForm('general')">contact@orhar.com</a>
-                <span class="separator">•</span>
-                <span>orhar.com</span>
-            </div>
-            <div class="footer-links">
-                <a href="privacy.html"><i class="fas fa-shield-alt"></i>
-                    <span data-i18n="foot_priv"> Privacy Policy</span>
-                </a>
-                <a href="terms.html"><i class="fas fa-scale-balanced"></i>
-                    <span data-i18n="foot_terms"> Terms of Service</span>
-                </a>
-                <a href="licenses.html"><i class="fas fa-file-contract"></i>
-                    <span data-i18n="foot_lic"> Licenses</span>
-                </a>
-                <a href="contact.html"><i class="fas fa-envelope"></i>
-                    <span data-i18n="nav_contact"> Contact Us</span>
-                </a>
-                <a href="preview.html"><i class="fas fa-images"></i>
-                    <span data-i18n="nav_prev"> Preview the App</span>
-                </a>
-                <a href="https://github.com/Instiledge/orhar" target="_blank" rel="noopener" class="github-link">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-            </div>
-        </div>
-        <div class="copyright">
-            &copy; 2026 ORHAR. <span data-i18n="foot_rights">All Rights Reserved.</span><br>
-            <span data-i18n="foot_verse">"Your word is a lamp to my feet, a light to my path." — Psalm 119:105</span>
-        </div>
-    </footer>
+    <div id="footer-container"></div>
+
+    <script>
+        const footerLang = (typeof activeLang !== 'undefined') ? activeLang : (localStorage.getItem('orhar_lang') || 'en');
+        fetch('/footer.html')
+            .then(response => response.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const footerBlock = doc.getElementById('footer-' + footerLang);
+                if (footerBlock) {
+                    footerBlock.style.display = '';
+                    document.getElementById('footer-container').appendChild(footerBlock);
+                } else {
+                    const enFooter = doc.getElementById('footer-en');
+                    enFooter.style.display = '';
+                    document.getElementById('footer-container').appendChild(enFooter);
+                }
+            })
+            .catch(() => {
+                console.log('Footer not available');
+            });
+    </script>
 
     <script>
         let activeLang = 'en';

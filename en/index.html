@@ -948,30 +948,18 @@
                 padding: 24px 20px;
             }
         }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .github-link i {
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
-
-    <header>
-        <a href="/en/" class="logo-container">
-            <img src="/logo.png" alt="ORHAR Logo" class="logo-img" onerror="this.style.display='none'">
-            <span class="logo-text">ORHAR</span>
-        </a>
-        <nav class="nav-links">
-            <a href="#story">The Story</a>
-            <a href="#features">Features</a>
-            <a href="/contact.html">Contact</a>
-            <select id="langSwitch" class="lang-select" onchange="switchLanguage(this.value)">
-                <option value="en" selected>🇬🇧 EN</option>
-                <option value="fr">🇫🇷 FR</option>
-                <option value="es">🇪🇸 ES</option>
-                <option value="de">🇩🇪 DE</option>
-                <option value="it">🇮🇹 IT</option>
-                <option value="pt">🇵🇹 PT</option>
-                <option value="pl">🇵🇱 PL</option>
-            </select>
-        </nav>
-    </header>
 
     <!-- ========== LATEST UPDATE ========== -->
     <div class="update-section" id="update-container">
@@ -1205,25 +1193,6 @@
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h2>ORHAR</h2>
-                <p>Made with ❤️ for the life of prayer.</p>
-            </div>
-            <div class="footer-links">
-                <a href="/privacy.html">Privacy Policy</a>
-                <a href="/terms.html">Terms of Service</a>
-                <a href="/licenses.html">Licenses</a>
-                <a href="/contact.html">Contact Us</a>
-            </div>
-        </div>
-        <div class="copyright">
-            &copy; 2026 ORHAR. All Rights Reserved.<br>
-            "Your word is a lamp to my feet, a light to my path." — Psalm 119:105
-        </div>
-    </footer>
-
     <script>
         // ========== THEMES LOGIC ==========
         const appThemes = [
@@ -1401,5 +1370,12 @@
             });
         }
     </script>
+
+    <script>
+        window.headerLinks = 'home';
+    </script>
+    <script src="/components/header.js"></script>
+    <script src="/components/footer.js"></script>
+</body>
 </body>
 </html>

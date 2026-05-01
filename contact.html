@@ -627,6 +627,15 @@
             transition: var(--theme-transition);
             color: #FFFFFF;
         }
+
+        #footer-container footer {
+            animation: footerFadeIn 0.3s ease;
+        }
+        
+        @keyframes footerFadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
         
         .footer-content { 
             max-width: 1200px; 
@@ -1019,25 +1028,35 @@
     <div id="footer-container"></div>
 
     <script>
-        const footerLang = (typeof activeLang !== 'undefined') ? activeLang : (localStorage.getItem('orhar_lang') || 'en');
-        fetch('/footer.html')
-            .then(response => response.text())
-            .then(html => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const footerBlock = doc.getElementById('footer-' + footerLang);
-                if (footerBlock) {
-                    footerBlock.style.display = '';
-                    document.getElementById('footer-container').appendChild(footerBlock);
-                } else {
-                    const enFooter = doc.getElementById('footer-en');
-                    enFooter.style.display = '';
-                    document.getElementById('footer-container').appendChild(enFooter);
-                }
-            })
-            .catch(() => {
-                console.log('Footer not available');
-            });
+        function loadFooter(lang) {
+            const container = document.getElementById('footer-container');
+            container.innerHTML = ''; // Clear existing footer
+            
+            fetch('/footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const footerBlock = doc.getElementById('footer-' + lang);
+                    
+                    if (footerBlock) {
+                        footerBlock.style.display = '';
+                        container.appendChild(footerBlock);
+                    } else {
+                        // Fallback to English
+                        const enFooter = doc.getElementById('footer-en');
+                        enFooter.style.display = '';
+                        container.appendChild(enFooter);
+                    }
+                })
+                .catch(() => {
+                    console.log('Footer not available');
+                });
+        }
+        
+        // Initial load
+        const initLang = (typeof activeLang !== 'undefined') ? activeLang : (localStorage.getItem('orhar_lang') || 'en');
+        loadFooter(initLang);
     </script>
 
     <script>
@@ -1477,6 +1496,8 @@
 
             localStorage.setItem('orhar_lang', lang);
             document.documentElement.lang = lang;
+
+            loadFooter(lang);
         }
 
         document.addEventListener("DOMContentLoaded", () => {

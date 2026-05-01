@@ -961,6 +961,27 @@
 </head>
 <body>
 
+    <header>
+        <a href="/de/" class="logo-container">
+            <img src="/logo.png" alt="ORHAR Logo" class="logo-img" onerror="this.style.display='none'">
+            <span class="logo-text">ORHAR</span>
+        </a>
+        <nav class="nav-links">
+            <a href="#story">Die Geschichte</a>
+            <a href="#features">Funktionen</a>
+            <a href="/contact.html">Kontakt</a>
+            <select id="langSwitch" class="lang-select" onchange="switchLanguage(this.value)">
+                <option value="en">🇬🇧 EN</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="de" selected>🇩🇪 DE</option>
+                <option value="it">🇮🇹 IT</option>
+                <option value="pt">🇵🇹 PT</option>
+                <option value="pl">🇵🇱 PL</option>
+            </select>
+        </nav>
+    </header>
+
     <!-- ========== NEUESTES ========== -->
     <div class="update-section" id="update-container">
         <div class="update-badge">📣 Neuestes</div>
@@ -1193,6 +1214,28 @@
         </div>
     </section>
 
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>ORHAR</h2>
+                <p>Gemacht mit ❤️ für das Leben im Gebet.</p>
+            </div>
+            <div class="footer-links">
+                <a href="/privacy.html">Datenschutz</a>
+                <a href="/terms.html">Bedingungen</a>
+                <a href="/licenses.html">Lizenzen</a>
+                <a href="/contact.html">Kontakt</a>
+                <a href="https://github.com/Instiledge/orhar" target="_blank" rel="noopener" class="github-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 ORHAR. Alle Rechte vorbehalten.<br>
+            »Dein Wort ist meines Fußes Leuchte und ein Licht auf meinem Wege.« — Psalm 119:105
+        </div>
+    </footer>
+
     <script>
         // ========== THEMEN ==========
         const appThemes = [
@@ -1362,12 +1405,5 @@
             });
         }
     </script>
-    
-    <script>
-        window.headerLinks = 'home';
-    </script>
-    <script src="/components/header.js"></script>
-    <script src="/components/footer.js"></script>
-</body>
 </body>
 </html>

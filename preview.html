@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preview ORHAR — The Mountain of Light</title>
+    <title data-i18n="prev_title">Preview ORHAR — The Mountain of Light</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,6 +44,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1A2E4A">
     <meta name="msapplication-TileColor" content="#1A2E4A">
+    <meta name="msapplication-config" content="/browserconfig.xml">
 
     <!-- ========== PWA ========== -->
     <link rel="manifest" href="/manifest.json">
@@ -51,17 +52,34 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="ORHAR">
 
+    <!-- ========== iOS SPLASH SCREEN ========== -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2048.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2048.png" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2048.png" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3)">
+    <link rel="apple-touch-startup-image" href="/apple-splash-2048.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)">
+    
+    <!-- ========== SERVICE WORKER ========== -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(() => console.log('ORHAR: Service Worker registered'))
+                    .catch(() => console.log('ORHAR: Service Worker registration failed'));
+            });
+        }
+    </script>
+
     <!-- ========== STRUCTURED DATA ========== -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "ORHAR",
-        "applicationCategory": "ReligiousApplication",
-        "operatingSystem": "Android",
-        "description": "A multilingual Bible app built for the daily ascent through Scripture.",
+        "description": "A multilingual Bible app built for the daily ascent through Scripture. OR means light, HAR means mountain.",
         "url": "https://orhar.com",
-        "image": "https://orhar.com/og-image.png",
+        "applicationCategory": "ReligiousApplication",
+        "operatingSystem": "iOS, Android",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "author": { "@type": "Organization", "name": "ORHAR", "url": "https://orhar.com" }
     }
@@ -83,6 +101,7 @@
             
             --font-display: 'Cormorant Garamond', serif;
             --font-body: 'Work Sans', sans-serif;
+            --theme-transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -93,6 +112,7 @@
             background-color: var(--bg-color); 
             color: var(--text-dark); 
             line-height: 1.7; 
+            transition: var(--theme-transition);
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
@@ -100,7 +120,16 @@
         h1, h2, h3, h4 { 
             font-family: var(--font-display); 
             color: var(--primary-navy); 
+            transition: var(--theme-transition); 
         }
+        
+        a { 
+            text-decoration: none; 
+            color: var(--primary-navy); 
+            transition: var(--theme-transition); 
+        }
+        
+        a:hover { color: var(--accent-brown); }
 
         /* ========== HEADER ========== */
         header { 
@@ -115,13 +144,14 @@
             top: 0; 
             z-index: 1000; 
             border-bottom: 1px solid rgba(var(--accent-gold-rgb), 0.3); 
+            transition: var(--theme-transition);
         }
         
         .logo-container { 
             display: flex; 
             align-items: center; 
             gap: 14px; 
-            text-decoration: none;
+            text-decoration: none !important;
         }
         
         .logo-img { 
@@ -130,6 +160,12 @@
             border-radius: 12px; 
             object-fit: cover;
             box-shadow: 0 4px 12px rgba(var(--accent-gold-rgb), 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .logo-container:hover .logo-img {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(var(--accent-gold-rgb), 0.4);
         }
         
         .logo-text { 
@@ -138,19 +174,55 @@
             font-weight: 700; 
             letter-spacing: 3px; 
             color: var(--primary-navy);
+            transition: var(--theme-transition);
         }
         
-        .nav-links { display: flex; gap: 28px; align-items: center; }
+        .nav-links { 
+            display: flex; 
+            gap: 28px; 
+            align-items: center; 
+        }
         
         .nav-links a { 
             font-size: 15px; 
             font-weight: 500;
+            position: relative;
+            padding: 4px 0;
+            transition: color 0.3s ease;
             color: var(--primary-navy);
             text-decoration: none;
-            transition: color 0.3s ease;
         }
         
-        .nav-links a:hover { color: var(--accent-brown); }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-brown);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after { width: 100%; }
+        
+        .lang-select { 
+            background: transparent; 
+            border: 1.5px solid var(--accent-gold); 
+            color: var(--primary-navy); 
+            padding: 8px 14px; 
+            border-radius: 8px; 
+            font-family: var(--font-body); 
+            font-weight: 500; 
+            cursor: pointer; 
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-select:hover { 
+            border-color: var(--accent-brown);
+            box-shadow: 0 2px 8px rgba(var(--accent-brown-rgb), 0.15);
+        }
 
         /* ========== HERO ========== */
         .hero {
@@ -171,6 +243,7 @@
             font-weight: 600;
             letter-spacing: 1px;
             margin-bottom: 24px;
+            font-family: var(--font-body);
         }
         
         .hero h1 {
@@ -198,7 +271,7 @@
             line-height: 1.8;
         }
 
-        /* ========== SCREENSHOT GALLERY ========== */
+        /* ========== VIGNETTE GALLERY ========== */
         .gallery-section {
             padding: 40px 5% 80px;
             max-width: 1200px;
@@ -207,59 +280,157 @@
         
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
             margin-top: 40px;
         }
         
-        .screenshot-card {
-            text-align: center;
-            transition: transform 0.4s ease;
-        }
-        
-        .screenshot-card:hover {
-            transform: translateY(-8px);
-        }
-        
-        .phone-frame {
+        .vignette-card {
             position: relative;
-            display: inline-block;
+            cursor: pointer;
+            transition: all 0.4s ease;
         }
         
-        .phone-frame img {
-            width: 260px;
+        .vignette-card:hover {
+            transform: translateY(-8px);
+            z-index: 10;
+        }
+        
+        .vignette-card img {
+            width: 100%;
             height: auto;
-            border-radius: 28px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-            transition: box-shadow 0.4s ease;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            transition: all 0.4s ease;
         }
         
-        .screenshot-card:hover .phone-frame img {
-            box-shadow: 0 30px 70px rgba(0,0,0,0.25);
+        .vignette-card:hover img {
+            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+            transform: scale(1.05);
         }
         
-        .screenshot-label {
+        .vignette-label {
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .vignette-card:hover .vignette-label {
+            opacity: 1;
+        }
+        
+        .vignette-label h3 {
+            font-size: 17px;
+            margin-bottom: 4px;
+        }
+        
+        .vignette-label p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ========== LIGHTBOX ========== */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            backdrop-filter: blur(8px);
+        }
+        
+        .lightbox-overlay.active { display: flex; }
+        
+        .lightbox-content {
+            max-width: 360px;
+            width: 100%;
+            text-align: center;
+            animation: lightboxIn 0.3s ease;
+        }
+        
+        @keyframes lightboxIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .lightbox-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+        }
+        
+        .lightbox-info {
             margin-top: 20px;
+            color: #FFFFFF;
         }
         
-        .screenshot-label h3 {
-            font-size: 20px;
+        .lightbox-info h3 {
+            font-size: 22px;
+            color: var(--accent-gold);
             margin-bottom: 6px;
         }
         
-        .screenshot-label p {
-            font-size: 14px;
-            color: var(--text-muted);
-            max-width: 240px;
+        .lightbox-info p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+            max-width: 300px;
             margin: 0 auto;
         }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            color: #FFFFFF;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+        
+        .lightbox-close:hover { background: rgba(255,255,255,0.3); }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            color: #FFFFFF;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+        
+        .lightbox-nav:hover { background: rgba(255,255,255,0.3); }
+        .lightbox-prev { left: 24px; }
+        .lightbox-next { right: 24px; }
 
         /* ========== FEATURE HIGHLIGHTS ========== */
         .highlights-section {
             background: var(--surface-color);
             padding: 80px 5%;
             border-top: 1px solid rgba(var(--accent-gold-rgb), 0.3);
-            border-bottom: 1px solid rgba(var(--accent-gold-rgb), 0.3);
         }
         
         .highlights-grid {
@@ -349,257 +520,498 @@
         }
 
         /* ========== FOOTER ========== */
-        footer { 
-            background: linear-gradient(180deg, var(--primary-navy), #0f1f33); 
-            padding: 70px 5% 35px; 
-            color: #FFFFFF;
+        #footer-container footer {
+            animation: footerFadeIn 0.3s ease;
         }
         
-        .footer-content { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: flex-start; 
-            flex-wrap: wrap; 
-            gap: 40px; 
-        }
-        
-        .footer-brand h2 { 
-            font-size: 34px; 
-            letter-spacing: 4px; 
-            margin-bottom: 8px;
-            color: var(--accent-gold);
-        }
-        
-        .footer-brand p { 
-            font-style: italic; 
-            color: rgba(255,255,255,0.6); 
-            font-family: var(--font-display); 
-            font-size: 18px; 
-        }
-        
-        .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
-        
-        .footer-links a { 
-            font-size: 14px; 
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover { color: var(--accent-gold); }
-        
-        .copyright { 
-            text-align: center; 
-            margin-top: 40px; 
-            font-size: 13px; 
-            color: rgba(255,255,255,0.5); 
-            line-height: 1.8;
+        @keyframes footerFadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .github-link i { font-size: 14px; }
+
         /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        
         @media (max-width: 768px) {
             .hero h1 { font-size: 38px; }
             .hero .subtitle { font-size: 18px; }
-            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
             .highlights-grid { grid-template-columns: 1fr 1fr; }
             .nav-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
             header { flex-direction: column; gap: 16px; }
-            .footer-content { flex-direction: column; text-align: center; align-items: center; }
-            .footer-links { justify-content: center; }
+            .lightbox-prev { left: 12px; }
+            .lightbox-next { right: 12px; }
         }
 
         @media (max-width: 480px) {
             .hero h1 { font-size: 30px; }
-            .phone-frame img { width: 220px; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
             .highlights-grid { grid-template-columns: 1fr; }
+            .lightbox-overlay { padding: 20px; }
+            .lightbox-content { max-width: 300px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="/" class="logo-container">
-            <img src="/logo.png" alt="ORHAR Logo" class="logo-img" onerror="this.style.display='none'">
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="ORHAR Logo" class="logo-img" onerror="this.style.display='none'">
             <span class="logo-text">ORHAR</span>
         </a>
         <nav class="nav-links">
-            <a href="/">Home</a>
-            <a href="/updates.html">Updates</a>
-            <a href="/contact.html">Contact</a>
+            <a href="index.html" data-i18n="nav_home">Home</a>
+            <a href="preview.html" data-i18n="nav_prev">Preview</a>
+            <a href="contact.html" data-i18n="nav_contact">Contact</a>
+            <select id="langSwitch" class="lang-select" onchange="changeLang(this.value)">
+                <option value="en">🇬🇧 EN</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="de">🇩🇪 DE</option>
+                <option value="it">🇮🇹 IT</option>
+                <option value="pt">🇵🇹 PT</option>
+                <option value="pl">🇵🇱 PL</option>
+            </select>
         </nav>
     </header>
 
     <main>
         <!-- ========== HERO ========== -->
         <section class="hero">
-            <div class="hero-badge">✦ See It in Action</div>
-            <h1>Preview ORHAR</h1>
-            <p class="subtitle">A glimpse of the Mountain of Light.</p>
-            <p class="description">Every screen is crafted for the daily ascent — beautiful typography, offline access, and tools that walk with you through Scripture.</p>
+            <div class="hero-badge" data-i18n="prev_badge">✦ See It in Action</div>
+            <h1 data-i18n="prev_heading">Preview ORHAR</h1>
+            <p class="subtitle" data-i18n="prev_subtitle">A glimpse of the Mountain of Light.</p>
+            <p class="description" data-i18n="prev_desc">Every screen is crafted for the daily ascent — beautiful typography, offline access, and tools that walk with you through Scripture.</p>
         </section>
 
-        <!-- ========== SCREENSHOT GALLERY ========== -->
+        <!-- ========== VIGNETTE GALLERY ========== -->
         <section class="gallery-section">
-            <h2 style="text-align:center;font-size:36px;margin-bottom:8px;">Explore the App</h2>
-            <p style="text-align:center;color:var(--text-muted);font-size:16px;font-style:italic;margin-bottom:40px;">Every screen designed for your daily ascent</p>
+            <h2 style="text-align:center;font-size:36px;margin-bottom:8px;" data-i18n="gallery_title">Explore the App</h2>
+            <p style="text-align:center;color:var(--text-muted);font-size:16px;font-style:italic;margin-bottom:40px;" data-i18n="gallery_sub">Click any image to enlarge</p>
             <div class="gallery-grid" id="screenshot-gallery">
-                
-                <!-- Home + Daily Verse -->
-                <div class="screenshot-card">
-                    <div class="phone-frame">
-                        <img src="/screenshots/home-daily-verse.jpg" alt="Home with Daily Verse">
-                    </div>
-                    <div class="screenshot-label">
-                        <h3>Home & Daily Verse</h3>
-                        <p>Start each day with a carefully selected scripture to illuminate your path.</p>
-                    </div>
-                </div>
-
-                <!-- Bible Reader -->
-                <div class="screenshot-card">
-                    <div class="phone-frame">
-                        <img src="/screenshots/bible-reader.jpg" alt="Bible Reader">
-                    </div>
-                    <div class="screenshot-label">
-                        <h3>Immersive Bible Reader</h3>
-                        <p>Clean typography, multiple versions, full offline access. The Word, uninterrupted.</p>
-                    </div>
-                </div>
-
-                <!-- Random Verse -->
-                <div class="screenshot-card">
-                    <div class="phone-frame">
-                        <img src="/screenshots/random-verse.jpg" alt="Random Verse Generator">
-                    </div>
-                    <div class="screenshot-label">
-                        <h3>Random Verse Generator</h3>
-                        <p>Let the Spirit guide you. Tap for a verse from either testament — perfect for Lectio Divina.</p>
-                    </div>
-                </div>
-
-                <!-- Reading Plan -->
-                <div class="screenshot-card">
-                    <div class="phone-frame">
-                        <img src="/screenshots/reading-plan.jpg" alt="Reading Plan">
-                    </div>
-                    <div class="screenshot-label">
-                        <h3>Custom Reading Plans</h3>
-                        <p>365-day plans, daily Psalms, daily Proverbs. Read through Scripture at your own pace.</p>
-                    </div>
-                </div>
-
-                <!-- Quiz -->
-                <div class="screenshot-card">
-                    <div class="phone-frame">
-                        <img src="/screenshots/quiz.jpg" alt="Bible Quiz">
-                    </div>
-                    <div class="screenshot-label">
-                        <h3>Interactive Bible Quiz</h3>
-                        <p>Level up your knowledge with questions across all books. Leaderboards included.</p>
-                    </div>
-                </div>
-
-                <!-- Notes -->
-                <div class="screenshot-card">
-                    <div class="phone-frame">
-                        <img src="/screenshots/notes.jpg" alt="Personal Notes">
-                    </div>
-                    <div class="screenshot-label">
-                        <h3>Personal Notes</h3>
-                        <p>Capture your revelations, tag them by category, and sync securely across devices.</p>
-                    </div>
-                </div>
-
-                <!-- Spiritual Books -->
-                <div class="screenshot-card">
-                    <div class="phone-frame">
-                        <img src="/screenshots/spiritual-books.jpg" alt="Spiritual Books Library">
-                    </div>
-                    <div class="screenshot-label">
-                        <h3>Spiritual Books Library</h3>
-                        <p>Access a curated library of theological and spiritual writings inside the app.</p>
-                    </div>
-                </div>
-
-                <!-- Bible Versions -->
-                <div class="screenshot-card">
-                    <div class="phone-frame">
-                        <img src="/screenshots/bible-versions.jpg" alt="Bible Versions">
-                    </div>
-                    <div class="screenshot-label">
-                        <h3>10+ Bible Versions</h3>
-                        <p>Multiple translations in multiple languages. Download the ones you need for offline use.</p>
-                    </div>
-                </div>
-
+                <!-- Screenshots injected by JS -->
             </div>
         </section>
 
+        <!-- ========== LIGHTBOX ========== -->
+        <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+            <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+            <button class="lightbox-nav lightbox-prev" onclick="event.stopPropagation(); navigateLightbox(-1)"><i class="fas fa-chevron-left"></i></button>
+            <button class="lightbox-nav lightbox-next" onclick="event.stopPropagation(); navigateLightbox(1)"><i class="fas fa-chevron-right"></i></button>
+            <div class="lightbox-content" onclick="event.stopPropagation()">
+                <img id="lightbox-img" src="" alt="">
+                <div class="lightbox-info">
+                    <h3 id="lightbox-title"></h3>
+                    <p id="lightbox-desc"></p>
+                </div>
+            </div>
+        </div>
+
         <!-- ========== FEATURE HIGHLIGHTS ========== -->
         <section class="highlights-section">
-            <h2 style="text-align:center;font-size:36px;">Built for the Daily Ascent</h2>
+            <h2 style="text-align:center;font-size:36px;" data-i18n="highlights_title">Built for the Daily Ascent</h2>
             <div class="highlights-grid">
                 <div class="highlight-item">
                     <i class="fas fa-globe"></i>
-                    <h4>7 Languages</h4>
-                    <p>English, French, Spanish, German, Italian, Portuguese, Polish</p>
+                    <h4 data-i18n="hl_languages">7 Languages</h4>
+                    <p data-i18n="hl_languages_desc">English, French, Spanish, German, Italian, Portuguese, Polish</p>
                 </div>
                 <div class="highlight-item">
                     <i class="fas fa-wifi"></i>
-                    <h4>100% Offline</h4>
-                    <p>No internet needed. The Word goes where you go.</p>
+                    <h4 data-i18n="hl_offline">100% Offline</h4>
+                    <p data-i18n="hl_offline_desc">No internet needed. The Word goes where you go.</p>
                 </div>
                 <div class="highlight-item">
                     <i class="fas fa-palette"></i>
-                    <h4>9 Color Themes</h4>
-                    <p>Choose a palette that reflects your spirit.</p>
+                    <h4 data-i18n="hl_themes">9 Color Themes</h4>
+                    <p data-i18n="hl_themes_desc">Choose a palette that reflects your spirit.</p>
                 </div>
                 <div class="highlight-item">
                     <i class="fas fa-shield-alt"></i>
-                    <h4>Privacy First</h4>
-                    <p>Your notes and prayers are encrypted. We never sell your data.</p>
+                    <h4 data-i18n="hl_privacy">Privacy First</h4>
+                    <p data-i18n="hl_privacy_desc">Your notes and prayers are encrypted. We never sell your data.</p>
                 </div>
             </div>
         </section>
 
         <!-- ========== CTA ========== -->
         <section class="cta-section">
-            <h2>Ready to Climb the Mountain?</h2>
-            <p>ORHAR is free. No ads on the premium plan. Just the Word, beautifully crafted for your daily ascent.</p>
+            <h2 data-i18n="cta_title">Ready to Climb the Mountain?</h2>
+            <p data-i18n="cta_desc">ORHAR is free. No ads on the premium plan. Just the Word, beautifully crafted for your daily ascent.</p>
             <div class="cta-buttons">
                 <a href="/app.html" class="cta-btn">
-                    <i class="fab fa-google-play"></i> Get on Google Play
+                    <i class="fab fa-google-play"></i> <span data-i18n="cta_play">Get on Google Play</span>
                 </a>
                 <a href="/contact.html" class="cta-btn cta-btn-secondary">
-                    <i class="fas fa-bell"></i> Get Launch Updates
+                    <i class="fas fa-bell"></i> <span data-i18n="cta_updates">Get Launch Updates</span>
                 </a>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h2>ORHAR</h2>
-                <p>Made with ❤️ for the life of prayer.</p>
-            </div>
-            <div class="footer-links">
-                <a href="/privacy.html">Privacy Policy</a>
-                <a href="/terms.html">Terms of Service</a>
-                <a href="/licenses.html">Open Source Licenses</a>
-                <a href="/contact.html">Contact Us</a>
-                <a href="https://github.com/Instiledge/orhar" target="_blank" rel="noopener">
-                    <i class="fab fa-github"></i> Open Source
-                </a>
-            </div>
-        </div>
-        <div class="copyright">
-            &copy; 2026 ORHAR. All Rights Reserved.<br>
-            "Your word is a lamp to my feet, a light to my path." — Psalm 119:105
-        </div>
-    </footer>
+    <div id="footer-container"></div>
 
+    <script>
+        let footerLoaded = false;
+        let activeLang = 'en';
+        
+        function loadFooter(lang) {
+            const container = document.getElementById('footer-container');
+            while (container.firstChild) {
+                container.removeChild(container.firstChild);
+            }
+            
+            fetch('/footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    let footerBlock = doc.getElementById('footer-' + lang);
+                    
+                    if (!footerBlock) {
+                        footerBlock = doc.getElementById('footer-en');
+                    }
+                    
+                    if (footerBlock) {
+                        footerBlock.style.display = '';
+                        container.appendChild(footerBlock);
+                        footerLoaded = true;
+                    }
+                })
+                .catch(() => {
+                    console.log('Footer not available');
+                });
+        }
+
+        // ========== TRANSLATIONS ==========
+        const previewData = {
+            en: {
+                nav_home: "Home", nav_prev: "Preview", nav_contact: "Contact",
+                prev_badge: "✦ See It in Action",
+                prev_heading: "Preview ORHAR",
+                prev_subtitle: "A glimpse of the Mountain of Light.",
+                prev_desc: "Every screen is crafted for the daily ascent — beautiful typography, offline access, and tools that walk with you through Scripture.",
+                gallery_title: "Explore the App",
+                gallery_sub: "Click any image to enlarge",
+                highlights_title: "Built for the Daily Ascent",
+                hl_languages: "7 Languages",
+                hl_languages_desc: "English, French, Spanish, German, Italian, Portuguese, Polish",
+                hl_offline: "100% Offline",
+                hl_offline_desc: "No internet needed. The Word goes where you go.",
+                hl_themes: "9 Color Themes",
+                hl_themes_desc: "Choose a palette that reflects your spirit.",
+                hl_privacy: "Privacy First",
+                hl_privacy_desc: "Your notes and prayers are encrypted. We never sell your data.",
+                cta_title: "Ready to Climb the Mountain?",
+                cta_desc: "ORHAR is free. No ads on the premium plan. Just the Word, beautifully crafted for your daily ascent.",
+                cta_play: "Get on Google Play",
+                cta_updates: "Get Launch Updates",
+                screenshots: [
+                    { src: "/screenshots/home-daily-verse.jpg", title: "Home & Daily Verse", desc: "Start each day with a carefully selected scripture to illuminate your path." },
+                    { src: "/screenshots/bible-reader.jpg", title: "Immersive Bible Reader", desc: "Clean typography, multiple versions, full offline access. The Word, uninterrupted." },
+                    { src: "/screenshots/random-verse.jpg", title: "Random Verse Generator", desc: "Let the Spirit guide you. Tap for a verse from either testament — perfect for Lectio Divina." },
+                    { src: "/screenshots/reading-plan.jpg", title: "Custom Reading Plans", desc: "365-day plans, daily Psalms, daily Proverbs. Read through Scripture at your own pace." },
+                    { src: "/screenshots/quiz.jpg", title: "Interactive Bible Quiz", desc: "Level up your knowledge with questions across all books. Leaderboards included." },
+                    { src: "/screenshots/notes.jpg", title: "Personal Notes", desc: "Capture your revelations, tag them by category, and sync securely across devices." },
+                    { src: "/screenshots/spiritual-books.jpg", title: "Spiritual Books Library", desc: "Access a curated library of theological and spiritual writings inside the app." },
+                    { src: "/screenshots/bible-versions.jpg", title: "10+ Bible Versions", desc: "Multiple translations in multiple languages. Download the ones you need for offline use." }
+                ]
+            },
+            fr: {
+                nav_home: "Accueil", nav_prev: "Aperçu", nav_contact: "Contact",
+                prev_badge: "✦ Voir en Action",
+                prev_heading: "Aperçu d'ORHAR",
+                prev_subtitle: "Un aperçu de la Montagne de Lumière.",
+                prev_desc: "Chaque écran est conçu pour l'ascension quotidienne — belle typographie, accès hors ligne et des outils qui marchent avec vous à travers les Écritures.",
+                gallery_title: "Explorer l'Application",
+                gallery_sub: "Cliquez sur une image pour l'agrandir",
+                highlights_title: "Conçu pour l'Ascension Quotidienne",
+                hl_languages: "7 Langues",
+                hl_languages_desc: "Anglais, Français, Espagnol, Allemand, Italien, Portugais, Polonais",
+                hl_offline: "100% Hors Ligne",
+                hl_offline_desc: "Pas d'internet nécessaire. La Parole va où vous allez.",
+                hl_themes: "9 Thèmes de Couleur",
+                hl_themes_desc: "Choisissez une palette qui reflète votre esprit.",
+                hl_privacy: "Confidentialité d'Abord",
+                hl_privacy_desc: "Vos notes et prières sont cryptées. Nous ne vendons jamais vos données.",
+                cta_title: "Prêt à Gravrir la Montagne ?",
+                cta_desc: "ORHAR est gratuit. Sans publicité sur le plan premium. Juste la Parole, magnifiquement conçue pour votre ascension quotidienne.",
+                cta_play: "Télécharger sur Google Play",
+                cta_updates: "Recevoir les Alertes de Lancement",
+                screenshots: [
+                    { src: "/screenshots/home-daily-verse.jpg", title: "Accueil & Verset du Jour", desc: "Commencez chaque jour avec une écriture soigneusement sélectionnée pour illuminer votre chemin." },
+                    { src: "/screenshots/bible-reader.jpg", title: "Lecteur Biblique Immersif", desc: "Typographie épurée, versions multiples, accès hors ligne complet. La Parole, sans interruption." },
+                    { src: "/screenshots/random-verse.jpg", title: "Générateur de Verset Aléatoire", desc: "Laissez l'Esprit vous guider. Appuyez pour un verset — parfait pour la Lectio Divina." },
+                    { src: "/screenshots/reading-plan.jpg", title: "Plans de Lecture Personnalisés", desc: "Plans de 365 jours, Psaumes quotidiens, Proverbes quotidiens. Lisez la Bible à votre rythme." },
+                    { src: "/screenshots/quiz.jpg", title: "Quiz Biblique Interactif", desc: "Améliorez vos connaissances avec des questions sur tous les livres. Classements inclus." },
+                    { src: "/screenshots/notes.jpg", title: "Notes Personnelles", desc: "Capturez vos révélations, catégorisez-les et synchronisez-les en toute sécurité." },
+                    { src: "/screenshots/spiritual-books.jpg", title: "Bibliothèque Spirituelle", desc: "Accédez à une bibliothèque organisée d'écrits théologiques et spirituels dans l'application." },
+                    { src: "/screenshots/bible-versions.jpg", title: "10+ Versions de la Bible", desc: "Traductions multiples en plusieurs langues. Téléchargez celles dont vous avez besoin." }
+                ]
+            },
+            es: {
+                nav_home: "Inicio", nav_prev: "Vista Previa", nav_contact: "Contacto",
+                prev_badge: "✦ Ver en Acción",
+                prev_heading: "Vista Previa de ORHAR",
+                prev_subtitle: "Un vistazo al Monte de Luz.",
+                prev_desc: "Cada pantalla está diseñada para el ascenso diario — hermosa tipografía, acceso sin conexión y herramientas que caminan contigo a través de las Escrituras.",
+                gallery_title: "Explorar la Aplicación",
+                gallery_sub: "Haz clic en cualquier imagen para ampliar",
+                highlights_title: "Construido para el Ascenso Diario",
+                hl_languages: "7 Idiomas",
+                hl_languages_desc: "Inglés, Francés, Español, Alemán, Italiano, Portugués, Polaco",
+                hl_offline: "100% Sin Conexión",
+                hl_offline_desc: "No se necesita internet. La Palabra va contigo donde vayas.",
+                hl_themes: "9 Temas de Color",
+                hl_themes_desc: "Elige una paleta que refleje tu espíritu.",
+                hl_privacy: "Privacidad Primero",
+                hl_privacy_desc: "Tus notas y oraciones están encriptadas. Nunca vendemos tus datos.",
+                cta_title: "¿Listo para Escalar la Montaña?",
+                cta_desc: "ORHAR es gratuito. Sin anuncios en el plan premium. Solo la Palabra, bellamente diseñada para tu ascenso diario.",
+                cta_play: "Descargar en Google Play",
+                cta_updates: "Recibir Actualizaciones",
+                screenshots: [
+                    { src: "/screenshots/home-daily-verse.jpg", title: "Inicio y Verso Diario", desc: "Comienza cada día con una escritura cuidadosamente seleccionada para iluminar tu camino." },
+                    { src: "/screenshots/bible-reader.jpg", title: "Lector Bíblico Inmersivo", desc: "Tipografía limpia, múltiples versiones, acceso sin conexión. La Palabra, sin interrupción." },
+                    { src: "/screenshots/random-verse.jpg", title: "Generador de Versos Aleatorios", desc: "Deja que el Espíritu te guíe. Toca para un verso — perfecto para la Lectio Divina." },
+                    { src: "/screenshots/reading-plan.jpg", title: "Planes de Lectura Personalizados", desc: "Planes de 365 días, Salmos diarios, Proverbios diarios. Lee la Biblia a tu propio ritmo." },
+                    { src: "/screenshots/quiz.jpg", title: "Quiz Bíblico Interactivo", desc: "Sube de nivel con preguntas de todos los libros. Tablas de clasificación incluidas." },
+                    { src: "/screenshots/notes.jpg", title: "Notas Personales", desc: "Captura tus revelaciones, etiquétalas y sincronízalas de forma segura." },
+                    { src: "/screenshots/spiritual-books.jpg", title: "Biblioteca Espiritual", desc: "Accede a una biblioteca seleccionada de escritos teológicos y espirituales." },
+                    { src: "/screenshots/bible-versions.jpg", title: "10+ Versiones de la Biblia", desc: "Múltiples traducciones en varios idiomas. Descarga las que necesites." }
+                ]
+            },
+            de: {
+                nav_home: "Startseite", nav_prev: "Vorschau", nav_contact: "Kontakt",
+                prev_badge: "✦ In Aktion Sehen",
+                prev_heading: "ORHAR Vorschau",
+                prev_subtitle: "Ein Blick auf den Berg des Lichts.",
+                prev_desc: "Jeder Bildschirm ist für den täglichen Aufstieg gestaltet — schöne Typografie, Offline-Zugang und Werkzeuge, die dich durch die Schrift begleiten.",
+                gallery_title: "Die App Erkunden",
+                gallery_sub: "Klicke auf ein Bild zum Vergrößern",
+                highlights_title: "Gebaut für den Täglichen Aufstieg",
+                hl_languages: "7 Sprachen",
+                hl_languages_desc: "Englisch, Französisch, Spanisch, Deutsch, Italienisch, Portugiesisch, Polnisch",
+                hl_offline: "100% Offline",
+                hl_offline_desc: "Kein Internet nötig. Das Wort geht mit dir, wohin du gehst.",
+                hl_themes: "9 Farbthemen",
+                hl_themes_desc: "Wähle eine Palette, die deinen Geist widerspiegelt.",
+                hl_privacy: "Datenschutz Zuerst",
+                hl_privacy_desc: "Deine Notizen und Gebete sind verschlüsselt. Wir verkaufen niemals deine Daten.",
+                cta_title: "Bereit, den Berg zu Erklimmen?",
+                cta_desc: "ORHAR ist kostenlos. Keine Werbung im Premium-Plan. Nur das Wort, wunderschön gestaltet für deinen täglichen Aufstieg.",
+                cta_play: "Bei Google Play Herunterladen",
+                cta_updates: "Updates Erhalten",
+                screenshots: [
+                    { src: "/screenshots/home-daily-verse.jpg", title: "Startseite & Tagesvers", desc: "Beginne jeden Tag mit einer sorgfältig ausgewählten Schriftstelle." },
+                    { src: "/screenshots/bible-reader.jpg", title: "Immersiver Bibelleser", desc: "Klare Typografie, mehrere Versionen, vollständiger Offline-Zugang." },
+                    { src: "/screenshots/random-verse.jpg", title: "Zufallsvers-Generator", desc: "Lass dich vom Geist leiten. Tippe für einen Vers — perfekt für die Lectio Divina." },
+                    { src: "/screenshots/reading-plan.jpg", title: "Lesepläne", desc: "365-Tage-Pläne, tägliche Psalmen, tägliche Sprüche. Lies die Bibel in deinem Tempo." },
+                    { src: "/screenshots/quiz.jpg", title: "Interaktives Bibel-Quiz", desc: "Verbessere dein Wissen mit Fragen zu allen Büchern. Mit Bestenlisten." },
+                    { src: "/screenshots/notes.jpg", title: "Persönliche Notizen", desc: "Halte deine Erkenntnisse fest und synchronisiere sie sicher." },
+                    { src: "/screenshots/spiritual-books.jpg", title: "Spirituelle Bibliothek", desc: "Zugriff auf eine kuratierte Bibliothek theologischer und spiritueller Schriften." },
+                    { src: "/screenshots/bible-versions.jpg", title: "10+ Bibelversionen", desc: "Mehrere Übersetzungen in mehreren Sprachen. Lade die herunter, die du brauchst." }
+                ]
+            },
+            it: {
+                nav_home: "Home", nav_prev: "Anteprima", nav_contact: "Contatto",
+                prev_badge: "✦ Vedi in Azione",
+                prev_heading: "Anteprima ORHAR",
+                prev_subtitle: "Uno sguardo al Monte di Luce.",
+                prev_desc: "Ogni schermata è progettata per l'ascesa quotidiana — bella tipografia, accesso offline e strumenti che camminano con te attraverso le Scritture.",
+                gallery_title: "Esplora l'App",
+                gallery_sub: "Clicca su un'immagine per ingrandirla",
+                highlights_title: "Costruito per l'Ascesa Quotidiana",
+                hl_languages: "7 Lingue",
+                hl_languages_desc: "Inglese, Francese, Spagnolo, Tedesco, Italiano, Portoghese, Polacco",
+                hl_offline: "100% Offline",
+                hl_offline_desc: "Nessuna connessione necessaria. La Parola va dove vai tu.",
+                hl_themes: "9 Temi di Colore",
+                hl_themes_desc: "Scegli una tavolozza che rifletta il tuo spirito.",
+                hl_privacy: "Privacy al Primo Posto",
+                hl_privacy_desc: "Le tue note e preghiere sono crittografate. Non vendiamo mai i tuoi dati.",
+                cta_title: "Pronto a Scalare la Montagna?",
+                cta_desc: "ORHAR è gratuito. Nessuna pubblicità sul piano premium. Solo la Parola, splendidamente realizzata per la tua ascesa quotidiana.",
+                cta_play: "Scarica su Google Play",
+                cta_updates: "Ricevi Aggiornamenti",
+                screenshots: [
+                    { src: "/screenshots/home-daily-verse.jpg", title: "Home e Versetto del Giorno", desc: "Inizia ogni giorno con una scrittura accuratamente selezionata." },
+                    { src: "/screenshots/bible-reader.jpg", title: "Lettore Biblico Immersivo", desc: "Tipografia pulita, versioni multiple, accesso offline completo." },
+                    { src: "/screenshots/random-verse.jpg", title: "Generatore di Versetti Casuali", desc: "Lascia che lo Spirito ti guidi. Tocca per un versetto — perfetto per la Lectio Divina." },
+                    { src: "/screenshots/reading-plan.jpg", title: "Piani di Lettura Personalizzati", desc: "Piani di 365 giorni, Salmi quotidiani, Proverbi quotidiani." },
+                    { src: "/screenshots/quiz.jpg", title: "Quiz Biblico Interattivo", desc: "Migliora la tua conoscenza con domande su tutti i libri. Classifiche incluse." },
+                    { src: "/screenshots/notes.jpg", title: "Note Personali", desc: "Cattura le tue rivelazioni e sincronizzale in sicurezza." },
+                    { src: "/screenshots/spiritual-books.jpg", title: "Biblioteca Spirituale", desc: "Accedi a una biblioteca curata di scritti teologici e spirituali." },
+                    { src: "/screenshots/bible-versions.jpg", title: "10+ Versioni della Bibbia", desc: "Traduzioni multiple in più lingue. Scarica quelle che ti servono." }
+                ]
+            },
+            pt: {
+                nav_home: "Início", nav_prev: "Pré-visualizar", nav_contact: "Contato",
+                prev_badge: "✦ Veja em Ação",
+                prev_heading: "Pré-visualizar ORHAR",
+                prev_subtitle: "Um vislumbre do Monte de Luz.",
+                prev_desc: "Cada tela é criada para a ascensão diária — bela tipografia, acesso offline e ferramentas que caminham com você pelas Escrituras.",
+                gallery_title: "Explorar o App",
+                gallery_sub: "Clique em qualquer imagem para ampliar",
+                highlights_title: "Construído para a Ascensão Diária",
+                hl_languages: "7 Idiomas",
+                hl_languages_desc: "Inglês, Francês, Espanhol, Alemão, Italiano, Português, Polonês",
+                hl_offline: "100% Offline",
+                hl_offline_desc: "Sem necessidade de internet. A Palavra vai onde você for.",
+                hl_themes: "9 Temas de Cores",
+                hl_themes_desc: "Escolha uma paleta que reflita seu espírito.",
+                hl_privacy: "Privacidade em Primeiro Lugar",
+                hl_privacy_desc: "Suas notas e orações são criptografadas. Nunca vendemos seus dados.",
+                cta_title: "Pronto para Escalar a Montanha?",
+                cta_desc: "ORHAR é gratuito. Sem anúncios no plano premium. Apenas a Palavra, belamente elaborada para sua ascensão diária.",
+                cta_play: "Baixar no Google Play",
+                cta_updates: "Receber Atualizações",
+                screenshots: [
+                    { src: "/screenshots/home-daily-verse.jpg", title: "Início e Versículo Diário", desc: "Comece cada dia com uma escritura cuidadosamente selecionada." },
+                    { src: "/screenshots/bible-reader.jpg", title: "Leitor Bíblico Imersivo", desc: "Tipografia limpa, várias versões, acesso offline completo." },
+                    { src: "/screenshots/random-verse.jpg", title: "Gerador de Versículo Aleatório", desc: "Deixe o Espírito guiá-lo. Toque para um versículo — perfeito para a Lectio Divina." },
+                    { src: "/screenshots/reading-plan.jpg", title: "Planos de Leitura Personalizados", desc: "Planos de 365 dias, Salmos diários, Provérbios diários." },
+                    { src: "/screenshots/quiz.jpg", title: "Quiz Bíblico Interativo", desc: "Aprimore seu conhecimento com perguntas sobre todos os livros." },
+                    { src: "/screenshots/notes.jpg", title: "Notas Pessoais", desc: "Capture suas revelações e sincronize com segurança." },
+                    { src: "/screenshots/spiritual-books.jpg", title: "Biblioteca Espiritual", desc: "Acesse uma biblioteca selecionada de escritos teológicos e espirituais." },
+                    { src: "/screenshots/bible-versions.jpg", title: "10+ Versões da Bíblia", desc: "Várias traduções em vários idiomas. Baixe as que precisar." }
+                ]
+            },
+            pl: {
+                nav_home: "Strona Główna", nav_prev: "Podgląd", nav_contact: "Kontakt",
+                prev_badge: "✦ Zobacz w Akcji",
+                prev_heading: "Podgląd ORHAR",
+                prev_subtitle: "Spojrzenie na Górę Światła.",
+                prev_desc: "Każdy ekran jest stworzony z myślą o codziennym wznoszeniu się — piękna typografia, dostęp offline i narzędzia, które idą z tobą przez Pismo Święte.",
+                gallery_title: "Odkryj Aplikację",
+                gallery_sub: "Kliknij obraz, aby powiększyć",
+                highlights_title: "Zbudowana z Myślą o Codziennym Wznoszeniu",
+                hl_languages: "7 Języków",
+                hl_languages_desc: "Angielski, Francuski, Hiszpański, Niemiecki, Włoski, Portugalski, Polski",
+                hl_offline: "100% Offline",
+                hl_offline_desc: "Nie potrzebujesz internetu. Słowo idzie z tobą, gdziekolwiek jesteś.",
+                hl_themes: "9 Motywów Kolorystycznych",
+                hl_themes_desc: "Wybierz paletę, która odzwierciedla twojego ducha.",
+                hl_privacy: "Prywatność Przede Wszystkim",
+                hl_privacy_desc: "Twoje notatki i modlitwy są szyfrowane. Nigdy nie sprzedajemy twoich danych.",
+                cta_title: "Gotowy, by Wspiąć się na Górę?",
+                cta_desc: "ORHAR jest darmowa. Bez reklam w planie premium. Tylko Słowo, pięknie zaprojektowane dla twojego codziennego wznoszenia.",
+                cta_play: "Pobierz z Google Play",
+                cta_updates: "Otrzymuj Aktualizacje",
+                screenshots: [
+                    { src: "/screenshots/home-daily-verse.jpg", title: "Strona Główna i Werset Dnia", desc: "Zacznij każdy dzień od starannie wybranego fragmentu Pisma." },
+                    { src: "/screenshots/bible-reader.jpg", title: "Czytnik Biblii", desc: "Czysta typografia, wiele wersji, pełny dostęp offline." },
+                    { src: "/screenshots/random-verse.jpg", title: "Generator Losowych Wersetów", desc: "Pozwól Duchowi cię prowadzić. Dotknij, by otrzymać werset." },
+                    { src: "/screenshots/reading-plan.jpg", title: "Plany Czytania", desc: "Plany 365-dniowe, codzienne Psalmy, codzienne Przysłowia." },
+                    { src: "/screenshots/quiz.jpg", title: "Interaktywny Quiz Biblijny", desc: "Poszerzaj swoją wiedzę z pytaniami ze wszystkich ksiąg." },
+                    { src: "/screenshots/notes.jpg", title: "Osobiste Notatki", desc: "Zapisuj swoje przemyślenia i synchronizuj je bezpiecznie." },
+                    { src: "/screenshots/spiritual-books.jpg", title: "Biblioteka Duchowa", desc: "Dostęp do wyselekcjonowanej biblioteki pism teologicznych i duchowych." },
+                    { src: "/screenshots/bible-versions.jpg", title: "10+ Wersji Biblii", desc: "Wiele tłumaczeń w wielu językach. Pobierz te, których potrzebujesz." }
+                ]
+            }
+        };
+
+        // ========== RENDER GALLERY ==========
+        function renderGallery(lang) {
+            const data = previewData[lang] || previewData.en;
+            const screenshots = data.screenshots;
+            const gallery = document.getElementById('screenshot-gallery');
+            
+            gallery.innerHTML = screenshots.map((s, i) => `
+                <div class="vignette-card" onclick="openLightbox(${i})">
+                    <img src="${s.src}" alt="${s.title}" loading="lazy">
+                    <div class="vignette-label">
+                        <h3>${s.title}</h3>
+                        <p>${s.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // ========== LIGHTBOX LOGIC ==========
+        let currentIndex = 0;
+        
+        function openLightbox(index) {
+            currentIndex = index;
+            const lang = activeLang || 'en';
+            const data = previewData[lang] || previewData.en;
+            const screenshots = data.screenshots;
+            const item = screenshots[index];
+            
+            document.getElementById('lightbox-img').src = item.src;
+            document.getElementById('lightbox-img').alt = item.title;
+            document.getElementById('lightbox-title').textContent = item.title;
+            document.getElementById('lightbox-desc').textContent = item.desc;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        function navigateLightbox(direction) {
+            const lang = activeLang || 'en';
+            const data = previewData[lang] || previewData.en;
+            const total = data.screenshots.length;
+            currentIndex = (currentIndex + direction + total) % total;
+            openLightbox(currentIndex);
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // ========== LANGUAGE SWITCHER ==========
+        function changeLang(lang) {
+            activeLang = lang;
+            const data = previewData[lang] || previewData.en;
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (data[key] !== undefined) {
+                    el.textContent = data[key];
+                }
+            });
+            
+            renderGallery(lang);
+            localStorage.setItem('orhar_lang', lang);
+            document.documentElement.lang = lang;
+            
+            if (footerLoaded) {
+                loadFooter(lang);
+            }
+        }
+
+        // ========== INITIALIZATION ==========
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedLang = localStorage.getItem('orhar_lang');
+            const browserLang = navigator.language.slice(0, 2);
+            const supported = ['en', 'fr', 'es', 'de', 'it', 'pt', 'pl'];
+            let initLang = 'en'; 
+            if (savedLang && supported.includes(savedLang)) initLang = savedLang;
+            else if (supported.includes(browserLang)) initLang = browserLang;
+            
+            document.getElementById('langSwitch').value = initLang;
+            changeLang(initLang);
+            
+            if (!footerLoaded) {
+                loadFooter(initLang);
+            }
+        });
+    </script>
 </body>
 </html>

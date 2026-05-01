@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download ORHAR App</title>
+    
+    <!-- ========== FAVICONS ========== -->
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- ========== PRIMARY META TAGS ========== -->
+    <meta name="description" content="Download ORHAR — The Mountain of Light. A multilingual Bible app for the daily ascent through Scripture.">
+    <meta name="theme-color" content="#1A2E4A">
+    <link rel="canonical" href="https://orhar.com/app.html">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #FCFBF8;
+            color: #1e1e1e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 500px;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 24px rgba(207, 178, 134, 0.3);
+        }
+        
+        h1 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 36px;
+            color: #1A2E4A;
+            margin-bottom: 12px;
+        }
+        
+        p {
+            font-size: 16px;
+            color: #7f8c8d;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(207, 178, 134, 0.15);
+            border: 1px solid #CFB286;
+            color: #915B27;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .home-link {
+            display: inline-block;
+            margin-top: 24px;
+            color: #915B27;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        
+        .home-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/logo.png" alt="ORHAR Logo" class="logo" onerror="this.style.display='none'">
+        <h1 id="app-title">ORHAR App</h1>
+        <p id="app-message">The app is coming soon. For now, explore our website to learn more about the Mountain of Light.</p>
+        <div class="badge" id="app-badge">✦ Coming Soon</div>
+        <br>
+        <a href="/" class="home-link" id="app-back">← Return to ORHAR</a>
+    </div>
+
+    <script>
+        // ========== TRANSLATIONS ==========
+        const translations = {
+            en: {
+                title: 'ORHAR App',
+                message: 'The app is coming soon. For now, explore our website to learn more about the Mountain of Light.',
+                badge: '✦ Coming Soon',
+                back: '← Return to ORHAR'
+            },
+            fr: {
+                title: 'Application ORHAR',
+                message: 'L\'application arrive bientôt. En attendant, explorez notre site pour en savoir plus sur la Montagne de Lumière.',
+                badge: '✦ Bientôt Disponible',
+                back: '← Retour à ORHAR'
+            },
+            es: {
+                title: 'App ORHAR',
+                message: 'La aplicación estará disponible pronto. Mientras tanto, explora nuestro sitio para conocer más sobre el Monte de Luz.',
+                badge: '✦ Próximamente',
+                back: '← Volver a ORHAR'
+            },
+            de: {
+                title: 'ORHAR App',
+                message: 'Die App kommt bald. Erkunde vorerst unsere Website, um mehr über den Berg des Lichts zu erfahren.',
+                badge: '✦ Demnächst Verfügbar',
+                back: '← Zurück zu ORHAR'
+            },
+            it: {
+                title: 'App ORHAR',
+                message: 'L\'app arriverà presto. Per ora, esplora il nostro sito per saperne di più sul Monte di Luce.',
+                badge: '✦ In Arrivo',
+                back: '← Torna a ORHAR'
+            },
+            pt: {
+                title: 'App ORHAR',
+                message: 'O aplicativo está chegando. Por enquanto, explore nosso site para saber mais sobre o Monte de Luz.',
+                badge: '✦ Em Breve',
+                back: '← Voltar para ORHAR'
+            },
+            pl: {
+                title: 'Aplikacja ORHAR',
+                message: 'Aplikacja już wkrótce. Tymczasem poznaj naszą stronę, aby dowiedzieć się więcej o Górze Światła.',
+                badge: '✦ Wkrótce',
+                back: '← Powrót do ORHAR'
+            }
+        };
+
+        // ========== LANGUAGE DETECTION ==========
+        function detectLanguage() {
+            const savedLang = localStorage.getItem('orhar_lang');
+            const browserLang = navigator.language.slice(0, 2);
+            const supported = ['en', 'fr', 'es', 'de', 'it', 'pt', 'pl'];
+            
+            if (savedLang && supported.includes(savedLang)) return savedLang;
+            if (supported.includes(browserLang)) return browserLang;
+            return 'en';
+        }
+
+        const lang = detectLanguage();
+        const t = translations[lang] || translations.en;
+
+        // Apply translations
+        document.getElementById('app-title').textContent = t.title;
+        document.getElementById('app-message').textContent = t.message;
+        document.getElementById('app-badge').textContent = t.badge;
+        document.getElementById('app-back').textContent = t.back;
+        document.documentElement.lang = lang;
+
+        // ========== REDIRECT ==========
+        const userAgent = navigator.userAgent || '';
+        
+        if (/Android/.test(userAgent)) {
+            // ANDROID: Redirect to Google Play
+            window.location.href = 'https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME';
+        }
+        // iOS and Desktop: Show the coming soon page (no redirect needed)
+        // iOS → Website for now (App Store coming later)
+        else if (/iPhone|iPad|iPod/.test(userAgent)) {
+            // UNCOMENT WHEN iOS IS LIVE:
+            // window.location.href = 'https://apps.apple.com/app/YOUR_APP_ID';
+        }
+    </script>
+</body>
+</html>

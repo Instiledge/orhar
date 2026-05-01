@@ -105,5 +105,13 @@
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
+
+    <!-- app redirect -->
+    <url>
+        <loc>https://orhar.com/app.html</loc>
+        <lastmod>2026-05-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
     
 </urlset>

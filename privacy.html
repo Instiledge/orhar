@@ -498,6 +498,15 @@
             color: #FFFFFF;
         }
         
+        #footer-container footer {
+            animation: footerFadeIn 0.3s ease;
+        }
+        
+        @keyframes footerFadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
         .footer-content { 
             max-width: 1200px; 
             margin: 0 auto; 
@@ -627,28 +636,41 @@
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h2>ORHAR</h2>
-                <p data-i18n="foot_made">Made with ❤️ for the life of prayer.</p>
-            </div>
-            <div class="footer-links">
-                <a href="privacy.html" data-i18n="foot_priv"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
-                <a href="terms.html" data-i18n="foot_terms"><i class="fas fa-scale-balanced"></i> Terms of Service</a>
-                <a href="licenses.html" data-i18n="foot_lic"><i class="fas fa-file-contract"></i> Licenses</a>
-                <a href="contact.html" data-i18n="nav_contact"><i class="fas fa-envelope"></i> Contact Us</a>
-                <a href="preview.html" data-i18n="nav_prev"><i class="fas fa-images"></i> Preview the App</a>
-                <a href="https://github.com/Instiledge/orhar" target="_blank" rel="noopener" class="github-link">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-            </div>
-        </div>
-        <div class="copyright">
-            &copy; 2026 ORHAR. <span data-i18n="foot_rights">All Rights Reserved.</span><br>
-            <span data-i18n="foot_verse">"Your word is a lamp to my feet, a light to my path." — Psalm 119:105</span>
-        </div>
-    </footer>
+    <div id="footer-container"></div>
+
+    <script>
+        let footerLoaded = false;
+        
+        function loadFooter(lang) {
+            const container = document.getElementById('footer-container');
+            // Always clear completely before loading
+            while (container.firstChild) {
+                container.removeChild(container.firstChild);
+            }
+            
+            fetch('/footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    let footerBlock = doc.getElementById('footer-' + lang);
+                    
+                    // Fallback to English
+                    if (!footerBlock) {
+                        footerBlock = doc.getElementById('footer-en');
+                    }
+                    
+                    if (footerBlock) {
+                        footerBlock.style.display = '';
+                        container.appendChild(footerBlock);
+                        footerLoaded = true;
+                    }
+                })
+                .catch(() => {
+                    console.log('Footer not available');
+                });
+        }
+    </script>
 
     <script>
         const contactEmail = "contact@orhar.com";
@@ -1409,6 +1431,11 @@
 
             localStorage.setItem('orhar_lang', lang);
             document.documentElement.lang = lang;
+            
+            // Reload footer if already loaded
+            if (footerLoaded) {
+                loadFooter(lang);
+            }
         }
 
         // ========== INITIALIZATION ==========
@@ -1425,7 +1452,14 @@
             }
             
             document.getElementById('langSwitch').value = initLang;
+            
+            // Apply translations first
             changeLang(initLang);
+            
+            // Load footer once
+            if (!footerLoaded) {
+                loadFooter(initLang);
+            }
         });
     </script>
 </body>

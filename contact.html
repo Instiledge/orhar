@@ -1028,9 +1028,11 @@
     <div id="footer-container"></div>
 
     <script>
+        let footerLoaded = false;
+        
         function loadFooter(lang) {
             const container = document.getElementById('footer-container');
-            container.innerHTML = ''; // Clear existing footer
+            container.innerHTML = ''; // Always clear first
             
             fetch('/footer.html')
                 .then(response => response.text())
@@ -1045,18 +1047,23 @@
                     } else {
                         // Fallback to English
                         const enFooter = doc.getElementById('footer-en');
-                        enFooter.style.display = '';
-                        container.appendChild(enFooter);
+                        if (enFooter) {
+                            enFooter.style.display = '';
+                            container.appendChild(enFooter);
+                        }
                     }
+                    footerLoaded = true;
                 })
                 .catch(() => {
                     console.log('Footer not available');
                 });
         }
         
-        // Initial load
-        const initLang = (typeof activeLang !== 'undefined') ? activeLang : (localStorage.getItem('orhar_lang') || 'en');
-        loadFooter(initLang);
+        // Only load on first run — don't load on initial page load
+        // because changeLang() will handle it via DOMContentLoaded
+        document.addEventListener('footer:reload', function(e) {
+            loadFooter(e.detail.lang);
+        });
     </script>
 
     <script>
@@ -1497,7 +1504,10 @@
             localStorage.setItem('orhar_lang', lang);
             document.documentElement.lang = lang;
 
-            loadFooter(lang);
+            // Reload footer if already loaded
+            if (footerLoaded) {
+                loadFooter(lang);
+            }
         }
 
         document.addEventListener("DOMContentLoaded", () => {
@@ -1509,6 +1519,8 @@
             else if (supported.includes(browserLang)) initLang = browserLang;
             document.getElementById('langSwitch').value = initLang;
             changeLang(initLang);
+            // Load footer once — after translations are applied
+            loadFooter(initLang);
         });
 
         // ========== INLINE CONTACT FORM LOGIC ==========

@@ -1,26 +1,36 @@
 // ORHAR — Shared Header Component
-// Usage: <script src="/components/header.js"></script>
+// Usage: <script>window.headerLinks = 'home';</script>
+//        <script src="/components/header.js"></script>
 
 (function() {
-    const currentPath = window.location.pathname;
-    const depth = (currentPath.match(/\//g) || []).length;
-    const prefix = depth > 0 ? '../'.repeat(depth - 1) || './' : './';
+    const linkSet = window.headerLinks || 'home';
     
-    // Determine active page
-    const isHome = currentPath.includes('/index.html') || currentPath === '/' || currentPath.endsWith('/');
-    const isContact = currentPath.includes('contact.html');
-    const isUpdates = currentPath.includes('updates.html');
-    
+    const links = {
+        home: `
+            <a href="#story" data-i18n="nav_story">The Story</a>
+            <a href="#features" data-i18n="nav_features">Features</a>
+            <a href="/contact.html" data-i18n="nav_contact">Contact</a>
+        `,
+        contact: `
+            <a href="/" data-i18n="nav_home">Home</a>
+            <a href="#contact-section" data-i18n="nav_contact">Contact</a>
+            <a href="#support-section" data-i18n="nav_support">Support</a>
+            <a href="#faq-section" data-i18n="nav_faq">FAQ</a>
+        `,
+        default: `
+            <a href="/" data-i18n="nav_home">Home</a>
+            <a href="/contact.html" data-i18n="nav_contact">Contact</a>
+        `
+    };
+
     const headerHTML = `
     <header>
-        <a href="${prefix}" class="logo-container">
-            <img src="${prefix}logo.png" alt="ORHAR Logo" class="logo-img" onerror="this.style.display='none'">
+        <a href="/" class="logo-container">
+            <img src="/logo.png" alt="ORHAR Logo" class="logo-img" onerror="this.style.display='none'">
             <span class="logo-text">ORHAR</span>
         </a>
         <nav class="nav-links">
-            <a href="${prefix}" data-i18n="nav_home"${isHome ? ' class="active"' : ''}>Home</a>
-            <a href="${prefix}contact.html#contact-section" data-i18n="nav_contact"${isContact ? ' class="active"' : ''}>Contact</a>
-            <a href="${prefix}updates.html" data-i18n="nav_updates"${isUpdates ? ' class="active"' : ''}>Updates</a>
+            ${links[linkSet] || links.default}
             <select id="langSwitch" class="lang-select" onchange="changeLang(this.value)">
                 <option value="en">🇬🇧 EN</option>
                 <option value="fr">🇫🇷 FR</option>
@@ -33,6 +43,5 @@
         </nav>
     </header>`;
     
-    // Insert at the very beginning of body
     document.body.insertAdjacentHTML('afterbegin', headerHTML);
 })();

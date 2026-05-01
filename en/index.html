@@ -623,6 +623,29 @@
         }
         
         .footer-links a:hover { color: var(--accent-gold); }
+
+        .footer-links .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--accent-brown);
+            color: #FFFFFF;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links .cta-btn:hover {
+            background: #b8733a;
+            color: #FFFFFF;
+        }
+        
+        .footer-links .cta-btn i {
+            font-size: 12px;
+        }
         
         .copyright { 
             text-align: center; margin-top: 40px; 
@@ -971,6 +994,7 @@
             <a href="#story">The Story</a>
             <a href="#features">Features</a>
             <a href="/contact.html">Contact</a>
+            <a href="/preview.html">Preview</a>    
             <select id="langSwitch" class="lang-select" onchange="switchLanguage(this.value)">
                 <option value="en" selected>🇬🇧 EN</option>
                 <option value="fr">🇫🇷 FR</option>
@@ -1226,6 +1250,9 @@
                 <a href="/terms.html">Terms of Service</a>
                 <a href="/licenses.html">Licenses</a>
                 <a href="/contact.html">Contact Us</a>
+                <a href="/preview.html" class="cta-btn cta-btn-secondary">
+                    <i class="fas fa-images"></i> Preview the App
+                </a>
                 <a href="https://github.com/Instiledge/orhar" target="_blank" rel="noopener" class="github-link">
                     <i class="fab fa-github"></i> GitHub
                 </a>

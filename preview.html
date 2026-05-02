@@ -649,33 +649,36 @@
         @media (max-width: 600px) {
             .hero h1 { font-size: 34px; }
             .gallery-grid { gap: 10px; }
-            .lightbox-image-wrapper img { width: 190px; }
+            .lightbox-image-wrapper img { width: 200px; }
             .vignette-label h3 { font-size: 14px; }
             .vignette-label p { font-size: 11px; }
         }
         
-        @media (max-width: 480px) {
+        /* Galaxy A51, iPhone 12/13/14, Pixel 6/7 — modern phones */
+        @media (max-width: 430px) {
             .hero h1 { font-size: 30px; }
             .hero .subtitle { font-size: 16px; }
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            .highlights-grid { grid-template-columns: 1fr; }
-            .lightbox-overlay { padding: 12px; }
-            .lightbox-dialog { gap: 16px; }
-            .lightbox-image-wrapper img { width: 180px; }
-            .lightbox-info h3 { font-size: 18px; }
-            .lightbox-info p { font-size: 13px; }
+            .lightbox-image-wrapper img { width: 200px; }
+            .lightbox-info h3 { font-size: 19px; }
+            .lightbox-info p { font-size: 14px; }
+            .vignette-label h3 { font-size: 13px; }
+            .vignette-label p { font-size: 11px; }
             .cta-buttons { flex-direction: column; align-items: center; }
             .cta-btn { width: 100%; justify-content: center; }
         }
         
+        /* Small phones — iPhone SE, iPhone 7, older devices */
         @media (max-width: 380px) {
             .hero h1 { font-size: 26px; }
             .gallery-grid { gap: 8px; }
-            .lightbox-image-wrapper img { width: 160px; }
-            .vignette-label h3 { font-size: 13px; }
-            .vignette-label p { font-size: 11px; }
+            .highlights-grid { grid-template-columns: 1fr; }
+            .lightbox-overlay { padding: 12px; }
+            .lightbox-dialog { gap: 16px; }
+            .lightbox-image-wrapper img { width: 180px; }
             .lightbox-info h3 { font-size: 17px; }
             .lightbox-info p { font-size: 12px; }
+            .vignette-label h3 { font-size: 12px; }
+            .vignette-label p { font-size: 10px; }
         }
     </style>
 </head>

@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download ORHAR App</title>
     
+    <!-- ========== FONT AWESOME (needed for footer icons) ========== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- ========== GOOGLE FONTS ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <!-- ========== FAVICONS ========== -->
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-96x96.png">
@@ -22,6 +30,7 @@
             --accent-gold-rgb: 207, 178, 134;
             --accent-brown: #915B27;
             --bg-color: #FCFBF8;
+            --theme-transition: background-color 0.5s ease, color 0.5s ease;
             --font-display: 'Cormorant Garamond', Georgia, serif;
             --font-body: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         }
@@ -103,7 +112,6 @@
             background: linear-gradient(180deg, var(--primary-navy), #0f1f33); 
             padding: 70px 5% 35px; 
             border-top: 1px solid rgba(var(--accent-gold-rgb), 0.3); 
-            transition: var(--theme-transition);
             color: #FFFFFF;
         }
 
@@ -149,6 +157,16 @@
         }
         
         .footer-links a:hover { color: var(--accent-gold); }
+        
+        .footer-links a i {
+            margin-right: 4px;
+            font-size: 12px;
+            color: var(--accent-gold);
+        }
+        
+        .footer-links a:hover i {
+            color: #FFFFFF;
+        }
 
         .footer-contact { color: rgba(255,255,255,0.7); font-size: 14px; }
         .footer-contact a { color: var(--accent-gold); font-weight: 500; }
@@ -160,6 +178,15 @@
             font-size: 13px; 
             color: rgba(255,255,255,0.5); 
             line-height: 1.8;
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .github-link i {
+            font-size: 14px;
         }
     </style>
 </head>
@@ -238,7 +265,6 @@
         const lang = detectLanguage();
         const t = translations[lang] || translations.en;
 
-        // Apply translations
         document.getElementById('app-title').textContent = t.title;
         document.getElementById('app-message').textContent = t.message;
         document.getElementById('app-badge').textContent = t.badge;

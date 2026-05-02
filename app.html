@@ -16,22 +16,39 @@
     <link rel="canonical" href="https://orhar.com/app.html">
     
     <style>
+        :root {
+            --primary-navy: #1A2E4A;
+            --accent-gold: #CFB286;
+            --accent-gold-rgb: 207, 178, 134;
+            --accent-brown: #915B27;
+            --bg-color: #FCFBF8;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #FCFBF8;
+            font-family: var(--font-body);
+            background: var(--bg-color);
             color: #1e1e1e;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        main {
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            text-align: center;
-            padding: 20px;
+            padding: 60px 20px;
         }
         
         .container {
             max-width: 500px;
+            text-align: center;
         }
         
         .logo {
@@ -43,9 +60,9 @@
         }
         
         h1 {
-            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-family: var(--font-display);
             font-size: 36px;
-            color: #1A2E4A;
+            color: var(--primary-navy);
             margin-bottom: 12px;
         }
         
@@ -59,8 +76,8 @@
         .badge {
             display: inline-block;
             background: rgba(207, 178, 134, 0.15);
-            border: 1px solid #CFB286;
-            color: #915B27;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-brown);
             padding: 8px 20px;
             border-radius: 50px;
             font-size: 14px;
@@ -71,7 +88,7 @@
         .home-link {
             display: inline-block;
             margin-top: 24px;
-            color: #915B27;
+            color: var(--accent-brown);
             text-decoration: none;
             font-weight: 600;
             font-size: 15px;
@@ -81,50 +98,7 @@
             text-decoration: underline;
         }
 
-
         /* ========== FOOTER ========== */
-        footer { 
-            background: linear-gradient(180deg, var(--primary-navy), #0f1f33); 
-            padding: 70px 5% 35px; 
-            border-top: 1px solid rgba(var(--accent-gold-rgb), 0.3); 
-            transition: var(--theme-transition);
-            color: #FFFFFF;
-        }
-
-        .footer-content { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: flex-start; 
-            flex-wrap: wrap; 
-            gap: 40px; 
-        }
-        
-        .footer-brand h2 { 
-            font-size: 34px; 
-            letter-spacing: 4px; 
-            margin-bottom: 8px;
-            color: var(--accent-gold);
-        }
-        
-        .footer-brand p { 
-            font-style: italic; 
-            color: rgba(255,255,255,0.6); 
-            font-family: var(--font-display); 
-            font-size: 18px; 
-        }
-        
-        .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
-        
-        .footer-links a { 
-            font-size: 14px; 
-            color: rgba(255,255,255,0.7);
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover { color: var(--accent-gold); }
-
         #footer-container footer {
             animation: footerFadeIn 0.3s ease;
         }
@@ -133,53 +107,21 @@
             from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
-        .footer-contact { color: rgba(255,255,255,0.7); font-size: 14px; }
-        .footer-contact a { color: var(--accent-gold); font-weight: 500; }
-        .footer-contact .separator { color: rgba(255,255,255,0.3); margin: 0 8px; }
-        
-        .copyright { 
-            text-align: center; 
-            margin-top: 40px; 
-            font-size: 13px; 
-            color: rgba(255,255,255,0.5); 
-            line-height: 1.8;
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="/logo.png" alt="ORHAR Logo" class="logo" onerror="this.style.display='none'">
-        <h1 id="app-title">ORHAR App</h1>
-        <p id="app-message">The app is coming soon. For now, explore our website to learn more about the Mountain of Light.</p>
-        <div class="badge" id="app-badge">✦ Coming Soon</div>
-        <br>
-        <a href="/" class="home-link" id="app-back">← Return to ORHAR</a>
-    </div>
+    <main>
+        <div class="container">
+            <img src="/logo.png" alt="ORHAR Logo" class="logo" onerror="this.style.display='none'">
+            <h1 id="app-title">ORHAR App</h1>
+            <p id="app-message">The app is coming soon. For now, explore our website to learn more about the Mountain of Light.</p>
+            <div class="badge" id="app-badge">✦ Coming Soon</div>
+            <br>
+            <a href="/" class="home-link" id="app-back">← Return to ORHAR</a>
+        </div>
+    </main>
 
     <div id="footer-container"></div>
-
-    <script>
-        const savedLang = localStorage.getItem('orhar_lang');
-        const browserLang = navigator.language.slice(0, 2);
-        const supported = ['en', 'fr', 'es', 'de', 'it', 'pt', 'pl'];
-        let footerLang = 'en';
-        if (savedLang && supported.includes(savedLang)) footerLang = savedLang;
-        else if (supported.includes(browserLang)) footerLang = browserLang;
-        
-        fetch('/footer.html')
-            .then(response => response.text())
-            .then(html => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const footerBlock = doc.getElementById('footer-' + footerLang) || doc.getElementById('footer-en');
-                if (footerBlock) {
-                    footerBlock.style.display = '';
-                    document.getElementById('footer-container').appendChild(footerBlock);
-                }
-            })
-            .catch(() => console.log('Footer not available'));
-    </script>
 
     <script>
         // ========== TRANSLATIONS ==========
@@ -249,18 +191,25 @@
         document.getElementById('app-back').textContent = t.back;
         document.documentElement.lang = lang;
 
+        // ========== FOOTER LOADER ==========
+        fetch('/footer.html')
+            .then(response => response.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const footerBlock = doc.getElementById('footer-' + lang) || doc.getElementById('footer-en');
+                if (footerBlock) {
+                    footerBlock.style.display = '';
+                    document.getElementById('footer-container').appendChild(footerBlock);
+                }
+            })
+            .catch(() => console.log('Footer not available'));
+
         // ========== REDIRECT ==========
         const userAgent = navigator.userAgent || '';
         
         if (/Android/.test(userAgent)) {
-            // ANDROID: Redirect to Google Play
             window.location.href = 'https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME';
-        }
-        // iOS and Desktop: Show the coming soon page (no redirect needed)
-        // iOS → Website for now (App Store coming later)
-        else if (/iPhone|iPad|iPod/.test(userAgent)) {
-            // UNCOMENT WHEN iOS IS LIVE:
-            // window.location.href = 'https://apps.apple.com/app/YOUR_APP_ID';
         }
     </script>
 </body>

@@ -1,0 +1,88 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-06-11",
+  "updates": [
+    {
+      "id": "update-001",
+      "date": "2025-06-11",
+      "translations": {
+        "en": {
+          "badge": "✨ New Feature",
+          "title": "Natural Voices Available!",
+          "content": "We're excited to announce that ORHAR now supports natural-sounding AI voices for Bible reading and prayer. Upgrade to Premium to unlock this immersive experience."
+        },
+        "fr": {
+          "badge": "✨ Nouvelle Fonctionnalité",
+          "title": "Voix Naturelles Disponibles !",
+          "content": "Nous sommes ravis d'annoncer qu'ORHAR prend désormais en charge des voix IA naturelles pour la lecture de la Bible et la prière. Passez à Premium pour débloquer cette expérience immersive."
+        },
+        "de": {
+          "badge": "✨ Neue Funktion",
+          "title": "Natürliche Stimmen Verfügbar!",
+          "content": "Wir freuen uns, bekannt zu geben, dass ORHAR jetzt natürlich klingende KI-Stimmen für Bibellesungen und Gebete unterstützt. Upgrade auf Premium, um dieses immersive Erlebnis freizuschalten."
+        },
+        "es": {
+          "badge": "✨ Nueva Función",
+          "title": "¡Voces Naturales Disponibles!",
+          "content": "Nos complace anunciar que ORHAR ahora admite voces de IA de sonido natural para la lectura de la Biblia y la oración. Actualiza a Premium para desbloquear esta experiencia inmersiva."
+        },
+        "it": {
+          "badge": "✨ Nuova Funzionalità",
+          "title": "Voci Naturali Disponibili!",
+          "content": "Siamo entusiasti di annunciare che ORHAR ora supporta voci AI dall'aspetto naturale per la lettura della Bibbia e la preghiera. Passa a Premium per sbloccare questa esperienza immersiva."
+        },
+        "pt": {
+          "badge": "✨ Nova Funcionalidade",
+          "title": "Vozes Naturais Disponíveis!",
+          "content": "Estamos animados em anunciar que o ORHAR agora suporta vozes de IA de som natural para leitura da Bíblia e oração. Atualize para Premium para desbloquear esta experiência imersiva."
+        },
+        "pl": {
+          "badge": "✨ Nowa Funkcja",
+          "title": "Naturalne Głosy Dostępne!",
+          "content": "Z przyjemnością ogłaszamy, że ORHAR obsługuje teraz naturalnie brzmiące głosy AI do czytania Biblii i modlitwy. Przejdź na Premium, aby odblokować to wciągające doświadczenie."
+        }
+      }
+    },
+    {
+      "id": "update-002",
+      "date": "2025-06-01",
+      "translations": {
+        "en": {
+          "badge": "📚 Content Update",
+          "title": "New Spiritual Books Added",
+          "content": "Three new spiritual books have been added to our library, including works by Thomas à Kempis and St. John of the Cross."
+        },
+        "fr": {
+          "badge": "📚 Mise à Jour du Contenu",
+          "title": "Nouveaux Livres Spirituels Ajoutés",
+          "content": "Trois nouveaux livres spirituels ont été ajoutés à notre bibliothèque, dont des œuvres de Thomas a Kempis et de saint Jean de la Croix."
+        },
+        "de": {
+          "badge": "📚 Inhaltsaktualisierung",
+          "title": "Neue Spirituelle Bücher Hinzugefügt",
+          "content": "Drei neue spirituelle Bücher wurden zu unserer Bibliothek hinzugefügt, darunter Werke von Thomas von Kempen und Johannes vom Kreuz."
+        },
+        "es": {
+          "badge": "📚 Actualización de Contenido",
+          "title": "Nuevos Libros Espirituales Agregados",
+          "content": "Se han agregado tres nuevos libros espirituales a nuestra biblioteca, incluyendo obras de Tomás de Kempis y San Juan de la Cruz."
+        },
+        "it": {
+          "badge": "📚 Aggiornamento dei Contenuti",
+          "title": "Aggiunti Nuovi Libri Spirituali",
+          "content": "Tre nuovi libri spirituali sono stati aggiunti alla nostra libreria, inclusi opere di Tommaso da Kempis e San Giovanni della Croce."
+        },
+        "pt": {
+          "badge": "📚 Atualização de Conteúdo",
+          "title": "Novos Livros Espirituais Adicionados",
+          "content": "Três novos livros espirituais foram adicionados à nossa biblioteca, incluindo obras de Tomás de Kempis e São João da Cruz."
+        },
+        "pl": {
+          "badge": "📚 Aktualizacja Treści",
+          "title": "Dodano Nowe Książki Duchowe",
+          "content": "Do naszej biblioteki dodano trzy nowe książki duchowe, w tym dzieła Tomasza a Kempis i św. Jana od Krzyża."
+        }
+      }
+    }
+  ]
+}

@@ -179,8 +179,7 @@
             <a href="index.html">Início</a>
             <a href="index.html#story">A História</a>
             <a href="index.html#features">Funcionalidades</a>
-            <a href="contact.html">Contato</a>
-            <a href="actuality.html" class="active">Atualidade</a>
+            <a href="/contact.html">Contato</a>
             <select id="langSwitch" class="lang-select">
                 <option value="en">🇬🇧 EN</option>
                 <option value="fr">🇫🇷 FR</option>
@@ -211,54 +210,101 @@
     <div id="footer-container"></div>
 
     <script>
+        // Get current language from URL
         const currentLang = window.location.pathname.split('/')[1];
+        const supportedLangs = ['en', 'fr', 'es', 'de', 'it', 'pt', 'pl'];
+        
+        // Update language selector
         document.getElementById('langSwitch').value = currentLang;
         
+        // Language switcher
         document.getElementById('langSwitch').addEventListener('change', (e) => {
-            window.location.href = '/' + e.target.value + '/actuality.html';
+            const newLang = e.target.value;
+            window.location.href = '/' + newLang + '/actuality.html';
         });
         
+        // Load updates data
         async function loadUpdates() {
             try {
                 const response = await fetch('/actuality-data.json');
                 const data = await response.json();
+                
                 const updates = data.updates;
                 const container = document.getElementById('updates-container');
                 
                 if (!updates || updates.length === 0) {
-                    container.innerHTML = `<div class="empty-state"><i class="fas fa-newspaper"></i><p>Nenhuma atualização disponível. Volte em breve!</p></div>`;
+                    container.innerHTML = `
+                        <div class="empty-state">
+                            <i class="fas fa-newspaper"></i>
+                            <p>No updates available. Check back soon!</p>
+                        </div>
+                    `;
                     return;
                 }
                 
+                // Sort by date (newest first)
                 const sorted = [...updates].sort((a, b) => new Date(b.date) - new Date(a.date));
+                
                 container.innerHTML = sorted.map(update => {
                     const t = update.translations[currentLang];
+                    // Fallback to English if translation missing
                     const badge = t?.badge || update.translations.en.badge;
                     const title = t?.title || update.translations.en.title;
                     const content = t?.content || update.translations.en.content;
+                    
+                    // Format date
                     const date = new Date(update.date);
-                    const formattedDate = date.toLocaleDateString('pt-PT', { year: 'numeric', month: 'long', day: 'numeric' });
-                    return `<div class="update-card"><div class="update-date">📅 ${formattedDate}</div><div class="update-badge">${badge}</div><h2 class="update-title">${title}</h2><div class="update-content">${content}</div></div>`;
+                    const formattedDate = date.toLocaleDateString(currentLang, {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+                    
+                    return `
+                        <div class="update-card">
+                            <div class="update-date">📅 ${formattedDate}</div>
+                            <div class="update-badge">${badge}</div>
+                            <h2 class="update-title">${title}</h2>
+                            <div class="update-content">${content}</div>
+                        </div>
+                    `;
                 }).join('');
+                
             } catch (error) {
-                document.getElementById('updates-container').innerHTML = `<div class="empty-state"><i class="fas fa-exclamation-triangle"></i><p>Não foi possível carregar as atualizações. Por favor, tente novamente mais tarde.</p></div>`;
+                console.error('Failed to load updates:', error);
+                document.getElementById('updates-container').innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p>Unable to load updates. Please try again later.</p>
+                    </div>
+                `;
             }
         }
         
-        async function loadFooter() {
-            try {
-                const response = await fetch('/footer.html');
-                const html = await response.text();
+        // ========== FOOTER LOADER (Fixed - matches index-en.html) ==========
+        const footerLang = currentLang || 'en';
+        fetch('/footer.html')
+            .then(response => response.text())
+            .then(html => {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
-                let footerBlock = doc.getElementById('footer-' + currentLang);
-                if (!footerBlock) footerBlock = doc.getElementById('footer-en');
-                if (footerBlock) document.getElementById('footer-container').appendChild(footerBlock.cloneNode(true));
-            } catch (error) {}
-        }
+                let footerBlock = doc.getElementById('footer-' + footerLang);
+                
+                if (!footerBlock) {
+                    footerBlock = doc.getElementById('footer-en');
+                }
+                
+                if (footerBlock) {
+                    footerBlock.style.display = '';
+                    document.getElementById('footer-container').appendChild(footerBlock);
+                }
+            })
+            .catch(() => {
+                console.log('Footer not available');
+            });
         
+        // Initialize
         loadUpdates();
-        loadFooter();
     </script>
 </body>
 </html>

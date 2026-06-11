@@ -278,13 +278,42 @@
             font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.8;
         }
 
+        /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
-            .actuality-hero h1 { font-size: 36px; }
-            .update-card { padding: 20px 24px; }
+            .hero h1 { font-size: 44px; }
+            .hero h2 { font-size: 22px; }
+            .section-title { font-size: 34px; }
             .nav-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
             header { flex-direction: column; gap: 16px; }
             .footer-content { flex-direction: column; text-align: center; align-items: center; }
             .footer-links { justify-content: center; }
+            .features-grid { grid-template-columns: 1fr; }
+            .story-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .story-grid { grid-template-columns: 1fr; }
+            .hero { padding: 60px 5% 50px; }
+        }
+        
+        /* Story grid — wider cards on large screens */
+        @media (min-width: 1400px) {
+            .story-card-wrapper {
+                max-width: 360px;
+            }
+        }
+        
+        @media (min-width: 1100px) and (max-width: 1399px) {
+            .story-card-wrapper {
+                max-width: 340px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .story-card-wrapper {
+                max-width: 100%;
+                min-width: 100%;
+            }
         }
     </style>
 </head>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORHAR — Actuality</title>
+    <script>
+        // ========== LANGUAGE DETECTION ==========
+        const supported = ['en', 'fr', 'es', 'de', 'it', 'pt', 'pl'];
+        
+        // Try to get language from URL path
+        let pathLang = window.location.pathname.split('/')[1];
+        
+        if (supported.includes(pathLang)) {
+            // Already in correct language folder, stay here
+            window.__APP_LANG__ = pathLang;
+        } else {
+            // Need to redirect to language version
+            const savedLang = localStorage.getItem('orhar_lang');
+            const browserLang = navigator.language.slice(0, 2);
+            
+            let targetLang = 'en';
+            if (savedLang && supported.includes(savedLang)) targetLang = savedLang;
+            else if (supported.includes(browserLang)) targetLang = browserLang;
+            
+            window.location.replace('/' + targetLang + '/actuality.html');
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecting to ORHAR Actuality...</p>
+</body>
+</html>

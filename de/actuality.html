@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORHAR — Aktuelles & Nachrichten</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <meta name="description" content="ORHAR Neuigkeiten und Updates. Bleiben Sie informiert über neue Funktionen, spirituelle Bücher, App-Veröffentlichungen und Community-Events.">
+    <meta name="keywords" content="ORHAR Neuigkeiten, ORHAR Updates, Bibel-App Nachrichten, spirituelle Bücher, App-Funktionen">
+    <meta name="theme-color" content="#1A2E4A">
+    
+    <link rel="canonical" href="https://orhar.com/de/actuality.html">
+    <link rel="alternate" hreflang="en" href="https://orhar.com/en/actuality.html">
+    <link rel="alternate" hreflang="fr" href="https://orhar.com/fr/actuality.html">
+    <link rel="alternate" hreflang="es" href="https://orhar.com/es/actuality.html">
+    <link rel="alternate" hreflang="de" href="https://orhar.com/de/actuality.html">
+    <link rel="alternate" hreflang="it" href="https://orhar.com/it/actuality.html">
+    <link rel="alternate" hreflang="pt" href="https://orhar.com/pt/actuality.html">
+    <link rel="alternate" hreflang="pl" href="https://orhar.com/pl/actuality.html">
+    <link rel="alternate" hreflang="x-default" href="https://orhar.com/en/actuality.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://orhar.com/de/actuality.html">
+    <meta property="og:title" content="ORHAR — Aktuelles & Nachrichten">
+    <meta property="og:description" content="Bleiben Sie informiert über die neuesten ORHAR-Nachrichten, Funktionen und spirituellen Einblicke.">
+    <meta property="og:image" content="https://orhar.com/og-image.png">
+    <meta property="og:site_name" content="ORHAR">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://orhar.com/de/actuality.html">
+    <meta name="twitter:title" content="ORHAR — Aktuelles & Nachrichten">
+    <meta name="twitter:description" content="Bleiben Sie informiert über die neuesten ORHAR-Nachrichten, Funktionen und spirituellen Einblicke.">
+    <meta name="twitter:image" content="https://orhar.com/og-image.png">
+    
+    <style>
+        :root {
+            --bg-color: #FCFBF8;
+            --surface-color: #FFFFFF;
+            --primary-navy: #1A2E4A;
+            --header-bg: rgba(252, 251, 248, 0.95);
+            --accent-gold: #CFB286;
+            --accent-gold-rgb: 207, 178, 134;
+            --accent-brown: #915B27;
+            --accent-brown-rgb: 145, 91, 39;
+            --text-dark: #1e1e1e;
+            --text-muted: #7f8c8d;
+            --card-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Work Sans', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: var(--font-body); 
+            background-color: var(--bg-color); 
+            color: var(--text-dark); 
+            line-height: 1.7; 
+        }
+        
+        h1, h2, h3, h4 { font-family: var(--font-display); color: var(--primary-navy); }
+        a { text-decoration: none; color: var(--primary-navy); }
+        a:hover { color: var(--accent-brown); }
+
+        header { 
+            padding: 16px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: var(--header-bg);
+            backdrop-filter: blur(20px);
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid rgba(var(--accent-gold-rgb), 0.3);
+        }
+        
+        .logo-container { display: flex; align-items: center; gap: 14px; }
+        .logo-img { width: 48px; height: 48px; border-radius: 12px; object-fit: cover; }
+        .logo-text { font-family: var(--font-display); font-size: 26px; font-weight: 700; letter-spacing: 3px; color: var(--primary-navy); }
+        
+        .nav-links { display: flex; gap: 28px; align-items: center; }
+        .nav-links a { font-size: 15px; font-weight: 500; padding: 4px 0; }
+        .nav-links a.active { color: var(--accent-brown); border-bottom: 2px solid var(--accent-brown); }
+        
+        .lang-select { 
+            background: transparent; 
+            border: 1.5px solid var(--accent-gold); 
+            color: var(--primary-navy); 
+            padding: 8px 14px; 
+            border-radius: 8px; 
+            font-family: var(--font-body); 
+            font-weight: 500; 
+            cursor: pointer; 
+            outline: none;
+        }
+
+        .actuality-wrapper { max-width: 900px; margin: 60px auto; padding: 0 5%; }
+        .actuality-hero { text-align: center; margin-bottom: 50px; }
+        .actuality-badge {
+            display: inline-block;
+            background: rgba(var(--accent-gold-rgb), 0.15);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-brown);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .actuality-hero h1 { font-size: 48px; margin-bottom: 12px; background: linear-gradient(135deg, var(--primary-navy), var(--accent-brown)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .actuality-hero p { font-size: 18px; color: var(--text-muted); max-width: 600px; margin: 0 auto; font-style: italic; }
+        
+        .update-card {
+            background: var(--surface-color);
+            border-radius: 20px;
+            padding: 28px 32px;
+            margin-bottom: 24px;
+            box-shadow: var(--card-shadow);
+            border-left: 4px solid var(--accent-gold);
+            transition: all 0.3s ease;
+        }
+        .update-card:hover { transform: translateX(4px); border-left-color: var(--accent-brown); }
+        .update-date { font-size: 12px; color: var(--accent-brown); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 600; }
+        .update-badge {
+            display: inline-block;
+            background: rgba(var(--accent-gold-rgb), 0.12);
+            color: var(--accent-brown);
+            font-size: 11px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .update-title { font-size: 22px; font-weight: 600; margin-bottom: 12px; color: var(--primary-navy); }
+        .update-content { color: var(--text-muted); line-height: 1.7; font-size: 15px; }
+        .empty-state { text-align: center; padding: 60px 20px; background: var(--surface-color); border-radius: 20px; color: var(--text-muted); }
+        .empty-state i { font-size: 48px; color: var(--accent-gold); margin-bottom: 16px; }
+
+        footer { 
+            background: linear-gradient(180deg, var(--primary-navy), #0f1f33); 
+            padding: 70px 5% 35px; 
+            border-top: 1px solid rgba(var(--accent-gold-rgb), 0.3); 
+            color: #FFFFFF;
+            margin-top: 60px;
+        }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; }
+        .footer-brand h2 { font-size: 34px; letter-spacing: 4px; margin-bottom: 8px; color: var(--accent-gold); }
+        .footer-brand p { font-style: italic; color: rgba(255,255,255,0.6); font-family: var(--font-display); font-size: 18px; }
+        .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+        .footer-links a { font-size: 14px; color: rgba(255,255,255,0.7); }
+        .footer-links a:hover { color: var(--accent-gold); }
+        .copyright { text-align: center; margin-top: 40px; font-size: 13px; color: rgba(255,255,255,0.5); }
+
+        @media (max-width: 768px) {
+            .actuality-hero h1 { font-size: 36px; }
+            .update-card { padding: 20px 24px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+            header { flex-direction: column; gap: 16px; }
+            .footer-content { flex-direction: column; text-align: center; align-items: center; }
+            .footer-links { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="/logo.png" alt="ORHAR Logo" class="logo-img">
+            <span class="logo-text">ORHAR</span>
+        </a>
+        <nav class="nav-links">
+            <a href="index.html">Startseite</a>
+            <a href="index.html#story">Die Geschichte</a>
+            <a href="index.html#features">Funktionen</a>
+            <a href="contact.html">Kontakt</a>
+            <a href="actuality.html" class="active">Aktuelles</a>
+            <select id="langSwitch" class="lang-select">
+                <option value="en">🇬🇧 EN</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="de">🇩🇪 DE</option>
+                <option value="it">🇮🇹 IT</option>
+                <option value="pt">🇵🇹 PT</option>
+                <option value="pl">🇵🇱 PL</option>
+            </select>
+        </nav>
+    </header>
+
+    <main class="actuality-wrapper">
+        <div class="actuality-hero">
+            <div class="actuality-badge">📰 Bleiben Sie Informiert</div>
+            <h1>Aktuelles</h1>
+            <p>Neuigkeiten, Updates und spirituelle Einblicke von ORHAR</p>
+        </div>
+
+        <div id="updates-container">
+            <div class="empty-state">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Updates werden geladen...</p>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script>
+        const currentLang = window.location.pathname.split('/')[1];
+        document.getElementById('langSwitch').value = currentLang;
+        
+        document.getElementById('langSwitch').addEventListener('change', (e) => {
+            window.location.href = '/' + e.target.value + '/actuality.html';
+        });
+        
+        async function loadUpdates() {
+            try {
+                const response = await fetch('/actuality-data.json');
+                const data = await response.json();
+                const updates = data.updates;
+                const container = document.getElementById('updates-container');
+                
+                if (!updates || updates.length === 0) {
+                    container.innerHTML = `<div class="empty-state"><i class="fas fa-newspaper"></i><p>Keine Updates verfügbar. Besuchen Sie uns bald wieder!</p></div>`;
+                    return;
+                }
+                
+                const sorted = [...updates].sort((a, b) => new Date(b.date) - new Date(a.date));
+                container.innerHTML = sorted.map(update => {
+                    const t = update.translations[currentLang];
+                    const badge = t?.badge || update.translations.en.badge;
+                    const title = t?.title || update.translations.en.title;
+                    const content = t?.content || update.translations.en.content;
+                    const date = new Date(update.date);
+                    const formattedDate = date.toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' });
+                    return `<div class="update-card"><div class="update-date">📅 ${formattedDate}</div><div class="update-badge">${badge}</div><h2 class="update-title">${title}</h2><div class="update-content">${content}</div></div>`;
+                }).join('');
+            } catch (error) {
+                document.getElementById('updates-container').innerHTML = `<div class="empty-state"><i class="fas fa-exclamation-triangle"></i><p>Updates konnten nicht geladen werden. Bitte versuchen Sie es später erneut.</p></div>`;
+            }
+        }
+        
+        async function loadFooter() {
+            try {
+                const response = await fetch('/footer.html');
+                const html = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                let footerBlock = doc.getElementById('footer-' + currentLang);
+                if (!footerBlock) footerBlock = doc.getElementById('footer-en');
+                if (footerBlock) document.getElementById('footer-container').appendChild(footerBlock.cloneNode(true));
+            } catch (error) {}
+        }
+        
+        loadUpdates();
+        loadFooter();
+    </script>
+</body>
+</html>

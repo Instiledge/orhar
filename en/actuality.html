@@ -400,26 +400,30 @@
             }
         }
         
-        // Load footer
-        async function loadFooter() {
-            try {
-                const response = await fetch('/footer.html');
-                const html = await response.text();
+        // ========== FOOTER LOADER (Fixed - matches index-en.html) ==========
+        const footerLang = currentLang || 'en';
+        fetch('/footer.html')
+            .then(response => response.text())
+            .then(html => {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
-                let footerBlock = doc.getElementById('footer-' + currentLang);
-                if (!footerBlock) footerBlock = doc.getElementById('footer-en');
+                let footerBlock = doc.getElementById('footer-' + footerLang);
+                
+                if (!footerBlock) {
+                    footerBlock = doc.getElementById('footer-en');
+                }
+                
                 if (footerBlock) {
+                    footerBlock.style.display = '';
                     document.getElementById('footer-container').appendChild(footerBlock);
                 }
-            } catch (error) {
+            })
+            .catch(() => {
                 console.log('Footer not available');
-            }
-        }
+            });
         
         // Initialize
         loadUpdates();
-        loadFooter();
     </script>
 </body>
 </html>

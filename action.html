@@ -778,14 +778,15 @@
         const lang = translations[activeLang];
 
         // ========== APPLY TRANSLATIONS ==========
-        document.getElementById('page-title').textContent = lang.pageTitle;
-        document.getElementById('loading-text').textContent = lang.loading;
-        document.getElementById('navHome').textContent = lang.navHome;
-        document.getElementById('navContact').textContent = lang.navContact;
-        document.getElementById('footPriv').textContent = lang.footPriv;
-        document.getElementById('footTerms').textContent = lang.footTerms;
-        document.getElementById('footLic').textContent = lang.footLic;
-        document.getElementById('footRights').textContent = lang.footRights;
+        function setText(id, value) {
+            const el = document.getElementById(id);
+            if (el && value) el.textContent = value;
+        }
+        
+        setText('page-title', lang.pageTitle);
+        setText('loading-text', lang.loading);
+        setText('navHome', lang.navHome);
+        setText('navContact', lang.navContact);
 
         // ========== FIREBASE CONFIG ==========
         const firebaseConfig = {

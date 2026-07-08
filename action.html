@@ -598,11 +598,11 @@
 
     <script>
         const savedLang = localStorage.getItem('orhar_lang');
-        const browserLang = navigator.language.slice(0, 2);
+        const footerBrowserLang = navigator.language.slice(0, 2);
         const supported = ['en', 'fr', 'es', 'de', 'it', 'pt', 'pl'];
         let footerLang = 'en';
         if (savedLang && supported.includes(savedLang)) footerLang = savedLang;
-        else if (supported.includes(browserLang)) footerLang = browserLang;
+        else if (supported.includes(footerBrowserLang)) footerLang = footerBrowserLang;
         
         fetch('/footer.html')
             .then(response => response.text())

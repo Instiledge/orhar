@@ -623,26 +623,40 @@
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js" crossorigin="anonymous"></script>
 
     <script>
-        // ===== SAFETY NET: catch script-level failures & hangs =====
+        // ===== SAFETY NET: catch real script-level failures & hangs =====
         window.addEventListener('error', function (e) {
-            console.error('Uncaught error:', e.message);
+            console.error('Uncaught error:', e.message, e.filename, e.lineno, e.colno);
+            // Ignore generic cross-origin "Script error." events.
+            // They are often from external scripts/styles and are not always fatal.
+            if (e.message === 'Script error.' && !e.filename) {
+                return;
+            }
+        
             const loadingEl = document.getElementById('loading-state');
-            if (loadingEl) loadingEl.classList.add('hidden');
             const errView = document.getElementById('error-view');
-            if (errView && errView.classList.contains('hidden')) {
-                errView.classList.remove('hidden');
-                document.getElementById('error-detail').textContent = 'Technical error: ' + e.message;
+        
+            if (loadingEl && !loadingEl.classList.contains('hidden')) {
+                loadingEl.classList.add('hidden');
+                if (errView && errView.classList.contains('hidden')) {
+                    errView.classList.remove('hidden');
+                    document.getElementById('error-detail').textContent =
+                        'Technical error: ' + (e.message || 'Unknown script error');
+                }
             }
         });
-
+        
         // Timeout fallback: if still loading after 10s, something hung
         setTimeout(() => {
             const loadingEl = document.getElementById('loading-state');
+            const errView = document.getElementById('error-view');
+        
             if (loadingEl && !loadingEl.classList.contains('hidden')) {
                 loadingEl.classList.add('hidden');
-                document.getElementById('error-view').classList.remove('hidden');
-                document.getElementById('error-detail').textContent =
-                    'Request timed out. This usually means the Firebase API key is not authorized for this domain.';
+                if (errView) {
+                    errView.classList.remove('hidden');
+                    document.getElementById('error-detail').textContent =
+                        'Request timed out. Firebase may be blocked or unavailable for this domain.';
+                }
             }
         }, 10000);
     </script>

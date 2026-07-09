@@ -432,46 +432,12 @@
         /* ========== FOOTER ========== */
         footer { 
             background: linear-gradient(180deg, var(--primary-navy), #0f1f33); 
-            padding: 35px 5% 25px; 
+            padding: 70px 5% 35px; 
             border-top: 1px solid rgba(var(--accent-gold-rgb), 0.3); 
             transition: var(--theme-transition);
             color: #FFFFFF;
-            margin-top: auto;
         }
-        
-        .footer-content { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            flex-wrap: wrap; 
-            gap: 24px; 
-        }
-        
-        .footer-brand h2 { 
-            font-size: 24px; 
-            letter-spacing: 3px; 
-            margin-bottom: 0;
-            color: var(--accent-gold);
-        }
-        
-        .footer-links { 
-            display: flex; 
-            gap: 20px; 
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a { 
-            font-size: 13px; 
-            color: rgba(255,255,255,0.7);
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent-gold);
-        }
-        
+
         #footer-container footer {
             animation: footerFadeIn 0.3s ease;
         }
@@ -480,6 +446,40 @@
             from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        
+        .footer-content { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: flex-start; 
+            flex-wrap: wrap; 
+            gap: 40px; 
+        }
+        
+        .footer-brand h2 { 
+            font-size: 34px; 
+            letter-spacing: 4px; 
+            margin-bottom: 8px;
+            color: var(--accent-gold);
+        }
+        
+        .footer-brand p { 
+            font-style: italic; 
+            color: rgba(255,255,255,0.6); 
+            font-family: var(--font-display); 
+            font-size: 18px; 
+        }
+        
+        .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+        
+        .footer-links a { 
+            font-size: 14px; 
+            color: rgba(255,255,255,0.7);
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover { color: var(--accent-gold); }
 
         .footer-contact { color: rgba(255,255,255,0.7); font-size: 14px; }
         .footer-contact a { color: var(--accent-gold); font-weight: 500; }
@@ -487,24 +487,26 @@
         
         .copyright { 
             text-align: center; 
-            margin-top: 20px; 
-            font-size: 12px; 
+            margin-top: 40px; 
+            font-size: 13px; 
             color: rgba(255,255,255,0.5); 
+            line-height: 1.8;
         }
 
         /* ========== RESPONSIVE ========== */
-        @media (max-width: 600px) {
-            .auth-card { 
-                padding: 36px 24px; 
-                border-radius: 20px;
-            }
-            .auth-card h1 { font-size: 26px; }
+        @media (max-width: 768px) {
+            .contact-hero h1 { font-size: 38px; }
+            .section-heading { font-size: 28px; }
             .nav-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
-            header { flex-direction: column; gap: 12px; }
-            .footer-content { flex-direction: column; text-align: center; }
+            header { flex-direction: column; gap: 16px; }
+            .footer-content { flex-direction: column; text-align: center; align-items: center; }
             .footer-links { justify-content: center; }
-            .store-row { flex-direction: column; align-items: center; }
-            .store-row .button { max-width: 100%; }
+            .contribute-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .contact-hero h1 { font-size: 32px; }
+            .contact-wrapper { margin: 50px auto; }
         }
     </style>
 </head>

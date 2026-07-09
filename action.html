@@ -805,8 +805,10 @@
         setText('navContact', lang.navContact);
 
         // ========== FIREBASE CONFIG ==========
+        const actionApiKey = urlParams.get('apiKey');
+
         const firebaseConfig = {
-            apiKey: "AIzaSyBEEWsFIsv2NyS5LZEJn0jMjXCT-XdAbgU",
+            apiKey: actionApiKey || "AIzaSyCxx7c1XvVNT-FehV2HnzFSP8ZryH-DX2o",
             authDomain: "parobible-app.firebaseapp.com",
             projectId: "parobible-app",
             storageBucket: "parobible-app.firebasestorage.app",
@@ -885,22 +887,36 @@
         // ========== EMAIL VERIFICATION ==========
         async function handleEmailVerification() {
             try {
+                const actionInfo = await auth.checkActionCode(oobCode);
+                console.log('✅ Verification code is valid:', actionInfo);
+        
                 await auth.applyActionCode(oobCode);
                 console.log('✅ Email verified successfully');
-                
+        
                 document.getElementById('loading-state').classList.add('hidden');
                 document.getElementById('verify-email-view').classList.remove('hidden');
-                
+        
                 document.getElementById('verify-title').textContent = lang.verifyTitle;
                 document.getElementById('verify-message').textContent = lang.verifyMessage;
                 document.getElementById('verify-open-app').innerHTML = `<i class="fas fa-external-link-alt"></i> ${lang.openApp}`;
-                
+        
                 setTimeout(() => {
                     openAppWithDeepLink('Home');
                 }, 2000);
             } catch (error) {
-                console.error('Email verification error:', error);
-                const message = error.code === 'auth/expired-action-code' ? lang.errorExpired : lang.errorInvalid;
+                console.error('Email verification error:', {
+                    code: error.code,
+                    message: error.message,
+                    full: error
+                });
+        
+                const message =
+                    error.code === 'auth/expired-action-code'
+                        ? lang.errorExpired
+                        : error.code === 'auth/invalid-action-code'
+                            ? lang.errorInvalid
+                            : error.message || lang.errorDefault;
+        
                 showError(message);
             }
         }

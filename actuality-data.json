@@ -1,7 +1,48 @@
 {
-  "version": "1.0.0",
-  "lastUpdated": "2025-06-11",
+  "version": "1.3.0",
+  "lastUpdated": "2026-09-27",
   "updates": [
+    {
+      "id": "update-003",
+      "date": "2026-09-27",
+      "translations": {
+        "en": {
+          "badge": "⛰️ ORHAR 1.3",
+          "title": "A More Complete Daily Companion",
+          "content": "ORHAR now brings together a refreshed daily home, offline Bible reading, ParoBible and the Catechism, flexible reading plans, SianAQuiz progression, notes, bookmarks, spiritual books, prayers, natural voices and contemplative soundscapes."
+        },
+        "fr": {
+          "badge": "⛰️ ORHAR 1.3",
+          "title": "Un compagnon quotidien plus complet",
+          "content": "ORHAR réunit désormais un accueil quotidien renouvelé, la Bible hors ligne, ParoBible et le Catéchisme, des plans de lecture flexibles, la progression SianAQuiz, les notes, les signets, les livres spirituels, les prières, les voix naturelles et des ambiances contemplatives."
+        },
+        "de": {
+          "badge": "⛰️ ORHAR 1.3",
+          "title": "Ein umfassenderer täglicher Begleiter",
+          "content": "ORHAR vereint jetzt eine erneuerte tägliche Startseite, Offline-Bibellektüre, ParoBible und den Katechismus, flexible Lesepläne, SianAQuiz-Fortschritt, Notizen, Lesezeichen, geistliche Bücher, Gebete, natürliche Stimmen und kontemplative Klangwelten."
+        },
+        "es": {
+          "badge": "⛰️ ORHAR 1.3",
+          "title": "Un compañero diario más completo",
+          "content": "ORHAR reúne ahora un inicio diario renovado, lectura bíblica sin conexión, ParoBible y el Catecismo, planes de lectura flexibles, progreso en SianAQuiz, notas, marcadores, libros espirituales, oraciones, voces naturales y ambientes contemplativos."
+        },
+        "it": {
+          "badge": "⛰️ ORHAR 1.3",
+          "title": "Un compagno quotidiano più completo",
+          "content": "ORHAR riunisce ora una schermata quotidiana rinnovata, lettura biblica offline, ParoBible e il Catechismo, piani di lettura flessibili, progressi SianAQuiz, note, segnalibri, libri spirituali, preghiere, voci naturali e paesaggi sonori contemplativi."
+        },
+        "pt": {
+          "badge": "⛰️ ORHAR 1.3",
+          "title": "Um companheiro diário mais completo",
+          "content": "ORHAR reúne agora uma página diária renovada, leitura bíblica offline, ParoBible e o Catecismo, planos de leitura flexíveis, progresso no SianAQuiz, notas, marcadores, livros espirituais, orações, vozes naturais e ambientes contemplativos."
+        },
+        "pl": {
+          "badge": "⛰️ ORHAR 1.3",
+          "title": "Pełniejszy codzienny przewodnik",
+          "content": "ORHAR łączy teraz odświeżony ekran dnia, Biblię offline, ParoBible i Katechizm, elastyczne plany czytania, postępy SianAQuiz, notatki, zakładki, książki duchowe, modlitwy, naturalne głosy i kontemplacyjne pejzaże dźwiękowe."
+        }
+      }
+    },
     {
       "id": "update-001",
       "date": "2025-06-11",

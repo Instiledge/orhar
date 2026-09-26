@@ -13,6 +13,8 @@ ORHAR is a faith-based mobile application. **OR** (אוֹר) means *light* — G
 
 This repository contains the **official website** for ORHAR — a multilingual showcase and support hub for the application.
 
+The current website presentation is aligned with **ORHAR 1.3** and uses current simulator captures from the mobile application.
+
 ---
 
 ## 🌍 Website Structure
@@ -20,6 +22,9 @@ This repository contains the **official website** for ORHAR — a multilingual s
 | Page | Description |
 |------|-------------|
 | `index.html` | Homepage — hero section, icon narrative, features grid, theme color picker |
+| `site.css` / `site.js` | Shared visual system and interactions for the current product pages |
+| `scripts/build-homepages.mjs` | Generates the seven localized homepage files from one maintained source |
+| `preview.html` | Current application gallery based on real simulator captures |
 | `contact.html` | Contact & Support — email, FAQ, ways to contribute, donate section |
 | `privacy.html` | Privacy Policy — complete legal document |
 | `terms.html` | Terms of Service — complete legal document |

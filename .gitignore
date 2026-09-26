@@ -25,3 +25,7 @@ Desktop.ini
 # Sensitive config (if you ever add one)
 .env
 .env.local
+
+# Raw simulator captures are preserved in ../OrharAppImages; the website uses
+# the optimized WebP exports generated from them.
+screenshots/app-*-2026.png

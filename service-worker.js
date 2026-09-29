@@ -1,8 +1,7 @@
 // ORHAR — Service Worker for offline caching
-const CACHE_NAME = 'orhar-cache-v2';
+const CACHE_NAME = 'orhar-cache-v3';
 
 const ASSETS_TO_CACHE = [
-    '/',
     '/en/',
     '/fr/',
     '/es/',
@@ -11,7 +10,6 @@ const ASSETS_TO_CACHE = [
     '/pt/',
     '/pl/',
     '/updates.html',
-    '/index.html',
     '/contact.html',
     '/privacy.html',
     '/terms.html',
@@ -83,6 +81,42 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
+    // Safari rejects navigation responses served by a service worker when the
+    // response is a redirect. Always resolve navigation requests from network
+    // first, follow redirects explicitly, and never cache redirected responses.
+    if (event.request.mode === 'navigate') {
+        event.respondWith(
+            fetch(event.request)
+                .then(async (response) => {
+                    if (response.redirected && response.url) {
+                        const finalResponse = await fetch(response.url, { cache: 'reload' });
+                        if (finalResponse.ok && finalResponse.type === 'basic' && !finalResponse.redirected) {
+                            const responseToCache = finalResponse.clone();
+                            caches.open(CACHE_NAME).then((cache) => {
+                                cache.put(event.request, responseToCache);
+                            });
+                        }
+                        return finalResponse;
+                    }
+
+                    if (response.ok && response.type === 'basic' && !response.redirected) {
+                        const responseToCache = response.clone();
+                        caches.open(CACHE_NAME).then((cache) => {
+                            cache.put(event.request, responseToCache);
+                        });
+                    }
+                    return response;
+                })
+                .catch(() => caches.match(event.request).then((cachedResponse) => {
+                    if (cachedResponse && !cachedResponse.redirected) {
+                        return cachedResponse;
+                    }
+                    return caches.match('/404.html');
+                }))
+        );
+        return;
+    }
+
     event.respondWith(
         caches.match(event.request)
             .then((cachedResponse) => {
@@ -92,7 +126,7 @@ self.addEventListener('fetch', (event) => {
                 return fetch(event.request)
                     .then((response) => {
                         // Don't cache non-success responses
-                        if (!response || response.status !== 200 || response.type !== 'basic') {
+                        if (!response || response.status !== 200 || response.type !== 'basic' || response.redirected) {
                             return response;
                         }
                         const responseToCache = response.clone();

@@ -1863,16 +1863,23 @@
             element.className = 'form-status';
         }
 
-        function submitToFormSubmit(payload) {
+        function submitToFormSubmit(payload, options = {}) {
+            const timeoutMs = options.timeoutMs || 15000;
             const formData = new FormData();
             Object.entries(payload).forEach(([key, value]) => {
                 formData.append(key, value);
             });
 
+            const controller = new AbortController();
+            const timeoutId = window.setTimeout(() => {
+                controller.abort();
+            }, timeoutMs);
+
             return fetch('https://formsubmit.co/ajax/contact@orhar.com', {
                 method: 'POST',
                 headers: { 'Accept': 'application/json' },
-                body: formData
+                body: formData,
+                signal: controller.signal
             }).then(response => {
                 if (!response.ok) {
                     throw new Error(`FormSubmit HTTP ${response.status}`);
@@ -1889,6 +1896,13 @@
                 }
 
                 return result;
+            }).catch(error => {
+                if (error && error.name === 'AbortError') {
+                    throw new Error(`FormSubmit timeout after ${Math.round(timeoutMs / 1000)}s`);
+                }
+                throw error;
+            }).finally(() => {
+                window.clearTimeout(timeoutId);
             });
         }
 
@@ -2010,6 +2024,7 @@
             // Disable button
             submitBtn.disabled = true;
             submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${runtime.sending}`;
+            setStatus(statusMsg, 'Diagnostic: sending request to FormSubmit…', 'info');
             
             const topicLabels = {
                 general: 'General Inquiry',
@@ -2034,8 +2049,9 @@
                 message: body
             };
 
-            submitToFormSubmit(payload)
+            submitToFormSubmit(payload, { timeoutMs: 15000 })
                 .then(() => {
+                    clearStatus(statusMsg);
                     form.style.display = 'none';
                     successMsg.style.display = 'block';
 
@@ -2071,6 +2087,7 @@
 
             submitBtn.disabled = true;
             submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${runtime.newsletterSending}`;
+            setStatus(statusMsg, 'Diagnostic: sending request to FormSubmit…', 'info');
 
             const subject = '[ORHAR] Newsletter subscription';
             const body = `Newsletter subscription request\nEmail: ${email}\nLanguage: ${activeLang}`;
@@ -2084,13 +2101,13 @@
                 message: body
             };
 
-            submitToFormSubmit(payload)
+            submitToFormSubmit(payload, { timeoutMs: 15000 })
                 .then(() => {
                     document.getElementById('newsletterForm').reset();
                     setStatus(statusMsg, `${runtime.newsletterSuccessTitle} ${runtime.newsletterSuccessDesc}`, 'info');
                 })
-                .catch(() => {
-                    setStatus(statusMsg, runtime.blocked, 'error');
+                .catch((error) => {
+                    setStatus(statusMsg, `${runtime.newsletterFallback} (${error.message})`, 'error');
                 })
             .finally(() => {
                 submitBtn.disabled = false;

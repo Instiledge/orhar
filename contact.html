@@ -1863,37 +1863,86 @@
             element.className = 'form-status';
         }
 
-        function submitToWeb3Forms(payload, options = {}) {
+        const FIREBASE_API_KEY = 'AIzaSyCxx7c1XvVNT-FehV2HnzFSP8ZryH-DX2o';
+        const FIREBASE_PROJECT_ID = 'parobible-app';
+
+        async function submitContactToFirebase({ name, email, subject, message, topic, language }, options = {}) {
             const timeoutMs = options.timeoutMs || 15000;
-            const formData = new FormData();
-            formData.append("access_key", "e384b3c8-76e2-4403-bdcd-4900b36e8682");
-            Object.entries(payload).forEach(([key, value]) => {
-                formData.append(key, value);
-            });
-
             const controller = new AbortController();
-            const timeoutId = window.setTimeout(() => {
-                controller.abort();
-            }, timeoutMs);
+            const timeoutId = window.setTimeout(() => controller.abort(), timeoutMs);
 
-            return fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: formData,
-                signal: controller.signal
-            }).then(async response => {
+            const endpoint = `https://firestore.googleapis.com/v1/projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents/contact_submissions?key=${FIREBASE_API_KEY}`;
+            const payload = {
+                fields: {
+                    name: { stringValue: (name || email.split('@')[0]).slice(0, 100) },
+                    email: { stringValue: email.slice(0, 150) },
+                    subject: { stringValue: subject.slice(0, 200) },
+                    message: { stringValue: message.slice(0, 5000) },
+                    topic: { stringValue: (topic || 'general').slice(0, 50) },
+                    language: { stringValue: (language || 'en').slice(0, 10) },
+                    status: { stringValue: 'new' },
+                    createdAt: { stringValue: new Date().toISOString() }
+                }
+            };
+
+            try {
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                    signal: controller.signal
+                });
                 const result = await response.json().catch(() => ({}));
-                if (!response.ok || !result.success) {
-                    throw new Error(result.message || `Web3Forms HTTP ${response.status}`);
+                if (!response.ok) {
+                    throw new Error(result?.error?.message || `HTTP ${response.status}`);
                 }
                 return result;
-            }).catch(error => {
+            } catch (error) {
                 if (error && error.name === 'AbortError') {
                     throw new Error(`Timeout after ${Math.round(timeoutMs / 1000)}s`);
                 }
                 throw error;
-            }).finally(() => {
+            } finally {
                 window.clearTimeout(timeoutId);
-            });
+            }
+        }
+
+        async function submitNewsletterToFirebase(email, language = 'en', options = {}) {
+            const timeoutMs = options.timeoutMs || 15000;
+            const controller = new AbortController();
+            const timeoutId = window.setTimeout(() => controller.abort(), timeoutMs);
+
+            const endpoint = `https://firestore.googleapis.com/v1/projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents/newsletter_subscribers?key=${FIREBASE_API_KEY}`;
+            const payload = {
+                fields: {
+                    email: { stringValue: email.trim().toLowerCase().slice(0, 150) },
+                    language: { stringValue: (language || 'en').slice(0, 10) },
+                    status: { stringValue: 'active' },
+                    subscribedAt: { stringValue: new Date().toISOString() },
+                    source: { stringValue: 'contact_page' }
+                }
+            };
+
+            try {
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                    signal: controller.signal
+                });
+                const result = await response.json().catch(() => ({}));
+                if (!response.ok) {
+                    throw new Error(result?.error?.message || `HTTP ${response.status}`);
+                }
+                return result;
+            } catch (error) {
+                if (error && error.name === 'AbortError') {
+                    throw new Error(`Timeout after ${Math.round(timeoutMs / 1000)}s`);
+                }
+                throw error;
+            } finally {
+                window.clearTimeout(timeoutId);
+            }
         }
 
         function escapeHtml(value) {
@@ -2027,17 +2076,15 @@
             };
             
             const subject = `[ORHAR Support] ${topicLabels[topic] || 'General Inquiry'}`;
-            const body = `From: ${email}\nTopic: ${topicLabels[topic] || 'General Inquiry'}\n\n${message}`;
             
-            const payload = {
+            submitContactToFirebase({
                 name: email.split('@')[0],
                 email: email,
                 subject: subject,
-                from_name: 'ORHAR App Support',
-                message: body
-            };
-
-            submitToWeb3Forms(payload, { timeoutMs: 15000 })
+                message: message,
+                topic: topic || 'general',
+                language: activeLang || 'en'
+            }, { timeoutMs: 15000 })
                 .then(() => {
                     clearStatus(statusMsg);
                     form.style.display = 'none';
@@ -2076,18 +2123,7 @@
             submitBtn.disabled = true;
             submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${runtime.newsletterSending}`;
 
-            const subject = `[ORHAR Newsletter] Subscription (${activeLang ? activeLang.toUpperCase() : 'EN'})`;
-            const body = `Newsletter subscription request\nEmail: ${email}\nLanguage: ${activeLang || 'en'}`;
-
-            const payload = {
-                name: email.split('@')[0],
-                email: email,
-                subject: subject,
-                from_name: 'ORHAR Newsletter',
-                message: body
-            };
-
-            submitToWeb3Forms(payload, { timeoutMs: 15000 })
+            submitNewsletterToFirebase(email, activeLang || 'en', { timeoutMs: 15000 })
                 .then(() => {
                     document.getElementById('newsletterForm').reset();
                     setStatus(statusMsg, `${runtime.newsletterSuccessTitle} ${runtime.newsletterSuccessDesc}`, 'info');

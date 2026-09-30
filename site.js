@@ -194,12 +194,40 @@
   }
 
   // Seamless AJAX submission for homepage newsletter forms
+  const FIREBASE_API_KEY = 'AIzaSyCxx7c1XvVNT-FehV2HnzFSP8ZryH-DX2o';
+  const FIREBASE_PROJECT_ID = 'parobible-app';
+
+  async function submitNewsletterToFirebase(email, language = 'en', source = 'homepage') {
+    const endpoint = `https://firestore.googleapis.com/v1/projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents/newsletter_subscribers?key=${FIREBASE_API_KEY}`;
+    const payload = {
+      fields: {
+        email: { stringValue: email.trim().toLowerCase().slice(0, 150) },
+        language: { stringValue: (language || 'en').slice(0, 10) },
+        status: { stringValue: 'active' },
+        subscribedAt: { stringValue: new Date().toISOString() },
+        source: { stringValue: source.slice(0, 50) }
+      }
+    };
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err?.error?.message || `HTTP ${res.status}`);
+    }
+    return await res.json();
+  }
+
   document.querySelectorAll('.home-newsletter-form').forEach(form => {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const submitBtn = form.querySelector('button[type="submit"]');
       const originalBtnText = submitBtn ? submitBtn.textContent : '';
       const lang = form.querySelector('input[name="language"]')?.value || 'en';
+      const emailInput = form.querySelector('input[name="email"]');
+      const email = emailInput ? emailInput.value.trim() : '';
       
       const sendingLabels = {
         en: 'Sending...', fr: 'Envoi en cours...', es: 'Enviando...',
@@ -224,24 +252,16 @@
         pl: 'Błąd. Spróbuj ponownie.'
       };
 
+      if (!email) return;
+
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.textContent = sendingLabels[lang] || sendingLabels.en;
       }
 
       try {
-        const formData = new FormData(form);
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-        const data = await res.json().catch(() => ({}));
-        if (res.ok && data.success !== false) {
-          form.innerHTML = `<div class="newsletter-success" style="padding:12px 18px;background:rgba(213,183,125,.18);border:1px solid rgba(213,183,125,.45);border-radius:12px;color:var(--gold,#d5b77d);font-weight:600;font-size:.95rem;text-align:center;">${successLabels[lang] || successLabels.en}</div>`;
-        } else {
-          throw new Error(data.message || 'Submission failed');
-        }
+        await submitNewsletterToFirebase(email, lang, 'home_page');
+        form.innerHTML = `<div class="newsletter-success" style="padding:12px 18px;background:rgba(213,183,125,.18);border:1px solid rgba(213,183,125,.45);border-radius:12px;color:var(--gold,#d5b77d);font-weight:600;font-size:.95rem;text-align:center;">${successLabels[lang] || successLabels.en}</div>`;
       } catch (err) {
         if (submitBtn) {
           submitBtn.disabled = false;

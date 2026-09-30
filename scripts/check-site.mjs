@@ -22,6 +22,10 @@ for (const code of languages) {
     }
   }
   const home = readFileSync(resolve(root,code,'index.html'),'utf8');
+  assert(home.includes(`/assets/videos/${code}/teaser.mp4`), `${code}: localized mp4 teaser missing`);
+  assert(home.includes(`/assets/videos/${code}/teaser.webm`), `${code}: localized webm teaser missing`);
+  assert(existsSync(resolve(root, 'assets', 'videos', code, 'teaser.mp4')), `${code}: teaser.mp4 missing on disk`);
+  assert(existsSync(resolve(root, 'assets', 'videos', code, 'teaser.webm')), `${code}: teaser.webm missing on disk`);
   assert((home.match(/class="feature reveal"/g)||[]).length===13, `${code}: module grid incomplete`);
   const gallery = readFileSync(resolve(root,code,'preview.html'),'utf8');
   assert((gallery.match(/class="shot reveal"/g)||[]).length===Object.keys(localizedScreenshotPaths[code]).length, `${code}: localized gallery incomplete`);

@@ -1863,9 +1863,10 @@
             element.className = 'form-status';
         }
 
-        function submitToFormSubmit(payload, options = {}) {
+        function submitToWeb3Forms(payload, options = {}) {
             const timeoutMs = options.timeoutMs || 15000;
             const formData = new FormData();
+            formData.append("access_key", "e384b3c8-76e2-4403-bdcd-4900b36e8682");
             Object.entries(payload).forEach(([key, value]) => {
                 formData.append(key, value);
             });
@@ -1875,30 +1876,19 @@
                 controller.abort();
             }, timeoutMs);
 
-            return fetch('https://formsubmit.co/ajax/contact@orhar.com', {
+            return fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                headers: { 'Accept': 'application/json' },
                 body: formData,
                 signal: controller.signal
-            }).then(response => {
-                if (!response.ok) {
-                    throw new Error(`FormSubmit HTTP ${response.status}`);
+            }).then(async response => {
+                const result = await response.json().catch(() => ({}));
+                if (!response.ok || !result.success) {
+                    throw new Error(result.message || `Web3Forms HTTP ${response.status}`);
                 }
-                return response.json().catch(() => ({}));
-            }).then(result => {
-                const successValue = result.success;
-                const message = result.message || '';
-                const isSuccess = successValue === true || successValue === 'true';
-                const needsActivation = /activat|confirm/i.test(message);
-
-                if (!isSuccess || needsActivation) {
-                    throw new Error(message || 'FormSubmit did not confirm delivery');
-                }
-
                 return result;
             }).catch(error => {
                 if (error && error.name === 'AbortError') {
-                    throw new Error(`FormSubmit timeout after ${Math.round(timeoutMs / 1000)}s`);
+                    throw new Error(`Timeout after ${Math.round(timeoutMs / 1000)}s`);
                 }
                 throw error;
             }).finally(() => {
@@ -2024,7 +2014,6 @@
             // Disable button
             submitBtn.disabled = true;
             submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${runtime.sending}`;
-            setStatus(statusMsg, 'Diagnostic: sending request to FormSubmit…', 'info');
             
             const topicLabels = {
                 general: 'General Inquiry',
@@ -2037,19 +2026,18 @@
                 other: 'Other'
             };
             
-            const subject = `[ORHAR] ${topicLabels[topic] || 'General Inquiry'}`;
+            const subject = `[ORHAR Support] ${topicLabels[topic] || 'General Inquiry'}`;
             const body = `From: ${email}\nTopic: ${topicLabels[topic] || 'General Inquiry'}\n\n${message}`;
             
             const payload = {
                 name: email.split('@')[0],
                 email: email,
-                _subject: subject,
-                _template: 'table',
-                _captcha: 'false',
+                subject: subject,
+                from_name: 'ORHAR App Support',
                 message: body
             };
 
-            submitToFormSubmit(payload, { timeoutMs: 15000 })
+            submitToWeb3Forms(payload, { timeoutMs: 15000 })
                 .then(() => {
                     clearStatus(statusMsg);
                     form.style.display = 'none';
@@ -2087,21 +2075,19 @@
 
             submitBtn.disabled = true;
             submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${runtime.newsletterSending}`;
-            setStatus(statusMsg, 'Diagnostic: sending request to FormSubmit…', 'info');
 
-            const subject = '[ORHAR] Newsletter subscription';
-            const body = `Newsletter subscription request\nEmail: ${email}\nLanguage: ${activeLang}`;
+            const subject = `[ORHAR Newsletter] Subscription (${activeLang ? activeLang.toUpperCase() : 'EN'})`;
+            const body = `Newsletter subscription request\nEmail: ${email}\nLanguage: ${activeLang || 'en'}`;
 
             const payload = {
                 name: email.split('@')[0],
-                email,
-                _subject: subject,
-                _template: 'table',
-                _captcha: 'false',
+                email: email,
+                subject: subject,
+                from_name: 'ORHAR Newsletter',
                 message: body
             };
 
-            submitToFormSubmit(payload, { timeoutMs: 15000 })
+            submitToWeb3Forms(payload, { timeoutMs: 15000 })
                 .then(() => {
                     document.getElementById('newsletterForm').reset();
                     setStatus(statusMsg, `${runtime.newsletterSuccessTitle} ${runtime.newsletterSuccessDesc}`, 'info');
@@ -2109,10 +2095,10 @@
                 .catch((error) => {
                     setStatus(statusMsg, `${runtime.newsletterFallback} (${error.message})`, 'error');
                 })
-            .finally(() => {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = `<i class="fas fa-envelope-circle-check"></i> <span id="newsletterSubmitLabel">${runtime.newsletterSubmit}</span>`;
-            });
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = `<i class="fas fa-envelope-circle-check"></i> <span id="newsletterSubmitLabel">${runtime.newsletterSubmit}</span>`;
+                });
         }
     </script>
 </body>

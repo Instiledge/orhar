@@ -150,13 +150,28 @@
   document.querySelectorAll('.phone-main video').forEach(video => {
     video.muted = true;
     video.defaultMuted = true;
-    const play = () => { video.play().catch(() => {}); };
-    if (video.readyState >= 2) {
+    video.playsInline = true;
+    video.setAttribute('muted', '');
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
+    const play = () => {
+      const promise = video.play();
+      if (promise !== undefined) {
+        promise.catch(() => {});
+      }
+    };
+    if (video.readyState >= 1) {
       play();
     } else {
-      video.addEventListener('loadeddata', play);
-      video.addEventListener('canplay', play);
+      video.addEventListener('loadedmetadata', play, { once: true });
+      video.addEventListener('canplay', play, { once: true });
     }
+    // Safari interaction fallback
+    ['click', 'touchstart', 'scroll'].forEach(evt => {
+      window.addEventListener(evt, () => {
+        if (video.paused) play();
+      }, { once: true, passive: true });
+    });
   });
 
 

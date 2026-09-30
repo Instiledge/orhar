@@ -136,12 +136,14 @@
 
   const preview = document.querySelector('[data-theme-preview]');
   const themeLabel = document.querySelector('[data-theme-label]');
-  document.querySelectorAll('[data-theme]').forEach(button => {
+  const paletteButtons = document.querySelectorAll('.palette button');
+  paletteButtons.forEach(button => {
     button.addEventListener('click', () => {
-      document.querySelectorAll('[data-theme]').forEach(item => item.setAttribute('aria-pressed', 'false'));
+      paletteButtons.forEach(item => item.setAttribute('aria-pressed', 'false'));
       button.setAttribute('aria-pressed', 'true');
-      if (preview) preview.style.setProperty('--theme', button.dataset.theme);
-      if (themeLabel) themeLabel.textContent = button.getAttribute('aria-label');
+      const color = button.dataset.themeColor || button.dataset.theme;
+      if (preview && color) preview.style.setProperty('--theme', color);
+      if (themeLabel) themeLabel.textContent = button.getAttribute('aria-label') || '';
     });
   });
 

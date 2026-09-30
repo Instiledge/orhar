@@ -193,6 +193,65 @@
     window.addEventListener('load', () => navigator.serviceWorker.register('/service-worker.js').catch(() => {}));
   }
 
+  // Seamless AJAX submission for homepage newsletter forms
+  document.querySelectorAll('.home-newsletter-form').forEach(form => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn ? submitBtn.textContent : '';
+      const lang = form.querySelector('input[name="language"]')?.value || 'en';
+      
+      const sendingLabels = {
+        en: 'Sending...', fr: 'Envoi en cours...', es: 'Enviando...',
+        de: 'Wird gesendet...', it: 'Invio in corso...', pt: 'Enviando...', pl: 'Wysyłanie...'
+      };
+      const successLabels = {
+        en: '✓ Subscribed! Thank you.',
+        fr: '✓ Inscription confirmée ! Merci.',
+        es: '✓ ¡Suscrito! Gracias.',
+        de: '✓ Abonniert! Vielen Dank.',
+        it: '✓ Iscritto! Grazie.',
+        pt: '✓ Inscrito! Obrigado.',
+        pl: '✓ Zapisano! Dziękujemy.'
+      };
+      const errorLabels = {
+        en: 'Error. Please try again.',
+        fr: 'Erreur. Veuillez réessayer.',
+        es: 'Error. Inténtelo de nuevo.',
+        de: 'Fehler. Bitte versuchen Sie es erneut.',
+        it: 'Errore. Riprova.',
+        pt: 'Erro. Tente novamente.',
+        pl: 'Błąd. Spróbuj ponownie.'
+      };
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = sendingLabels[lang] || sendingLabels.en;
+      }
+
+      try {
+        const formData = new FormData(form);
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data.success !== false) {
+          form.innerHTML = `<div class="newsletter-success" style="padding:12px 18px;background:rgba(213,183,125,.18);border:1px solid rgba(213,183,125,.45);border-radius:12px;color:var(--gold,#d5b77d);font-weight:600;font-size:.95rem;text-align:center;">${successLabels[lang] || successLabels.en}</div>`;
+        } else {
+          throw new Error(data.message || 'Submission failed');
+        }
+      } catch (err) {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+        alert(errorLabels[lang] || errorLabels.en);
+      }
+    });
+  });
+
   const footerCopy = {
     en: ['The Mountain of Light — Scripture, prayer and growth in one place.','Footer','Gallery','News','Get the app','Contact','Privacy','Terms','Licenses','All rights reserved.'],
     fr: ['La Montagne de Lumière — Écriture, prière et cheminement en un seul lieu.','Pied de page','Galerie','Actualité','Obtenir l’app','Contact','Confidentialité','Conditions','Licences','Tous droits réservés.'],

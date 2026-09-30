@@ -261,7 +261,7 @@ function story(data, images, klass = '') {
 
 function newsletterSection(code) {
   const n = newsletter[code] || newsletter.en;
-  return `<section class="section home-newsletter-section"><div class="section-inner"><article class="home-newsletter reveal"><div class="home-newsletter-copy"><p class="eyebrow">${n.eyebrow}</p><h2>${n.title}</h2><p>${n.desc}</p><form class="home-newsletter-form" method="POST"><input type="hidden" name="language" value="${code}"><input type="email" name="email" placeholder="${n.email}" required autocomplete="email"><button type="submit">${n.button}</button></form><p class="home-newsletter-note">${n.privacy}</p><p class="home-newsletter-note">${n.unsubscribe}</p></div><div class="home-newsletter-qr"><img src="/${code}/qr-subscribe-${code}.png" alt="${n.qr}" loading="lazy" width="1148" height="1148"><p>${n.qr}</p></div></article></div></section>`;
+  return `<section class="section home-newsletter-section" id="newsletter"><div class="section-inner"><article class="home-newsletter reveal"><div class="home-newsletter-copy"><p class="eyebrow">${n.eyebrow}</p><h2>${n.title}</h2><p>${n.desc}</p><form class="home-newsletter-form" method="POST"><input type="hidden" name="language" value="${code}"><input type="email" name="email" placeholder="${n.email}" required autocomplete="email"><button type="submit">${n.button}</button></form><p class="home-newsletter-note">${n.privacy}</p><p class="home-newsletter-note">${n.unsubscribe}</p></div><div class="home-newsletter-qr"><img src="/${code}/qr-subscribe-${code}.png" alt="${n.qr}" loading="lazy" width="1148" height="1148"><p>${n.qr}</p></div></article></div></section>`;
 }
 
 function iconStorySection(code) {

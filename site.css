@@ -177,7 +177,7 @@ img { display: block; max-width: 100%; }
   border: 7px solid rgba(255,255,255,.92); border-radius: 34px;
   background: white; box-shadow: 0 36px 90px rgba(0,0,0,.38);
 }
-.phone img { display: block; width: 100%; height: auto; aspect-ratio: 9 / 20; object-fit: contain; }
+.phone img, .phone video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 20; object-fit: contain; }
 .phone-main { z-index: 2; transform: translateY(-15px); }
 .phone-left, .phone-right { transform: translateY(18px); }
 .orb { position: absolute; border-radius: 50%; filter: blur(2px); }

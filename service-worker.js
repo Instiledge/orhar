@@ -98,8 +98,10 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
-    // Skip POST requests and API calls
-    if (event.request.method !== 'GET') {
+    // Skip POST requests, video streaming, and API calls
+    if (event.request.method !== 'GET' || 
+        event.request.url.match(/\.(mp4|webm)$/i) || 
+        event.request.headers.get('range')) {
         return;
     }
 

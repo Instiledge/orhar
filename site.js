@@ -147,6 +147,18 @@
     });
   });
 
+  document.querySelectorAll('.phone-main video').forEach(video => {
+    video.muted = true;
+    video.defaultMuted = true;
+    const play = () => { video.play().catch(() => {}); };
+    if (video.readyState >= 2) {
+      play();
+    } else {
+      video.addEventListener('loadeddata', play);
+      video.addEventListener('canplay', play);
+    }
+  });
+
 
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const observer = new IntersectionObserver(entries => {

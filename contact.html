@@ -1875,7 +1875,7 @@
                 body: formData
             }).then(response => {
                 if (!response.ok) {
-                    throw new Error('FormSubmit AJAX failed');
+                    throw new Error(`FormSubmit HTTP ${response.status}`);
                 }
                 return response.json().catch(() => ({}));
             }).then(result => {
@@ -1892,16 +1892,22 @@
             });
         }
 
-        function buildSupportMailLink(subject, body) {
-            return `mailto:contact@orhar.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        function escapeHtml(value) {
+            return String(value || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
         }
 
-        function renderManualContactFallback(element, message, subject, body) {
+        function renderContactFailure(element, message, error) {
             if (!element) return;
-            const mailLink = buildSupportMailLink(subject, body);
+            const detail = error && error.message ? ` (${escapeHtml(error.message)})` : '';
             element.innerHTML = `
-                <span>${message}</span>
-                <a href="${mailLink}" style="color: var(--accent-brown); font-weight: 700; text-decoration: underline;">contact@orhar.com</a>
+                <span>${escapeHtml(message)}${detail}</span>
+                <br>
+                <span style="font-weight: 700;">contact@orhar.com</span>
             `;
             element.className = 'form-status is-error';
         }
@@ -2038,8 +2044,8 @@
                         hideContactForm();
                     }, 8000);
                 })
-                .catch(() => {
-                    renderManualContactFallback(statusMsg, runtime.fallback, subject, body);
+                .catch((error) => {
+                    renderContactFailure(statusMsg, runtime.fallback, error);
                 })
                 .finally(() => {
                     submitBtn.disabled = false;

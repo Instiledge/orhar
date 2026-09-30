@@ -1,10 +1,10 @@
 /* TEAM */
-Founder: [Your Name]
+Founder: Alain Kamdem (Instiledge)
 Contact: contact [at] orhar.com
-From: [Your Country/City]
+From: Paris, France
 
 /* SITE */
-Last update: 2026-04-25
+Last update: 2026-09-30
 Languages: English, French, Spanish, German, Italian, Portuguese, Polish
 Design: Custom — Glassmorphism + typography-driven
 Fonts: Cormorant Garamond (display), Work Sans (body)

@@ -1,7 +1,48 @@
 {
-  "version": "1.3.0",
-  "lastUpdated": "2026-09-27",
+  "version": "1.3.1",
+  "lastUpdated": "2026-09-30",
   "updates": [
+    {
+      "id": "update-004",
+      "date": "2026-09-30",
+      "translations": {
+        "en": {
+          "badge": "🎵 Ambient & Masterpieces",
+          "title": "Ambient Soundscapes & Original Masterpieces",
+          "content": "Deepen your prayer and meditation: ORHAR now introduces contemplative ambient soundscapes and original “Masterpieces” — 100% ORHAR-created musical compositions designed specifically for quiet reflection and scripture immersion."
+        },
+        "fr": {
+          "badge": "🎵 Ambiances & Masterpieces",
+          "title": "Sons d’ambiance et Masterpieces originaux",
+          "content": "Enrichissez votre prière et votre méditation : ORHAR intègre désormais des ambiances sonores contemplatives ainsi que des « Masterpieces », des compositions musicales originales créées à 100 % par ORHAR pour accompagner vos temps de recueillement."
+        },
+        "de": {
+          "badge": "🎵 Klangwelten & Masterpieces",
+          "title": "Klanglandschaften & originale Masterpieces",
+          "content": "Vertiefen Sie Ihr Gebet und Ihre Meditation: ORHAR bietet ab sofort kontemplative Klangwelten und originale „Masterpieces“ — zu 100 % von ORHAR komponierte Musikstücke, die Ihre Stillezeiten und Schriftlesungen begleiten."
+        },
+        "es": {
+          "badge": "🎵 Ambientes y Masterpieces",
+          "title": "Paisajes sonoros y Masterpieces originales",
+          "content": "Enriquece tu oración y meditación: ORHAR integra ahora paisajes sonoros contemplativos y «Masterpieces», composiciones musicales originales 100 % creadas por ORHAR para acompañar tus momentos de recogimiento."
+        },
+        "it": {
+          "badge": "🎵 Ambienti & Masterpieces",
+          "title": "Paesaggi sonori e Masterpieces originali",
+          "content": "Arricchisci la tua preghiera e meditazione: ORHAR include ora paesaggi sonori contemplativi e «Masterpieces», composizioni musicali originali create al 100% da ORHAR per accompagnare i tuoi momenti di raccoglimento."
+        },
+        "pt": {
+          "badge": "🎵 Ambientes e Masterpieces",
+          "title": "Paisagens sonoras e Masterpieces originais",
+          "content": "Enriqueça sua oração e meditação: o ORHAR agora traz paisagens sonoras contemplativas e «Masterpieces», composições musicais originais 100% criadas pelo ORHAR para acompanhar seus momentos de oração e leitura."
+        },
+        "pl": {
+          "badge": "🎵 Tło i Masterpieces",
+          "title": "Pejzaże dźwiękowe i oryginalne Masterpieces",
+          "content": "Wzbogać swoją modlitwę i medytację: ORHAR wprowadza kontemplacyjne pejzaże dźwiękowe oraz „Masterpieces” — oryginalne kompozycje muzyczne stworzone w 100% przez ORHAR, towarzyszące wyciszeniu i lekturze Pisma."
+        }
+      }
+    },
     {
       "id": "update-003",
       "date": "2026-09-27",

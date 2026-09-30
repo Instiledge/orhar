@@ -1,84 +1,35 @@
-<!-- ========== LATEST UPDATE ========== -->
-<!-- English -->
-<section class="section" id="update-en" style="padding: 40px 5%; background: var(--surface-color); display: none;">
-    <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-        <div style="display: inline-block; background: rgba(var(--accent-gold-rgb), 0.1); border: 1px solid var(--accent-gold); color: var(--accent-brown); padding: 6px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: 1px; margin-bottom: 12px; text-transform: uppercase;">
-            📣 Latest
-        </div>
-        <p style="font-size: 16px; color: var(--text-muted); font-style: italic; line-height: 1.7;">
-            Our app is currently in active development. The website is live, the contact form works, and we're building something beautiful. Stay tuned.
-        </p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <title>ORHAR — News & updates</title>
+  <meta name="description" content="Follow the latest ORHAR news in your language.">
+  <meta name="theme-color" content="#0b182a">
+  <link rel="stylesheet" href="/site.css?v=21">
+  <script>
+    const supported = ['en','fr','es','de','it','pt','pl'];
+    const saved = localStorage.getItem('orhar_lang') || navigator.language.slice(0,2);
+    location.replace(`/${supported.includes(saved) ? saved : 'en'}/actuality.html`);
+  </script>
+</head>
+<body>
+  <main class="news-hero" id="main">
+    <div class="section-inner">
+      <p class="eyebrow">ORHAR · NEWS</p>
+      <h1>What’s new in ORHAR</h1>
+      <p>Choose your language to read the latest news.</p>
+      <nav class="hero-actions" aria-label="Choose language">
+        <a class="button button-primary" href="/en/actuality.html">🇬🇧 English</a>
+        <a class="button button-secondary" href="/fr/actuality.html">🇫🇷 Français</a>
+        <a class="button button-secondary" href="/es/actuality.html">🇪🇸 Español</a>
+        <a class="button button-secondary" href="/de/actuality.html">🇩🇪 Deutsch</a>
+        <a class="button button-secondary" href="/it/actuality.html">🇮🇹 Italiano</a>
+        <a class="button button-secondary" href="/pt/actuality.html">🇵🇹 Português</a>
+        <a class="button button-secondary" href="/pl/actuality.html">🇵🇱 Polski</a>
+      </nav>
     </div>
-</section>
-
-<!-- French -->
-<section class="section" id="update-fr" style="padding: 40px 5%; background: var(--surface-color); display: none;">
-    <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-        <div style="display: inline-block; background: rgba(var(--accent-gold-rgb), 0.1); border: 1px solid var(--accent-gold); color: var(--accent-brown); padding: 6px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: 1px; margin-bottom: 12px; text-transform: uppercase;">
-            📣 Dernières Nouvelles
-        </div>
-        <p style="font-size: 16px; color: var(--text-muted); font-style: italic; line-height: 1.7;">
-            Notre application est en développement actif. Le site est en ligne, le formulaire de contact fonctionne, et nous construisons quelque chose de magnifique. Restez à l'écoute.
-        </p>
-    </div>
-</section>
-
-<!-- Spanish -->
-<section class="section" id="update-es" style="padding: 40px 5%; background: var(--surface-color); display: none;">
-    <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-        <div style="display: inline-block; background: rgba(var(--accent-gold-rgb), 0.1); border: 1px solid var(--accent-gold); color: var(--accent-brown); padding: 6px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: 1px; margin-bottom: 12px; text-transform: uppercase;">
-            📣 Novedades
-        </div>
-        <p style="font-size: 16px; color: var(--text-muted); font-style: italic; line-height: 1.7;">
-            Nuestra aplicación está en desarrollo activo. El sitio está en línea, el formulario de contacto funciona, y estamos construyendo algo hermoso. Mantente atento.
-        </p>
-    </div>
-</section>
-
-<!-- German -->
-<section class="section" id="update-de" style="padding: 40px 5%; background: var(--surface-color); display: none;">
-    <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-        <div style="display: inline-block; background: rgba(var(--accent-gold-rgb), 0.1); border: 1px solid var(--accent-gold); color: var(--accent-brown); padding: 6px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: 1px; margin-bottom: 12px; text-transform: uppercase;">
-            📣 Neuestes
-        </div>
-        <p style="font-size: 16px; color: var(--text-muted); font-style: italic; line-height: 1.7;">
-            Unsere App befindet sich in aktiver Entwicklung. Die Website ist live, das Kontaktformular funktioniert, und wir bauen etwas Wunderschönes. Bleib dran.
-        </p>
-    </div>
-</section>
-
-<!-- Italian -->
-<section class="section" id="update-it" style="padding: 40px 5%; background: var(--surface-color); display: none;">
-    <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-        <div style="display: inline-block; background: rgba(var(--accent-gold-rgb), 0.1); border: 1px solid var(--accent-gold); color: var(--accent-brown); padding: 6px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: 1px; margin-bottom: 12px; text-transform: uppercase;">
-            📣 Ultime
-        </div>
-        <p style="font-size: 16px; color: var(--text-muted); font-style: italic; line-height: 1.7;">
-            La nostra app è in fase di sviluppo attivo. Il sito è online, il modulo di contatto funziona, e stiamo costruendo qualcosa di bello. Resta sintonizzato.
-        </p>
-    </div>
-</section>
-
-<!-- Portuguese -->
-<section class="section" id="update-pt" style="padding: 40px 5%; background: var(--surface-color); display: none;">
-    <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-        <div style="display: inline-block; background: rgba(var(--accent-gold-rgb), 0.1); border: 1px solid var(--accent-gold); color: var(--accent-brown); padding: 6px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: 1px; margin-bottom: 12px; text-transform: uppercase;">
-            📣 Novidades
-        </div>
-        <p style="font-size: 16px; color: var(--text-muted); font-style: italic; line-height: 1.7;">
-            Nosso aplicativo está em desenvolvimento ativo. O site está no ar, o formulário de contato funciona, e estamos construindo algo bonito. Fique ligado.
-        </p>
-    </div>
-</section>
-
-<!-- Polish -->
-<section class="section" id="update-pl" style="padding: 40px 5%; background: var(--surface-color); display: none;">
-    <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-        <div style="display: inline-block; background: rgba(var(--accent-gold-rgb), 0.1); border: 1px solid var(--accent-gold); color: var(--accent-brown); padding: 6px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: 1px; margin-bottom: 12px; text-transform: uppercase;">
-            📣 Aktualności
-        </div>
-        <p style="font-size: 16px; color: var(--text-muted); font-style: italic; line-height: 1.7;">
-            Nasza aplikacja jest w trakcie aktywnego rozwoju. Strona działa, formularz kontaktowy jest aktywny, a my budujemy coś pięknego. Bądź na bieżąco.
-        </p>
-    </div>
-</section>
+  </main>
+</body>
+</html>

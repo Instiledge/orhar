@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.orhar.bible",
+      "sha256_cert_fingerprints": [
+        "FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C",
+        "7A:8B:D2:74:EA:7C:E7:14:73:A1:80:CC:D4:D6:C0:B3:15:F9:93:51:F0:77:30:D0:46:61:0D:75:BC:CF:4A:B2"
+      ]
+    }
+  }
+]

@@ -1,24 +1,40 @@
 // ORHAR — Service Worker for offline caching
-const CACHE_NAME = 'orhar-cache-v3';
+const CACHE_NAME = 'orhar-cache-v21';
+
+const LOCALIZED_SCREEN_MODULES = {
+    en: ['home','bible','reader','parobible','plan','quiz','books','mypath','meditbrary'],
+    fr: ['home','bible','reader','parobible','plan','quiz','books','mypath','meditbrary'],
+    es: ['home','bible','reader','parobible','plan','quiz','books','mypath','meditbrary'],
+    de: ['home','bible','reader','parobible','plan','quiz','books','mypath','meditbrary'],
+    it: ['home','bible','reader','parobible','plan','quiz','books','mypath','meditbrary'],
+    pt: ['home','bible','reader','parobible','plan','quiz','books','mypath','meditbrary'],
+    pl: ['home','bible','reader','parobible','plan','quiz','books','mypath','meditbrary']
+};
+const LOCALIZED_SCREEN_ASSETS = Object.entries(LOCALIZED_SCREEN_MODULES).flatMap(([locale, modules]) =>
+    modules.map(module => `/screenshots/locales/${locale}/app-${module}-2026.webp`)
+);
+const LOCALIZED_NEWSLETTER_QR = ['en','fr','es','de','it','pt','pl'].map(code => `/${code}/qr-subscribe-${code}.png`);
 
 const ASSETS_TO_CACHE = [
-    '/en/',
-    '/fr/',
-    '/es/',
-    '/de/',
-    '/it/',
-    '/pt/',
-    '/pl/',
+    ...['en','fr','es','de','it','pt','pl'].flatMap(code => [`/${code}/index.html`, `/${code}/preview.html`, `/${code}/app.html`, `/${code}/actuality.html`]),
+    '/preview.html',
+    '/app.html',
+    '/action.html',
     '/updates.html',
     '/contact.html',
+    '/footer.html',
     '/privacy.html',
     '/terms.html',
     '/licenses.html',
     '/404.html',
     '/manifest.json',
+    '/actuality-data.json',
     '/site.css',
+    '/legacy-layout.css',
     '/site.js',
     '/logo.png',
+    '/assets/background_light.webp',
+    '/assets/background_dark.webp',
     '/og-image.png',
     '/icon-192.png',
     '/icon-512.png',
@@ -28,10 +44,16 @@ const ASSETS_TO_CACHE = [
     '/screenshots/app-home-2026.webp',
     '/screenshots/app-bible-2026.webp',
     '/screenshots/app-parobible-2026.webp',
-    '/screenshots/app-reading-plan-2026.webp',
-    '/screenshots/app-quiz-2026.webp',
-    'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@400;500;600&display=swap',
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
+    '/screenshots/app-reader-2026.webp',
+    '/screenshots/app-my-path-2026.webp',
+    '/screenshots/app-books-2026.webp',
+    '/screenshots/app-meditbrary-2026.webp',
+    '/screenshots/app-voices-2026.webp',
+    '/screenshots/app-chapters-2026.webp',
+    '/screenshots/app-notes-2026.webp',
+    '/screenshots/app-bookmarks-2026.webp',
+    ...LOCALIZED_NEWSLETTER_QR,
+    ...LOCALIZED_SCREEN_ASSETS
 ];
 
 // Install event — cache all assets
@@ -81,39 +103,27 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
-    // Safari rejects navigation responses served by a service worker when the
-    // response is a redirect. Always resolve navigation requests from network
-    // first, follow redirects explicitly, and never cache redirected responses.
+    // Pages must update promptly after a release; retain cache only as offline fallback.
     if (event.request.mode === 'navigate') {
-        event.respondWith(
-            fetch(event.request)
-                .then(async (response) => {
-                    if (response.redirected && response.url) {
-                        const finalResponse = await fetch(response.url, { cache: 'reload' });
-                        if (finalResponse.ok && finalResponse.type === 'basic' && !finalResponse.redirected) {
-                            const responseToCache = finalResponse.clone();
-                            caches.open(CACHE_NAME).then((cache) => {
-                                cache.put(event.request, responseToCache);
-                            });
-                        }
-                        return finalResponse;
-                    }
+        event.respondWith(fetch(event.request).then(async response => {
+            if (response.redirected && response.url) {
+                const finalResponse = await fetch(response.url, { cache: 'reload' });
+                if (finalResponse.ok && finalResponse.type === 'basic' && !finalResponse.redirected) {
+                    const copy = finalResponse.clone();
+                    caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
+                }
+                return finalResponse;
+            }
 
-                    if (response.ok && response.type === 'basic' && !response.redirected) {
-                        const responseToCache = response.clone();
-                        caches.open(CACHE_NAME).then((cache) => {
-                            cache.put(event.request, responseToCache);
-                        });
-                    }
-                    return response;
-                })
-                .catch(() => caches.match(event.request).then((cachedResponse) => {
-                    if (cachedResponse && !cachedResponse.redirected) {
-                        return cachedResponse;
-                    }
-                    return caches.match('/404.html');
-                }))
-        );
+            if (response.ok && response.type === 'basic' && !response.redirected) {
+                const copy = response.clone();
+                caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
+            }
+            return response;
+        }).catch(() => caches.match(event.request).then(cached => {
+            if (cached && !cached.redirected) return cached;
+            return caches.match('/404.html');
+        })));
         return;
     }
 
@@ -126,7 +136,7 @@ self.addEventListener('fetch', (event) => {
                 return fetch(event.request)
                     .then((response) => {
                         // Don't cache non-success responses
-                        if (!response || response.status !== 200 || response.type !== 'basic' || response.redirected) {
+                        if (!response || response.status !== 200 || response.type !== 'basic') {
                             return response;
                         }
                         const responseToCache = response.clone();

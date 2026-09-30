@@ -744,6 +744,39 @@
             min-height: 120px;
             resize: vertical;
         }
+
+        .form-honeypot {
+            position: absolute !important;
+            left: -10000px !important;
+            width: 1px !important;
+            height: 1px !important;
+            overflow: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+
+        .form-status {
+            margin-top: 16px;
+            padding: 12px 14px;
+            border-radius: 12px;
+            font-size: 14px;
+            line-height: 1.55;
+            display: none;
+        }
+
+        .form-status.is-error {
+            display: block;
+            color: #7f1d1d;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.22);
+        }
+
+        .form-status.is-info {
+            display: block;
+            color: var(--primary-navy);
+            background: rgba(var(--accent-gold-rgb), 0.14);
+            border: 1px solid rgba(var(--accent-gold-rgb), 0.32);
+        }
         
         .form-buttons-row {
             display: flex;
@@ -801,6 +834,125 @@
             line-height: 1.7;
         }
 
+        .newsletter-card {
+            margin-bottom: 80px;
+            padding: clamp(36px, 5vw, 62px);
+            background:
+                radial-gradient(circle at 86% 18%, rgba(var(--accent-gold-rgb), 0.28), transparent 32%),
+                linear-gradient(135deg, rgba(26,46,74,0.96), rgba(45,78,119,0.92));
+            color: #fff;
+            border: 1px solid rgba(var(--accent-gold-rgb), 0.38);
+            border-radius: 26px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+        }
+
+        .newsletter-card h2,
+        .newsletter-card label {
+            color: #fff;
+        }
+
+        .newsletter-card p {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .newsletter-card .form-group-inline input {
+            background: rgba(255,255,255,0.96);
+            color: #1e1e1e;
+            border: 2px solid rgba(var(--accent-gold-rgb), 0.3);
+            border-radius: 12px;
+            padding: 18px 22px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .newsletter-card .form-group-inline input::placeholder {
+            color: rgba(26, 46, 74, 0.42);
+        }
+
+        .newsletter-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(230px, 300px);
+            gap: clamp(34px, 6vw, 70px);
+            align-items: center;
+        }
+
+        .newsletter-main {
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        .newsletter-mailbox {
+            font-size: 38px;
+            line-height: 1;
+            margin-bottom: 24px;
+        }
+
+        .newsletter-card h2 {
+            font-family: var(--font-body);
+            font-size: clamp(30px, 4vw, 42px);
+            line-height: 1.12;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 18px;
+        }
+
+        .newsletter-card #newsletterDesc {
+            font-size: clamp(18px, 2.2vw, 24px);
+            line-height: 1.45;
+            margin-bottom: 28px;
+            letter-spacing: 0.02em;
+        }
+
+        .newsletter-card .email-link {
+            min-height: 64px;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .newsletter-note {
+            max-width: 520px;
+            margin: 22px auto 0;
+            font-size: clamp(16px, 2vw, 21px);
+            line-height: 1.7;
+            font-style: italic;
+            color: rgba(255,255,255,0.68) !important;
+        }
+
+        .newsletter-qr {
+            margin: 0 auto;
+            display: grid;
+            justify-items: center;
+            gap: 18px;
+        }
+
+        .newsletter-qr img {
+            width: min(235px, 72vw);
+            height: auto;
+            padding: 12px;
+            border-radius: 20px;
+            background: #fff;
+            border: 3px solid rgba(255,255,255,0.22);
+            box-shadow: 0 18px 45px rgba(0,0,0,0.22);
+        }
+
+        .newsletter-qr p {
+            margin: 0;
+            font-size: clamp(16px, 2vw, 20px);
+            line-height: 1.3;
+            font-style: italic;
+            font-weight: 600;
+            color: rgba(255,255,255,0.86) !important;
+        }
+
+        @media (max-width: 860px) {
+            .newsletter-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .github-link {
             display: inline-flex;
             align-items: center;
@@ -810,6 +962,8 @@
             font-size: 14px;
         }
     </style>
+    <link rel="stylesheet" href="/legacy-layout.css?v=11">
+    <script src="/site.js?v=21" defer></script>
 </head>
 <body>
 
@@ -875,6 +1029,11 @@
             <h2 id="formTitle" data-i18n="c_form_title">Send Us a Message</h2>
             
             <form id="contactForm" onsubmit="handleFormSubmit(event)" style="margin-top: 24px;">
+                <div class="form-honeypot" aria-hidden="true">
+                    <label for="formWebsite">Website</label>
+                    <input type="text" id="formWebsite" name="website" tabindex="-1" autocomplete="off">
+                </div>
+
                 <div class="form-group-inline">
                     <label for="formEmail" data-i18n="c_form_email_label">Your Email *</label>
                     <input type="email" id="formEmail" placeholder="you@example.com" required data-i18n-placeholder="c_form_email_placeholder">
@@ -909,6 +1068,7 @@
                         <span data-i18n="c_form_cancel_btn">Cancel</span>
                     </button>
                 </div>
+                <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
             </form>
             
             <div class="form-success-message" id="formSuccessMessage" style="display: none;">
@@ -917,6 +1077,36 @@
                 </div>
                 <h3 data-i18n="c_form_success_title">Message Sent!</h3>
                 <p data-i18n="c_form_success_desc">Thank you for reaching out. We'll get back to you within 24–48 hours. God bless you.</p>
+            </div>
+        </div>
+
+        <!-- ========== NEWSLETTER ========== -->
+        <div class="contact-card newsletter-card" id="newsletter-section">
+            <div class="newsletter-layout">
+                <form id="newsletterForm" class="newsletter-main" onsubmit="handleNewsletterSubmit(event)">
+                    <div class="newsletter-mailbox" aria-hidden="true">📬</div>
+                    <h2 id="newsletterTitle">Stay informed</h2>
+                    <p id="newsletterDesc">Be the first to receive important ORHAR updates.</p>
+                    <div class="form-honeypot" aria-hidden="true">
+                        <label for="newsletterWebsite">Website</label>
+                        <input type="text" id="newsletterWebsite" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+                    <div class="form-group-inline">
+                        <label for="newsletterEmail" id="newsletterEmailLabel">Your Email *</label>
+                        <input type="email" id="newsletterEmail" placeholder="you@example.com" required>
+                    </div>
+                    <button type="submit" class="email-link" id="newsletterSubmitBtn" style="width: 100%;">
+                        <i class="fas fa-envelope-circle-check"></i>
+                        <span id="newsletterSubmitLabel">Subscribe</span>
+                    </button>
+                    <p class="newsletter-note" id="newsletterNote">We respect your privacy and will never send irrelevant information.</p>
+                    <p class="newsletter-note" id="newsletterUnsubscribeNote">You can unsubscribe at any time by contacting us.</p>
+                    <div class="form-status" id="newsletterStatus" role="status" aria-live="polite"></div>
+                </form>
+                <div class="newsletter-qr">
+                    <img id="newsletterQrImage" src="/en/qr-subscribe-en.png" alt="QR code to subscribe to the ORHAR newsletter" loading="lazy" width="1148" height="1148">
+                    <p id="newsletterQrLabel">📱 Scan to subscribe</p>
+                </div>
             </div>
         </div>
         
@@ -1064,6 +1254,127 @@
 
     <script>
         let activeLang = 'en';
+        const formRuntimeCopy = {
+            en: {
+                sending: 'Sending...',
+                fallback: 'We could not submit the form automatically. Your email app has been opened as a fallback.',
+                blocked: 'Your message was not submitted.',
+                newsletterTitle: 'Newsletter ORHAR',
+                newsletterDesc: 'Receive important ORHAR updates, release notes and spiritual reflections. No spam.',
+                newsletterEmail: 'Your Email *',
+                newsletterSubmit: 'Subscribe',
+                newsletterSending: 'Subscribing...',
+                newsletterSuccessTitle: 'Subscription received!',
+                newsletterSuccessDesc: 'Thank you. We received your newsletter request.',
+                newsletterFallback: 'We could not submit the newsletter form automatically. Your email app has been opened as a fallback.',
+                newsletterNote: 'We respect your privacy and will never send irrelevant information.',
+                newsletterUnsubscribeNote: 'You can unsubscribe at any time by contacting us.',
+                newsletterQrLabel: '📱 Scan to subscribe',
+                newsletterQrAlt: 'QR code to subscribe to the ORHAR newsletter'
+            },
+            fr: {
+                sending: 'Envoi...',
+                fallback: 'L’envoi automatique a échoué. Votre application e-mail s’ouvre en solution de secours.',
+                blocked: 'Votre message n’a pas été soumis.',
+                newsletterTitle: 'Newsletter ORHAR',
+                newsletterDesc: 'Recevez les nouvelles importantes d’ORHAR, les notes de version et des réflexions spirituelles. Pas de spam.',
+                newsletterEmail: 'Votre e-mail *',
+                newsletterSubmit: 'S’inscrire',
+                newsletterSending: 'Inscription...',
+                newsletterSuccessTitle: 'Inscription reçue !',
+                newsletterSuccessDesc: 'Merci. Nous avons reçu votre demande d’inscription à la newsletter.',
+                newsletterFallback: 'L’inscription automatique a échoué. Votre application e-mail s’ouvre en solution de secours.',
+                newsletterNote: 'Nous respectons votre vie privée et ne vous enverrons jamais d’informations non pertinentes.',
+                newsletterUnsubscribeNote: 'Vous pouvez vous désinscrire à tout moment en nous contactant.',
+                newsletterQrLabel: '📱 Scannez pour vous abonner',
+                newsletterQrAlt: 'QR code pour s’abonner à la newsletter ORHAR'
+            },
+            es: {
+                sending: 'Enviando...',
+                fallback: 'No pudimos enviar el formulario automáticamente. Se abrió tu app de correo como alternativa.',
+                blocked: 'Tu mensaje no fue enviado.',
+                newsletterTitle: 'Newsletter ORHAR',
+                newsletterDesc: 'Recibe novedades importantes de ORHAR, notas de versión y reflexiones espirituales. Sin spam.',
+                newsletterEmail: 'Tu email *',
+                newsletterSubmit: 'Suscribirse',
+                newsletterSending: 'Suscribiendo...',
+                newsletterSuccessTitle: '¡Suscripción recibida!',
+                newsletterSuccessDesc: 'Gracias. Recibimos tu solicitud de newsletter.',
+                newsletterFallback: 'No pudimos enviar la suscripción automáticamente. Se abrió tu app de correo como alternativa.',
+                newsletterNote: 'Respetamos tu privacidad y nunca enviaremos información irrelevante.',
+                newsletterUnsubscribeNote: 'Puedes darte de baja en cualquier momento contactándonos.',
+                newsletterQrLabel: '📱 Escanea para suscribirte',
+                newsletterQrAlt: 'Código QR para suscribirse a la newsletter de ORHAR'
+            },
+            de: {
+                sending: 'Senden...',
+                fallback: 'Das Formular konnte nicht automatisch gesendet werden. Ihre E-Mail-App wurde als Alternative geöffnet.',
+                blocked: 'Ihre Nachricht wurde nicht gesendet.',
+                newsletterTitle: 'ORHAR Newsletter',
+                newsletterDesc: 'Erhalten Sie wichtige ORHAR-Neuigkeiten, Versionshinweise und geistliche Impulse. Kein Spam.',
+                newsletterEmail: 'Ihre E-Mail *',
+                newsletterSubmit: 'Abonnieren',
+                newsletterSending: 'Abonnieren...',
+                newsletterSuccessTitle: 'Anmeldung erhalten!',
+                newsletterSuccessDesc: 'Danke. Wir haben Ihre Newsletter-Anfrage erhalten.',
+                newsletterFallback: 'Die Anmeldung konnte nicht automatisch gesendet werden. Ihre E-Mail-App wurde als Alternative geöffnet.',
+                newsletterNote: 'Wir respektieren Ihre Privatsphäre und senden Ihnen niemals irrelevante Informationen.',
+                newsletterUnsubscribeNote: 'Sie können sich jederzeit abmelden, indem Sie uns kontaktieren.',
+                newsletterQrLabel: '📱 Scannen zum Abonnieren',
+                newsletterQrAlt: 'QR-Code zum Abonnieren des ORHAR-Newsletters'
+            },
+            it: {
+                sending: 'Invio...',
+                fallback: 'Non è stato possibile inviare il modulo automaticamente. L’app email è stata aperta come alternativa.',
+                blocked: 'Il messaggio non è stato inviato.',
+                newsletterTitle: 'Newsletter ORHAR',
+                newsletterDesc: 'Ricevi aggiornamenti importanti di ORHAR, note di rilascio e riflessioni spirituali. Niente spam.',
+                newsletterEmail: 'La tua email *',
+                newsletterSubmit: 'Iscriviti',
+                newsletterSending: 'Iscrizione...',
+                newsletterSuccessTitle: 'Iscrizione ricevuta!',
+                newsletterSuccessDesc: 'Grazie. Abbiamo ricevuto la tua richiesta di newsletter.',
+                newsletterFallback: 'Non è stato possibile inviare l’iscrizione automaticamente. L’app email è stata aperta come alternativa.',
+                newsletterNote: 'Rispettiamo la tua privacy e non invieremo mai informazioni non pertinenti.',
+                newsletterUnsubscribeNote: 'Puoi annullare l’iscrizione in qualsiasi momento contattandoci.',
+                newsletterQrLabel: '📱 Scansiona per iscriverti',
+                newsletterQrAlt: 'Codice QR per iscriversi alla newsletter ORHAR'
+            },
+            pt: {
+                sending: 'Enviando...',
+                fallback: 'Não foi possível enviar o formulário automaticamente. Seu app de e-mail foi aberto como alternativa.',
+                blocked: 'Sua mensagem não foi enviada.',
+                newsletterTitle: 'Newsletter ORHAR',
+                newsletterDesc: 'Receba novidades importantes do ORHAR, notas de versão e reflexões espirituais. Sem spam.',
+                newsletterEmail: 'Seu email *',
+                newsletterSubmit: 'Inscrever-se',
+                newsletterSending: 'Inscrevendo...',
+                newsletterSuccessTitle: 'Inscrição recebida!',
+                newsletterSuccessDesc: 'Obrigado. Recebemos sua solicitação da newsletter.',
+                newsletterFallback: 'Não foi possível enviar a inscrição automaticamente. Seu app de e-mail foi aberto como alternativa.',
+                newsletterNote: 'Respeitamos sua privacidade e nunca enviaremos informações irrelevantes.',
+                newsletterUnsubscribeNote: 'Você pode cancelar a inscrição a qualquer momento entrando em contato conosco.',
+                newsletterQrLabel: '📱 Escaneie para se inscrever',
+                newsletterQrAlt: 'Código QR para assinar a newsletter ORHAR'
+            },
+            pl: {
+                sending: 'Wysyłanie...',
+                fallback: 'Nie udało się wysłać formularza automatycznie. Aplikacja e-mail została otwarta jako alternatywa.',
+                blocked: 'Wiadomość nie została wysłana.',
+                newsletterTitle: 'Newsletter ORHAR',
+                newsletterDesc: 'Otrzymuj ważne aktualizacje ORHAR, informacje o wydaniach i refleksje duchowe. Bez spamu.',
+                newsletterEmail: 'Twój e-mail *',
+                newsletterSubmit: 'Zapisz się',
+                newsletterSending: 'Zapisywanie...',
+                newsletterSuccessTitle: 'Zgłoszenie otrzymane!',
+                newsletterSuccessDesc: 'Dziękujemy. Otrzymaliśmy Twoją prośbę o newsletter.',
+                newsletterFallback: 'Nie udało się wysłać zapisu automatycznie. Aplikacja e-mail została otwarta jako alternatywa.',
+                newsletterNote: 'Szanujemy Twoją prywatność i nigdy nie wyślemy nieistotnych informacji.',
+                newsletterUnsubscribeNote: 'Możesz zrezygnować w dowolnym momencie, kontaktując się z nami.',
+                newsletterQrLabel: '📱 Zeskanuj, aby się zapisać',
+                newsletterQrAlt: 'Kod QR do zapisania się do newslettera ORHAR'
+            }
+        };
         const contactData = {
             en: {
                 c_form_open: "Send Us a Message",
@@ -1475,6 +1786,12 @@
 
         function changeLang(lang) {
             activeLang = lang;
+            document.documentElement.lang = lang;
+            localStorage.setItem('orhar_lang', lang);
+            document.querySelectorAll('[data-i18n="nav_home"]').forEach(a => a.href = `/${lang}/index.html`);
+            document.querySelectorAll('[data-i18n="nav_actuality"]').forEach(a => a.href = `/${lang}/actuality.html`);
+            document.querySelectorAll('[data-i18n="nav_prev"]').forEach(a => a.href = `/${lang}/preview.html`);
+            document.querySelector('.logo-container').href = `/${lang}/index.html`;
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (contactData[lang] && contactData[lang][key] !== undefined) {
@@ -1504,6 +1821,46 @@
             if (footerLoaded) {
                 loadFooter(lang);
             }
+
+            applyNewsletterCopy(lang);
+        }
+
+        function applyNewsletterCopy(lang) {
+            const copy = formRuntimeCopy[lang] || formRuntimeCopy.en;
+            const mappings = [
+                ['newsletterTitle', copy.newsletterTitle],
+                ['newsletterDesc', copy.newsletterDesc],
+                ['newsletterEmailLabel', copy.newsletterEmail],
+                ['newsletterSubmitLabel', copy.newsletterSubmit],
+                ['newsletterNote', copy.newsletterNote],
+                ['newsletterUnsubscribeNote', copy.newsletterUnsubscribeNote],
+                ['newsletterQrLabel', copy.newsletterQrLabel]
+            ];
+            mappings.forEach(([id, value]) => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = value;
+            });
+            const emailInput = document.getElementById('newsletterEmail');
+            if (emailInput) {
+                emailInput.placeholder = contactData[lang]?.c_form_email_placeholder || contactData.en.c_form_email_placeholder;
+            }
+            const qrImage = document.getElementById('newsletterQrImage');
+            if (qrImage) {
+                qrImage.src = `/${lang}/qr-subscribe-${lang}.png`;
+                qrImage.alt = copy.newsletterQrAlt || formRuntimeCopy.en.newsletterQrAlt;
+            }
+        }
+
+        function setStatus(element, message, type = 'info') {
+            if (!element) return;
+            element.textContent = message;
+            element.className = `form-status is-${type}`;
+        }
+
+        function clearStatus(element) {
+            if (!element) return;
+            element.textContent = '';
+            element.className = 'form-status';
         }
 
         document.addEventListener("DOMContentLoaded", () => {
@@ -1527,11 +1884,16 @@
             const form = document.getElementById('contactForm');
             const successMsg = document.getElementById('formSuccessMessage');
             const topicSelect = document.getElementById('formTopic');
+            const submitBtn = document.getElementById('formSubmitBtn');
+            const statusMsg = document.getElementById('formStatus');
             
             // Reset state
             form.style.display = 'block';
             successMsg.style.display = 'none';
             form.reset();
+            clearStatus(statusMsg);
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = `<i class="fas fa-paper-plane"></i> <span data-i18n="c_form_send_btn">${contactData[activeLang]?.c_form_send_btn || contactData.en.c_form_send_btn}</span>`;
             
             // Re-translate the dropdown options (reset clears them)
             const lang = activeLang || 'en';
@@ -1582,13 +1944,23 @@
             const email = document.getElementById('formEmail').value.trim();
             const topic = document.getElementById('formTopic').value;
             const message = document.getElementById('formMessage').value.trim();
+            const website = document.getElementById('formWebsite').value.trim();
             const form = document.getElementById('contactForm');
             const successMsg = document.getElementById('formSuccessMessage');
             const submitBtn = document.getElementById('formSubmitBtn');
+            const statusMsg = document.getElementById('formStatus');
+            const runtime = formRuntimeCopy[activeLang] || formRuntimeCopy.en;
+
+            clearStatus(statusMsg);
+
+            if (website) {
+                setStatus(statusMsg, runtime.blocked, 'error');
+                return;
+            }
             
             // Disable button
             submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${runtime.sending}`;
             
             const topicLabels = {
                 general: 'General Inquiry',
@@ -1612,6 +1984,8 @@
                     name: email.split('@')[0],
                     email: email,
                     _subject: subject,
+                    _template: 'table',
+                    _captcha: 'false',
                     message: body
                 })
             })
@@ -1632,10 +2006,59 @@
                 // Fallback: open mailto as last resort
                 const mailtoLink = `mailto:contact@orhar.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                 window.location.href = mailtoLink;
-                
-                form.style.display = 'none';
-                successMsg.style.display = 'block';
-                setTimeout(() => hideContactForm(), 8000);
+                setStatus(statusMsg, runtime.fallback, 'info');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `<i class="fas fa-paper-plane"></i> ${contactData[activeLang]?.c_form_send_btn || contactData.en.c_form_send_btn}`;
+            });
+        }
+
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('newsletterEmail').value.trim();
+            const website = document.getElementById('newsletterWebsite').value.trim();
+            const submitBtn = document.getElementById('newsletterSubmitBtn');
+            const statusMsg = document.getElementById('newsletterStatus');
+            const runtime = formRuntimeCopy[activeLang] || formRuntimeCopy.en;
+
+            clearStatus(statusMsg);
+
+            if (website) {
+                setStatus(statusMsg, runtime.blocked, 'error');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${runtime.newsletterSending}`;
+
+            const subject = '[ORHAR] Newsletter subscription';
+            const body = `Newsletter subscription request\nEmail: ${email}\nLanguage: ${activeLang}`;
+
+            fetch('https://formsubmit.co/ajax/contact@orhar.com', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: email.split('@')[0],
+                    email,
+                    _subject: subject,
+                    _template: 'table',
+                    _captcha: 'false',
+                    message: body
+                })
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Failed');
+                document.getElementById('newsletterForm').reset();
+                setStatus(statusMsg, `${runtime.newsletterSuccessTitle} ${runtime.newsletterSuccessDesc}`, 'info');
+            })
+            .catch(() => {
+                const mailtoLink = `mailto:contact@orhar.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                window.location.href = mailtoLink;
+                setStatus(statusMsg, runtime.newsletterFallback, 'info');
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `<i class="fas fa-envelope-circle-check"></i> <span id="newsletterSubmitLabel">${runtime.newsletterSubmit}</span>`;
             });
         }
     </script>

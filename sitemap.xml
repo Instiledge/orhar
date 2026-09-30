@@ -5,7 +5,7 @@
     <!-- English Homepage -->
     <url>
         <loc>https://orhar.com/en/</loc>
-        <lastmod>2026-09-27</lastmod>
+        <lastmod>2026-09-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/" />
@@ -21,7 +21,7 @@
     <!-- French Homepage -->
     <url>
         <loc>https://orhar.com/fr/</loc>
-        <lastmod>2026-09-27</lastmod>
+        <lastmod>2026-09-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -29,7 +29,7 @@
     <!-- Spanish Homepage -->
     <url>
         <loc>https://orhar.com/es/</loc>
-        <lastmod>2026-09-27</lastmod>
+        <lastmod>2026-09-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -37,7 +37,7 @@
     <!-- German Homepage -->
     <url>
         <loc>https://orhar.com/de/</loc>
-        <lastmod>2026-09-27</lastmod>
+        <lastmod>2026-09-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -45,7 +45,7 @@
     <!-- Italian Homepage -->
     <url>
         <loc>https://orhar.com/it/</loc>
-        <lastmod>2026-09-27</lastmod>
+        <lastmod>2026-09-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -53,7 +53,7 @@
     <!-- Portuguese Homepage -->
     <url>
         <loc>https://orhar.com/pt/</loc>
-        <lastmod>2026-09-27</lastmod>
+        <lastmod>2026-09-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -61,7 +61,7 @@
     <!-- Polish Homepage -->
     <url>
         <loc>https://orhar.com/pl/</loc>
-        <lastmod>2026-09-27</lastmod>
+        <lastmod>2026-09-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -69,23 +69,15 @@
     <!-- Contact & Support -->
     <url>
         <loc>https://orhar.com/contact.html</loc>
-        <lastmod>2026-09-27</lastmod>
+        <lastmod>2026-09-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-    </url>
-    
-    <!-- Updates -->
-    <url>
-        <loc>https://orhar.com/updates.html</loc>
-        <lastmod>2026-09-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
     </url>
     
     <!-- Privacy Policy -->
     <url>
         <loc>https://orhar.com/privacy.html</loc>
-        <lastmod>2026-09-27</lastmod>
+        <lastmod>2026-09-30</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
@@ -93,7 +85,7 @@
     <!-- Terms of Service -->
     <url>
         <loc>https://orhar.com/terms.html</loc>
-        <lastmod>2026-09-27</lastmod>
+        <lastmod>2026-09-30</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
@@ -101,25 +93,32 @@
     <!-- Open Source Licenses -->
     <url>
         <loc>https://orhar.com/licenses.html</loc>
-        <lastmod>2026-09-27</lastmod>
+        <lastmod>2026-09-30</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
 
-    <!-- app redirect -->
-    <url>
-        <loc>https://orhar.com/app.html</loc>
-        <lastmod>2026-09-27</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-        
-    <!-- Preview the App -->
-    <url>
-        <loc>https://orhar.com/preview.html</loc>
-        <lastmod>2026-09-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
+    <!-- Localized news, gallery and download pages -->
+    <url><loc>https://orhar.com/en/actuality.html</loc><lastmod>2026-09-30</lastmod><priority>0.7</priority></url>
+    <url><loc>https://orhar.com/fr/actuality.html</loc><lastmod>2026-09-30</lastmod><priority>0.7</priority></url>
+    <url><loc>https://orhar.com/es/actuality.html</loc><lastmod>2026-09-30</lastmod><priority>0.7</priority></url>
+    <url><loc>https://orhar.com/de/actuality.html</loc><lastmod>2026-09-30</lastmod><priority>0.7</priority></url>
+    <url><loc>https://orhar.com/it/actuality.html</loc><lastmod>2026-09-30</lastmod><priority>0.7</priority></url>
+    <url><loc>https://orhar.com/pt/actuality.html</loc><lastmod>2026-09-30</lastmod><priority>0.7</priority></url>
+    <url><loc>https://orhar.com/pl/actuality.html</loc><lastmod>2026-09-30</lastmod><priority>0.7</priority></url>
+    <url><loc>https://orhar.com/en/preview.html</loc><lastmod>2026-09-30</lastmod><priority>0.7</priority></url>
+    <url><loc>https://orhar.com/fr/preview.html</loc><lastmod>2026-09-30</lastmod><priority>0.7</priority></url>
+    <url><loc>https://orhar.com/es/preview.html</loc><lastmod>2026-09-30</lastmod><priority>0.7</priority></url>
+    <url><loc>https://orhar.com/de/preview.html</loc><lastmod>2026-09-30</lastmod><priority>0.7</priority></url>
+    <url><loc>https://orhar.com/it/preview.html</loc><lastmod>2026-09-30</lastmod><priority>0.7</priority></url>
+    <url><loc>https://orhar.com/pt/preview.html</loc><lastmod>2026-09-30</lastmod><priority>0.7</priority></url>
+    <url><loc>https://orhar.com/pl/preview.html</loc><lastmod>2026-09-30</lastmod><priority>0.7</priority></url>
+    <url><loc>https://orhar.com/en/app.html</loc><lastmod>2026-09-30</lastmod><priority>0.6</priority></url>
+    <url><loc>https://orhar.com/fr/app.html</loc><lastmod>2026-09-30</lastmod><priority>0.6</priority></url>
+    <url><loc>https://orhar.com/es/app.html</loc><lastmod>2026-09-30</lastmod><priority>0.6</priority></url>
+    <url><loc>https://orhar.com/de/app.html</loc><lastmod>2026-09-30</lastmod><priority>0.6</priority></url>
+    <url><loc>https://orhar.com/it/app.html</loc><lastmod>2026-09-30</lastmod><priority>0.6</priority></url>
+    <url><loc>https://orhar.com/pt/app.html</loc><lastmod>2026-09-30</lastmod><priority>0.6</priority></url>
+    <url><loc>https://orhar.com/pl/app.html</loc><lastmod>2026-09-30</lastmod><priority>0.6</priority></url>
     
 </urlset>

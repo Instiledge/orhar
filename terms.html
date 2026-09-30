@@ -572,6 +572,8 @@
             font-size: 14px;
         }
     </style>
+    <link rel="stylesheet" href="/legacy-layout.css?v=11">
+    <script src="/site.js?v=21" defer></script>
 </head>
 <body>
 
@@ -1032,6 +1034,12 @@
 
         // ========== LANGUAGE SWITCHER ==========
         function changeLang(lang) {
+            document.documentElement.lang = lang;
+            localStorage.setItem('orhar_lang', lang);
+            document.querySelectorAll('[data-i18n="nav_home"]').forEach(a => a.href = `/${lang}/index.html`);
+            document.querySelectorAll('[data-i18n="nav_actuality"]').forEach(a => a.href = `/${lang}/actuality.html`);
+            document.querySelectorAll('[data-i18n="nav_prev"]').forEach(a => a.href = `/${lang}/preview.html`);
+            document.querySelector('.logo-container').href = `/${lang}/index.html`;
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (legalData[lang] && legalData[lang][key] !== undefined) {

@@ -14,7 +14,7 @@ def generate_styled_qr(data_url, logo_path, output_path, target_size=1148):
         version=None,
         error_correction=qrcode.constants.ERROR_CORRECT_H,
         box_size=32,
-        border=4
+        border=1
     )
     qr.add_data(data_url)
     qr.make(fit=True)
@@ -28,7 +28,7 @@ def generate_styled_qr(data_url, logo_path, output_path, target_size=1148):
 
     color_primary = (11, 24, 42, 255) # #0b182a navy
 
-    b = 4
+    b = 1
 
     def in_finder_zone(r, c):
         # top-left

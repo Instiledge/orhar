@@ -1,58 +1,71 @@
 # ORHAR Website Development Guide
 
-Local repository:
+Local repository path:
+`/Users/kalain/Documents/APKDev2024/OrharAppProject/OrharWebsite/repo`
 
-/Users/kalain/Documents/APKDev2024/OrharAppProject/OrharWebsite/repo
+The website repository is maintained separately from the mobile app codebase (`/Users/kalain/Documents/APKDev2024/OrharAppProject/OrharBibleApp`).
 
-The website repository is separate from the mobile app source code.
+## Build & Test Workflow
 
-Mobile app source:
+The website features an automated Node.js build system to ensure 100% consistency across all 7 supported languages.
 
-/Users/kalain/Documents/APKDev2024/OrharAppProject/OrharBibleApp
+### 1. Rebuilding Localized Pages
 
-## Local preview
+Whenever translations, templates, meta tags, or navigation headers change, re-generate all static pages:
 
-Run:
+```bash
+# Rebuild all 7 localized homepages, preview, app and actuality pages
+node scripts/build-homepages.mjs
+```
 
+### 2. Running Automated Validation Tests
+
+Before committing any changes, run the validation test suite (550+ assertions):
+
+```bash
+# Run integrity checks (SEO, meta tags, language flags, links, cache versions)
+node scripts/check-site.mjs
+```
+
+All tests must pass with zero errors.
+
+### 3. Local Preview
+
+To preview the website locally in your browser:
+
+```bash
 python3 -m http.server 8080
+```
 
-Open:
+Open `http://localhost:8080` and stop the server with `CTRL + C`.
 
-http://localhost:8080
+## Asset & Screenshot Management
 
-Stop with CTRL + C.
+- **Format**: All screenshots must be encoded in **WebP** format for optimal compression and fast mobile loading times.
+- **Storage**:
+  - Localized screenshots are placed in `screenshots/locales/<lang>/`.
+  - Generic screenshots are placed in `screenshots/`.
+  - Uncompressed raw simulator captures (`.png`) are excluded via `.gitignore` to keep the repository lightweight.
+- **Cache Busting**: When modifying CSS or JS files, update the version query parameter (e.g. `?v=21`) in the build scripts and check assertions in `check-site.mjs`.
 
-## Branch workflow
+## Branch Workflow
 
-Do not work directly on main for meaningful changes.
+1. Create a descriptive feature/fix branch:
+   ```bash
+   git checkout main
+   git pull origin main
+   git checkout -b feat/my-feature
+   ```
 
-Use:
+2. Make changes and run the build + test script:
+   ```bash
+   node scripts/build-homepages.mjs
+   node scripts/check-site.mjs
+   ```
 
-git checkout main
-git pull origin main
-git checkout -b fix/example-change
-
-Recommended branch names:
-
-fix/privacy-policy-data-flows
-fix/store-links
-feature/voices-marketplace
-chore/readme-cleanup
-chore/security-headers
-
-## Before committing
-
-Run:
-
-git status
-git diff
-
-Never commit private files, credentials, Firebase service account JSON files, .env files, node_modules, or .DS_Store.
-
-## Commit and push
-
-git add .
-git commit -m "Describe the change"
-git push -u origin branch-name
-
-After pushing, Cloudflare Pages should create a Preview Deployment for the branch.
+3. Commit and push:
+   ```bash
+   git add .
+   git commit -m "feat: description of change"
+   git push origin feat/my-feature
+   ```

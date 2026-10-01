@@ -164,11 +164,11 @@ const biblicalAnchors = {
     previous: 'Previous',
     next: 'Next',
     slides: [
-      ['Genesis 1:3', '“God said, Let there be light — and there was light.”', 'The first word of creation is the light ORHAR carries.'],
-      ['Psalm 119:105', '“Your word is a lamp to my feet and a light to my path.”', 'The golden path in the icon. The Word as a living lamp.'],
-      ['Isaiah 60:19', '“The Lord will be your everlasting light.”', 'The halo above the summit. A light that never goes out.'],
-      ['John 8:12', '“I am the light of the world. Whoever follows me will not walk in darkness.”', 'The one who climbs the mountain does not climb alone.'],
-      ['Matthew 5:14', '“You are the light of the world. A city set on a hill cannot be hidden.”', 'The mountain lit from above becomes a beacon for others. ORHAR too.']
+      ['Genesis 1:3', '“God said, “Let there be light,” and there was light.”', 'The first word of creation is the light ORHAR carries.'],
+      ['Psalms 119:105', '“Your word is a lamp to my feet, and a light for my path.”', 'The golden path in the icon. The Word as a living lamp.'],
+      ['Isaiah 60:19', '“The sun will be no more your light by day, nor will the brightness of the moon give light to you, but the LORD will be your everlasting light, and your God will be your glory.”', 'The halo above the summit. A light that never goes out.'],
+      ['John 8:12', '“Again, therefore, Jesus spoke to them, saying, “I am the light of the world. He who follows me will not walk in the darkness, but will have the light of life.””', 'The one who climbs the mountain does not climb alone.'],
+      ['Matthew 5:14', '“You are the light of the world. A city located on a hill can’t be hidden.”', 'The mountain lit from above becomes a beacon for others. ORHAR too.']
     ]
   },
   fr: {
@@ -177,11 +177,11 @@ const biblicalAnchors = {
     previous: 'Précédent',
     next: 'Suivant',
     slides: [
-      ['Genèse 1, 3', '« Dieu dit : Que la lumière soit — et la lumière fut. »', 'La première parole de la création est la lumière que porte ORHAR.'],
-      ['Psaume 119, 105', '« Ta parole est une lampe à mes pieds, et une lumière sur mon sentier. »', 'Le chemin doré dans notre icône. La Parole comme lampe vivante.'],
-      ['Isaïe 60, 19', '« L’Éternel sera ta lumière éternelle. »', 'L’auréole au-dessus du sommet. Une lumière qui ne s’éteint jamais.'],
-      ['Jean 8, 12', '« Je suis la lumière du monde ; celui qui me suit ne marchera pas dans les ténèbres. »', 'Celui qui gravit la montagne ne gravit pas seul.'],
-      ['Matthieu 5, 14', '« Vous êtes la lumière du monde. Une ville située sur une montagne ne peut être cachée. »', 'La montagne éclairée d’en haut devient un phare pour les autres. ORHAR aussi.']
+      ['Genèse 1, 3', '« Dieu dit : « Que la lumière soit ! » et la lumière fut. »', 'La première parole de la création est la lumière que porte ORHAR.'],
+      ['Psaumes 119, 105', '« Ta parole est un flambeau devant mes pas, une lumière sur mon sentier. »', 'Le chemin doré dans notre icône. La Parole comme lampe vivante.'],
+      ['Isaïe 60, 19', '« Le soleil ne sera plus ta lumière pendant le jour, et la lueur de la lune ne t’éclairera plus ; Yahweh sera pour toi une lumière éternelle, et ton Dieu sera ta gloire. »', 'L’auréole au-dessus du sommet. Une lumière qui ne s’éteint jamais.'],
+      ['Jean 8, 12', '« Jésus leur parla de nouveau, disant : « Moi je suis la lumière du monde. Celui qui me suit ne marchera pas dans les ténèbres, mais il aura la lumière de la vie. » »', 'Celui qui gravit la montagne ne gravit pas seul.'],
+      ['Matthieu 5, 14', '« Vous êtes la lumière du monde. Une ville située au sommet d’une montagne ne peut être cachée ; »', 'La montagne éclairée d’en haut devient un phare pour les autres. ORHAR aussi.']
     ]
   },
   es: {
@@ -190,11 +190,11 @@ const biblicalAnchors = {
     previous: 'Anterior',
     next: 'Siguiente',
     slides: [
-      ['Génesis 1, 3', '« Dijo Dios: Sea la luz. Y fue la luz. »', 'La primera palabra de la creación es la luz que ORHAR lleva.'],
-      ['Salmo 119, 105', '« Tu palabra es lámpara para mis pies y luz en mi sendero. »', 'El camino dorado del icono. La Palabra como lámpara viva.'],
-      ['Isaías 60, 19', '« El Señor será tu luz eterna. »', 'La aureola sobre la cima. Una luz que no se apaga.'],
-      ['Juan 8, 12', '« Yo soy la luz del mundo; quien me sigue no caminará en tinieblas. »', 'Quien sube la montaña no sube solo.'],
-      ['Mateo 5, 14', '« Ustedes son la luz del mundo. No se puede ocultar una ciudad situada en un monte. »', 'La montaña iluminada desde lo alto se vuelve faro para otros. ORHAR también.']
+      ['Génesis 1, 3', '« Dios dijo: “Que se haga la luz”, y se hizo la luz. »', 'La primera palabra de la creación es la luz que ORHAR lleva.'],
+      ['Salmos 119, 105', '« Tu palabra es una lámpara para mis pies, y una luz para mi camino. »', 'El camino dorado del icono. La Palabra como lámpara viva.'],
+      ['Isaías 60, 19', '« El sol ya no será tu luz de día, ni el brillo de la luna te alumbrará, pero Yahvé será su luz eterna, y tu Dios será tu gloria. »', 'La aureola sobre la cima. Una luz que no se apaga.'],
+      ['Juan 8, 12', '« Por eso, Jesús les habló de nuevo, diciendo: “Yo soy la luz del mundo. El que me sigue no caminará en la oscuridad, sino que tendrá la luz de la vida”. »', 'Quien sube la montaña no sube solo.'],
+      ['Mateo 5, 14', '« Vosotros sois la luz del mundo. Una ciudad situada en una colina no se puede ocultar. »', 'La montaña iluminada desde lo alto se vuelve faro para otros. ORHAR también.']
     ]
   },
   de: {
@@ -203,11 +203,11 @@ const biblicalAnchors = {
     previous: 'Zurück',
     next: 'Weiter',
     slides: [
-      ['Genesis 1,3', '„Gott sprach: Es werde Licht. Und es wurde Licht.“', 'Das erste Wort der Schöpfung ist das Licht, das ORHAR trägt.'],
-      ['Psalm 119,105', '„Dein Wort ist meines Fußes Leuchte und ein Licht auf meinem Weg.“', 'Der goldene Weg im Symbol. Das Wort als lebendige Lampe.'],
-      ['Jesaja 60,19', '„Der Herr wird dein ewiges Licht sein.“', 'Der Schein über dem Gipfel. Ein Licht, das nie erlischt.'],
-      ['Johannes 8,12', '„Ich bin das Licht der Welt. Wer mir nachfolgt, wird nicht in der Finsternis gehen.“', 'Wer den Berg hinaufsteigt, steigt nicht allein.'],
-      ['Matthäus 5,14', '„Ihr seid das Licht der Welt. Eine Stadt, die auf einem Berg liegt, kann nicht verborgen bleiben.“', 'Der von oben erleuchtete Berg wird zum Leuchtfeuer für andere. ORHAR ebenso.']
+      ['Genesis 1,3', '„Und Gott sprach: Es werde Licht! und es ward Licht.“', 'Das erste Wort der Schöpfung ist das Licht, das ORHAR trägt.'],
+      ['Psalmen 119,105', '„Dein Wort ist meine Fußes Leuchte und ein Licht auf meinem Wege.“', 'Der goldene Weg im Symbol. Das Wort als lebendige Lampe.'],
+      ['Jesaja 60,19', '„Die Sonne soll nicht mehr des Tages dir scheinen, und der Glanz des Mondes soll dir nicht leuchten; sondern der HERR wird dein ewiges Licht und dein Gott wird dein Preis sein.“', 'Der Schein über dem Gipfel. Ein Licht, das nie erlischt.'],
+      ['Johannes 8,12', '„Da redete Jesus abermals zu ihnen und sprach: Ich bin das Licht der Welt; wer mir nachfolgt, der wird nicht wandeln in der Finsternis, sondern wir das Licht des Lebens haben.“', 'Wer den Berg hinaufsteigt, steigt nicht allein.'],
+      ['Matthäus 5,14', '„Ihr seid das Licht der Welt. Es kann die Stadt, die auf einem Berge liegt, nicht verborgen sein.“', 'Der von oben erleuchtete Berg wird zum Leuchtfeuer für andere. ORHAR ebenso.']
     ]
   },
   it: {
@@ -216,11 +216,11 @@ const biblicalAnchors = {
     previous: 'Precedente',
     next: 'Successivo',
     slides: [
-      ['Genesi 1,3', '« Dio disse: Sia la luce. E la luce fu. »', 'La prima parola della creazione è la luce che ORHAR porta.'],
-      ['Salmo 119,105', '« Lampada per i miei passi è la tua parola, luce sul mio cammino. »', 'Il cammino dorato nell’icona. La Parola come lampada viva.'],
-      ['Isaia 60,19', '« Il Signore sarà per te luce eterna. »', 'L’aureola sopra la vetta. Una luce che non si spegne.'],
-      ['Giovanni 8,12', '« Io sono la luce del mondo; chi segue me non camminerà nelle tenebre. »', 'Chi sale la montagna non sale da solo.'],
-      ['Matteo 5,14', '« Voi siete la luce del mondo. Non può restare nascosta una città posta sopra un monte. »', 'La montagna illuminata dall’alto diventa faro per gli altri. Anche ORHAR.']
+      ['Genesi 1,3', '« E Iddio disse: Sia la luce. E la luce fu. »', 'La prima parola della creazione è la luce che ORHAR porta.'],
+      ['Salmi 119,105', '« La tua parola è una lampana al mio piè, Ed un lume al mio sentiero. »', 'Il cammino dorato nell’icona. La Parola come lampada viva.'],
+      ['Isaia 60,19', '« Tu non avrai più il sole per la luce del giorno, e lo splendor della luna non ti illuminerà più; ma il Signore ti sarà per luce eterna, e l’Iddio tuo ti sarà per gloria. »', 'L’aureola sopra la vetta. Una luce che non si spegne.'],
+      ['Giovanni 8,12', '« E GESÙ di nuovo parlò loro, dicendo: Io son la luce del mondo; chi mi seguita non camminerà nelle tenebre, anzi avrà la luce della vita. »', 'Chi sale la montagna non sale da solo.'],
+      ['Matteo 5,14', '« Voi siete la luce del mondo; la città posta sopra un monte non può esser nascosta. »', 'La montagna illuminata dall’alto diventa faro per gli altri. Anche ORHAR.']
     ]
   },
   pt: {
@@ -229,11 +229,11 @@ const biblicalAnchors = {
     previous: 'Anterior',
     next: 'Seguinte',
     slides: [
-      ['Gênesis 1,3', '« Deus disse: Faça-se a luz. E a luz se fez. »', 'A primeira palavra da criação é a luz que ORHAR carrega.'],
-      ['Salmo 119,105', '« Tua palavra é lâmpada para os meus pés e luz para o meu caminho. »', 'O caminho dourado no ícone. A Palavra como lâmpada viva.'],
-      ['Isaías 60,19', '« O Senhor será a tua luz eterna. »', 'A auréola acima do cume. Uma luz que não se apaga.'],
-      ['João 8,12', '« Eu sou a luz do mundo; quem me segue não andará nas trevas. »', 'Quem sobe a montanha não sobe sozinho.'],
-      ['Mateus 5,14', '« Vós sois a luz do mundo. Não se pode esconder uma cidade situada sobre um monte. »', 'A montanha iluminada do alto se torna farol para outros. ORHAR também.']
+      ['Gênesis 1,3', '« Deus disse: “Que haja luz”, e houve luz. »', 'A primeira palavra da criação é a luz que ORHAR carrega.'],
+      ['Salmos 119,105', '« Sua palavra é uma lâmpada para os meus pés, e uma luz para o meu caminho. »', 'O caminho dourado no ícone. A Palavra como lâmpada viva.'],
+      ['Isaías 60,19', '« O sol não será mais sua luz durante o dia, nem a luminosidade da lua lhe dará luz, mas Yahweh será sua luz eterna, e seu Deus será sua glória. »', 'A auréola acima do cume. Uma luz que não se apaga.'],
+      ['João 8,12', '« Mais uma vez, portanto, Jesus falou com eles, dizendo: “Eu sou a luz do mundo”. Aquele que me segue não andará nas trevas, mas terá a luz da vida”. »', 'Quem sobe a montanha não sobe sozinho.'],
+      ['Mateus 5,14', '« Você é a luz do mundo. Uma cidade localizada em uma colina não pode ser escondida. »', 'A montanha iluminada do alto se torna farol para outros. ORHAR também.']
     ]
   },
   pl: {
@@ -242,11 +242,11 @@ const biblicalAnchors = {
     previous: 'Poprzedni',
     next: 'Następny',
     slides: [
-      ['Rodzaju 1,3', '„Bóg rzekł: Niech stanie się światłość. I stała się światłość.”', 'Pierwszym słowem stworzenia jest światło, które niesie ORHAR.'],
-      ['Psalm 119,105', '„Twoje słowo jest lampą dla moich stóp i światłem na mojej ścieżce.”', 'Złota droga w ikonie. Słowo jako żywa lampa.'],
-      ['Izajasza 60,19', '„Pan będzie twoją wieczną światłością.”', 'Aureola nad szczytem. Światło, które nie gaśnie.'],
-      ['Jana 8,12', '„Ja jestem światłością świata. Kto idzie za Mną, nie będzie chodził w ciemności.”', 'Ten, kto wchodzi na górę, nie idzie sam.'],
-      ['Mateusza 5,14', '„Wy jesteście światłem świata. Nie może się ukryć miasto położone na górze.”', 'Góra oświetlona z wysoka staje się latarnią dla innych. ORHAR także.']
+      ['Księga Rodzaju 1,3', '„I Bóg powiedział: Niech stanie się światłość. I stała się światłość.”', 'Pierwszym słowem stworzenia jest światło, które niesie ORHAR.'],
+      ['Księga Psalmów 119,105', '„Twoje słowo jest pochodnią dla moich nóg i światłością na mojej ścieżce.”', 'Złota droga w ikonie. Słowo jako żywa lampa.'],
+      ['Księga Izajasza 60,19', '„Słońce nie będzie już twoją światłością za dnia ani księżyc już nie zaświeci ci swoim blaskiem; ale PAN będzie twoją wieczną światłością, a twój Bóg – twoją chwałą.”', 'Aureola nad szczytem. Światło, które nie gaśnie.'],
+      ['Ewangelia Jana 8,12', '„Jezus znowu powiedział do nich: Ja jestem światłością świata. Kto idzie za mną, nie będzie chodził w ciemności, ale będzie miał światłość życia.”', 'Ten, kto wchodzi na górę, nie idzie sam.'],
+      ['Ewangelia Mateusza 5,14', '„Wy jesteście światłością świata. Nie może się ukryć miasto położone na górze.”', 'Góra oświetlona z wysoka staje się latarnią dla innych. ORHAR także.']
     ]
   }
 };

@@ -285,7 +285,7 @@ function biblicalAnchorsSection(code) {
   var canvas=track?track.parentElement:null;
   var timer=null;
   function upd(){
-    if(track)track.style.transform='translateX(-'+(cur*100)+'%)';
+    if(track)track.style.transform='translate3d(-'+(cur*100)+'%,0,0)';
     document.querySelectorAll('.anchor-dot').forEach(function(d,i){d.classList.toggle('active',i===cur);});
   }
   function resetTimer(){

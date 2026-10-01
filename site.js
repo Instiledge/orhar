@@ -272,6 +272,195 @@
     });
   });
 
+  // SianAQuiz Interactive Demo Controller (Multi-question from real bundle)
+  (function initQuizDemo() {
+    const card = document.getElementById('quizCard');
+    const bundleEl = document.getElementById('quizBundleData');
+    if (!card || !bundleEl) return;
+
+    let questions = [];
+    try {
+      questions = JSON.parse(bundleEl.textContent);
+    } catch (_) {
+      return;
+    }
+    if (!questions.length) return;
+
+    const lang = card.getAttribute('data-lang') || 'en';
+    const sectionNameEl = document.getElementById('quizSectionName');
+    const themeNameEl = document.getElementById('quizThemeName');
+    const subThemeNameEl = document.getElementById('quizSubThemeName');
+    const idBadgeEl = document.getElementById('quizIdBadge');
+    const diffBadgeEl = document.getElementById('quizDiffBadge');
+    const refBadgeEl = document.getElementById('quizRefBadge');
+    const counterEl = document.getElementById('quizCounter');
+    const questionEl = document.getElementById('quizQuestion');
+    const optionsListEl = document.getElementById('quizOptionsList');
+    const feedbackEl = document.getElementById('quizFeedback');
+    const scoreBadgeEl = document.getElementById('quizScoreBadge');
+    const feedbackHeaderEl = document.getElementById('quizFeedbackHeader');
+    const feedbackScorePillEl = document.getElementById('quizFeedbackScorePill');
+    const feedbackExpEl = document.getElementById('quizFeedbackExp');
+    const nextBtn = document.getElementById('quizNextBtn');
+    const soundBtn = document.getElementById('quizSoundToggle');
+    const soundIcon = document.getElementById('quizSoundIcon');
+
+    let currentIndex = 0;
+    let answered = false;
+    let soundEnabled = true;
+    let correctCount = 0;
+    let answeredCount = 0;
+    const answeredIndices = new Set();
+
+    const scoreLabels = {
+      fr: 'Note :',
+      en: 'Score:',
+      es: 'Nota:',
+      de: 'Note:',
+      it: 'Voto:',
+      pt: 'Nota:',
+      pl: 'Wynik:'
+    };
+    const scoreLabel = scoreLabels[lang] || scoreLabels.en;
+
+    const diffNames = {
+      fr: { beginner: 'Débutant', intermediate: 'Intermédiaire', advanced: 'Avancé' },
+      en: { beginner: 'Beginner', intermediate: 'Intermediate', advanced: 'Advanced' },
+      es: { beginner: 'Principiante', intermediate: 'Intermedio', advanced: 'Avanzado' },
+      de: { beginner: 'Anfänger', intermediate: 'Mittelstufe', advanced: 'Fortgeschritten' },
+      it: { beginner: 'Principiante', intermediate: 'Intermedio', advanced: 'Avanzato' },
+      pt: { beginner: 'Iniciante', intermediate: 'Intermediário', advanced: 'Avançado' },
+      pl: { beginner: 'Początkujący', intermediate: 'Średniozaawansowany', advanced: 'Zaawansowany' }
+    };
+    const diffMap = diffNames[lang] || diffNames.en;
+
+    let correctAudio = null;
+    let wrongAudio = null;
+    try {
+      correctAudio = new Audio('/assets/sounds/correct.mp3');
+      wrongAudio = new Audio('/assets/sounds/wrong.mp3');
+      correctAudio.preload = 'auto';
+      wrongAudio.preload = 'auto';
+    } catch (_) {}
+
+    if (soundBtn) {
+      soundBtn.addEventListener('click', function () {
+        soundEnabled = !soundEnabled;
+        soundBtn.classList.toggle('is-muted', !soundEnabled);
+        if (soundIcon) {
+          soundIcon.className = soundEnabled ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark';
+        }
+      });
+    }
+
+    function renderCurrentQuestion() {
+      const q = questions[currentIndex];
+      answered = false;
+
+      if (sectionNameEl) sectionNameEl.textContent = q.sectionName || q.sectionCode;
+      if (themeNameEl) themeNameEl.textContent = q.themeName || q.themeCode;
+      if (subThemeNameEl) subThemeNameEl.textContent = q.subThemeName || q.subThemeCode;
+      if (idBadgeEl) idBadgeEl.textContent = `Quiz #${q.id}`;
+      if (diffBadgeEl) diffBadgeEl.textContent = diffMap[q.difficulty] || q.difficulty;
+      if (counterEl) counterEl.textContent = `${currentIndex + 1} / ${questions.length}`;
+      if (questionEl) questionEl.textContent = q.question;
+
+      if (feedbackEl) feedbackEl.style.display = 'none';
+
+      if (optionsListEl) {
+        optionsListEl.innerHTML = q.answers.map((ans, idx) => `
+          <button type="button" class="quiz-option-btn" data-correct="${ans.correct}" data-index="${idx}">
+            <span class="quiz-option-badge">${String.fromCharCode(65 + idx)}</span>
+            <span class="quiz-option-text">${ans.text}</span>
+            <span class="quiz-option-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+          </button>
+        `).join('');
+
+        const btns = optionsListEl.querySelectorAll('.quiz-option-btn');
+        btns.forEach(btn => {
+          btn.addEventListener('click', () => handleChoice(btn, btns, q));
+        });
+      }
+    }
+
+    function handleChoice(btn, allBtns, q) {
+      if (answered) return;
+      answered = true;
+
+      allBtns.forEach(b => b.disabled = true);
+      const isCorrect = btn.getAttribute('data-correct') === 'true';
+
+      if (!answeredIndices.has(currentIndex)) {
+        answeredIndices.add(currentIndex);
+        answeredCount++;
+        if (isCorrect) correctCount++;
+      }
+
+      const isGood = answeredCount > 0 ? (correctCount / answeredCount >= 0.5) : true;
+      const scoreIconClass = isGood ? 'fa-trophy' : 'fa-seedling';
+
+      if (scoreBadgeEl) {
+        scoreBadgeEl.style.display = 'inline-flex';
+        scoreBadgeEl.className = 'quiz-score-badge ' + (isGood ? 'is-good' : 'is-grow');
+        scoreBadgeEl.innerHTML = `<span>${scoreLabel}</span> <strong>${correctCount}/${answeredCount}</strong> <i class="fa-solid ${scoreIconClass}"></i>`;
+      }
+
+      if (feedbackScorePillEl) {
+        feedbackScorePillEl.className = 'quiz-feedback-score-pill ' + (isGood ? 'is-good' : 'is-grow');
+        feedbackScorePillEl.innerHTML = `<span>${scoreLabel} <strong>${correctCount}/${answeredCount}</strong></span> <i class="fa-solid ${scoreIconClass}"></i>`;
+      }
+
+      if (isCorrect) {
+        btn.classList.add('is-correct');
+        if (soundEnabled && correctAudio) {
+          correctAudio.currentTime = 0;
+          correctAudio.play().catch(() => {});
+        }
+        if (feedbackHeaderEl && feedbackEl) {
+          feedbackHeaderEl.textContent = feedbackEl.getAttribute('data-correct-title') || '✨ Excellente réponse !';
+        }
+      } else {
+        btn.classList.add('is-wrong');
+        allBtns.forEach(b => {
+          if (b.getAttribute('data-correct') === 'true') {
+            b.classList.add('is-revealed');
+          }
+        });
+        if (soundEnabled && wrongAudio) {
+          wrongAudio.currentTime = 0;
+          wrongAudio.play().catch(() => {});
+        }
+        if (feedbackHeaderEl && feedbackEl) {
+          feedbackHeaderEl.textContent = feedbackEl.getAttribute('data-wrong-title') || '💡 Regardons la réponse :';
+        }
+      }
+
+      if (feedbackExpEl) {
+        const exactRef = q.verseExactRef || (q.verseBookName ? `${q.verseBookName} (${q.reference})` : q.reference);
+        const verseText = q.verseText ? `« ${q.verseText} »` : '';
+        feedbackExpEl.innerHTML = `
+          <div class="quiz-verse-card">
+            <div class="quiz-verse-header">
+              <span class="quiz-verse-badge"><i class="fa-solid fa-quote-left"></i> ${exactRef}</span>
+            </div>
+            ${verseText ? `<blockquote class="quiz-verse-text">${verseText}</blockquote>` : ''}
+          </div>
+        `;
+      }
+
+      if (feedbackEl) feedbackEl.style.display = 'block';
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        currentIndex = (currentIndex + 1) % questions.length;
+        renderCurrentQuestion();
+      });
+    }
+
+    renderCurrentQuestion();
+  })();
+
   const footerCopy = {
     en: ['The Mountain of Light — Scripture, prayer and growth in one place.','Footer','Gallery','News','Get the app','Contact','Privacy','Terms','Licenses','All rights reserved.'],
     fr: ['La Montagne de Lumière — Écriture, prière et cheminement en un seul lieu.','Pied de page','Galerie','Actualité','Obtenir l’app','Contact','Confidentialité','Conditions','Licences','Tous droits réservés.'],
@@ -316,6 +505,7 @@
   if (document.querySelector('.error-container')) translateNotFound(initialLocale);
   const iconPaths = {
     gallery: '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>',
+    demo: '<polygon points="5 3 19 12 5 21 5 3"/>',
     news: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h7M7 12h7M7 16h10M17 8h1v4h-1"/>',
     app: '<path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3"/>',
     contact: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/>',
@@ -335,6 +525,9 @@
     pt: ['Tua palavra é lâmpada para os meus pés e luz para o meu caminho.', 'Salmo 119:105'],
     pl: ['Twoje słowo jest lampą dla moich stóp i światłem na mojej ścieżce.', 'Psalm 119:105']
   };
+  const demoNavCopy = {
+    en: 'Demo', fr: 'Démo', es: 'Demo', de: 'Demo', it: 'Demo', pt: 'Demo', pl: 'Demo'
+  };
   function buildFooterMarkup() {
     const selectedLocale = document.querySelector('#langSwitch')?.value;
     const sharedSelector = document.querySelector('[data-language]')?.value;
@@ -344,6 +537,7 @@
     const v = footerVerseCopy[footerLocale] || footerVerseCopy.en;
     const footerLinks = [
       [`/${footerLocale}/preview.html`, f[2], 'gallery'],
+      [`/${footerLocale}/appdemo.html`, demoNavCopy[footerLocale] || 'Demo', 'demo'],
       [`/${footerLocale}/actuality.html`, f[3], 'news'],
       [`/${footerLocale}/app.html`, f[4], 'app'],
       ['/contact.html', f[5], 'contact'],

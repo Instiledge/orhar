@@ -1,0 +1,980 @@
+[
+  {
+    "id": 4815,
+    "originalId": "4815|II|E|44|advanced|T/F",
+    "question": "I discepoli si rallegreranno mentre il mondo piangerà.",
+    "difficulty": "advanced",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "44",
+    "reference": "Giovanni 16, 19-22",
+    "createdAt": "2026-04-14T05:29:28.664047Z",
+    "answers": [
+      {
+        "text": "Vero",
+        "correct": false
+      },
+      {
+        "text": "Falso",
+        "correct": true
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Giovanni 16, 20",
+      "contentType": "Prophétie",
+      "priority": "Basse",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_16_20_TF",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Ultima Cena e Glorificazione",
+    "verseText": "In verità, in verità, io vi dico, che voi piangerete, e farete cordoglio; e il mondo si rallegrerà, e voi sarete contristati; ma la vostra tristizia sarà mutata in letizia.",
+    "verseBookName": "Giovanni",
+    "verseExactRef": "Giovanni 16,20"
+  },
+  {
+    "id": 4589,
+    "originalId": "4589|II|E|42|beginner|T/F",
+    "question": "Giuseppe d'Arimatea avvolse il corpo di Gesù in un lenzuolo nero.",
+    "difficulty": "beginner",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "42",
+    "reference": "Matteo 27, 55-61",
+    "createdAt": "2026-04-14T05:29:28.662903Z",
+    "answers": [
+      {
+        "text": "Vero",
+        "correct": false
+      },
+      {
+        "text": "Falso",
+        "correct": true
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Matteo 27, 59",
+      "contentType": "Fait",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_27_59_TF",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Passione e Risurrezione",
+    "verseText": "E Giuseppe, preso il corpo, lo involse in un lenzuolo netto.",
+    "verseBookName": "Matteo",
+    "verseExactRef": "Matteo 27,59"
+  },
+  {
+    "id": 4605,
+    "originalId": "4605|II|E|42|beginner|T/F",
+    "question": "I discepoli chiesero a Gesù dove preparare la Pasqua per se stessi.",
+    "difficulty": "beginner",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "42",
+    "reference": "Marco 14, 12-14",
+    "createdAt": "2026-04-14T05:29:28.662369Z",
+    "answers": [
+      {
+        "text": "Vero",
+        "correct": false
+      },
+      {
+        "text": "Falso",
+        "correct": true
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Marco 14, 12",
+      "contentType": "Action",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MC",
+      "universalId": "MC_14_12_TF",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Passione e Risurrezione",
+    "verseText": "ORA, nel primo giorno della festa degli azzimi, quando si sacrificava la pasqua, i suoi discepoli gli dissero: Dove vuoi che andiamo ad apparecchiarti da mangiar la pasqua?",
+    "verseBookName": "Marco",
+    "verseExactRef": "Marco 14,12"
+  },
+  {
+    "id": 4359,
+    "originalId": "4359|II|E|40|intermediate|MCQ",
+    "question": "Quale titolo un giovane dà a Gesù in Matteo 19?",
+    "difficulty": "intermediate",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "40",
+    "reference": "Matteo 19, 15-17",
+    "createdAt": "2026-04-14T05:29:28.661631Z",
+    "answers": [
+      {
+        "text": "Messia",
+        "correct": false
+      },
+      {
+        "text": "Buon Maestro",
+        "correct": true
+      },
+      {
+        "text": "Rabbi",
+        "correct": false
+      },
+      {
+        "text": "Profeta",
+        "correct": false
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Matteo 19, 16",
+      "contentType": "Personnage",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_19_16_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Parabole e Insegnamenti",
+    "verseText": "ED ecco, un certo, accostatosi, gli disse: Maestro buono, che bene farò io per aver la vita eterna?",
+    "verseBookName": "Matteo",
+    "verseExactRef": "Matteo 19,16"
+  },
+  {
+    "id": 4142,
+    "originalId": "4142|II|E|38|advanced|T/F",
+    "question": "Gesù parla della provvidenza divina confrontando gli esseri umani con gli uccelli.",
+    "difficulty": "advanced",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "38",
+    "reference": "Matteo 6, 25-27",
+    "createdAt": "2026-04-14T05:29:28.659982Z",
+    "answers": [
+      {
+        "text": "Vero",
+        "correct": true
+      },
+      {
+        "text": "Falso",
+        "correct": false
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Matteo 6, 26",
+      "contentType": "Symbole",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_6_26_TF",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Discorso e Primi Miracoli",
+    "verseText": "Riguardate agli uccelli del cielo; come non seminano, e non mietono, e non accolgono in granai; e pure il Padre vostro veleste li nudrisce; non siete voi da molto più di loro?",
+    "verseBookName": "Matteo",
+    "verseExactRef": "Matteo 6,26"
+  },
+  {
+    "id": 4706,
+    "originalId": "4706|II|E|43|beginner|MCQ",
+    "question": "Cosa fece Gesù prima di distribuire i pani e i pesci durante la moltiplicazione?",
+    "difficulty": "beginner",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "43",
+    "reference": "Giovanni 6, 11-13",
+    "createdAt": "2026-04-14T05:29:28.663289Z",
+    "answers": [
+      {
+        "text": "Prega ad alta voce",
+        "correct": false
+      },
+      {
+        "text": "Benedice l’acqua",
+        "correct": false
+      },
+      {
+        "text": "Rende grazie",
+        "correct": true
+      },
+      {
+        "text": "Alza le mani",
+        "correct": false
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Giovanni 6, 11",
+      "contentType": "Action",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_6_11_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Segni e Discorsi",
+    "verseText": "E Gesù prese i pani, e, rese grazie, li distribuì a' discepoli, e i discepoli alla gente assettata; il simigliante fece dei pesci, quanti ne volevano.",
+    "verseBookName": "Giovanni",
+    "verseExactRef": "Giovanni 6,11"
+  },
+  {
+    "id": 4758,
+    "originalId": "4758|II|E|43|advanced|MCQ",
+    "question": "Cosa simboleggia il chicco di grano che cade in terra e muore negli insegnamenti di Gesù?",
+    "difficulty": "advanced",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "43",
+    "reference": "Giovanni 12, 20-26",
+    "createdAt": "2026-04-14T05:29:28.663595Z",
+    "answers": [
+      {
+        "text": "Crescita rapida senza sacrificio",
+        "correct": false
+      },
+      {
+        "text": "Raccolto abbondante senza sforzo",
+        "correct": false
+      },
+      {
+        "text": "Seme sterile e inutile",
+        "correct": false
+      },
+      {
+        "text": "Vita data per portare frutto",
+        "correct": true
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Giovanni 12, 24",
+      "contentType": "Métaphore",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_12_24_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Segni e Discorsi",
+    "verseText": "In verità, in verità, io vi dico che, se il granel del frumento, caduto in terra, non muore, riman solo; ma, se muore, produce molto frutto.",
+    "verseBookName": "Giovanni",
+    "verseExactRef": "Giovanni 12,24"
+  },
+  {
+    "id": 4828,
+    "originalId": "4828|II|E|44|beginner|MCQ",
+    "question": "Dove va Gesù con i suoi discepoli dopo il Suo ultimo discorso prima della Passione?",
+    "difficulty": "beginner",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "44",
+    "reference": "Giovanni 18, 1-3",
+    "createdAt": "2026-04-14T05:29:28.664122Z",
+    "answers": [
+      {
+        "text": "Sul Monte degli Ulivi",
+        "correct": false
+      },
+      {
+        "text": "Nel tempio di Gerusalemme",
+        "correct": false
+      },
+      {
+        "text": "Verso il mare di Galilea",
+        "correct": false
+      },
+      {
+        "text": "Oltre il torrente Cedron",
+        "correct": true
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Giovanni 18, 1",
+      "contentType": "Événement",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_18_1_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Ultima Cena e Glorificazione",
+    "verseText": "GESÙ, avendo dette queste cose, uscì co' suoi discepoli, e andò di là dal torrente di Chedron, ove era un orto, nel quale entrò egli ed i suoi discepoli.",
+    "verseBookName": "Giovanni",
+    "verseExactRef": "Giovanni 18,1"
+  },
+  {
+    "id": 4082,
+    "originalId": "4082|II|E|38|beginner|MCQ",
+    "question": "Chi predicava nel deserto della Giudea secondo i Vangeli?",
+    "difficulty": "beginner",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "38",
+    "reference": "Matteo 3, 1-3",
+    "createdAt": "2026-04-14T05:29:28.659424Z",
+    "answers": [
+      {
+        "text": "Giovanni Battista",
+        "correct": true
+      },
+      {
+        "text": "Mosè",
+        "correct": false
+      },
+      {
+        "text": "Pietro",
+        "correct": false
+      },
+      {
+        "text": "Gesù",
+        "correct": false
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Matteo 3, 1",
+      "contentType": "Personnage",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_3_1_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Discorso e Primi Miracoli",
+    "verseText": "OR in que' giorni venne Giovanni Battista, predicando nel deserto della Giudea, e dicendo:",
+    "verseBookName": "Matteo",
+    "verseExactRef": "Matteo 3,1"
+  },
+  {
+    "id": 4180,
+    "originalId": "4180|II|E|38|advanced|MCQ",
+    "question": "Quali azioni Gesù annuncia di compiere secondo la profezia di Isaia che legge a Nazareth?",
+    "difficulty": "advanced",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "38",
+    "reference": "Luca 4, 16-22",
+    "createdAt": "2026-04-14T05:29:28.659663Z",
+    "answers": [
+      {
+        "text": "Regnare su Gerusalemme ora",
+        "correct": false
+      },
+      {
+        "text": "Costruire tempio nuovo",
+        "correct": false
+      },
+      {
+        "text": "Giudicare nazioni ribelli",
+        "correct": false
+      },
+      {
+        "text": "Liberare prigionieri e ciechi",
+        "correct": true
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Luca 4, 19",
+      "contentType": "Prophétie",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "LC",
+      "universalId": "LC_4_19_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Discorso e Primi Miracoli",
+    "verseText": "per bandir liberazione a' prigioni, e racquisto della vista a' ciechi; per mandarne in libertà i fiaccati, e per predicar l'anno accettevole del Signore.",
+    "verseBookName": "Luca",
+    "verseExactRef": "Luca 4,19"
+  },
+  {
+    "id": 4648,
+    "originalId": "4648|II|E|42|intermediate|MCQ",
+    "question": "Quali sono le prime parole di Gesù risorto quando appare ai discepoli?",
+    "difficulty": "intermediate",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "42",
+    "reference": "Luca 24, 36-38",
+    "createdAt": "2026-04-14T05:29:28.662620Z",
+    "answers": [
+      {
+        "text": "La pace sia con voi",
+        "correct": true
+      },
+      {
+        "text": "Il Padre e io siamo uno",
+        "correct": false
+      },
+      {
+        "text": "Andate ad annunciare il Vangelo",
+        "correct": false
+      },
+      {
+        "text": "Prendete e mangiate",
+        "correct": false
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Luca 24, 36",
+      "contentType": "Personnage",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "LC",
+      "universalId": "LC_24_36_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Passione e Risurrezione",
+    "verseText": "ORA, mentre essi ragionavano queste cose, Gesù stesso comparve nel mezzo di loro, e disse loro: Pace a voi.",
+    "verseBookName": "Luca",
+    "verseExactRef": "Luca 24,36"
+  },
+  {
+    "id": 4552,
+    "originalId": "4552|II|E|42|advanced|MCQ",
+    "question": "Cosa profetizza Gesù sulla reazione dei suoi discepoli quella notte?",
+    "difficulty": "advanced",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "42",
+    "reference": "Matteo 26, 31-35",
+    "createdAt": "2026-04-14T05:29:28.662688Z",
+    "answers": [
+      {
+        "text": "Dispersi come pecore",
+        "correct": true
+      },
+      {
+        "text": "Conversione immediata",
+        "correct": false
+      },
+      {
+        "text": "Tradimento solo di Giuda",
+        "correct": false
+      },
+      {
+        "text": "Fuga in Galilea",
+        "correct": false
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Matteo 26, 31",
+      "contentType": "Prophétie",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_26_31_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Passione e Risurrezione",
+    "verseText": "Allora Gesù disse loro: Voi tutti sarete scandalezzati in me questa notte; perciocchè egli è scritto: Io percoterò il Pastore, e le pecore della greggia saranno disperse.",
+    "verseBookName": "Matteo",
+    "verseExactRef": "Matteo 26,31"
+  },
+  {
+    "id": 4497,
+    "originalId": "4497|II|E|41|advanced|MCQ",
+    "question": "Cosa prendono le dieci vergini nella parabola dello sposo per andare incontro a lui?",
+    "difficulty": "advanced",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "41",
+    "reference": "Matteo 25, 1-13",
+    "createdAt": "2026-04-14T05:29:28.662329Z",
+    "answers": [
+      {
+        "text": "Rotoli sacri",
+        "correct": false
+      },
+      {
+        "text": "Rami di palma",
+        "correct": false
+      },
+      {
+        "text": "Corone d’ulivo",
+        "correct": false
+      },
+      {
+        "text": "Lampade accese",
+        "correct": true
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Matteo 25, 1",
+      "contentType": "Parabole",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_25_1_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Ingresso Trionfale",
+    "verseText": "ALLORA il regno de' cieli sarà simile a dieci vergini, le quali, prese le lor lampane, uscirono fuori incontro allo sposo.",
+    "verseBookName": "Matteo",
+    "verseExactRef": "Matteo 25,1"
+  },
+  {
+    "id": 4141,
+    "originalId": "4141|II|E|38|beginner|MCQ",
+    "question": "Cosa dice Gesù riguardo alla preoccupazione per il cibo e i vestiti?",
+    "difficulty": "beginner",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "38",
+    "reference": "Matteo 6, 25-27",
+    "createdAt": "2026-04-14T05:29:28.659976Z",
+    "answers": [
+      {
+        "text": "Non preoccupatevi",
+        "correct": true
+      },
+      {
+        "text": "Lavorate di più",
+        "correct": false
+      },
+      {
+        "text": "Chiedete ai ricchi",
+        "correct": false
+      },
+      {
+        "text": "Pregate sempre",
+        "correct": false
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Matteo 6, 25",
+      "contentType": "Citation",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_6_25_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Discorso e Primi Miracoli",
+    "verseText": "Perciò, io vi dico: Non siate con ansietà solleciti per la vita vostra, di che mangerete, o di che berrete; nè per lo vostro corpo, di che vi vestirete; non è la vita più che il nutrimento, e il corpo più che il vestire?",
+    "verseBookName": "Matteo",
+    "verseExactRef": "Matteo 6,25"
+  },
+  {
+    "id": 4814,
+    "originalId": "4814|II|E|44|intermediate|MCQ",
+    "question": "Cosa promette Gesù che lo Spirito di verità farà per i discepoli?",
+    "difficulty": "intermediate",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "44",
+    "reference": "Giovanni 16, 12-15",
+    "createdAt": "2026-04-14T05:29:28.664042Z",
+    "answers": [
+      {
+        "text": "Guidare nella verità intera",
+        "correct": true
+      },
+      {
+        "text": "Parlare di sé stesso",
+        "correct": false
+      },
+      {
+        "text": "Nascondere cose future",
+        "correct": false
+      },
+      {
+        "text": "Sostituire Gesù subito",
+        "correct": false
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Giovanni 16, 13",
+      "contentType": "Doctrine",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_16_13_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Ultima Cena e Glorificazione",
+    "verseText": "Ma, quando colui sarà venuto, cioè lo Spirito di verità, egli vi guiderà in ogni verità; perciocchè egli non parlerà da sè stesso, ma dirà tutte le cose che avrà udite, e vi annunzierà le cose a venire.",
+    "verseBookName": "Giovanni",
+    "verseExactRef": "Giovanni 16,13"
+  },
+  {
+    "id": 4746,
+    "originalId": "4746|II|E|43|intermediate|T/F",
+    "question": "Gesù afferma di aver ricevuto dal Padre il potere di dare e riprendere la sua vita.",
+    "difficulty": "intermediate",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "43",
+    "reference": "Giovanni 10, 17-18",
+    "createdAt": "2026-04-14T05:29:28.663524Z",
+    "answers": [
+      {
+        "text": "Vero",
+        "correct": true
+      },
+      {
+        "text": "Falso",
+        "correct": false
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Giovanni 10, 18",
+      "contentType": "Doctrine",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_10_18_TF",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Segni e Discorsi",
+    "verseText": "Niuno me la toglie, ma io da me stesso la dipongo; io ho podestà di diporla, ed ho altresì podestà di ripigliarla; questo comandamento ho ricevuto dal Padre mio.",
+    "verseBookName": "Giovanni",
+    "verseExactRef": "Giovanni 10,18"
+  },
+  {
+    "id": 4846,
+    "originalId": "4846|II|E|44|beginner|MCQ",
+    "question": "Dove Gesù apparve ai discepoli dopo la Sua risurrezione secondo Giovanni 21?",
+    "difficulty": "beginner",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "44",
+    "reference": "Giovanni 21, 1-3",
+    "createdAt": "2026-04-14T05:29:28.664222Z",
+    "answers": [
+      {
+        "text": "Monte degli Ulivi",
+        "correct": false
+      },
+      {
+        "text": "Betlemme",
+        "correct": false
+      },
+      {
+        "text": "Mare di Tiberiade",
+        "correct": true
+      },
+      {
+        "text": "Gerusalemme",
+        "correct": false
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Giovanni 21, 1",
+      "contentType": "Événement",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_21_1_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Ultima Cena e Glorificazione",
+    "verseText": "DOPO queste cose, Gesù si fece vedere di nuovo a' discepoli presso al mar di Tiberiade; e si fece vedere in questa maniera.",
+    "verseBookName": "Giovanni",
+    "verseExactRef": "Giovanni 21,1"
+  },
+  {
+    "id": 4229,
+    "originalId": "4229|II|E|39|advanced|MCQ",
+    "question": "Quali due qualità animali Gesù raccomandò ai discepoli perseguitati?",
+    "difficulty": "advanced",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "39",
+    "reference": "Matteo 10, 16-23",
+    "createdAt": "2026-04-14T05:29:28.660559Z",
+    "answers": [
+      {
+        "text": "Leoni tra gli agnelli",
+        "correct": false
+      },
+      {
+        "text": "Pecore tra i lupi",
+        "correct": true
+      },
+      {
+        "text": "Colombe tra le volpi",
+        "correct": false
+      },
+      {
+        "text": "Aquile tra i serpenti",
+        "correct": false
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Matteo 10, 16",
+      "contentType": "Métaphore",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_10_16_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Ministero in Galilea",
+    "verseText": "Ecco, io vi mando come pecore in mezzo de' lupi; siate dunque prudenti come serpenti, e semplici come colombe.",
+    "verseBookName": "Matteo",
+    "verseExactRef": "Matteo 10,16"
+  },
+  {
+    "id": 4732,
+    "originalId": "4732|II|E|43|intermediate|T/F",
+    "question": "Gesù dichiara: «Prima che Abramo fosse, Io Sono.»",
+    "difficulty": "intermediate",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "43",
+    "reference": "Giovanni 8, 54-59",
+    "createdAt": "2026-04-14T05:29:28.663444Z",
+    "answers": [
+      {
+        "text": "Vero",
+        "correct": true
+      },
+      {
+        "text": "Falso",
+        "correct": false
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Giovanni 8, 58",
+      "contentType": "Citation",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_8_58_TF",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Segni e Discorsi",
+    "verseText": "Gesù disse loro: In verità, in verità, io vi dico, che avanti che Abrahamo fosse nato, io sono.",
+    "verseBookName": "Giovanni",
+    "verseExactRef": "Giovanni 8,58"
+  },
+  {
+    "id": 4378,
+    "originalId": "4378|II|E|40|intermediate|MCQ",
+    "question": "Quale vizio NON è menzionato da Gesù nell'elenco dei mali che vengono dal cuore?",
+    "difficulty": "intermediate",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "40",
+    "reference": "Marco 7, 22-23",
+    "createdAt": "2026-04-14T05:29:28.660778Z",
+    "answers": [
+      {
+        "text": "L’orgoglio",
+        "correct": false
+      },
+      {
+        "text": "L’avarizia",
+        "correct": false
+      },
+      {
+        "text": "La calunnia",
+        "correct": false
+      },
+      {
+        "text": "La gelosia",
+        "correct": true
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Marco 7, 22",
+      "contentType": "Doctrine",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MC",
+      "universalId": "MC_7_22_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Parabole e Insegnamenti",
+    "verseText": "cupidigie, malizie, frodi, lascivie, occhio maligno, bestemmia, alterezza, stoltizia.",
+    "verseBookName": "Marco",
+    "verseExactRef": "Marco 7,22"
+  },
+  {
+    "id": 4336,
+    "originalId": "4336|II|E|40|intermediate|MCQ",
+    "question": "A chi Gesù dice di essere stato mandato durante l'incontro con la donna cananea?",
+    "difficulty": "intermediate",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "40",
+    "reference": "Matteo 15, 21-24",
+    "createdAt": "2026-04-14T05:29:28.661269Z",
+    "answers": [
+      {
+        "text": "Ai re e governanti",
+        "correct": false
+      },
+      {
+        "text": "Alle pecore perdute d’Israele",
+        "correct": true
+      },
+      {
+        "text": "A tutti i popoli pagani",
+        "correct": false
+      },
+      {
+        "text": "Ai farisei e scribi",
+        "correct": false
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Matteo 15, 24",
+      "contentType": "Promesse",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_15_24_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Parabole e Insegnamenti",
+    "verseText": "Ma egli, rispondendo, disse: Io non son mandato se non alle pecore perdute della casa d'Israele.",
+    "verseBookName": "Matteo",
+    "verseExactRef": "Matteo 15,24"
+  },
+  {
+    "id": 4393,
+    "originalId": "4393|II|E|40|beginner|T/F",
+    "question": "Il Regno appartiene a chi è come i bambini piccoli.",
+    "difficulty": "beginner",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "40",
+    "reference": "Marco 10, 13-16",
+    "createdAt": "2026-04-14T05:29:28.660870Z",
+    "answers": [
+      {
+        "text": "Vero",
+        "correct": true
+      },
+      {
+        "text": "Falso",
+        "correct": false
+      }
+    ],
+    "language": "it",
+    "metadata": {
+      "verseTarget": "Marco 10, 14",
+      "contentType": "Citation",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MC",
+      "universalId": "MC_10_14_TF",
+      "isFallback": false
+    },
+    "sectionName": "Nuovo Testamento",
+    "themeName": "Vangeli e Vita di Cristo",
+    "subThemeName": "Parabole e Insegnamenti",
+    "verseText": "E Gesù, veduto ciò, s'indegnò, e disse loro: Lasciate i piccoli fanciulli venire a me, e non li divietate; perciocchè di tali è il regno di Dio.",
+    "verseBookName": "Marco",
+    "verseExactRef": "Marco 10,14"
+  }
+]

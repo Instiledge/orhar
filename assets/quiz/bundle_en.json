@@ -1,0 +1,980 @@
+[
+  {
+    "id": 4815,
+    "originalId": "4815|II|E|44|advanced|T/F",
+    "question": "The disciples will rejoice while the world will weep.",
+    "difficulty": "advanced",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "44",
+    "reference": "John 16, 19-22",
+    "createdAt": "2026-04-14T01:53:38.712745Z",
+    "answers": [
+      {
+        "text": "True",
+        "correct": false
+      },
+      {
+        "text": "False",
+        "correct": true
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "John 16, 20",
+      "contentType": "Prophétie",
+      "priority": "Basse",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_16_20_TF",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Last Supper and Glorification",
+    "verseText": "Most certainly I tell you that you will weep and lament, but the world will rejoice. You will be sorrowful, but your sorrow will be turned into joy.",
+    "verseBookName": "John",
+    "verseExactRef": "John 16:20"
+  },
+  {
+    "id": 4589,
+    "originalId": "4589|II|E|42|beginner|T/F",
+    "question": "Joseph of Arimathea wrapped Jesus' body in a black shroud.",
+    "difficulty": "beginner",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "42",
+    "reference": "Matthew 27, 55-61",
+    "createdAt": "2026-04-14T01:53:38.711666Z",
+    "answers": [
+      {
+        "text": "True",
+        "correct": false
+      },
+      {
+        "text": "False",
+        "correct": true
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "Matthew 27, 59",
+      "contentType": "Fait",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_27_59_TF",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Passion and Resurrection",
+    "verseText": "Joseph took the body and wrapped it in a clean linen cloth",
+    "verseBookName": "Matthew",
+    "verseExactRef": "Matthew 27:59"
+  },
+  {
+    "id": 4605,
+    "originalId": "4605|II|E|42|beginner|T/F",
+    "question": "The disciples asked Jesus where to prepare the Passover for themselves.",
+    "difficulty": "beginner",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "42",
+    "reference": "Mark 14, 12-14",
+    "createdAt": "2026-04-14T01:53:38.711140Z",
+    "answers": [
+      {
+        "text": "True",
+        "correct": false
+      },
+      {
+        "text": "False",
+        "correct": true
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "Mark 14, 12",
+      "contentType": "Action",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MC",
+      "universalId": "MC_14_12_TF",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Passion and Resurrection",
+    "verseText": "On the first day of unleavened bread, when they sacrificed the Passover, his disciples asked him, “Where do you want us to go and prepare that you may eat the Passover?”",
+    "verseBookName": "Mark",
+    "verseExactRef": "Mark 14:12"
+  },
+  {
+    "id": 4359,
+    "originalId": "4359|II|E|40|intermediate|MCQ",
+    "question": "What title does a young man give Jesus in Matthew 19?",
+    "difficulty": "intermediate",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "40",
+    "reference": "Matthew 19, 15-17",
+    "createdAt": "2026-04-14T01:53:38.710463Z",
+    "answers": [
+      {
+        "text": "Messiah",
+        "correct": false
+      },
+      {
+        "text": "Rabbi",
+        "correct": false
+      },
+      {
+        "text": "Prophet",
+        "correct": false
+      },
+      {
+        "text": "Good Teacher",
+        "correct": true
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "Matthew 19, 16",
+      "contentType": "Personnage",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_19_16_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Parables and Teachings",
+    "verseText": "Behold, one came to him and said, “Good teacher, what good thing shall I do, that I may have eternal life?”",
+    "verseBookName": "Matthew",
+    "verseExactRef": "Matthew 19:16"
+  },
+  {
+    "id": 4142,
+    "originalId": "4142|II|E|38|advanced|T/F",
+    "question": "Jesus speaks of divine providence by comparing humans to birds.",
+    "difficulty": "advanced",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "38",
+    "reference": "Matthew 6, 25-27",
+    "createdAt": "2026-04-14T01:53:38.708801Z",
+    "answers": [
+      {
+        "text": "True",
+        "correct": true
+      },
+      {
+        "text": "False",
+        "correct": false
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "Matthew 6, 26",
+      "contentType": "Symbole",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_6_26_TF",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Sermon and First Miracles",
+    "verseText": "See the birds of the sky, that they don’t sow, neither do they reap, nor gather into barns. Your heavenly Father feeds them. Aren’t you of much more value than they?",
+    "verseBookName": "Matthew",
+    "verseExactRef": "Matthew 6:26"
+  },
+  {
+    "id": 4706,
+    "originalId": "4706|II|E|43|beginner|MCQ",
+    "question": "What did Jesus do before distributing the bread and fish during the multiplication?",
+    "difficulty": "beginner",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "43",
+    "reference": "John 6, 11-13",
+    "createdAt": "2026-04-14T01:53:38.712049Z",
+    "answers": [
+      {
+        "text": "Blesses water",
+        "correct": false
+      },
+      {
+        "text": "Gives thanks",
+        "correct": true
+      },
+      {
+        "text": "Raises hands",
+        "correct": false
+      },
+      {
+        "text": "Prays aloud",
+        "correct": false
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "John 6, 11",
+      "contentType": "Action",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_6_11_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Signs and Discourses",
+    "verseText": "Jesus took the loaves, and having given thanks, he distributed to the disciples, and the disciples to those who were sitting down, likewise also of the fish as much as they desired.",
+    "verseBookName": "John",
+    "verseExactRef": "John 6:11"
+  },
+  {
+    "id": 4758,
+    "originalId": "4758|II|E|43|advanced|MCQ",
+    "question": "What does the wheat grain that falls to the ground and dies symbolize in Jesus' teachings?",
+    "difficulty": "advanced",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "43",
+    "reference": "John 12, 20-26",
+    "createdAt": "2026-04-14T01:53:38.712342Z",
+    "answers": [
+      {
+        "text": "Life given to bear fruit",
+        "correct": true
+      },
+      {
+        "text": "Rapid growth without sacrifice",
+        "correct": false
+      },
+      {
+        "text": "Abundant harvest without effort",
+        "correct": false
+      },
+      {
+        "text": "Sterile and useless seed",
+        "correct": false
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "John 12, 24",
+      "contentType": "Métaphore",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_12_24_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Signs and Discourses",
+    "verseText": "Most certainly I tell you, unless a grain of wheat falls into the earth and dies, it remains by itself alone. But if it dies, it bears much fruit.",
+    "verseBookName": "John",
+    "verseExactRef": "John 12:24"
+  },
+  {
+    "id": 4828,
+    "originalId": "4828|II|E|44|beginner|MCQ",
+    "question": "Where does Jesus go with His disciples after His last discourse before the Passion?",
+    "difficulty": "beginner",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "44",
+    "reference": "John 18, 1-3",
+    "createdAt": "2026-04-14T01:53:38.712819Z",
+    "answers": [
+      {
+        "text": "To the Mount of Olives",
+        "correct": false
+      },
+      {
+        "text": "Toward the Sea of Galilee",
+        "correct": false
+      },
+      {
+        "text": "Into Jerusalem’s temple",
+        "correct": false
+      },
+      {
+        "text": "Beyond the Kidron Brook",
+        "correct": true
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "John 18, 1",
+      "contentType": "Événement",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_18_1_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Last Supper and Glorification",
+    "verseText": "When Jesus had spoken these words, he went out with his disciples over the brook Kidron, where there was a garden, into which he and his disciples entered.",
+    "verseBookName": "John",
+    "verseExactRef": "John 18:1"
+  },
+  {
+    "id": 4082,
+    "originalId": "4082|II|E|38|beginner|MCQ",
+    "question": "Who preached in the Judean desert according to the Gospels?",
+    "difficulty": "beginner",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "38",
+    "reference": "Matthew 3, 1-3",
+    "createdAt": "2026-04-14T01:53:38.708244Z",
+    "answers": [
+      {
+        "text": "John the Baptist",
+        "correct": true
+      },
+      {
+        "text": "Moses",
+        "correct": false
+      },
+      {
+        "text": "Jesus",
+        "correct": false
+      },
+      {
+        "text": "Peter",
+        "correct": false
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "Matthew 3, 1",
+      "contentType": "Personnage",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_3_1_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Sermon and First Miracles",
+    "verseText": "In those days, John the Baptizer came, preaching in the wilderness of Judea, saying,",
+    "verseBookName": "Matthew",
+    "verseExactRef": "Matthew 3:1"
+  },
+  {
+    "id": 4180,
+    "originalId": "4180|II|E|38|advanced|MCQ",
+    "question": "Which actions does Jesus announce He will fulfill according to Isaiah's prophecy He reads in Nazareth?",
+    "difficulty": "advanced",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "38",
+    "reference": "Luke 4, 16-22",
+    "createdAt": "2026-04-14T01:53:38.708479Z",
+    "answers": [
+      {
+        "text": "Build a new temple",
+        "correct": false
+      },
+      {
+        "text": "Judge rebellious nations",
+        "correct": false
+      },
+      {
+        "text": "Reign over Jerusalem now",
+        "correct": false
+      },
+      {
+        "text": "Free captives and blind",
+        "correct": true
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "Luke 4, 19",
+      "contentType": "Prophétie",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "LC",
+      "universalId": "LC_4_19_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Sermon and First Miracles",
+    "verseText": "and to proclaim the acceptable year of the Lord.”",
+    "verseBookName": "Luke",
+    "verseExactRef": "Luke 4:19"
+  },
+  {
+    "id": 4648,
+    "originalId": "4648|II|E|42|intermediate|MCQ",
+    "question": "What are Jesus' first words when he appears to the disciples after his resurrection?",
+    "difficulty": "intermediate",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "42",
+    "reference": "Luke 24, 36-38",
+    "createdAt": "2026-04-14T01:53:38.711387Z",
+    "answers": [
+      {
+        "text": "Go preach the Gospel",
+        "correct": false
+      },
+      {
+        "text": "The Father and I are one",
+        "correct": false
+      },
+      {
+        "text": "Peace be with you",
+        "correct": true
+      },
+      {
+        "text": "Take and eat",
+        "correct": false
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "Luke 24, 36",
+      "contentType": "Personnage",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "LC",
+      "universalId": "LC_24_36_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Passion and Resurrection",
+    "verseText": "As they said these things, Jesus himself stood among them, and said to them, “Peace be to you.”",
+    "verseBookName": "Luke",
+    "verseExactRef": "Luke 24:36"
+  },
+  {
+    "id": 4552,
+    "originalId": "4552|II|E|42|advanced|MCQ",
+    "question": "What does Jesus prophesy about his disciples' reaction that night?",
+    "difficulty": "advanced",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "42",
+    "reference": "Matthew 26, 31-35",
+    "createdAt": "2026-04-14T01:53:38.711453Z",
+    "answers": [
+      {
+        "text": "Immediate conversion",
+        "correct": false
+      },
+      {
+        "text": "Flight to Galilee",
+        "correct": false
+      },
+      {
+        "text": "Betrayal by Judas alone",
+        "correct": false
+      },
+      {
+        "text": "Scattered like sheep",
+        "correct": true
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "Matthew 26, 31",
+      "contentType": "Prophétie",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_26_31_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Passion and Resurrection",
+    "verseText": "Then Jesus said to them, “All of you will be made to stumble because of me tonight, for it is written, ‘I will strike the shepherd, and the sheep of the flock will be scattered.’",
+    "verseBookName": "Matthew",
+    "verseExactRef": "Matthew 26:31"
+  },
+  {
+    "id": 4497,
+    "originalId": "4497|II|E|41|advanced|MCQ",
+    "question": "What do the ten virgins take in the parable of the bridegroom to meet him?",
+    "difficulty": "advanced",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "41",
+    "reference": "Matthew 25, 1-13",
+    "createdAt": "2026-04-14T01:53:38.711100Z",
+    "answers": [
+      {
+        "text": "Palm branches",
+        "correct": false
+      },
+      {
+        "text": "Lighted lamps",
+        "correct": true
+      },
+      {
+        "text": "Olive wreaths",
+        "correct": false
+      },
+      {
+        "text": "Sacred scrolls",
+        "correct": false
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "Matthew 25, 1",
+      "contentType": "Parabole",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_25_1_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Triumphal Entry",
+    "verseText": "“Then the Kingdom of Heaven will be like ten virgins who took their lamps and went out to meet the bridegroom.",
+    "verseBookName": "Matthew",
+    "verseExactRef": "Matthew 25:1"
+  },
+  {
+    "id": 4141,
+    "originalId": "4141|II|E|38|beginner|MCQ",
+    "question": "What does Jesus say about worrying for food and clothing?",
+    "difficulty": "beginner",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "38",
+    "reference": "Matthew 6, 25-27",
+    "createdAt": "2026-04-14T01:53:38.708795Z",
+    "answers": [
+      {
+        "text": "Ask the rich",
+        "correct": false
+      },
+      {
+        "text": "Do not worry",
+        "correct": true
+      },
+      {
+        "text": "Work harder",
+        "correct": false
+      },
+      {
+        "text": "Pray always",
+        "correct": false
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "Matthew 6, 25",
+      "contentType": "Citation",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_6_25_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Sermon and First Miracles",
+    "verseText": "Therefore I tell you, don’t be anxious for your life: what you will eat, or what you will drink; nor yet for your body, what you will wear. Isn’t life more than food, and the body more than clothing?",
+    "verseBookName": "Matthew",
+    "verseExactRef": "Matthew 6:25"
+  },
+  {
+    "id": 4814,
+    "originalId": "4814|II|E|44|intermediate|MCQ",
+    "question": "What does Jesus promise the Spirit of truth will do for the disciples?",
+    "difficulty": "intermediate",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "44",
+    "reference": "John 16, 12-15",
+    "createdAt": "2026-04-14T01:53:38.712739Z",
+    "answers": [
+      {
+        "text": "Replace Jesus at once",
+        "correct": false
+      },
+      {
+        "text": "Speak of himself",
+        "correct": false
+      },
+      {
+        "text": "Guide into all truth",
+        "correct": true
+      },
+      {
+        "text": "Hide future things",
+        "correct": false
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "John 16, 13",
+      "contentType": "Doctrine",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_16_13_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Last Supper and Glorification",
+    "verseText": "However, when he, the Spirit of truth, has come, he will guide you into all truth, for he will not speak from himself; but whatever he hears, he will speak. He will declare to you things that are coming.",
+    "verseBookName": "John",
+    "verseExactRef": "John 16:13"
+  },
+  {
+    "id": 4746,
+    "originalId": "4746|II|E|43|intermediate|T/F",
+    "question": "Jesus affirms he received from the Father the power to lay down and take up his life.",
+    "difficulty": "intermediate",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "43",
+    "reference": "John 10, 17-18",
+    "createdAt": "2026-04-14T01:53:38.712275Z",
+    "answers": [
+      {
+        "text": "True",
+        "correct": true
+      },
+      {
+        "text": "False",
+        "correct": false
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "John 10, 18",
+      "contentType": "Doctrine",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_10_18_TF",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Signs and Discourses",
+    "verseText": "No one takes it away from me, but I lay it down by myself. I have power to lay it down, and I have power to take it again. I received this commandment from my Father.”",
+    "verseBookName": "John",
+    "verseExactRef": "John 10:18"
+  },
+  {
+    "id": 4846,
+    "originalId": "4846|II|E|44|beginner|MCQ",
+    "question": "Where did Jesus appear to the disciples after His resurrection according to John 21?",
+    "difficulty": "beginner",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "44",
+    "reference": "John 21, 1-3",
+    "createdAt": "2026-04-14T01:53:38.712922Z",
+    "answers": [
+      {
+        "text": "Jerusalem",
+        "correct": false
+      },
+      {
+        "text": "Mount of Olives",
+        "correct": false
+      },
+      {
+        "text": "Sea of Tiberias",
+        "correct": true
+      },
+      {
+        "text": "Bethlehem",
+        "correct": false
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "John 21, 1",
+      "contentType": "Événement",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_21_1_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Last Supper and Glorification",
+    "verseText": "After these things, Jesus revealed himself again to the disciples at the sea of Tiberias. He revealed himself this way.",
+    "verseBookName": "John",
+    "verseExactRef": "John 21:1"
+  },
+  {
+    "id": 4229,
+    "originalId": "4229|II|E|39|advanced|MCQ",
+    "question": "Which two animal qualities did Jesus use to describe the attitude His disciples should adopt toward persecution?",
+    "difficulty": "advanced",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "39",
+    "reference": "Matthew 10, 16-23",
+    "createdAt": "2026-04-14T01:53:38.709385Z",
+    "answers": [
+      {
+        "text": "Eagles among serpents",
+        "correct": false
+      },
+      {
+        "text": "Lions among lambs",
+        "correct": false
+      },
+      {
+        "text": "Sheep among wolves",
+        "correct": true
+      },
+      {
+        "text": "Doves among foxes",
+        "correct": false
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "Matthew 10, 16",
+      "contentType": "Métaphore",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_10_16_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Ministry in Galilee",
+    "verseText": "“Behold, I send you out as sheep among wolves. Therefore be wise as serpents and harmless as doves.",
+    "verseBookName": "Matthew",
+    "verseExactRef": "Matthew 10:16"
+  },
+  {
+    "id": 4732,
+    "originalId": "4732|II|E|43|intermediate|T/F",
+    "question": "Jesus declares: \"Before Abraham was, I am.\"",
+    "difficulty": "intermediate",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "43",
+    "reference": "John 8, 54-59",
+    "createdAt": "2026-04-14T01:53:38.712197Z",
+    "answers": [
+      {
+        "text": "True",
+        "correct": true
+      },
+      {
+        "text": "False",
+        "correct": false
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "John 8, 58",
+      "contentType": "Citation",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_8_58_TF",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Signs and Discourses",
+    "verseText": "Jesus said to them, “Most certainly, I tell you, before Abraham came into existence, I AM.”",
+    "verseBookName": "John",
+    "verseExactRef": "John 8:58"
+  },
+  {
+    "id": 4378,
+    "originalId": "4378|II|E|40|intermediate|MCQ",
+    "question": "Which vice is NOT mentioned by Jesus in His list of evils coming from the heart?",
+    "difficulty": "intermediate",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "40",
+    "reference": "Mark 7, 22-23",
+    "createdAt": "2026-04-14T01:53:38.709599Z",
+    "answers": [
+      {
+        "text": "Slander",
+        "correct": false
+      },
+      {
+        "text": "Pride",
+        "correct": false
+      },
+      {
+        "text": "Jealousy",
+        "correct": true
+      },
+      {
+        "text": "Greed",
+        "correct": false
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "Mark 7, 22",
+      "contentType": "Doctrine",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MC",
+      "universalId": "MC_7_22_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Parables and Teachings",
+    "verseText": "covetings, wickedness, deceit, lustful desires, an evil eye, blasphemy, pride, and foolishness.",
+    "verseBookName": "Mark",
+    "verseExactRef": "Mark 7:22"
+  },
+  {
+    "id": 4336,
+    "originalId": "4336|II|E|40|intermediate|MCQ",
+    "question": "To whom does Jesus say He was sent during His encounter with the Canaanite woman?",
+    "difficulty": "intermediate",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "40",
+    "reference": "Matthew 15, 21-24",
+    "createdAt": "2026-04-14T01:53:38.710226Z",
+    "answers": [
+      {
+        "text": "To all pagan peoples",
+        "correct": false
+      },
+      {
+        "text": "To kings and rulers",
+        "correct": false
+      },
+      {
+        "text": "To Pharisees and scribes",
+        "correct": false
+      },
+      {
+        "text": "To lost sheep of Israel",
+        "correct": true
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "Matthew 15, 24",
+      "contentType": "Promesse",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_15_24_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Parables and Teachings",
+    "verseText": "But he answered, “I wasn’t sent to anyone but the lost sheep of the house of Israel.”",
+    "verseBookName": "Matthew",
+    "verseExactRef": "Matthew 15:24"
+  },
+  {
+    "id": 4393,
+    "originalId": "4393|II|E|40|beginner|T/F",
+    "question": "The Kingdom belongs to those who are like little children.",
+    "difficulty": "beginner",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "40",
+    "reference": "Mark 10, 13-16",
+    "createdAt": "2026-04-14T01:53:38.709691Z",
+    "answers": [
+      {
+        "text": "True",
+        "correct": true
+      },
+      {
+        "text": "False",
+        "correct": false
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "verseTarget": "Mark 10, 14",
+      "contentType": "Citation",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MC",
+      "universalId": "MC_10_14_TF",
+      "isFallback": false
+    },
+    "sectionName": "New Testament",
+    "themeName": "Gospels and Life of Christ",
+    "subThemeName": "Parables and Teachings",
+    "verseText": "But when Jesus saw it, he was moved with indignation and said to them, “Allow the little children to come to me! Don’t forbid them, for God’s Kingdom belongs to such as these.",
+    "verseBookName": "Mark",
+    "verseExactRef": "Mark 10:14"
+  }
+]

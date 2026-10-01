@@ -1,4 +1,4 @@
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 export const ui = {
@@ -16,7 +16,7 @@ export const brandStory = {
   fr:['Le nom derrière le chemin','OR signifie lumière. HAR signifie montagne.','La Bible ouverte, le chemin doré et la montagne de l’emblème ORHAR racontent une même histoire : la Parole éclaire chaque pas de l’ascension. Ce sens demeure au cœur de l’app.'],
   es:['El nombre detrás del camino','OR significa luz. HAR significa montaña.','La Biblia abierta, el sendero dorado y la montaña del emblema ORHAR cuentan una historia: la Palabra ilumina cada paso del ascenso. Ese sentido sigue en el corazón de la app.'],
   de:['Der Name hinter dem Weg','OR bedeutet Licht. HAR bedeutet Berg.','Die offene Bibel, der goldene Pfad und der Berg im ORHAR-Zeichen erzählen eine Geschichte: Das Wort erhellt jeden Schritt des Aufstiegs. Dieser Gedanke bleibt das Herz der App.'],
-  it:['Il nome dietro il cammino','OR significa luce. HAR significa monte.','La Bibbia aperta, il sentiero dorato e il monte dell’emblema ORHAR raccontano una storia: la Parola illumina ogni passo della salita. Questo significato resta al cuore dell’app.'],
+  it:['Il nome dietro il cammino','OR significa luce. HAR means mountain.','La Bibbia aperta, il sentiero dorato e il monte dell’emblema ORHAR raccontano una storia: la Parola illumina ogni passo della salita. Questo significato resta al cuore dell’app.'],
   pt:['O nome por trás do caminho','OR significa luz. HAR significa monte.','A Bíblia aberta, a trilha dourada e o monte do emblema ORHAR contam uma história: a Palavra ilumina cada passo da subida. Esse significado continua no coração do app.'],
   pl:['Nazwa stojąca za drogą','OR oznacza światło. HAR oznacza górę.','Otwarta Biblia, złota ścieżka i góra w znaku ORHAR opowiadają jedną historię: Słowo rozświetla każdy krok wspinaczki. Ta myśl pozostaje sercem aplikacji.']
 };
@@ -46,7 +46,7 @@ export const localizedScreenshotPaths = Object.fromEntries(
 );
 const galleryCardIndex = {home:0,bible:1,reader:2,parobible:3,mypath:4,plan:5,quiz:6,books:7,meditbrary:8};
 
-const copy = {
+export const copy = {
  en:{back:'Home',eyebrow:'Real app screens · Version 1.3',title:'See ORHAR as it is today.',intro:'Explore a curated selection of real app screens, captured in English from the current release.',get:'Get ORHAR',gallery:'Gallery',download:'Take the Word with you.',downloadBody:'Bible reading, liturgical journey, plans, prayers, spiritual books, Meditbrary and voice experiences — together in ORHAR.',store:'Download on Google Play',view:'Explore the app',note:'Availability may vary by country and release phase. An iOS link will be added when publicly available.',cards:['A home for today','A complete Bible library','Focused Scripture reading','ParoBible and Catechism','The daily liturgical path','Reading plans','SianAQuiz','Spiritual books','Meditbrary','Prayers','Voice experience','Bible chapters']},
  fr:{back:'Accueil',eyebrow:'Captures réelles · Version 1.3',title:'ORHAR, tel qu’il vit aujourd’hui.',intro:'Découvrez une sélection de vrais écrans de l’app, capturés en français dans sa version actuelle.',get:'Obtenir ORHAR',gallery:'Galerie',download:'Emportez la Parole avec vous.',downloadBody:'Lecture biblique, parcours liturgique, plans, prières, livres spirituels, Meditbrary et expériences vocales réunis dans ORHAR.',store:'Télécharger sur Google Play',view:'Explorer l’app',note:'La disponibilité peut varier selon le pays et la phase de diffusion. Le lien iOS sera ajouté lorsqu’il sera public.',cards:['Un accueil pour aujourd’hui','Bibliothèque biblique','Lecture attentive','ParoBible et Catéchisme','Le parcours liturgique','Plans de lecture','SianAQuiz','Livres spirituels','Meditbrary','Prières','Expérience vocale','Chapitres bibliques']},
  es:{back:'Inicio',eyebrow:'Capturas reales · Versión 1.3',title:'ORHAR, como es hoy.',intro:'Descubre una selección de pantallas reales de la app, capturadas en español en su versión actual.',get:'Descargar ORHAR',gallery:'Galería',download:'Lleva la Palabra contigo.',downloadBody:'Lectura bíblica, camino litúrgico, planes, oraciones, libros espirituales, Meditbrary y experiencias de voz en ORHAR.',store:'Descargar en Google Play',view:'Explorar la app',note:'La disponibilidad puede variar según el país y la fase de lanzamiento. Añadiremos el enlace de iOS cuando sea público.',cards:['Un inicio para hoy','Biblioteca bíblica','Lectura de la Escritura','ParoBible y Catecismo','Camino litúrgico diario','Planes de lectura','SianAQuiz','Libros espirituales','Meditbrary','Oraciones','Experiencia de voz','Capítulos de la Biblia']},
@@ -60,6 +60,347 @@ export const navGalleryLabels = Object.fromEntries(
   Object.entries(copy).map(([code, locale]) => [code, locale.gallery])
 );
 
+export const newsNavLabels = {
+  fr: 'Actualité', en: 'News', es: 'Novedades', de: 'Neuigkeiten', it: 'Novità', pt: 'Novidades', pl: 'Aktualności'
+};
+
+export const demoLabels = {
+  fr: {
+    nav: 'Démo',
+    title: 'Démo Interactive',
+    eyebrow: 'Goûter à l’Application · Expérience Démo',
+    intro: 'Explorez ORHAR à travers nos modules interactifs réels : teaser vidéo cinématique, quiz SianAQuiz avec versets bibliques, et aperçus sonores et de lecture.',
+    videoTitle: 'Aperçu Cinématique de l’App',
+    videoSubtitle: 'Une découverte visuelle de l’ascension spirituelle et de l’interface épurée d’ORHAR.',
+    audioTitle: 'Expérience Audio & Méditation',
+    audioSubtitle: 'Découvrez la narration par voix naturelle IA et les ambiances sonores contemplatives.',
+    audioCards: [
+      ['fa-microphone-lines', 'Voix Naturelle IA', 'Une lecture biblique fluide avec intonation respectueuse et claire pour chaque chapitre.'],
+      ['fa-mountain-sun', 'Ambiances Sonores', 'Des paysages sonores apaisants (Montagne de lumière, pluie douce, sanctuaire) pour accompagner votre prière.'],
+      ['fa-compass', 'Cheminement MyPath', 'Parcours quotidien guidé, calendrier liturgique et méditations personnalisées.']
+    ],
+    readerTitle: 'Bibliothèque & Lecteur Biblique',
+    readerSubtitle: 'Une expérience de lecture pure, rapide et personnalisable.',
+    readerBody: 'Naviguez facilement entre les traductions, les chapitres et les Testaments. Ajustez la taille de police, surlignez vos versets préférés et méditez en toute sérénité.',
+    ctaQuiz: 'Tester le Quiz ↓',
+    ctaApp: 'Télécharger l’App ↗'
+  },
+  en: {
+    nav: 'Demo',
+    title: 'Interactive Demo',
+    eyebrow: 'Taste the App · Interactive Experience',
+    intro: 'Explore ORHAR through real interactive modules: cinematic video teaser, SianAQuiz with biblical verses, and upcoming audio & scripture previews.',
+    videoTitle: 'Cinematic App Teaser',
+    videoSubtitle: 'A visual discovery of the spiritual journey and the serene design of ORHAR.',
+    audioTitle: 'Voice & Meditation Experience',
+    audioSubtitle: 'Discover natural AI voice narration and immersive ambient soundscapes.',
+    audioCards: [
+      ['fa-microphone-lines', 'Natural AI Voice', 'Smooth Scripture reading with respectful, clear intonation for every chapter.'],
+      ['fa-mountain-sun', 'Ambient Soundscapes', 'Peaceful background atmospheres (Mountain of Light, gentle rain, serene sanctuary) for your prayer time.'],
+      ['fa-compass', 'MyPath Daily Journey', 'Guided daily track, liturgical calendar, and personalised meditations.']
+    ],
+    readerTitle: 'Bible Library & Scripture Reader',
+    readerSubtitle: 'A pure, fast, and customizable reading experience.',
+    readerBody: 'Easily switch between Bible versions, chapters, and Testaments. Adjust font sizes, highlight favorite verses, and meditate with complete peace of mind.',
+    ctaQuiz: 'Try the Quiz ↓',
+    ctaApp: 'Get the App ↗'
+  },
+  es: {
+    nav: 'Demo',
+    title: 'Demostración Interactiva',
+    eyebrow: 'Prueba la App · Experiencia Interactiva',
+    intro: 'Explora ORHAR a través de módulos interactivos reales: teaser en video, SianAQuiz con versículos bíblicos y avances de audio y lectura.',
+    videoTitle: 'Teaser Cinemático de la App',
+    videoSubtitle: 'Un descubrimiento visual del ascenso espiritual y el diseño sereno de ORHAR.',
+    audioTitle: 'Experiencia de Voz y Meditación',
+    audioSubtitle: 'Descubre la narración por voz natural con IA y paisajes sonoros contemplativos.',
+    audioCards: [
+      ['fa-microphone-lines', 'Voz Natural con IA', 'Lectura fluida de las Escrituras con entonación clara y respetuosa para cada capítulo.'],
+      ['fa-mountain-sun', 'Paisajes Sonoros', 'Ambientes de fondo relajantes para acompañar tu momento de oración.'],
+      ['fa-compass', 'Camino MyPath', 'Itinerario diario guiado, calendario litúrgico y meditaciones personalizadas.']
+    ],
+    readerTitle: 'Biblioteca Bíblica y Lector',
+    readerSubtitle: 'Una experiencia de lectura pura, rápida y personalizable.',
+    readerBody: 'Navega fácilmente entre traducciones, capítulos y Testamentos. Ajusta tamaños de letra, resalta versículos y medita en paz.',
+    ctaQuiz: 'Probar el Quiz ↓',
+    ctaApp: 'Descargar la App ↗'
+  },
+  de: {
+    nav: 'Demo',
+    title: 'Interaktive Demo',
+    eyebrow: 'App Erleben · Interaktives Erlebnis',
+    intro: 'Entdecke ORHAR mit echten interaktiven Modulen: Video-Teaser, SianAQuiz mit Bibelversen sowie Audio- und Lese-Vorschauen.',
+    videoTitle: 'Kinoreifer App-Teaser',
+    videoSubtitle: 'Eine visuelle Reise durch den geistlichen Aufstieg und das klare Design von ORHAR.',
+    audioTitle: 'Stimm- & Meditationserlebnis',
+    audioSubtitle: 'Entdecke natürliche KI-Stimmenlesung und beruhigende Klanglandschaften.',
+    audioCards: [
+      ['fa-microphone-lines', 'Natürliche KI-Stimme', 'Flüssiges Vorlesen der Schrift mit respektvoller und klarer Intonation.'],
+      ['fa-mountain-sun', 'Klanglandschaften', 'Friedliche Hintergrundklänge für deine persönliche Gebetszeit.'],
+      ['fa-compass', 'MyPath Tagesweg', 'Geführter Tagespfad, liturgischer Kalender und individuelle Meditationen.']
+    ],
+    readerTitle: 'Bibelbibliothek & Leseansicht',
+    readerSubtitle: 'Ein pures, schnelles und anpassbares Leseerlebnis.',
+    readerBody: 'Wechsle mühelos zwischen Bibelausgaben, Kapiteln und Testamenten. Passe die Schriftgröße an und lese in Ruhe.',
+    ctaQuiz: 'Quiz Testen ↓',
+    ctaApp: 'App Herunterladen ↗'
+  },
+  it: {
+    nav: 'Demo',
+    title: 'Demo Interattiva',
+    eyebrow: 'Assapora l’App · Esperienza Interattiva',
+    intro: 'Esplora ORHAR attraverso moduli interattivi reali: teaser video, SianAQuiz con versetti biblici e anteprime audio e di lettura.',
+    videoTitle: 'Teaser Cinematico dell’App',
+    videoSubtitle: 'Una scoperta visiva dell’ascesa spirituale e del design essenziale di ORHAR.',
+    audioTitle: 'Esperienza Audio & Meditazione',
+    audioSubtitle: 'Scopri la narrazione con voce naturale IA e paesaggi sonori contemplativi.',
+    audioCards: [
+      ['fa-microphone-lines', 'Voce Naturale IA', 'Lettura fluida della Scrittura con intonazione chiara e rispettosa per ogni capitolo.'],
+      ['fa-mountain-sun', 'Paesaggi Sonori', 'Atmosfere di sottofondo rilassanti per accompagnare la tua preghiera.'],
+      ['fa-compass', 'Percorso MyPath', 'Cammino quotidiano guidato, calendario liturgico e meditazioni personalizzate.']
+    ],
+    readerTitle: 'Biblioteca & Lettura della Bibbia',
+    readerSubtitle: 'Un’esperienza di lettura pura, rapida e personalizzabile.',
+    readerBody: 'Passa agevolmente da una versione biblica all’altra. Regola i caratteri, evidenzia i versetti e medita in pace.',
+    ctaQuiz: 'Prova il Quiz ↓',
+    ctaApp: 'Scarica l’App ↗'
+  },
+  pt: {
+    nav: 'Demo',
+    title: 'Demonstração Interativa',
+    eyebrow: 'Experimente o App · Experiência Interativa',
+    intro: 'Explore o ORHAR por meio de módulos interativos reais: teaser em vídeo, SianAQuiz com versículos bíblicos e prévias de áudio e leitura.',
+    videoTitle: 'Teaser Cinemático do App',
+    videoSubtitle: 'Uma descoberta visual da subida espiritual e do design sereno do ORHAR.',
+    audioTitle: 'Experiência de Voz e Meditação',
+    audioSubtitle: 'Descubra a narração por voz natural com IA e paisagens sonoras contemplativas.',
+    audioCards: [
+      ['fa-microphone-lines', 'Voz Natural com IA', 'Leitura bíblica fluida com entonação clara e respeitosa para cada capítulo.'],
+      ['fa-mountain-sun', 'Paisagens Sonoras', 'Ambientes sonoros relaxantes para acompanhar seu momento de oração.'],
+      ['fa-compass', 'Jornada MyPath', 'Caminho diário guiado, calendário litúrgico e meditações personalizadas.']
+    ],
+    readerTitle: 'Biblioteca Bíblica e Leitor',
+    readerSubtitle: 'Uma experiência de leitura pura, rápida e personalizável.',
+    readerBody: 'Navegue facilmente entre versões, capítulos e Testamentos. Ajuste o tamanho da fonte e medite com serenidade.',
+    ctaQuiz: 'Testar o Quiz ↓',
+    ctaApp: 'Baixar o App ↗'
+  },
+  pl: {
+    nav: 'Demo',
+    title: 'Interaktywne Demo',
+    eyebrow: 'Poznaj Aplikację · Interaktywne Doświadczenie',
+    intro: 'Poznaj ORHAR poprzez prawdziwe moduły interaktywne: teaser wideo, SianAQuiz z wersetami biblijnymi oraz zapowiedzi audio i lektury.',
+    videoTitle: 'Filmowa Zapowiedź Aplikacji',
+    videoSubtitle: 'Wizualne odkrycie duchowej wspinaczki i harmonijnego projektu ORHAR.',
+    audioTitle: 'Głos i Medytacja',
+    audioSubtitle: 'Poznaj naturalne czytanie głosem AI oraz kojące tła dźwiękowe.',
+    audioCards: [
+      ['fa-microphone-lines', 'Naturalny Głos AI', 'Płynna lektura Pisma z szacunkiem i wyraźną intonacją dla każdego rozdziału.'],
+      ['fa-mountain-sun', 'Klimaty Dźwiękowe', 'Spokojne tła dźwiękowe do osobistej modlitwy.'],
+      ['fa-compass', 'Droga MyPath', 'Prowadzona ścieżka codzienna, kalendarz liturgiczny i medytacje.']
+    ],
+    readerTitle: 'Biblioteka i Czytnik Biblii',
+    readerSubtitle: 'Czyste, szybkie i elastyczne doświadczenie lektury.',
+    readerBody: 'Łatwo przełączaj się między przekładami, rozdziałami i Testamentami. Dostosuj czcionkę i czytaj w spokoju.',
+    ctaQuiz: 'Rozwiąż Quiz ↓',
+    ctaApp: 'Pobierz Aplikację ↗'
+  }
+};
+
+export const navDemoLabels = Object.fromEntries(
+  Object.entries(demoLabels).map(([code, locale]) => [code, locale.nav])
+);
+
+export const quizLabels = {
+  fr: {
+    eyebrow: 'SianAQuiz · Démo Interactive',
+    title: 'Testez vos connaissances bibliques',
+    subtitle: 'Une immersion immédiate dans l’expérience d’apprentissage et de méditation d’ORHAR.',
+    soundLabel: 'Effets sonores',
+    correctFeedback: '✨ Excellente réponse !',
+    wrongFeedback: '💡 Regardons la réponse biblique :',
+    catalogTitle: 'Plus de 9 500 questions & 97 thèmes',
+    catalogSub: 'Explorez l’expérience biblique complète dans l’application ORHAR.',
+    getApp: 'Obtenir l’App',
+    next: 'Question suivante',
+    difficulty: { beginner: 'Débutant', intermediate: 'Intermédiaire', advanced: 'Avancé' },
+    type: { 'MCQ': 'Choix Multiple', 'T/F': 'Vrai ou Faux' }
+  },
+  en: {
+    eyebrow: 'SianAQuiz · Interactive Demo',
+    title: 'Test Your Biblical Knowledge',
+    subtitle: 'An instant taste of the learning and meditation experience in ORHAR.',
+    soundLabel: 'Sound effects',
+    correctFeedback: '✨ Excellent answer!',
+    wrongFeedback: '💡 Here is the biblical insight:',
+    catalogTitle: '9,500+ Questions & 97 Themes',
+    catalogSub: 'Explore the complete biblical quiz journey in the ORHAR App.',
+    getApp: 'Get the App',
+    next: 'Next question',
+    difficulty: { beginner: 'Beginner', intermediate: 'Intermediate', advanced: 'Advanced' },
+    type: { 'MCQ': 'Multiple Choice', 'T/F': 'True / False' }
+  },
+  es: {
+    eyebrow: 'SianAQuiz · Demostración Interactiva',
+    title: 'Pon a prueba tus conocimientos bíblicos',
+    subtitle: 'Una inmersión inmediata en la experiencia de aprendizaje y meditación de ORHAR.',
+    soundLabel: 'Efectos de sonido',
+    correctFeedback: '✨ ¡Excelente respuesta!',
+    wrongFeedback: '💡 Veamos la respuesta bíblica:',
+    catalogTitle: 'Más de 9.500 preguntas y 97 temas',
+    catalogSub: 'Explora la experiencia bíblica completa en la aplicación ORHAR.',
+    getApp: 'Obtener la App',
+    next: 'Siguiente pregunta',
+    difficulty: { beginner: 'Principiante', intermediate: 'Intermedio', advanced: 'Avanzado' },
+    type: { 'MCQ': 'Opción Múltiple', 'T/F': 'Verdadero o Falso' }
+  },
+  de: {
+    eyebrow: 'SianAQuiz · Interaktive Demo',
+    title: 'Teste dein biblisches Wissen',
+    subtitle: 'Ein direkter Einblick in das Lern- und Meditationserlebnis von ORHAR.',
+    soundLabel: 'Soundeffekte',
+    correctFeedback: '✨ Ausgezeichnete Antwort!',
+    wrongFeedback: '💡 Hier ist die biblische Erklärung:',
+    catalogTitle: 'Über 9.500 Fragen & 97 Themen',
+    catalogSub: 'Entdecke das vollständige Bibelerlebnis in der ORHAR App.',
+    getApp: 'App herunterladen',
+    next: 'Nächste Frage',
+    difficulty: { beginner: 'Anfänger', intermediate: 'Mittelstufe', advanced: 'Fortgeschritten' },
+    type: { 'MCQ': 'Multiple Choice', 'T/F': 'Wahr oder Falsch' }
+  },
+  it: {
+    eyebrow: 'SianAQuiz · Demo Interattiva',
+    title: 'Metti alla prova la tua conoscenza biblica',
+    subtitle: 'Un’immersione immediata nell’esperienza di apprendimento e meditazione di ORHAR.',
+    soundLabel: 'Effetti sonori',
+    correctFeedback: '✨ Risposta eccellente!',
+    wrongFeedback: '💡 Ecco la spiegazione biblica:',
+    catalogTitle: 'Oltre 9.500 domande e 97 percorsi tematici',
+    catalogSub: 'Esplora l’esperienza biblica completa nell’app ORHAR.',
+    getApp: 'Scarica l’App',
+    next: 'Prossima domanda',
+    difficulty: { beginner: 'Principiante', intermediate: 'Intermedio', advanced: 'Avanzato' },
+    type: { 'MCQ': 'Scelta Multipla', 'T/F': 'Vero o Falso' }
+  },
+  pt: {
+    eyebrow: 'SianAQuiz · Demonstração Interativa',
+    title: 'Teste seus conhecimentos bíblicos',
+    subtitle: 'Uma imersão imediata na experiência de aprendizado e meditação do ORHAR.',
+    soundLabel: 'Efeitos sonoros',
+    correctFeedback: '✨ Resposta excelente!',
+    wrongFeedback: '💡 Aqui está a explicação bíblica:',
+    catalogTitle: 'Mais de 9.500 perguntas e 97 temas',
+    catalogSub: 'Explore a experiência bíblica completa no aplicativo ORHAR.',
+    getApp: 'Baixar o App',
+    next: 'Próxima pergunta',
+    difficulty: { beginner: 'Iniciante', intermediate: 'Intermediário', advanced: 'Avançado' },
+    type: { 'MCQ': 'Múltipla Escolha', 'T/F': 'Verdadeiro ou Falso' }
+  },
+  pl: {
+    eyebrow: 'SianAQuiz · Interaktywne Demo',
+    title: 'Sprawdź swoją wiedzę biblijną',
+    subtitle: 'Bezpośrednie doświadczenie nauki i medytacji ze SianAQuiz w ORHAR.',
+    soundLabel: 'Efekty dźwiękowe',
+    correctFeedback: '✨ Doskonała odpowiedź!',
+    wrongFeedback: '💡 Oto biblijne wyjaśnienie:',
+    catalogTitle: 'Ponad 9 500 pytań i 97 tematów',
+    catalogSub: 'Odkryj pełne doświadczenie biblijne w aplikacji ORHAR.',
+    getApp: 'Pobierz Aplikację',
+    next: 'Następne pytanie',
+    difficulty: { beginner: 'Początkujący', intermediate: 'Średniozaawansowany', advanced: 'Zaawansowany' },
+    type: { 'MCQ': 'Wielokrotny Wybór', 'T/F': 'Prawda / Fałsz' }
+  }
+};
+
+export function interactiveQuizSection(root, code) {
+  const lbl = quizLabels[code] || quizLabels.en;
+  const bundlePath = resolve(root, 'assets', 'quiz', `bundle_${code}.json`);
+  const bundleRaw = readFileSync(bundlePath, 'utf8');
+  const bundle = JSON.parse(bundleRaw);
+  const total = bundle.length;
+  const initial = bundle[0];
+  const diffLabel = lbl.difficulty[initial.difficulty] || initial.difficulty;
+  const exactRef = initial.verseExactRef || (initial.verseBookName ? `${initial.verseBookName} (${initial.reference})` : initial.reference);
+  const verseText = initial.verseText ? `« ${initial.verseText} »` : '';
+
+  return `<section class="section quiz-section" id="quiz-demo">
+  <div class="section-inner">
+    <div class="section-heading center reveal">
+      <p class="eyebrow">${lbl.eyebrow}</p>
+      <h2 class="section-title">${lbl.title}</h2>
+      <p class="section-intro">${lbl.subtitle}</p>
+    </div>
+    <div class="quiz-container reveal">
+      <div class="quiz-card" id="quizCard" data-lang="${code}">
+        <div class="quiz-breadcrumb" id="quizBreadcrumb">
+          <span><i class="fa-solid fa-book-bible"></i> <strong id="quizSectionName">${initial.sectionName}</strong></span>
+          <i class="fa-solid fa-angle-right quiz-bc-sep"></i>
+          <span><strong id="quizThemeName">${initial.themeName}</strong></span>
+          <i class="fa-solid fa-angle-right quiz-bc-sep"></i>
+          <span class="quiz-bc-sub"><strong id="quizSubThemeName">${initial.subThemeName}</strong></span>
+        </div>
+        
+        <div class="quiz-card-header">
+          <div class="quiz-meta-group">
+            <span class="quiz-id-badge" id="quizIdBadge">Quiz #${initial.id}</span>
+            <span class="quiz-diff-badge" id="quizDiffBadge">${diffLabel}</span>
+            <span class="quiz-score-badge" id="quizScoreBadge" style="display:none"></span>
+          </div>
+          <div class="quiz-header-controls">
+            <span class="quiz-counter" id="quizCounter">1 / ${total}</span>
+            <button type="button" class="quiz-sound-btn" id="quizSoundToggle" aria-label="${lbl.soundLabel}" title="${lbl.soundLabel}">
+              <i class="fa-solid fa-volume-high" id="quizSoundIcon"></i>
+            </button>
+          </div>
+        </div>
+        
+        <h3 class="quiz-question" id="quizQuestion">${initial.question}</h3>
+        
+        <div class="quiz-options-list" id="quizOptionsList" role="group" aria-label="${initial.question}">
+          ${initial.answers.map((opt, idx) => `
+            <button type="button" class="quiz-option-btn" data-correct="${opt.correct}" data-index="${idx}">
+              <span class="quiz-option-badge">${String.fromCharCode(65 + idx)}</span>
+              <span class="quiz-option-text">${opt.text}</span>
+              <span class="quiz-option-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+            </button>
+          `).join('')}
+        </div>
+        
+        <div class="quiz-feedback" id="quizFeedback" style="display:none" data-correct-title="${lbl.correctFeedback}" data-wrong-title="${lbl.wrongFeedback}">
+          <div class="quiz-feedback-top">
+            <div class="quiz-feedback-header" id="quizFeedbackHeader"></div>
+            <div class="quiz-feedback-score-pill" id="quizFeedbackScorePill"></div>
+          </div>
+          <div class="quiz-feedback-exp" id="quizFeedbackExp">
+            <div class="quiz-verse-card">
+              <div class="quiz-verse-header">
+                <span class="quiz-verse-badge"><i class="fa-solid fa-quote-left"></i> ${exactRef}</span>
+              </div>
+              ${verseText ? `<blockquote class="quiz-verse-text">${verseText}</blockquote>` : ''}
+            </div>
+          </div>
+          <div class="quiz-feedback-actions">
+            <button type="button" class="button button-primary quiz-next-btn" id="quizNextBtn">${lbl.next} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+          </div>
+        </div>
+        
+        <div class="quiz-catalog-banner">
+          <div class="quiz-catalog-info">
+            <i class="fa-solid fa-layer-group quiz-catalog-icon" aria-hidden="true"></i>
+            <div class="quiz-catalog-text">
+              <strong>${lbl.catalogTitle}</strong>
+              <span>${lbl.catalogSub}</span>
+            </div>
+          </div>
+          <a class="button button-secondary quiz-catalog-btn" href="/${code}/app.html">${lbl.getApp} <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="application/json" id="quizBundleData">${bundleRaw}</script>
+</section>`;
+}
+
 const descriptions = {
  en:['Daily verse, reflection and quick access to your journey.','Browse books, Testaments and available Bible editions.','Read a chapter and keep meaningful verses close.','Explore Scripture, the Catechism and recent passages.','Follow the readings and prayers of the day.','Build a reading habit with a plan that fits your pace.','Learn through levels and different quiz modes.','Discover books for spiritual reflection.','A dedicated space for guided meditation.','Return to prayers for every moment.','Choose the complimentary welcome voice included with Premium.','Move easily between chapters in a Bible book.'],
  fr:['Verset, pensée du jour et accès rapide à votre parcours.','Parcourez les livres, Testaments et versions bibliques.','Lisez un chapitre et gardez les versets importants.','Explorez l’Écriture, le Catéchisme et les passages récents.','Suivez les lectures et prières du jour.','Construisez une habitude de lecture à votre rythme.','Apprenez avec des niveaux et plusieurs modes de quiz.','Découvrez des livres pour nourrir la réflexion spirituelle.','Un espace dédié à la méditation guidée.','Retrouvez des prières pour chaque moment.','Choisissez la voix de bienvenue offerte avec Premium.','Passez facilement d’un chapitre à l’autre.'],
@@ -70,17 +411,132 @@ const descriptions = {
  pl:['Werset i myśl dnia oraz szybki dostęp do twojej drogi.','Przeglądaj księgi, Testamenty i przekłady Biblii.','Czytaj rozdział i zachowuj ważne wersety.','Poznaj Pismo, Katechizm i ostatnio czytane fragmenty.','Podążaj za czytaniami i modlitwami dnia.','Buduj nawyk lektury we własnym tempie.','Ucz się przez poziomy i różne tryby quizu.','Odkrywaj książki do duchowej refleksji.','Osobna przestrzeń do prowadzonej medytacji.','Znajdź modlitwy na każdą chwilę.','Wybierz głos powitalny dostępny w Premium.','Łatwo przechodź między rozdziałami.']
 };
 
-const extraGalleryCopy = {
-  en:{cards:['Personal notes','Bookmarks'],descriptions:['Write and organise reflections, with references, tags and search.','Keep verses close and return to them with version, language and book filters.']},
-  fr:{cards:['Notes personnelles','Signets'],descriptions:['Notez vos réflexions et retrouvez-les par référence, tags ou recherche.','Gardez vos versets favoris et retrouvez-les par version, langue ou livre.']},
-  es:{cards:['Notas personales','Marcadores'],descriptions:['Anota tus reflexiones y encuéntralas por referencia, etiquetas o búsqueda.','Guarda versículos y vuelve a ellos con filtros por versión, idioma y libro.']},
-  de:{cards:['Persönliche Notizen','Lesezeichen'],descriptions:['Halte Gedanken fest und finde sie über Bibelstelle, Schlagwörter oder Suche.','Bewahre Verse auf und finde sie nach Ausgabe, Sprache oder Buch wieder.']},
-  it:{cards:['Note personali','Segnalibri'],descriptions:['Annota le tue riflessioni e ritrovale per riferimento, tag o ricerca.','Salva i versetti e ritrovali per versione, lingua e libro.']},
-  pt:{cards:['Notas pessoais','Favoritos'],descriptions:['Registe reflexões e encontre-as por referência, etiquetas ou pesquisa.','Guarde versículos e encontre-os por versão, idioma e livro.']},
-  pl:{cards:['Własne notatki','Zakładki'],descriptions:['Zapisuj refleksje i odnajduj je według odnośnika, tagów lub wyszukiwania.','Zachowuj wersety i filtruj je według przekładu, języka i księgi.']}
-};
-
 const pageCss = `<style>.gallery-hero{padding:105px 0 78px;color:#fff;background:radial-gradient(circle at 84% 24%,rgba(213,183,125,.2),transparent 30%),linear-gradient(135deg,rgba(7,17,30,.94),rgba(29,57,91,.88)),var(--orhar-bg-art);background-size:auto,auto,min(880px,90vw);background-position:center,center,right -120px center;background-repeat:no-repeat}.gallery-hero h1{max-width:850px;margin:0;font:600 clamp(3.5rem,8vw,7rem)/.97 var(--display)}.gallery-hero p{max-width:700px;color:rgba(255,255,255,.75);font-size:1.08rem}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.shot{margin:0;padding:13px 13px 24px;border:1px solid var(--line);border-radius:30px;background:#fff;box-shadow:0 18px 45px rgba(19,38,61,.09)}.shot img{display:block;width:100%;height:auto;aspect-ratio:9/20;object-fit:contain;border-radius:20px;background:var(--paper-deep)}.shot figcaption{padding:20px 8px 0}.shot h2{margin:0;font:600 1.8rem/1 var(--display)}.shot p{margin:9px 0 0;color:var(--ink-soft);font-size:.87rem}.gallery-cta{margin-top:55px;text-align:center}.download{min-height:calc(100vh - 78px);display:grid;place-items:center;padding:70px 20px;color:#fff;background:radial-gradient(circle at 70% 25%,rgba(213,183,125,.22),transparent 30%),linear-gradient(145deg,rgba(7,17,30,.94),rgba(29,57,91,.88)),var(--orhar-bg-art);background-size:auto,auto,min(900px,94vw);background-position:center,center,right -110px center;background-repeat:no-repeat}.download-card{width:min(920px,100%);display:grid;grid-template-columns:.8fr 1.2fr;align-items:center;gap:55px;padding:55px;border:1px solid rgba(255,255,255,.14);border-radius:36px;background:rgba(255,255,255,.07);backdrop-filter:blur(18px);box-shadow:0 35px 90px rgba(0,0,0,.3)}.download-phone{display:block;width:min(280px,100%);height:auto;object-fit:contain;margin:auto;border:7px solid #fff;border-radius:35px;box-shadow:0 24px 65px rgba(0,0,0,.35)}.download-copy h1{margin:0;font:600 clamp(3.4rem,7vw,6rem)/.94 var(--display)}.download-copy p{color:rgba(255,255,255,.7)}.download-copy .hero-actions{margin-top:28px}.download-note{margin-top:20px;font-size:.8rem;color:rgba(255,255,255,.52)}html[data-theme=dark] .shot{background:#121d2d;border-color:var(--line);box-shadow:0 18px 45px rgba(0,0,0,.28)}html[data-theme=dark] .shot h2{color:#f6efe4}html[data-theme=dark] .download-card{background:rgba(18,29,45,.72);border-color:rgba(255,255,255,.16)}@media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}@media(max-width:720px){.download-card{grid-template-columns:1fr;padding:30px}.download-phone{width:210px}.gallery-hero,.download{background-position:center,center,right -240px center}}@media(max-width:580px){.gallery{grid-template-columns:1fr}.gallery-hero{padding:70px 0}}@media(max-width:480px){.gallery-hero h1,.download-copy h1{font-size:clamp(2.2rem,8.5vw,3.4rem)}.download-card{padding:24px 18px;border-radius:24px}.download-phone{width:min(185px,65vw)}.download-copy .hero-actions{flex-direction:column;width:100%}.download-copy .hero-actions .button{width:100%}.shot{border-radius:22px;padding:12px 12px 18px}}</style>`;
 const flags = {en:'🇬🇧',fr:'🇫🇷',es:'🇪🇸',de:'🇩🇪',it:'🇮🇹',pt:'🇵🇹',pl:'🇵🇱'};
-function shell(code,title,body){const c=copy[code],u=ui[code];return `<!doctype html><html lang="${code}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} — ORHAR</title><meta name="description" content="${c.intro}"><meta name="theme-color" content="#0b182a"><meta property="og:type" content="website"><meta property="og:title" content="${title} — ORHAR"><meta property="og:description" content="${c.intro}"><meta property="og:url" content="https://orhar.com/${code}/${title===c.gallery?'preview':'app'}.html"><meta property="og:image" content="https://orhar.com/og-image.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@orhar_app"><meta name="twitter:title" content="${title} — ORHAR"><meta name="twitter:image" content="https://orhar.com/og-image.png"><link rel="canonical" href="https://orhar.com/${code}/${title===c.gallery?'preview':'app'}.html"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-96x96.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1A2E4A"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/site.css?v=23">${pageCss}</head><body><a class="skip-link" href="#main">${u.skip}</a><header class="site-header"><div class="header-inner"><a class="brand" href="/${code}/index.html"><img src="/logo.png" alt=""><strong>ORHAR</strong></a><nav class="nav" data-nav aria-label="${u.nav}"><a href="/${code}/index.html">${c.back}</a><a href="/${code}/preview.html">${c.gallery}</a><a href="/${code}/actuality.html">${code==='fr'?'Actualité':code==='en'?'News':code==='pt'?'Novidades':code==='es'?'Novedades':code==='de'?'Neuigkeiten':code==='it'?'Novità':'Aktualności'}</a><a href="/contact.html">${u.contact}</a></nav><select class="language" data-language aria-label="${u.language}">${Object.keys(copy).map(lang=>`<option value="${lang}" ${lang===code?'selected':''}>${flags[lang]} ${lang.toUpperCase()}</option>`).join('')}</select><button class="mode-toggle" data-mode-toggle type="button"><span aria-hidden="true">☾</span></button><button class="menu-button" data-menu aria-label="Menu" aria-expanded="false">☰</button></div></header><main id="main">${body}</main><footer class="site-footer"><div class="section-inner"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="/${code}/index.html"><img src="/logo.png" alt=""><strong>ORHAR</strong></a><p>${c.back}</p><p class="footer-verse">« ${u.quote} » <span class="footer-verse-ref">— ${u.psalm}:105</span></p></div><nav class="footer-links" aria-label="${u.footer}"><a href="/${code}/index.html">${c.back}</a><a href="/${code}/preview.html">${c.gallery}</a><a href="/${code}/app.html">${c.get}</a><a href="/contact.html">${u.contact}</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/licenses.html">Licenses</a></nav></div><div class="footer-bottom"><span>© 2026 ORHAR.</span><a href="/${code}/index.html">${c.back}</a></div></div></footer><script src="/site.js?v=25" defer></script></body></html>`}
-export function writeSecondaryPages(root){for(const code of Object.keys(copy)){const c=copy[code];const localeKeys=localeScreens[code];const gallery=`<section class="gallery-hero"><div class="section-inner"><p class="eyebrow">${c.eyebrow}</p><h1>${c.title}</h1><p>${c.intro}</p></div></section><section class="section"><div class="section-inner"><div class="gallery">${localeKeys.map((key)=>{const sourceIndex=galleryCardIndex[key];const src=localizedScreenshotPaths[code][key];const label=c.cards[sourceIndex];const description=descriptions[code][sourceIndex];return `<figure class="shot reveal"><img src="${src}" alt="ORHAR — ${label}" loading="lazy" width="720" height="1600"><figcaption><h2>${label}</h2><p>${description}</p></figcaption></figure>`}).join('')}</div><div class="gallery-cta"><a class="button button-primary" href="/${code}/app.html">${c.get} ↗</a></div></div></section>`;writeFileSync(resolve(root,code,'preview.html'),shell(code,c.gallery,gallery));const download=`<section class="download"><article class="download-card"><img class="download-phone" src="${localizedScreenshotPaths[code].home}" alt="ORHAR — ${c.cards[0]}"><div class="download-copy"><p class="eyebrow">ORHAR 1.3 · Android</p><h1>${c.download}</h1><p>${c.downloadBody}</p><div class="hero-actions"><a class="button button-primary" href="https://play.google.com/store/apps/details?id=com.orhar.bible">${c.store} ↗</a><a class="button button-secondary" href="/${code}/preview.html">${c.view}</a></div><p class="download-note">${c.note}</p></div></article></section>`;writeFileSync(resolve(root,code,'app.html'),shell(code,c.get,download));}}
+
+function shell(code, title, body, pageSlug = 'preview', metaDesc = '') {
+  const c = copy[code], u = ui[code], d = demoLabels[code];
+  const desc = metaDesc || c.intro;
+  return `<!doctype html><html lang="${code}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} — ORHAR</title><meta name="description" content="${desc}"><meta name="theme-color" content="#0b182a"><meta property="og:type" content="website"><meta property="og:title" content="${title} — ORHAR"><meta property="og:description" content="${desc}"><meta property="og:url" content="https://orhar.com/${code}/${pageSlug}.html"><meta property="og:image" content="https://orhar.com/og-image.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@orhar_app"><meta name="twitter:title" content="${title} — ORHAR"><meta name="twitter:image" content="https://orhar.com/og-image.png"><link rel="canonical" href="https://orhar.com/${code}/${pageSlug}.html"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-96x96.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1A2E4A"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="/site.css?v=25">${pageCss}</head><body><a class="skip-link" href="#main">${u.skip}</a><header class="site-header"><div class="header-inner"><a class="brand" href="/${code}/index.html"><img src="/logo.png" alt=""><strong>ORHAR</strong></a><nav class="nav" data-nav aria-label="${u.nav}"><a href="/${code}/index.html">${c.back}</a><a href="/${code}/preview.html">${c.gallery}</a><a href="/${code}/appdemo.html">${d.nav}</a><a href="/${code}/actuality.html">${newsNavLabels[code]}</a><a href="/contact.html">${u.contact}</a></nav><select class="language" data-language aria-label="${u.language}">${Object.keys(copy).map(lang=>`<option value="${lang}" ${lang===code?'selected':''}>${flags[lang]} ${lang.toUpperCase()}</option>`).join('')}</select><button class="mode-toggle" data-mode-toggle type="button"><span aria-hidden="true">☾</span></button><button class="menu-button" data-menu aria-label="Menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button></div></header><main id="main">${body}</main><footer class="site-footer"><div class="section-inner"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="/${code}/index.html"><img src="/logo.png" alt=""><strong>ORHAR</strong></a><p>${c.back}</p><p class="footer-verse">« ${u.quote} » <span class="footer-verse-ref">— ${u.psalm}:105</span></p></div><nav class="footer-links" aria-label="${u.footer}"><a href="/${code}/index.html">${c.back}</a><a href="/${code}/preview.html">${c.gallery}</a><a href="/${code}/appdemo.html">${d.nav}</a><a href="/${code}/app.html">${c.get}</a><a href="/contact.html">${u.contact}</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/licenses.html">Licenses</a></nav></div><div class="footer-bottom"><span>© 2026 ORHAR.</span><a href="/${code}/index.html">${c.back}</a></div></div></footer><script src="/site.js?v=25" defer></script></body></html>`;
+}
+
+export function writeSecondaryPages(root) {
+  for (const code of Object.keys(copy)) {
+    const c = copy[code];
+    const d = demoLabels[code];
+    const localeKeys = localeScreens[code];
+
+    // 1. Gallery Page (preview.html)
+    const gallery = `<section class="gallery-hero"><div class="section-inner"><p class="eyebrow">${c.eyebrow}</p><h1>${c.title}</h1><p>${c.intro}</p></div></section><section class="section"><div class="section-inner"><div class="gallery">${localeKeys.map((key)=>{const sourceIndex=galleryCardIndex[key];const src=localizedScreenshotPaths[code][key];const label=c.cards[sourceIndex];const description=descriptions[code][sourceIndex];return `<figure class="shot reveal"><img src="${src}" alt="ORHAR — ${label}" loading="lazy" width="720" height="1600"><figcaption><h2>${label}</h2><p>${description}</p></figcaption></figure>`}).join('')}</div><div class="gallery-cta"><a class="button button-primary" href="/${code}/app.html">${c.get} ↗</a><a class="button button-secondary" href="/${code}/appdemo.html" style="margin-left: 12px;">${d.title}</a></div></div></section>`;
+    writeFileSync(resolve(root, code, 'preview.html'), shell(code, c.gallery, gallery, 'preview'));
+
+    // 2. Download App Page (app.html)
+    const download = `<section class="download"><article class="download-card"><img class="download-phone" src="${localizedScreenshotPaths[code].home}" alt="ORHAR — ${c.cards[0]}"><div class="download-copy"><p class="eyebrow">ORHAR 1.3 · Android</p><h1>${c.download}</h1><p>${c.downloadBody}</p><div class="hero-actions"><a class="button button-primary" href="https://play.google.com/store/apps/details?id=com.orhar.bible">${c.store} ↗</a><a class="button button-secondary" href="/${code}/preview.html">${c.view}</a></div><p class="download-note">${c.note}</p></div></article></section>`;
+    writeFileSync(resolve(root, code, 'app.html'), shell(code, c.get, download, 'app'));
+
+    // 3. Interactive App Demo Page (appdemo.html)
+    const appdemo = `
+    <section class="demo-hero">
+      <div class="section-inner">
+        <p class="eyebrow">${d.eyebrow}</p>
+        <h1>${d.title}</h1>
+        <p>${d.intro}</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#quiz-demo">${d.ctaQuiz}</a>
+          <a class="button button-secondary" href="/${code}/app.html">${d.ctaApp}</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 1: VIDEO TEASER -->
+    <section class="section" id="demo-video">
+      <div class="section-inner">
+        <div class="demo-teaser-preview reveal">
+          <div class="demo-video-visual">
+            <div class="demo-phone-stage">
+              <div class="demo-phone-glow" aria-hidden="true"></div>
+              <figure class="demo-phone-frame">
+                <video controls autoplay loop muted playsinline poster="${localizedScreenshotPaths[code].home}" aria-label="${d.videoTitle}">
+                  <source src="/assets/videos/${code}/teaser.mp4" type="video/mp4">
+                  <source src="/assets/videos/${code}/teaser.webm" type="video/webm">
+                </video>
+              </figure>
+            </div>
+          </div>
+          <div class="demo-video-copy">
+            <p class="eyebrow">Module 01 · Video</p>
+            <h3>${d.videoTitle}</h3>
+            <p>${d.videoSubtitle}</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#quiz-demo">${d.ctaQuiz}</a>
+              <a class="button button-secondary" href="/${code}/app.html">${d.ctaApp}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 2: INTERACTIVE QUIZ (SIANAQUIZ) -->
+    ${interactiveQuizSection(root, code)}
+
+    <!-- MODULE 3: AUDIO & MYPATH PREVIEW -->
+    <section class="section" id="demo-audio">
+      <div class="section-inner">
+        <div class="section-heading center reveal">
+          <p class="eyebrow">Module 03 · Audio</p>
+          <h2 class="section-title">${d.audioTitle}</h2>
+          <p class="section-intro">${d.audioSubtitle}</p>
+        </div>
+        <div class="demo-audio-grid">
+          ${d.audioCards.map(([icon, title, text]) => `
+            <article class="demo-audio-card reveal">
+              <span class="demo-audio-icon"><i class="fa-solid ${icon}"></i></span>
+              <h3>${title}</h3>
+              <p>${text}</p>
+            </article>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 4: SCRIPTURE READER PREVIEW -->
+    <section class="section" id="demo-reader">
+      <div class="section-inner">
+        <div class="demo-reader-preview reveal">
+          <div class="demo-reader-copy">
+            <p class="eyebrow">Module 04 · Scripture</p>
+            <h3>${d.readerTitle}</h3>
+            <p>${d.readerBody}</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="/${code}/app.html">${c.get} ↗</a>
+              <a class="button button-secondary" href="/${code}/preview.html">${c.view}</a>
+            </div>
+          </div>
+          <div class="demo-reader-visual">
+            <div class="demo-phone-stage">
+              <div class="demo-phone-glow" aria-hidden="true"></div>
+              <figure class="demo-phone-frame">
+                <video controls autoplay loop muted playsinline poster="${localizedScreenshotPaths[code].reader}" aria-label="${d.readerTitle}">
+                  <source src="/assets/videos/${code}/reader.mp4" type="video/mp4">
+                  <source src="/assets/videos/${code}/reader.webm" type="video/webm">
+                </video>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA DOWNLOAD -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="gallery-cta">
+          <a class="button button-primary" href="https://play.google.com/store/apps/details?id=com.orhar.bible">${c.store} ↗</a>
+          <a class="button button-secondary" href="/${code}/preview.html" style="margin-left: 12px;">${c.gallery}</a>
+        </div>
+      </div>
+    </section>
+    `;
+    writeFileSync(resolve(root, code, 'appdemo.html'), shell(code, d.title, appdemo, 'appdemo', d.intro));
+  }
+}

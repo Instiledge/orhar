@@ -1,0 +1,980 @@
+[
+  {
+    "id": 4815,
+    "originalId": "4815|II|E|44|advanced|T/F",
+    "question": "Os discípulos se alegrarão enquanto o mundo chorará.",
+    "difficulty": "advanced",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "44",
+    "reference": "João 16, 19-22",
+    "createdAt": "2026-04-14T06:41:34.093143Z",
+    "answers": [
+      {
+        "text": "Verdadeiro",
+        "correct": false
+      },
+      {
+        "text": "Falso",
+        "correct": true
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "João 16, 20",
+      "contentType": "Prophétie",
+      "priority": "Basse",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_16_20_TF",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Última Ceia e Glorificação",
+    "verseText": "Certamente lhes digo que vão chorar e lamentar, mas o mundo vai se alegrar. Você ficará triste, mas sua tristeza será transformada em alegria.",
+    "verseBookName": "João",
+    "verseExactRef": "João 16,20"
+  },
+  {
+    "id": 4589,
+    "originalId": "4589|II|E|42|beginner|T/F",
+    "question": "José de Arimateia envolveu o corpo de Jesus em um sudário preto.",
+    "difficulty": "beginner",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "42",
+    "reference": "Mateus 27, 55-61",
+    "createdAt": "2026-04-14T06:41:34.091436Z",
+    "answers": [
+      {
+        "text": "Verdadeiro",
+        "correct": false
+      },
+      {
+        "text": "Falso",
+        "correct": true
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "Mateus 27, 59",
+      "contentType": "Fait",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_27_59_TF",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Paixão e Ressurreição",
+    "verseText": "José pegou o corpo e o envolveu em um pano de linho limpo",
+    "verseBookName": "Mateus",
+    "verseExactRef": "Mateus 27,59"
+  },
+  {
+    "id": 4605,
+    "originalId": "4605|II|E|42|beginner|T/F",
+    "question": "Os discípulos perguntaram a Jesus onde preparar a Páscoa para si mesmos.",
+    "difficulty": "beginner",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "42",
+    "reference": "Marcos 14, 12-14",
+    "createdAt": "2026-04-14T06:41:34.090832Z",
+    "answers": [
+      {
+        "text": "Verdadeiro",
+        "correct": false
+      },
+      {
+        "text": "Falso",
+        "correct": true
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "Marcos 14, 12",
+      "contentType": "Action",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MC",
+      "universalId": "MC_14_12_TF",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Paixão e Ressurreição",
+    "verseText": "No primeiro dia de pão ázimo, quando sacrificaram a Páscoa, seus discípulos lhe perguntaram: “Onde você quer que vamos e nos preparemos para que você possa comer a Páscoa?",
+    "verseBookName": "Marcos",
+    "verseExactRef": "Marcos 14,12"
+  },
+  {
+    "id": 4359,
+    "originalId": "4359|II|E|40|intermediate|MCQ",
+    "question": "Que título um jovem dá a Jesus em Mateus 19?",
+    "difficulty": "intermediate",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "40",
+    "reference": "Mateus 19, 15-17",
+    "createdAt": "2026-04-14T06:41:34.089873Z",
+    "answers": [
+      {
+        "text": "Profeta",
+        "correct": false
+      },
+      {
+        "text": "Bom Mestre",
+        "correct": true
+      },
+      {
+        "text": "Messias",
+        "correct": false
+      },
+      {
+        "text": "Rabino",
+        "correct": false
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "Mateus 19, 16",
+      "contentType": "Personnage",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_19_16_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Parábolas e Ensinamentos",
+    "verseText": "Eis que alguém veio até ele e disse: “Bom professor, que bem devo fazer para ter a vida eterna?",
+    "verseBookName": "Mateus",
+    "verseExactRef": "Mateus 19,16"
+  },
+  {
+    "id": 4142,
+    "originalId": "4142|II|E|38|advanced|T/F",
+    "question": "Jesus fala da providência divina comparando os humanos às aves.",
+    "difficulty": "advanced",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "38",
+    "reference": "Mateus 6, 25-27",
+    "createdAt": "2026-04-14T06:41:34.087987Z",
+    "answers": [
+      {
+        "text": "Verdadeiro",
+        "correct": true
+      },
+      {
+        "text": "Falso",
+        "correct": false
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "Mateus 6, 26",
+      "contentType": "Symbole",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_6_26_TF",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Sermão e Primeiros Milagres",
+    "verseText": "Veja as aves do céu, que elas não semeiam, nem colhem, nem se reúnem em celeiros. Vosso Pai celestial as alimenta. Você não tem muito mais valor do que elas?",
+    "verseBookName": "Mateus",
+    "verseExactRef": "Mateus 6,26"
+  },
+  {
+    "id": 4706,
+    "originalId": "4706|II|E|43|beginner|MCQ",
+    "question": "O que Jesus fez antes de distribuir os pães e peixes durante a multiplicação?",
+    "difficulty": "beginner",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "43",
+    "reference": "João 6, 11-13",
+    "createdAt": "2026-04-14T06:41:34.092079Z",
+    "answers": [
+      {
+        "text": "Levanta as mãos",
+        "correct": false
+      },
+      {
+        "text": "Agradece",
+        "correct": true
+      },
+      {
+        "text": "Bênze a água",
+        "correct": false
+      },
+      {
+        "text": "Ora em voz alta",
+        "correct": false
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "João 6, 11",
+      "contentType": "Action",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_6_11_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Sinais e Discursos",
+    "verseText": "Jesus tomou os pães, e tendo dado graças, distribuiu aos discípulos, e os discípulos aos que estavam sentados, também dos peixes, tanto quanto eles desejavam.",
+    "verseBookName": "João",
+    "verseExactRef": "João 6,11"
+  },
+  {
+    "id": 4758,
+    "originalId": "4758|II|E|43|advanced|MCQ",
+    "question": "O que simboliza o grão de trigo que cai na terra e morre nos ensinamentos de Jesus?",
+    "difficulty": "advanced",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "43",
+    "reference": "João 12, 20-26",
+    "createdAt": "2026-04-14T06:41:34.092419Z",
+    "answers": [
+      {
+        "text": "Crescimento rápido sem sacrifício",
+        "correct": false
+      },
+      {
+        "text": "Vida dada para dar fruto",
+        "correct": true
+      },
+      {
+        "text": "Semente estéril e inútil",
+        "correct": false
+      },
+      {
+        "text": "Colheita abundante sem esforço",
+        "correct": false
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "João 12, 24",
+      "contentType": "Métaphore",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_12_24_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Sinais e Discursos",
+    "verseText": "Certamente vos digo, a menos que um grão de trigo caia na terra e morra, ele permanece por si só. Mas se ele morre, dá muito fruto.",
+    "verseBookName": "João",
+    "verseExactRef": "João 12,24"
+  },
+  {
+    "id": 4828,
+    "originalId": "4828|II|E|44|beginner|MCQ",
+    "question": "Para onde Jesus vai com seus discípulos após Seu último discurso antes da Paixão?",
+    "difficulty": "beginner",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "44",
+    "reference": "João 18, 1-3",
+    "createdAt": "2026-04-14T06:41:34.093216Z",
+    "answers": [
+      {
+        "text": "Além do ribeiro Cedrom",
+        "correct": true
+      },
+      {
+        "text": "Rumo ao mar da Galileia",
+        "correct": false
+      },
+      {
+        "text": "Ao templo de Jerusalém",
+        "correct": false
+      },
+      {
+        "text": "Ao Monte das Oliveiras",
+        "correct": false
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "João 18, 1",
+      "contentType": "Événement",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_18_1_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Última Ceia e Glorificação",
+    "verseText": "Quando Jesus pronunciou estas palavras, ele saiu com seus discípulos sobre o riacho Kidron, onde havia um jardim, no qual ele e seus discípulos entraram.",
+    "verseBookName": "João",
+    "verseExactRef": "João 18,1"
+  },
+  {
+    "id": 4082,
+    "originalId": "4082|II|E|38|beginner|MCQ",
+    "question": "Quem pregava no deserto da Judeia segundo os Evangelhos?",
+    "difficulty": "beginner",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "38",
+    "reference": "Mateus 3, 1-3",
+    "createdAt": "2026-04-14T06:41:34.087321Z",
+    "answers": [
+      {
+        "text": "João Batista",
+        "correct": true
+      },
+      {
+        "text": "Jesus",
+        "correct": false
+      },
+      {
+        "text": "Moisés",
+        "correct": false
+      },
+      {
+        "text": "Pedro",
+        "correct": false
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "Mateus 3, 1",
+      "contentType": "Personnage",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_3_1_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Sermão e Primeiros Milagres",
+    "verseText": "Naqueles dias, veio João Batista, pregando no deserto da Judéia, dizendo:",
+    "verseBookName": "Mateus",
+    "verseExactRef": "Mateus 3,1"
+  },
+  {
+    "id": 4180,
+    "originalId": "4180|II|E|38|advanced|MCQ",
+    "question": "Quais ações Jesus anuncia que cumprirá de acordo com a profecia de Isaías que lê em Nazaré?",
+    "difficulty": "advanced",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "38",
+    "reference": "Lucas 4, 16-22",
+    "createdAt": "2026-04-14T06:41:34.087637Z",
+    "answers": [
+      {
+        "text": "Libertar cativos e cegos",
+        "correct": true
+      },
+      {
+        "text": "Reinar sobre Jerusalém agora",
+        "correct": false
+      },
+      {
+        "text": "Construir templo novo",
+        "correct": false
+      },
+      {
+        "text": "Julgar nações rebeldes",
+        "correct": false
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "Lucas 4, 19",
+      "contentType": "Prophétie",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "LC",
+      "universalId": "LC_4_19_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Sermão e Primeiros Milagres",
+    "verseText": "e para proclamar o ano aceitável do Senhor”.",
+    "verseBookName": "Lucas",
+    "verseExactRef": "Lucas 4,19"
+  },
+  {
+    "id": 4648,
+    "originalId": "4648|II|E|42|intermediate|MCQ",
+    "question": "Quais são as primeiras palavras de Jesus ressuscitado ao aparecer aos discípulos?",
+    "difficulty": "intermediate",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "42",
+    "reference": "Lucas 24, 36-38",
+    "createdAt": "2026-04-14T06:41:34.091109Z",
+    "answers": [
+      {
+        "text": "Ide anunciar o Evangelho",
+        "correct": false
+      },
+      {
+        "text": "Tomai e comei",
+        "correct": false
+      },
+      {
+        "text": "O Pai e eu somos um",
+        "correct": false
+      },
+      {
+        "text": "A paz esteja convosco",
+        "correct": true
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "Lucas 24, 36",
+      "contentType": "Personnage",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "LC",
+      "universalId": "LC_24_36_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Paixão e Ressurreição",
+    "verseText": "Enquanto diziam estas coisas, o próprio Jesus estava entre eles, e disse-lhes: “A paz seja convosco”.",
+    "verseBookName": "Lucas",
+    "verseExactRef": "Lucas 24,36"
+  },
+  {
+    "id": 4552,
+    "originalId": "4552|II|E|42|advanced|MCQ",
+    "question": "O que Jesus profetiza sobre a reação de seus discípulos naquela noite?",
+    "difficulty": "advanced",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "42",
+    "reference": "Mateus 26, 31-35",
+    "createdAt": "2026-04-14T06:41:34.091214Z",
+    "answers": [
+      {
+        "text": "Traição só de Judas",
+        "correct": false
+      },
+      {
+        "text": "Dispersos como ovelhas",
+        "correct": true
+      },
+      {
+        "text": "Fuga para a Galiléia",
+        "correct": false
+      },
+      {
+        "text": "Conversão imediata",
+        "correct": false
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "Mateus 26, 31",
+      "contentType": "Prophétie",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_26_31_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Paixão e Ressurreição",
+    "verseText": "Então Jesus lhes disse: “Todos vós tropeçareis por minha causa esta noite, pois está escrito: 'Golpearei o pastor, e as ovelhas do rebanho serão dispersas'.",
+    "verseBookName": "Mateus",
+    "verseExactRef": "Mateus 26,31"
+  },
+  {
+    "id": 4497,
+    "originalId": "4497|II|E|41|advanced|MCQ",
+    "question": "O que as dez virgens levam na parábola do noivo para ir ao seu encontro?",
+    "difficulty": "advanced",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "41",
+    "reference": "Mateus 25, 1-13",
+    "createdAt": "2026-04-14T06:41:34.090750Z",
+    "answers": [
+      {
+        "text": "Pergaminhos sagrados",
+        "correct": false
+      },
+      {
+        "text": "Coronas de oliveira",
+        "correct": false
+      },
+      {
+        "text": "Lâmpadas acesas",
+        "correct": true
+      },
+      {
+        "text": "Ramos de palmeira",
+        "correct": false
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "Mateus 25, 1",
+      "contentType": "Parabole",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_25_1_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Entrada Triunfal",
+    "verseText": "“Então o Reino dos Céus será como dez virgens que pegaram suas lâmpadas e saíram para se encontrar com o noivo.",
+    "verseBookName": "Mateus",
+    "verseExactRef": "Mateus 25,1"
+  },
+  {
+    "id": 4141,
+    "originalId": "4141|II|E|38|beginner|MCQ",
+    "question": "O que Jesus diz sobre a preocupação com comida e roupas?",
+    "difficulty": "beginner",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "38",
+    "reference": "Mateus 6, 25-27",
+    "createdAt": "2026-04-14T06:41:34.087981Z",
+    "answers": [
+      {
+        "text": "Trabalhem mais",
+        "correct": false
+      },
+      {
+        "text": "Peçam aos ricos",
+        "correct": false
+      },
+      {
+        "text": "Orem sem cessar",
+        "correct": false
+      },
+      {
+        "text": "Não se preocupem",
+        "correct": true
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "Mateus 6, 25",
+      "contentType": "Citation",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_6_25_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Sermão e Primeiros Milagres",
+    "verseText": "Portanto, eu lhe digo, não esteja ansioso por sua vida: o que vai comer, ou o que vai beber; nem ainda pelo seu corpo, o que vai vestir. A vida não é mais do que comida, e o corpo mais do que roupa?",
+    "verseBookName": "Mateus",
+    "verseExactRef": "Mateus 6,25"
+  },
+  {
+    "id": 4814,
+    "originalId": "4814|II|E|44|intermediate|MCQ",
+    "question": "O que Jesus promete que o Espírito da verdade fará pelos discípulos?",
+    "difficulty": "intermediate",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "44",
+    "reference": "João 16, 12-15",
+    "createdAt": "2026-04-14T06:41:34.093128Z",
+    "answers": [
+      {
+        "text": "Falar de si mesmo",
+        "correct": false
+      },
+      {
+        "text": "Substituir Jesus imediatamente",
+        "correct": false
+      },
+      {
+        "text": "Guiar em toda verdade",
+        "correct": true
+      },
+      {
+        "text": "Esconder coisas futuras",
+        "correct": false
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "João 16, 13",
+      "contentType": "Doctrine",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_16_13_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Última Ceia e Glorificação",
+    "verseText": "Entretanto, quando ele, o Espírito da verdade, tiver chegado, ele vos guiará em toda a verdade, pois não falará de si mesmo; mas o que quer que ele ouça, falará. Ele declarará a vocês as coisas que estão por vir.",
+    "verseBookName": "João",
+    "verseExactRef": "João 16,13"
+  },
+  {
+    "id": 4746,
+    "originalId": "4746|II|E|43|intermediate|T/F",
+    "question": "Jesus afirma ter recebido do Pai o poder de dar e retomar a sua vida.",
+    "difficulty": "intermediate",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "43",
+    "reference": "João 10, 17-18",
+    "createdAt": "2026-04-14T06:41:34.092333Z",
+    "answers": [
+      {
+        "text": "Verdadeiro",
+        "correct": true
+      },
+      {
+        "text": "Falso",
+        "correct": false
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "João 10, 18",
+      "contentType": "Doctrine",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_10_18_TF",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Sinais e Discursos",
+    "verseText": "Ninguém a tira de mim, mas eu a deixo sozinha. Eu tenho poder para dá-la, e tenho poder para tomá-la novamente. Eu recebi este mandamento de meu Pai”.",
+    "verseBookName": "João",
+    "verseExactRef": "João 10,18"
+  },
+  {
+    "id": 4846,
+    "originalId": "4846|II|E|44|beginner|MCQ",
+    "question": "Onde Jesus apareceu aos discípulos após Sua ressurreição segundo João 21?",
+    "difficulty": "beginner",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "44",
+    "reference": "João 21, 1-3",
+    "createdAt": "2026-04-14T06:41:34.093324Z",
+    "answers": [
+      {
+        "text": "Monte das Oliveiras",
+        "correct": false
+      },
+      {
+        "text": "Mar da Tiberíades",
+        "correct": true
+      },
+      {
+        "text": "Jerusalém",
+        "correct": false
+      },
+      {
+        "text": "Belém",
+        "correct": false
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "João 21, 1",
+      "contentType": "Événement",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_21_1_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Última Ceia e Glorificação",
+    "verseText": "Depois destas coisas, Jesus revelou-se novamente aos discípulos no mar de Tiberíades. Ele se revelou desta maneira.",
+    "verseBookName": "João",
+    "verseExactRef": "João 21,1"
+  },
+  {
+    "id": 4229,
+    "originalId": "4229|II|E|39|advanced|MCQ",
+    "question": "Jesus disse que seus discípulos deveriam ser prudentes como quê?",
+    "difficulty": "advanced",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "39",
+    "reference": "Mateus 10, 16-23",
+    "createdAt": "2026-04-14T06:41:34.088733Z",
+    "answers": [
+      {
+        "text": "Águias entre serpentes",
+        "correct": false
+      },
+      {
+        "text": "Leões entre cordeiros",
+        "correct": false
+      },
+      {
+        "text": "Pombas entre raposas",
+        "correct": false
+      },
+      {
+        "text": "Ovelhas entre lobos",
+        "correct": true
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "Mateus 10, 16",
+      "contentType": "Métaphore",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_10_16_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Ministério na Galileia",
+    "verseText": "“Eis que eu vos envio como ovelhas entre lobos. Portanto, sede sábios como serpentes e inofensivos como pombas”.",
+    "verseBookName": "Mateus",
+    "verseExactRef": "Mateus 10,16"
+  },
+  {
+    "id": 4732,
+    "originalId": "4732|II|E|43|intermediate|T/F",
+    "question": "Jesus declara: «Antes que Abraão existisse, Eu Sou.»",
+    "difficulty": "intermediate",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "43",
+    "reference": "João 8, 54-59",
+    "createdAt": "2026-04-14T06:41:34.092246Z",
+    "answers": [
+      {
+        "text": "Verdadeiro",
+        "correct": true
+      },
+      {
+        "text": "Falso",
+        "correct": false
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "João 8, 58",
+      "contentType": "Citation",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "JN",
+      "universalId": "JN_8_58_TF",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Sinais e Discursos",
+    "verseText": "Jesus lhes disse: “Certamente, eu lhes digo, antes de Abraão vir à existência, EU SOU”. ”",
+    "verseBookName": "João",
+    "verseExactRef": "João 8,58"
+  },
+  {
+    "id": 4378,
+    "originalId": "4378|II|E|40|intermediate|MCQ",
+    "question": "Qual vício NÃO é mencionado por Jesus em Sua lista de males que vêm do coração?",
+    "difficulty": "intermediate",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "40",
+    "reference": "Marcos 7, 22-23",
+    "createdAt": "2026-04-14T06:41:34.089000Z",
+    "answers": [
+      {
+        "text": "A calúnia",
+        "correct": false
+      },
+      {
+        "text": "A avareza",
+        "correct": false
+      },
+      {
+        "text": "O orgulho",
+        "correct": false
+      },
+      {
+        "text": "O ciúme",
+        "correct": true
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "Marcos 7, 22",
+      "contentType": "Doctrine",
+      "priority": "Haute",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MC",
+      "universalId": "MC_7_22_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Parábolas e Ensinamentos",
+    "verseText": "cobiças, maldades, enganos, desejos luxuriosos, mau olhado, blasfêmia, orgulho e tolice.",
+    "verseBookName": "Marcos",
+    "verseExactRef": "Marcos 7,22"
+  },
+  {
+    "id": 4336,
+    "originalId": "4336|II|E|40|intermediate|MCQ",
+    "question": "A quem Jesus diz ter sido enviado durante Seu encontro com a mulher cananeia?",
+    "difficulty": "intermediate",
+    "questionType": "MCQ",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "40",
+    "reference": "Mateus 15, 21-24",
+    "createdAt": "2026-04-14T06:41:34.089638Z",
+    "answers": [
+      {
+        "text": "A todos os povos pagãos",
+        "correct": false
+      },
+      {
+        "text": "A reis e governantes",
+        "correct": false
+      },
+      {
+        "text": "Às ovelhas perdidas de Israel",
+        "correct": true
+      },
+      {
+        "text": "A fariseus e escribas",
+        "correct": false
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "Mateus 15, 24",
+      "contentType": "Promesse",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MT",
+      "universalId": "MT_15_24_MCQ",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Parábolas e Ensinamentos",
+    "verseText": "Mas ele respondeu: “Eu não fui enviado a ninguém além das ovelhas perdidas da casa de Israel”.",
+    "verseBookName": "Mateus",
+    "verseExactRef": "Mateus 15,24"
+  },
+  {
+    "id": 4393,
+    "originalId": "4393|II|E|40|beginner|T/F",
+    "question": "O Reino pertence aos que são como criancinhas.",
+    "difficulty": "beginner",
+    "questionType": "T/F",
+    "sectionCode": "II",
+    "themeCode": "E",
+    "subThemeCode": "40",
+    "reference": "Marcos 10, 13-16",
+    "createdAt": "2026-04-14T06:41:34.089099Z",
+    "answers": [
+      {
+        "text": "Verdadeiro",
+        "correct": true
+      },
+      {
+        "text": "Falso",
+        "correct": false
+      }
+    ],
+    "language": "pt",
+    "metadata": {
+      "verseTarget": "Marcos 10, 14",
+      "contentType": "Citation",
+      "priority": "Moyenne",
+      "apiProvider": "Mistral AI",
+      "apiModelName": "Mistral Medium Latest 🔥",
+      "bookAbbreviation": "MC",
+      "universalId": "MC_10_14_TF",
+      "isFallback": false
+    },
+    "sectionName": "Novo Testamento",
+    "themeName": "Evangelhos e Vida de Cristo",
+    "subThemeName": "Parábolas e Ensinamentos",
+    "verseText": "Mas quando Jesus viu isso, ficou indignado e disse-lhes: “Deixem as criancinhas vir até mim! Não os proíba, pois o Reino de Deus pertence a tais crianças.",
+    "verseBookName": "Marcos",
+    "verseExactRef": "Marcos 10,14"
+  }
+]

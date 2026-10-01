@@ -14,9 +14,10 @@ const LOCALIZED_SCREEN_ASSETS = Object.entries(LOCALIZED_SCREEN_MODULES).flatMap
     modules.map(module => `/screenshots/locales/${locale}/app-${module}-2026.webp`)
 );
 const LOCALIZED_NEWSLETTER_QR = ['en','fr','es','de','it','pt','pl'].map(code => `/${code}/qr-subscribe-${code}.png`);
+const LOCALIZED_QUIZ_BUNDLES = ['en','fr','es','de','it','pt','pl'].map(code => `/assets/quiz/bundle_${code}.json`);
 
 const ASSETS_TO_CACHE = [
-    ...['en','fr','es','de','it','pt','pl'].flatMap(code => [`/${code}/index.html`, `/${code}/preview.html`, `/${code}/app.html`, `/${code}/actuality.html`]),
+    ...['en','fr','es','de','it','pt','pl'].flatMap(code => [`/${code}/index.html`, `/${code}/preview.html`, `/${code}/appdemo.html`, `/${code}/app.html`, `/${code}/actuality.html`]),
     '/preview.html',
     '/app.html',
     '/action.html',
@@ -41,6 +42,8 @@ const ASSETS_TO_CACHE = [
     '/apple-touch-icon.png',
     '/favicon.ico',
     '/favicon-96x96.png',
+    '/assets/sounds/correct.mp3',
+    '/assets/sounds/wrong.mp3',
     '/screenshots/app-home-2026.webp',
     '/screenshots/app-bible-2026.webp',
     '/screenshots/app-parobible-2026.webp',
@@ -53,6 +56,7 @@ const ASSETS_TO_CACHE = [
     '/screenshots/app-notes-2026.webp',
     '/screenshots/app-bookmarks-2026.webp',
     ...LOCALIZED_NEWSLETTER_QR,
+    ...LOCALIZED_QUIZ_BUNDLES,
     ...LOCALIZED_SCREEN_ASSETS
 ];
 

@@ -9,7 +9,7 @@ const oldShots = ['bible-reader.jpg','bible-versions.jpg','home-daily-verse.jpg'
 let checks = 0;
 function assert(condition, message) { if (!condition) throw new Error(message); checks++; }
 for (const code of languages) {
-  for (const page of ['index.html','preview.html','app.html','actuality.html']) {
+  for (const page of ['index.html','preview.html','app.html','actuality.html','appdemo.html']) {
     const fullPath = resolve(root, code, page);
     const html = readFileSync(fullPath, 'utf8');
     assert(html.includes(`<html lang="${code}">`), `${code}/${page}: language missing`);
@@ -21,11 +21,18 @@ for (const code of languages) {
       assert(existsSync(resolve(root, image[1].slice(1))), `${code}/${page}: missing ${image[1]}`);
     }
   }
+  const appdemo = readFileSync(resolve(root,code,'appdemo.html'),'utf8');
+  assert(appdemo.includes(`/assets/videos/${code}/teaser.mp4`), `${code}/appdemo.html: localized mp4 teaser missing`);
+  assert(appdemo.includes(`/assets/videos/${code}/reader.mp4`), `${code}/appdemo.html: localized mp4 reader missing`);
+  assert(appdemo.includes(`/assets/videos/${code}/reader.webm`), `${code}/appdemo.html: localized webm reader missing`);
+  assert(appdemo.includes('id="quizCard"'), `${code}/appdemo.html: quizCard widget missing`);
   const home = readFileSync(resolve(root,code,'index.html'),'utf8');
   assert(home.includes(`/assets/videos/${code}/teaser.mp4`), `${code}: localized mp4 teaser missing`);
   assert(home.includes(`/assets/videos/${code}/teaser.webm`), `${code}: localized webm teaser missing`);
   assert(existsSync(resolve(root, 'assets', 'videos', code, 'teaser.mp4')), `${code}: teaser.mp4 missing on disk`);
   assert(existsSync(resolve(root, 'assets', 'videos', code, 'teaser.webm')), `${code}: teaser.webm missing on disk`);
+  assert(existsSync(resolve(root, 'assets', 'videos', code, 'reader.mp4')), `${code}: reader.mp4 missing on disk`);
+  assert(existsSync(resolve(root, 'assets', 'videos', code, 'reader.webm')), `${code}: reader.webm missing on disk`);
   assert((home.match(/class="feature reveal"/g)||[]).length===13, `${code}: module grid incomplete`);
   const gallery = readFileSync(resolve(root,code,'preview.html'),'utf8');
   assert((gallery.match(/class="shot reveal"/g)||[]).length===Object.keys(localizedScreenshotPaths[code]).length, `${code}: localized gallery incomplete`);

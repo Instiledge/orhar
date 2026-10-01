@@ -1,0 +1,200 @@
+{
+  "JN_16_20_TF": {
+    "id": 4815,
+    "universalId": "JN_16_20_TF",
+    "book": "Johannes",
+    "chapter": 16,
+    "verse": 20,
+    "reference": "Johannes 16,20",
+    "text": "Wahrlich, wahrlich ich sage euch: Ihr werdet weinen und heulen, aber die Welt wird sich freuen; ihr werdet traurig sein; doch eure Traurigkeit soll in Freude verkehrt werden."
+  },
+  "MT_27_59_TF": {
+    "id": 4589,
+    "universalId": "MT_27_59_TF",
+    "book": "Matthäus",
+    "chapter": 27,
+    "verse": 59,
+    "reference": "Matthäus 27,59",
+    "text": "Und Joseph nahm den Leib und wickelte ihn in eine reine Leinwand"
+  },
+  "MC_14_12_TF": {
+    "id": 4605,
+    "universalId": "MC_14_12_TF",
+    "book": "Markus",
+    "chapter": 14,
+    "verse": 12,
+    "reference": "Markus 14,12",
+    "text": "Und am ersten Tage der süßen Brote, da man das Osterlamm opferte, sprachen seine Jünger zu ihm: Wo willst du, daß wir hingehen und bereiten, daß du das Osterlamm essest?"
+  },
+  "MT_19_16_MCQ": {
+    "id": 4359,
+    "universalId": "MT_19_16_MCQ",
+    "book": "Matthäus",
+    "chapter": 19,
+    "verse": 16,
+    "reference": "Matthäus 19,16",
+    "text": "Und siehe, einer trat zu ihm und sprach: Guter Meister, was soll ich Gutes tun, daß ich das ewige Leben möge haben?"
+  },
+  "MT_6_26_TF": {
+    "id": 4142,
+    "universalId": "MT_6_26_TF",
+    "book": "Matthäus",
+    "chapter": 6,
+    "verse": 26,
+    "reference": "Matthäus 6,26",
+    "text": "Sehet die Vögel unter dem Himmel an: sie säen nicht, sie ernten nicht, sie sammeln nicht in die Scheunen; und euer himmlischer Vater nährt sie doch. Seid ihr denn nicht viel mehr denn sie?"
+  },
+  "JN_6_11_MCQ": {
+    "id": 4706,
+    "universalId": "JN_6_11_MCQ",
+    "book": "Johannes",
+    "chapter": 6,
+    "verse": 11,
+    "reference": "Johannes 6,11",
+    "text": "Jesus aber nahm die Brote, dankte und gab sie den Jüngern, die Jünger aber denen, die sich gelagert hatten; desgleichen auch von den Fischen, wieviel sie wollten."
+  },
+  "JN_12_24_MCQ": {
+    "id": 4758,
+    "universalId": "JN_12_24_MCQ",
+    "book": "Johannes",
+    "chapter": 12,
+    "verse": 24,
+    "reference": "Johannes 12,24",
+    "text": "Wahrlich, wahrlich ich sage euch: Es sei denn, daß das Weizenkorn in die Erde falle und ersterbe, so bleibt's allein; wo es aber erstirbt, so bringt es viele Früchte."
+  },
+  "JN_18_1_MCQ": {
+    "id": 4828,
+    "universalId": "JN_18_1_MCQ",
+    "book": "Johannes",
+    "chapter": 18,
+    "verse": 1,
+    "reference": "Johannes 18,1",
+    "text": "Da Jesus solches geredet hatte, ging er hinaus mit seinen Jüngern über den Bach Kidron; da war ein Garten, darein ging Jesus und seine Jünger."
+  },
+  "MT_3_1_MCQ": {
+    "id": 4082,
+    "universalId": "MT_3_1_MCQ",
+    "book": "Matthäus",
+    "chapter": 3,
+    "verse": 1,
+    "reference": "Matthäus 3,1",
+    "text": "Zu der Zeit kam Johannes der Täufer und predigte in der Wüste des jüdischen Landes"
+  },
+  "LC_4_19_MCQ": {
+    "id": 4180,
+    "universalId": "LC_4_19_MCQ",
+    "book": "Lukas",
+    "chapter": 4,
+    "verse": 19,
+    "reference": "Lukas 4,19",
+    "text": "und zu verkündigen das angenehme Jahr des HERRN.”"
+  },
+  "LC_24_36_MCQ": {
+    "id": 4648,
+    "universalId": "LC_24_36_MCQ",
+    "book": "Lukas",
+    "chapter": 24,
+    "verse": 36,
+    "reference": "Lukas 24,36",
+    "text": "Da sie aber davon redeten, trat er selbst, Jesus, mitten unter sie und sprach: Friede sei mit euch!"
+  },
+  "MT_26_31_MCQ": {
+    "id": 4552,
+    "universalId": "MT_26_31_MCQ",
+    "book": "Matthäus",
+    "chapter": 26,
+    "verse": 31,
+    "reference": "Matthäus 26,31",
+    "text": "Da sprach Jesus zu ihnen: In dieser Nacht werdet ihr euch alle ärgern an mir. Denn es steht geschrieben: “Ich werde den Hirten schlagen, und die Schafe der Herde werden sich zerstreuen.”"
+  },
+  "MT_25_1_MCQ": {
+    "id": 4497,
+    "universalId": "MT_25_1_MCQ",
+    "book": "Matthäus",
+    "chapter": 25,
+    "verse": 1,
+    "reference": "Matthäus 25,1",
+    "text": "Dann wird das Himmelreich gleich sein zehn Jungfrauen, die ihre Lampen nahmen und gingen aus, dem Bräutigam entgegen."
+  },
+  "MT_6_25_MCQ": {
+    "id": 4141,
+    "universalId": "MT_6_25_MCQ",
+    "book": "Matthäus",
+    "chapter": 6,
+    "verse": 25,
+    "reference": "Matthäus 6,25",
+    "text": "Darum sage ich euch: Sorget nicht für euer Leben, was ihr essen und trinken werdet, auch nicht für euren Leib, was ihr anziehen werdet. Ist nicht das Leben mehr denn Speise? und der Leib mehr denn die Kleidung?"
+  },
+  "JN_16_13_MCQ": {
+    "id": 4814,
+    "universalId": "JN_16_13_MCQ",
+    "book": "Johannes",
+    "chapter": 16,
+    "verse": 13,
+    "reference": "Johannes 16,13",
+    "text": "Wenn aber jener, der Geist der Wahrheit, kommen wird, der wird euch in alle Wahrheit leiten. Denn er wird nicht von sich selber reden; sondern was er hören wird, das wird er reden, und was zukünftig ist, wird er euch verkünden."
+  },
+  "JN_10_18_TF": {
+    "id": 4746,
+    "universalId": "JN_10_18_TF",
+    "book": "Johannes",
+    "chapter": 10,
+    "verse": 18,
+    "reference": "Johannes 10,18",
+    "text": "Niemand nimmt es von mir, sondern ich lasse es von mir selber. Ich habe Macht, es zu lassen, und habe Macht, es wiederzunehmen. Solch Gebot habe ich empfangen von meinem Vater."
+  },
+  "JN_21_1_MCQ": {
+    "id": 4846,
+    "universalId": "JN_21_1_MCQ",
+    "book": "Johannes",
+    "chapter": 21,
+    "verse": 1,
+    "reference": "Johannes 21,1",
+    "text": "Darnach offenbarte sich Jesus abermals den Jüngern an den Meer bei Tiberias. Er offenbarte sich aber also:"
+  },
+  "MT_10_16_MCQ": {
+    "id": 4229,
+    "universalId": "MT_10_16_MCQ",
+    "book": "Matthäus",
+    "chapter": 10,
+    "verse": 16,
+    "reference": "Matthäus 10,16",
+    "text": "Siehe, ich sende euch wie Schafe mitten unter die Wölfe; darum seid klug wie die Schlangen und ohne Falsch wie die Tauben."
+  },
+  "JN_8_58_TF": {
+    "id": 4732,
+    "universalId": "JN_8_58_TF",
+    "book": "Johannes",
+    "chapter": 8,
+    "verse": 58,
+    "reference": "Johannes 8,58",
+    "text": "Jesus sprach zu ihnen: Wahrlich, wahrlich ich sage euch: Ehe denn Abraham ward, bin ich."
+  },
+  "MC_7_22_MCQ": {
+    "id": 4378,
+    "universalId": "MC_7_22_MCQ",
+    "book": "Markus",
+    "chapter": 7,
+    "verse": 22,
+    "reference": "Markus 7,22",
+    "text": "Dieberei, Geiz, Schalkheit, List, Unzucht, Schalksauge, Gotteslästerung, Hoffart, Unvernunft."
+  },
+  "MT_15_24_MCQ": {
+    "id": 4336,
+    "universalId": "MT_15_24_MCQ",
+    "book": "Matthäus",
+    "chapter": 15,
+    "verse": 24,
+    "reference": "Matthäus 15,24",
+    "text": "Er antwortete aber und sprach: Ich bin nicht gesandt denn nur zu den verlorenen Schafen von dem Hause Israel."
+  },
+  "MC_10_14_TF": {
+    "id": 4393,
+    "universalId": "MC_10_14_TF",
+    "book": "Markus",
+    "chapter": 10,
+    "verse": 14,
+    "reference": "Markus 10,14",
+    "text": "Da es aber Jesus sah, ward er unwillig und sprach zu ihnen: Lasset die Kindlein zu mir kommen und wehret ihnen nicht; denn solcher ist das Reich Gottes."
+  }
+}

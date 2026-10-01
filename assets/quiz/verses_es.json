@@ -1,0 +1,200 @@
+{
+  "JN_16_20_TF": {
+    "id": 4815,
+    "universalId": "JN_16_20_TF",
+    "book": "Juan",
+    "chapter": 16,
+    "verse": 20,
+    "reference": "Juan 16,20",
+    "text": "Ciertamente os digo que lloraréis y os lamentaréis, pero el mundo se alegrará. Estaréis tristes, pero vuestra tristeza se convertirá en alegría."
+  },
+  "MT_27_59_TF": {
+    "id": 4589,
+    "universalId": "MT_27_59_TF",
+    "book": "Mateo",
+    "chapter": 27,
+    "verse": 59,
+    "reference": "Mateo 27,59",
+    "text": "José tomó el cuerpo, lo envolvió en una tela de lino limpia"
+  },
+  "MC_14_12_TF": {
+    "id": 4605,
+    "universalId": "MC_14_12_TF",
+    "book": "Marcos",
+    "chapter": 14,
+    "verse": 12,
+    "reference": "Marcos 14,12",
+    "text": "El primer día de los panes sin levadura, cuando sacrificaban la Pascua, sus discípulos le preguntaron: “¿Dónde quieres que vayamos a preparar para que comáis la Pascua?”"
+  },
+  "MT_19_16_MCQ": {
+    "id": 4359,
+    "universalId": "MT_19_16_MCQ",
+    "book": "Mateo",
+    "chapter": 19,
+    "verse": 16,
+    "reference": "Mateo 19,16",
+    "text": "He aquí que uno se acercó a él y le dijo: “Maestro bueno, ¿qué debo hacer para tener la vida eterna?”"
+  },
+  "MT_6_26_TF": {
+    "id": 4142,
+    "universalId": "MT_6_26_TF",
+    "book": "Mateo",
+    "chapter": 6,
+    "verse": 26,
+    "reference": "Mateo 6,26",
+    "text": "Mirad las aves del cielo, que no siembran, ni cosechan, ni recogen en graneros. Vuestro Padre celestial las alimenta. ¿No tienéis vosotros mucho más valor que ellas?"
+  },
+  "JN_6_11_MCQ": {
+    "id": 4706,
+    "universalId": "JN_6_11_MCQ",
+    "book": "Juan",
+    "chapter": 6,
+    "verse": 11,
+    "reference": "Juan 6,11",
+    "text": "Jesús tomó los panes, y habiendo dado gracias, repartió a los discípulos, y los discípulos a los que estaban sentados, asimismo de los peces cuanto quisieron."
+  },
+  "JN_12_24_MCQ": {
+    "id": 4758,
+    "universalId": "JN_12_24_MCQ",
+    "book": "Juan",
+    "chapter": 12,
+    "verse": 24,
+    "reference": "Juan 12,24",
+    "text": "De cierto os digo que si el grano de trigo no cae en la tierra y muere, queda solo. Pero si muere, da mucho fruto."
+  },
+  "JN_18_1_MCQ": {
+    "id": 4828,
+    "universalId": "JN_18_1_MCQ",
+    "book": "Juan",
+    "chapter": 18,
+    "verse": 1,
+    "reference": "Juan 18,1",
+    "text": "Cuando Jesús hubo dicho estas palabras, salió con sus discípulos por el torrente Cedrón, donde había un huerto en el que entraron él y sus discípulos."
+  },
+  "MT_3_1_MCQ": {
+    "id": 4082,
+    "universalId": "MT_3_1_MCQ",
+    "book": "Mateo",
+    "chapter": 3,
+    "verse": 1,
+    "reference": "Mateo 3,1",
+    "text": "En aquellos días, vino Juan el Bautista predicando en el desierto de Judea, diciendo:"
+  },
+  "LC_4_19_MCQ": {
+    "id": 4180,
+    "universalId": "LC_4_19_MCQ",
+    "book": "Lucas",
+    "chapter": 4,
+    "verse": 19,
+    "reference": "Lucas 4,19",
+    "text": "y proclamar el año de gracia del Señor.”"
+  },
+  "LC_24_36_MCQ": {
+    "id": 4648,
+    "universalId": "LC_24_36_MCQ",
+    "book": "Lucas",
+    "chapter": 24,
+    "verse": 36,
+    "reference": "Lucas 24,36",
+    "text": "Mientras decían estas cosas, Jesús mismo se puso en medio de ellos y les dijo: “La paz sea con vosotros”."
+  },
+  "MT_26_31_MCQ": {
+    "id": 4552,
+    "universalId": "MT_26_31_MCQ",
+    "book": "Mateo",
+    "chapter": 26,
+    "verse": 31,
+    "reference": "Mateo 26,31",
+    "text": "Entonces Jesús les dijo: “Esta noche todos vosotros tropezaréis por mi causa, porque está escrito: “Heriré al pastor, y las ovejas del rebaño se dispersarán."
+  },
+  "MT_25_1_MCQ": {
+    "id": 4497,
+    "universalId": "MT_25_1_MCQ",
+    "book": "Mateo",
+    "chapter": 25,
+    "verse": 1,
+    "reference": "Mateo 25,1",
+    "text": "“Entonces el Reino de los Cielos será como diez vírgenes que, tomando sus lámparas, salieron a recibir al novio."
+  },
+  "MT_6_25_MCQ": {
+    "id": 4141,
+    "universalId": "MT_6_25_MCQ",
+    "book": "Mateo",
+    "chapter": 6,
+    "verse": 25,
+    "reference": "Mateo 6,25",
+    "text": "Por eso os digo que no os preocupéis por vuestra vida: qué vais a comer o qué vais a beber; ni tampoco por vuestro cuerpo, qué vais a vestir. ¿No es la vida más que el alimento, y el cuerpo más que el vestido?"
+  },
+  "JN_16_13_MCQ": {
+    "id": 4814,
+    "universalId": "JN_16_13_MCQ",
+    "book": "Juan",
+    "chapter": 16,
+    "verse": 13,
+    "reference": "Juan 16,13",
+    "text": "Sin embargo, cuando él, el Espíritu de la verdad, haya venido, os guiará a toda la verdad, porque no hablará por su cuenta, sino que hablará todo lo que oiga. Él os anunciará las cosas que se avecinan."
+  },
+  "JN_10_18_TF": {
+    "id": 4746,
+    "universalId": "JN_10_18_TF",
+    "book": "Juan",
+    "chapter": 10,
+    "verse": 18,
+    "reference": "Juan 10,18",
+    "text": "Nadie me la quita, sino que yo mismo la pongo. Tengo poder para ponerla, y tengo poder para volver a tomarla. Este mandamiento lo recibí de mi Padre”."
+  },
+  "JN_21_1_MCQ": {
+    "id": 4846,
+    "universalId": "JN_21_1_MCQ",
+    "book": "Juan",
+    "chapter": 21,
+    "verse": 1,
+    "reference": "Juan 21,1",
+    "text": "Después de estas cosas, Jesús se reveló de nuevo a los discípulos en el mar de Tiberias. Se reveló así."
+  },
+  "MT_10_16_MCQ": {
+    "id": 4229,
+    "universalId": "MT_10_16_MCQ",
+    "book": "Mateo",
+    "chapter": 10,
+    "verse": 16,
+    "reference": "Mateo 10,16",
+    "text": "“He aquí que os envío como ovejas en medio de lobos. Por tanto, sed prudentes como serpientes y sencillos como palomas."
+  },
+  "JN_8_58_TF": {
+    "id": 4732,
+    "universalId": "JN_8_58_TF",
+    "book": "Juan",
+    "chapter": 8,
+    "verse": 58,
+    "reference": "Juan 8,58",
+    "text": "Jesús les dijo: “Os aseguro que antes de que Abraham llegara a existir, YO SOY.”"
+  },
+  "MC_7_22_MCQ": {
+    "id": 4378,
+    "universalId": "MC_7_22_MCQ",
+    "book": "Marcos",
+    "chapter": 7,
+    "verse": 22,
+    "reference": "Marcos 7,22",
+    "text": "las codicias, la maldad, el engaño, los deseos lujuriosos, el mal de ojo, la blasfemia, la soberbia y la necedad."
+  },
+  "MT_15_24_MCQ": {
+    "id": 4336,
+    "universalId": "MT_15_24_MCQ",
+    "book": "Mateo",
+    "chapter": 15,
+    "verse": 24,
+    "reference": "Mateo 15,24",
+    "text": "Pero él respondió: “No he sido enviado sino a las ovejas perdidas de la casa de Israel”."
+  },
+  "MC_10_14_TF": {
+    "id": 4393,
+    "universalId": "MC_10_14_TF",
+    "book": "Marcos",
+    "chapter": 10,
+    "verse": 14,
+    "reference": "Marcos 10,14",
+    "text": "Al ver esto, Jesús se indignó y les dijo: “Dejad que los niños se acerquen a mí. No se lo prohibáis, porque el Reino de Dios es de los que son como ellos."
+  }
+}

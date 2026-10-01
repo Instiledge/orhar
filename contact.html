@@ -2066,12 +2066,20 @@
             };
             
             const subject = `[ORHAR Support] ${topicLabels[topic] || 'General Inquiry'}`;
+            const webContext = [
+                '',
+                '---',
+                'Source: ORHAR website',
+                'App Version: N/A (Web)',
+                `Platform: ${navigator.userAgentData?.platform || navigator.platform || 'Web'}`,
+                'User ID: N/A (Visitor)'
+            ].join('\n');
             
             submitContactToFirebase({
-                name: formatEmailLocalPartAsName(email),
+                name: email.split('@')[0],
                 email: email,
                 subject: subject,
-                message: message,
+                message: `${message}${webContext}`.slice(0, 5000),
                 topic: topic || 'general',
                 language: activeLang || 'en'
             }, { timeoutMs: 15000 })

@@ -1150,14 +1150,6 @@
                 </div>
                 <i class="fas fa-chevron-right support-item-arrow"></i>
             </a>
-            <a href="#" class="support-item" onclick="showContactForm('bug')">
-                <div class="support-item-icon"><i class="fas fa-bug"></i></div>
-                <div class="support-item-content">
-                    <h4 data-i18n="sup_bug">Report an Issue</h4>
-                    <p data-i18n="sup_bug_desc">Found a bug? Let us know immediately</p>
-                </div>
-                <i class="fas fa-chevron-right support-item-arrow"></i>
-            </a>
             <a href="#" class="support-item" onclick="showContactForm('beta')">
                 <div class="support-item-icon"><i class="fas fa-flask"></i></div>
                 <div class="support-item-content">
@@ -1166,21 +1158,38 @@
                 </div>
                 <i class="fas fa-chevron-right support-item-arrow"></i>
             </a>
-            <a href="#" class="support-item" onclick="showContactForm('general')">
-                <div class="support-item-icon"><i class="fas fa-question-circle"></i></div>
+            <a href="#" class="support-item" onclick="showContactForm('prayer')">
+                <div class="support-item-icon"><i class="fas fa-hands-praying"></i></div>
                 <div class="support-item-content">
-                    <h4 data-i18n="sup_general">General Inquiry</h4>
-                    <p data-i18n="sup_general_desc">Anything else on your mind</p>
+                    <h4 data-i18n="sup_prayer">Suggest a Prayer</h4>
+                    <p data-i18n="sup_prayer_desc">Share a prayer that could bless the community</p>
                 </div>
                 <i class="fas fa-chevron-right support-item-arrow"></i>
             </a>
-        </div>
-
-        <!-- Contribute Grid -->
-        <h2 class="section-heading" data-i18n="contrib_title">Other Ways to Help</h2>
-        <p class="section-subtitle" data-i18n="contrib_sub">Every contribution, big or small, makes a difference</p>
-        <div class="contribute-grid" id="contribute-content">
-            <!-- Translated dynamically -->
+            <a href="#" class="support-item" onclick="showContactForm('feature')">
+                <div class="support-item-icon"><i class="fas fa-lightbulb"></i></div>
+                <div class="support-item-content">
+                    <h4 data-i18n="sup_feature">Feature Request</h4>
+                    <p data-i18n="sup_feature_desc">Ideas that could make ORHAR even better</p>
+                </div>
+                <i class="fas fa-chevron-right support-item-arrow"></i>
+            </a>
+            <a href="#" class="support-item" onclick="showContactForm('content')">
+                <div class="support-item-icon"><i class="fas fa-pen-fancy"></i></div>
+                <div class="support-item-content">
+                    <h4 data-i18n="sup_content">Content Contribution</h4>
+                    <p data-i18n="sup_content_desc">Help us write or review biblical content</p>
+                </div>
+                <i class="fas fa-chevron-right support-item-arrow"></i>
+            </a>
+            <a href="#" class="support-item" onclick="showContactForm('general')">
+                <div class="support-item-icon"><i class="fas fa-share-alt"></i></div>
+                <div class="support-item-content">
+                    <h4 data-i18n="sup_share">Spread the Word</h4>
+                    <p data-i18n="sup_share_desc">Share ORHAR with your community</p>
+                </div>
+                <i class="fas fa-chevron-right support-item-arrow"></i>
+            </a>
         </div>
 
         <!-- ════════════════════════════════════════════
@@ -1421,6 +1430,10 @@
                 sup_translate: "Become a Translator", sup_translate_desc: "Help us bring ORHAR to more languages",
                 sup_bug: "Report an Issue", sup_bug_desc: "Found a bug? Let us know immediately",
                 sup_beta: "Join Beta Testing", sup_beta_desc: "Test early features before release",
+                sup_prayer: "Suggest a Prayer", sup_prayer_desc: "Share a prayer that could bless the community",
+                sup_feature: "Feature Request", sup_feature_desc: "Ideas that could make ORHAR even better",
+                sup_content: "Content Contribution", sup_content_desc: "Help us write or review biblical content",
+                sup_share: "Spread the Word", sup_share_desc: "Share ORHAR with your community",
                 sup_general: "General Inquiry", sup_general_desc: "Anything else on your mind",
                 contrib_title: "Other Ways to Help",
                 contrib_sub: "Every contribution, big or small, makes a difference",
@@ -1484,6 +1497,10 @@
                 sup_translate: "Devenir Traducteur", sup_translate_desc: "Aidez-nous à proposer ORHAR dans plus de langues",
                 sup_bug: "Signaler un Problème", sup_bug_desc: "Vous avez trouvé un bug ? Prévenez-nous immédiatement",
                 sup_beta: "Rejoindre le Programme Bêta", sup_beta_desc: "Testez les nouvelles fonctionnalités en avant-première",
+                sup_prayer: "Suggérer une Prière", sup_prayer_desc: "Partagez une prière qui pourrait bénir la communauté",
+                sup_feature: "Suggérer une Fonctionnalité", sup_feature_desc: "Des idées pour rendre ORHAR encore meilleur",
+                sup_content: "Contribution de Contenu", sup_content_desc: "Aidez-nous à rédiger ou réviser du contenu biblique",
+                sup_share: "Partager la Parole", sup_share_desc: "Faites connaître ORHAR autour de vous",
                 sup_general: "Demande Générale", sup_general_desc: "Toute autre question en tête",
                 contrib_title: "Autres Façons d'Aider", contrib_sub: "Chaque contribution, grande ou petite, fait la différence",
                 divider_faq: "✦ Questions Fréquentes",
@@ -1544,6 +1561,10 @@
                 sup_translate: "Conviértete en Traductor", sup_translate_desc: "Ayúdanos a llevar ORHAR a más idiomas",
                 sup_bug: "Reportar un Problema", sup_bug_desc: "¿Encontraste un error? Cuéntanos de inmediato",
                 sup_beta: "Únete a la Beta", sup_beta_desc: "Prueba funciones antes del lanzamiento",
+                sup_prayer: "Sugerir una Oración", sup_prayer_desc: "Comparte una oración que bendiga a la comunidad",
+                sup_feature: "Sugerir Función", sup_feature_desc: "Ideas para hacer ORHAR aún mejor",
+                sup_content: "Contribuir Contenido", sup_content_desc: "Ayúdanos a escribir o revisar contenido bíblico",
+                sup_share: "Compartir la Palabra", sup_share_desc: "Difunde ORHAR en tu comunidad",
                 sup_general: "Consulta General", sup_general_desc: "Cualquier otra cosa en mente",
                 contrib_title: "Otras Formas de Ayudar", contrib_sub: "Cada contribución, grande o pequeña, marca la diferencia",
                 divider_faq: "✦ Preguntas Frecuentes",
@@ -1604,6 +1625,10 @@
                 sup_translate: "Übersetzer werden", sup_translate_desc: "Hilf uns, ORHAR in weiteren Sprachen anzubieten",
                 sup_bug: "Problem melden", sup_bug_desc: "Fehler gefunden? Sag uns sofort Bescheid",
                 sup_beta: "Beta-Tester werden", sup_beta_desc: "Teste neue Funktionen vor der Veröffentlichung",
+                sup_prayer: "Gebet vorschlagen", sup_prayer_desc: "Teile ein Gebet, das die Gemeinschaft segnen kann",
+                sup_feature: "Funktion vorschlagen", sup_feature_desc: "Ideen, die ORHAR noch besser machen",
+                sup_content: "Inhalte beisteuern", sup_content_desc: "Hilf uns, biblische Inhalte zu schreiben oder zu prüfen",
+                sup_share: "Weitersagen", sup_share_desc: "Teile ORHAR mit deiner Gemeinschaft",
                 sup_general: "Allgemeine Anfrage", sup_general_desc: "Alles, was dir sonst auf dem Herzen liegt",
                 contrib_title: "Weitere Möglichkeiten", contrib_sub: "Jeder Beitrag, ob groß oder klein, macht einen Unterschied",
                 divider_faq: "✦ Häufige Fragen",
@@ -1664,6 +1689,10 @@
                 sup_translate: "Diventa Traduttore", sup_translate_desc: "Aiutaci a portare ORHAR in altre lingue",
                 sup_bug: "Segnala un Problema", sup_bug_desc: "Trovato un bug? Segnalacelo subito",
                 sup_beta: "Partecipa al Beta Testing", sup_beta_desc: "Prova le funzionalità in anteprima",
+                sup_prayer: "Suggerisci una Preghiera", sup_prayer_desc: "Condividi una preghiera per benedire la comunità",
+                sup_feature: "Suggerisci una Funzionalità", sup_feature_desc: "Idee per rendere ORHAR ancora migliore",
+                sup_content: "Contribuisci Contenuti", sup_content_desc: "Aiutaci a scrivere o rivedere contenuti biblici",
+                sup_share: "Condividi la Parola", sup_share_desc: "Fai conoscere ORHAR alla tua comunità",
                 sup_general: "Richiesta Generale", sup_general_desc: "Qualsiasi altra cosa in mente",
                 contrib_title: "Altri Modi per Aiutare", contrib_sub: "Ogni contributo, grande o piccolo, fa la differenza",
                 divider_faq: "✦ Domande Frequenti",
@@ -1724,6 +1753,10 @@
                 sup_translate: "Torne-se Tradutor", sup_translate_desc: "Ajude-nos a levar o ORHAR a mais idiomas",
                 sup_bug: "Reportar um Problema", sup_bug_desc: "Encontrou um bug? Avise-nos imediatamente",
                 sup_beta: "Participar do Beta", sup_beta_desc: "Teste recursos antes do lançamento",
+                sup_prayer: "Sugerir uma Oração", sup_prayer_desc: "Compartilhe uma oração que abençoe a comunidade",
+                sup_feature: "Sugerir Recurso", sup_feature_desc: "Ideias para tornar o ORHAR ainda melhor",
+                sup_content: "Contribuir com Conteúdo", sup_content_desc: "Ajude-nos a escrever ou revisar conteúdo bíblico",
+                sup_share: "Compartilhar a Palavra", sup_share_desc: "Divulgue o ORHAR na sua comunidade",
                 sup_general: "Dúvida Geral", sup_general_desc: "Qualquer outra coisa em mente",
                 contrib_title: "Outras Formas de Ajudar", contrib_sub: "Cada contribuição, grande ou pequena, faz a diferença",
                 divider_faq: "✦ Perguntas Frequentes",
@@ -1784,6 +1817,10 @@
                 sup_translate: "Zostań Tłumaczem", sup_translate_desc: "Pomóż nam udostępnić ORHAR w kolejnych językach",
                 sup_bug: "Zgłoś Problem", sup_bug_desc: "Znalazłeś błąd? Daj nam znać natychmiast",
                 sup_beta: "Dołącz do Testów Beta", sup_beta_desc: "Testuj nowe funkcje przed premierą",
+                sup_prayer: "Zaproponuj Modlitwę", sup_prayer_desc: "Podziel się modlitwą, która pobłogosławi wspólnotę",
+                sup_feature: "Zaproponuj Funkcję", sup_feature_desc: "Pomysły, które uczynią ORHAR jeszcze lepszym",
+                sup_content: "Wkład Treści", sup_content_desc: "Pomóż nam pisać lub sprawdzać treści biblijne",
+                sup_share: "Podziel się Słowem", sup_share_desc: "Podziel się ORHAR ze swoją wspólnotą",
                 sup_general: "Zapytanie Ogólne", sup_general_desc: "Wszystko inne, co masz na myśli",
                 contrib_title: "Inne Sposoby Pomocy", contrib_sub: "Każdy wkład, duży czy mały, robi różnicę",
                 divider_faq: "✦ Częste Pytania",
@@ -1834,9 +1871,6 @@
             
             const faqDiv = document.getElementById('faq-content');
             if (contactData[lang] && contactData[lang].faq_html) faqDiv.innerHTML = contactData[lang].faq_html;
-            
-            const contribDiv = document.getElementById('contribute-content');
-            if (contactData[lang] && contactData[lang].contrib_html) contribDiv.innerHTML = contactData[lang].contrib_html;
 
             localStorage.setItem('orhar_lang', lang);
             document.documentElement.lang = lang;

@@ -281,14 +281,41 @@ function biblicalAnchorsSection(code) {
   const script = `<script>
 (function(){
   var cur=0,total=${total};
+  var track=document.getElementById('anchorsTrack');
+  var canvas=track?track.parentElement:null;
+  var timer=null;
   function upd(){
-    var t=document.getElementById('anchorsTrack');
-    if(t)t.style.transform='translateX(-'+(cur*100)+'%)';
+    if(track)track.style.transform='translateX(-'+(cur*100)+'%)';
     document.querySelectorAll('.anchor-dot').forEach(function(d,i){d.classList.toggle('active',i===cur);});
   }
-  window.moveAnchor=function(dir){cur=(cur+dir+total)%total;upd();};
-  window.goToAnchor=function(i){cur=i;upd();};
-  setInterval(function(){cur=(cur+1)%total;upd();},6000);
+  function resetTimer(){
+    if(timer)clearInterval(timer);
+    timer=setInterval(function(){cur=(cur+1)%total;upd();},7000);
+  }
+  window.moveAnchor=function(dir){cur=(cur+dir+total)%total;upd();resetTimer();};
+  window.goToAnchor=function(i){cur=i;upd();resetTimer();};
+  if(canvas){
+    var startX=0,startY=0,distX=0,distY=0,isTouching=false;
+    canvas.addEventListener('touchstart',function(e){
+      if(!e.touches||e.touches.length!==1)return;
+      startX=e.touches[0].clientX;
+      startY=e.touches[0].clientY;
+      distX=0;distY=0;isTouching=true;
+    },{passive:true});
+    canvas.addEventListener('touchmove',function(e){
+      if(!isTouching||!e.touches||e.touches.length!==1)return;
+      distX=e.touches[0].clientX-startX;
+      distY=e.touches[0].clientY-startY;
+    },{passive:true});
+    canvas.addEventListener('touchend',function(){
+      if(!isTouching)return;
+      isTouching=false;
+      if(Math.abs(distX)>40&&Math.abs(distX)>Math.abs(distY)*1.2){
+        if(distX<0){moveAnchor(1);}else{moveAnchor(-1);}
+      }
+    },{passive:true});
+  }
+  resetTimer();
 })();
 <\/script>`;
   return `<section class="section biblical-anchors" id="anchors"><div class="section-inner"><div class="section-heading center reveal"><p class="eyebrow">אוֹר הַר</p><h2 class="section-title">${copy.title}</h2><p class="section-intro">${copy.subtitle}</p></div><div class="anchors-canvas reveal"><div class="anchors-track" id="anchorsTrack">${slides}</div></div><div class="anchors-nav"><button class="anchor-arrow" onclick="moveAnchor(-1)" aria-label="${copy.previous}">&#10094;</button>${dots}<button class="anchor-arrow" onclick="moveAnchor(1)" aria-label="${copy.next}">&#10095;</button></div></div>${script}</section>`;

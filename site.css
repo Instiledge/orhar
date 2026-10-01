@@ -317,6 +317,9 @@ img { display: block; max-width: 100%; }
     linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.045)),
     radial-gradient(circle at 50% 0%, rgba(213,183,125,.18), transparent 38%);
   box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+  touch-action: pan-y pinch-zoom;
+  user-select: none;
+  -webkit-user-select: none;
 }
 .anchors-track {
   display: flex;
@@ -803,8 +806,14 @@ html[data-theme="dark"] .icon-story-symbol {
   .paths, .feature-grid { grid-template-columns: 1fr; }
   .icon-story-grid { grid-template-columns: 1fr; }
   .icon-story-card { min-height: auto; }
-  .anchor-arrow { display: none; }
-  .anchor-slide { min-height: 280px; }
+  .anchors-canvas { min-height: 320px; border-radius: 24px; }
+  .anchor-slide { padding: 28px 18px; min-height: auto; }
+  .anchor-ref { font-size: .75rem; margin-bottom: 14px; }
+  .anchor-text { font-size: clamp(1.2rem, 4.6vw, 2.1rem); line-height: 1.28; margin: 0 auto 14px; max-width: 96%; }
+  .anchor-divider { margin: 0 auto 14px; }
+  .anchor-note { font-size: .92rem; line-height: 1.45; }
+  .anchors-nav { gap: 10px; margin-top: 18px; }
+  .anchor-arrow { display: inline-flex; width: 38px; height: 38px; font-size: .95rem; }
   .story-row, .theme-layout, .release-card, .brand-story-grid { grid-template-columns: 1fr; }
   .home-newsletter { grid-template-columns: 1fr; padding: 30px 22px; text-align: center; }
   .home-newsletter-form { grid-template-columns: 1fr; }
@@ -851,10 +860,14 @@ html[data-theme="dark"] .icon-story-symbol {
   .story-copy h3 { font-size: clamp(1.85rem, 7vw, 2.5rem); }
   .story-visual img { width: min(240px, 85%); border-width: 6px; border-radius: 28px; }
   .story-visual.double img { width: 100%; max-width: 130px; border-width: 5px; border-radius: 22px; }
-  .anchor-slide { padding: 24px 14px; min-height: auto; }
-  .anchor-text { font-size: clamp(1.3rem, 5.5vw, 1.9rem); margin-bottom: 18px; }
-  .anchor-divider { margin-bottom: 16px; }
-  .anchor-note { font-size: .9rem; }
+  .anchors-canvas { min-height: 290px; border-radius: 20px; }
+  .anchor-slide { padding: 22px 14px; min-height: auto; }
+  .anchor-ref { font-size: .72rem; margin-bottom: 10px; }
+  .anchor-text { font-size: clamp(1.05rem, 4.4vw, 1.55rem); line-height: 1.28; margin: 0 auto 12px; max-width: 100%; word-break: normal; overflow-wrap: break-word; }
+  .anchor-divider { width: 44px; margin: 0 auto 12px; }
+  .anchor-note { font-size: .86rem; line-height: 1.4; }
+  .anchors-nav { gap: 8px; margin-top: 14px; }
+  .anchor-arrow { display: inline-flex; width: 36px; height: 36px; font-size: .9rem; }
   .theme-preview { min-height: auto; padding: 24px 16px; border-radius: 24px; }
   .preview-bar { margin: -24px -16px 18px; height: 46px; border-radius: 24px 24px 0 0; }
   .preview-card { padding: 18px 16px; border-radius: 18px; }

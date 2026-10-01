@@ -16,14 +16,41 @@
 <section class="section biblical-anchors" id="anchors"><div class="section-inner"><div class="section-heading center reveal"><p class="eyebrow">אוֹר הַר</p><h2 class="section-title">Słowo ukryte w Nazwie</h2><p class="section-intro">Pięć biblijnych kotwic, które rozświetlają znaczenie ORHAR</p></div><div class="anchors-canvas reveal"><div class="anchors-track" id="anchorsTrack"><div class="anchor-slide"><div class="anchor-ref">Księga Rodzaju 1,3</div><p class="anchor-text">„I Bóg powiedział: Niech stanie się światłość. I stała się światłość.”</p><div class="anchor-divider"></div><p class="anchor-note">Pierwszym słowem stworzenia jest światło, które niesie ORHAR.</p></div><div class="anchor-slide"><div class="anchor-ref">Księga Psalmów 119,105</div><p class="anchor-text">„Twoje słowo jest pochodnią dla moich nóg i światłością na mojej ścieżce.”</p><div class="anchor-divider"></div><p class="anchor-note">Złota droga w ikonie. Słowo jako żywa lampa.</p></div><div class="anchor-slide"><div class="anchor-ref">Księga Izajasza 60,19</div><p class="anchor-text">„Słońce nie będzie już twoją światłością za dnia ani księżyc już nie zaświeci ci swoim blaskiem; ale PAN będzie twoją wieczną światłością, a twój Bóg – twoją chwałą.”</p><div class="anchor-divider"></div><p class="anchor-note">Aureola nad szczytem. Światło, które nie gaśnie.</p></div><div class="anchor-slide"><div class="anchor-ref">Ewangelia Jana 8,12</div><p class="anchor-text">„Jezus znowu powiedział do nich: Ja jestem światłością świata. Kto idzie za mną, nie będzie chodził w ciemności, ale będzie miał światłość życia.”</p><div class="anchor-divider"></div><p class="anchor-note">Ten, kto wchodzi na górę, nie idzie sam.</p></div><div class="anchor-slide"><div class="anchor-ref">Ewangelia Mateusza 5,14</div><p class="anchor-text">„Wy jesteście światłością świata. Nie może się ukryć miasto położone na górze.”</p><div class="anchor-divider"></div><p class="anchor-note">Góra oświetlona z wysoka staje się latarnią dla innych. ORHAR także.</p></div></div></div><div class="anchors-nav"><button class="anchor-arrow" onclick="moveAnchor(-1)" aria-label="Poprzedni">&#10094;</button><span class="anchor-dot active" onclick="goToAnchor(0)"></span><span class="anchor-dot" onclick="goToAnchor(1)"></span><span class="anchor-dot" onclick="goToAnchor(2)"></span><span class="anchor-dot" onclick="goToAnchor(3)"></span><span class="anchor-dot" onclick="goToAnchor(4)"></span><button class="anchor-arrow" onclick="moveAnchor(1)" aria-label="Następny">&#10095;</button></div></div><script>
 (function(){
   var cur=0,total=5;
+  var track=document.getElementById('anchorsTrack');
+  var canvas=track?track.parentElement:null;
+  var timer=null;
   function upd(){
-    var t=document.getElementById('anchorsTrack');
-    if(t)t.style.transform='translateX(-'+(cur*100)+'%)';
+    if(track)track.style.transform='translateX(-'+(cur*100)+'%)';
     document.querySelectorAll('.anchor-dot').forEach(function(d,i){d.classList.toggle('active',i===cur);});
   }
-  window.moveAnchor=function(dir){cur=(cur+dir+total)%total;upd();};
-  window.goToAnchor=function(i){cur=i;upd();};
-  setInterval(function(){cur=(cur+1)%total;upd();},6000);
+  function resetTimer(){
+    if(timer)clearInterval(timer);
+    timer=setInterval(function(){cur=(cur+1)%total;upd();},7000);
+  }
+  window.moveAnchor=function(dir){cur=(cur+dir+total)%total;upd();resetTimer();};
+  window.goToAnchor=function(i){cur=i;upd();resetTimer();};
+  if(canvas){
+    var startX=0,startY=0,distX=0,distY=0,isTouching=false;
+    canvas.addEventListener('touchstart',function(e){
+      if(!e.touches||e.touches.length!==1)return;
+      startX=e.touches[0].clientX;
+      startY=e.touches[0].clientY;
+      distX=0;distY=0;isTouching=true;
+    },{passive:true});
+    canvas.addEventListener('touchmove',function(e){
+      if(!isTouching||!e.touches||e.touches.length!==1)return;
+      distX=e.touches[0].clientX-startX;
+      distY=e.touches[0].clientY-startY;
+    },{passive:true});
+    canvas.addEventListener('touchend',function(){
+      if(!isTouching)return;
+      isTouching=false;
+      if(Math.abs(distX)>40&&Math.abs(distX)>Math.abs(distY)*1.2){
+        if(distX<0){moveAnchor(1);}else{moveAnchor(-1);}
+      }
+    },{passive:true});
+  }
+  resetTimer();
 })();
 </script></section>
 <section class="section" id="experience"><div class="section-inner"><div class="section-heading center reveal"><p class="eyebrow">ORHAR 1.3</p><h2 class="section-title">Jedna aplikacja. Pełna droga duchowa.</h2><p class="section-intro">Otwórz ORHAR, aby przeczytać werset, a potem sięgnij po czytanie, modlitwę, plan lub chwilę ciszy. Każda przestrzeń wspiera inny etap tej samej drogi.</p></div><div class="paths"><article class="path-card reveal"><span class="path-number">01</span><h3>Czytaj</h3><p>Pełna biblioteka biblijna do uważnej lektury, także bez internetu.</p><ul><li>Różne przekłady Biblii</li><li>Zakładki i własne notatki</li><li>Wyszukiwanie i ustawienia tekstu</li></ul></article><article class="path-card reveal"><span class="path-number">02</span><h3>Rozważaj</h3><p>Odkrywaj znaczenie Pisma z ParoBible i Katechizmem.</p><ul><li>Fragmenty dnia i losowe</li><li>Katechizm Kościoła Katolickiego</li><li>Historia lektury</li></ul></article><article class="path-card reveal"><span class="path-number">03</span><h3>Wzrastaj</h3><p>Znajdź własny rytm i obserwuj postępy.</p><ul><li>Elastyczne plany czytania</li><li>Codzienny Psalm i Przysłowie</li><li>Przypomnienia i serie</li></ul></article><article class="path-card reveal"><span class="path-number">04</span><h3>Ucz się</h3><p>Utrwalaj wiedzę z SianAQuiz.</p><ul><li>Stopniowo trudniejsze poziomy</li><li>Różne tryby gry</li><li>Własne quizy i rankingi</li></ul></article></div></div></section>

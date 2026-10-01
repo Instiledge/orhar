@@ -1865,6 +1865,43 @@
 
         const FIREBASE_API_KEY = 'AIzaSyCxx7c1XvVNT-FehV2HnzFSP8ZryH-DX2o';
         const FIREBASE_PROJECT_ID = 'parobible-app';
+        const WEB3FORMS_ACCESS_KEY = 'e384b3c8-76e2-4403-bdcd-4900b36e8682';
+
+        async function submitContactToWeb3Forms({ name, email, subject, message, topic, language }, options = {}) {
+            const timeoutMs = options.timeoutMs || 15000;
+            const controller = new AbortController();
+            const timeoutId = window.setTimeout(() => controller.abort(), timeoutMs);
+
+            const formData = new FormData();
+            formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+            formData.append("name", name || email.split('@')[0]);
+            formData.append("email", email);
+            formData.append("subject", subject || `[ORHAR Support] ${topic || 'General'}`);
+            formData.append("topic", topic || 'general');
+            formData.append("language", language || 'en');
+            formData.append("message", message);
+            formData.append("from_name", "ORHAR Website Contact Form");
+
+            try {
+                const response = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    body: formData,
+                    signal: controller.signal
+                });
+                const result = await response.json().catch(() => ({}));
+                if (!response.ok || result.success === false) {
+                    throw new Error(result?.message || `HTTP ${response.status}`);
+                }
+                return result;
+            } catch (error) {
+                if (error && error.name === 'AbortError') {
+                    throw new Error(`Timeout after ${Math.round(timeoutMs / 1000)}s`);
+                }
+                throw error;
+            } finally {
+                window.clearTimeout(timeoutId);
+            }
+        }
 
         async function submitContactToFirebase({ name, email, subject, message, topic, language }, options = {}) {
             const timeoutMs = options.timeoutMs || 15000;
@@ -2076,16 +2113,27 @@
             };
             
             const subject = `[ORHAR Support] ${topicLabels[topic] || 'General Inquiry'}`;
-            
-            submitContactToFirebase({
+            const contactPayload = {
                 name: email.split('@')[0],
                 email: email,
                 subject: subject,
                 message: message,
                 topic: topic || 'general',
                 language: activeLang || 'en'
-            }, { timeoutMs: 15000 })
-                .then(() => {
+            };
+
+            // Dual dispatch: Firestore database persistence + Web3Forms email notification to contact@orhar.com
+            const firestorePromise = submitContactToFirebase(contactPayload, { timeoutMs: 15000 });
+            const emailPromise = submitContactToWeb3Forms(contactPayload, { timeoutMs: 15000 }).catch(err => {
+                console.warn('Web3Forms notification error:', err);
+                return null;
+            });
+
+            Promise.allSettled([firestorePromise, emailPromise])
+                .then(([firestoreRes, emailRes]) => {
+                    if (firestoreRes.status === 'rejected' && emailRes.status === 'rejected') {
+                        throw firestoreRes.reason || emailRes.reason || new Error('Transmission failed');
+                    }
                     clearStatus(statusMsg);
                     form.style.display = 'none';
                     successMsg.style.display = 'block';

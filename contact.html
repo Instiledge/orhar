@@ -1838,15 +1838,30 @@
         const FIREBASE_API_KEY = 'AIzaSyCxx7c1XvVNT-FehV2HnzFSP8ZryH-DX2o';
         const FIREBASE_PROJECT_ID = 'parobible-app';
 
+        function formatEmailLocalPartAsName(email) {
+            const localPart = (email || '').trim().split('@')[0] || '';
+            const words = localPart
+                .split(/[^A-Za-zÀ-ÖØ-öø-ÿ0-9]+/)
+                .map(word => word.trim())
+                .filter(Boolean);
+
+            if (!words.length) return '';
+
+            return words
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                .join(' ');
+        }
+
         async function submitContactToFirebase({ name, email, subject, message, topic, language }, options = {}) {
             const timeoutMs = options.timeoutMs || 15000;
             const controller = new AbortController();
             const timeoutId = window.setTimeout(() => controller.abort(), timeoutMs);
 
             const endpoint = `https://firestore.googleapis.com/v1/projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents/contact_submissions?key=${FIREBASE_API_KEY}`;
+            const displayName = name || formatEmailLocalPartAsName(email) || 'ORHAR Visitor';
             const payload = {
                 fields: {
-                    name: { stringValue: (name || email.split('@')[0]).slice(0, 100) },
+                    name: { stringValue: displayName.slice(0, 100) },
                     email: { stringValue: email.slice(0, 150) },
                     subject: { stringValue: subject.slice(0, 200) },
                     message: { stringValue: message.slice(0, 5000) },
@@ -2053,7 +2068,7 @@
             const subject = `[ORHAR Support] ${topicLabels[topic] || 'General Inquiry'}`;
             
             submitContactToFirebase({
-                name: email.split('@')[0],
+                name: formatEmailLocalPartAsName(email),
                 email: email,
                 subject: subject,
                 message: message,

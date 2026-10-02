@@ -482,7 +482,7 @@ export const faqData = {
 
 function faqSection(code) {
   const faq = faqData[code] || faqData.en;
-  return `<section class="section faq-section" id="faq"><div class="section-inner"><div class="section-heading center reveal"><p class="eyebrow">${faq.eyebrow}</p><h2 class="section-title">${faq.title}</h2></div><div class="faq-accordion reveal">${faq.items.map((item, idx) => `<details class="faq-item"${idx === 0 ? ' open' : ''}><summary class="faq-question"><span>${item.q}</span><i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>${item.a}</p></div></details>`).join('')}</div></div></section>`;
+  return `<section class="section faq-section" id="faq"><div class="section-inner"><div class="faq-container reveal"><div class="section-heading center"><p class="eyebrow">${faq.eyebrow}</p><h2 class="section-title">${faq.title}</h2></div><div class="faq-accordion">${faq.items.map((item, idx) => `<details class="faq-item"${idx === 0 ? ' open' : ''}><summary class="faq-question"><span>${item.q}</span><i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i></summary><div class="faq-answer"><div class="faq-divider"></div><p>${item.a}</p></div></details>`).join('')}</div></div></div></section>`;
 }
 
 const ogLocale = {en:'en_US',fr:'fr_FR',es:'es_ES',de:'de_DE',it:'it_IT',pt:'pt_PT',pl:'pl_PL'};

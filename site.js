@@ -566,4 +566,16 @@
   document.querySelector('#langSwitch')?.addEventListener('change', renderFooter);
   document.querySelector('[data-language]')?.addEventListener('change', renderFooter);
   renderFooter();
+
+  // Accordion exclusive behavior: close other open items when one is opened
+  document.addEventListener('toggle', function(e) {
+    if (e.target && e.target.tagName === 'DETAILS' && e.target.classList.contains('faq-item') && e.target.open) {
+      const container = e.target.closest('.faq-accordion') || e.target.parentElement;
+      if (container) {
+        container.querySelectorAll('details.faq-item[open]').forEach(function(item) {
+          if (item !== e.target) item.removeAttribute('open');
+        });
+      }
+    }
+  }, true);
 })();

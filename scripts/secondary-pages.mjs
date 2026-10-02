@@ -83,6 +83,8 @@ export const demoLabels = {
     readerSubtitle: 'Une expérience de lecture pure, rapide et personnalisable.',
     readerBody: 'Naviguez facilement entre les traductions, les chapitres et les Testaments. Ajustez la taille de police, surlignez vos versets préférés et méditez en toute sérénité.',
     ctaQuiz: 'Tester le Quiz ↓',
+    ctaAudio: 'Démo Audio ↓',
+    ctaReader: 'Lecteur Biblique ↓',
     ctaApp: 'Télécharger l’App ↗'
   },
   en: {
@@ -103,6 +105,8 @@ export const demoLabels = {
     readerSubtitle: 'A pure, fast, and customizable reading experience.',
     readerBody: 'Easily switch between Bible versions, chapters, and Testaments. Adjust font sizes, highlight favorite verses, and meditate with complete peace of mind.',
     ctaQuiz: 'Try the Quiz ↓',
+    ctaAudio: 'Audio Demo ↓',
+    ctaReader: 'Bible Reader ↓',
     ctaApp: 'Get the App ↗'
   },
   es: {
@@ -121,8 +125,10 @@ export const demoLabels = {
     ],
     readerTitle: 'Biblioteca Bíblica y Lector',
     readerSubtitle: 'Una experiencia de lectura pura, rápida y personalizable.',
-    readerBody: 'Navega fácilmente entre traducciones, capítulos y Testamentos. Ajusta tamaños de letra, resalta versículos y medita en paz.',
+    readerBody: 'Navega fácilmente entre traductions, capítulos y Testamentos. Ajusta tamaños de letra, resalta versículos y medita en paz.',
     ctaQuiz: 'Probar el Quiz ↓',
+    ctaAudio: 'Demo de Audio ↓',
+    ctaReader: 'Lector Bíblico ↓',
     ctaApp: 'Descargar la App ↗'
   },
   de: {
@@ -143,6 +149,8 @@ export const demoLabels = {
     readerSubtitle: 'Ein pures, schnelles und anpassbares Leseerlebnis.',
     readerBody: 'Wechsle mühelos zwischen Bibelausgaben, Kapiteln und Testamenten. Passe die Schriftgröße an und lese in Ruhe.',
     ctaQuiz: 'Quiz Testen ↓',
+    ctaAudio: 'Audio-Demo ↓',
+    ctaReader: 'Bibel-Reader ↓',
     ctaApp: 'App Herunterladen ↗'
   },
   it: {
@@ -163,6 +171,8 @@ export const demoLabels = {
     readerSubtitle: 'Un’expérience di lettura pura, rapida e personalizzabile.',
     readerBody: 'Passa agevolmente da una versione biblica all’altra. Regola i caratteri, evidenzia i versetti e medita in pace.',
     ctaQuiz: 'Prova il Quiz ↓',
+    ctaAudio: 'Demo Audio ↓',
+    ctaReader: 'Lettore Biblico ↓',
     ctaApp: 'Scarica l’App ↗'
   },
   pt: {
@@ -180,9 +190,11 @@ export const demoLabels = {
       ['fa-compass', 'Meu Caminho', 'Caminho diário guiado, calendário litúrgico e meditações personalizadas.']
     ],
     readerTitle: 'Biblioteca Bíblica e Leitor',
-    readerSubtitle: 'Uma experiência de leitura pura, rápida e personalizável.',
+    readerSubtitle: 'Uma expérience de leitura pura, rápida e personalizável.',
     readerBody: 'Navegue facilmente entre versões, capítulos e Testamentos. Ajuste o tamanho da fonte e medite com serenidade.',
     ctaQuiz: 'Testar o Quiz ↓',
+    ctaAudio: 'Demo de Áudio ↓',
+    ctaReader: 'Leitor Bíblico ↓',
     ctaApp: 'Baixar o App ↗'
   },
   pl: {
@@ -203,6 +215,8 @@ export const demoLabels = {
     readerSubtitle: 'Czyste, szybkie i elastyczne doświadczenie lektury.',
     readerBody: 'Łatwo przełączaj się między przekładami, rozdziałami i Testamentami. Dostosuj czcionkę i czytaj w spokoju.',
     ctaQuiz: 'Rozwiąż Quiz ↓',
+    ctaAudio: 'Demo Audio ↓',
+    ctaReader: 'Czytnik Biblii ↓',
     ctaApp: 'Pobierz Aplikację ↗'
   }
 };
@@ -566,6 +580,8 @@ export function writeSecondaryPages(root) {
         <p>${d.intro}</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#quiz-demo">${d.ctaQuiz}</a>
+          <a class="button button-secondary" href="#demo-audio">${d.ctaAudio}</a>
+          <a class="button button-secondary" href="#demo-reader">${d.ctaReader}</a>
           <a class="button button-secondary" href="/${code}/app.html">${d.ctaApp}</a>
         </div>
       </div>
@@ -592,7 +608,8 @@ export function writeSecondaryPages(root) {
             <p>${d.videoSubtitle}</p>
             <div class="hero-actions">
               <a class="button button-primary" href="#quiz-demo">${d.ctaQuiz}</a>
-              <a class="button button-secondary" href="/${code}/app.html">${d.ctaApp}</a>
+              <a class="button button-secondary" href="#demo-audio">${d.ctaAudio}</a>
+              <a class="button button-secondary" href="#demo-reader">${d.ctaReader}</a>
             </div>
           </div>
         </div>

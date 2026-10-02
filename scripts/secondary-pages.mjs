@@ -65,7 +65,7 @@ export const newsNavLabels = {
 };
 
 export const navFaqLabels = {
-  fr: 'Questions', en: 'Questions', es: 'Preguntas', de: 'Fragen', it: 'Domande', pt: 'Perguntas', pl: 'Pytania'
+  fr: 'FAQ', en: 'FAQ', es: 'FAQ', de: 'FAQ', it: 'FAQ', pt: 'FAQ', pl: 'FAQ'
 };
 
 export const demoLabels = {

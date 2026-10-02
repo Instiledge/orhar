@@ -426,7 +426,7 @@ img { display: block; max-width: 100%; }
   align-items: center;
   gap: 12px;
   max-width: min(1180px, calc(100% - 30px));
-  margin: 18px auto 0;
+  margin: 18px auto 26px;
   padding: 10px 18px;
   background: rgba(213,183,125,.12);
   border: 1px solid rgba(213,183,125,.32);
@@ -1707,7 +1707,7 @@ html[data-theme="dark"] .icon-story-symbol {
     align-items: flex-start;
     gap: 8px 12px;
     padding: 10px 14px;
-    margin: 12px auto 0;
+    margin: 12px auto 20px;
     max-width: min(100% - 24px, 1180px);
     font-size: .86rem;
   }

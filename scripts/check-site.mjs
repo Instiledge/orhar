@@ -32,6 +32,7 @@ for (const code of languages) {
   assert(appdemo.includes('google-play-app'), `${code}/appdemo.html: google-play-app meta missing`);
   const home = readFileSync(resolve(root,code,'index.html'),'utf8');
   assert(home.includes('id="faq"'), `${code}: FAQ section missing`);
+  assert(home.includes('href="#faq"'), `${code}: FAQ nav link missing`);
   assert(home.includes('FAQPage'), `${code}: FAQPage JSON-LD schema missing`);
   assert(home.includes('google-play-app'), `${code}: google-play-app meta missing`);
   assert(home.includes(`/assets/videos/${code}/teaser.mp4`), `${code}: localized mp4 teaser missing`);

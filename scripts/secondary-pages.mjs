@@ -64,6 +64,10 @@ export const newsNavLabels = {
   fr: 'Actualité', en: 'News', es: 'Novedades', de: 'Neuigkeiten', it: 'Novità', pt: 'Novidades', pl: 'Aktualności'
 };
 
+export const navFaqLabels = {
+  fr: 'FAQ', en: 'FAQ', es: 'FAQ', de: 'FAQ', it: 'FAQ', pt: 'FAQ', pl: 'FAQ'
+};
+
 export const demoLabels = {
   fr: {
     nav: 'Démo',

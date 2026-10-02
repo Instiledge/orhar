@@ -330,19 +330,31 @@ export const faqData = {
     items: [
       {
         q: 'L’application ORHAR fonctionne-t-elle sans connexion Internet ?',
-        a: 'Oui. La lecture des textes bibliques, les signets, les notes et vos plans de lecture téléchargés sont entièrement accessibles hors-ligne sans connexion requise.'
+        a: 'Oui. La lecture intégrale des textes bibliques, vos signets, vos notes personnelles et vos plans de lecture téléchargés sont accessibles à 100 % hors-ligne sans connexion requise.'
       },
       {
         q: 'Quelles traductions de la Bible sont disponibles dans ORHAR ?',
-        a: 'ORHAR propose des traductions de référence dans chaque langue (comme Louis Segond 1910 pour le français, King James & Web pour l’anglais, Reina-Valera 1909 pour l’espagnol, Luther 1912 pour l’allemand, etc.), ainsi que des éditions interlinéaires et des livres spirituels.'
+        a: 'ORHAR propose des traductions de référence (comme Louis Segond 1910 pour le français, King James & WEB pour l’anglais, Reina-Valera 1909 pour l’espagnol, Luther 1912 pour l’allemand, etc.), ainsi que des éditions interlinéaires et des ouvrages spirituels.'
       },
       {
         q: 'Qu’est-ce que le module « Mon Chemin » ?',
-        a: '« Mon Chemin » est un parcours spirituel quotidien structuré : il réunit les lectures liturgiques du jour, une pensée méditative et des prières thématiques pour rythmer votre journée de foi.'
+        a: '« Mon Chemin » est un parcours spirituel quotidien structuré : il réunit les lectures liturgiques du jour, une pensée méditative et des prières thématiques pour nourrir votre vie de foi.'
       },
       {
         q: 'Comment fonctionnent les voix naturelles et les ambiances sonores ?',
-        a: 'ORHAR combine des voix de narration fluides et respectueuses pour la lecture des chapitres avec des paysages sonores contemplatifs originaux (pluie douce, sanctuaire, piano) créés à 100 % par ORHAR.'
+        a: 'ORHAR combine des voix de narration fluides et respectueuses pour la lecture des chapitres avec des paysages sonores contemplatifs originaux (pluie douce, sanctuaire, piano acoustique) créés pour favoriser la prière.'
+      },
+      {
+        q: 'Mes notes personnelles et données spirituelles sont-elles sécurisées ?',
+        a: 'Absolument. Vos notes, surlignages et prières sont chiffrés et synchronisés en toute sécurité sur votre compte. Nous ne lisons, n’analysons ni ne vendons jamais vos données spirituelles. Votre vie privée est sacrée.'
+      },
+      {
+        q: 'Comment restaurer mon abonnement Premium ?',
+        a: 'Si vous changez d’appareil ou réinstallez l’application, rendez-vous dans Paramètres → Restaurer les achats dans l’application ORHAR en veillant à être connecté au même compte Apple ou Google utilisé lors de l’achat initial.'
+      },
+      {
+        q: 'Puis-je exporter mes notes ou supprimer mon compte ?',
+        a: 'Oui, vous disposez d’un contrôle total. Vous pouvez exporter vos notes depuis Paramètres → Données → Exporter, ou supprimer définitivement votre compte et l’ensemble de ses données via Paramètres → Compte → Supprimer le compte.'
       }
     ]
   },
@@ -352,11 +364,11 @@ export const faqData = {
     items: [
       {
         q: 'Does the ORHAR app work offline without an Internet connection?',
-        a: 'Yes. Scripture reading, bookmarks, personal notes, and downloaded reading plans are fully functional offline without requiring an active internet connection.'
+        a: 'Yes. Scripture reading, personal notes, bookmarks, and downloaded reading plans are 100% functional offline without requiring an active internet connection.'
       },
       {
         q: 'Which Bible translations are available in ORHAR?',
-        a: 'ORHAR offers standard and historic translations across languages (including King James Version, World English Bible, Louis Segond, Reina-Valera, Luther Bibel, etc.), alongside spiritual books and devotional texts.'
+        a: 'ORHAR offers standard and historic translations across languages (including King James Version, World English Bible, Louis Segond, Reina-Valera, Luther Bibel, etc.), alongside interlinear resources and spiritual devotional books.'
       },
       {
         q: 'What is the "My Path" daily journey module?',
@@ -365,6 +377,18 @@ export const faqData = {
       {
         q: 'How do natural voice narration and soundscapes work?',
         a: 'ORHAR pairs fluent, reverent voice narration for Scripture chapters with original contemplative soundscapes (gentle rain, serene sanctuary, acoustic piano) designed to foster prayer.'
+      },
+      {
+        q: 'Are my personal notes and data secure and private?',
+        a: 'Absolutely. All notes, highlights, and prayers are encrypted and securely synchronized to your account. We never read, analyze, or sell your personal spiritual data. Your privacy is sacred.'
+      },
+      {
+        q: 'How do I restore my Premium subscription?',
+        a: 'If you change devices or reinstall the app, simply go to Settings → Restore Purchases inside the ORHAR app. Ensure you are logged into the same Apple ID or Google account used for the original purchase.'
+      },
+      {
+        q: 'Can I export my notes or delete my account?',
+        a: 'Yes, you have complete control over your data. You can export your notes at any time via Settings → Data → Export, or permanently delete your account and all associated data via Settings → Account → Delete Account.'
       }
     ]
   },
@@ -374,19 +398,31 @@ export const faqData = {
     items: [
       {
         q: '¿La aplicación ORHAR funciona sin conexión a Internet?',
-        a: 'Sí. La lectura de las Escrituras, los marcadores, las notas personales y los planes de lectura descargados están disponibles 100% sin conexión.'
+        a: 'Sí. La lectura completa de las Escrituras, los marcadores, las notas personales y los planes de lectura descargados están disponibles 100% sin conexión.'
       },
       {
         q: '¿Qué traducciones de la Biblia están disponibles en ORHAR?',
-        a: 'ORHAR incluye traducciones de referencia (como Reina-Valera 1909, Louis Segond, King James, etc.), así como libros espirituales y meditaciones guiadas.'
+        a: 'ORHAR incluye traducciones de referencia (como Reina-Valera 1909, Louis Segond, King James Version, etc.), así como libros devocionales y textos interlineales.'
       },
       {
         q: '¿Qué es el módulo «Mi Sendero»?',
-        a: '«Mi Sendero» es un camino espiritual diario guiado que reúne las lecturas litúrgicas del día, una reflexión meditativa y oraciones temáticas.'
+        a: '«Mi Sendero» es un camino espiritual diario guiado que reúne las lecturas litúrgicas del día, una reflexión meditativa y oraciones temáticas para acompañar tu fe.'
       },
       {
         q: '¿Cómo funcionan las voces naturales y los paisajes sonoros?',
         a: 'ORHAR combina narración fluida y respetuosa para cada capítulo bíblico con paisajes sonoros y composiciones de piano originales para la oración.'
+      },
+      {
+        q: '¿Mis notas personales y datos espirituales están seguros?',
+        a: 'Totalmente. Todas las notas, destacados y oraciones están encriptados y sincronizados de forma segura. Nunca leemos, analizamos ni vendemos tus datos espirituales. Tu privacidad es sagrada.'
+      },
+      {
+        q: '¿Cómo restauro mi suscripción Premium?',
+        a: 'Si cambiaste de dispositivo o reinstalaste la app, ve a Ajustes → Restaurar Compras en la aplicación ORHAR asegurándote de usar la misma cuenta de Google o Apple de la compra original.'
+      },
+      {
+        q: '¿Puedo exportar mis notas o eliminar mi cuenta?',
+        a: 'Sí, tienes el control total. Puedes exportar tus notas desde Ajustes → Datos → Exportar, o eliminar permanentemente tu cuenta y todos los datos asociados desde Ajustes → Cuenta → Eliminar Cuenta.'
       }
     ]
   },
@@ -396,7 +432,7 @@ export const faqData = {
     items: [
       {
         q: 'Funktioniert die ORHAR-App ohne Internetverbindung offline?',
-        a: 'Ja. Die Bibellese, Lesezeichen, persönliche Notizen und heruntergeladene Lesepläne sind vollständig offline verfügbar.'
+        a: 'Ja. Die Bibellese, Lesezeichen, persönliche Notizen und heruntergeladene Lesepläne sind vollständig und zu 100 % offline verfügbar.'
       },
       {
         q: 'Welche Bibelübersetzungen sind in ORHAR verfügbar?',
@@ -409,6 +445,18 @@ export const faqData = {
       {
         q: 'Wie funktionieren die natürlichen Vorlesestimmen und Klanglandschaften?',
         a: 'ORHAR verbindet flüssige, andächtige Stimmen für jedes Bibelkapitel mit beruhigenden Original-Klanglandschaften (Sanfter Regen, Klavier, Heiligtum).'
+      },
+      {
+        q: 'Sind meine persönlichen Notizen und Daten sicher und geschützt?',
+        a: 'Absolut. Alle Notizen, Markierungen und Gebete sind verschlüsselt und werden sicher synchronisiert. Wir lesen, analysieren oder verkaufen niemals Ihre Daten. Ihre Privatsphäre ist heilig.'
+      },
+      {
+        q: 'Wie stelle ich mein Premium-Abonnement wieder her?',
+        a: 'Gehen Sie in der ORHAR-App auf Einstellungen → Käufe wiederherstellen. Stellen Sie sicher, dass Sie mit demselben Apple- oder Google-Konto angemeldet sind, mit dem der Kauf getätigt wurde.'
+      },
+      {
+        q: 'Kann ich meine Notizen exportieren oder mein Konto löschen?',
+        a: 'Ja, Sie haben die volle Kontrolle über Ihre Daten. Sie können Ihre Notizen unter Einstellungen → Daten → Exportieren sichern oder Ihr Konto unter Einstellungen → Konto → Konto löschen dauerhaft entfernen.'
       }
     ]
   },
@@ -418,11 +466,11 @@ export const faqData = {
     items: [
       {
         q: 'L’applicazione ORHAR funziona offline senza connessione Internet?',
-        a: 'Sì. La lettura della Bibbia, i segnalibri, le note personali e i piani di lettura scaricati sono interamente accessibili offline.'
+        a: 'Sì. La lettura della Bibbia, i segnalibri, le note personali e i piani di lettura scaricati sono interamente accessibili offline al 100%.'
       },
       {
         q: 'Quali traduzioni della Bibbia sono disponibili in ORHAR?',
-        a: 'ORHAR include traduzioni bibliche di riferimento (tra cui Riveduta/Diodati, Louis Segond, KJV) e una biblioteca di letture spirituali.'
+        a: 'ORHAR include traduzioni bibliche di riferimento (tra cui Riveduta/Diodati, Louis Segond, KJV) e una biblioteca di letture spirituali e devozionali.'
       },
       {
         q: 'Cos’è il modulo «Il Mio Percorso»?',
@@ -431,6 +479,18 @@ export const faqData = {
       {
         q: 'Come funzionano le voci naturali e i paesaggi sonori?',
         a: 'ORHAR unisce una narrazione vocale fluida e rispettosa della Scrittura a paesaggi sonori e melodie di pianoforte originali per favorire la preghiera.'
+      },
+      {
+        q: 'Le mie note personali e i miei dati spirituali sono al sicuro?',
+        a: 'Assolutamente sì. Tutte le note, evidenziazioni e preghiere sono crittografate e sincronizzate in modo sicuro. Non leggiamo né vendiamo mai i tuoi dati spirituali. La tua privacy è sacra.'
+      },
+      {
+        q: 'Come ripristino il mio abbonamento Premium?',
+        a: 'Se hai cambiato dispositivo o reinstallato l’app, vai su Impostazioni → Ripristina acquisti nell’app ORHAR con lo stesso account Apple o Google dell’acquisto originale.'
+      },
+      {
+        q: 'Posso esportare le mie note o eliminare il mio account?',
+        a: 'Sì, hai il pieno controllo dei tuoi dati. Puoi esportare le note tramite Impostazioni → Dati → Esporta, oppure eliminare definitivamente il tuo account in Impostazioni → Account → Elimina account.'
       }
     ]
   },
@@ -440,19 +500,31 @@ export const faqData = {
     items: [
       {
         q: 'O aplicativo ORHAR funciona offline sem conexão à Internet?',
-        a: 'Sim. A leitura bíblica, os marcadores, as notas pessoais e os planos de leitura baixados funcionam totalmente offline.'
+        a: 'Sim. A leitura bíblica completa, os marcadores, as notas pessoais e os planos de leitura baixados funcionam 100% offline sem necessidade de conexão.'
       },
       {
         q: 'Quais traduções da Bíblia estão disponíveis no ORHAR?',
-        a: 'O ORHAR disponibiliza traduções consagradas (como Almeida Revista e Corrigida / Tradução Brasileira, KJV, Louis Segond) e livros espirituais.'
+        a: 'O ORHAR disponibiliza traduções consagradas (como Almeida Revista e Corrigida, KJV, Louis Segond) e uma rica coleção de livros espirituais e devocionais.'
       },
       {
         q: 'O que é o módulo «Meu Caminho»?',
-        a: '«Meu Caminho» é uma jornada espiritual diária estruturada com leituras litúrgicas do dia, meditações e orações para a sua caminhada de fé.'
+        a: '«Meu Caminho» é uma jornada espiritual diária estruturada com as leituras litúrgicas do dia, reflexões meditativas e orações para fortalecer sua fé.'
       },
       {
         q: 'Como funcionam as vozes naturais e as paisagens sonoras?',
         a: 'O ORHAR combina narração bíblica fluida e respeitosa com paisagens sonoras contemplativas originais (chuva suave, piano, santuário) para momentos de oração.'
+      },
+      {
+        q: 'Minhas notas pessoais e dados espirituais estão seguros?',
+        a: 'Com certeza. Todas as notas, destaques e orações são criptografados e sincronizados com segurança. Nunca lemos ou vendemos seus dados espirituais. Sua privacidade é sagrada.'
+      },
+      {
+        q: 'Como restauro minha assinatura Premium?',
+        a: 'Se trocou de aparelho ou reinstalou o app, vá em Configurações → Restaurar Compras no aplicativo ORHAR. Certifique-se de usar a mesma conta Google ou Apple da compra original.'
+      },
+      {
+        q: 'Posso exportar minhas notas ou excluir minha conta?',
+        a: 'Sim, você tem controle total. Pode exportar suas notas em Configurações → Dados → Exportar, ou excluir definitivamente sua conta e dados em Configurações → Conta → Excluir Conta.'
       }
     ]
   },
@@ -462,7 +534,7 @@ export const faqData = {
     items: [
       {
         q: 'Czy aplikacja ORHAR działa w trybie offline bez połączenia z Internetem?',
-        a: 'Tak. Czytanie Pisma Świętego, zakładki, notatki i pobrane plany czytania działają w pełni offline.'
+        a: 'Tak. Pełne czytanie Pisma Świętego, zakładki, osobiste notatki i pobrane plany czytania działają w 100% w trybie offline bez dostępu do sieci.'
       },
       {
         q: 'Jakie przekłady Biblii są dostępne w ORHAR?',
@@ -470,11 +542,23 @@ export const faqData = {
       },
       {
         q: 'Czym jest moduł «Moja Ścieżka»?',
-        a: '«Moja Ścieżka» to codzienna prowadzona droga duchowa łącząca czytania liturgiczne dnia, rozważania biblijne i modlitwy.'
+        a: '«Moja Ścieżka» to codzienna prowadzona droga duchowa łącząca czytania liturgiczne dnia, rozważania biblijne i modlitwy wspierające Twoje życie wiary.'
       },
       {
         q: 'Jak działają naturalne głosy lektorskie i klimaty dźwiękowe?',
         a: 'ORHAR łączy płynną i pełną szacunku lekturę rozdziałów biblijnych z oryginalnymi tłami dźwiękowymi i kompozycjami fortepianowymi sprzyjającymi modlitwie.'
+      },
+      {
+        q: 'Czy moje notatki i dane duchowe są bezpieczne i poufne?',
+        a: 'Absolutnie tak. Wszystkie notatki, zaznaczenia i modlitwy są szyfrowane i bezpiecznie synchronizowane. Nigdy nie czytamy ani nie sprzedajemy Twoich danych duchowych. Twoja prywatność jest święta.'
+      },
+      {
+        q: 'Jak przywrócić subskrypcję Premium?',
+        a: 'W przypadku zmiany urządzenia lub ponownej instalacji przejdź do Ustawienia → Przywróć zakupy w aplikacji ORHAR, korzystając z tego samego konta Google lub Apple co przy zakupie.'
+      },
+      {
+        q: 'Czy mogę wyeksportować notatki lub usunąć konto?',
+        a: 'Tak, masz pełną kontrolę. Możesz wyeksportować notatki w Ustawienia → Dane → Eksportuj lub trwale usunąć konto i wszystkie powiązane dane w Ustawienia → Konto → Usuń konto.'
       }
     ]
   }

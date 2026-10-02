@@ -581,7 +581,7 @@ export function writeSecondaryPages(root) {
         <div class="hero-actions">
           <a class="button button-primary" href="#quiz-demo">${d.ctaQuiz}</a>
           <a class="button button-secondary" href="#demo-audio">${d.ctaAudio}</a>
-          <a class="button button-secondary" href="#demo-reader">${d.ctaReader}</a>
+          <a class="button button-primary" href="#demo-reader">${d.ctaReader}</a>
           <a class="button button-secondary" href="/${code}/app.html">${d.ctaApp}</a>
         </div>
       </div>
@@ -609,7 +609,7 @@ export function writeSecondaryPages(root) {
             <div class="hero-actions">
               <a class="button button-primary" href="#quiz-demo">${d.ctaQuiz}</a>
               <a class="button button-secondary" href="#demo-audio">${d.ctaAudio}</a>
-              <a class="button button-secondary" href="#demo-reader">${d.ctaReader}</a>
+              <a class="button button-primary" href="#demo-reader">${d.ctaReader}</a>
             </div>
           </div>
         </div>

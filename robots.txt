@@ -4,15 +4,20 @@
 User-agent: *
 Allow: /
 
-# Explicitly allow Facebook's sharing crawler
+# Explicitly allow major search & social crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 User-agent: facebookexternalhit
 Allow: /
 
-# Explicitly allow Twitter's card crawler
 User-agent: Twitterbot
 Allow: /
 
-# Block email harvesters
+# Block email harvesters and aggressive scrapers
 User-agent: EmailCollector
 Disallow: /
 User-agent: WebEMailExtrac
@@ -23,8 +28,5 @@ Disallow: /
 # Sitemap location
 Sitemap: https://orhar.com/sitemap.xml
 
-# Disallow action pages (Firebase auth — no SEO value)
+# Disallow action pages (Firebase auth callbacks — no SEO value)
 Disallow: /action.html
-
-# Crawl delay (polite crawling)
-Crawl-delay: 1

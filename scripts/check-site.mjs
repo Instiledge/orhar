@@ -26,7 +26,14 @@ for (const code of languages) {
   assert(appdemo.includes(`/assets/videos/${code}/reader.mp4`), `${code}/appdemo.html: localized mp4 reader missing`);
   assert(appdemo.includes(`/assets/videos/${code}/reader.webm`), `${code}/appdemo.html: localized webm reader missing`);
   assert(appdemo.includes('id="quizCard"'), `${code}/appdemo.html: quizCard widget missing`);
+  assert(appdemo.includes('AudioObject'), `${code}/appdemo.html: AudioObject schema missing`);
+  assert(appdemo.includes('VideoObject'), `${code}/appdemo.html: VideoObject schema missing`);
+  assert(appdemo.includes('BreadcrumbList'), `${code}/appdemo.html: BreadcrumbList schema missing`);
+  assert(appdemo.includes('google-play-app'), `${code}/appdemo.html: google-play-app meta missing`);
   const home = readFileSync(resolve(root,code,'index.html'),'utf8');
+  assert(home.includes('id="faq"'), `${code}: FAQ section missing`);
+  assert(home.includes('FAQPage'), `${code}: FAQPage JSON-LD schema missing`);
+  assert(home.includes('google-play-app'), `${code}: google-play-app meta missing`);
   assert(home.includes(`/assets/videos/${code}/teaser.mp4`), `${code}: localized mp4 teaser missing`);
   assert(home.includes(`/assets/videos/${code}/teaser.webm`), `${code}: localized webm teaser missing`);
   assert(existsSync(resolve(root, 'assets', 'videos', code, 'teaser.mp4')), `${code}: teaser.mp4 missing on disk`);
@@ -52,6 +59,8 @@ for (const code of languages) {
   assert(!gallery.includes('/screenshots/app-quiz-2026.webp'), `${code}: account-specific quiz image found`);
   const news = readFileSync(resolve(root,code,'actuality.html'),'utf8');
   assert((news.match(/class="news-card reveal"/g)||[]).length===4, `${code}: news incomplete`);
+  assert(news.includes('BreadcrumbList'), `${code}/actuality.html: BreadcrumbList schema missing`);
+  assert(news.includes('google-play-app'), `${code}/actuality.html: google-play-app meta missing`);
   if (code !== 'en') assert(!home.includes('A home shaped around today'), `${code}: English fallback found`);
 }
 for (const name of oldShots) assert(!existsSync(resolve(root,'screenshots',name)), `Old screenshot retained: ${name}`);
@@ -62,4 +71,9 @@ for (const page of ['404.html','action.html','contact.html','privacy.html','term
   assert(html.includes('class="logo-container"'), `${page}: brand link missing`);
 }
 assert(readFileSync(resolve(root,'updates.html'),'utf8').includes('/actuality.html'), 'Updates route does not lead to current news');
+const rootIndex = readFileSync(resolve(root,'index.html'),'utf8');
+assert(rootIndex.includes('http-equiv="refresh"'), 'root index.html: meta refresh missing');
+assert(rootIndex.includes('google-play-app'), 'root index.html: google-play-app meta missing');
+const sitemap = readFileSync(resolve(root,'sitemap.xml'),'utf8');
+assert(sitemap.includes('appdemo.html'), 'sitemap.xml: appdemo.html missing');
 console.log(`ORHAR static checks passed: ${checks} assertions across 7 languages.`);

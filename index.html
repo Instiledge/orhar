@@ -3,13 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ORHAR — The Mountain of Light</title>
-    <meta name="description" content="ORHAR — The Mountain of Light. A multilingual Bible, prayer and contemplation app for the daily spiritual ascent.">
-    <link rel="canonical" href="https://orhar.com/">
+    <title>ORHAR — The Mountain of Light | Multilingual Bible & Prayer App</title>
+    <meta name="description" content="ORHAR — The Mountain of Light. A modern multilingual Bible, liturgical prayer, ambient soundscapes and spiritual contemplation app.">
+    <meta http-equiv="refresh" content="0;url=/en/">
+    <link rel="canonical" href="https://orhar.com/en/">
+    <link rel="alternate" hreflang="en" href="https://orhar.com/en/">
+    <link rel="alternate" hreflang="fr" href="https://orhar.com/fr/">
+    <link rel="alternate" hreflang="es" href="https://orhar.com/es/">
+    <link rel="alternate" hreflang="de" href="https://orhar.com/de/">
+    <link rel="alternate" hreflang="it" href="https://orhar.com/it/">
+    <link rel="alternate" hreflang="pt" href="https://orhar.com/pt/">
+    <link rel="alternate" hreflang="pl" href="https://orhar.com/pl/">
     <link rel="alternate" hreflang="x-default" href="https://orhar.com/en/">
+    <meta name="google-play-app" content="app-id=com.orhar.bible">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ORHAR — The Mountain of Light">
+    <meta property="og:description" content="A multilingual Bible, liturgical journey, natural audio voices and contemplative soundscapes.">
+    <meta property="og:url" content="https://orhar.com/">
+    <meta property="og:image" content="https://orhar.com/og-image.png">
     <script>
         const savedLang = localStorage.getItem('orhar_lang');
-        const browserLang = navigator.language.slice(0, 2);
+        const browserLang = (navigator.language || 'en').slice(0, 2);
         const supported = ['en', 'fr', 'es', 'de', 'it', 'pt', 'pl'];
         
         let lang = 'en';
@@ -21,6 +35,18 @@
     </script>
 </head>
 <body>
-    <p>Redirecting to ORHAR...</p>
+    <main style="font-family: system-ui, sans-serif; text-align: center; padding: 40px 20px;">
+        <h1>ORHAR — The Mountain of Light</h1>
+        <p>Redirecting to your language...</p>
+        <nav aria-label="Select language" style="margin-top: 20px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <a href="/en/">English</a>
+            <a href="/fr/">Français</a>
+            <a href="/es/">Español</a>
+            <a href="/de/">Deutsch</a>
+            <a href="/it/">Italiano</a>
+            <a href="/pt/">Português</a>
+            <a href="/pl/">Polski</a>
+        </nav>
+    </main>
 </body>
 </html>

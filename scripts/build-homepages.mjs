@@ -323,6 +323,168 @@ function biblicalAnchorsSection(code) {
   return `<section class="section biblical-anchors" id="anchors"><div class="section-inner"><div class="section-heading center reveal"><p class="eyebrow">אוֹר הַר</p><h2 class="section-title">${copy.title}</h2><p class="section-intro">${copy.subtitle}</p></div><div class="anchors-canvas reveal"><div class="anchors-track" id="anchorsTrack">${slides}</div></div><div class="anchors-nav"><button class="anchor-arrow" onclick="moveAnchor(-1)" aria-label="${copy.previous}">&#10094;</button>${dots}<button class="anchor-arrow" onclick="moveAnchor(1)" aria-label="${copy.next}">&#10095;</button></div></div>${script}</section>`;
 }
 
+export const faqData = {
+  fr: {
+    eyebrow: 'Questions Fréquentes',
+    title: 'Tout savoir sur l’application ORHAR',
+    items: [
+      {
+        q: 'L’application ORHAR fonctionne-t-elle sans connexion Internet ?',
+        a: 'Oui. La lecture des textes bibliques, les signets, les notes et vos plans de lecture téléchargés sont entièrement accessibles hors-ligne sans connexion requise.'
+      },
+      {
+        q: 'Quelles traductions de la Bible sont disponibles dans ORHAR ?',
+        a: 'ORHAR propose des traductions de référence dans chaque langue (comme Louis Segond 1910 pour le français, King James & Web pour l’anglais, Reina-Valera 1909 pour l’espagnol, Luther 1912 pour l’allemand, etc.), ainsi que des éditions interlinéaires et des livres spirituels.'
+      },
+      {
+        q: 'Qu’est-ce que le module « Mon Chemin » ?',
+        a: '« Mon Chemin » est un parcours spirituel quotidien structuré : il réunit les lectures liturgiques du jour, une pensée méditative et des prières thématiques pour rythmer votre journée de foi.'
+      },
+      {
+        q: 'Comment fonctionnent les voix naturelles et les ambiances sonores ?',
+        a: 'ORHAR combine des voix de narration fluides et respectueuses pour la lecture des chapitres avec des paysages sonores contemplatifs originaux (pluie douce, sanctuaire, piano) créés à 100 % par ORHAR.'
+      }
+    ]
+  },
+  en: {
+    eyebrow: 'Frequently Asked Questions',
+    title: 'Everything you need to know about ORHAR',
+    items: [
+      {
+        q: 'Does the ORHAR app work offline without an Internet connection?',
+        a: 'Yes. Scripture reading, bookmarks, personal notes, and downloaded reading plans are fully functional offline without requiring an active internet connection.'
+      },
+      {
+        q: 'Which Bible translations are available in ORHAR?',
+        a: 'ORHAR offers standard and historic translations across languages (including King James Version, World English Bible, Louis Segond, Reina-Valera, Luther Bibel, etc.), alongside spiritual books and devotional texts.'
+      },
+      {
+        q: 'What is the "My Path" daily journey module?',
+        a: '“My Path” is a structured daily spiritual journey: it brings together today’s liturgical readings, a contemplative reflection, and dedicated prayers for every moment of your day.'
+      },
+      {
+        q: 'How do natural voice narration and soundscapes work?',
+        a: 'ORHAR pairs fluent, reverent voice narration for Scripture chapters with original contemplative soundscapes (gentle rain, serene sanctuary, acoustic piano) designed to foster prayer.'
+      }
+    ]
+  },
+  es: {
+    eyebrow: 'Preguntas Frecuentes',
+    title: 'Todo lo que necesitas saber sobre ORHAR',
+    items: [
+      {
+        q: '¿La aplicación ORHAR funciona sin conexión a Internet?',
+        a: 'Sí. La lectura de las Escrituras, los marcadores, las notas personales y los planes de lectura descargados están disponibles 100% sin conexión.'
+      },
+      {
+        q: '¿Qué traducciones de la Biblia están disponibles en ORHAR?',
+        a: 'ORHAR incluye traducciones de referencia (como Reina-Valera 1909, Louis Segond, King James, etc.), así como libros espirituales y meditaciones guiadas.'
+      },
+      {
+        q: '¿Qué es el módulo «Mi Sendero»?',
+        a: '«Mi Sendero» es un camino espiritual diario guiado que reúne las lecturas litúrgicas del día, una reflexión meditativa y oraciones temáticas.'
+      },
+      {
+        q: '¿Cómo funcionan las voces naturales y los paisajes sonoros?',
+        a: 'ORHAR combina narración fluida y respetuosa para cada capítulo bíblico con paisajes sonoros y composiciones de piano originales para la oración.'
+      }
+    ]
+  },
+  de: {
+    eyebrow: 'Häufig Gestellte Fragen',
+    title: 'Alles Wissenswerte über die ORHAR App',
+    items: [
+      {
+        q: 'Funktioniert die ORHAR-App ohne Internetverbindung offline?',
+        a: 'Ja. Die Bibellese, Lesezeichen, persönliche Notizen und heruntergeladene Lesepläne sind vollständig offline verfügbar.'
+      },
+      {
+        q: 'Welche Bibelübersetzungen sind in ORHAR verfügbar?',
+        a: 'ORHAR bietet klassische und verlässliche Übersetzungen (wie die Lutherbibel 1912, KJV, Louis Segond usw.) sowie geistliche Bücher und Andachten.'
+      },
+      {
+        q: 'Was ist das Modul «Mein Weg»?',
+        a: '«Mein Weg» ist ein strukturierter täglicher Glaubensweg: Er vereint die heutigen liturgischen Lesungen, eine besinnliche Meditation und persönliche Gebete.'
+      },
+      {
+        q: 'Wie funktionieren die natürlichen Vorlesestimmen und Klanglandschaften?',
+        a: 'ORHAR verbindet flüssige, andächtige Stimmen für jedes Bibelkapitel mit beruhigenden Original-Klanglandschaften (Sanfter Regen, Klavier, Heiligtum).'
+      }
+    ]
+  },
+  it: {
+    eyebrow: 'Domande Frequenti',
+    title: 'Tutto quello che c’è da sapere su ORHAR',
+    items: [
+      {
+        q: 'L’applicazione ORHAR funziona offline senza connessione Internet?',
+        a: 'Sì. La lettura della Bibbia, i segnalibri, le note personali e i piani di lettura scaricati sono interamente accessibili offline.'
+      },
+      {
+        q: 'Quali traduzioni della Bibbia sono disponibili in ORHAR?',
+        a: 'ORHAR include traduzioni bibliche di riferimento (tra cui Riveduta/Diodati, Louis Segond, KJV) e una biblioteca di letture spirituali.'
+      },
+      {
+        q: 'Cos’è il modulo «Il Mio Percorso»?',
+        a: '«Il Mio Percorso» è un cammino spirituale quotidiano strutturato con letture liturgiche del giorno, meditazioni e preghiere dedicate.'
+      },
+      {
+        q: 'Come funzionano le voci naturali e i paesaggi sonori?',
+        a: 'ORHAR unisce una narrazione vocale fluida e rispettosa della Scrittura a paesaggi sonori e melodie di pianoforte originali per favorire la preghiera.'
+      }
+    ]
+  },
+  pt: {
+    eyebrow: 'Perguntas Frequentes',
+    title: 'Tudo o que você precisa saber sobre o ORHAR',
+    items: [
+      {
+        q: 'O aplicativo ORHAR funciona offline sem conexão à Internet?',
+        a: 'Sim. A leitura bíblica, os marcadores, as notas pessoais e os planos de leitura baixados funcionam totalmente offline.'
+      },
+      {
+        q: 'Quais traduções da Bíblia estão disponíveis no ORHAR?',
+        a: 'O ORHAR disponibiliza traduções consagradas (como Almeida Revista e Corrigida / Tradução Brasileira, KJV, Louis Segond) e livros espirituais.'
+      },
+      {
+        q: 'O que é o módulo «Meu Caminho»?',
+        a: '«Meu Caminho» é uma jornada espiritual diária estruturada com leituras litúrgicas do dia, meditações e orações para a sua caminhada de fé.'
+      },
+      {
+        q: 'Como funcionam as vozes naturais e as paisagens sonoras?',
+        a: 'O ORHAR combina narração bíblica fluida e respeitosa com paisagens sonoras contemplativas originais (chuva suave, piano, santuário) para momentos de oração.'
+      }
+    ]
+  },
+  pl: {
+    eyebrow: 'Często Zadawane Pytania',
+    title: 'Wszystko, co warto wiedzieć o aplikacji ORHAR',
+    items: [
+      {
+        q: 'Czy aplikacja ORHAR działa w trybie offline bez połączenia z Internetem?',
+        a: 'Tak. Czytanie Pisma Świętego, zakładki, notatki i pobrane plany czytania działają w pełni offline.'
+      },
+      {
+        q: 'Jakie przekłady Biblii są dostępne w ORHAR?',
+        a: 'ORHAR oferuje uznane przekłady (m.in. Biblia Gdańska / Uwspółcześniona, KJV, Louis Segond) oraz książki duchowe i rozważania.'
+      },
+      {
+        q: 'Czym jest moduł «Moja Ścieżka»?',
+        a: '«Moja Ścieżka» to codzienna prowadzona droga duchowa łącząca czytania liturgiczne dnia, rozważania biblijne i modlitwy.'
+      },
+      {
+        q: 'Jak działają naturalne głosy lektorskie i klimaty dźwiękowe?',
+        a: 'ORHAR łączy płynną i pełną szacunku lekturę rozdziałów biblijnych z oryginalnymi tłami dźwiękowymi i kompozycjami fortepianowymi sprzyjającymi modlitwie.'
+      }
+    ]
+  }
+};
+
+function faqSection(code) {
+  const faq = faqData[code] || faqData.en;
+  return `<section class="section faq-section" id="faq"><div class="section-inner"><div class="section-heading center reveal"><p class="eyebrow">${faq.eyebrow}</p><h2 class="section-title">${faq.title}</h2></div><div class="faq-accordion reveal">${faq.items.map((item, idx) => `<details class="faq-item"${idx === 0 ? ' open' : ''}><summary class="faq-question"><span>${item.q}</span><i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>${item.a}</p></div></details>`).join('')}</div></div></section>`;
+}
+
 const ogLocale = {en:'en_US',fr:'fr_FR',es:'es_ES',de:'de_DE',it:'it_IT',pt:'pt_PT',pl:'pl_PL'};
 
 function render(code, t) {
@@ -330,15 +492,68 @@ function render(code, t) {
   const brand = brandStory[code];
   const screens = localizedScreenshotPaths[code];
   const title = `ORHAR — ${t.title} ${t.accent}`;
+  const faq = faqData[code] || faqData.en;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "ORHAR",
+        "applicationCategory": "ReligiousApplication",
+        "operatingSystem": "Android",
+        "description": t.hero,
+        "url": `https://orhar.com/${code}/`,
+        "image": "https://orhar.com/og-image.png",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "ORHAR",
+          "url": "https://orhar.com"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "name": "ORHAR",
+        "url": `https://orhar.com/${code}/`,
+        "inLanguage": code
+      },
+      {
+        "@type": "Organization",
+        "name": "ORHAR",
+        "url": "https://orhar.com",
+        "logo": "https://orhar.com/logo.png",
+        "sameAs": [
+          "https://play.google.com/store/apps/details?id=com.orhar.bible"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faq.items.map(item => ({
+          "@type": "Question",
+          "name": item.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.a
+          }
+        }))
+      }
+    ]
+  };
+
   return `<!doctype html>
 <html lang="${code}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${title}</title><meta name="description" content="${t.hero}"><meta name="theme-color" content="#0b182a"><meta name="author" content="ORHAR">
+<meta name="google-play-app" content="app-id=com.orhar.bible">
 <link rel="canonical" href="https://orhar.com/${code}/">${languages.map(([value]) => `<link rel="alternate" hreflang="${value}" href="https://orhar.com/${value}/">`).join('')}<link rel="alternate" hreflang="x-default" href="https://orhar.com/en/">
 <meta property="og:type" content="website"><meta property="og:title" content="${title}"><meta property="og:description" content="${t.hero}"><meta property="og:url" content="https://orhar.com/${code}/"><meta property="og:image" content="https://orhar.com/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="ORHAR"><meta property="og:locale" content="${ogLocale[code]||'en_US'}"><meta property="fb:app_id" content="826566160013437">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@orhar_app"><meta name="twitter:title" content="${title}"><meta name="twitter:description" content="${t.hero}"><meta name="twitter:image" content="https://orhar.com/og-image.png">
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-96x96.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1A2E4A"><meta name="msapplication-TileColor" content="#1A2E4A"><link rel="apple-touch-startup-image" href="/apple-splash-2048.png" media="(device-width:1024px) and (device-height:1366px) and (-webkit-device-pixel-ratio:2)"><link rel="apple-touch-startup-image" href="/apple-splash-2048.png" media="(device-width:430px) and (device-height:932px) and (-webkit-device-pixel-ratio:3)"><link rel="apple-touch-startup-image" href="/apple-splash-2048.png" media="(device-width:393px) and (device-height:852px) and (-webkit-device-pixel-ratio:3)"><link rel="apple-touch-startup-image" href="/apple-splash-2048.png" media="(device-width:375px) and (device-height:667px) and (-webkit-device-pixel-ratio:2)"><link rel="manifest" href="/manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="/site.css?v=23">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ORHAR","applicationCategory":"ReligiousApplication","operatingSystem":"Android","description":"${t.hero.replace(/"/g,'&quot;')}","url":"https://orhar.com/${code}/","image":"https://orhar.com/og-image.png","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Organization","name":"ORHAR","url":"https://orhar.com"}}<\/script>
+<script type="application/ld+json">${JSON.stringify(jsonLd)}<\/script>
 </head><body><a class="skip-link" href="#main">${u.skip}</a>
 <header class="site-header"><div class="header-inner"><a class="brand" href="/${code}/index.html"><img src="/logo.png" alt=""><strong>ORHAR</strong></a><nav class="nav" data-nav aria-label="${u.nav}"><a href="#experience">${t.nav[0]}</a><a href="#daily">${t.nav[1]}</a><a href="#features">${t.nav[2]}</a><a href="/${code}/preview.html">${navGalleryLabels[code]}</a><a href="/${code}/appdemo.html">${navDemoLabels[code]}</a><a href="/${code}/actuality.html">${t.nav[3]}</a><a href="/contact.html">${u.contact}</a></nav><select class="language" data-language aria-label="${u.language}">${languages.map(([value, flag]) => `<option value="${value}" ${value === code ? 'selected' : ''}>${flag} ${value.toUpperCase()}</option>`).join('')}</select><button class="mode-toggle" data-mode-toggle type="button"><span aria-hidden="true">☾</span></button><button class="menu-button" data-menu aria-label="Menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button></div></header>
 <main id="main"><a id="update-container" href="/${code}/actuality.html" style="display:none"></a><section class="hero"><div class="hero-inner"><div><p class="eyebrow">${t.eyebrow}</p><h1>${t.title} <em>${t.accent}</em></h1><p class="hero-copy">${t.hero}</p><div class="hero-actions"><a class="button button-primary" href="#experience">${t.actions[0]} <span aria-hidden="true">↓</span></a><a class="button button-secondary" href="/${code}/app.html">${t.actions[1]} <span aria-hidden="true">↗</span></a></div><div class="status-line">${t.status.map(value => `<span><i></i>${value}</span>`).join('')}</div></div><div class="phone-stage" aria-label="${u.phone}"><span class="orb orb-a"></span><span class="orb orb-b"></span><figure class="phone phone-left"><img src="${screens.bible}" alt="ORHAR — ${u.bible}" width="720" height="1600"></figure><figure class="phone phone-main"><video autoplay loop muted playsinline webkit-playsinline preload="auto" poster="${screens.home}" width="720" height="1600" aria-label="ORHAR — ${u.home}"><source src="/assets/videos/${code}/teaser.mp4" type="video/mp4"><source src="/assets/videos/${code}/teaser.webm" type="video/webm"><img src="${screens.home}" alt="ORHAR — ${u.home}" width="720" height="1600"></video></figure><figure class="phone phone-right"><img src="${screens.parobible}" alt="ORHAR — ${u.phone}" width="720" height="1600"></figure></div></div></section>
@@ -350,6 +565,7 @@ ${biblicalAnchorsSection(code)}
 <section class="section showcase" id="daily"><div class="section-inner">${story(t.real,[{src:screens.home,alt:`ORHAR — ${u.home}`}])}${story(t.depth,[{src:screens.bible,alt:`ORHAR — ${u.bible}`},{src:screens.reader,alt:`ORHAR — ${u.reader}`}],'double')}${story(t.beyond,[{src:screens.books,alt:`ORHAR — ${t.features[7][0]}`}])}</div></section>
 <section class="section" id="features"><div class="section-inner"><div class="section-heading reveal"><p class="eyebrow">${t.featureTitle[0]}</p><h2 class="section-title">${t.featureTitle[1]}</h2></div><div class="feature-grid">${t.features.map((item,index) => `<article class="feature reveal"><span class="feature-icon"><i class="fa-solid ${icons[index]}"></i></span><h3>${item[0]}</h3><p>${item[1]}</p></article>`).join('')}</div></div></section>
 <section class="section themes"><div class="section-inner theme-layout"><div class="reveal"><p class="eyebrow">${u.personal}</p><h2 class="section-title">${t.theme[0]}</h2><p class="section-intro">${t.theme[1]}</p><div class="palette" aria-label="${u.themes}">${themeColors.map(([,color],index) => `<button type="button" data-theme="${color}" style="background:${color}" aria-label="${u.themeNames[index]}" aria-pressed="${index === 0}"></button>`).join('')}</div><div class="theme-label" data-theme-label>${t.theme[2]}</div></div><div class="theme-preview reveal" data-theme-preview><div class="preview-bar"></div><div class="preview-card"><small>ORHAR · ${u.psalm}</small><blockquote>“${u.quote}”</blockquote><div class="preview-progress"></div></div></div></div></section>
+${faqSection(code)}
 ${newsletterSection(code)}
 <section class="section"><div class="section-inner"><article class="release-card reveal"><div class="release-side"><span>${t.release[0]}</span><strong>${t.release[1]}</strong></div><div class="release-body"><h2>${t.release[2]}</h2><p>${t.release[3]}</p><div class="release-links"><a class="button button-primary" href="/${code}/preview.html">${t.release[4][0]}</a><a class="button button-secondary" href="/${code}/actuality.html">${t.release[4][1]}</a></div></div></article></div></section></main>
 <footer class="site-footer"><div class="section-inner"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="/${code}/index.html"><img src="/logo.png" alt=""><strong>ORHAR</strong></a><p>${t.footer}</p><p class="footer-verse">« ${u.quote} » <span class="footer-verse-ref">— ${u.psalm}:105</span></p></div><nav class="footer-links" aria-label="${u.footer}">${[['/privacy.html',t.legal[0]],['/terms.html',t.legal[1]],['/licenses.html',t.legal[2]],['/contact.html',t.legal[3]],[`/${code}/preview.html`,t.legal[4]]].map(([href,label]) => `<a href="${href}">${label}</a>`).join('')}</nav></div><div class="footer-bottom"><span>© 2026 ORHAR. ${t.copyright}</span><span>אוֹר הַר · The Mountain of Light</span></div></div></footer><script src="/site.js?v=25" defer></script><script>(function(){fetch('/actuality-data.json').then(function(r){return r.ok?r.json():null;}).then(function(d){if(!d||!d.updates||!d.updates.length)return;var lang=document.documentElement.lang||'en';var latest=d.updates.sort(function(a,b){return b.date.localeCompare(a.date);})[0];var tr=latest.translations[lang]||latest.translations['en'];if(!tr)return;var el=document.getElementById('update-container');if(!el)return;el.innerHTML='<div class="update-badge">'+tr.badge+'</div><p class="update-text">'+tr.title+'</p>';el.style.display='';}).catch(function(){});})();</script></body></html>`;
@@ -360,3 +576,4 @@ for (const [code, locale] of Object.entries(locales)) {
 }
 writeSecondaryPages(root);
 writeNewsPages(root, locales);
+import('./build-sitemap.mjs');

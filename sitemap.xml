@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    
-    <!-- English Homepage -->
     <url>
         <loc>https://orhar.com/en/</loc>
-        <lastmod>2026-10-01</lastmod>
-        <changefreq>monthly</changefreq>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/" />
         <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/" />
@@ -17,108 +15,504 @@
         <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/" />
     </url>
-    
-    <!-- French Homepage -->
     <url>
         <loc>https://orhar.com/fr/</loc>
-        <lastmod>2026-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/" />
     </url>
-    
-    <!-- Spanish Homepage -->
     <url>
         <loc>https://orhar.com/es/</loc>
-        <lastmod>2026-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/" />
     </url>
-    
-    <!-- German Homepage -->
     <url>
         <loc>https://orhar.com/de/</loc>
-        <lastmod>2026-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/" />
     </url>
-    
-    <!-- Italian Homepage -->
     <url>
         <loc>https://orhar.com/it/</loc>
-        <lastmod>2026-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/" />
     </url>
-    
-    <!-- Portuguese Homepage -->
     <url>
         <loc>https://orhar.com/pt/</loc>
-        <lastmod>2026-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/" />
     </url>
-    
-    <!-- Polish Homepage -->
     <url>
         <loc>https://orhar.com/pl/</loc>
-        <lastmod>2026-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/" />
     </url>
-    
-    <!-- Contact & Support -->
+    <url>
+        <loc>https://orhar.com/en/appdemo.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/appdemo.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/fr/appdemo.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/appdemo.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/es/appdemo.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/appdemo.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/de/appdemo.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/appdemo.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/it/appdemo.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/appdemo.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/pt/appdemo.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/appdemo.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/pl/appdemo.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/appdemo.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/appdemo.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/en/preview.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/preview.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/preview.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/preview.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/preview.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/preview.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/preview.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/preview.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/preview.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/fr/preview.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/preview.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/preview.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/preview.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/preview.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/preview.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/preview.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/preview.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/preview.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/es/preview.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/preview.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/preview.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/preview.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/preview.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/preview.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/preview.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/preview.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/preview.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/de/preview.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/preview.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/preview.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/preview.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/preview.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/preview.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/preview.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/preview.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/preview.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/it/preview.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/preview.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/preview.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/preview.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/preview.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/preview.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/preview.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/preview.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/preview.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/pt/preview.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/preview.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/preview.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/preview.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/preview.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/preview.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/preview.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/preview.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/preview.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/pl/preview.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/preview.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/preview.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/preview.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/preview.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/preview.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/preview.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/preview.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/preview.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/en/app.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/app.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/app.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/app.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/app.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/app.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/app.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/app.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/app.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/fr/app.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/app.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/app.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/app.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/app.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/app.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/app.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/app.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/app.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/es/app.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/app.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/app.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/app.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/app.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/app.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/app.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/app.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/app.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/de/app.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/app.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/app.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/app.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/app.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/app.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/app.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/app.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/app.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/it/app.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/app.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/app.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/app.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/app.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/app.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/app.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/app.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/app.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/pt/app.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/app.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/app.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/app.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/app.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/app.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/app.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/app.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/app.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/pl/app.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/app.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/app.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/app.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/app.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/app.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/app.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/app.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/app.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/en/actuality.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/actuality.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/fr/actuality.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/actuality.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/es/actuality.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/actuality.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/de/actuality.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/actuality.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/it/actuality.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/actuality.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/pt/actuality.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/actuality.html" />
+    </url>
+    <url>
+        <loc>https://orhar.com/pl/actuality.html</loc>
+        <lastmod>2026-10-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://orhar.com/fr/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://orhar.com/es/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://orhar.com/de/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="it" href="https://orhar.com/it/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://orhar.com/pt/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="pl" href="https://orhar.com/pl/actuality.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://orhar.com/en/actuality.html" />
+    </url>
     <url>
         <loc>https://orhar.com/contact.html</loc>
-        <lastmod>2026-10-01</lastmod>
+        <lastmod>2026-10-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-    
-    <!-- Privacy Policy -->
     <url>
         <loc>https://orhar.com/privacy.html</loc>
-        <lastmod>2026-10-01</lastmod>
+        <lastmod>2026-10-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
-
-    <!-- Terms of Service -->
     <url>
         <loc>https://orhar.com/terms.html</loc>
-        <lastmod>2026-10-01</lastmod>
+        <lastmod>2026-10-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
-
-    <!-- Open Source Licenses -->
     <url>
         <loc>https://orhar.com/licenses.html</loc>
-        <lastmod>2026-10-01</lastmod>
+        <lastmod>2026-10-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
-
-    <!-- Localized news, gallery and download pages -->
-    <url><loc>https://orhar.com/en/actuality.html</loc><lastmod>2026-10-01</lastmod><priority>0.7</priority></url>
-    <url><loc>https://orhar.com/fr/actuality.html</loc><lastmod>2026-10-01</lastmod><priority>0.7</priority></url>
-    <url><loc>https://orhar.com/es/actuality.html</loc><lastmod>2026-10-01</lastmod><priority>0.7</priority></url>
-    <url><loc>https://orhar.com/de/actuality.html</loc><lastmod>2026-10-01</lastmod><priority>0.7</priority></url>
-    <url><loc>https://orhar.com/it/actuality.html</loc><lastmod>2026-10-01</lastmod><priority>0.7</priority></url>
-    <url><loc>https://orhar.com/pt/actuality.html</loc><lastmod>2026-10-01</lastmod><priority>0.7</priority></url>
-    <url><loc>https://orhar.com/pl/actuality.html</loc><lastmod>2026-10-01</lastmod><priority>0.7</priority></url>
-    <url><loc>https://orhar.com/en/preview.html</loc><lastmod>2026-10-01</lastmod><priority>0.7</priority></url>
-    <url><loc>https://orhar.com/fr/preview.html</loc><lastmod>2026-10-01</lastmod><priority>0.7</priority></url>
-    <url><loc>https://orhar.com/es/preview.html</loc><lastmod>2026-10-01</lastmod><priority>0.7</priority></url>
-    <url><loc>https://orhar.com/de/preview.html</loc><lastmod>2026-10-01</lastmod><priority>0.7</priority></url>
-    <url><loc>https://orhar.com/it/preview.html</loc><lastmod>2026-10-01</lastmod><priority>0.7</priority></url>
-    <url><loc>https://orhar.com/pt/preview.html</loc><lastmod>2026-10-01</lastmod><priority>0.7</priority></url>
-    <url><loc>https://orhar.com/pl/preview.html</loc><lastmod>2026-10-01</lastmod><priority>0.7</priority></url>
-    <url><loc>https://orhar.com/en/app.html</loc><lastmod>2026-10-01</lastmod><priority>0.6</priority></url>
-    <url><loc>https://orhar.com/fr/app.html</loc><lastmod>2026-10-01</lastmod><priority>0.6</priority></url>
-    <url><loc>https://orhar.com/es/app.html</loc><lastmod>2026-10-01</lastmod><priority>0.6</priority></url>
-    <url><loc>https://orhar.com/de/app.html</loc><lastmod>2026-10-01</lastmod><priority>0.6</priority></url>
-    <url><loc>https://orhar.com/it/app.html</loc><lastmod>2026-10-01</lastmod><priority>0.6</priority></url>
-    <url><loc>https://orhar.com/pt/app.html</loc><lastmod>2026-10-01</lastmod><priority>0.6</priority></url>
-    <url><loc>https://orhar.com/pl/app.html</loc><lastmod>2026-10-01</lastmod><priority>0.6</priority></url>
-    
 </urlset>

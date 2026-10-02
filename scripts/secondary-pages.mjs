@@ -73,11 +73,11 @@ export const demoLabels = {
     videoTitle: 'Aperçu Cinématique de l’App',
     videoSubtitle: 'Une découverte visuelle de l’ascension spirituelle et de l’interface épurée d’ORHAR.',
     audioTitle: 'Expérience Audio & Méditation',
-    audioSubtitle: 'Découvrez la narration par voix naturelle IA et les ambiances sonores contemplatives.',
+    audioSubtitle: 'Découvrez la narration par voix naturelle et les ambiances sonores contemplatives.',
     audioCards: [
-      ['fa-microphone-lines', 'Voix Naturelle IA', 'Une lecture biblique fluide avec intonation respectueuse et claire pour chaque chapitre.'],
+      ['fa-microphone-lines', 'Voix Naturelle', 'Une lecture biblique fluide avec intonation respectueuse et claire pour chaque chapitre.'],
       ['fa-mountain-sun', 'Ambiances Sonores', 'Des paysages sonores apaisants (Montagne de lumière, pluie douce, sanctuaire) pour accompagner votre prière.'],
-      ['fa-compass', 'Cheminement MyPath', 'Parcours quotidien guidé, calendrier liturgique et méditations personnalisées.']
+      ['fa-compass', 'Mon Chemin', 'Parcours quotidien guidé, calendrier liturgique et méditations personnalisées.']
     ],
     readerTitle: 'Bibliothèque & Lecteur Biblique',
     readerSubtitle: 'Une expérience de lecture pure, rapide et personnalisable.',
@@ -93,11 +93,11 @@ export const demoLabels = {
     videoTitle: 'Cinematic App Teaser',
     videoSubtitle: 'A visual discovery of the spiritual journey and the serene design of ORHAR.',
     audioTitle: 'Voice & Meditation Experience',
-    audioSubtitle: 'Discover natural AI voice narration and immersive ambient soundscapes.',
+    audioSubtitle: 'Discover natural voice narration and immersive ambient soundscapes.',
     audioCards: [
-      ['fa-microphone-lines', 'Natural AI Voice', 'Smooth Scripture reading with respectful, clear intonation for every chapter.'],
+      ['fa-microphone-lines', 'Natural Voice', 'Smooth Scripture reading with respectful, clear intonation for every chapter.'],
       ['fa-mountain-sun', 'Ambient Soundscapes', 'Peaceful background atmospheres (Mountain of Light, gentle rain, serene sanctuary) for your prayer time.'],
-      ['fa-compass', 'MyPath Daily Journey', 'Guided daily track, liturgical calendar, and personalised meditations.']
+      ['fa-compass', 'My Path', 'Guided daily track, liturgical calendar, and personalised meditations.']
     ],
     readerTitle: 'Bible Library & Scripture Reader',
     readerSubtitle: 'A pure, fast, and customizable reading experience.',
@@ -113,11 +113,11 @@ export const demoLabels = {
     videoTitle: 'Teaser Cinemático de la App',
     videoSubtitle: 'Un descubrimiento visual del ascenso espiritual y el diseño sereno de ORHAR.',
     audioTitle: 'Experiencia de Voz y Meditación',
-    audioSubtitle: 'Descubre la narración por voz natural con IA y paisajes sonoros contemplativos.',
+    audioSubtitle: 'Descubre la narración por voz natural y paisajes sonoros contemplativos.',
     audioCards: [
-      ['fa-microphone-lines', 'Voz Natural con IA', 'Lectura fluida de las Escrituras con entonación clara y respetuosa para cada capítulo.'],
+      ['fa-microphone-lines', 'Voz Natural', 'Lectura fluida de las Escrituras con entonación clara y respetuosa para cada capítulo.'],
       ['fa-mountain-sun', 'Paisajes Sonoros', 'Ambientes de fondo relajantes para acompañar tu momento de oración.'],
-      ['fa-compass', 'Camino MyPath', 'Itinerario diario guiado, calendario litúrgico y meditaciones personalizadas.']
+      ['fa-compass', 'Mi Sendero', 'Itinerario diario guiado, calendario litúrgico y meditaciones personalizadas.']
     ],
     readerTitle: 'Biblioteca Bíblica y Lector',
     readerSubtitle: 'Una experiencia de lectura pura, rápida y personalizable.',
@@ -133,11 +133,11 @@ export const demoLabels = {
     videoTitle: 'Kinoreifer App-Teaser',
     videoSubtitle: 'Eine visuelle Reise durch den geistlichen Aufstieg und das klare Design von ORHAR.',
     audioTitle: 'Stimm- & Meditationserlebnis',
-    audioSubtitle: 'Entdecke natürliche KI-Stimmenlesung und beruhigende Klanglandschaften.',
+    audioSubtitle: 'Entdecke natürliche Stimmenlesung und beruhigende Klanglandschaften.',
     audioCards: [
-      ['fa-microphone-lines', 'Natürliche KI-Stimme', 'Flüssiges Vorlesen der Schrift mit respektvoller und klarer Intonation.'],
+      ['fa-microphone-lines', 'Natürliche Stimme', 'Flüssiges Vorlesen der Schrift mit respektvoller und klarer Intonation.'],
       ['fa-mountain-sun', 'Klanglandschaften', 'Friedliche Hintergrundklänge für deine persönliche Gebetszeit.'],
-      ['fa-compass', 'MyPath Tagesweg', 'Geführter Tagespfad, liturgischer Kalender und individuelle Meditationen.']
+      ['fa-compass', 'Mein Weg', 'Geführter Tagespfad, liturgischer Kalender und individuelle Meditationen.']
     ],
     readerTitle: 'Bibelbibliothek & Leseansicht',
     readerSubtitle: 'Ein pures, schnelles und anpassbares Leseerlebnis.',
@@ -153,14 +153,14 @@ export const demoLabels = {
     videoTitle: 'Teaser Cinematico dell’App',
     videoSubtitle: 'Una scoperta visiva dell’ascesa spirituale e del design essenziale di ORHAR.',
     audioTitle: 'Esperienza Audio & Meditazione',
-    audioSubtitle: 'Scopri la narrazione con voce naturale IA e paesaggi sonori contemplativi.',
+    audioSubtitle: 'Scopri la narrazione con voce naturale e paesaggi sonori contemplativi.',
     audioCards: [
-      ['fa-microphone-lines', 'Voce Naturale IA', 'Lettura fluida della Scrittura con intonazione chiara e rispettosa per ogni capitolo.'],
+      ['fa-microphone-lines', 'Voce Naturale', 'Lettura fluida della Scrittura con intonazione chiara e rispettosa per ogni capitolo.'],
       ['fa-mountain-sun', 'Paesaggi Sonori', 'Atmosfere di sottofondo rilassanti per accompagnare la tua preghiera.'],
-      ['fa-compass', 'Percorso MyPath', 'Cammino quotidiano guidato, calendario liturgico e meditazioni personalizzate.']
+      ['fa-compass', 'Il Mio Percorso', 'Cammino quotidiano guidato, calendario liturgico e meditazioni personalizzate.']
     ],
     readerTitle: 'Biblioteca & Lettura della Bibbia',
-    readerSubtitle: 'Un’esperienza di lettura pura, rapida e personalizzabile.',
+    readerSubtitle: 'Un’expérience di lettura pura, rapida e personalizzabile.',
     readerBody: 'Passa agevolmente da una versione biblica all’altra. Regola i caratteri, evidenzia i versetti e medita in pace.',
     ctaQuiz: 'Prova il Quiz ↓',
     ctaApp: 'Scarica l’App ↗'
@@ -173,11 +173,11 @@ export const demoLabels = {
     videoTitle: 'Teaser Cinemático do App',
     videoSubtitle: 'Uma descoberta visual da subida espiritual e do design sereno do ORHAR.',
     audioTitle: 'Experiência de Voz e Meditação',
-    audioSubtitle: 'Descubra a narração por voz natural com IA e paisagens sonoras contemplativas.',
+    audioSubtitle: 'Descubra a narração por voz natural e paisagens sonoras contemplativas.',
     audioCards: [
-      ['fa-microphone-lines', 'Voz Natural com IA', 'Leitura bíblica fluida com entonação clara e respeitosa para cada capítulo.'],
+      ['fa-microphone-lines', 'Voz Natural', 'Leitura bíblica fluida com entonação clara e respeitosa para cada capítulo.'],
       ['fa-mountain-sun', 'Paisagens Sonoras', 'Ambientes sonoros relaxantes para acompanhar seu momento de oração.'],
-      ['fa-compass', 'Jornada MyPath', 'Caminho diário guiado, calendário litúrgico e meditações personalizadas.']
+      ['fa-compass', 'Meu Caminho', 'Caminho diário guiado, calendário litúrgico e meditações personalizadas.']
     ],
     readerTitle: 'Biblioteca Bíblica e Leitor',
     readerSubtitle: 'Uma experiência de leitura pura, rápida e personalizável.',
@@ -193,11 +193,11 @@ export const demoLabels = {
     videoTitle: 'Filmowa Zapowiedź Aplikacji',
     videoSubtitle: 'Wizualne odkrycie duchowej wspinaczki i harmonijnego projektu ORHAR.',
     audioTitle: 'Głos i Medytacja',
-    audioSubtitle: 'Poznaj naturalne czytanie głosem AI oraz kojące tła dźwiękowe.',
+    audioSubtitle: 'Poznaj naturalne czytanie głosem oraz kojące tła dźwiękowe.',
     audioCards: [
-      ['fa-microphone-lines', 'Naturalny Głos AI', 'Płynna lektura Pisma z szacunkiem i wyraźną intonacją dla każdego rozdziału.'],
+      ['fa-microphone-lines', 'Naturalny Głos', 'Płynna lektura Pisma z szacunkiem i wyraźną intonacją dla każdego rozdziału.'],
       ['fa-mountain-sun', 'Klimaty Dźwiękowe', 'Spokojne tła dźwiękowe do osobistej modlitwy.'],
-      ['fa-compass', 'Droga MyPath', 'Prowadzona ścieżka codzienna, kalendarz liturgiczny i medytacje.']
+      ['fa-compass', 'Moja Ścieżka', 'Prowadzona ścieżka codzienna, kalendarz liturgiczny i medytacje.']
     ],
     readerTitle: 'Biblioteka i Czytnik Biblii',
     readerSubtitle: 'Czyste, szybkie i elastyczne doświadczenie lektury.',
@@ -210,6 +210,128 @@ export const demoLabels = {
 export const navDemoLabels = Object.fromEntries(
   Object.entries(demoLabels).map(([code, locale]) => [code, locale.nav])
 );
+
+export const soundscapeSamples = {
+  fr: {
+    heading: 'Écoutez nos Compositions Originales',
+    subheading: 'Deux extraits musicaux conçus pour la méditation et la prière, composés et spatialisés exclusivement pour l’expérience ORHAR.',
+    usageTitle: 'Rôle dans l’application',
+    loopBadge: 'Boucle Continue · 10s',
+    loopTag: 'Ambiance sonore',
+    loopTitle: 'Prière du Soir (Evening Prayer)',
+    loopDesc: 'Une texture contemplative douce et apaisante, conçue pour accompagner la prière du crépuscule et le recueillement nocturne. Les accords harmoniques chauds et l’espace réverbéré créent un cocon de sérénité sans jamais distraire la lecture.',
+    loopUsage: 'Ce son d’ambiance est conçu pour jouer en boucle continue en arrière-plan (background) tout au long de votre navigation dans l’application, et se superposer harmonieusement à la lecture audio des textes de la Bible pour une immersion spirituelle profonde.',
+    loopDetails: 'Style : Ambiant méditatif · Boucle sans coupure · Registre doux & contemplatif',
+    masterpieceBadge: 'Masterpiece Symphonique · 10m40',
+    masterpieceTag: 'Concerto pour Piano',
+    masterpieceTitle: 'Piano Romantique (Romantic Piano)',
+    masterpieceDesc: 'Un chef-d’œuvre symphonique en 3 mouvements inspiré des concertos de Frédéric Chopin, du lyrisme de Robert Schumann et de la puissance orchestrale de Johannes Brahms. De l’Allegro orageux au nocturne intimiste du Larghetto jusqu’au Rondo étincelant en Mi majeur, le piano virtuose dialogue en continu avec l’orchestre.',
+    masterpieceQuote: '« Il fait toute chose bonne en son temps; même il a mis dans leur cœur la pensée de l’éternité, bien que l’homme ne puisse pas saisir l’œuvre que Dieu fait, du commencement jusqu’à la fin. » — Ecclésiaste 3, 11',
+    masterpieceDetails: 'Structure : I. Allegro maestoso · II. Larghetto Romance · III. Rondo finale | Tonalités : Mi mineur harmonique, Si majeur, Mi majeur'
+  },
+  en: {
+    heading: 'Listen to Original Compositions',
+    subheading: 'Two audio excerpts crafted for prayer and meditation, composed and spatialized exclusively for the ORHAR experience.',
+    usageTitle: 'In-App Experience',
+    loopBadge: 'Seamless Loop · 10s',
+    loopTag: 'Ambient Soundscape',
+    loopTitle: 'Evening Prayer',
+    loopDesc: 'A soft, soothing contemplative texture designed for dusk prayer and night meditation. Warm harmonic pads and delicate reverberation create a peaceful cocoon that enriches spiritual reading without distraction.',
+    loopUsage: 'This ambient soundscape plays as a seamless background loop throughout your navigation in the app, blending harmoniously with audio scripture readings for a deeply peaceful and immersive experience.',
+    loopDetails: 'Style: Meditative Ambient · Seamless Crossfade · Gentle & Contemplative Register',
+    masterpieceBadge: 'Symphonic Masterpiece · 10m40',
+    masterpieceTag: 'Piano Concerto',
+    masterpieceTitle: 'Romantic Piano',
+    masterpieceDesc: 'A complete 3-movement symphonic concerto inspired by Frédéric Chopin’s piano concertos, Robert Schumann’s lyrical dialogue, and Johannes Brahms’ orchestral depth. From the stormy Allegro through the tender Larghetto nocturne to a triumphant E major Rondo finale, the singing virtuoso piano weaves an evocative conversation with the orchestra.',
+    masterpieceQuote: '“He has made everything beautiful in its time. He has also set eternity in their hearts, yet so that man can’t find out the work that God has done from the beginning even to the end.” — Ecclesiastes 3:11',
+    masterpieceDetails: 'Structure: I. Allegro maestoso · II. Larghetto Romance · III. Rondo finale | Keys: E harmonic minor, B major, E major'
+  },
+  es: {
+    heading: 'Escucha Nuestras Composiciones Originales',
+    subheading: 'Dos extractos musicales diseñados para la meditación y la oración, compuestos y espacializados para la experiencia ORHAR.',
+    usageTitle: 'Uso en la aplicación',
+    loopBadge: 'Bucle Continuo · 10s',
+    loopTag: 'Ambiente Sonoro',
+    loopTitle: 'Oración de la Noche (Evening Prayer)',
+    loopDesc: 'Una textura contemplativa suave y serena, diseñada para acompañar la oración del atardecer y el recogimiento nocturno. Almohadillas armónicas cálidas y resonancias sutiles crean un espacio de paz.',
+    loopUsage: 'Este ambiente sonoro se reproduce en bucle continuo en segundo plano (background) mientras navegas por la app o escuchas las lecturas bíblicas narradas, creando un entorno de recogimiento sin distracciones.',
+    loopDetails: 'Estilo: Ambiental Meditativo · Transición Continua · Registro Suave y Contemplativo',
+    masterpieceBadge: 'Obra Maestra Sinfónica · 10m40',
+    masterpieceTag: 'Concierto para Piano',
+    masterpieceTitle: 'Piano Romántico (Romantic Piano)',
+    masterpieceDesc: 'Un concierto sinfónico en 3 movimientos inspirado en los conciertos de Frédéric Chopin, el lirismo de Robert Schumann y la riqueza orquestal de Johannes Brahms. Del impetuoso Allegro al nocturno íntimo del Larghetto y al brillante Rondo final en Mi mayor, el piano canta en continuo diálogo con la orquesta.',
+    masterpieceQuote: '« Todo lo hizo hermoso en su tiempo: y aun el mundo dió en su corazón, de tal manera que no alcance el hombre la obra de Dios desde el principio hasta el cabo. » — Eclesiastés 3:11',
+    masterpieceDetails: 'Estructura: I. Allegro maestoso · II. Larghetto Romance · III. Rondo finale | Tonalidades: Mi menor armónico, Si mayor, Mi mayor'
+  },
+  de: {
+    heading: 'Höre Unsere Originalkompositionen',
+    subheading: 'Zwei musikalische Auszüge für Gebet und Meditation, exklusiv für das ORHAR-Erlebnis komponiert und arrangiert.',
+    usageTitle: 'Nutzung in der App',
+    loopBadge: 'Endlosschleife · 10s',
+    loopTag: 'Klanglandschaft',
+    loopTitle: 'Abendgebet (Evening Prayer)',
+    loopDesc: 'Eine sanfte, beruhigende Textur für das Abendgebet und die nächtliche Stille. Warme harmonische Klänge und behutsamer Nachhall schaffen einen friedvollen Raum für die Schriftlesung.',
+    loopUsage: 'Diese Klanglandschaft läuft als kontinuierliche Endlosschleife im Hintergrund während der App-Nutzung und untermalt harmonisch das Audio-Vorlesen der Bibeltexte für ein vertieftes Hörerlebnis.',
+    loopDetails: 'Stil: Meditatives Ambient · Nahtloser Übergang · Sanftes & kontemplatives Register',
+    masterpieceBadge: 'Sinfonisches Meisterwerk · 10m40',
+    masterpieceTag: 'Klavierkonzert',
+    masterpieceTitle: 'Romantisches Klavier (Romantic Piano)',
+    masterpieceDesc: 'Ein vollständiges 3-sätziges Klavierkonzert, inspiriert von Frédéric Chopins Klavierkonzerten, Robert Schumanns lyrischem Dialog und Johannes Brahms’ sinfonischer Dichte. Vom stürmischen Allegro über das innige Nocturne des Larghetto bis zum strahlenden E-Dur Rondo-Finale entfaltet das Klavier einen tiefgründigen Dialog mit dem Orchester.',
+    masterpieceQuote: '„Er aber tut alles fein zu seiner Zeit und läßt ihr Herz sich ängsten, wie es gehen solle in der Welt; denn der Mensch kann doch nicht treffen das Werk, das Gott tut, weder Anfang noch Ende.“ — Prediger 3,11',
+    masterpieceDetails: 'Struktur: I. Allegro maestoso · II. Larghetto Romance · III. Rondo finale | Tonarten: E-Moll harmonisch, H-Dur, E-Dur'
+  },
+  it: {
+    heading: 'Ascolta le Nostre Composizioni Originali',
+    subheading: 'Due estratti musicali creati per la preghiera e la meditazione, composti e spazializzati per l’esperienza ORHAR.',
+    usageTitle: 'Uso nell’applicazione',
+    loopBadge: 'Loop Continuo · 10s',
+    loopTag: 'Paesaggio Sonoro',
+    loopTitle: 'Preghiera della Sera (Evening Prayer)',
+    loopDesc: 'Una trama contemplativa dolce e rilassante, pensata per accompagnare la preghiera della sera. Pad armonici caldi e un riverbero delicato creano un’atmosfera di pace per la meditazione.',
+    loopUsage: 'Questo suono d’ambiente viene riprodotto in loop continuo in sottofondo durante l’intera navigazione nell’app e si unisce all’ascolto audio dei testi sacri per un raccoglimento senza distrazioni.',
+    loopDetails: 'Stile: Ambient Meditativo · Dissolvenza Continua · Registro Dolce & Contemplativo',
+    masterpieceBadge: 'Capolavoro Sinfonico · 10m40',
+    masterpieceTag: 'Concerto per Pianoforte',
+    masterpieceTitle: 'Pianoforte Romantico (Romantic Piano)',
+    masterpieceDesc: 'Un concerto sinfonico in 3 movimenti ispirato ai concerti per pianoforte di Frédéric Chopin, al lirismo di Robert Schumann e alla potenza orchestrale di Johannes Brahms. Dall’Allegro tempestoso al notturno intimo del Larghetto fino al radioso Rondò finale in Mi maggiore, il pianoforte virtuoso dialoga con l’orchestra.',
+    masterpieceQuote: '« Egli ha fatta ogni cosa bella nella sua stagione: ha eziandio posto l\'eternità nel cuor degli uomini, senza che però l\'uomo possa giammai rinvenir l\'opere che Iddio ha fatte, da capo al fine. » — Ecclesiaste 3:11',
+    masterpieceDetails: 'Struttura: I. Allegro maestoso · II. Larghetto Romance · III. Rondò finale | Tonalità: Mi minore armonico, Si maggiore, Mi maggiore'
+  },
+  pt: {
+    heading: 'Ouça Nossas Composições Originais',
+    subheading: 'Dois trechos musicais concebidos para oração e meditação, compostos e espacializados para a experiência ORHAR.',
+    usageTitle: 'Uso no aplicativo',
+    loopBadge: 'Loop Contínuo · 10s',
+    loopTag: 'Paisagem Sonora',
+    loopTitle: 'Oração da Noite (Evening Prayer)',
+    loopDesc: 'Uma textura contemplativa suave e serena, criada para acompanhar a oração do crepúsculo. Acordes harmônicos calorosos e reverberação delicada criam um refúgio de paz para a leitura espiritual.',
+    loopUsage: 'Este som ambiente toca em loop contínuo em segundo plano (background) durante toda a navegação no app e acompanha com suavidade a leitura em áudio dos textos sagrados.',
+    loopDetails: 'Estilo: Ambiente Meditativo · Transição Suave · Registro Sereno & Contemplativo',
+    masterpieceBadge: 'Obra-Prima Sinfônica · 10m40',
+    masterpieceTag: 'Concerto para Piano',
+    masterpieceTitle: 'Piano Romântico (Romantic Piano)',
+    masterpieceDesc: 'Um concerto sinfônico completo em 3 movimentos inspirado nos concertos de Frédéric Chopin, no lirismo de Robert Schumann e na densidade orquestral de Johannes Brahms. Do Allegro tempestuoso ao noturno íntimo do Larghetto e ao triunfante Rondó final em Mi maior, o piano virtuoso dialoga em harmonia com a orquestra.',
+    masterpieceQuote: '« Ele tornou tudo belo em seu tempo. Ele também colocou a eternidade em seus corações, mas para que o homem não possa descobrir o trabalho que Deus tem feito desde o início até o fim. » — Eclesiastes 3:11',
+    masterpieceDetails: 'Estrutura: I. Allegro maestoso · II. Larghetto Romance · III. Rondó finale | Tonalidades: Mi menor harmônico, Si maior, Mi maior'
+  },
+  pl: {
+    heading: 'Posłuchaj Naszych Oryginalnych Kompozycji',
+    subheading: 'Dwa fragmenty muzyczne stworzone do modlitwy i medytacji, skomponowane i przestrzenne specjalnie dla doświadczenia ORHAR.',
+    usageTitle: 'Zastosowanie w aplikacji',
+    loopBadge: 'Pętla Ciągła · 10s',
+    loopTag: 'Klimat Dźwiękowy',
+    loopTitle: 'Wieczorna Modlitwa (Evening Prayer)',
+    loopDesc: 'Łagodna, kojąca tekstura kontemplacyjna stworzona do wieczornej modlitwy i wyciszenia. Ciepłe pady harmoniczne i delikatny pogłos tworzą atmosferę pokoju sprzyjającą skupieniu.',
+    loopUsage: 'To tło dźwiękowe odtwarza się w ciągłej pętli w tle (background) podczas poruszania się po aplikacji i współgra z lekturą audio tekstów Pisma Świętego dla pełnego skupienia.',
+    loopDetails: 'Styl: Medytacyjny Ambient · Płynne Przejście · Rejestr Delikatny i Kontemplacyjny',
+    masterpieceBadge: 'Symfoniczne Arcydzieło · 10m40',
+    masterpieceTag: 'Koncert Fortepianowy',
+    masterpieceTitle: 'Romantyczny Fortepian (Romantic Piano)',
+    masterpieceDesc: 'Pełny 3-częściowy koncert fortepianowy inspirowany koncertami Fryderyka Chopina, lirycznym dialogiem Roberta Schumanna i symfoniczną głębią Johannesa Brahmsa. Od burzliwego Allegro przez intymny nokturn Larghetto po promienny finał Rondo w E-dur, wirtuozowski fortepian śpiewa w nieustannym dialogu z orkiestrą.',
+    masterpieceQuote: '„Wszystko dobrze uczynił w swoim czasie. Włożył także świat w ich serca, mimo że człowiek nie zdoła pojąć dzieła, którego Bóg dokonuje od początku do końca.” — Księga Koheleta 3,11',
+    masterpieceDetails: 'Struktura: I. Allegro maestoso · II. Larghetto Romance · III. Rondo finale | Tonacje: e-moll harmoniczny, H-dur, E-dur'
+  }
+};
 
 export const quizLabels = {
   fr: {
@@ -424,6 +546,7 @@ export function writeSecondaryPages(root) {
   for (const code of Object.keys(copy)) {
     const c = copy[code];
     const d = demoLabels[code];
+    const s = soundscapeSamples[code] || soundscapeSamples.en;
     const localeKeys = localeScreens[code];
 
     // 1. Gallery Page (preview.html)
@@ -495,6 +618,59 @@ export function writeSecondaryPages(root) {
               <p>${text}</p>
             </article>
           `).join('')}
+        </div>
+
+        <!-- AMBIENT & MASTERPIECE SHOWCASE PLAYERS -->
+        <div class="demo-soundscapes-header reveal">
+          <h3>${s.heading}</h3>
+          <p>${s.subheading}</p>
+        </div>
+
+        <div class="demo-soundscapes-showcase reveal">
+          <!-- Card 1: Evening Prayer Loop -->
+          <article class="soundscape-player-card">
+            <div class="soundscape-card-top">
+              <span class="soundscape-badge"><i class="fa-solid fa-arrows-rotate"></i> ${s.loopBadge}</span>
+              <span class="soundscape-tag"><i class="fa-solid fa-moon"></i> ${s.loopTag}</span>
+            </div>
+            <div class="soundscape-card-body">
+              <h4>${s.loopTitle}</h4>
+              <p class="soundscape-desc">${s.loopDesc}</p>
+              <div class="soundscape-app-usage">
+                <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+                <p><strong>${s.usageTitle} :</strong> ${s.loopUsage}</p>
+              </div>
+              <div class="soundscape-meta">
+                <span><i class="fa-solid fa-sliders"></i> ${s.loopDetails}</span>
+              </div>
+            </div>
+            <div class="soundscape-card-player">
+              <audio controls loop preload="none" aria-label="${s.loopTitle}">
+                <source src="/assets/audio/evening_prayer_ambient.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </article>
+
+          <!-- Card 2: Romantic Piano Masterpiece -->
+          <article class="soundscape-player-card masterpiece-card">
+            <div class="soundscape-card-top">
+              <span class="soundscape-badge masterpiece-badge"><i class="fa-solid fa-crown"></i> ${s.masterpieceBadge}</span>
+              <span class="soundscape-tag"><i class="fa-solid fa-compact-disc"></i> ${s.masterpieceTag}</span>
+            </div>
+            <div class="soundscape-card-body">
+              <h4>${s.masterpieceTitle}</h4>
+              <p class="soundscape-desc">${s.masterpieceDesc}</p>
+              <blockquote class="soundscape-quote">${s.masterpieceQuote}</blockquote>
+              <div class="soundscape-meta">
+                <span><i class="fa-solid fa-music"></i> ${s.masterpieceDetails}</span>
+              </div>
+            </div>
+            <div class="soundscape-card-player">
+              <audio controls preload="none" aria-label="${s.masterpieceTitle}">
+                <source src="/assets/audio/romantic_piano_masterpiece.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </article>
         </div>
       </div>
     </section>

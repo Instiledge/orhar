@@ -232,122 +232,122 @@ export const navDemoLabels = Object.fromEntries(
 export const soundscapeSamples = {
   fr: {
     heading: 'Écoutez nos Compositions Originales',
-    subheading: 'Deux extraits musicaux conçus pour la méditation et la prière, composés et spatialisés exclusivement pour l’expérience ORHAR.',
+    subheading: 'Deux œuvres complètes offertes dans ORHAR, composées pour accompagner la prière, la méditation et la lecture biblique.',
     usageTitle: 'Rôle dans l’application',
-    loopBadge: 'Boucle Continue · 10s',
-    loopTag: 'Ambiance sonore',
-    loopTitle: 'Prière du Soir (Evening Prayer)',
-    loopDesc: 'Une texture contemplative douce et apaisante, conçue pour accompagner la prière du crépuscule et le recueillement nocturne. Les accords harmoniques chauds et l’espace réverbéré créent un cocon de sérénité sans jamais distraire la lecture.',
-    loopUsage: 'Ce son d’ambiance est conçu pour jouer en boucle continue en arrière-plan (background) tout au long de votre navigation dans l’application, et se superposer harmonieusement à la lecture audio des textes de la Bible pour une immersion spirituelle profonde.',
-    loopDetails: 'Style : Ambiant méditatif · Boucle sans coupure · Registre doux & contemplatif',
-    masterpieceBadge: 'Masterpiece Symphonique · 10m40',
-    masterpieceTag: 'Concerto pour Piano',
-    masterpieceTitle: 'Piano Romantique (Romantic Piano)',
-    masterpieceDesc: 'Un chef-d’œuvre symphonique en 3 mouvements inspiré des concertos de Frédéric Chopin, du lyrisme de Robert Schumann et de la puissance orchestrale de Johannes Brahms. De l’Allegro orageux au nocturne intimiste du Larghetto jusqu’au Rondo étincelant en Mi majeur, le piano virtuose dialogue en continu avec l’orchestre.',
-    masterpieceQuote: '« Il fait toute chose bonne en son temps; même il a mis dans leur cœur la pensée de l’éternité, bien que l’homme ne puisse pas saisir l’œuvre que Dieu fait, du commencement jusqu’à la fin. » — Ecclésiaste 3, 11',
-    masterpieceDetails: 'Structure : I. Allegro maestoso · II. Larghetto Romance · III. Rondo finale | Tonalités : Mi mineur harmonique, Si majeur, Mi majeur'
+    loopBadge: 'Œuvre complète gratuite · 8 min 45',
+    loopTag: 'Jardin sonore sacré',
+    loopTitle: 'Le Jardin de Dieu',
+    loopDesc: 'Jardin sonore sacré : eau vive en fond discret, brise respirante, feuillage doux et phrases lumineuses de piano et clarinette.',
+    loopUsage: 'La version Présent (ambient) est proposée ici. Dans l’application, choisissez aussi les intensités Contemplatif et Profond selon votre moment de lecture ou de prière.',
+    loopDetails: 'Version écoutée : Présent · Cycle long composé · 3 intensités dans l’application',
+    masterpieceBadge: 'Œuvre complète gratuite · 8 min 30',
+    masterpieceTag: 'Piano sacré',
+    masterpieceTitle: 'De la Nuit à l’Aurore',
+    masterpieceDesc: 'Piano sacré méditatif et chaleureux, accompagnant la prière, le recueillement et la lecture biblique.',
+    masterpieceQuote: '',
+    masterpieceDetails: 'Version écoutée : Présent · Cycle long composé · 3 intensités dans l’application'
   },
   en: {
     heading: 'Listen to Original Compositions',
-    subheading: 'Two audio excerpts crafted for prayer and meditation, composed and spatialized exclusively for the ORHAR experience.',
+    subheading: 'Two complete works included free in ORHAR, composed for prayer, meditation and Scripture reading.',
     usageTitle: 'In-App Experience',
-    loopBadge: 'Seamless Loop · 10s',
-    loopTag: 'Ambient Soundscape',
-    loopTitle: 'Evening Prayer',
-    loopDesc: 'A soft, soothing contemplative texture designed for dusk prayer and night meditation. Warm harmonic pads and delicate reverberation create a peaceful cocoon that enriches spiritual reading without distraction.',
-    loopUsage: 'This ambient soundscape plays as a seamless background loop throughout your navigation in the app, blending harmoniously with audio scripture readings for a deeply peaceful and immersive experience.',
-    loopDetails: 'Style: Meditative Ambient · Seamless Crossfade · Gentle & Contemplative Register',
-    masterpieceBadge: 'Symphonic Masterpiece · 10m40',
-    masterpieceTag: 'Piano Concerto',
-    masterpieceTitle: 'Romantic Piano',
-    masterpieceDesc: 'A complete 3-movement symphonic concerto inspired by Frédéric Chopin’s piano concertos, Robert Schumann’s lyrical dialogue, and Johannes Brahms’ orchestral depth. From the stormy Allegro through the tender Larghetto nocturne to a triumphant E major Rondo finale, the singing virtuoso piano weaves an evocative conversation with the orchestra.',
-    masterpieceQuote: '“He has made everything beautiful in its time. He has also set eternity in their hearts, yet so that man can’t find out the work that God has done from the beginning even to the end.” — Ecclesiastes 3:11',
-    masterpieceDetails: 'Structure: I. Allegro maestoso · II. Larghetto Romance · III. Rondo finale | Keys: E harmonic minor, B major, E major'
+    loopBadge: 'Complete free work · 8 min 45',
+    loopTag: 'Sacred sound garden',
+    loopTitle: 'Garden of God',
+    loopDesc: 'A sacred garden soundscape: discreet living water, breathing breeze, soft foliage and luminous piano and clarinet phrases.',
+    loopUsage: 'The Present (ambient) version is available here. In the app, you can also choose Contemplative and Deep intensities for reading or prayer.',
+    loopDetails: 'Now playing: Present · Long-form composed cycle · 3 intensities in the app',
+    masterpieceBadge: 'Complete free work · 8 min 30',
+    masterpieceTag: 'Sacred piano',
+    masterpieceTitle: 'From Night to Dawn',
+    masterpieceDesc: 'A sacred, warm meditative piano composition accompanying prayer, contemplation and Scripture reading.',
+    masterpieceQuote: '',
+    masterpieceDetails: 'Now playing: Present · Long-form composed cycle · 3 intensities in the app'
   },
   es: {
     heading: 'Escucha Nuestras Composiciones Originales',
-    subheading: 'Dos extractos musicales diseñados para la meditación y la oración, compuestos y espacializados para la experiencia ORHAR.',
+    subheading: 'Dos obras completas gratuitas en ORHAR, compuestas para la oración, la meditación y la lectura bíblica.',
     usageTitle: 'Uso en la aplicación',
-    loopBadge: 'Bucle Continuo · 10s',
-    loopTag: 'Ambiente Sonoro',
-    loopTitle: 'Oración de la Noche (Evening Prayer)',
-    loopDesc: 'Una textura contemplativa suave y serena, diseñada para acompañar la oración del atardecer y el recogimiento nocturno. Almohadillas armónicas cálidas y resonancias sutiles crean un espacio de paz.',
-    loopUsage: 'Este ambiente sonoro se reproduce en bucle continuo en segundo plano (background) mientras navegas por la app o escuchas las lecturas bíblicas narradas, creando un entorno de recogimiento sin distracciones.',
-    loopDetails: 'Estilo: Ambiental Meditativo · Transición Continua · Registro Suave y Contemplativo',
-    masterpieceBadge: 'Obra Maestra Sinfónica · 10m40',
-    masterpieceTag: 'Concierto para Piano',
-    masterpieceTitle: 'Piano Romántico (Romantic Piano)',
-    masterpieceDesc: 'Un concierto sinfónico en 3 movimientos inspirado en los conciertos de Frédéric Chopin, el lirismo de Robert Schumann y la riqueza orquestal de Johannes Brahms. Del impetuoso Allegro al nocturno íntimo del Larghetto y al brillante Rondo final en Mi mayor, el piano canta en continuo diálogo con la orquesta.',
-    masterpieceQuote: '« Todo lo hizo hermoso en su tiempo: y aun el mundo dió en su corazón, de tal manera que no alcance el hombre la obra de Dios desde el principio hasta el cabo. » — Eclesiastés 3:11',
-    masterpieceDetails: 'Estructura: I. Allegro maestoso · II. Larghetto Romance · III. Rondo finale | Tonalidades: Mi menor armónico, Si mayor, Mi mayor'
+    loopBadge: 'Obra completa gratuita · 8 min 45',
+    loopTag: 'Jardín sonoro sagrado',
+    loopTitle: 'El Jardín de Dios',
+    loopDesc: 'Un jardín sonoro sagrado: agua viva discreta, brisa respirante, hojas suaves y frases luminosas de piano y clarinete.',
+    loopUsage: 'Aquí se presenta la versión Presente (ambient). En la aplicación también puedes elegir las intensidades Contemplativa y Profunda.',
+    loopDetails: 'Versión: Presente · Ciclo largo compuesto · 3 intensidades en la aplicación',
+    masterpieceBadge: 'Obra completa gratuita · 8 min 30',
+    masterpieceTag: 'Piano sagrado',
+    masterpieceTitle: 'De la Noche al Amanecer',
+    masterpieceDesc: 'Un piano sagrado meditativo y cálido que acompaña la oración, el recogimiento y la lectura bíblica.',
+    masterpieceQuote: '',
+    masterpieceDetails: 'Versión: Presente · Ciclo largo compuesto · 3 intensidades en la aplicación'
   },
   de: {
     heading: 'Höre Unsere Originalkompositionen',
-    subheading: 'Zwei musikalische Auszüge für Gebet und Meditation, exklusiv für das ORHAR-Erlebnis komponiert und arrangiert.',
+    subheading: 'Zwei vollständige, kostenlose Werke in ORHAR für Gebet, Meditation und Bibellesung.',
     usageTitle: 'Nutzung in der App',
-    loopBadge: 'Endlosschleife · 10s',
-    loopTag: 'Klanglandschaft',
-    loopTitle: 'Abendgebet (Evening Prayer)',
-    loopDesc: 'Eine sanfte, beruhigende Textur für das Abendgebet und die nächtliche Stille. Warme harmonische Klänge und behutsamer Nachhall schaffen einen friedvollen Raum für die Schriftlesung.',
-    loopUsage: 'Diese Klanglandschaft läuft als kontinuierliche Endlosschleife im Hintergrund während der App-Nutzung und untermalt harmonisch das Audio-Vorlesen der Bibeltexte für ein vertieftes Hörerlebnis.',
-    loopDetails: 'Stil: Meditatives Ambient · Nahtloser Übergang · Sanftes & kontemplatives Register',
-    masterpieceBadge: 'Sinfonisches Meisterwerk · 10m40',
-    masterpieceTag: 'Klavierkonzert',
-    masterpieceTitle: 'Romantisches Klavier (Romantic Piano)',
-    masterpieceDesc: 'Ein vollständiges 3-sätziges Klavierkonzert, inspiriert von Frédéric Chopins Klavierkonzerten, Robert Schumanns lyrischem Dialog und Johannes Brahms’ sinfonischer Dichte. Vom stürmischen Allegro über das innige Nocturne des Larghetto bis zum strahlenden E-Dur Rondo-Finale entfaltet das Klavier einen tiefgründigen Dialog mit dem Orchester.',
-    masterpieceQuote: '„Er aber tut alles fein zu seiner Zeit und läßt ihr Herz sich ängsten, wie es gehen solle in der Welt; denn der Mensch kann doch nicht treffen das Werk, das Gott tut, weder Anfang noch Ende.“ — Prediger 3,11',
-    masterpieceDetails: 'Struktur: I. Allegro maestoso · II. Larghetto Romance · III. Rondo finale | Tonarten: E-Moll harmonisch, H-Dur, E-Dur'
+    loopBadge: 'Vollständiges Gratiswerk · 8 Min. 45',
+    loopTag: 'Heiliger Klanggarten',
+    loopTitle: 'Garten Gottes',
+    loopDesc: 'Ein heiliger Klanggarten: dezentes lebendiges Wasser, atmende Brise, sanftes Laub und leuchtende Klavier- und Klarinettenphrasen.',
+    loopUsage: 'Hier hören Sie die Version Präsent (ambient). In der App stehen außerdem die Intensitäten Kontemplativ und Tief zur Verfügung.',
+    loopDetails: 'Version: Präsent · Komponierter Langzyklus · 3 Intensitäten in der App',
+    masterpieceBadge: 'Vollständiges Gratiswerk · 8 Min. 30',
+    masterpieceTag: 'Heiliges Klavier',
+    masterpieceTitle: 'Von der Nacht zur Morgenröte',
+    masterpieceDesc: 'Ein meditatives, warmes heiliges Klavierwerk zur Begleitung von Gebet, Andacht und Bibellesung.',
+    masterpieceQuote: '',
+    masterpieceDetails: 'Version: Präsent · Komponierter Langzyklus · 3 Intensitäten in der App'
   },
   it: {
     heading: 'Ascolta le Nostre Composizioni Originali',
-    subheading: 'Due estratti musicali creati per la preghiera e la meditazione, composti e spazializzati per l’esperienza ORHAR.',
+    subheading: 'Due opere complete gratuite in ORHAR, composte per la preghiera, la meditazione e la lettura biblica.',
     usageTitle: 'Uso nell’applicazione',
-    loopBadge: 'Loop Continuo · 10s',
-    loopTag: 'Paesaggio Sonoro',
-    loopTitle: 'Preghiera della Sera (Evening Prayer)',
-    loopDesc: 'Una trama contemplativa dolce e rilassante, pensata per accompagnare la preghiera della sera. Pad armonici caldi e un riverbero delicato creano un’atmosfera di pace per la meditazione.',
-    loopUsage: 'Questo suono d’ambiente viene riprodotto in loop continuo in sottofondo durante l’intera navigazione nell’app e si unisce all’ascolto audio dei testi sacri per un raccoglimento senza distrazioni.',
-    loopDetails: 'Stile: Ambient Meditativo · Dissolvenza Continua · Registro Dolce & Contemplativo',
-    masterpieceBadge: 'Capolavoro Sinfonico · 10m40',
-    masterpieceTag: 'Concerto per Pianoforte',
-    masterpieceTitle: 'Pianoforte Romantico (Romantic Piano)',
-    masterpieceDesc: 'Un concerto sinfonico in 3 movimenti ispirato ai concerti per pianoforte di Frédéric Chopin, al lirismo di Robert Schumann e alla potenza orchestrale di Johannes Brahms. Dall’Allegro tempestoso al notturno intimo del Larghetto fino al radioso Rondò finale in Mi maggiore, il pianoforte virtuoso dialoga con l’orchestra.',
-    masterpieceQuote: '« Egli ha fatta ogni cosa bella nella sua stagione: ha eziandio posto l\'eternità nel cuor degli uomini, senza che però l\'uomo possa giammai rinvenir l\'opere che Iddio ha fatte, da capo al fine. » — Ecclesiaste 3:11',
-    masterpieceDetails: 'Struttura: I. Allegro maestoso · II. Larghetto Romance · III. Rondò finale | Tonalità: Mi minore armonico, Si maggiore, Mi maggiore'
+    loopBadge: 'Opera completa gratuita · 8 min 45',
+    loopTag: 'Giardino sonoro sacro',
+    loopTitle: 'Il Giardino di Dio',
+    loopDesc: 'Un giardino sonoro sacro: acqua viva discreta, brezza respirante, foglie morbide e frasi luminose di pianoforte e clarinetto.',
+    loopUsage: 'Qui è disponibile la versione Presente (ambient). Nell’app puoi scegliere anche le intensità Contemplativa e Profonda.',
+    loopDetails: 'Versione: Presente · Ciclo lungo composto · 3 intensità nell’app',
+    masterpieceBadge: 'Opera completa gratuita · 8 min 30',
+    masterpieceTag: 'Pianoforte sacro',
+    masterpieceTitle: 'Dalla Notte all’Aurora',
+    masterpieceDesc: 'Un pianoforte sacro meditativo e caloroso che accompagna la preghiera, il raccoglimento e la lettura biblica.',
+    masterpieceQuote: '',
+    masterpieceDetails: 'Versione: Presente · Ciclo lungo composto · 3 intensità nell’app'
   },
   pt: {
     heading: 'Ouça Nossas Composições Originais',
-    subheading: 'Dois trechos musicais concebidos para oração e meditação, compostos e espacializados para a experiência ORHAR.',
+    subheading: 'Duas obras completas gratuitas no ORHAR, compostas para oração, meditação e leitura bíblica.',
     usageTitle: 'Uso no aplicativo',
-    loopBadge: 'Loop Contínuo · 10s',
-    loopTag: 'Paisagem Sonora',
-    loopTitle: 'Oração da Noite (Evening Prayer)',
-    loopDesc: 'Uma textura contemplativa suave e serena, criada para acompanhar a oração do crepúsculo. Acordes harmônicos calorosos e reverberação delicada criam um refúgio de paz para a leitura espiritual.',
-    loopUsage: 'Este som ambiente toca em loop contínuo em segundo plano (background) durante toda a navegação no app e acompanha com suavidade a leitura em áudio dos textos sagrados.',
-    loopDetails: 'Estilo: Ambiente Meditativo · Transição Suave · Registro Sereno & Contemplativo',
-    masterpieceBadge: 'Obra-Prima Sinfônica · 10m40',
-    masterpieceTag: 'Concerto para Piano',
-    masterpieceTitle: 'Piano Romântico (Romantic Piano)',
-    masterpieceDesc: 'Um concerto sinfônico completo em 3 movimentos inspirado nos concertos de Frédéric Chopin, no lirismo de Robert Schumann e na densidade orquestral de Johannes Brahms. Do Allegro tempestuoso ao noturno íntimo do Larghetto e ao triunfante Rondó final em Mi maior, o piano virtuoso dialoga em harmonia com a orquestra.',
-    masterpieceQuote: '« Ele tornou tudo belo em seu tempo. Ele também colocou a eternidade em seus corações, mas para que o homem não possa descobrir o trabalho que Deus tem feito desde o início até o fim. » — Eclesiastes 3:11',
-    masterpieceDetails: 'Estrutura: I. Allegro maestoso · II. Larghetto Romance · III. Rondó finale | Tonalidades: Mi menor harmônico, Si maior, Mi maior'
+    loopBadge: 'Obra completa gratuita · 8 min 45',
+    loopTag: 'Jardim sonoro sagrado',
+    loopTitle: 'O Jardim de Deus',
+    loopDesc: 'Um jardim sonoro sagrado: água viva discreta, brisa respirante, folhas suaves e frases luminosas de piano e clarinete.',
+    loopUsage: 'Aqui você ouve a versão Presente (ambient). No aplicativo também pode escolher as intensidades Contemplativa e Profunda.',
+    loopDetails: 'Versão: Presente · Ciclo longo composto · 3 intensidades no aplicativo',
+    masterpieceBadge: 'Obra completa gratuita · 8 min 30',
+    masterpieceTag: 'Piano sagrado',
+    masterpieceTitle: 'Da Noite à Aurora',
+    masterpieceDesc: 'Um piano sagrado meditativo e acolhedor que acompanha a oração, o recolhimento e a leitura bíblica.',
+    masterpieceQuote: '',
+    masterpieceDetails: 'Versão: Presente · Ciclo longo composto · 3 intensidades no aplicativo'
   },
   pl: {
     heading: 'Posłuchaj Naszych Oryginalnych Kompozycji',
-    subheading: 'Dwa fragmenty muzyczne stworzone do modlitwy i medytacji, skomponowane i przestrzenne specjalnie dla doświadczenia ORHAR.',
+    subheading: 'Dwa pełne, bezpłatne utwory w ORHAR, stworzone do modlitwy, medytacji i lektury Pisma Świętego.',
     usageTitle: 'Zastosowanie w aplikacji',
-    loopBadge: 'Pętla Ciągła · 10s',
-    loopTag: 'Klimat Dźwiękowy',
-    loopTitle: 'Wieczorna Modlitwa (Evening Prayer)',
-    loopDesc: 'Łagodna, kojąca tekstura kontemplacyjna stworzona do wieczornej modlitwy i wyciszenia. Ciepłe pady harmoniczne i delikatny pogłos tworzą atmosferę pokoju sprzyjającą skupieniu.',
-    loopUsage: 'To tło dźwiękowe odtwarza się w ciągłej pętli w tle (background) podczas poruszania się po aplikacji i współgra z lekturą audio tekstów Pisma Świętego dla pełnego skupienia.',
-    loopDetails: 'Styl: Medytacyjny Ambient · Płynne Przejście · Rejestr Delikatny i Kontemplacyjny',
-    masterpieceBadge: 'Symfoniczne Arcydzieło · 10m40',
-    masterpieceTag: 'Koncert Fortepianowy',
-    masterpieceTitle: 'Romantyczny Fortepian (Romantic Piano)',
-    masterpieceDesc: 'Pełny 3-częściowy koncert fortepianowy inspirowany koncertami Fryderyka Chopina, lirycznym dialogiem Roberta Schumanna i symfoniczną głębią Johannesa Brahmsa. Od burzliwego Allegro przez intymny nokturn Larghetto po promienny finał Rondo w E-dur, wirtuozowski fortepian śpiewa w nieustannym dialogu z orkiestrą.',
-    masterpieceQuote: '„Wszystko dobrze uczynił w swoim czasie. Włożył także świat w ich serca, mimo że człowiek nie zdoła pojąć dzieła, którego Bóg dokonuje od początku do końca.” — Księga Koheleta 3,11',
-    masterpieceDetails: 'Struktura: I. Allegro maestoso · II. Larghetto Romance · III. Rondo finale | Tonacje: e-moll harmoniczny, H-dur, E-dur'
+    loopBadge: 'Pełny utwór bezpłatny · 8 min 45',
+    loopTag: 'Święty ogród dźwięku',
+    loopTitle: 'Ogród Boga',
+    loopDesc: 'Święty ogród dźwięku: dyskretna żywa woda, oddychająca bryza, delikatne liście oraz świetliste frazy fortepianu i klarnetu.',
+    loopUsage: 'Tutaj dostępna jest wersja Obecna (ambient). W aplikacji możesz również wybrać intensywność Kontemplacyjną i Głęboką.',
+    loopDetails: 'Wersja: Obecna · Skomponowany długi cykl · 3 poziomy intensywności w aplikacji',
+    masterpieceBadge: 'Pełny utwór bezpłatny · 8 min 30',
+    masterpieceTag: 'Fortepian sakralny',
+    masterpieceTitle: 'Od Nocy do Świtu',
+    masterpieceDesc: 'Medytacyjny, ciepły sakralny fortepian towarzyszący modlitwie, skupieniu i czytaniu Pisma Świętego.',
+    masterpieceQuote: '',
+    masterpieceDetails: 'Wersja: Obecna · Skomponowany długi cykl · 3 poziomy intensywności w aplikacji'
   }
 };
 
@@ -599,19 +599,19 @@ function shell(code, title, body, pageSlug = 'preview', metaDesc = '') {
       },
       {
         "@type": "AudioObject",
-        "name": "ORHAR — Evening Prayer (Ambient Soundscape)",
-        "description": "Seamless contemplative ambient loop for prayer and Scripture reading.",
-        "contentUrl": "https://orhar.com/assets/audio/evening_prayer_ambient.mp3",
+        "name": "ORHAR — Garden of God (Present intensity)",
+        "description": "Complete sacred garden soundscape offered free in ORHAR for prayer and Scripture reading.",
+        "contentUrl": "https://orhar.com/assets/audio/garden_of_god_ambient.mp3",
         "encodingFormat": "audio/mpeg",
-        "duration": "PT10S"
+        "duration": "PT8M45S"
       },
       {
         "@type": "AudioObject",
-        "name": "ORHAR — Romantic Piano Masterpiece (Ecclesiastes 3:11)",
-        "description": "Original musical composition for deep spiritual reflection and meditation.",
-        "contentUrl": "https://orhar.com/assets/audio/romantic_piano_masterpiece.mp3",
+        "name": "ORHAR — From Night to Dawn (Present intensity)",
+        "description": "Complete sacred piano composition offered free in ORHAR for prayer, contemplation and Scripture reading.",
+        "contentUrl": "https://orhar.com/assets/audio/piano_sacre_ambient.mp3",
         "encodingFormat": "audio/mpeg",
-        "duration": "PT10M40S"
+        "duration": "PT8M30S"
       }
     );
   } else if (pageSlug === 'app') {
@@ -726,11 +726,11 @@ export function writeSecondaryPages(root) {
         </div>
 
         <div class="demo-soundscapes-showcase reveal">
-          <!-- Card 1: Evening Prayer Loop -->
+          <!-- Free pack 1: Garden of God -->
           <article class="soundscape-player-card">
             <div class="soundscape-card-top">
-              <span class="soundscape-badge"><i class="fa-solid fa-arrows-rotate"></i> ${s.loopBadge}</span>
-              <span class="soundscape-tag"><i class="fa-solid fa-moon"></i> ${s.loopTag}</span>
+              <span class="soundscape-badge"><i class="fa-solid fa-gift"></i> ${s.loopBadge}</span>
+              <span class="soundscape-tag"><i class="fa-solid fa-leaf"></i> ${s.loopTag}</span>
             </div>
             <div class="soundscape-card-body">
               <h4>${s.loopTitle}</h4>
@@ -744,29 +744,28 @@ export function writeSecondaryPages(root) {
               </div>
             </div>
             <div class="soundscape-card-player">
-              <audio controls loop preload="none" aria-label="${s.loopTitle}">
-                <source src="/assets/audio/evening_prayer_ambient.mp3" type="audio/mpeg">
+              <audio controls preload="metadata" aria-label="${s.loopTitle}">
+                <source src="/assets/audio/garden_of_god_ambient.mp3" type="audio/mpeg">
               </audio>
             </div>
           </article>
 
-          <!-- Card 2: Romantic Piano Masterpiece -->
+          <!-- Free pack 2: From Night to Dawn -->
           <article class="soundscape-player-card masterpiece-card">
             <div class="soundscape-card-top">
-              <span class="soundscape-badge masterpiece-badge"><i class="fa-solid fa-crown"></i> ${s.masterpieceBadge}</span>
-              <span class="soundscape-tag"><i class="fa-solid fa-compact-disc"></i> ${s.masterpieceTag}</span>
+              <span class="soundscape-badge masterpiece-badge"><i class="fa-solid fa-gift"></i> ${s.masterpieceBadge}</span>
+              <span class="soundscape-tag"><i class="fa-solid fa-music"></i> ${s.masterpieceTag}</span>
             </div>
             <div class="soundscape-card-body">
               <h4>${s.masterpieceTitle}</h4>
               <p class="soundscape-desc">${s.masterpieceDesc}</p>
-              <blockquote class="soundscape-quote">${s.masterpieceQuote}</blockquote>
               <div class="soundscape-meta">
                 <span><i class="fa-solid fa-music"></i> ${s.masterpieceDetails}</span>
               </div>
             </div>
             <div class="soundscape-card-player">
-              <audio controls preload="none" aria-label="${s.masterpieceTitle}">
-                <source src="/assets/audio/romantic_piano_masterpiece.mp3" type="audio/mpeg">
+              <audio controls preload="metadata" aria-label="${s.masterpieceTitle}">
+                <source src="/assets/audio/piano_sacre_ambient.mp3" type="audio/mpeg">
               </audio>
             </div>
           </article>

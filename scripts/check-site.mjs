@@ -30,6 +30,10 @@ for (const code of languages) {
   assert(appdemo.includes('VideoObject'), `${code}/appdemo.html: VideoObject schema missing`);
   assert(appdemo.includes('BreadcrumbList'), `${code}/appdemo.html: BreadcrumbList schema missing`);
   assert(appdemo.includes('google-play-app'), `${code}/appdemo.html: google-play-app meta missing`);
+  assert(appdemo.includes('/assets/audio/garden_of_god_ambient.mp3'), `${code}/appdemo.html: Garden of God audio missing`);
+  assert(appdemo.includes('/assets/audio/piano_sacre_ambient.mp3'), `${code}/appdemo.html: Piano Sacre audio missing`);
+  assert(!appdemo.includes('/assets/audio/evening_prayer_ambient.mp3'), `${code}/appdemo.html: legacy short loop retained`);
+  assert(!appdemo.includes('/assets/audio/romantic_piano_masterpiece.mp3'), `${code}/appdemo.html: legacy piano demo retained`);
   const home = readFileSync(resolve(root,code,'index.html'),'utf8');
   assert(home.includes('id="faq"'), `${code}: FAQ section missing`);
   assert(home.includes('href="#faq"'), `${code}: FAQ nav link missing`);
@@ -77,4 +81,6 @@ assert(rootIndex.includes('http-equiv="refresh"'), 'root index.html: meta refres
 assert(rootIndex.includes('google-play-app'), 'root index.html: google-play-app meta missing');
 const sitemap = readFileSync(resolve(root,'sitemap.xml'),'utf8');
 assert(sitemap.includes('appdemo.html'), 'sitemap.xml: appdemo.html missing');
+assert(existsSync(resolve(root,'assets/audio/garden_of_god_ambient.mp3')), 'Garden of God audio file missing');
+assert(existsSync(resolve(root,'assets/audio/piano_sacre_ambient.mp3')), 'Piano Sacre audio file missing');
 console.log(`ORHAR static checks passed: ${checks} assertions across 7 languages.`);

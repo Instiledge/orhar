@@ -190,9 +190,15 @@
   }
 
   if ('serviceWorker' in navigator) {
+    let serviceWorkerReloaded = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (serviceWorkerReloaded) return;
+      serviceWorkerReloaded = true;
+      window.location.reload();
+    });
     window.addEventListener('load', () => {
       navigator.serviceWorker
-        .register('/service-worker.js', { updateViaCache: 'none' })
+        .register('/service-worker.js?v=24', { updateViaCache: 'none' })
         .then(registration => registration.update())
         .catch(() => {});
     });

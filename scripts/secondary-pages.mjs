@@ -735,10 +735,6 @@ export function writeSecondaryPages(root) {
             <div class="soundscape-card-body">
               <h4>${s.loopTitle}</h4>
               <p class="soundscape-desc">${s.loopDesc}</p>
-              <div class="soundscape-app-usage">
-                <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
-                <p><strong>${s.usageTitle} :</strong> ${s.loopUsage}</p>
-              </div>
               <div class="soundscape-meta">
                 <span><i class="fa-solid fa-sliders"></i> ${s.loopDetails}</span>
               </div>
@@ -769,6 +765,10 @@ export function writeSecondaryPages(root) {
               </audio>
             </div>
           </article>
+        </div>
+        <div class="soundscape-app-usage reveal" style="margin-top: 24px;">
+          <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+          <p><strong>${s.usageTitle} :</strong> ${s.loopUsage}</p>
         </div>
       </div>
     </section>

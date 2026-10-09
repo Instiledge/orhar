@@ -36,6 +36,7 @@ for (const code of languages) {
   assert(appdemo.includes('/assets/audio/piano_sacre_ambient.mp3'), `${code}/appdemo.html: Piano Sacre audio missing`);
   assert(!appdemo.includes('/assets/audio/evening_prayer_ambient.mp3'), `${code}/appdemo.html: legacy short loop retained`);
   assert(!appdemo.includes('/assets/audio/romantic_piano_masterpiece.mp3'), `${code}/appdemo.html: legacy piano demo retained`);
+  assert((appdemo.match(/class="soundscape-app-usage reveal"/g)||[]).length===1, `${code}/appdemo.html: shared intensity notice must appear exactly once`);
   const home = readFileSync(resolve(root,code,'index.html'),'utf8');
   assert(home.includes('id="faq"'), `${code}: FAQ section missing`);
   assert(home.includes('href="#faq"'), `${code}: FAQ nav link missing`);

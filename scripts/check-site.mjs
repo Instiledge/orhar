@@ -5,6 +5,8 @@ import { localizedScreenshotPaths } from './secondary-pages.mjs';
 const root = resolve(import.meta.dirname, '..');
 const languages = ['en','fr','es','de','it','pt','pl'];
 const serviceWorker = readFileSync(resolve(root,'service-worker.js'),'utf8');
+const sharedScript = readFileSync(resolve(root,'site.js'),'utf8');
+const headers = readFileSync(resolve(root,'_headers'),'utf8');
 const oldShots = ['bible-reader.jpg','bible-versions.jpg','home-daily-verse.jpg','notes.jpg','quiz.jpg','random-verse.jpg','reading-plan.jpg','spiritual-books.jpg'];
 let checks = 0;
 function assert(condition, message) { if (!condition) throw new Error(message); checks++; }
@@ -13,7 +15,7 @@ for (const code of languages) {
     const fullPath = resolve(root, code, page);
     const html = readFileSync(fullPath, 'utf8');
     assert(html.includes(`<html lang="${code}">`), `${code}/${page}: language missing`);
-    assert(html.includes('/site.js?v=27'), `${code}/${page}: shared header/footer script missing`);
+    assert(html.includes('/site.js?v=28'), `${code}/${page}: shared header/footer script missing`);
     assert(html.includes(`/${code}/preview.html`), `${code}/${page}: gallery link missing`);
     if (page !== 'app.html') assert(html.includes(`/${code}/app.html`), `${code}/${page}: app link missing`);
     assert(!oldShots.some(name => html.includes(name)), `${code}/${page}: old screenshot linked`);
@@ -72,7 +74,7 @@ for (const name of oldShots) assert(!existsSync(resolve(root,'screenshots',name)
 for (const page of ['404.html','action.html','contact.html','privacy.html','terms.html','licenses.html']) {
   const html = readFileSync(resolve(root,page),'utf8');
   assert(html.includes('/legacy-layout.css'), `${page}: shared layout missing`);
-  assert(html.includes('/site.js?v=27'), `${page}: shared header/footer script missing`);
+  assert(html.includes('/site.js?v=28'), `${page}: shared header/footer script missing`);
   assert(html.includes('class="logo-container"'), `${page}: brand link missing`);
 }
 assert(readFileSync(resolve(root,'updates.html'),'utf8').includes('/actuality.html'), 'Updates route does not lead to current news');
@@ -83,4 +85,7 @@ const sitemap = readFileSync(resolve(root,'sitemap.xml'),'utf8');
 assert(sitemap.includes('appdemo.html'), 'sitemap.xml: appdemo.html missing');
 assert(existsSync(resolve(root,'assets/audio/garden_of_god_ambient.mp3')), 'Garden of God audio file missing');
 assert(existsSync(resolve(root,'assets/audio/piano_sacre_ambient.mp3')), 'Piano Sacre audio file missing');
+assert(serviceWorker.includes("orhar-cache-v24"), 'Service worker cache version is stale');
+assert(sharedScript.includes("updateViaCache: 'none'"), 'Service worker update must bypass HTTP cache');
+assert(headers.includes('/service-worker.js') && headers.includes('no-cache, no-store, must-revalidate'), 'Service worker cache headers are not strict enough');
 console.log(`ORHAR static checks passed: ${checks} assertions across 7 languages.`);

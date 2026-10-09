@@ -64,7 +64,8 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js')
+                navigator.serviceWorker.register('/service-worker.js', { updateViaCache: 'none' })
+                    .then(registration => registration.update())
                     .then(() => console.log('ORHAR: Service Worker registered'))
                     .catch(() => console.log('ORHAR: Service Worker registration failed'));
             });
@@ -586,7 +587,7 @@
         }
     </style>
     <link rel="stylesheet" href="/legacy-layout.css?v=11">
-    <script src="/site.js?v=27" defer></script>
+    <script src="/site.js?v=28" defer></script>
 </head>
 <body>
 

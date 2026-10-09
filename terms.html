@@ -16,11 +16,11 @@
     <meta name="author" content="ORHAR">
     <meta name="theme-color" content="#1A2E4A">
     <meta name="google-play-app" content="app-id=com.orhar.bible">
-    <link rel="canonical" href="https://orhar.com/terms.html">
+    <link rel="canonical" href="https://orhar.com/terms">
 
     <!-- ========== OPEN GRAPH (Facebook, LinkedIn, WhatsApp, Telegram) ========== -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://orhar.com/terms.html">
+    <meta property="og:url" content="https://orhar.com/terms">
     <meta property="og:title" content="Terms of Service — ORHAR">
     <meta property="og:description" content="ORHAR Terms of Service — Our covenant with you. Learn about your rights and responsibilities.">
     <meta property="og:image" content="https://orhar.com/og-image.png">
@@ -32,7 +32,7 @@
 
     <!-- ========== TWITTER CARD ========== -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://orhar.com/terms.html">
+    <meta name="twitter:url" content="https://orhar.com/terms">
     <meta name="twitter:title" content="Terms of Service — ORHAR">
     <meta name="twitter:description" content="ORHAR Terms of Service — Our covenant with you. Learn about your rights and responsibilities.">
     <meta name="twitter:image" content="https://orhar.com/og-image.png">
@@ -580,15 +580,15 @@
 <body>
 
     <header>
-        <a href="index.html" class="logo-container">
+        <a href="/" class="logo-container">
             <img src="logo.png" alt="ORHAR Logo" class="logo-img" onerror="this.style.display='none'">
             <span class="logo-text">ORHAR</span>
         </a>
         <nav class="nav-links">
-            <a href="index.html" data-i18n="nav_home">Home</a>
-            <a href="actuality.html" data-i18n="nav_actuality">Actuality</a>
-            <a href="preview.html" data-i18n="nav_prev">Preview</a>
-            <a href="contact.html" data-i18n="nav_contact">Contact</a>
+            <a href="/" data-i18n="nav_home">Home</a>
+            <a href="/en/actuality" data-i18n="nav_actuality">Actuality</a>
+            <a href="/en/preview" data-i18n="nav_prev">Preview</a>
+            <a href="/contact" data-i18n="nav_contact">Contact</a>
             <select id="langSwitch" class="lang-select" onchange="changeLang(this.value)">
                 <option value="en">🇬🇧 EN</option>
                 <option value="fr">🇫🇷 FR</option>
@@ -619,15 +619,15 @@
         <h3 data-i18n="legal_title">Legal & Transparency</h3>
         <p class="legal-subtitle" data-i18n="legal_sub">Your trust matters. Read our policies and licenses.</p>
         <div class="legal-grid">
-            <a href="privacy.html" class="legal-card">
+            <a href="/privacy" class="legal-card">
                 <i class="fas fa-shield-alt"></i>
                 <h4 data-i18n="foot_priv">Privacy Policy</h4>
             </a>
-            <a href="terms.html" class="legal-card active">
+            <a href="/terms" class="legal-card active">
                 <i class="fas fa-scale-balanced"></i>
                 <h4 data-i18n="foot_terms">Terms of Service</h4>
             </a>
-            <a href="licenses.html" class="legal-card">
+            <a href="/licenses" class="legal-card">
                 <i class="fas fa-file-contract"></i>
                 <h4 data-i18n="foot_lic">Open Source Licenses</h4>
             </a>
@@ -672,7 +672,7 @@
 
     <script>
         const contactEmail = "contact@orhar.com";
-        const contactLink = `<a href="contact.html#contact-section" style="color: var(--accent-brown); font-weight: 700;">${contactEmail}</a>`;
+        const contactLink = `<a href="/contact#contact-section" style="color: var(--accent-brown); font-weight: 700;">${contactEmail}</a>`;
 
         // ========== COMPLETE TRANSLATION DICTIONARY (7 LANGUAGES, 1:1 MAPPED) ==========
         const legalData = {
@@ -772,7 +772,7 @@
                     <div class="legal-section">
                         <h2><span class="section-icon"><i class="fas fa-envelope"></i></span> 12. Contact Us</h2>
                         <p>If you have any questions about these Terms, please contact us at:</p>
-                        <p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="contact.html#contact-section" style="color: var(--accent-brown); font-weight: 700;"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p>
+                        <p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="/contact#contact-section" style="color: var(--accent-brown); font-weight: 700;"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p>
                     </div>
                 `
             },
@@ -873,7 +873,7 @@
                     <div class="legal-section">
                         <h2><span class="section-icon"><i class="fas fa-envelope"></i></span> 12. Nous Contacter</h2>
                         <p>Pour toute question concernant ces Conditions, veuillez nous contacter à :</p>
-                        <p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="contact.html#contact-section" style="color: var(--accent-brown); font-weight: 700;"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p>
+                        <p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="/contact#contact-section" style="color: var(--accent-brown); font-weight: 700;"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p>
                     </div>
                 `
             },
@@ -905,7 +905,7 @@
                     <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-door-open"></i></span> 9. Terminación</h2><p>Podemos suspender o terminar su acceso inmediatamente por cualquier motivo, incluyendo el incumplimiento de estos Términos. Usted puede eliminar su cuenta en cualquier momento desde los ajustes de la aplicación.</p></div>
                     <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-sync-alt"></i></span> 10. Cambios en los Términos</h2><p>Nos reservamos el derecho de modificar estos Términos. Los cambios sustanciales serán notificados con al menos 30 días de antelación. El uso continuado de los Servicios después de la entrada en vigor de los cambios constituye la aceptación de los nuevos términos.</p></div>
                     <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-gavel"></i></span> 11. Ley Aplicable</h2><p>Estos Términos se rigen por las leyes de la jurisdicción en la que opera ORHAR.</p></div>
-                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-envelope"></i></span> 12. Contáctenos</h2><p>Si tiene preguntas sobre estos Términos, contáctenos en:</p><p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="contact.html#contact-section" style="color: var(--accent-brown); font-weight: 700;"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-envelope"></i></span> 12. Contáctenos</h2><p>Si tiene preguntas sobre estos Términos, contáctenos en:</p><p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="/contact#contact-section" style="color: var(--accent-brown); font-weight: 700;"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p></div>
                 `
             },
             de: {
@@ -936,7 +936,7 @@
                     <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-door-open"></i></span> 9. Kündigung</h2><p>Wir können Ihren Zugang bei Verstoß gegen diese Bedingungen sperren. Sie können Ihr Konto jederzeit in den App-Einstellungen löschen.</p></div>
                     <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-sync-alt"></i></span> 10. Änderungen</h2><p>Bei wesentlichen Änderungen werden wir Sie mindestens 30 Tage im Voraus informieren.</p></div>
                     <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-gavel"></i></span> 11. Anwendbares Recht</h2><p>Es gilt das Recht der Gerichtsbarkeit, in der ORHAR tätig ist.</p></div>
-                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-envelope"></i></span> 12. Kontakt</h2><p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="contact.html#contact-section" style="color: var(--accent-brown); font-weight: 700;"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-envelope"></i></span> 12. Kontakt</h2><p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="/contact#contact-section" style="color: var(--accent-brown); font-weight: 700;"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p></div>
                 `
             },
             it: {
@@ -967,7 +967,7 @@
                     <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-door-open"></i></span> 9. Risoluzione</h2><p>Possiamo sospendere il tuo accesso in caso di violazione. Puoi eliminare il tuo account in qualsiasi momento dalle impostazioni dell'app.</p></div>
                     <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-sync-alt"></i></span> 10. Modifiche ai Termini</h2><p>Ti informeremo con almeno 30 giorni di preavviso in caso di modifiche sostanziali.</p></div>
                     <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-gavel"></i></span> 11. Legge Applicabile</h2><p>Questi Termini sono regolati dalle leggi della giurisdizione in cui opera ORHAR.</p></div>
-                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-envelope"></i></span> 12. Contattaci</h2><p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="contact.html#contact-section" style="color: var(--accent-brown); font-weight: 700;"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-envelope"></i></span> 12. Contattaci</h2><p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="/contact#contact-section" style="color: var(--accent-brown); font-weight: 700;"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p></div>
                 `
             },
             pt: {
@@ -998,7 +998,7 @@
                     <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-door-open"></i></span> 9. Rescisão</h2><p>Podemos suspender seu acesso em caso de violação. Você pode excluir sua conta a qualquer momento nas configurações do aplicativo.</p></div>
                     <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-sync-alt"></i></span> 10. Alterações nos Termos</h2><p>Alterações substanciais serão notificadas com pelo menos 30 dias de antecedência.</p></div>
                     <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-gavel"></i></span> 11. Lei Aplicável</h2><p>Estes Termos são regidos pelas leis da jurisdição em que o ORHAR opera.</p></div>
-                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-envelope"></i></span> 12. Contate-nos</h2><p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="contact.html#contact-section" style="color: var(--accent-brown); font-weight: 700;"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-envelope"></i></span> 12. Contate-nos</h2><p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="/contact#contact-section" style="color: var(--accent-brown); font-weight: 700;"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p></div>
                 `
             },
             pl: {
@@ -1029,7 +1029,7 @@
                     <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-door-open"></i></span> 9. Zakończenie</h2><p>Możemy zawiesić Twój dostęp w przypadku naruszenia Regulaminu. Możesz usunąć swoje konto w dowolnym momencie w ustawieniach aplikacji.</p></div>
                     <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-sync-alt"></i></span> 10. Zmiany Regulaminu</h2><p>O istotnych zmianach powiadomimy z co najmniej 30-dniowym wyprzedzeniem.</p></div>
                     <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-gavel"></i></span> 11. Prawo Właściwe</h2><p>Niniejszy Regulamin podlega prawu jurysdykcji, w której działa ORHAR.</p></div>
-                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-envelope"></i></span> 12. Skontaktuj się z nami</h2><p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="contact.html#contact-section" style="color: var(--accent-brown); font-weight: 700;"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p></div>
+                    <div class="legal-section"><h2><span class="section-icon"><i class="fas fa-envelope"></i></span> 12. Skontaktuj się z nami</h2><p style="text-align: center; font-size: 16px; margin-top: 12px;"><strong><a href="/contact#contact-section" style="color: var(--accent-brown); font-weight: 700;"><i class="fas fa-envelope"></i> ${contactEmail}</a></strong></p></div>
                 `
             }
         };
@@ -1038,10 +1038,10 @@
         function changeLang(lang) {
             document.documentElement.lang = lang;
             localStorage.setItem('orhar_lang', lang);
-            document.querySelectorAll('[data-i18n="nav_home"]').forEach(a => a.href = `/${lang}/index.html`);
-            document.querySelectorAll('[data-i18n="nav_actuality"]').forEach(a => a.href = `/${lang}/actuality.html`);
-            document.querySelectorAll('[data-i18n="nav_prev"]').forEach(a => a.href = `/${lang}/preview.html`);
-            document.querySelector('.logo-container').href = `/${lang}/index.html`;
+            document.querySelectorAll('[data-i18n="nav_home"]').forEach(a => a.href = `/${lang}/`);
+            document.querySelectorAll('[data-i18n="nav_actuality"]').forEach(a => a.href = `/${lang}/actuality`);
+            document.querySelectorAll('[data-i18n="nav_prev"]').forEach(a => a.href = `/${lang}/preview`);
+            document.querySelector('.logo-container').href = `/${lang}/`;
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (legalData[lang] && legalData[lang][key] !== undefined) {

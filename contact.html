@@ -17,11 +17,11 @@
     <meta name="author" content="ORHAR">
     <meta name="theme-color" content="#1A2E4A">
     <meta name="google-play-app" content="app-id=com.orhar.bible">
-    <link rel="canonical" href="https://orhar.com/contact.html">
+    <link rel="canonical" href="https://orhar.com/contact">
 
     <!-- ========== OPEN GRAPH (Facebook, LinkedIn, WhatsApp, Telegram) ========== -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://orhar.com/contact.html">
+    <meta property="og:url" content="https://orhar.com/contact">
     <meta property="og:title" content="Contact & Support — ORHAR">
     <meta property="og:description" content="Get help with ORHAR. Find answers, contact support, or contribute to our mission.">
     <meta property="og:image" content="https://orhar.com/og-image.png">
@@ -33,7 +33,7 @@
 
     <!-- ========== TWITTER CARD ========== -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://orhar.com/contact.html">
+    <meta name="twitter:url" content="https://orhar.com/contact">
     <meta name="twitter:title" content="Contact & Support — ORHAR">
     <meta name="twitter:description" content="Get help with ORHAR. Find answers, contact support, or contribute to our mission.">
     <meta name="twitter:image" content="https://orhar.com/og-image.png">
@@ -919,14 +919,14 @@
 <body>
 
     <header>
-        <a href="index.html" class="logo-container">
+        <a href="/" class="logo-container">
             <img src="logo.png" alt="ORHAR Logo" class="logo-img" onerror="this.style.display='none'">
             <span class="logo-text">ORHAR</span>
         </a>
         <nav class="nav-links">
-            <a href="index.html" data-i18n="nav_home">Home</a>
-            <a href="actuality.html" data-i18n="nav_actuality">Actuality</a>
-            <a href="preview.html" data-i18n="nav_prev">Preview</a>
+            <a href="/" data-i18n="nav_home">Home</a>
+            <a href="/en/actuality" data-i18n="nav_actuality">Actuality</a>
+            <a href="/en/preview" data-i18n="nav_prev">Preview</a>
             <a href="#contact-section" data-i18n="nav_contact">Contact</a>
             <a href="#support-section" data-i18n="nav_support">Support</a>
             <a href="#faq-section" data-i18n="nav_faq">FAQ</a>
@@ -1175,15 +1175,15 @@
         <h3 data-i18n="legal_title">Legal & Transparency</h3>
         <p class="legal-subtitle" data-i18n="legal_sub">Your trust matters. Read our policies and licenses.</p>
         <div class="legal-grid">
-            <a href="privacy.html" class="legal-card">
+            <a href="/privacy" class="legal-card">
                 <i class="fas fa-shield-alt"></i>
                 <h4 data-i18n="foot_priv">Privacy Policy</h4>
             </a>
-            <a href="terms.html" class="legal-card">
+            <a href="/terms" class="legal-card">
                 <i class="fas fa-scale-balanced"></i>
                 <h4 data-i18n="foot_terms">Terms of Service</h4>
             </a>
-            <a href="licenses.html" class="legal-card">
+            <a href="/licenses" class="legal-card">
                 <i class="fas fa-file-contract"></i>
                 <h4 data-i18n="foot_lic">Open Source Licenses</h4>
             </a>
@@ -1769,10 +1769,10 @@
             activeLang = lang;
             document.documentElement.lang = lang;
             localStorage.setItem('orhar_lang', lang);
-            document.querySelectorAll('[data-i18n="nav_home"]').forEach(a => a.href = `/${lang}/index.html`);
-            document.querySelectorAll('[data-i18n="nav_actuality"]').forEach(a => a.href = `/${lang}/actuality.html`);
-            document.querySelectorAll('[data-i18n="nav_prev"]').forEach(a => a.href = `/${lang}/preview.html`);
-            document.querySelector('.logo-container').href = `/${lang}/index.html`;
+            document.querySelectorAll('[data-i18n="nav_home"]').forEach(a => a.href = `/${lang}/`);
+            document.querySelectorAll('[data-i18n="nav_actuality"]').forEach(a => a.href = `/${lang}/actuality`);
+            document.querySelectorAll('[data-i18n="nav_prev"]').forEach(a => a.href = `/${lang}/preview`);
+            document.querySelector('.logo-container').href = `/${lang}/`;
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (contactData[lang] && contactData[lang][key] !== undefined) {

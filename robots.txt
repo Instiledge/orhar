@@ -29,4 +29,4 @@ Disallow: /
 Sitemap: https://orhar.com/sitemap.xml
 
 # Disallow action pages (Firebase auth callbacks — no SEO value)
-Disallow: /action.html
+Disallow: /action

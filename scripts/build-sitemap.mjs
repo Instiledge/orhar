@@ -13,17 +13,17 @@ function generateHreflangs(pagePath = '') {
 
 const localizedPages = [
   { path: '', priority: '1.0', changefreq: 'weekly' },
-  { path: 'appdemo.html', priority: '0.9', changefreq: 'weekly' },
-  { path: 'preview.html', priority: '0.8', changefreq: 'monthly' },
-  { path: 'app.html', priority: '0.8', changefreq: 'monthly' },
-  { path: 'actuality.html', priority: '0.7', changefreq: 'weekly' },
+  { path: 'appdemo', priority: '0.9', changefreq: 'weekly' },
+  { path: 'preview', priority: '0.8', changefreq: 'monthly' },
+  { path: 'app', priority: '0.8', changefreq: 'monthly' },
+  { path: 'actuality', priority: '0.7', changefreq: 'weekly' },
 ];
 
 const staticPages = [
-  { url: 'https://orhar.com/contact.html', priority: '0.8', changefreq: 'monthly' },
-  { url: 'https://orhar.com/privacy.html', priority: '0.5', changefreq: 'yearly' },
-  { url: 'https://orhar.com/terms.html', priority: '0.5', changefreq: 'yearly' },
-  { url: 'https://orhar.com/licenses.html', priority: '0.5', changefreq: 'yearly' },
+  { url: 'https://orhar.com/contact', priority: '0.8', changefreq: 'monthly' },
+  { url: 'https://orhar.com/privacy', priority: '0.5', changefreq: 'yearly' },
+  { url: 'https://orhar.com/terms', priority: '0.5', changefreq: 'yearly' },
+  { url: 'https://orhar.com/licenses', priority: '0.5', changefreq: 'yearly' },
 ];
 
 let xml = `<?xml version="1.0" encoding="UTF-8"?>

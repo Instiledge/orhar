@@ -660,4 +660,5 @@ for (const [code, locale] of Object.entries(locales)) {
 }
 writeSecondaryPages(root);
 writeNewsPages(root, locales);
-import('./build-sitemap.mjs');
+await import('./build-sitemap.mjs');
+await import('./normalize-clean-urls.mjs');

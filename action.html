@@ -15,7 +15,7 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="author" content="ORHAR">
     <meta name="theme-color" content="#1A2E4A">
-    <link rel="canonical" href="https://orhar.com/action.html">
+    <link rel="canonical" href="https://orhar.com/action">
 
     <!-- ========== FAVICONS ========== -->
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
@@ -513,13 +513,13 @@
 <body>
 
     <header>
-        <a href="index.html" class="logo-container">
+        <a href="/" class="logo-container">
             <img src="logo.png" alt="ORHAR Logo" class="logo-img" onerror="this.style.display='none'">
             <span class="logo-text">ORHAR</span>
         </a>
         <nav class="nav-links">
-            <a href="index.html" id="navHome">Home</a>
-            <a href="contact.html" id="navContact">Contact</a>
+            <a href="/" id="navHome">Home</a>
+            <a href="/contact" id="navContact">Contact</a>
         </nav>
     </header>
 
@@ -589,7 +589,7 @@
                 <h1 id="error-title">Action Failed</h1>
                 <p id="error-message">Something went wrong.</p>
                 <div class="alert alert-error" id="error-detail"></div>
-                <a href="contact.html" class="button button-secondary" style="margin-top: 12px;">
+                <a href="/contact" class="button button-secondary" style="margin-top: 12px;">
                     <i class="fas fa-envelope"></i> <span id="error-contact-label">Contact Support</span>
                 </a>
             </div>
@@ -820,7 +820,7 @@
         document.getElementById('page-title').textContent = lang.pageTitle;
         document.getElementById('loading-text').textContent = lang.loading;
         document.getElementById('navHome').textContent = lang.navHome;
-        document.getElementById('navHome').href = `/${activeLang}/index.html`;
+        document.getElementById('navHome').href = `/${activeLang}/`;
         document.getElementById('navContact').textContent = lang.navContact;
         document.getElementById('error-contact-label').textContent = lang.contactSupport;
 
@@ -1070,7 +1070,7 @@
                     </a>
                 </div>
                 <p style="margin-top: 12px; font-size: 13px; color: var(--text-muted);">${lang.iosSoon}</p>
-                <a href="contact.html" class="button button-secondary" style="margin-top: 16px;">
+                <a href="/contact" class="button button-secondary" style="margin-top: 16px;">
                     <i class="fas fa-envelope"></i> ${lang.contactSupport}
                 </a>
             `;

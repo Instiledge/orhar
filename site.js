@@ -3,7 +3,7 @@
   const languageNames = { en:'🇬🇧 EN', fr:'🇫🇷 FR', es:'🇪🇸 ES', de:'🇩🇪 DE', it:'🇮🇹 IT', pt:'🇵🇹 PT', pl:'🇵🇱 PL' };
   const initialLocale = (() => {
     const pathLocale = location.pathname.match(/^\/(en|fr|es|de|it|pt|pl)\//)?.[1];
-    const actionLocale = location.pathname === '/action.html' ? new URLSearchParams(location.search).get('lang') : null;
+    const actionLocale = /^\/action(?:\.html)?$/.test(location.pathname) ? new URLSearchParams(location.search).get('lang') : null;
     const stored = localStorage.getItem('orhar_lang');
     const browser = navigator.language.slice(0,2);
     return (supportedLanguages.includes(actionLocale) ? actionLocale : null) || pathLocale || (supportedLanguages.includes(stored) ? stored : supportedLanguages.includes(browser) ? browser : 'en');
@@ -58,7 +58,7 @@
         languageSelect.value = initialLocale;
         languageSelect.addEventListener('change', () => {
           localStorage.setItem('orhar_lang', languageSelect.value);
-          if (location.pathname === '/action.html') {
+          if (/^\/action(?:\.html)?$/.test(location.pathname)) {
             const params = new URLSearchParams(location.search);
             params.set('lang', languageSelect.value);
             location.search = params.toString();
@@ -129,8 +129,8 @@
     language.addEventListener('change', event => {
       const code = event.target.value;
       localStorage.setItem('orhar_lang', code);
-      const current = window.location.pathname.match(/^\/(en|fr|es|de|it|pt|pl)\/(preview|app|actuality)\.html$/);
-      window.location.href = current ? `/${code}/${current[2]}.html` : `/${code}/index.html`;
+      const current = window.location.pathname.match(/^\/(en|fr|es|de|it|pt|pl)\/(preview|app|actuality|appdemo)(?:\.html)?$/);
+      window.location.href = current ? `/${code}/${current[2]}` : `/${code}/`;
     });
   }
 
@@ -198,7 +198,7 @@
     });
     window.addEventListener('load', () => {
       navigator.serviceWorker
-        .register('/service-worker.js?v=24', { updateViaCache: 'none' })
+        .register('/service-worker.js?v=25', { updateViaCache: 'none' })
         .then(registration => registration.update())
         .catch(() => {});
     });
@@ -497,17 +497,17 @@
     const links = document.querySelector('header .nav')?.querySelectorAll('a');
     if (links?.length >= 3) {
       [0,1,2].forEach(i => links[i].textContent = t[i]);
-      links[0].href = `/${code}/index.html`; links[1].href = `/${code}/preview.html`; links[2].href = '/contact.html';
+      links[0].href = `/${code}/`; links[1].href = `/${code}/preview`; links[2].href = '/contact';
     }
     const logo = document.querySelector('header .logo-container');
-    if (logo) logo.href = `/${code}/index.html`;
+    if (logo) logo.href = `/${code}/`;
     const actions = page.querySelectorAll('.button-group a');
     const heading = page.querySelector('h1');
     const paragraphs = page.querySelectorAll('p');
     if (heading) heading.textContent = t[3];
     if (paragraphs[0]) paragraphs[0].textContent = t[4];
-    if (actions[0]) { actions[0].href = `/${code}/index.html`; actions[0].lastChild.textContent = ` ${t[5]}`; }
-    if (actions[1]) { actions[1].href = '/contact.html'; actions[1].lastChild.textContent = ` ${t[6]}`; }
+    if (actions[0]) { actions[0].href = `/${code}/`; actions[0].lastChild.textContent = ` ${t[5]}`; }
+    if (actions[1]) { actions[1].href = '/contact'; actions[1].lastChild.textContent = ` ${t[6]}`; }
     if (paragraphs[1]) paragraphs[1].innerHTML = `“${t[7]}”<br>— ${t[8]}`;
     const skip = document.querySelector('.skip-link');
     if (skip) skip.textContent = code === 'fr' ? 'Aller au contenu' : 'Skip to content';
@@ -547,16 +547,16 @@
     const f = footerCopy[footerLocale];
     const v = footerVerseCopy[footerLocale] || footerVerseCopy.en;
     const footerLinks = [
-      [`/${footerLocale}/preview.html`, f[2], 'gallery'],
-      [`/${footerLocale}/appdemo.html`, demoNavCopy[footerLocale] || 'Demo', 'demo'],
-      [`/${footerLocale}/actuality.html`, f[3], 'news'],
-      [`/${footerLocale}/app.html`, f[4], 'app'],
-      ['/contact.html', f[5], 'contact'],
-      ['/privacy.html', f[6], 'privacy'],
-      ['/terms.html', f[7], 'terms'],
-      ['/licenses.html', f[8], 'licenses']
+      [`/${footerLocale}/preview`, f[2], 'gallery'],
+      [`/${footerLocale}/appdemo`, demoNavCopy[footerLocale] || 'Demo', 'demo'],
+      [`/${footerLocale}/actuality`, f[3], 'news'],
+      [`/${footerLocale}/app`, f[4], 'app'],
+      ['/contact', f[5], 'contact'],
+      ['/privacy', f[6], 'privacy'],
+      ['/terms', f[7], 'terms'],
+      ['/licenses', f[8], 'licenses']
     ];
-    return `<div class="section-inner"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="/${footerLocale}/index.html"><img src="/logo.png" alt=""><strong>ORHAR</strong></a><p>${f[0]}</p><p class="footer-verse">« ${v[0]} » <span class="footer-verse-ref">— ${v[1]}</span></p><span class="footer-script">אוֹר הַר · The Mountain of Light</span></div><nav class="footer-links" aria-label="${f[1]}">${footerLinks.map(([url,label,icon]) => `<a href="${url}">${svg(icon)}<span>${label}</span></a>`).join('')}</nav></div><div class="footer-bottom"><span>© 2026 ORHAR. ${f[9]}</span><span>אוֹר הַר</span></div></div>`;
+    return `<div class="section-inner"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="/${footerLocale}/"><img src="/logo.png" alt=""><strong>ORHAR</strong></a><p>${f[0]}</p><p class="footer-verse">« ${v[0]} » <span class="footer-verse-ref">— ${v[1]}</span></p><span class="footer-script">אוֹר הַר · The Mountain of Light</span></div><nav class="footer-links" aria-label="${f[1]}">${footerLinks.map(([url,label,icon]) => `<a href="${url}">${svg(icon)}<span>${label}</span></a>`).join('')}</nav></div><div class="footer-bottom"><span>© 2026 ORHAR. ${f[9]}</span><span>אוֹר הַר</span></div></div>`;
   }
   const footerContainer = document.querySelector('#footer-container');
   const footerElement = document.querySelector('.site-footer') || document.querySelector('body > footer');

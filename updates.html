@@ -11,7 +11,7 @@
   <script>
     const supported = ['en','fr','es','de','it','pt','pl'];
     const saved = localStorage.getItem('orhar_lang') || navigator.language.slice(0,2);
-    location.replace(`/${supported.includes(saved) ? saved : 'en'}/actuality.html`);
+    location.replace(`/${supported.includes(saved) ? saved : 'en'}/actuality`);
   </script>
 </head>
 <body>
@@ -21,13 +21,13 @@
       <h1>What’s new in ORHAR</h1>
       <p>Choose your language to read the latest news.</p>
       <nav class="hero-actions" aria-label="Choose language">
-        <a class="button button-primary" href="/en/actuality.html">🇬🇧 English</a>
-        <a class="button button-secondary" href="/fr/actuality.html">🇫🇷 Français</a>
-        <a class="button button-secondary" href="/es/actuality.html">🇪🇸 Español</a>
-        <a class="button button-secondary" href="/de/actuality.html">🇩🇪 Deutsch</a>
-        <a class="button button-secondary" href="/it/actuality.html">🇮🇹 Italiano</a>
-        <a class="button button-secondary" href="/pt/actuality.html">🇵🇹 Português</a>
-        <a class="button button-secondary" href="/pl/actuality.html">🇵🇱 Polski</a>
+        <a class="button button-primary" href="/en/actuality">🇬🇧 English</a>
+        <a class="button button-secondary" href="/fr/actuality">🇫🇷 Français</a>
+        <a class="button button-secondary" href="/es/actuality">🇪🇸 Español</a>
+        <a class="button button-secondary" href="/de/actuality">🇩🇪 Deutsch</a>
+        <a class="button button-secondary" href="/it/actuality">🇮🇹 Italiano</a>
+        <a class="button button-secondary" href="/pt/actuality">🇵🇹 Português</a>
+        <a class="button button-secondary" href="/pl/actuality">🇵🇱 Polski</a>
       </nav>
     </div>
   </main>

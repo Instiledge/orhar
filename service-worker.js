@@ -1,5 +1,5 @@
 // ORHAR — Service Worker for offline caching
-const CACHE_NAME = 'orhar-cache-v24';
+const CACHE_NAME = 'orhar-cache-v25';
 
 const LOCALIZED_SCREEN_MODULES = {
     en: ['home','bible','reader','parobible','plan','quiz','books','mypath','meditbrary'],
@@ -17,17 +17,17 @@ const LOCALIZED_NEWSLETTER_QR = ['en','fr','es','de','it','pt','pl'].map(code =>
 const LOCALIZED_QUIZ_BUNDLES = ['en','fr','es','de','it','pt','pl'].map(code => `/assets/quiz/bundle_${code}.json`);
 
 const ASSETS_TO_CACHE = [
-    ...['en','fr','es','de','it','pt','pl'].flatMap(code => [`/${code}/index.html`, `/${code}/preview.html`, `/${code}/appdemo.html`, `/${code}/app.html`, `/${code}/actuality.html`]),
-    '/preview.html',
-    '/app.html',
-    '/action.html',
-    '/updates.html',
-    '/contact.html',
+    ...['en','fr','es','de','it','pt','pl'].flatMap(code => [`/${code}/`, `/${code}/preview`, `/${code}/appdemo`, `/${code}/app`, `/${code}/actuality`]),
+    '/preview',
+    '/app',
+    '/action',
+    '/updates',
+    '/contact',
     '/footer.html',
-    '/privacy.html',
-    '/terms.html',
-    '/licenses.html',
-    '/404.html',
+    '/privacy',
+    '/terms',
+    '/licenses',
+    '/404',
     '/manifest.json',
     '/actuality-data.json',
     '/site.css',
@@ -128,7 +128,7 @@ self.addEventListener('fetch', (event) => {
             return response;
         }).catch(() => caches.match(event.request).then(cached => {
             if (cached && !cached.redirected) return cached;
-            return caches.match('/404.html');
+            return caches.match('/404');
         })));
         return;
     }
@@ -154,7 +154,7 @@ self.addEventListener('fetch', (event) => {
                     .catch(() => {
                         // If both cache and network fail, show 404 for navigation requests
                         if (event.request.mode === 'navigate') {
-                            return caches.match('/404.html');
+                            return caches.match('/404');
                         }
                         return null;
                     });

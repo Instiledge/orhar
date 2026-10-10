@@ -89,6 +89,11 @@
             color: #dc2626;
         }
 
+        .status-icon.pending {
+            background: #fffbeb;
+            color: #b7791f;
+        }
+
         @keyframes spin {
             100% { transform: rotate(360deg); }
         }
@@ -121,7 +126,7 @@
             word-break: break-all;
         }
 
-        .btn-home {
+        .btn-home, .btn-confirm {
             display: inline-block;
             background: var(--primary-navy);
             color: var(--accent-gold);
@@ -131,6 +136,12 @@
             font-weight: 600;
             font-size: 14px;
             transition: opacity 0.2s;
+        }
+
+        .btn-confirm {
+            border: 0;
+            cursor: pointer;
+            margin-right: 8px;
         }
 
         .btn-home:hover {
@@ -151,16 +162,14 @@
             <img src="/logo.png" alt="ORHAR Logo" onerror="this.style.display='none'">
         </div>
 
-        <div id="status-icon" class="status-icon loading">
-            <i class="fa-solid fa-spinner"></i>
+        <div id="status-icon" class="status-icon pending">
+            <i class="fa-solid fa-envelope-open-text"></i>
         </div>
 
-        <h1 id="title">Traitement en cours...</h1>
-        <div id="email-container" style="display: none;">
-            <span class="email-badge" id="user-email"></span>
-        </div>
-        <p id="message">Veuillez patienter pendant que nous mettons à jour vos préférences...</p>
+        <h1 id="title">Confirmer le désabonnement</h1>
+        <p id="message">Cliquez sur le bouton ci-dessous pour ne plus recevoir la lettre spirituelle ORHAR.</p>
 
+        <button type="button" class="btn-confirm" id="btn-confirm">Confirmer le désabonnement</button>
         <a href="/" class="btn-home" id="btn-action">Retour à l'accueil</a>
 
         <div class="footer-note">
@@ -171,6 +180,10 @@
     <script>
         const i18n = {
             fr: {
+                confirmTitle: "Confirmer le désabonnement",
+                confirmMsg: "Cliquez sur le bouton ci-dessous pour ne plus recevoir la lettre spirituelle ORHAR.",
+                btnConfirm: "Confirmer le désabonnement",
+                confirming: "Désabonnement en cours...",
                 loadingTitle: "Traitement en cours...",
                 loadingMsg: "Veuillez patienter pendant que nous mettons à jour vos préférences...",
                 successTitle: "Désabonnement confirmé",
@@ -180,6 +193,10 @@
                 btnHome: "Retour à l'accueil"
             },
             en: {
+                confirmTitle: "Confirm unsubscription",
+                confirmMsg: "Click the button below to stop receiving the ORHAR spiritual newsletter.",
+                btnConfirm: "Confirm unsubscription",
+                confirming: "Unsubscribing...",
                 loadingTitle: "Processing...",
                 loadingMsg: "Please wait while we update your email preferences...",
                 successTitle: "Unsubscription confirmed",
@@ -189,6 +206,10 @@
                 btnHome: "Back to Home"
             },
             es: {
+                confirmTitle: "Confirmar la baja",
+                confirmMsg: "Pulse el botón para dejar de recibir la carta espiritual de ORHAR.",
+                btnConfirm: "Confirmar la baja",
+                confirming: "Cancelando la suscripción...",
                 loadingTitle: "Procesando...",
                 loadingMsg: "Por favor espere mientras actualizamos sus preferencias...",
                 successTitle: "Baja confirmada",
@@ -198,6 +219,10 @@
                 btnHome: "Volver al inicio"
             },
             de: {
+                confirmTitle: "Abmeldung bestätigen",
+                confirmMsg: "Klicken Sie auf die Schaltfläche, um den geistlichen Rundbrief von ORHAR nicht mehr zu erhalten.",
+                btnConfirm: "Abmeldung bestätigen",
+                confirming: "Abmeldung läuft...",
                 loadingTitle: "Wird bearbeitet...",
                 loadingMsg: "Bitte warten Sie, während wir Ihre Einstellungen aktualisieren...",
                 successTitle: "Abmeldung bestätigt",
@@ -207,6 +232,10 @@
                 btnHome: "Zur Startseite"
             },
             it: {
+                confirmTitle: "Conferma la cancellazione",
+                confirmMsg: "Premi il pulsante per non ricevere più la lettera spirituale ORHAR.",
+                btnConfirm: "Conferma la cancellazione",
+                confirming: "Cancellazione in corso...",
                 loadingTitle: "Elaborazione in corso...",
                 loadingMsg: "Attendi mentre aggiorniamo le tue preferenze...",
                 successTitle: "Disiscrizione confermata",
@@ -216,6 +245,10 @@
                 btnHome: "Torna alla home"
             },
             pt: {
+                confirmTitle: "Confirmar cancelamento",
+                confirmMsg: "Clique no botão para deixar de receber a carta espiritual ORHAR.",
+                btnConfirm: "Confirmar cancelamento",
+                confirming: "A cancelar...",
                 loadingTitle: "Processando...",
                 loadingMsg: "Aguarde enquanto atualizamos suas preferências...",
                 successTitle: "Cancelamento confirmado",
@@ -225,6 +258,10 @@
                 btnHome: "Voltar ao início"
             },
             pl: {
+                confirmTitle: "Potwierdź wypisanie",
+                confirmMsg: "Kliknij przycisk, aby przestać otrzymywać duchowy biuletyn ORHAR.",
+                btnConfirm: "Potwierdź wypisanie",
+                confirming: "Wypisywanie...",
                 loadingTitle: "Przetwarzanie...",
                 loadingMsg: "Proszę czekać, aktualizujemy Twoje preferencje...",
                 successTitle: "Wypisanie potwierdzone",
@@ -244,18 +281,13 @@
         const iconEl = document.getElementById('status-icon');
         const titleEl = document.getElementById('title');
         const msgEl = document.getElementById('message');
-        const emailBadge = document.getElementById('user-email');
-        const emailContainer = document.getElementById('email-container');
+        const btnConfirm = document.getElementById('btn-confirm');
         const btnAction = document.getElementById('btn-action');
 
-        titleEl.textContent = t.loadingTitle;
-        msgEl.textContent = t.loadingMsg;
+        titleEl.textContent = t.confirmTitle;
+        msgEl.textContent = t.confirmMsg;
+        btnConfirm.textContent = t.btnConfirm;
         btnAction.textContent = t.btnHome;
-
-        if (email) {
-            emailBadge.textContent = email;
-            emailContainer.style.display = 'block';
-        }
 
         async function processUnsubscription() {
             if (!email || !sig) {
@@ -264,9 +296,19 @@
             }
 
             try {
+                btnConfirm.disabled = true;
+                btnConfirm.textContent = t.confirming;
+                iconEl.className = 'status-icon loading';
+                iconEl.innerHTML = '<i class="fa-solid fa-spinner"></i>';
+                titleEl.textContent = t.loadingTitle;
+                msgEl.textContent = t.loadingMsg;
                 // Cloud Function endpoint on parobible-app
                 const endpoint = `https://us-central1-parobible-app.cloudfunctions.net/unsubscribeNewsletter?email=${encodeURIComponent(email)}&sig=${encodeURIComponent(sig)}`;
-                const response = await fetch(endpoint, { method: 'GET' });
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, sig })
+                });
                 const data = await response.json().catch(() => ({}));
 
                 if (response.ok && data.success) {
@@ -277,6 +319,8 @@
             } catch (err) {
                 console.error('Unsubscribe request failed:', err);
                 showError();
+            } finally {
+                btnConfirm.disabled = false;
             }
         }
 
@@ -285,6 +329,7 @@
             iconEl.innerHTML = '<i class="fa-solid fa-check"></i>';
             titleEl.textContent = t.successTitle;
             msgEl.textContent = t.successMsg;
+            btnConfirm.style.display = 'none';
         }
 
         function showError() {
@@ -292,9 +337,11 @@
             iconEl.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
             titleEl.textContent = t.errorTitle;
             msgEl.textContent = t.errorMsg;
+            btnConfirm.style.display = 'none';
         }
 
-        processUnsubscription();
+        if (!email || !sig) showError();
+        btnConfirm.addEventListener('click', processUnsubscription);
     </script>
 </body>
 </html>

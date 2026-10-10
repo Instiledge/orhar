@@ -198,26 +198,19 @@
     });
     window.addEventListener('load', () => {
       navigator.serviceWorker
-        .register('/service-worker.js?v=25', { updateViaCache: 'none' })
+        .register('/service-worker.js?v=26', { updateViaCache: 'none' })
         .then(registration => registration.update())
         .catch(() => {});
     });
   }
 
   // Seamless AJAX submission for homepage newsletter forms
-  const FIREBASE_API_KEY = 'AIzaSyCxx7c1XvVNT-FehV2HnzFSP8ZryH-DX2o';
-  const FIREBASE_PROJECT_ID = 'parobible-app';
-
   async function submitNewsletterToFirebase(email, language = 'en', source = 'homepage') {
-    const endpoint = `https://firestore.googleapis.com/v1/projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents/newsletter_subscribers?key=${FIREBASE_API_KEY}`;
+    const endpoint = 'https://us-central1-parobible-app.cloudfunctions.net/subscribeNewsletter';
     const payload = {
-      fields: {
-        email: { stringValue: email.trim().toLowerCase().slice(0, 150) },
-        language: { stringValue: (language || 'en').slice(0, 10) },
-        status: { stringValue: 'active' },
-        subscribedAt: { stringValue: new Date().toISOString() },
-        source: { stringValue: source.slice(0, 50) }
-      }
+      email: email.trim().toLowerCase().slice(0, 150),
+      language: (language || 'en').slice(0, 10),
+      source: source.slice(0, 50)
     };
     const res = await fetch(endpoint, {
       method: 'POST',
@@ -226,7 +219,7 @@
     });
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
-      throw new Error(err?.error?.message || `HTTP ${res.status}`);
+      throw new Error(err?.error || `HTTP ${res.status}`);
     }
     return await res.json();
   }

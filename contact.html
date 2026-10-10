@@ -1905,15 +1905,11 @@
             const controller = new AbortController();
             const timeoutId = window.setTimeout(() => controller.abort(), timeoutMs);
 
-            const endpoint = `https://firestore.googleapis.com/v1/projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents/newsletter_subscribers?key=${FIREBASE_API_KEY}`;
+            const endpoint = 'https://us-central1-parobible-app.cloudfunctions.net/subscribeNewsletter';
             const payload = {
-                fields: {
-                    email: { stringValue: email.trim().toLowerCase().slice(0, 150) },
-                    language: { stringValue: (language || 'en').slice(0, 10) },
-                    status: { stringValue: 'active' },
-                    subscribedAt: { stringValue: new Date().toISOString() },
-                    source: { stringValue: 'contact_page' }
-                }
+                email: email.trim().toLowerCase().slice(0, 150),
+                language: (language || 'en').slice(0, 10),
+                source: 'contact_page'
             };
 
             try {
@@ -1925,7 +1921,7 @@
                 });
                 const result = await response.json().catch(() => ({}));
                 if (!response.ok) {
-                    throw new Error(result?.error?.message || `HTTP ${response.status}`);
+                    throw new Error(result?.error || `HTTP ${response.status}`);
                 }
                 return result;
             } catch (error) {

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORHAR — Désabonnement de la lettre spirituelle</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#1A2E4A">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    
+    <style>
+        :root {
+            --bg-color: #FCFBF8;
+            --surface-color: #FFFFFF;
+            --primary-navy: #1A2E4A;
+            --accent-gold: #CFB286;
+            --text-dark: #1e1e1e;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Work Sans', -apple-system, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: var(--font-body); 
+            background-color: var(--bg-color); 
+            color: var(--text-dark); 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 24px 16px;
+        }
+
+        .unsub-card {
+            background: var(--surface-color);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            width: 100%;
+            max-width: 520px;
+            padding: 40px 32px;
+            text-align: center;
+        }
+
+        .logo-container {
+            margin-bottom: 24px;
+        }
+
+        .logo-container img {
+            width: 72px;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        .status-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+        }
+
+        .status-icon.loading {
+            background: #f1f5f9;
+            color: var(--primary-navy);
+            animation: spin 1.5s linear infinite;
+        }
+
+        .status-icon.success {
+            background: #ecfdf5;
+            color: #059669;
+        }
+
+        .status-icon.error {
+            background: #fef2f2;
+            color: #dc2626;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: 28px;
+            color: var(--primary-navy);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .email-badge {
+            display: inline-block;
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--primary-navy);
+            margin-bottom: 20px;
+            word-break: break-all;
+        }
+
+        .btn-home {
+            display: inline-block;
+            background: var(--primary-navy);
+            color: var(--accent-gold);
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: opacity 0.2s;
+        }
+
+        .btn-home:hover {
+            opacity: 0.9;
+        }
+
+        .footer-note {
+            margin-top: 24px;
+            font-size: 13px;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="unsub-card">
+        <div class="logo-container">
+            <img src="/logo.png" alt="ORHAR Logo" onerror="this.style.display='none'">
+        </div>
+
+        <div id="status-icon" class="status-icon loading">
+            <i class="fa-solid fa-spinner"></i>
+        </div>
+
+        <h1 id="title">Traitement en cours...</h1>
+        <div id="email-container" style="display: none;">
+            <span class="email-badge" id="user-email"></span>
+        </div>
+        <p id="message">Veuillez patienter pendant que nous mettons à jour vos préférences...</p>
+
+        <a href="/" class="btn-home" id="btn-action">Retour à l'accueil</a>
+
+        <div class="footer-note">
+            ORHAR — La Parole de Dieu chaque jour
+        </div>
+    </div>
+
+    <script>
+        const i18n = {
+            fr: {
+                loadingTitle: "Traitement en cours...",
+                loadingMsg: "Veuillez patienter pendant que nous mettons à jour vos préférences...",
+                successTitle: "Désabonnement confirmé",
+                successMsg: "Votre désabonnement a bien été pris en compte. Vous ne recevrez plus nos lettres spirituelles.",
+                errorTitle: "Lien invalide ou expiré",
+                errorMsg: "Impossible de valider ce lien de désabonnement. Si vous souhaitez modifier vos préférences, ouvrez directement l'application Orhar.",
+                btnHome: "Retour à l'accueil"
+            },
+            en: {
+                loadingTitle: "Processing...",
+                loadingMsg: "Please wait while we update your email preferences...",
+                successTitle: "Unsubscription confirmed",
+                successMsg: "You have been successfully unsubscribed. You will no longer receive our spiritual newsletter.",
+                errorTitle: "Invalid or expired link",
+                errorMsg: "Unable to process this unsubscription link. You can manage your preferences directly in the Orhar app.",
+                btnHome: "Back to Home"
+            },
+            es: {
+                loadingTitle: "Procesando...",
+                loadingMsg: "Por favor espere mientras actualizamos sus preferencias...",
+                successTitle: "Baja confirmada",
+                successMsg: "Se ha cancelado su suscripción con éxito. Ya no recibirá nuestras cartas espirituales.",
+                errorTitle: "Enlace no válido o caducado",
+                errorMsg: "No se pudo procesar este enlace. Puede gestionar sus preferencias en la aplicación Orhar.",
+                btnHome: "Volver al inicio"
+            },
+            de: {
+                loadingTitle: "Wird bearbeitet...",
+                loadingMsg: "Bitte warten Sie, während wir Ihre Einstellungen aktualisieren...",
+                successTitle: "Abmeldung bestätigt",
+                successMsg: "Sie haben sich erfolgreich abgemeldet. Sie erhalten unseren geistlichen Rundbrief nicht mehr.",
+                errorTitle: "Ungültiger oder abgelaufener Link",
+                errorMsg: "Dieser Abmeldelink konnte nicht verarbeitet werden.",
+                btnHome: "Zur Startseite"
+            },
+            it: {
+                loadingTitle: "Elaborazione in corso...",
+                loadingMsg: "Attendi mentre aggiorniamo le tue preferenze...",
+                successTitle: "Disiscrizione confermata",
+                successMsg: "La tua cancellazione è stata confermata con successo.",
+                errorTitle: "Link non valido o scaduto",
+                errorMsg: "Impossibile elaborare questo link di cancellazione.",
+                btnHome: "Torna alla home"
+            },
+            pt: {
+                loadingTitle: "Processando...",
+                loadingMsg: "Aguarde enquanto atualizamos suas preferências...",
+                successTitle: "Cancelamento confirmado",
+                successMsg: "Você foi cancelado com sucesso. Não receberá mais nossas cartas espirituais.",
+                errorTitle: "Link inválido ou expirado",
+                errorMsg: "Não foi possível processar este link de cancelamento.",
+                btnHome: "Voltar ao início"
+            },
+            pl: {
+                loadingTitle: "Przetwarzanie...",
+                loadingMsg: "Proszę czekać, aktualizujemy Twoje preferencje...",
+                successTitle: "Wypisanie potwierdzone",
+                successMsg: "Zostałeś pomyślnie wypisany z naszej listy duchowych rozważań.",
+                errorTitle: "Nieprawidłowy lub wygasły link",
+                errorMsg: "Nie można przetworzyć tego linku wypisania.",
+                btnHome: "Powrót do strony głównej"
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const email = params.get('email') || params.get('e') || '';
+        const sig = params.get('sig') || params.get('token') || '';
+        const langParam = (params.get('lang') || navigator.language || 'fr').split('-')[0].toLowerCase();
+        const t = i18n[langParam] || i18n.en;
+
+        const iconEl = document.getElementById('status-icon');
+        const titleEl = document.getElementById('title');
+        const msgEl = document.getElementById('message');
+        const emailBadge = document.getElementById('user-email');
+        const emailContainer = document.getElementById('email-container');
+        const btnAction = document.getElementById('btn-action');
+
+        titleEl.textContent = t.loadingTitle;
+        msgEl.textContent = t.loadingMsg;
+        btnAction.textContent = t.btnHome;
+
+        if (email) {
+            emailBadge.textContent = email;
+            emailContainer.style.display = 'block';
+        }
+
+        async function processUnsubscription() {
+            if (!email || !sig) {
+                showError();
+                return;
+            }
+
+            try {
+                // Cloud Function endpoint on parobible-app
+                const endpoint = `https://us-central1-parobible-app.cloudfunctions.net/unsubscribeNewsletter?email=${encodeURIComponent(email)}&sig=${encodeURIComponent(sig)}`;
+                const response = await fetch(endpoint, { method: 'GET' });
+                const data = await response.json().catch(() => ({}));
+
+                if (response.ok && data.success) {
+                    showSuccess();
+                } else {
+                    showError();
+                }
+            } catch (err) {
+                console.error('Unsubscribe request failed:', err);
+                showError();
+            }
+        }
+
+        function showSuccess() {
+            iconEl.className = 'status-icon success';
+            iconEl.innerHTML = '<i class="fa-solid fa-check"></i>';
+            titleEl.textContent = t.successTitle;
+            msgEl.textContent = t.successMsg;
+        }
+
+        function showError() {
+            iconEl.className = 'status-icon error';
+            iconEl.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
+            titleEl.textContent = t.errorTitle;
+            msgEl.textContent = t.errorMsg;
+        }
+
+        processUnsubscription();
+    </script>
+</body>
+</html>

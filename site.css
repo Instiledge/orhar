@@ -1253,6 +1253,186 @@ html[data-theme="dark"] .demo-phone-frame {
   margin: auto;
   display: block;
 }
+
+/* ========== SPIRITUAL BOOKS DEMO ========== */
+.spiritual-books-demo {
+  background:
+    radial-gradient(circle at 12% 20%, rgba(213,183,125,.14), transparent 30%),
+    linear-gradient(180deg, transparent, rgba(238,230,216,.42));
+}
+.spiritual-books-demo .section-heading { margin-bottom: 30px; }
+.spiritual-books-demo .section-intro { max-width: 790px; }
+.spiritual-books-shell {
+  width: min(1080px, 100%);
+  margin: 0 auto;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: rgba(255,255,255,.88);
+  box-shadow: 0 22px 60px rgba(19,38,61,.1);
+}
+.spiritual-tradition-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 3px 3px 13px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.spiritual-tradition-tab,
+.spiritual-book-view-tabs button {
+  border: 1px solid var(--line);
+  color: var(--navy);
+  background: var(--paper);
+  font: 600 .82rem/1.2 var(--sans);
+  cursor: pointer;
+  transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.spiritual-tradition-tab {
+  min-height: 42px;
+  padding: 9px 15px;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex: 1 0 auto;
+}
+.spiritual-tradition-tab:hover { transform: translateY(-1px); }
+.spiritual-tradition-tab[aria-selected="true"] {
+  color: white;
+  border-color: var(--navy);
+  background: var(--navy);
+  box-shadow: 0 8px 20px rgba(19,38,61,.17);
+}
+.spiritual-book-panel {
+  display: grid;
+  grid-template-columns: 210px minmax(0,1fr);
+  gap: clamp(24px,4vw,44px);
+  min-height: 455px;
+  padding: clamp(22px,4vw,38px);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 0 0, rgba(213,183,125,.12), transparent 34%),
+    var(--paper);
+}
+.spiritual-book-panel[hidden],
+.spiritual-book-view[hidden] { display: none; }
+.spiritual-book-cover-wrap { align-self: start; }
+.spiritual-book-cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  border: 5px solid #fff;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(11,24,42,.2);
+}
+.spiritual-book-format {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 12px;
+  color: var(--gold-deep);
+  font-size: .72rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+}
+.spiritual-book-heading { min-height: 103px; }
+.spiritual-book-kicker,
+.spiritual-book-chapter-label {
+  margin: 0 0 7px;
+  color: var(--gold-deep);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.spiritual-book-heading h3 {
+  margin: 0;
+  color: var(--navy);
+  font: 600 clamp(2rem,4vw,3rem)/1 var(--display);
+}
+.spiritual-book-author { margin: 8px 0 0; color: var(--ink-soft); font-size: .92rem; }
+.spiritual-book-view-tabs {
+  display: inline-flex;
+  gap: 5px;
+  margin: 15px 0;
+  padding: 4px;
+  border-radius: 14px;
+  background: var(--paper-deep);
+}
+.spiritual-book-view-tabs button { padding: 9px 14px; border-color: transparent; border-radius: 10px; }
+.spiritual-book-view-tabs button[aria-selected="true"] {
+  color: var(--navy-deep);
+  background: #fff;
+  box-shadow: 0 5px 14px rgba(19,38,61,.1);
+}
+.spiritual-book-view { min-height: 205px; }
+.spiritual-book-description,
+.spiritual-book-excerpt {
+  color: var(--ink-soft);
+  font-size: .92rem;
+  line-height: 1.68;
+}
+.spiritual-book-description {
+  max-height: 142px;
+  margin: 0;
+  padding-right: 10px;
+  overflow: auto;
+}
+.spiritual-book-themes {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 16px;
+  font-size: .72rem;
+}
+.spiritual-book-themes strong { margin-right: 3px; color: var(--navy); }
+.spiritual-book-themes span {
+  padding: 5px 9px;
+  border: 1px solid rgba(145,91,39,.18);
+  border-radius: 999px;
+  color: var(--gold-deep);
+  background: rgba(213,183,125,.12);
+  font-weight: 600;
+}
+.spiritual-book-chapter h4 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font: 600 1.42rem/1.12 var(--display);
+}
+.spiritual-book-chapter-summary { margin: 0 0 10px; color: var(--ink-soft); font-size: .84rem; line-height: 1.5; }
+.spiritual-book-excerpt {
+  position: relative;
+  max-height: 145px;
+  padding: 12px 16px 20px;
+  overflow-y: auto;
+  border-left: 3px solid var(--gold);
+  border-radius: 0 12px 12px 0;
+  background: rgba(213,183,125,.09);
+  scrollbar-width: thin;
+}
+.spiritual-book-excerpt p { margin: 0 0 10px; }
+.spiritual-book-excerpt p:last-child { margin-bottom: 0; }
+.spiritual-books-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 9px 3px;
+}
+.spiritual-books-footer p {
+  display: flex;
+  gap: 9px;
+  max-width: 650px;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: .78rem;
+  line-height: 1.5;
+}
+.spiritual-books-footer i { margin-top: 2px; color: var(--gold-deep); }
+.spiritual-books-footer .button { flex: 0 0 auto; padding: 11px 16px; font-size: .78rem; }
 html[data-theme="dark"] .demo-audio-card {
   background: #121d2d;
   border-color: var(--line);
@@ -1327,12 +1507,46 @@ html[data-theme="dark"] .demo-reader-copy h3 {
 html[data-theme="dark"] .demo-reader-img {
   border-color: #1e3048;
 }
+html[data-theme="dark"] .spiritual-books-demo {
+  background: radial-gradient(circle at 12% 20%, rgba(213,183,125,.08), transparent 30%);
+}
+html[data-theme="dark"] .spiritual-books-shell,
+html[data-theme="dark"] .spiritual-book-panel {
+  background-color: #121d2d;
+  border-color: var(--line);
+  box-shadow: 0 22px 60px rgba(0,0,0,.3);
+}
+html[data-theme="dark"] .spiritual-tradition-tab,
+html[data-theme="dark"] .spiritual-book-view-tabs button { color: #f6efe4; background: #18263a; }
+html[data-theme="dark"] .spiritual-tradition-tab[aria-selected="true"] { color: var(--navy-deep); background: var(--gold); border-color: var(--gold); }
+html[data-theme="dark"] .spiritual-book-heading h3,
+html[data-theme="dark"] .spiritual-book-chapter h4,
+html[data-theme="dark"] .spiritual-book-themes strong { color: #f6efe4; }
+html[data-theme="dark"] .spiritual-book-view-tabs { background: #0d1725; }
+html[data-theme="dark"] .spiritual-book-view-tabs button[aria-selected="true"] { color: #f6efe4; background: #243650; }
+html[data-theme="dark"] .spiritual-book-cover { border-color: #243650; }
+html[data-theme="dark"] .spiritual-book-excerpt { background: rgba(213,183,125,.07); }
 @media (max-width: 860px) {
   .demo-audio-grid,
   .demo-soundscapes-showcase { grid-template-columns: 1fr; }
   .demo-teaser-preview,
   .demo-reader-preview { grid-template-columns: 1fr; padding: 28px 20px; }
+  .spiritual-book-panel { grid-template-columns: 160px minmax(0,1fr); padding: 24px; }
   .demo-hero { padding: 75px 0 50px; }
+}
+@media (max-width: 640px) {
+  .spiritual-books-shell { padding: 10px; border-radius: 22px; }
+  .spiritual-book-panel { grid-template-columns: 92px minmax(0,1fr); gap: 17px; min-height: 470px; padding: 18px 14px; }
+  .spiritual-book-cover { border-width: 3px; border-radius: 12px; }
+  .spiritual-book-format { font-size: .61rem; }
+  .spiritual-book-heading { min-height: 116px; }
+  .spiritual-book-heading h3 { font-size: clamp(1.65rem,8vw,2.25rem); }
+  .spiritual-book-content { min-width: 0; }
+  .spiritual-book-view-tabs { grid-column: 1/-1; }
+  .spiritual-book-view-tabs button { padding: 9px 10px; font-size: .74rem; }
+  .spiritual-book-view { grid-column: 1/-1; margin-left: -109px; margin-top: 8px; }
+  .spiritual-books-footer { align-items: stretch; flex-direction: column; }
+  .spiritual-books-footer .button { width: 100%; }
 }
 
 .themes {

@@ -1,5 +1,5 @@
 // ORHAR — Service Worker for offline caching
-const CACHE_NAME = 'orhar-cache-v26';
+const CACHE_NAME = 'orhar-cache-v27';
 
 const LOCALIZED_SCREEN_MODULES = {
     en: ['home','bible','reader','parobible','plan','quiz','books','mypath','meditbrary'],
@@ -37,6 +37,10 @@ const ASSETS_TO_CACHE = [
     '/logo.png',
     '/assets/background_light.webp',
     '/assets/background_dark.webp',
+    '/assets/spiritual-books/interior_castle_teresa.webp',
+    '/assets/spiritual-books/imitation_of_christ.webp',
+    '/assets/spiritual-books/way_of_a_pilgrim.webp',
+    '/assets/spiritual-books/life_together_bonhoeffer.webp',
     '/og-image.png',
     '/icon-192.png',
     '/icon-512.png',

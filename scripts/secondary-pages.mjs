@@ -1,6 +1,10 @@
 import { writeFileSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
+const spiritualBooksDemo = JSON.parse(
+  readFileSync(resolve(import.meta.dirname, 'spiritual-books-demo-data.json'), 'utf8')
+);
+
 export const ui = {
   en:{skip:'Skip to content',nav:'Main navigation',contact:'Contact',language:'Language',phone:'ORHAR app screens',home:'Daily home',bible:'Bible library',reader:'Bible reader',quiz:'Bible quiz',plan:'Reading plan',personal:'Personalisation',themes:'ORHAR themes',themeNames:['Default','Blue','Sunset','Forest','Violet','Oceanic','Earthy','Graphite','Sakura'],psalm:'Psalms 119',quote:'Your word is a lamp to my feet, and a light for my path.',footer:'Footer'},
   fr:{skip:'Aller au contenu',nav:'Navigation principale',contact:'Contact',language:'Langue',phone:'Écrans de l’application ORHAR',home:'Accueil quotidien',bible:'Bibliothèque biblique',reader:'Lecture biblique',quiz:'Quiz biblique',plan:'Plan de lecture',personal:'Personnalisation',themes:'Thèmes ORHAR',themeNames:['Défaut','Bleu','Coucher de soleil','Forêt','Violet','Océan','Terre','Graphite','Sakura'],psalm:'Psaumes 119',quote:'Ta parole est un flambeau devant mes pas, une lumière sur mon sentier.',footer:'Pied de page'},
@@ -228,6 +232,110 @@ export const demoLabels = {
 export const navDemoLabels = Object.fromEntries(
   Object.entries(demoLabels).map(([code, locale]) => [code, locale.nav])
 );
+
+const spiritualBooksLabels = {
+  en: {
+    eyebrow: 'Module 05 · Spiritual Books', title: 'Spiritual Books',
+    intro: 'Explore major works of Christian spirituality through structured ORHAR Editions summaries and complete books available in the app. Each title offers context, key themes and guided chapters for reflection.',
+    groups: ['Catholic pillars', 'Shared Christian heritage', 'Orthodox spirituality', 'Anglican & Protestant'],
+    details: 'Book details', chapter: 'Chapter 1', themes: 'Key themes', excerpt: 'Chapter 1 excerpt',
+    format: 'ORHAR Editions summary', expectation: 'In the app: structured summaries, complete books, chapter-by-chapter reading and spiritual exercises.',
+    cta: 'Discover the full library in ORHAR'
+  },
+  fr: {
+    eyebrow: 'Module 05 · Livres spirituels', title: 'Livres Spirituels',
+    intro: 'Explorez les grandes œuvres de la spiritualité chrétienne à travers des résumés structurés signés Éditions ORHAR et des livres complets disponibles dans l’app. Chaque titre apporte contexte, thèmes essentiels et chapitres guidés pour la méditation.',
+    groups: ['Piliers catholiques', 'Héritage chrétien partagé', 'Spiritualité orthodoxe', 'Anglicane & protestante'],
+    details: 'Détails du livre', chapter: 'Chapitre 1', themes: 'Thèmes essentiels', excerpt: 'Extrait du chapitre 1',
+    format: 'Résumé Éditions ORHAR', expectation: 'Dans l’app : résumés structurés, livres complets, lecture chapitre par chapitre et exercices spirituels.',
+    cta: 'Découvrir toute la bibliothèque dans ORHAR'
+  },
+  es: {
+    eyebrow: 'Módulo 05 · Libros espirituales', title: 'Libros Espirituales',
+    intro: 'Explora grandes obras de la espiritualidad cristiana mediante resúmenes estructurados de Ediciones ORHAR y libros completos disponibles en la app. Cada título ofrece contexto, temas esenciales y capítulos guiados para meditar.',
+    groups: ['Pilares católicos', 'Herencia cristiana compartida', 'Espiritualidad ortodoxa', 'Anglicana y protestante'],
+    details: 'Detalles del libro', chapter: 'Capítulo 1', themes: 'Temas esenciales', excerpt: 'Extracto del capítulo 1',
+    format: 'Resumen Ediciones ORHAR', expectation: 'En la app: resúmenes estructurados, libros completos, lectura capítulo a capítulo y ejercicios espirituales.',
+    cta: 'Descubrir toda la biblioteca en ORHAR'
+  },
+  de: {
+    eyebrow: 'Modul 05 · Geistliche Bücher', title: 'Geistliche Bücher',
+    intro: 'Entdecke bedeutende Werke christlicher Spiritualität durch strukturierte Zusammenfassungen der ORHAR Editionen und vollständige Bücher in der App. Jeder Titel bietet Kontext, Kernthemen und geführte Kapitel zur Vertiefung.',
+    groups: ['Katholische Grundwerke', 'Gemeinsames christliches Erbe', 'Orthodoxe Spiritualität', 'Anglikanisch & protestantisch'],
+    details: 'Buchdetails', chapter: 'Kapitel 1', themes: 'Kernthemen', excerpt: 'Auszug aus Kapitel 1',
+    format: 'Zusammenfassung · ORHAR Editionen', expectation: 'In der App: strukturierte Zusammenfassungen, vollständige Bücher, kapitelweise Lektüre und geistliche Übungen.',
+    cta: 'Die ganze Bibliothek in ORHAR entdecken'
+  },
+  it: {
+    eyebrow: 'Modulo 05 · Libri spirituali', title: 'Libri Spirituali',
+    intro: 'Esplora grandi opere della spiritualità cristiana attraverso sintesi strutturate delle Edizioni ORHAR e libri completi disponibili nell’app. Ogni titolo offre contesto, temi essenziali e capitoli guidati per la meditazione.',
+    groups: ['Pilastri cattolici', 'Patrimonio cristiano condiviso', 'Spiritualità ortodossa', 'Anglicana e protestante'],
+    details: 'Dettagli del libro', chapter: 'Capitolo 1', themes: 'Temi essenziali', excerpt: 'Estratto dal capitolo 1',
+    format: 'Sintesi Edizioni ORHAR', expectation: 'Nell’app: sintesi strutturate, libri completi, lettura capitolo per capitolo ed esercizi spirituali.',
+    cta: 'Scopri tutta la biblioteca in ORHAR'
+  },
+  pt: {
+    eyebrow: 'Módulo 05 · Livros espirituais', title: 'Livros Espirituais',
+    intro: 'Explore grandes obras da espiritualidade cristã por meio de resumos estruturados das Edições ORHAR e livros completos disponíveis no app. Cada título oferece contexto, temas essenciais e capítulos guiados para meditação.',
+    groups: ['Pilares católicos', 'Herança cristã compartilhada', 'Espiritualidade ortodoxa', 'Anglicana e protestante'],
+    details: 'Detalhes do livro', chapter: 'Capítulo 1', themes: 'Temas essenciais', excerpt: 'Trecho do capítulo 1',
+    format: 'Resumo Edições ORHAR', expectation: 'No app: resumos estruturados, livros completos, leitura capítulo a capítulo e exercícios espirituais.',
+    cta: 'Descobrir toda a biblioteca no ORHAR'
+  },
+  pl: {
+    eyebrow: 'Moduł 05 · Książki duchowe', title: 'Książki Duchowe',
+    intro: 'Poznaj wielkie dzieła duchowości chrześcijańskiej dzięki uporządkowanym opracowaniom Edycji ORHAR oraz pełnym książkom dostępnym w aplikacji. Każdy tytuł zawiera kontekst, główne tematy i rozdziały prowadzące do refleksji.',
+    groups: ['Filary katolickie', 'Wspólne dziedzictwo chrześcijańskie', 'Duchowość prawosławna', 'Anglikańska i protestancka'],
+    details: 'Szczegóły książki', chapter: 'Rozdział 1', themes: 'Główne tematy', excerpt: 'Fragment rozdziału 1',
+    format: 'Opracowanie Edycji ORHAR', expectation: 'W aplikacji: uporządkowane opracowania, pełne książki, lektura rozdział po rozdziale i ćwiczenia duchowe.',
+    cta: 'Odkryj całą bibliotekę w ORHAR'
+  }
+};
+
+const escapeHtml = (value = '') => String(value)
+  .replaceAll('&', '&amp;')
+  .replaceAll('<', '&lt;')
+  .replaceAll('>', '&gt;')
+  .replaceAll('"', '&quot;');
+
+function spiritualBooksSection(code) {
+  const labels = spiritualBooksLabels[code] || spiritualBooksLabels.en;
+  const books = spiritualBooksDemo.map((book) => ({ ...book, ...book.localeData[code] }));
+  const tabs = books.map((book, index) => `<button class="spiritual-tradition-tab" type="button" role="tab" id="spiritual-tab-${code}-${index}" aria-controls="spiritual-panel-${code}-${index}" aria-selected="${index === 0}" tabindex="${index === 0 ? '0' : '-1'}" data-spiritual-book-select="${index}">${escapeHtml(labels.groups[index])}</button>`).join('');
+  const panels = books.map((book, index) => `
+    <article class="spiritual-book-panel" id="spiritual-panel-${code}-${index}" role="tabpanel" aria-labelledby="spiritual-tab-${code}-${index}" data-spiritual-book-panel="${index}" ${index === 0 ? '' : 'hidden'}>
+      <div class="spiritual-book-cover-wrap">
+        <img class="spiritual-book-cover" src="${book.cover}" alt="${escapeHtml(book.title)}" loading="lazy" width="640" height="960">
+        <span class="spiritual-book-format"><i class="fa-solid fa-feather-pointed" aria-hidden="true"></i> ${escapeHtml(labels.format)}</span>
+      </div>
+      <div class="spiritual-book-content">
+        <div class="spiritual-book-heading">
+          <p class="spiritual-book-kicker">${escapeHtml(labels.groups[index])} · ${escapeHtml(book.publicationYear)}</p>
+          <h3>${escapeHtml(book.title)}</h3>
+          <p class="spiritual-book-author">${escapeHtml(book.author)}</p>
+        </div>
+        <div class="spiritual-book-view-tabs" role="tablist" aria-label="${escapeHtml(book.title)}">
+          <button type="button" role="tab" aria-selected="true" data-spiritual-book-view="details">${escapeHtml(labels.details)}</button>
+          <button type="button" role="tab" aria-selected="false" tabindex="-1" data-spiritual-book-view="chapter">${escapeHtml(labels.chapter)}</button>
+        </div>
+        <div class="spiritual-book-view" data-spiritual-book-view-panel="details">
+          <p class="spiritual-book-description">${escapeHtml(book.description)}</p>
+          <div class="spiritual-book-themes"><strong>${escapeHtml(labels.themes)}</strong>${book.themes.map((theme) => `<span>${escapeHtml(theme)}</span>`).join('')}</div>
+        </div>
+        <div class="spiritual-book-view spiritual-book-chapter" data-spiritual-book-view-panel="chapter" hidden>
+          <p class="spiritual-book-chapter-label">${escapeHtml(labels.excerpt)}</p>
+          <h4>${escapeHtml(book.chapterTitle)}</h4>
+          <p class="spiritual-book-chapter-summary">${escapeHtml(book.chapterSummary)}</p>
+          <div class="spiritual-book-excerpt" tabindex="0">${book.excerpt.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('')}</div>
+        </div>
+      </div>
+    </article>`).join('');
+
+  return `<section class="section spiritual-books-demo" id="demo-spiritual-books" data-spiritual-books-demo><div class="section-inner">
+    <div class="section-heading center reveal"><p class="eyebrow">${escapeHtml(labels.eyebrow)}</p><h2 class="section-title">${escapeHtml(labels.title)}</h2><p class="section-intro">${escapeHtml(labels.intro)}</p></div>
+    <div class="spiritual-books-shell reveal"><div class="spiritual-tradition-tabs" role="tablist" aria-label="${escapeHtml(labels.title)}">${tabs}</div>${panels}<div class="spiritual-books-footer"><p><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i> ${escapeHtml(labels.expectation)}</p><a class="button button-primary" href="/${code}/app.html">${escapeHtml(labels.cta)} ↗</a></div></div>
+  </div></section>`;
+}
 
 export const soundscapeSamples = {
   fr: {
@@ -634,8 +742,9 @@ function shell(code, title, body, pageSlug = 'preview', metaDesc = '') {
     "@context": "https://schema.org",
     "@graph": schemas
   };
+  const cssVersion = pageSlug === 'appdemo' ? '30' : '27';
 
-  return `<!doctype html><html lang="${code}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} — ORHAR</title><meta name="description" content="${desc}"><meta name="theme-color" content="#0b182a"><meta name="author" content="ORHAR"><meta name="google-play-app" content="app-id=com.orhar.bible"><meta property="og:type" content="website"><meta property="og:title" content="${title} — ORHAR"><meta property="og:description" content="${desc}"><meta property="og:url" content="${canonicalUrl}"><meta property="og:image" content="https://orhar.com/og-image.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@orhar_app"><meta name="twitter:title" content="${title} — ORHAR"><meta name="twitter:image" content="https://orhar.com/og-image.png"><link rel="canonical" href="${canonicalUrl}"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-96x96.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1A2E4A"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="/site.css?v=27">${pageCss}<script type="application/ld+json">${JSON.stringify(jsonLd)}<\/script></head><body><a class="skip-link" href="#main">${u.skip}</a><header class="site-header"><div class="header-inner"><a class="brand" href="/${code}/index.html"><img src="/logo.png" alt=""><strong>ORHAR</strong></a><nav class="nav" data-nav aria-label="${u.nav}"><a href="/${code}/index.html">${c.back}</a><a href="/${code}/preview.html">${c.gallery}</a><a href="/${code}/appdemo.html">${d.nav}</a><a href="/${code}/actuality.html">${newsNavLabels[code]}</a><a href="/contact.html">${u.contact}</a></nav><select class="language" data-language aria-label="${u.language}">${Object.keys(copy).map(lang=>`<option value="${lang}" ${lang===code?'selected':''}>${flags[lang]} ${lang.toUpperCase()}</option>`).join('')}</select><button class="mode-toggle" data-mode-toggle type="button"><span aria-hidden="true">☾</span></button><button class="menu-button" data-menu aria-label="Menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button></div></header><main id="main">${body}</main><footer class="site-footer"><div class="section-inner"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="/${code}/index.html"><img src="/logo.png" alt=""><strong>ORHAR</strong></a><p>${c.back}</p><p class="footer-verse">« ${u.quote} » <span class="footer-verse-ref">— ${u.psalm}:105</span></p></div><nav class="footer-links" aria-label="${u.footer}"><a href="/${code}/index.html">${c.back}</a><a href="/${code}/preview.html">${c.gallery}</a><a href="/${code}/appdemo.html">${d.nav}</a><a href="/${code}/app.html">${c.get}</a><a href="/contact.html">${u.contact}</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/licenses.html">Licenses</a></nav></div><div class="footer-bottom"><span>© 2026 ORHAR.</span><a href="/${code}/index.html">${c.back}</a></div></div></footer><script src="/site.js?v=29" defer></script></body></html>`;
+  return `<!doctype html><html lang="${code}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} — ORHAR</title><meta name="description" content="${desc}"><meta name="theme-color" content="#0b182a"><meta name="author" content="ORHAR"><meta name="google-play-app" content="app-id=com.orhar.bible"><meta property="og:type" content="website"><meta property="og:title" content="${title} — ORHAR"><meta property="og:description" content="${desc}"><meta property="og:url" content="${canonicalUrl}"><meta property="og:image" content="https://orhar.com/og-image.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@orhar_app"><meta name="twitter:title" content="${title} — ORHAR"><meta name="twitter:image" content="https://orhar.com/og-image.png"><link rel="canonical" href="${canonicalUrl}"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-96x96.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1A2E4A"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="/site.css?v=${cssVersion}">${pageCss}<script type="application/ld+json">${JSON.stringify(jsonLd)}<\/script></head><body><a class="skip-link" href="#main">${u.skip}</a><header class="site-header"><div class="header-inner"><a class="brand" href="/${code}/index.html"><img src="/logo.png" alt=""><strong>ORHAR</strong></a><nav class="nav" data-nav aria-label="${u.nav}"><a href="/${code}/index.html">${c.back}</a><a href="/${code}/preview.html">${c.gallery}</a><a href="/${code}/appdemo.html">${d.nav}</a><a href="/${code}/actuality.html">${newsNavLabels[code]}</a><a href="/contact.html">${u.contact}</a></nav><select class="language" data-language aria-label="${u.language}">${Object.keys(copy).map(lang=>`<option value="${lang}" ${lang===code?'selected':''}>${flags[lang]} ${lang.toUpperCase()}</option>`).join('')}</select><button class="mode-toggle" data-mode-toggle type="button"><span aria-hidden="true">☾</span></button><button class="menu-button" data-menu aria-label="Menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button></div></header><main id="main">${body}</main><footer class="site-footer"><div class="section-inner"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="/${code}/index.html"><img src="/logo.png" alt=""><strong>ORHAR</strong></a><p>${c.back}</p><p class="footer-verse">« ${u.quote} » <span class="footer-verse-ref">— ${u.psalm}:105</span></p></div><nav class="footer-links" aria-label="${u.footer}"><a href="/${code}/index.html">${c.back}</a><a href="/${code}/preview.html">${c.gallery}</a><a href="/${code}/appdemo.html">${d.nav}</a><a href="/${code}/app.html">${c.get}</a><a href="/contact.html">${u.contact}</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/licenses.html">Licenses</a></nav></div><div class="footer-bottom"><span>© 2026 ORHAR.</span><a href="/${code}/index.html">${c.back}</a></div></div></footer><script src="/site.js?v=29" defer></script></body></html>`;
 }
 
 export function writeSecondaryPages(root) {
@@ -800,6 +909,9 @@ export function writeSecondaryPages(root) {
         </div>
       </div>
     </section>
+
+    <!-- MODULE 5: SPIRITUAL BOOKS -->
+    ${spiritualBooksSection(code)}
 
     <!-- CTA DOWNLOAD -->
     <section class="section">

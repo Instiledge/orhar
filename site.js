@@ -198,7 +198,7 @@
     });
     window.addEventListener('load', () => {
       navigator.serviceWorker
-        .register('/service-worker.js?v=26', { updateViaCache: 'none' })
+        .register('/service-worker.js?v=27', { updateViaCache: 'none' })
         .then(registration => registration.update())
         .catch(() => {});
     });
@@ -464,6 +464,62 @@
 
     renderCurrentQuestion();
   })();
+
+  // Compact spiritual-books demo: one tradition and one reading view at a time.
+  document.querySelectorAll('[data-spiritual-books-demo]').forEach(demo => {
+    const traditionTabs = [...demo.querySelectorAll('[data-spiritual-book-select]')];
+    const bookPanels = [...demo.querySelectorAll('[data-spiritual-book-panel]')];
+
+    function activateReadingView(panel, viewName) {
+      const viewTabs = [...panel.querySelectorAll('[data-spiritual-book-view]')];
+      const views = [...panel.querySelectorAll('[data-spiritual-book-view-panel]')];
+      viewTabs.forEach(tab => {
+        const selected = tab.dataset.spiritualBookView === viewName;
+        tab.setAttribute('aria-selected', String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+      });
+      views.forEach(view => { view.hidden = view.dataset.spiritualBookViewPanel !== viewName; });
+    }
+
+    function activateBook(index, moveFocus = false) {
+      traditionTabs.forEach((tab, tabIndex) => {
+        const selected = tabIndex === index;
+        tab.setAttribute('aria-selected', String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+        if (selected && moveFocus) tab.focus();
+      });
+      bookPanels.forEach((panel, panelIndex) => {
+        panel.hidden = panelIndex !== index;
+        if (panelIndex === index) activateReadingView(panel, 'details');
+      });
+    }
+
+    traditionTabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activateBook(index));
+      tab.addEventListener('keydown', event => {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        const last = traditionTabs.length - 1;
+        const next = event.key === 'Home' ? 0 : event.key === 'End' ? last :
+          event.key === 'ArrowRight' ? (index + 1) % traditionTabs.length : (index - 1 + traditionTabs.length) % traditionTabs.length;
+        activateBook(next, true);
+      });
+    });
+
+    bookPanels.forEach(panel => {
+      const viewTabs = [...panel.querySelectorAll('[data-spiritual-book-view]')];
+      viewTabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => activateReadingView(panel, tab.dataset.spiritualBookView));
+        tab.addEventListener('keydown', event => {
+          if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+          event.preventDefault();
+          const next = event.key === 'ArrowRight' ? (index + 1) % viewTabs.length : (index - 1 + viewTabs.length) % viewTabs.length;
+          activateReadingView(panel, viewTabs[next].dataset.spiritualBookView);
+          viewTabs[next].focus();
+        });
+      });
+    });
+  });
 
   const footerCopy = {
     en: ['The Mountain of Light — Scripture, prayer and growth in one place.','Footer','Gallery','News','Get the app','Contact','Privacy','Terms','Licenses','All rights reserved.'],

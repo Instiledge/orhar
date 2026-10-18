@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://orhar.com/en/</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/" />
@@ -17,7 +17,7 @@
     </url>
     <url>
         <loc>https://orhar.com/fr/</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/" />
@@ -31,7 +31,7 @@
     </url>
     <url>
         <loc>https://orhar.com/es/</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/" />
@@ -45,7 +45,7 @@
     </url>
     <url>
         <loc>https://orhar.com/de/</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/" />
@@ -59,7 +59,7 @@
     </url>
     <url>
         <loc>https://orhar.com/it/</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/" />
@@ -73,7 +73,7 @@
     </url>
     <url>
         <loc>https://orhar.com/pt/</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/" />
@@ -87,7 +87,7 @@
     </url>
     <url>
         <loc>https://orhar.com/pl/</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/" />
@@ -101,7 +101,7 @@
     </url>
     <url>
         <loc>https://orhar.com/en/appdemo</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/appdemo" />
@@ -115,7 +115,7 @@
     </url>
     <url>
         <loc>https://orhar.com/fr/appdemo</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/appdemo" />
@@ -129,7 +129,7 @@
     </url>
     <url>
         <loc>https://orhar.com/es/appdemo</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/appdemo" />
@@ -143,7 +143,7 @@
     </url>
     <url>
         <loc>https://orhar.com/de/appdemo</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/appdemo" />
@@ -157,7 +157,7 @@
     </url>
     <url>
         <loc>https://orhar.com/it/appdemo</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/appdemo" />
@@ -171,7 +171,7 @@
     </url>
     <url>
         <loc>https://orhar.com/pt/appdemo</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/appdemo" />
@@ -185,7 +185,7 @@
     </url>
     <url>
         <loc>https://orhar.com/pl/appdemo</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/appdemo" />
@@ -199,7 +199,7 @@
     </url>
     <url>
         <loc>https://orhar.com/en/preview</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/preview" />
@@ -213,7 +213,7 @@
     </url>
     <url>
         <loc>https://orhar.com/fr/preview</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/preview" />
@@ -227,7 +227,7 @@
     </url>
     <url>
         <loc>https://orhar.com/es/preview</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/preview" />
@@ -241,7 +241,7 @@
     </url>
     <url>
         <loc>https://orhar.com/de/preview</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/preview" />
@@ -255,7 +255,7 @@
     </url>
     <url>
         <loc>https://orhar.com/it/preview</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/preview" />
@@ -269,7 +269,7 @@
     </url>
     <url>
         <loc>https://orhar.com/pt/preview</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/preview" />
@@ -283,7 +283,7 @@
     </url>
     <url>
         <loc>https://orhar.com/pl/preview</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/preview" />
@@ -297,7 +297,7 @@
     </url>
     <url>
         <loc>https://orhar.com/en/app</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/app" />
@@ -311,7 +311,7 @@
     </url>
     <url>
         <loc>https://orhar.com/fr/app</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/app" />
@@ -325,7 +325,7 @@
     </url>
     <url>
         <loc>https://orhar.com/es/app</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/app" />
@@ -339,7 +339,7 @@
     </url>
     <url>
         <loc>https://orhar.com/de/app</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/app" />
@@ -353,7 +353,7 @@
     </url>
     <url>
         <loc>https://orhar.com/it/app</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/app" />
@@ -367,7 +367,7 @@
     </url>
     <url>
         <loc>https://orhar.com/pt/app</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/app" />
@@ -381,7 +381,7 @@
     </url>
     <url>
         <loc>https://orhar.com/pl/app</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/app" />
@@ -395,7 +395,7 @@
     </url>
     <url>
         <loc>https://orhar.com/en/actuality</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/actuality" />
@@ -409,7 +409,7 @@
     </url>
     <url>
         <loc>https://orhar.com/fr/actuality</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/actuality" />
@@ -423,7 +423,7 @@
     </url>
     <url>
         <loc>https://orhar.com/es/actuality</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/actuality" />
@@ -437,7 +437,7 @@
     </url>
     <url>
         <loc>https://orhar.com/de/actuality</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/actuality" />
@@ -451,7 +451,7 @@
     </url>
     <url>
         <loc>https://orhar.com/it/actuality</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/actuality" />
@@ -465,7 +465,7 @@
     </url>
     <url>
         <loc>https://orhar.com/pt/actuality</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/actuality" />
@@ -479,7 +479,7 @@
     </url>
     <url>
         <loc>https://orhar.com/pl/actuality</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://orhar.com/en/actuality" />
@@ -493,25 +493,25 @@
     </url>
     <url>
         <loc>https://orhar.com/contact</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://orhar.com/privacy</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://orhar.com/terms</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://orhar.com/licenses</loc>
-        <lastmod>2026-10-09</lastmod>
+        <lastmod>2026-10-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>

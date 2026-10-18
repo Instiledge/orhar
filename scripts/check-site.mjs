@@ -37,6 +37,14 @@ for (const code of languages) {
   assert(!appdemo.includes('/assets/audio/evening_prayer_ambient.mp3'), `${code}/appdemo.html: legacy short loop retained`);
   assert(!appdemo.includes('/assets/audio/romantic_piano_masterpiece.mp3'), `${code}/appdemo.html: legacy piano demo retained`);
   assert((appdemo.match(/class="soundscape-app-usage reveal"/g)||[]).length===1, `${code}/appdemo.html: shared intensity notice must appear exactly once`);
+  assert(appdemo.includes('id="demo-spiritual-books"'), `${code}/appdemo.html: spiritual books module missing`);
+  assert((appdemo.match(/data-spiritual-book-panel=/g)||[]).length===4, `${code}/appdemo.html: spiritual-book traditions incomplete`);
+  assert(appdemo.includes('data-spiritual-book-view="chapter"'), `${code}/appdemo.html: chapter 1 view missing`);
+  assert(!appdemo.includes('other_christian_traditions'), `${code}/appdemo.html: excluded other-traditions tab found`);
+  for (const cover of ['interior_castle_teresa','imitation_of_christ','way_of_a_pilgrim','life_together_bonhoeffer']) {
+    assert(existsSync(resolve(root,'assets','spiritual-books',`${cover}.webp`)), `${code}/appdemo.html: missing ${cover} cover`);
+    assert(appdemo.includes(`/assets/spiritual-books/${cover}.webp`), `${code}/appdemo.html: ${cover} cover not referenced`);
+  }
   const home = readFileSync(resolve(root,code,'index.html'),'utf8');
   assert(home.includes('id="faq"'), `${code}: FAQ section missing`);
   assert(home.includes('href="#faq"'), `${code}: FAQ nav link missing`);
@@ -87,9 +95,9 @@ assert(sitemap.includes('/appdemo'), 'sitemap.xml: appdemo missing');
 assert(!sitemap.includes('.html'), 'sitemap.xml: redirecting .html URL retained');
 assert(existsSync(resolve(root,'assets/audio/garden_of_god_ambient.mp3')), 'Garden of God audio file missing');
 assert(existsSync(resolve(root,'assets/audio/piano_sacre_ambient.mp3')), 'Piano Sacre audio file missing');
-assert(serviceWorker.includes("orhar-cache-v25"), 'Service worker cache version is stale');
+assert(serviceWorker.includes("orhar-cache-v27"), 'Service worker cache version is stale');
 assert(sharedScript.includes("updateViaCache: 'none'"), 'Service worker update must bypass HTTP cache');
-assert(sharedScript.includes("/service-worker.js?v=25"), 'Service worker URL must be release-versioned');
+assert(sharedScript.includes("/service-worker.js?v=27"), 'Service worker URL must be release-versioned');
 assert(sharedScript.includes("controllerchange"), 'Service worker activation must refresh the current page');
 assert(headers.includes('/service-worker.js') && headers.includes('no-cache, no-store, must-revalidate'), 'Service worker cache headers are not strict enough');
 console.log(`ORHAR static checks passed: ${checks} assertions across 7 languages.`);

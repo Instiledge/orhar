@@ -15,7 +15,8 @@ for (const code of languages) {
     const fullPath = resolve(root, code, page);
     const html = readFileSync(fullPath, 'utf8');
     assert(html.includes(`<html lang="${code}">`), `${code}/${page}: language missing`);
-    assert(html.includes('/site.js?v=30'), `${code}/${page}: shared header/footer script missing`);
+    assert(html.includes('/site.css?v=31'), `${code}/${page}: current stylesheet version missing`);
+    assert(html.includes('/site.js?v=31'), `${code}/${page}: shared header/footer script missing`);
     assert(html.includes(`/${code}/preview`), `${code}/${page}: gallery link missing`);
     if (page !== 'app.html') assert(html.includes(`/${code}/app`), `${code}/${page}: app link missing`);
     assert(!oldShots.some(name => html.includes(name)), `${code}/${page}: old screenshot linked`);
@@ -83,7 +84,7 @@ for (const name of oldShots) assert(!existsSync(resolve(root,'screenshots',name)
 for (const page of ['404.html','action.html','contact.html','privacy.html','terms.html','licenses.html']) {
   const html = readFileSync(resolve(root,page),'utf8');
   assert(html.includes('/legacy-layout.css'), `${page}: shared layout missing`);
-  assert(html.includes('/site.js?v=30'), `${page}: shared header/footer script missing`);
+  assert(html.includes('/site.js?v=31'), `${page}: shared header/footer script missing`);
   assert(html.includes('class="logo-container"'), `${page}: brand link missing`);
 }
 assert(readFileSync(resolve(root,'updates.html'),'utf8').includes('/actuality'), 'Updates route does not lead to current news');
@@ -95,9 +96,9 @@ assert(sitemap.includes('/appdemo'), 'sitemap.xml: appdemo missing');
 assert(!sitemap.includes('.html'), 'sitemap.xml: redirecting .html URL retained');
 assert(existsSync(resolve(root,'assets/audio/garden_of_god_ambient.mp3')), 'Garden of God audio file missing');
 assert(existsSync(resolve(root,'assets/audio/piano_sacre_ambient.mp3')), 'Piano Sacre audio file missing');
-assert(serviceWorker.includes("orhar-cache-v27"), 'Service worker cache version is stale');
+assert(serviceWorker.includes("orhar-cache-v31"), 'Service worker cache version is stale');
+assert(sharedScript.includes("/service-worker.js?v=31"), 'Service worker URL must match the v31 release cache');
 assert(sharedScript.includes("updateViaCache: 'none'"), 'Service worker update must bypass HTTP cache');
-assert(sharedScript.includes("/service-worker.js?v=27"), 'Service worker URL must be release-versioned');
 assert(sharedScript.includes("controllerchange"), 'Service worker activation must refresh the current page');
 assert(headers.includes('/service-worker.js') && headers.includes('no-cache, no-store, must-revalidate'), 'Service worker cache headers are not strict enough');
 console.log(`ORHAR static checks passed: ${checks} assertions across 7 languages.`);

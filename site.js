@@ -198,7 +198,7 @@
     });
     window.addEventListener('load', () => {
       navigator.serviceWorker
-        .register('/service-worker.js?v=27', { updateViaCache: 'none' })
+        .register('/service-worker.js?v=31', { updateViaCache: 'none' })
         .then(registration => registration.update())
         .catch(() => {});
     });

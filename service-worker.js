@@ -1,5 +1,5 @@
 // ORHAR — Service Worker for offline caching
-const CACHE_NAME = 'orhar-cache-v27';
+const CACHE_NAME = 'orhar-cache-v31';
 
 const LOCALIZED_SCREEN_MODULES = {
     en: ['home','bible','reader','parobible','plan','quiz','books','mypath','meditbrary'],

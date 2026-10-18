@@ -15,7 +15,7 @@ for (const code of languages) {
     const fullPath = resolve(root, code, page);
     const html = readFileSync(fullPath, 'utf8');
     assert(html.includes(`<html lang="${code}">`), `${code}/${page}: language missing`);
-    assert(html.includes('/site.js?v=29'), `${code}/${page}: shared header/footer script missing`);
+    assert(html.includes('/site.js?v=30'), `${code}/${page}: shared header/footer script missing`);
     assert(html.includes(`/${code}/preview`), `${code}/${page}: gallery link missing`);
     if (page !== 'app.html') assert(html.includes(`/${code}/app`), `${code}/${page}: app link missing`);
     assert(!oldShots.some(name => html.includes(name)), `${code}/${page}: old screenshot linked`);
@@ -83,7 +83,7 @@ for (const name of oldShots) assert(!existsSync(resolve(root,'screenshots',name)
 for (const page of ['404.html','action.html','contact.html','privacy.html','terms.html','licenses.html']) {
   const html = readFileSync(resolve(root,page),'utf8');
   assert(html.includes('/legacy-layout.css'), `${page}: shared layout missing`);
-  assert(html.includes('/site.js?v=29'), `${page}: shared header/footer script missing`);
+  assert(html.includes('/site.js?v=30'), `${page}: shared header/footer script missing`);
   assert(html.includes('class="logo-container"'), `${page}: brand link missing`);
 }
 assert(readFileSync(resolve(root,'updates.html'),'utf8').includes('/actuality'), 'Updates route does not lead to current news');

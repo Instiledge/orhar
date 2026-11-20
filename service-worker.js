@@ -1,5 +1,5 @@
 // ORHAR — Service Worker for offline caching
-const CACHE_NAME = 'orhar-cache-v32';
+const CACHE_NAME = 'orhar-cache-v33';
 
 const LOCALIZED_SCREEN_MODULES = {
     en: ['home','bible','reader','parobible','plan','quiz','books','mypath','meditbrary'],
@@ -49,17 +49,6 @@ const ASSETS_TO_CACHE = [
     '/favicon-96x96.png',
     '/assets/sounds/correct.mp3',
     '/assets/sounds/wrong.mp3',
-    '/screenshots/app-home-2026.webp',
-    '/screenshots/app-bible-2026.webp',
-    '/screenshots/app-parobible-2026.webp',
-    '/screenshots/app-reader-2026.webp',
-    '/screenshots/app-my-path-2026.webp',
-    '/screenshots/app-books-2026.webp',
-    '/screenshots/app-meditbrary-2026.webp',
-    '/screenshots/app-voices-2026.webp',
-    '/screenshots/app-chapters-2026.webp',
-    '/screenshots/app-notes-2026.webp',
-    '/screenshots/app-bookmarks-2026.webp',
     ...LOCALIZED_NEWSLETTER_QR,
     ...LOCALIZED_QUIZ_BUNDLES,
     ...LOCALIZED_SCREEN_ASSETS

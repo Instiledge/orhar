@@ -20,7 +20,7 @@ for (const code of languages) {
     assert(html.includes(`/${code}/preview`), `${code}/${page}: gallery link missing`);
     if (page !== 'app.html') assert(html.includes(`/${code}/app`), `${code}/${page}: app link missing`);
     assert(!oldShots.some(name => html.includes(name)), `${code}/${page}: old screenshot linked`);
-    for (const image of html.matchAll(/src="(\/screenshots\/[^"?]+)"/g)) {
+    for (const image of html.matchAll(/src="(\/screenshots\/[^"?]+)(?:\?[^"]*)?"/g)) {
       assert(existsSync(resolve(root, image[1].slice(1))), `${code}/${page}: missing ${image[1]}`);
     }
   }
@@ -96,8 +96,8 @@ assert(sitemap.includes('/appdemo'), 'sitemap.xml: appdemo missing');
 assert(!sitemap.includes('.html'), 'sitemap.xml: redirecting .html URL retained');
 assert(existsSync(resolve(root,'assets/audio/garden_of_god_ambient.mp3')), 'Garden of God audio file missing');
 assert(existsSync(resolve(root,'assets/audio/piano_sacre_ambient.mp3')), 'Piano Sacre audio file missing');
-assert(serviceWorker.includes("orhar-cache-v33"), 'Service worker cache version is stale');
-assert(sharedScript.includes("/service-worker.js?v=33"), 'Service worker URL must match the v33 release cache');
+assert(serviceWorker.includes("orhar-cache-v34"), 'Service worker cache version is stale');
+assert(sharedScript.includes("/service-worker.js?v=34"), 'Service worker URL must match the v34 release cache');
 assert(sharedScript.includes("updateViaCache: 'none'"), 'Service worker update must bypass HTTP cache');
 assert(sharedScript.includes("controllerchange"), 'Service worker activation must refresh the current page');
 assert(headers.includes('/service-worker.js') && headers.includes('no-cache, no-store, must-revalidate'), 'Service worker cache headers are not strict enough');

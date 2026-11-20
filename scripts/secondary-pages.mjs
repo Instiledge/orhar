@@ -45,7 +45,7 @@ const localeScreenFiles = {
 };
 export const localizedScreenshotPaths = Object.fromEntries(
   Object.entries(localeScreenFiles).map(([locale, files]) => [locale,
-    Object.fromEntries(Object.entries(files).map(([module]) => [module, `/screenshots/locales/${locale}/app-${module}-2026.webp`]))
+    Object.fromEntries(Object.entries(files).map(([module]) => [module, `/screenshots/locales/${locale}/app-${module}-2026.webp${['parobible', 'meditbrary'].includes(module) ? '?v=20261120' : ''}`]))
   ])
 );
 const galleryCardIndex = {home:0,bible:1,reader:2,parobible:3,mypath:4,plan:5,quiz:6,books:7,meditbrary:8};

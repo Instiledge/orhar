@@ -1,5 +1,5 @@
 // ORHAR — Service Worker for offline caching
-const CACHE_NAME = 'orhar-cache-v33';
+const CACHE_NAME = 'orhar-cache-v34';
 
 const LOCALIZED_SCREEN_MODULES = {
     en: ['home','bible','reader','parobible','plan','quiz','books','mypath','meditbrary'],
@@ -11,7 +11,7 @@ const LOCALIZED_SCREEN_MODULES = {
     pl: ['home','bible','reader','parobible','plan','quiz','books','mypath','meditbrary']
 };
 const LOCALIZED_SCREEN_ASSETS = Object.entries(LOCALIZED_SCREEN_MODULES).flatMap(([locale, modules]) =>
-    modules.map(module => `/screenshots/locales/${locale}/app-${module}-2026.webp`)
+    modules.map(module => `/screenshots/locales/${locale}/app-${module}-2026.webp${['parobible', 'meditbrary'].includes(module) ? '?v=20261120' : ''}`)
 );
 const LOCALIZED_NEWSLETTER_QR = ['en','fr','es','de','it','pt','pl'].map(code => `/${code}/qr-subscribe-${code}.png`);
 const LOCALIZED_QUIZ_BUNDLES = ['en','fr','es','de','it','pt','pl'].map(code => `/assets/quiz/bundle_${code}.json`);
